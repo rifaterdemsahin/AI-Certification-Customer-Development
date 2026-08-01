@@ -1,8 +1,8 @@
 # Hypothesis Tracker — AI Certification Helper
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Date:** 2026-08-01
-**Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.0.md` where a status claim is not backed by evidence in the repo.
+**Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.0.md` and `reports/market-validation-argument-v1.0.md` where a status claim is not backed by evidence in the repo, or has since been resolved by new research.
 
 **Status legend:**
 - ✅ **Validated** — supported by cited evidence
@@ -21,7 +21,7 @@
 - **Conclusion:** Demand for AI/LLM certification is structurally rising, not a fad.
 - **Experiment:** Search volume and job-description scrapes for certification terms.
 - **Target metric:** Steady monthly search growth.
-- **Status:** ⚠️ **Claimed, unverified** — labeled "Validated" in the source page, but no dataset, screenshot, or link to the underlying search/job-description data exists anywhere in the repo.
+- **Status:** 🟡 **Partially validated (upgraded 2026-08-01)** — the repo still contains no search-volume/job-scrape dataset backing the original "Validated" label, but independent research now corroborates the underlying claim from a different angle: Anthropic's Claude Partner Network ties consulting-firm partner tiers to certified-practitioner headcounts (10 for Select, 100 for Preferred, 1,000 for Global Premier — mirroring AWS Partner Network's identical mechanic), and 2026 compensation data shows 30–40% pay premiums for generative-AI skills at firms like Accenture and TCS. See `reports/market-validation-argument-v1.0.md`. The original search-volume experiment is still not done, so this remains short of full validation.
 
 ### H2 — Audience prefers animated summaries over dry materials
 - **Source:** `comp-problem-solution.html`, `comp-mvp.html`
@@ -79,7 +79,7 @@
 - **Premise 2:** Structured live instruction outperforms self-study for exam readiness.
 - **Conclusion:** Cohort graduates will pass the target exam at a high rate and recommend the program to peers.
 - **Target metrics:** >80% pass rate; NPS >50; organic LinkedIn badge sharing.
-- **Status:** ⚪ Hypothesized. **Note:** this hypothesis is entirely downstream of confirming the target certification ("Claude AI Architect Professional") actually exists and is administered — see acidity check Finding F1. Until that's confirmed, this hypothesis cannot be tested at all.
+- **Status:** ⚪ Hypothesized — but the blocker is cleared. Acidity check Finding F1 is now **resolved**: Anthropic officially launched the Claude Certification Program in 2026, including "Claude Certified Architect – Professional" ($175, via Pearson VUE), which is a near-exact match to this site's target. This hypothesis can now actually be tested against a real exam. See `reports/market-validation-argument-v1.0.md`.
 
 ---
 
@@ -112,26 +112,39 @@
 
 ---
 
+## Stage 2 addendum: New hypothesis surfaced by market research
+
+### H12 — IT consulting/government-contractor firms are a viable B2B demand channel (new)
+- **Source:** `reports/market-validation-argument-v1.0.md` (not yet reflected in any site page)
+- **Premise 1:** Anthropic's Claude Partner Network gates consulting-firm tier status on certified-practitioner headcount (10 for Select, 100 for Preferred, 1,000 for Global Premier), the same mechanic AWS uses in its own Partner Network.
+- **Premise 2:** Large government-facing IT consultancies (e.g., Capgemini, DXC) are already named Anthropic ecosystem partners, already reimburse cloud certification costs generally, and operate in a government-contracting world (see DoD Directive 8140) where mandated staff certification is already normal practice.
+- **Conclusion:** These firms have a structural, revenue-linked, bulk-purchase incentive to pay for staff Claude certification prep — a potentially larger and more predictable channel than the individual YouTube funnel this business model currently relies on exclusively.
+- **Status:** ⚪ Planned — this is a new, untested hypothesis. No firm has been asked directly whether it would pay for bulk cohort seats to hit its practitioner quota. Recommended first experiment: contact 3–5 Claude Partner Network "Registered"-tier firms and ask directly (see market-validation-argument-v1.0.md, Section 6).
+
+---
+
 ## Summary Table
 
 | ID | Hypothesis | Status |
 |----|------------|--------|
-| H1 | Rising AI skills expectations | ⚠️ Claimed, unverified |
+| H1 | Rising AI skills expectations | 🟡 Partially validated |
 | H2 | Animated content beats standard formats | 🟡 In Testing |
 | H3 | Audience will pay for cert prep | ⚪ Planned |
 | H4 | YouTube funnel → 1% paid membership conversion | ⚪ Hypothesized |
 | H5 | Cohorts sell out organically | ⚪ Hypothesized |
 | H6 | TAM/SAM/SOM market sizing | ⚠️ Claimed, unverified |
 | H7 | Funnel CTR/conversion rates | ⚪ Hypothesized |
-| H8 | Cohort delivers exam-ready PMF | ⚪ Hypothesized (blocked on F1) |
+| H8 | Cohort delivers exam-ready PMF | ⚪ Hypothesized (blocker cleared — target cert confirmed real) |
 | H9 | $10k single launch → full-time gate | ⚪ Hypothesized |
 | H10 | >40% retention proves teaching method | ⚪ Hypothesized |
 | H11 | $100k ARR → hiring threshold | ⚪ Hypothesized |
+| H12 | IT consulting/gov-contractor firms as B2B channel (new) | ⚪ Planned |
 
-**Overall:** 0 of 11 hypotheses are validated with cited evidence. 2 are marked as complete/validated in source pages but have no supporting evidence in the repo. This tracker should be updated in place (bump to v1.1, v1.2, etc.) as each experiment produces real results.
+**Overall:** 0 of 12 hypotheses are fully validated with cited evidence, 1 is partially validated, and 1 (TAM/SAM/SOM sizing) is still marked complete in a source page with no supporting evidence in the repo. The certification-existence blocker on H8 has been cleared by external research (see v1.1.0 below). This tracker should be updated in place (bump to v1.2, v1.3, etc.) as each experiment produces real results.
 
 ---
 
 ## Change Log
 
+- **v1.1.0** (2026-08-01): Incorporated `reports/market-validation-argument-v1.0.md`. Upgraded H1 to Partially Validated, cleared the certification-existence blocker on H8, and added H12 (IT consulting/government-contractor firms as a new B2B demand channel).
 - **v1.0.0** (2026-08-01): Initial consolidation of all hypotheses from the site's stage/component pages, cross-referenced against `reports/acidity-check-report-v1.0.md`.
