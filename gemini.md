@@ -61,7 +61,7 @@ Below is a custom SVG schematic illustrating how traffic flows from organic sear
   <rect x="560" y="140" width="40" height="40" rx="10" fill="url(#goldOrange)" />
   <text x="580" y="165" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">🏢</text>
   <text x="560" y="210" fill="#ffffff" font-size="16" font-weight="700">3. Scaling Gate</text>
-  <text x="560" y="235" fill="#9ca3af" font-size="12">Transition to Full-Time</text>
+  <text x="560" y="235" fill="#9ca3af" font-size="12">Ongoing Second Job, Scaled Up</text>
   <text x="560" y="255" fill="#9ca3af" font-size="12">Target Run-Rate: $100k</text>
   <text x="560" y="275" fill="#f59e0b" font-size="11" font-weight="700">Hire Editor &amp; Assistants</text>
   
@@ -88,9 +88,9 @@ Below is a custom SVG schematic illustrating how traffic flows from organic sear
 
 ### 3. ⚡ Customer Creation: Operational Threshold
 *   Rather than transitioning to full-time study guide creation blindly, we set a logical trigger gate:
-    *   **Financial Gate:** $10,000 generated from a single cohort course.
-    *   **Audience Gate:** Average percentage watch retention exceeding 40% across all video assets.
-*   Upon hitting these triggers, founder **Rifat Erdem Sahin** transitions full-time, devoting 3 hours daily to research and content updates.
+    *   **Validation Exit Gate (Stage 2 → 3):** $10,000 (USD) worth of validated customers generated from Customer Validation, achieved solely by the founder to keep the loop agile — required before any Customer Creation or Company Building work begins.
+    *   **Customer Creation Metric (Stage 3 focus):** 1,000x subscriber growth per published video, measured against the current baseline of roughly 30 subscribers.
+*   Upon clearing the validation gate, founder **Rifat Erdem Sahin** does **not** transition full-time. He keeps his primary job and runs this as an ongoing second job, devoting evenings and weekends to research, content production, and cohort support.
 
 ### 4. 🏢 Company Building: Hiring & System Automation
 *   Scaling occurs at **$100,000/year** run rate.
