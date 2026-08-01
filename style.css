@@ -146,6 +146,63 @@ header {
     border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
+/* Nav Dropdowns (Components / Docs) */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: inline-block;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: default;
+    transition: var(--transition-fast);
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle,
+.nav-dropdown-toggle:focus {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 260px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    list-style: none;
+    z-index: 200;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+}
+
+.nav-dropdown-menu li {
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu .nav-link {
+    display: block;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.nav-menu {
+    flex-wrap: wrap;
+}
+
 /* Layout Containers */
 .container {
     max-width: 1200px;
