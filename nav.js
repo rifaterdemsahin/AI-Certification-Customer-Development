@@ -690,9 +690,7 @@
         var searchBtn = document.getElementById('nav-search-btn');
         if (searchBtn) searchBtn.classList.remove('active');
         
-        if (!document.getElementById('notes-drawer').classList.contains('open')) {
-            document.body.classList.remove('overlay-open');
-        }
+        document.body.classList.remove('overlay-open');
     }
 
     function openNotes() {
@@ -700,7 +698,6 @@
         if (!drawer) return;
         closeSearchQuietly();
         drawer.classList.add('open');
-        document.body.classList.add('overlay-open');
         
         var notesBtn = document.getElementById('nav-notes-btn');
         if (notesBtn) notesBtn.classList.add('active');
@@ -724,10 +721,6 @@
         
         var notesBtn = document.getElementById('nav-notes-btn');
         if (notesBtn) notesBtn.classList.remove('active');
-        
-        if (!document.getElementById('search-modal').classList.contains('open')) {
-            document.body.classList.remove('overlay-open');
-        }
     }
     
     function closeSearchQuietly() {

@@ -1146,45 +1146,40 @@ footer {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* Drawer Overlay (Notes) */
+/* Drawer Overlay (Notes) - Now Floating and Non-Blocking */
 .drawer-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(7, 10, 19, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    top: 85px; /* Below the sticky navbar */
+    right: 20px;
+    bottom: 20px;
+    left: auto;
+    width: 420px;
+    max-width: 90%;
+    z-index: 999;
+    pointer-events: none; /* Let clicks pass through to page when closed */
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(calc(100% + 40px)); /* Hide offscreen */
 }
 
 .drawer-overlay.open {
-    opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* Capture clicks when open */
+    transform: translateX(0);
 }
 
 .drawer-content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    height: 100%;
     width: 100%;
-    max-width: 460px;
-    background: var(--bg-secondary);
-    border-left: 1px solid var(--border-color);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    background: rgba(17, 24, 39, 0.85); /* Glassmorphism */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-accent);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.drawer-overlay.open .drawer-content {
-    transform: translateX(0);
 }
 
 .drawer-header {
