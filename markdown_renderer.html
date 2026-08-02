@@ -47,7 +47,14 @@
 
         // Minimal, dependency-free markdown -> HTML converter.
         function renderMarkdown(src) {
-            var escaped = escapeHtml(src);
+            // Extract SVG blocks before escaping HTML
+            var svgBlocks = [];
+            var placeholderSrc = src.replace(/<svg[\s\S]*?<\/svg>/gi, function(match) {
+                svgBlocks.push(match);
+                return '___SVG_PLACEHOLDER_' + (svgBlocks.length - 1) + '___';
+            });
+
+            var escaped = escapeHtml(placeholderSrc);
             var lines = escaped.split('\n');
             var html = [];
             var i = 0;
@@ -78,6 +85,14 @@
 
             while (i < lines.length) {
                 var line = lines[i];
+
+                // SVG placeholder block check
+                if (/^___SVG_PLACEHOLDER_\d+___$/.test(line.trim())) {
+                    flushList();
+                    html.push(line.trim());
+                    i++;
+                    continue;
+                }
 
                 // fenced code block
                 if (/^```/.test(line)) {
@@ -172,7 +187,13 @@
                 html.push('<pre><code>' + codeLines.join('\n') + '</code></pre>');
             }
 
-            return html.join('\n');
+            var renderedHtml = html.join('\n');
+            for (var j = 0; j < svgBlocks.length; j++) {
+                var placeholder = '___SVG_PLACEHOLDER_' + j + '___';
+                renderedHtml = renderedHtml.replace(placeholder, svgBlocks[j]);
+            }
+
+            return renderedHtml;
         }
 
         var params = new URLSearchParams(location.search);
