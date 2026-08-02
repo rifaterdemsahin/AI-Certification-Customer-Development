@@ -209,56 +209,109 @@
         return hrefQuery === currentQuery;
     }
 
+    function getLatestReviewDate(href) {
+        var notes = getNotes();
+        var pageNotes = notes.filter(function(note) {
+            return note.pageUrl === href || (note.pageUrl.indexOf(href) !== -1 && href !== 'index.html');
+        });
+        
+        if (pageNotes.length === 0) return null;
+        
+        var latest = pageNotes[0];
+        for (var i = 1; i < pageNotes.length; i++) {
+            if (pageNotes[i].id > latest.id) {
+                latest = pageNotes[i];
+            }
+        }
+        return latest.date;
+    }
+
+    function getShortDate(fullDate) {
+        if (!fullDate) return "";
+        var parts = fullDate.split(',');
+        if (parts.length > 0) {
+            return parts[0].trim();
+        }
+        return fullDate;
+    }
+
     function linkHtml(href, label, className) {
         var active = isActive(href) ? ' active' : '';
         var finalHref = href.indexOf('http') === 0 ? href : (pathPrefix + href);
         var cls = className ? (' ' + className) : '';
-        return '<li><a href="' + finalHref + '" class="nav-link' + cls + active + '">' + label + '</a></li>';
+        
+        var reviewDate = getLatestReviewDate(href);
+        var reviewHtml = '';
+        if (reviewDate) {
+            var shortDate = getShortDate(reviewDate);
+            reviewHtml = ' <span class="menu-review-indicator" title="Reviewed on ' + reviewDate + '">👁️ ' + shortDate + '</span>';
+        }
+        
+        return '<li><a href="' + finalHref + '" class="nav-link' + cls + active + '">' + label + reviewHtml + '</a></li>';
     }
 
-    // Build Navigation HTML
-    var html = '<nav class="nav-container">' +
-        '<a href="' + pathPrefix + 'index.html" class="logo">' +
-        '<div class="logo-icon">AI</div>' +
-        '<span class="logo-text">AI Cert Helper</span>' +
-        '</a>' +
-        '<ul class="nav-menu">';
-
-    groups.forEach(function (group) {
-        var labelWithEmoji = group.emoji + ' ' + group.label;
-        if (group.type === 'link') {
-            html += linkHtml(group.href, labelWithEmoji, group.className);
-        } else {
-            var hasActiveChild = false;
-            group.items.forEach(function (item) {
-                if (isActive(item[0])) {
-                    hasActiveChild = true;
-                }
-            });
-            var activeClass = hasActiveChild ? ' active' : '';
-            html += '<li class="nav-dropdown">' +
-                '<span class="nav-dropdown-toggle ' + group.className + activeClass + '" tabindex="0">' + labelWithEmoji + ' &#9662;</span>' +
-                '<ul class="nav-dropdown-menu">';
-            group.items.forEach(function (item) {
-                html += linkHtml(item[0], item[1], group.className);
-            });
-            html += '</ul></li>';
+    function buildHeaderHtml() {
+        var currentReviewDate = getLatestReviewDate(currentPageUrl);
+        var currentReviewHtml = '';
+        if (currentReviewDate) {
+            var currentShortDate = getShortDate(currentReviewDate);
+            currentReviewHtml = '<div class="page-review-badge" title="Reviewed on ' + currentReviewDate + '">👁️ Reviewed: ' + currentShortDate + '</div>';
         }
-    });
 
-    // Append Search and Notes action items
-    html += '<li class="nav-menu-action">' +
-        '<button id="nav-search-btn" class="nav-action-btn" title="Search pages (Ctrl+K or 🔍)">' +
-        '<span>🔍</span> Search' +
-        '</button>' +
-        '</li>';
-    html += '<li class="nav-menu-action">' +
-        '<button id="nav-notes-btn" class="nav-action-btn" title="My Notes">' +
-        '<span>📝</span> Notes<span id="nav-notes-badge" class="badge-count" style="display:none;"></span>' +
-        '</button>' +
-        '</li>';
+        var headerHtml = '<nav class="nav-container">' +
+            '<a href="' + pathPrefix + 'index.html" class="logo">' +
+            '<div class="logo-icon">AI</div>' +
+            '<span class="logo-text">AI Cert Helper</span>' +
+            '</a>' +
+            currentReviewHtml +
+            '<ul class="nav-menu">';
 
-    html += '</ul></nav>';
+        groups.forEach(function (group) {
+            var labelWithEmoji = group.emoji + ' ' + group.label;
+            if (group.type === 'link') {
+                headerHtml += linkHtml(group.href, labelWithEmoji, group.className);
+            } else {
+                var hasActiveChild = false;
+                group.items.forEach(function (item) {
+                    if (isActive(item[0])) {
+                        hasActiveChild = true;
+                    }
+                });
+                var activeClass = hasActiveChild ? ' active' : '';
+                headerHtml += '<li class="nav-dropdown">' +
+                    '<span class="nav-dropdown-toggle ' + group.className + activeClass + '" tabindex="0">' + labelWithEmoji + ' &#9662;</span>' +
+                    '<ul class="nav-dropdown-menu">';
+                group.items.forEach(function (item) {
+                    headerHtml += linkHtml(item[0], item[1], group.className);
+                });
+                headerHtml += '</ul></li>';
+            }
+        });
+
+        // Append Search and Notes action items
+        headerHtml += '<li class="nav-menu-action">' +
+            '<button id="nav-search-btn" class="nav-action-btn" title="Search pages (Ctrl+K or 🔍)">' +
+            '<span>🔍</span> Search' +
+            '</button>' +
+            '</li>';
+            
+        var notes = getNotes();
+        var countBadge = '';
+        if (notes.length > 0) {
+            countBadge = '<span id="nav-notes-badge" class="badge-count">' + notes.length + '</span>';
+        } else {
+            countBadge = '<span id="nav-notes-badge" class="badge-count" style="display:none;"></span>';
+        }
+        
+        headerHtml += '<li class="nav-menu-action">' +
+            '<button id="nav-notes-btn" class="nav-action-btn" title="My Notes">' +
+            '<span>📝</span> Notes' + countBadge +
+            '</button>' +
+            '</li>';
+
+        headerHtml += '</ul></nav>';
+        return headerHtml;
+    }
 
     // Modal and Drawer HTML to inject
     var searchModalHtml = 
@@ -500,6 +553,7 @@
         });
         saveNotes(notes);
         renderNotes();
+        mountHeader();
     }
 
     function addNote(text) {
@@ -525,6 +579,7 @@
         notes.push(newNote);
         saveNotes(notes);
         renderNotes();
+        mountHeader();
     }
 
     function deleteNote(id) {
@@ -534,12 +589,14 @@
         });
         saveNotes(filtered);
         renderNotes();
+        mountHeader();
     }
 
     function clearNotes() {
         if (confirm('Are you sure you want to clear all your saved notes? This will delete the cookie.')) {
             saveNotes([]);
             renderNotes();
+            mountHeader();
         }
     }
 
@@ -840,16 +897,6 @@
         overlayDiv.innerHTML = searchModalHtml + notesDrawerHtml;
         document.body.appendChild(overlayDiv);
         
-        var searchBtn = document.getElementById('nav-search-btn');
-        if (searchBtn) {
-            searchBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                var searchModalOpen = document.getElementById('search-modal').classList.contains('open');
-                if (searchModalOpen) closeSearch();
-                else openSearch();
-            });
-        }
-        
         var closeSearchBtn = document.getElementById('close-search-btn');
         if (closeSearchBtn) {
             closeSearchBtn.addEventListener('click', closeSearch);
@@ -899,16 +946,6 @@
             });
         }
         
-        var notesBtn = document.getElementById('nav-notes-btn');
-        if (notesBtn) {
-            notesBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                var notesDrawerOpen = document.getElementById('notes-drawer').classList.contains('open');
-                if (notesDrawerOpen) closeNotes();
-                else openNotes();
-            });
-        }
-        
         var closeNotesBtn = document.getElementById('close-notes-btn');
         if (closeNotesBtn) {
             closeNotesBtn.addEventListener('click', closeNotes);
@@ -930,6 +967,7 @@
                 addNote(noteTextarea.value);
                 noteTextarea.value = '';
             });
+            
             noteTextarea.addEventListener('keydown', function(e) {
                 if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
                     e.preventDefault();
@@ -966,11 +1004,34 @@
         renderNotes();
     }
 
+    function bindHeaderButtons() {
+        var searchBtn = document.getElementById('nav-search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var searchModalOpen = document.getElementById('search-modal').classList.contains('open');
+                if (searchModalOpen) closeSearch();
+                else openSearch();
+            });
+        }
+        
+        var notesBtn = document.getElementById('nav-notes-btn');
+        if (notesBtn) {
+            notesBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var notesDrawerOpen = document.getElementById('notes-drawer').classList.contains('open');
+                if (notesDrawerOpen) closeNotes();
+                else openNotes();
+            });
+        }
+    }
+
     // Mount header
     function mountHeader() {
         var mount = document.getElementById('site-header');
         if (mount) {
-            mount.innerHTML = html;
+            mount.innerHTML = buildHeaderHtml();
+            bindHeaderButtons();
             // Initialize overlays after mounting header to ensure elements are ready
             initOverlays();
         }

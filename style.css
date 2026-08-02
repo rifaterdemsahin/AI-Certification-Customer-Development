@@ -1408,3 +1408,47 @@ footer {
 body.overlay-open {
     overflow: hidden;
 }
+
+/* Page & Menu Review Status Indicators */
+.page-review-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    margin-left: 1.5rem;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+    animation: pulseGlow 2s infinite ease-in-out;
+    flex-shrink: 0;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 5px rgba(16, 185, 129, 0.1); }
+    50% { box-shadow: 0 0 12px rgba(16, 185, 129, 0.25); }
+}
+
+.menu-review-indicator {
+    font-size: 0.65rem;
+    color: #34d399 !important;
+    margin-left: 0.35rem;
+    font-weight: 700;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 0.05rem 0.3rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    line-height: 1;
+}
+
+.nav-dropdown-menu .nav-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
