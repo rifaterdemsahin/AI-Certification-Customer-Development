@@ -9,6 +9,15 @@
     var currentFile = (location.pathname.split('/').pop() || 'index.html');
     if (currentFile === '') currentFile = 'index.html';
 
+    // Apply saved theme as early as possible to minimize flash of the wrong theme.
+    (function applyInitialTheme() {
+        var match = document.cookie.match(/(?:^|; )site_theme=([^;]*)/);
+        var theme = match ? decodeURIComponent(match[1]) : 'dark';
+        if (theme === 'light' && document.body) {
+            document.body.classList.add('light-theme');
+        }
+    })();
+
     // [href, label] pairs. Query-string hrefs are matched by their base filename + src param.
     var groups = [
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
@@ -310,6 +319,13 @@
             '</button>' +
             '</li>';
 
+        var themeIcon = getTheme() === 'light' ? '🌙' : '☀️';
+        headerHtml += '<li class="nav-menu-action">' +
+            '<button id="nav-theme-btn" class="nav-action-btn" title="Toggle Theme (Light/Dark)">' +
+            '<span id="theme-btn-icon">' + themeIcon + '</span> Theme' +
+            '</button>' +
+            '</li>';
+
         headerHtml += '</ul></nav>';
         return headerHtml;
     }
@@ -341,7 +357,10 @@
         '  <div class="drawer-content">' +
         '    <div class="drawer-header">' +
         '      <h3>📝 Workspace Notes</h3>' +
-        '      <button class="drawer-close-btn" id="close-notes-btn">&times;</button>' +
+        '      <div class="drawer-header-actions">' +
+        '        <button class="drawer-minimize-btn" id="minimize-notes-btn" title="Minimize">&#8211;</button>' +
+        '        <button class="drawer-close-btn" id="close-notes-btn">&times;</button>' +
+        '      </div>' +
         '    </div>' +
         '    <div class="drawer-body">' +
         '      <div class="current-page-indicator">' +
@@ -399,6 +418,23 @@
 
     function saveNotes(notes) {
         setCookie('site_notes', JSON.stringify(notes), 365);
+    }
+
+    // Theme Utilities
+    function getTheme() {
+        return getCookie('site_theme') || 'dark';
+    }
+
+    function applyTheme(theme) {
+        document.body.classList.toggle('light-theme', theme === 'light');
+        var icon = document.getElementById('theme-btn-icon');
+        if (icon) icon.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
+
+    function toggleTheme() {
+        var next = getTheme() === 'light' ? 'dark' : 'light';
+        setCookie('site_theme', next, 365);
+        applyTheme(next);
     }
 
     function escapeHtml(text) {
@@ -873,9 +909,20 @@
         var drawer = document.getElementById('notes-drawer');
         if (!drawer) return;
         drawer.classList.remove('open');
-        
+
         var notesBtn = document.getElementById('nav-notes-btn');
         if (notesBtn) notesBtn.classList.remove('active');
+    }
+
+    function toggleMinimizeNotes() {
+        var drawer = document.getElementById('notes-drawer');
+        if (!drawer) return;
+        var minimized = drawer.classList.toggle('minimized');
+        var btn = document.getElementById('minimize-notes-btn');
+        if (btn) {
+            btn.innerHTML = minimized ? '&#9633;' : '&#8211;';
+            btn.title = minimized ? 'Restore' : 'Minimize';
+        }
     }
     
     function closeSearchQuietly() {
@@ -952,9 +999,20 @@
         
         var closeNotesBtn = document.getElementById('close-notes-btn');
         if (closeNotesBtn) {
-            closeNotesBtn.addEventListener('click', closeNotes);
+            closeNotesBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeNotes();
+            });
         }
-        
+
+        var minimizeNotesBtn = document.getElementById('minimize-notes-btn');
+        if (minimizeNotesBtn) {
+            minimizeNotesBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMinimizeNotes();
+            });
+        }
+
         var notesDrawer = document.getElementById('notes-drawer');
         if (notesDrawer) {
             notesDrawer.addEventListener('click', function(e) {
@@ -962,6 +1020,15 @@
                     closeNotes();
                 }
             });
+
+            var notesDrawerHeader = notesDrawer.querySelector('.drawer-header');
+            if (notesDrawerHeader) {
+                notesDrawerHeader.addEventListener('click', function(e) {
+                    if (notesDrawer.classList.contains('minimized')) {
+                        toggleMinimizeNotes();
+                    }
+                });
+            }
         }
         
         var addNoteBtn = document.getElementById('add-note-btn');
@@ -990,6 +1057,24 @@
             clearNotesBtn.addEventListener('click', clearNotes);
         }
         
+        // When the notes drawer is open, capture any text the user highlights
+        // on the page and drop it straight into the note textarea.
+        document.addEventListener('mouseup', function(e) {
+            var drawer = document.getElementById('notes-drawer');
+            if (!drawer || !drawer.classList.contains('open') || drawer.classList.contains('minimized')) return;
+            if (drawer.contains(e.target)) return;
+
+            var selection = window.getSelection();
+            var text = selection ? selection.toString().trim() : '';
+            if (!text) return;
+
+            var textarea = document.getElementById('note-textarea');
+            if (!textarea) return;
+
+            textarea.value = textarea.value ? (textarea.value + '\n\n' + text) : text;
+            selection.removeAllRanges();
+        });
+
         document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
@@ -1026,6 +1111,14 @@
                 var notesDrawerOpen = document.getElementById('notes-drawer').classList.contains('open');
                 if (notesDrawerOpen) closeNotes();
                 else openNotes();
+            });
+        }
+
+        var themeBtn = document.getElementById('nav-theme-btn');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleTheme();
             });
         }
     }

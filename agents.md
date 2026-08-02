@@ -52,6 +52,26 @@ All web app page extensions or styles must uphold premium visual standards:
 
 ---
 
+## 🗂️ Navigation & Link Integrity
+
+* **Single source of truth:** all top nav grouping lives in `nav.js`'s `groups`
+  array (see `CLAUDE.md`'s "Nav groups" list for the current order/contents). Never
+  hand-write a `<header>` on a page — grep for `<header>` across `*.html` after any
+  nav change; it should never match.
+* **Before adding a page:** pick the nav group it logically belongs to (or add a new
+  group) and add it to `groups`, plus a `searchIndex` entry so it's findable via
+  🔍 Search.
+* **Before renaming or removing a page:** grep its filename across `*.html` and
+  `nav.js` — a link left dangling in `groups`, `searchIndex`, or another page's body
+  is the most common way this site breaks.
+* **Detail pages don't have to live in the top nav:** `discovery/*.html` is a
+  deliberate example — reachable from `stage-customer-discovery.html`'s diagram and
+  from Search, not from a dropdown, because it's contextual detail rather than a
+  top-level destination. Prefer this pattern over cramming every sub-page into the
+  nav when a parent page can link to it directly instead.
+
+---
+
 ## 📝 Document Synchronization Rule
 
 When updating a business fact or primary parameter (such as channel lists, pricing, or comments schedule), the agent **MUST** update all of the following in tandem:

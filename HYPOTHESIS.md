@@ -1,7 +1,7 @@
 # Hypothesis Tracker — AI Certification Helper
 
-**Version:** 1.3.0
-**Date:** 2026-08-01
+**Version:** 1.4.0
+**Date:** 2026-08-02
 **Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.0.md`, `reports/market-validation-argument-v1.0.md`, `reports/ai-adoption-and-skills-gap-v1.0.md`, and `reports/exam-prep-market-and-student-behavior-v1.0.md` where a status claim is not backed by evidence in the repo, or has since been resolved or changed by new research or a founder decision.
 
 **Status legend:**
@@ -50,14 +50,15 @@
 - **Premise 1:** Free YouTube content builds trust and traffic at scale.
 - **Premise 2:** A fraction of viewers will value the $10/mo community enough to subscribe.
 - **Conclusion:** Out of every 1,000 free-course views, at least 10 viewers will join the $10/mo membership.
-- **Status:** ⚪ Hypothesized — no reported view or signup counts in the repo yet.
+- **Status:** 🟡 **In Testing (upgraded 2026-08-02)** — no longer untested: a free weekly cohort has run for 8 consecutive weeks (June–July 2026) with a steady audience of ~4 attendees per session. This validates that free content converts into repeat live engagement; the specific 1% view→paid-membership conversion figure is still unmeasured.
 
 ### H5 — Cohorts sell out organically without paid ads
 - **Source:** `comp-business-model.html`
 - **Premise 1:** Cohort announcements reach an engaged audience via video callouts and the newsletter list.
 - **Premise 2 (revised 2026-08-01):** That audience is willing to pay $250–500 for live-streamed, real-time problem-solving sessions, community membership, and the discipline/network that comes with them — **not** for a promised exam outcome. The founder has explicitly clarified: "we do not grant the passing of the exam, the certification" — that is issued solely by Anthropic via Pearson VUE.
+- **Premise 3 (delivery model defined, 2026-08-02):** The $10/mo membership tier includes access to **recorded** cohort replays (async, self-paced). The $250 package buys **live** attendance with the ability to share their screen, structured as a day-long session with scheduled breaks.
 - **Conclusion:** 20–40 premium students will enroll per cohort launch with $0 paid ad spend, buying live community access and structured practice rather than a pass guarantee.
-- **Status:** ⚪ Hypothesized — no launch has been reported yet; this is also the basis for the $10k revenue gate (see H9), so it is currently untested at the point it matters most. **Open question:** removing the "guarantee" framing (previously used in `comp-business-model.html` and `comp-funnel.html`, corrected 2026-08-01) may change willingness to pay — this has not been tested and is worth watching at the first real launch.
+- **Status:** ⚪ Hypothesized — enrollment counts are still untested and no launch has been reported yet; this is also the basis for the $10k revenue gate (see H9), so it is currently untested at the point it matters most. The two-tier delivery model (recorded replay vs. live day-long screen-share session) is now defined as of 2026-08-02. **Open question:** removing the "guarantee" framing (previously used in `comp-business-model.html` and `comp-funnel.html`, corrected 2026-08-01) may change willingness to pay — this has not been tested and is worth watching at the first real launch.
 
 ### H6 — Market is large enough to sustain the business
 - **Source:** `comp-market.html`
@@ -71,7 +72,7 @@
 - **Premise 1:** Structured "YouTube Course" playlists rank higher for educational search intent than unstructured video.
 - **Premise 2:** That ranking advantage translates into a predictable click/conversion funnel.
 - **Conclusion:** 10% of video viewers click through to the newsletter; 2% of newsletter subscribers convert to a cohort purchase.
-- **Status:** ⚪ Hypothesized. **Note:** this funnel model does not numerically reconcile with H4's "1% of views" claim — the two describe different conversion paths to different offers and haven't been unified into one funnel model (flagged in the acidity check, Finding F5).
+- **Status:** ⚪ Hypothesized. **Note:** this funnel model does not numerically reconcile with H4's "1% of views" claim — the two describe different conversion paths to different offers and haven't been unified into one funnel model (flagged in the acidity check, Finding F5). **Scope clarified (2026-08-02):** funnel targeting and all content produced are scoped specifically to exam-prep search intent, not general AI education.
 
 ### H8 — Product-Market Fit: the cohort program gets students certified
 - **Source:** `comp-pmf.html`
@@ -112,6 +113,20 @@
 - **Target:** ~30,000 subscribers (1,000x the ~30 baseline), tracked incrementally per video rather than as a single pass/fail gate.
 - **Status:** ⚪ Planned — no subscriber-growth data has been reported yet against this target. Recommended next step: log subscriber count at each video publish date to start building a real growth curve against the 1,000x target.
 
+### H12 — IT consulting/government-contractor firms are a viable B2B demand channel (moved here from the Stage 2 addendum, 2026-08-02)
+- **Source:** `reports/market-validation-argument-v1.0.md` (not yet reflected in any site page)
+- **Premise 1:** Anthropic's Claude Partner Network gates consulting-firm tier status on certified-practitioner headcount (10 for Select, 100 for Preferred, 1,000 for Global Premier), the same mechanic AWS uses in its own Partner Network.
+- **Premise 2:** Large government-facing IT consultancies (e.g., Capgemini, DXC) are already named Anthropic ecosystem partners, already reimburse cloud certification costs generally, and operate in a government-contracting world (see DoD Directive 8140) where mandated staff certification is already normal practice.
+- **Conclusion:** These firms have a structural, revenue-linked, bulk-purchase incentive to pay for staff Claude certification prep — a potentially larger and more predictable channel than the individual YouTube funnel this business model currently relies on exclusively.
+- **Status:** ⚪ Planned — this is a new, untested hypothesis. No firm has been asked directly whether it would pay for bulk cohort seats to hit its practitioner quota. Recommended first experiment: contact 3–5 Claude Partner Network "Registered"-tier firms and ask directly (see market-validation-argument-v1.0.md, Section 6). **Reclassified 2026-08-02:** this is corporate bulk-sales demand generation, which belongs alongside Stage 3's other Customer Creation metrics (H10, H13) rather than as a Stage 2 addendum.
+
+### H14 — Multi-certification market expansion increases Stage 3 reach (new, 2026-08-02)
+- **Source:** Founder note via Workspace Notes
+- **Premise 1:** The Claude Certified Architect audience alone caps total addressable reach at one vendor's certification ecosystem.
+- **Premise 2:** Developers pursuing AI/cloud certification broadly also seek Nvidia, Azure, and AWS AI credentials, not just Anthropic's.
+- **Conclusion:** Expanding the content catalog to cover Nvidia, Azure, and AWS AI certifications alongside Claude will increase Stage 3 (Customer Creation) market reach beyond the current single-vendor scope.
+- **Status:** ⚪ Planned — no multi-vendor content has been produced yet; this is a new, untested hypothesis.
+
 ---
 
 ## Stage 4: Company Building
@@ -123,16 +138,12 @@
 - **Conclusion:** At $100k ARR, hiring these three roles lets the business scale past the founder's personal capacity.
 - **Status:** ⚪ Hypothesized. **Note:** no cost model exists for these hires against the $100k figure (i.e., whether $100k ARR actually leaves enough margin to pay three roles) — see acidity check Finding F7.
 
----
-
-## Stage 2 addendum: New hypothesis surfaced by market research
-
-### H12 — IT consulting/government-contractor firms are a viable B2B demand channel (new)
-- **Source:** `reports/market-validation-argument-v1.0.md` (not yet reflected in any site page)
-- **Premise 1:** Anthropic's Claude Partner Network gates consulting-firm tier status on certified-practitioner headcount (10 for Select, 100 for Preferred, 1,000 for Global Premier), the same mechanic AWS uses in its own Partner Network.
-- **Premise 2:** Large government-facing IT consultancies (e.g., Capgemini, DXC) are already named Anthropic ecosystem partners, already reimburse cloud certification costs generally, and operate in a government-contracting world (see DoD Directive 8140) where mandated staff certification is already normal practice.
-- **Conclusion:** These firms have a structural, revenue-linked, bulk-purchase incentive to pay for staff Claude certification prep — a potentially larger and more predictable channel than the individual YouTube funnel this business model currently relies on exclusively.
-- **Status:** ⚪ Planned — this is a new, untested hypothesis. No firm has been asked directly whether it would pay for bulk cohort seats to hit its practitioner quota. Recommended first experiment: contact 3–5 Claude Partner Network "Registered"-tier firms and ask directly (see market-validation-argument-v1.0.md, Section 6).
+### H15 — Founder transitions to full-time at the Stage 4 threshold (new, 2026-08-02)
+- **Source:** Founder note via Workspace Notes; `stage-company-building.html`
+- **Premise 1:** At the Stage 2→3 gate (H9), the founder deliberately kept his contract job and ran this as an ongoing second job — that decision was explicitly scoped to the $10k gate, not the whole business's lifetime.
+- **Premise 2:** $100k ARR (H11) represents revenue large enough to justify leaving the contract role entirely.
+- **Conclusion:** Unlike the Stage 3 entry gate, reaching Stage 4 ($100k ARR) is the point where Rifat Erdem Sahin goes all-in and runs AI Certification Helper as his full-time job.
+- **Status:** ⚪ Hypothesized/Decided — this is a firm founder decision tied to the $100k ARR hiring trigger (H11), not yet reached. No cost-of-living/runway model has been checked against this transition yet.
 
 ---
 
@@ -143,7 +154,7 @@
 | H1 | Rising AI skills expectations | 🟡 Partially validated |
 | H2 | Animated content beats standard formats | 🟡 In Testing |
 | H3 | Audience will pay for cert prep | ⚪ Planned |
-| H4 | YouTube funnel → 1% paid membership conversion | ⚪ Hypothesized |
+| H4 | YouTube funnel → 1% paid membership conversion | 🟡 In Testing |
 | H5 | Cohorts sell out organically (live streaming/community, not a guarantee) | ⚪ Hypothesized |
 | H6 | TAM/SAM/SOM market sizing | ⚠️ Claimed, unverified, now partially grounded |
 | H7 | Funnel CTR/conversion rates | ⚪ Hypothesized |
@@ -151,15 +162,18 @@
 | H9 | $10k Stage 2 exit gate → second job, not full-time (revised) | ⚪ Hypothesized/Decided |
 | H10 | >40% retention = MVP video-quality metric (confirmed) | 🟡 In Testing |
 | H11 | $100k ARR → hiring threshold | ⚪ Hypothesized |
-| H12 | IT consulting/gov-contractor firms as B2B channel | ⚪ Planned |
+| H12 | IT consulting/gov-contractor firms as B2B channel (now under Stage 3) | ⚪ Planned |
 | H13 | 1,000x subscriber growth per video (new, Stage 3 primary metric) | ⚪ Planned |
+| H14 | Multi-certification market expansion (Nvidia/Azure/AWS) (new) | ⚪ Planned |
+| H15 | Founder transitions to full-time at Stage 4 (new) | ⚪ Hypothesized/Decided |
 
-**Overall:** 0 of 13 hypotheses are fully validated with cited evidence, 1 is partially validated, and 1 (TAM/SAM/SOM sizing) is still marked complete in a source page with only partial external grounding. The certification-existence blocker on H8 has been cleared by external research (v1.1.0). As of v1.2.0, the founder has made two explicit decisions rather than pending hypotheses: (1) the $10k Stage 2 gate is executed solo for agility and does **not** trigger a full-time transition — it stays an ongoing second job — and (2) the primary Stage 3 success metric is now 1,000x subscriber growth per video (H13), not the 40% retention figure (H10, demoted to a quality floor). This tracker should be updated in place (bump to v1.3, v1.4, etc.) as each experiment produces real results.
+**Overall:** 0 of 15 hypotheses are fully validated with cited evidence, 1 is partially validated, and 1 (TAM/SAM/SOM sizing) is still marked complete in a source page with only partial external grounding. The certification-existence blocker on H8 has been cleared by external research (v1.1.0). As of v1.2.0, the founder has made two explicit decisions rather than pending hypotheses: (1) the $10k Stage 2 gate is executed solo for agility and does **not** trigger a full-time transition — it stays an ongoing second job — and (2) the primary Stage 3 success metric is now 1,000x subscriber growth per video (H13), not the 40% retention figure (H10, demoted to a quality floor). As of v1.4.0: H4 has real supporting data (an 8-week, ~4-attendee free weekly cohort) and is upgraded to In Testing; H12 moved from a Stage 2 addendum into Stage 3 as a Customer Creation-scale channel; and two new Stage 3/4 hypotheses were added — H14 (multi-certification expansion) and H15 (founder goes full-time at the $100k ARR / Stage 4 threshold, explicitly distinct from the H9 decision to stay part-time at the Stage 3 gate). This tracker should be updated in place (bump to v1.5, v1.6, etc.) as each experiment produces real results.
 
 ---
 
 ## Change Log
 
+- **v1.4.0** (2026-08-02): Incorporated founder notes captured via the site's Workspace Notes feature. Upgraded H4 to In Testing on the strength of an 8-week (Jun–Jul 2026) free weekly cohort averaging ~4 attendees per session. Defined H5's two-tier delivery model: $10/mo members get recorded cohort replays, the $250 package buys live attendance with screen-share participation across a day-long session with breaks. Clarified H7's funnel scope as exam-prep-specific. Moved H12 (B2B/consulting channel) from the Stage 2 addendum into Stage 3, reflecting that it's a Customer Creation-scale demand channel. Added H14 (multi-certification market expansion — Nvidia/Azure/AWS AI certs, alongside Claude) and H15 (founder transitions to full-time at the $100k ARR / Stage 4 threshold, distinct from and later than the H9 decision to stay part-time at the Stage 2→3 gate). Propagated all of the above into `hypothesis.html` (also split its combined "Stage 3 & Stage 4" section into two separately-headed sections for visual clarity) and `stage-company-building.html`.
 - **v1.3.0** (2026-08-01): Founder clarified the cohort's actual value proposition and corrected an overloaded metric. Removed all "exam pass guarantee"/"guaranteed cert preparation" language from `comp-business-model.html` and `comp-funnel.html` (acidity check Finding F8, now resolved) — replaced with an accurate description of live-streamed sessions, community membership, and real-time problem-solving that builds discipline and a peer network, with an explicit disclaimer that Anthropic alone grants the certification. Added the same disclaimer to `comp-pmf.html`'s PMF Validation Gates. Confirmed (H10) that >40% video retention is specifically the MVP-stage video-quality metric — proving content is clear and not confusing, tied to the single MVP problem focus of helping customers pass their exam — updated `comp-mvp.html` accordingly. Updated H5 and H8 to reflect the no-guarantee clarification.
 - **v1.2.0** (2026-08-01): Incorporated `reports/ai-adoption-and-skills-gap-v1.0.md` and `reports/exam-prep-market-and-student-behavior-v1.0.md` (further grounding H1 and H6). Revised H9 to reflect two founder decisions: the $10k gate is executed solo for agility and applies strictly as the Stage 2→3 exit criterion, and does not trigger a full-time transition — the project continues indefinitely as an ongoing second job (flagged an unresolved USD-vs-GBP currency ambiguity in the $10k figure). Demoted H10 (>40% retention) from primary Stage 3 gate to a secondary content-quality floor. Added H13: 1,000x per-video subscriber growth (baseline ~30 subscribers) as the new primary Stage 3 metric. Propagated all of the above into `comp-creation-validation.html`, `stage-customer-creation.html`, and `gemini.md`, and folded the skills-gap research into the TAM/SAM/SOM formula in `comp-market.html`.
 - **v1.1.0** (2026-08-01): Incorporated `reports/market-validation-argument-v1.0.md`. Upgraded H1 to Partially Validated, cleared the certification-existence blocker on H8, and added H12 (IT consulting/government-contractor firms as a new B2B demand channel).

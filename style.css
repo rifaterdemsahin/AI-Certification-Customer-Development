@@ -1015,7 +1015,7 @@ footer {
     margin: 0;
 }
 
-.modal-close-btn, .drawer-close-btn {
+.modal-close-btn, .drawer-close-btn, .drawer-minimize-btn {
     background: transparent;
     border: none;
     color: var(--text-secondary);
@@ -1025,8 +1025,18 @@ footer {
     transition: var(--transition-fast);
 }
 
-.modal-close-btn:hover, .drawer-close-btn:hover {
+.modal-close-btn:hover, .drawer-close-btn:hover, .drawer-minimize-btn:hover {
     color: var(--text-primary);
+}
+
+.drawer-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.drawer-minimize-btn {
+    font-size: 1.1rem;
 }
 
 .modal-body {
@@ -1451,4 +1461,66 @@ body.overlay-open {
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+}
+
+/* Light Theme Variables & Overrides */
+body.light-theme {
+    --bg-primary: #f9fafb;
+    --bg-secondary: #f3f4f6;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-accent: rgba(99, 102, 241, 0.25);
+    
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    
+    --color-primary: #4f46e5;
+    --color-primary-hover: #3730a3;
+    
+    --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, rgba(249, 250, 251, 0) 70%);
+}
+
+body.light-theme .drawer-content,
+body.light-theme .modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(99, 102, 241, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme #note-textarea {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme .note-item {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+body.light-theme .btn-secondary {
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--text-primary);
+}
+
+body.light-theme .keyboard-tip kbd {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .logo-text {
+    background: linear-gradient(to right, #1e1b4b, #7c3aed);
+    -webkit-background-clip: text;
+}
+
+/* Minimized Drawer Overlay Styles */
+.drawer-overlay.minimized {
+    transform: translateY(calc(100% - 60px)) translateX(0) !important;
+}
+
+.drawer-overlay.minimized .drawer-header {
+    cursor: pointer;
+}
+
+.drawer-overlay.minimized .drawer-content {
+    overflow: hidden;
 }

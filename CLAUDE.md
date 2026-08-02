@@ -56,6 +56,18 @@ Page families:
 - `stage-customer-discovery.html`, `stage-customer-validation.html`,
   `stage-customer-creation.html`, `stage-company-building.html` — the 4 Steve Blank
   stages. Each links out to its `comp-*.html` component specs.
+- `cd-*.html` (27 files) — the detailed Customer Discovery process playbook (the
+  "Discovery Process" nav dropdown): interview guide, watering holes/outreach,
+  interview recording & tracker, `cd-process.html` overview, and the 4 phases
+  (Hypothesis / Test Problem / Test Product / Verify), each with its own set of
+  `cd-hyp-*.html` / `cd-tp-*.html` / `cd-tpr-*.html` / `cd-verify-*.html` sub-pages.
+  This is the granular, step-by-step execution detail behind
+  `stage-customer-discovery.html`.
+- `discovery/*.html` (4 files, in the `discovery/` subfolder) — `state-hypotheses`,
+  `test-problem`, `test-solution`, `verify-pivot`. Deep-dive detail pages linked from
+  the SVG diagram on `stage-customer-discovery.html`; also indexed in `nav.js`'s
+  `searchIndex` (findable via 🔍 Search) but intentionally not in a nav dropdown —
+  reach them contextually from the stage page's diagram, not the top menu.
 - `comp-*.html` (9 files) — detailed component specs tied to a specific stage
   (Problem-Solution Fit, MVP, Market, Business Model, Funnel, PMF, Roadmap, Creation
   Validation, Scale Organization). This is a different, older framework from the
@@ -90,13 +102,49 @@ should hand-write its own `<header>` block — that duplication was removed in f
 this single file so nav structure/grouping only needs to be edited once.
 
 Nav groups (top-level menu items), in order: **Hub** (plain link) · **Stages**
-(the 4 stage pages) · **Strategy** (hypothesis, focus, target audience, risk
-analysis, requirements, business plan summary) · **Business Model** (canvas overview
-+ value prop + the 9 `bmc-*.html` blocks) · **Growth** (sales pipeline, flywheel,
-quality gates, test & metrics) · **Components** (the original 9 `comp-*.html` specs)
-· **Docs** (README, project rationale, hypothesis tracker, and the 4 `reports/*.md`
+(the 4 stage pages) · **Discovery Process** (all 27 `cd-*.html` playbook pages,
+nested/indented in the dropdown to show the phase → sub-page hierarchy) ·
+**Strategy** (hypothesis, focus, target audience, risk analysis, requirements,
+business plan summary) · **Business Model** (canvas overview + value prop + the 9
+`bmc-*.html` blocks) · **Growth** (sales pipeline, flywheel, quality gates, test &
+metrics) · **Components** (the original 9 `comp-*.html` specs) · **Docs** (README,
+project rationale, agent guidelines, hypothesis tracker, and the 4 `reports/*.md`
 files — all linked via `markdown_renderer.html?src=...` rather than as raw `.md`
 links, so they render as styled pages instead of downloading/showing raw text).
+
+A link-integrity check (every local `href` across all `.html` files, plus every URL
+referenced inside `nav.js`'s `groups` and `searchIndex` arrays, resolved against
+files that actually exist on disk) turned up zero broken links and zero pages
+unreachable from `nav.js` as of 2026-08-02 — keep it that way: whenever a page is
+renamed or removed, grep for its old filename across `*.html` and `nav.js` before
+considering the change done.
+
+## Nav bar action buttons (Search / Notes / Theme)
+
+Alongside the link groups, `nav.js` renders three `.nav-action-btn` buttons at the
+end of `.nav-menu`, each backed by logic inside the same IIFE:
+
+- **🔍 Search** (`#nav-search-btn`) — opens the `#search-modal` overlay, fuzzy-matches
+  against the in-file `searchIndex` array (bump it when adding a new page). Toggle
+  with `Ctrl/Cmd+K`.
+- **📝 Notes** (`#nav-notes-btn`) — opens the `#notes-drawer` floating panel. Notes
+  persist in the `site_notes` cookie (365-day) via `getNotes()`/`saveNotes()`, and are
+  tagged with the page they were written on. The drawer has its own **minimize**
+  button (`#minimize-notes-btn`, next to close) that adds a `.minimized` class to
+  `#notes-drawer` — CSS collapses it to just the header strip (`translateY` in
+  `style.css`); clicking the header again while minimized restores it via
+  `toggleMinimizeNotes()`. While the drawer is open (and not minimized), any text the
+  user highlights elsewhere on the page is auto-appended into `#note-textarea` (a
+  `mouseup` listener reads `window.getSelection()`, skips selections made inside the
+  drawer itself) — no extra click needed to send a highlight into the note.
+- **☀️/🌙 Theme** (`#nav-theme-btn`) — toggles a `light-theme` class on `<body>`,
+  persisted in the `site_theme` cookie (365-day, values `dark`/`light`) via
+  `getTheme()`/`applyTheme()`/`toggleTheme()`. `style.css` defines the light-mode
+  variable overrides under `body.light-theme` near the bottom of the file. Because
+  `nav.js` loads at the end of `<body>` (per this file's page-authoring convention),
+  the saved theme is applied as early as nav.js executes to minimize flash, but a
+  brief flash of the default dark theme on first paint is expected and out of scope
+  to fully eliminate without an inline head script on every page.
 
 ## The markdown_renderer.html pattern
 
