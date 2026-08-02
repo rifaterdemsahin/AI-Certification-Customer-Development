@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Gates | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-warning);">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fef3c7; border-color: rgba(245, 158, 11, 0.3);">Growth · Quality Gates</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">Quality Gates by Stage</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Explicit pass/fail numeric criteria for advancing between the four Customer Development stages. These are stage-level gates &mdash; for individual experiment-level thresholds, see <a href="test-metrics.html" style="color: var(--color-warning);">Test &amp; Metrics</a>.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔍 Gate 1 &rarr; 2: Discovery &rarr; Validation</h2>
+            <div class="grid">
+                <div class="col-8">
+                    <div class="card">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Do not progress to Customer Validation until the MVP proves people watch and understand the content.</p>
+                        <div class="spec-box" style="border-left-color: var(--color-primary);">
+                            <div class="spec-title">🚦 Pass Criteria</div>
+                            <div class="spec-desc">&ge;40% average watch retention across published MVP lessons (video-quality signal, H10) AND &ge;100 organic subscribers gathered without paid promotion.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="metric-card"><div class="metric-val">&ge;40%</div><div class="metric-lbl">Watch retention</div></div>
+                    <div class="metric-card" style="margin-top:1rem;"><div class="metric-val">100+</div><div class="metric-lbl">Organic subscribers</div></div>
+                    <p style="margin-top:1rem;"><span class="status-pill" style="color: var(--color-warning);">🧪 In Testing</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📈 Gate 2 &rarr; 3: Validation &rarr; Creation</h2>
+            <div class="grid">
+                <div class="col-8">
+                    <div class="card">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Customer Validation must independently produce real, paid revenue &mdash; not survey interest &mdash; before Customer Creation activity begins. This reconciles with the $10,000 figure already used in <a href="stage-customer-creation.html" style="color: var(--color-warning);">stage-customer-creation.html</a> and <a href="stage-customer-validation.html" style="color: var(--color-warning);">stage-customer-validation.html</a>.</p>
+                        <div class="spec-box" style="border-left-color: var(--color-warning);">
+                            <div class="spec-title">🚦 Pass Criteria</div>
+                            <div class="spec-desc"><strong>$10,000 USD cumulative cohort/course revenue</strong>, achieved solely by the founder (no hires) to keep the loop agile.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="metric-card"><div class="metric-val">$10,000</div><div class="metric-lbl">Cumulative validation revenue</div></div>
+                    <p style="margin-top:1rem;"><span class="status-pill" style="color: var(--color-info);">📅 Hypothesized</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚡ Gate 3 &rarr; 4: Creation &rarr; Building</h2>
+            <div class="grid">
+                <div class="col-8">
+                    <div class="card">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Customer Creation is managed against subscriber-growth momentum, not a single pass/fail event, until the revenue threshold for hiring is reached.</p>
+                        <div class="spec-box" style="border-left-color: var(--color-success);">
+                            <div class="spec-title">🚦 Pass Criteria</div>
+                            <div class="spec-desc">1,000x subscriber growth per video trend sustained (baseline ~30 &rarr; target ~30,000) AND $100,000 annual run-rate reached.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="metric-card"><div class="metric-val">1,000x</div><div class="metric-lbl">Subscriber growth per video</div></div>
+                    <div class="metric-card" style="margin-top:1rem;"><div class="metric-val">$100,000</div><div class="metric-lbl">Annual run-rate</div></div>
+                    <p style="margin-top:1rem;"><span class="status-pill" style="color: var(--color-info);">📅 Planned</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏢 Gate 4: Company Building Steady-State</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Company Building is considered stable once core operations are delegated without degrading student experience.</p>
+                <div class="spec-box" style="border-left-color: var(--color-info);">
+                    <div class="spec-title">🚦 Pass Criteria</div>
+                    <div class="spec-desc">All 3 planned roles hired (video editor, cohort coordinator, technical TAs) AND cohort NPS remains &gt;50 post-delegation.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

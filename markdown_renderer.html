@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Document Viewer</span>
+            <h1 id="doc-title" style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem;">Loading document&hellip;</h1>
+            <p id="doc-path" style="color: var(--text-secondary); font-size: 0.9rem;"></p>
+        </div>
+
+        <div class="card animate-fade-in markdown-body" id="doc-body">
+            <p style="color: var(--text-secondary);">Loading&hellip;</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script>
+    (function () {
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        // Minimal, dependency-free markdown -> HTML converter.
+        function renderMarkdown(src) {
+            var escaped = escapeHtml(src);
+            var lines = escaped.split('\n');
+            var html = [];
+            var i = 0;
+            var inCode = false;
+            var codeLines = [];
+            var listBuffer = [];
+            var listType = null; // 'ul' | 'ol'
+
+            function flushList() {
+                if (listBuffer.length) {
+                    html.push('<' + listType + '>' + listBuffer.join('') + '</' + listType + '>');
+                    listBuffer = [];
+                    listType = null;
+                }
+            }
+
+            function inlineFormat(text) {
+                // links [text](url)
+                text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+                // bold
+                text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+                // italic
+                text = text.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
+                // inline code
+                text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+                return text;
+            }
+
+            while (i < lines.length) {
+                var line = lines[i];
+
+                // fenced code block
+                if (/^```/.test(line)) {
+                    if (!inCode) {
+                        flushList();
+                        inCode = true;
+                        codeLines = [];
+                    } else {
+                        html.push('<pre><code>' + codeLines.join('\n') + '</code></pre>');
+                        inCode = false;
+                    }
+                    i++;
+                    continue;
+                }
+                if (inCode) {
+                    codeLines.push(line);
+                    i++;
+                    continue;
+                }
+
+                // horizontal rule
+                if (/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) {
+                    flushList();
+                    html.push('<hr>');
+                    i++;
+                    continue;
+                }
+
+                // headings
+                var headingMatch = line.match(/^(#{1,6})\s+(.*)$/);
+                if (headingMatch) {
+                    flushList();
+                    var level = headingMatch[1].length;
+                    html.push('<h' + level + '>' + inlineFormat(headingMatch[2]) + '</h' + level + '>');
+                    i++;
+                    continue;
+                }
+
+                // blockquote
+                if (/^\s*>\s?/.test(line)) {
+                    flushList();
+                    var quoteLines = [];
+                    while (i < lines.length && /^\s*>\s?/.test(lines[i])) {
+                        quoteLines.push(inlineFormat(lines[i].replace(/^\s*>\s?/, '')));
+                        i++;
+                    }
+                    html.push('<blockquote><p>' + quoteLines.join('<br>') + '</p></blockquote>');
+                    continue;
+                }
+
+                // unordered list
+                var ulMatch = line.match(/^\s*[-*]\s+(.*)$/);
+                if (ulMatch) {
+                    if (listType !== 'ul') { flushList(); listType = 'ul'; }
+                    listBuffer.push('<li>' + inlineFormat(ulMatch[1]) + '</li>');
+                    i++;
+                    continue;
+                }
+
+                // ordered list
+                var olMatch = line.match(/^\s*\d+\.\s+(.*)$/);
+                if (olMatch) {
+                    if (listType !== 'ol') { flushList(); listType = 'ol'; }
+                    listBuffer.push('<li>' + inlineFormat(olMatch[1]) + '</li>');
+                    i++;
+                    continue;
+                }
+
+                flushList();
+
+                // blank line
+                if (/^\s*$/.test(line)) {
+                    i++;
+                    continue;
+                }
+
+                // paragraph: gather consecutive non-blank plain lines
+                var paraLines = [line];
+                i++;
+                while (i < lines.length && !/^\s*$/.test(lines[i]) &&
+                       !/^```/.test(lines[i]) && !/^(#{1,6})\s+/.test(lines[i]) &&
+                       !/^\s*[-*]\s+/.test(lines[i]) && !/^\s*\d+\.\s+/.test(lines[i]) &&
+                       !/^\s*>\s?/.test(lines[i]) && !/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(lines[i])) {
+                    paraLines.push(lines[i]);
+                    i++;
+                }
+                html.push('<p>' + inlineFormat(paraLines.join(' ')) + '</p>');
+            }
+
+            flushList();
+            if (inCode && codeLines.length) {
+                html.push('<pre><code>' + codeLines.join('\n') + '</code></pre>');
+            }
+
+            return html.join('\n');
+        }
+
+        var params = new URLSearchParams(location.search);
+        var src = params.get('src');
+        var titleEl = document.getElementById('doc-title');
+        var pathEl = document.getElementById('doc-path');
+        var bodyEl = document.getElementById('doc-body');
+
+        if (!src) {
+            titleEl.textContent = 'No document specified';
+            bodyEl.innerHTML = '<p>Append <code>?src=FILENAME.md</code> to the URL, e.g. <code>markdown_renderer.html?src=HYPOTHESIS.md</code>.</p>';
+        } else {
+            pathEl.textContent = src;
+            fetch(src)
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.text();
+                })
+                .then(function (text) {
+                    var nameMatch = src.split('/').pop();
+                    titleEl.textContent = nameMatch;
+                    document.title = nameMatch + ' | AI Certification Helper';
+                    bodyEl.innerHTML = renderMarkdown(text);
+                })
+                .catch(function (err) {
+                    titleEl.textContent = 'Could not load document';
+                    bodyEl.innerHTML = '<p style="color: var(--color-warning);">Could not load ' + escapeHtml(src) + ' (' + escapeHtml(err.message) + '). If you opened this file directly from disk, run it via a local web server so fetch() can read repo files.</p>';
+                });
+        }
+    })();
+    </script>
+</body>
+</html>
