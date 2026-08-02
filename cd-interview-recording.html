@@ -469,7 +469,19 @@
                 // If direct global reload is not mapped, check if nav-notes-badge element is accessible
                 var badgeEl = document.getElementById('nav-notes-badge');
                 if (badgeEl) {
-                    badgeEl.style.display = 'inline-block';
+                    var rawNotes = getCookie('site_notes');
+                    var notesCount = 0;
+                    if (rawNotes) {
+                        try {
+                            notesCount = JSON.parse(rawNotes).length;
+                        } catch(e) {}
+                    }
+                    if (notesCount > 0) {
+                        badgeEl.textContent = notesCount;
+                        badgeEl.style.display = 'inline-flex';
+                    } else {
+                        badgeEl.style.display = 'none';
+                    }
                 }
             }
 

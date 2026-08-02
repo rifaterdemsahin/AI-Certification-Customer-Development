@@ -254,7 +254,7 @@
         '</li>';
     html += '<li class="nav-menu-action">' +
         '<button id="nav-notes-btn" class="nav-action-btn" title="My Notes">' +
-        '<span>📝</span> Notes<span id="nav-notes-badge" class="badge-dot" style="display:none;"></span>' +
+        '<span>📝</span> Notes<span id="nav-notes-badge" class="badge-count" style="display:none;"></span>' +
         '</button>' +
         '</li>';
 
@@ -369,7 +369,8 @@
         // Update nav badge
         if (badgeEl) {
             if (notes.length > 0) {
-                badgeEl.style.display = 'inline-block';
+                badgeEl.textContent = notes.length;
+                badgeEl.style.display = 'inline-flex';
             } else {
                 badgeEl.style.display = 'none';
             }

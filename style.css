@@ -940,14 +940,21 @@ footer {
     color: var(--text-primary);
 }
 
-.badge-dot {
-    width: 8px;
-    height: 8px;
+.badge-count {
     background-color: var(--color-success);
-    border-radius: 50%;
-    display: inline-block;
-    box-shadow: 0 0 8px var(--color-success);
-    margin-left: 0.25rem;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.1rem 0.35rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.35rem;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+    min-width: 16px;
+    height: 16px;
+    line-height: 1;
 }
 
 /* Modal Overlay (Search) */
