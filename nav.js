@@ -393,12 +393,17 @@
             var finalNoteUrl = note.pageUrl.indexOf('http') === 0 ? note.pageUrl : (pathPrefix + note.pageUrl);
             
             notesHtml += 
-                '<div class="note-item">' +
+                '<div class="note-item" id="note-item-' + note.id + '">' +
                 '  <div class="note-item-header">' +
                 '    <a href="' + finalNoteUrl + '" class="note-item-page">' + note.pageTitle + '</a>' +
-                '    <button class="note-delete-btn" data-id="' + note.id + '" title="Delete Note">🗑️</button>' +
+                '    <div style="display: flex; gap: 0.4rem;">' +
+                '      <button class="note-edit-btn" data-id="' + note.id + '" title="Edit Note" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:0.85rem; transition:var(--transition-fast);">✏️</button>' +
+                '      <button class="note-delete-btn" data-id="' + note.id + '" title="Delete Note" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:0.85rem; transition:var(--transition-fast);">🗑️</button>' +
+                '    </div>' +
                 '  </div>' +
-                '  <div class="note-item-text">' + escapeHtml(note.text) + '</div>' +
+                '  <div class="note-item-body">' +
+                '    <div class="note-item-text">' + escapeHtml(note.text) + '</div>' +
+                '  </div>' +
                 '  <div class="note-item-date">' + note.date + '</div>' +
                 '</div>';
         }
@@ -412,6 +417,88 @@
                 deleteNote(id);
             });
         });
+
+        // Attach edit events
+        var editBtns = listContainer.querySelectorAll('.note-edit-btn');
+        editBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var id = parseInt(this.getAttribute('data-id'), 10);
+                startEditNote(id);
+            });
+        });
+    }
+
+    function startEditNote(id) {
+        var notes = getNotes();
+        var note = notes.find(function(n) { return n.id === id; });
+        if (!note) return;
+        
+        var itemEl = document.getElementById('note-item-' + id);
+        if (!itemEl) return;
+        
+        var bodyEl = itemEl.querySelector('.note-item-body');
+        if (!bodyEl) return;
+        
+        var headerActionEl = itemEl.querySelector('.note-item-header div');
+        if (headerActionEl) headerActionEl.style.display = 'none';
+        
+        bodyEl.innerHTML = 
+            '<div class="note-edit-container" style="display:flex; flex-direction:column; gap:0.5rem; width:100%; margin-top:0.25rem;">' +
+            '  <textarea class="note-edit-textarea" rows="3" style="width:100%; background:rgba(0,0,0,0.25); border:1px solid var(--color-primary); border-radius:6px; color:var(--text-primary); padding:0.5rem; font-family:var(--font-sans); outline:none; resize:vertical; font-size:0.9rem;">' + escapeHtml(note.text) + '</textarea>' +
+            '  <div style="display:flex; gap:0.4rem;">' +
+            '    <button class="btn btn-primary note-save-btn" data-id="' + id + '" style="padding:0.3rem 0.6rem; font-size:0.75rem; border-radius:4px;">Save</button>' +
+            '    <button class="btn btn-secondary note-cancel-btn" style="padding:0.3rem 0.6rem; font-size:0.75rem; border-radius:4px;">Cancel</button>' +
+            '  </div>' +
+            '</div>';
+            
+        var textarea = bodyEl.querySelector('.note-edit-textarea');
+        if (textarea) {
+            textarea.focus();
+            textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+            
+            textarea.addEventListener('keydown', function(e) {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    bodyEl.querySelector('.note-save-btn').click();
+                }
+            });
+        }
+        
+        bodyEl.querySelector('.note-save-btn').addEventListener('click', function() {
+            var updatedText = textarea.value;
+            saveEditedNote(id, updatedText);
+        });
+        
+        bodyEl.querySelector('.note-cancel-btn').addEventListener('click', function() {
+            renderNotes();
+        });
+    }
+
+    function saveEditedNote(id, text) {
+        if (!text.trim()) {
+            if (confirm('Saving an empty note will delete it. Proceed?')) {
+                deleteNote(id);
+            }
+            return;
+        }
+        var notes = getNotes();
+        var now = new Date();
+        var dateString = now.toLocaleString('en-US', { 
+            month: 'short', 
+            day: 'numeric', 
+            year: 'numeric',
+            hour: '2-digit', 
+            minute: '2-digit' 
+        });
+        
+        notes.forEach(function(note) {
+            if (note.id === id) {
+                note.text = text;
+                note.date = dateString + ' (edited)';
+            }
+        });
+        saveNotes(notes);
+        renderNotes();
     }
 
     function addNote(text) {
