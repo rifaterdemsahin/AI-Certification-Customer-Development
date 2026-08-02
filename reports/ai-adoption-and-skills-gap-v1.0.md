@@ -6,7 +6,35 @@
 
 ---
 
-## 1. Year-by-Year Timeline
+## 1. The Long Arc of AI Transformation (1940–2019)
+
+### 1940s — Alan Turing & The Enigma
+- Alan Turing and his codebreaking team at Bletchley Park build the Bombe electromechanical machine to decrypt Enigma cipher codes, establishing the foundations of computation and mechanical logical reasoning.
+
+### 1950 — The Turing Test
+- Alan Turing publishes "Computing Machinery and Intelligence," formally introducing the Turing Test (Imitation Game) to evaluate machine intelligence.
+
+### 1956 — The Dartmouth Workshop
+- John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon organize the Dartmouth Summer Research Project, formally coining the term "Artificial Intelligence."
+
+### 1966–1974 — Early Conversationalists & First AI Winter
+- Joseph Weizenbaum develops ELIZA (1966), demonstrating early natural language processing. Shortly after, computation limits and the ALPAC (1966) / Lighthill (1973) reports trigger the first "AI Winter" as funding freezes.
+
+### 1980s — Expert Systems & Backpropagation
+- Expert systems (using formal rule engines) gain corporate popularity. Backpropagation is popularized for training multi-layer neural networks, followed by the second AI winter in the late 1980s due to high expert system maintenance costs.
+
+### 1997 — Deep Blue defeats Kasparov
+- IBM's Deep Blue defeats chess grandmaster Garry Kasparov, showing that brute-force logical heuristics can outperform human strategists in bounded domains.
+
+### 2012 — Deep Learning Breakthrough (AlexNet)
+- AlexNet wins the ImageNet competition by using Deep Convolutional Neural Networks (CNNs) trained on GPUs, triggering the modern deep learning renaissance.
+
+### 2017 — The Transformer Revolution
+- Google researchers publish "Attention Is All You Need," introducing the Transformer architecture and self-attention mechanism. This architecture replaces RNNs/CNNs for sequence modeling and establishes the baseline for all modern Large Language Models (GPT, Claude, etc.).
+
+---
+
+## 2. Modern Year-by-Year Timeline (2020–2026)
 
 ### 2020 — Foundation
 - OpenAI released GPT-3 (175B parameters) via a private API beta in June 2020, the first commercially available large language model at that scale.
@@ -52,7 +80,7 @@
 
 ---
 
-## 2. What This Means for the Skills-Gap Formula
+## 3. What This Means for the Skills-Gap Formula
 
 Read across the timeline, three distinct skills gaps opened in sequence, each with a different market size and urgency:
 
@@ -64,7 +92,7 @@ The TAM/SAM/SOM figures published in `comp-market.html` (previously unsourced) s
 
 ---
 
-## 3. Recommended Update to the Published Formula
+## 4. Recommended Update to the Published Formula
 
 `comp-market.html` currently states TAM = 25M developers, SAM = 3M developers seeking cloud/ML/LLM certifications, SOM = 50,000 reachable within 3 years — with no citation. This report grounds that formula as follows (see the corresponding edit made to `comp-market.html`):
 
@@ -76,7 +104,7 @@ This does not fully validate the specific 25M/3M/50k numbers — no source ties 
 
 ---
 
-## Sources
+## 5. Sources
 
 - [Future of Jobs Report 2025 — World Economic Forum](https://www.weforum.org/publications/the-future-of-jobs-report-2025/)
 - [Future of Jobs Report 2025: The jobs of the future — World Economic Forum](https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-jobs-of-the-future-and-the-skills-you-need-to-get-them/)
@@ -97,6 +125,7 @@ This does not fully validate the specific 25M/3M/50k numbers — no source ties 
 
 ---
 
-## Change Log
+## 6. Change Log
 
+- **v1.1.0** (2026-08-02): Prepended the long arc of AI transformation timeline (1940–2019), beginning with the Enigma machine.
 - **v1.0.0** (2026-08-01): Initial year-by-year AI adoption and skills-gap timeline (2020–2026), built to ground the previously unsourced TAM/SAM/SOM figures in `comp-market.html`.
