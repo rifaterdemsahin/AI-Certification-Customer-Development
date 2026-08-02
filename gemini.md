@@ -82,7 +82,7 @@ Below is a custom SVG schematic illustrating how traffic flows from organic sear
 *   **The Solution:** Highly-animated technical training videos that distill architectural diagrams down to visual components, allowing developers to retain core information and pass certifications.
 
 ### 2. 📈 Customer Validation: Revenue Repeatability
-*   **Freemium Distribution Funnel:** We rely strictly on YouTube Course playlists to capture organic search traffic. 
+*   **Freemium Distribution Funnel:** We rely on YouTube Course playlists and organic LinkedIn sharing (leveraging Rifat Erdem Sahin's professional audience) to capture organic search and network traffic.
 *   **Low Ticket ($10/mo):** Converts general watchers into community members to practice mock exams.
 *   **High Ticket ($250 - $500):** Cohort bootcamps (4-8 weeks) provide hands-on architectural reviews. The verification milestone is **$10,000 in gross revenue from a single course launch**.
 
@@ -90,7 +90,7 @@ Below is a custom SVG schematic illustrating how traffic flows from organic sear
 *   Rather than transitioning to full-time study guide creation blindly, we set a logical trigger gate:
     *   **Validation Exit Gate (Stage 2 → 3):** $10,000 (USD) worth of validated customers generated from Customer Validation, achieved solely by the founder to keep the loop agile — required before any Customer Creation or Company Building work begins.
     *   **Customer Creation Metric (Stage 3 focus):** 1,000x subscriber growth per published video, measured against the current baseline of roughly 30 subscribers.
-*   Upon clearing the validation gate, founder **Rifat Erdem Sahin** does **not** transition full-time. He keeps his primary job and runs this as an ongoing second job, devoting evenings and weekends to research, content production, and cohort support.
+*   Upon clearing the validation gate, founder **Rifat Erdem Sahin** does **not** transition full-time. He keeps his primary job and runs this as an ongoing second job, devoting evenings and weekends to research, content production, and cohort support. YouTube and LinkedIn comments are batch-answered in weekly cycles because Rifat works a contract role during this content generation phase.
 
 ### 4. 🏢 Company Building: Hiring & System Automation
 *   Scaling occurs at **$100,000/year** run rate.

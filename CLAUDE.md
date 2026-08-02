@@ -15,7 +15,8 @@ certification itself).
 
 Do not re-derive these facts from scratch in a future session — they are established
 and cross-referenced throughout the site:
-- **Founder:** Rifat Erdem Sahin, running this as a second job (not full-time).
+- **Founder:** Rifat Erdem Sahin, running this as a second job (not full-time; works a contract role, meaning YouTube and LinkedIn comments are batch-answered in weekly cycles).
+- **Primary Channels:** YouTube Courses & organic LinkedIn sharing (using Rifat Erdem Sahin's professional audience).
 - **$10,000 USD** cumulative cohort/course revenue = the Stage 2 → 3 (Customer
   Validation → Customer Creation) exit gate. See `stage-customer-creation.html`,
   `stage-customer-validation.html`, and `quality-gates.html`.
