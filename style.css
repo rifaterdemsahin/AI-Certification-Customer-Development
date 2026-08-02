@@ -665,3 +665,61 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+
+/* Visual flow connectors (SVG chevrons between steps) */
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    flex: 0 0 auto;
+    width: 28px;
+}
+
+.flow-arrow svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .flow-arrow {
+        transform: rotate(90deg);
+        margin: -0.5rem auto;
+    }
+}
+
+/* Emoji-led lists: gives each list item a fixed-width icon column so text stays aligned */
+.emoji-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.emoji-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+}
+
+.emoji-list li .emoji {
+    flex: 0 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* SVG diagram wrapper for inline schematic illustrations */
+.svg-diagram {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+}
