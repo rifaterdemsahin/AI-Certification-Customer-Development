@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Flywheel | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-info);">
+            <span class="badge" style="background-color: rgba(6, 182, 212, 0.15); color: #cffafe; border-color: rgba(6, 182, 212, 0.3);">Growth · Flywheel</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">Growth Flywheel</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                How content compounds into a self-reinforcing growth loop, and the recurring "prospecting calendar" that keeps the flywheel turning every week. Complements <a href="sales-pipeline.html" style="color: var(--color-info);">Sales Pipeline</a>, which covers the linear conversion path.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔄 The Loop</h2>
+            <div class="grid">
+                <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+                    <svg class="svg-diagram" viewBox="0 0 320 320" style="max-width: 360px;" role="img" aria-label="Circular flywheel diagram: content, audience, trust, paid cohort, testimonials, back to content">
+                        <circle cx="160" cy="160" r="120" fill="none" stroke="var(--border-color)" stroke-width="2" stroke-dasharray="4 6"/>
+                        <g font-family="Inter, sans-serif" font-size="11" font-weight="700">
+                            <circle cx="160" cy="40" r="34" fill="rgba(99,102,241,0.18)" stroke="var(--color-primary)" stroke-width="1.5"/>
+                            <text x="160" y="36" text-anchor="middle" fill="#a5b4fc">🎬 Content</text>
+                            <text x="160" y="50" text-anchor="middle" fill="#a5b4fc" font-size="9">weekly video</text>
+
+                            <circle cx="271" cy="100" r="34" fill="rgba(6,182,212,0.18)" stroke="var(--color-info)" stroke-width="1.5"/>
+                            <text x="271" y="96" text-anchor="middle" fill="#cffafe">👥 Audience</text>
+                            <text x="271" y="110" text-anchor="middle" fill="#cffafe" font-size="9">subscribers</text>
+
+                            <circle cx="271" cy="220" r="34" fill="rgba(16,185,129,0.18)" stroke="var(--color-success)" stroke-width="1.5"/>
+                            <text x="271" y="216" text-anchor="middle" fill="#a7f3d0">🤝 Trust</text>
+                            <text x="271" y="230" text-anchor="middle" fill="#a7f3d0" font-size="9">newsletter/community</text>
+
+                            <circle cx="160" cy="280" r="34" fill="rgba(245,158,11,0.18)" stroke="var(--color-warning)" stroke-width="1.5"/>
+                            <text x="160" y="276" text-anchor="middle" fill="#fef3c7">💳 Paid Cohort</text>
+                            <text x="160" y="290" text-anchor="middle" fill="#fef3c7" font-size="9">$250&ndash;$500</text>
+
+                            <circle cx="49" cy="220" r="34" fill="rgba(168,85,247,0.18)" stroke="#a855f7" stroke-width="1.5"/>
+                            <text x="49" y="216" text-anchor="middle" fill="#e9d5ff">⭐ Testimonials</text>
+                            <text x="49" y="230" text-anchor="middle" fill="#e9d5ff" font-size="9">badges, case studies</text>
+
+                            <circle cx="49" cy="100" r="34" fill="rgba(99,102,241,0.10)" stroke="var(--color-primary)" stroke-width="1.5"/>
+                            <text x="49" y="96" text-anchor="middle" fill="#a5b4fc">📈 More</text>
+                            <text x="49" y="110" text-anchor="middle" fill="#a5b4fc" font-size="9">reach &amp; credibility</text>
+                        </g>
+                        <defs>
+                            <marker id="fwArrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.4)" />
+                            </marker>
+                        </defs>
+                        <path d="M 190 55 A 130 130 0 0 1 250 80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#fwArrow)"/>
+                        <path d="M 280 133 A 130 130 0 0 1 280 187" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#fwArrow)"/>
+                        <path d="M 250 240 A 130 130 0 0 1 190 265" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#fwArrow)"/>
+                        <path d="M 130 265 A 130 130 0 0 1 70 240" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#fwArrow)"/>
+                        <path d="M 40 187 A 130 130 0 0 1 40 133" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#fwArrow)"/>
+                        <path d="M 70 80 A 130 130 0 0 1 130 55" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#fwArrow)"/>
+                    </svg>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 1rem;">Why It Compounds</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                            Each weekly video adds to a growing catalog that ranks for more search terms (audience). Engaged viewers who subscribe to the newsletter or membership build trust in the teaching style. A share of that trusted audience converts into a paid cohort. Cohort graduates who pass produce testimonials and shared LinkedIn badges &mdash; social proof that markets the next round of content for free, feeding back into reach.
+                        </p>
+                        <p style="color: var(--text-secondary);">
+                            Unlike a paid-ads growth model, each cycle lowers future acquisition cost rather than raising it, because the catalog and social proof are owned assets that keep working after they're published.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗓️ The Prospecting Calendar</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                A fixed recurring cadence is what actually turns the flywheel &mdash; without a schedule, "content compounds" is just a slogan. This is the concrete commitment (see also the founder's weekly routine in <a href="stage-customer-creation.html" style="color: var(--color-info);">Customer Creation</a>):
+            </p>
+            <div class="card">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 1rem 0.5rem;">Cadence</th>
+                            <th style="padding: 1rem 0.5rem;">Activity</th>
+                            <th style="padding: 1rem 0.5rem;">Flywheel Stage Fed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>Weekly</strong></td>
+                            <td style="padding: 1rem 0.5rem;">One new animated YouTube lesson published (Saturday production block)</td>
+                            <td style="padding: 1rem 0.5rem;">🎬 Content &rarr; 👥 Audience</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>Biweekly</strong></td>
+                            <td style="padding: 1rem 0.5rem;">Newsletter digest: new lessons, exam-blueprint updates, cohort dates</td>
+                            <td style="padding: 1rem 0.5rem;">👥 Audience &rarr; 🤝 Trust</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>Monthly</strong></td>
+                            <td style="padding: 1rem 0.5rem;">Live Q&amp;A / webinar open to the free community (Sunday cohort-support slot)</td>
+                            <td style="padding: 1rem 0.5rem;">🤝 Trust &rarr; 💳 Paid Cohort</td>
+                        </tr>
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>Quarterly</strong></td>
+                            <td style="padding: 1rem 0.5rem;">Cohort launch window (4&ndash;8 week bootcamp, $250&ndash;$500) opens and closes</td>
+                            <td style="padding: 1rem 0.5rem;">💳 Paid Cohort &rarr; ⭐ Testimonials</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
