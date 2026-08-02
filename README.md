@@ -1,3 +1,5 @@
+> https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/
+
 # 🚀 AI Certification Helper - Customer Development Portal
 
 This repository contains the interactive Customer Development and business validation blueprints for Rifat Erdem Sahin's **AI Certification Helper**, designed under Steve Blank's customer development framework.
