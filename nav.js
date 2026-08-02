@@ -17,6 +17,33 @@
             ]
         },
         {
+            type: 'dropdown', label: 'Discovery Process', items: [
+                ['cd-process.html', '📍 Process Overview'],
+                ['cd-hypotheses.html', '1. Hypothesis'],
+                ['cd-hyp-product.html', '&nbsp;&nbsp;↳ Product Hypothesis'],
+                ['cd-hyp-customer-problem.html', '&nbsp;&nbsp;↳ Customer &amp; Problem Hypothesis'],
+                ['cd-hyp-distribution-pricing.html', '&nbsp;&nbsp;↳ Distribution &amp; Pricing Hypothesis'],
+                ['cd-hyp-demand-creation.html', '&nbsp;&nbsp;↳ Demand Creation Hypothesis'],
+                ['cd-hyp-market-type.html', '&nbsp;&nbsp;↳ Market Type Hypothesis'],
+                ['cd-hyp-competitive.html', '&nbsp;&nbsp;↳ Competitive Hypothesis'],
+                ['cd-test-problem.html', '2. Test Problem Hypothesis'],
+                ['cd-tp-first-contacts.html', '&nbsp;&nbsp;↳ First Contacts'],
+                ['cd-tp-problem-presentation.html', '&nbsp;&nbsp;↳ Problem Presentation'],
+                ['cd-tp-customer-understanding.html', '&nbsp;&nbsp;↳ Customer Understanding'],
+                ['cd-tp-market-knowledge.html', '&nbsp;&nbsp;↳ Market Knowledge'],
+                ['cd-test-product.html', '3. Test Product Hypothesis'],
+                ['cd-tpr-first-reality-check.html', '&nbsp;&nbsp;↳ First Reality Check'],
+                ['cd-tpr-product-presentation.html', '&nbsp;&nbsp;↳ Product Presentation'],
+                ['cd-tpr-more-customer-visits.html', '&nbsp;&nbsp;↳ More Customer Visits'],
+                ['cd-tpr-second-reality-check.html', '&nbsp;&nbsp;↳ Second Reality Check'],
+                ['cd-verify.html', '4. Verify'],
+                ['cd-verify-product.html', '&nbsp;&nbsp;↳ Verify The Product'],
+                ['cd-verify-problem.html', '&nbsp;&nbsp;↳ Verify The Problem'],
+                ['cd-verify-business-model.html', '&nbsp;&nbsp;↳ Verify The Business Model'],
+                ['cd-verify-iterate-exit.html', '&nbsp;&nbsp;↳ Iterate Or Exit']
+            ]
+        },
+        {
             type: 'dropdown', label: 'Strategy', items: [
                 ['hypothesis.html', 'Hypothesis'],
                 ['focus.html', 'Focus'],
