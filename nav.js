@@ -99,6 +99,7 @@
             type: 'dropdown', label: 'Docs', emoji: '📄', className: 'nav-docs', items: [
                 ['markdown_renderer.html?src=README.md', '📖 README'],
                 ['markdown_renderer.html?src=gemini.md', '🧠 Project Rationale'],
+                ['markdown_renderer.html?src=agents.md', '🤖 AI Agent Guidelines'],
                 ['markdown_renderer.html?src=HYPOTHESIS.md', '📊 Hypothesis Tracker Full Doc'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report'],
                 ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
