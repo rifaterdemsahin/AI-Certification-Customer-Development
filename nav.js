@@ -610,7 +610,7 @@
         var md = '# AI Certification Helper - Workspace Notes\n';
         md += '*Generated on: ' + new Date().toLocaleDateString() + '*\n\n';
         
-        notes.forEach(function(note) {
+        notes.forEach(function(note, index) {
             var absoluteUrl = location.protocol + '//' + location.host + (location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/' + pathPrefix + note.pageUrl).replace(/\/\.\.\//g, '/').replace(/\/+/g, '/');
             if (location.protocol === 'file:') {
                 var currentPath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
@@ -630,6 +630,9 @@
             md += '### [' + note.pageTitle + '](' + absoluteUrl + ')\n';
             md += '*Saved on: ' + note.date + '*\n\n';
             md += note.text + '\n\n';
+            if (index < notes.length - 1) {
+                md += 'these are tasks to be asked to be implemented and would be fed back to the ai agent\n\n';
+            }
             md += '---\n\n';
         });
         
