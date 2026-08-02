@@ -23,6 +23,9 @@
         {
             type: 'dropdown', label: 'Discovery Process', emoji: '📍', className: 'nav-discovery', items: [
                 ['cd-process.html', '📍 Process Overview'],
+                ['cd-interview-guide.html', '🎤 Interview Guide'],
+                ['cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
+                ['cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
                 ['cd-hypotheses.html', '1. Hypothesis'],
                 ['cd-hyp-product.html', '&nbsp;&nbsp;↳ Product Hypothesis'],
                 ['cd-hyp-customer-problem.html', '&nbsp;&nbsp;↳ Customer &amp; Problem Hypothesis'],
@@ -108,6 +111,9 @@
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
         { url: 'index.html', title: 'Customer Development Hub', desc: 'Home hub mapping all stages, business validation frameworks, and milestones.', cat: 'Hub', tags: 'home dashboard main index' },
+        { url: 'cd-interview-guide.html', title: 'Customer Discovery Interview Guide', desc: 'Playbook of open-ended pains/gains questions, past behavior stories, and listening guidelines.', cat: 'Process', tags: 'interview questions open ended pains gains guide' },
+        { url: 'cd-watering-holes.html', title: 'Customer Watering Holes & Outreach', desc: 'Outreach blueprint mapping Triton Square, Venture Coffee meetups, and cohorts with ready-to-use scripts.', cat: 'Process', tags: 'watering holes triton square venture coffee cohorts scripts outreach slack dms' },
+        { url: 'cd-interview-recording.html', title: 'Interview Recording & Tracker', desc: 'Qualitative interview recording tool (day-in-the-life, current workarounds) and outreach tracker with copyable thank you followups.', cat: 'Process', tags: 'interview log recording tracker contacts referral thank you' },
         { url: 'stage-customer-discovery.html', title: '1. Customer Discovery Stage', desc: 'First phase of customer development focused on problem-solution fit and testing core customer pain points.', cat: 'Stage', tags: 'problem solution mvp validation first' },
         { url: 'stage-customer-validation.html', title: '2. Customer Validation Stage', desc: 'Second phase to build a repeatable, scalable sales blueprint and verify product-market fit.', cat: 'Stage', tags: 'sales roadmap pricing validation product market' },
         { url: 'stage-customer-creation.html', title: '3. Customer Creation Stage', desc: 'Third phase to drive demand, acquire users at scale, and verify retention triggers.', cat: 'Stage', tags: 'demand growth viral acquisition' },

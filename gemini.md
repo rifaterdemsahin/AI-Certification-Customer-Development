@@ -98,3 +98,25 @@ Below is a custom SVG schematic illustrating how traffic flows from organic sear
     1.  **Freelance Video Editor:** To offload timeline animation, asset compilation, and vocal leveling.
     2.  **Cohort Support Coordinator:** To handle scheduling, student onboarding, calendars, and subscriptions.
     3.  **Technical TAs:** Former graduates who assist students 1-on-1 with code blueprints.
+
+---
+
+## 🎤 Customer Discovery Interview Framework & Watering Holes (Init)
+
+This section maps out the qualitative customer validation protocol, aligning our face-to-face and online outreach channels.
+
+### 1. The Listening Mandate (Rule #1)
+*   **No Solution Pitching:** The founder must **never** mention the animated video course solution during the discovery phase. Pitching activates defenses and biases feedback.
+*   **Focus on Stories:** Ask candidates to recount specific past behaviors (how they acted, what they bought, what they failed at) rather than speculative future behaviors.
+
+### 2. High-Yield Open-Ended Questions
+*   **Pains:** "What sucks the most about official certification documentation?" "Tell me about the last time you got stuck on a cloud diagram—how did you solve it?"
+*   **Gains:** "What does a highly efficient study session feel like?" "How would passing this exam change your career status?"
+
+### 3. Core Watering Holes
+*   **Triton Square:** Physical business plaza where enterprise developers and IT staff gather (face-to-face intercepts during lunch hours).
+*   **Venture Coffee Meetups:** Weekly tech-focused meetups where local engineers discuss upskilling.
+*   **Weekend Cohorts:** Discord and Slack study groups where certification candidates actively trade exam tips.
+
+### 4. Qualitative Exit Criterion
+*   Successfully complete **30 customer interviews** detailing the "Day in the Life" of certification prep, capturing current workarounds, before finalizing the MVP video themes.

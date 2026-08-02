@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Discovery Interview Guide | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .listening-alert {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-left: 5px solid var(--color-warning);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .q-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-fast);
+        }
+        .q-card:hover {
+            border-color: var(--border-accent);
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .q-tag {
+            font-size: 0.75rem;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+        .q-tag.pain {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+        }
+        .q-tag.gain {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+        }
+        .q-tag.story {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+        }
+        .q-list {
+            padding-left: 1.25rem;
+            color: var(--text-secondary);
+        }
+        .q-list li {
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Breadcrumb / Back Link -->
+        <a href="stage-customer-discovery.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Stage 1 (Customer Discovery)
+        </a>
+
+        <!-- Hero Section -->
+        <section class="hero animate-fade-in" style="padding: 2rem 0 3rem; text-align: left;">
+            <span class="badge">Steve Blank Method</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🎤 Customer Discovery <span>Interview Guide</span></h1>
+            <p class="hero-subtitle" style="margin: 0; max-width: 800px;">
+                Qualitative research playbook designed to extract authentic developer stories, identify learning pains, and validate cloud architect certification struggles.
+            </p>
+        </section>
+
+        <!-- Rule #1 Banner -->
+        <section class="animate-fade-in">
+            <div class="listening-alert">
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="font-size: 2rem; line-height: 1;">⚠️</div>
+                    <div>
+                        <h3 style="color: var(--color-warning); font-family: var(--font-heading); margin-bottom: 0.5rem; font-weight: 700;">THE LISTENING MANDATE: DO NOT TALK ABOUT YOUR SOLUTION</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
+                            Your goal is <strong>validation of the problem, not promotion of your product</strong>. If you mention highly-animated videos, the customer will switch from sharing their actual frustrations to politely agreeing with your idea. Focus 100% on listening to their past experiences, timelines, and current frustrations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interview Flow & Questions -->
+        <section class="content-section animate-fade-in" style="margin-top: 2rem;">
+            <div class="grid">
+                <!-- Pains Column -->
+                <div class="col-6">
+                    <h2 class="section-title" style="color: #ef4444; border-bottom: 1px solid rgba(239, 68, 68, 0.2); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">🛑 Pain Identification</h2>
+                    
+                    <div class="q-card">
+                        <span class="q-tag pain">Frustration & Friction</span>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Dry Study Materials</h4>
+                        <ul class="q-list">
+                            <li>"What is the single most frustrating part of preparing for a technical certification?"</li>
+                            <li>"When was the last time you closed a study guide in annoyance? What caused that?"</li>
+                            <li>"How do you deal with heavy, multi-page AWS or Azure architecture docs when you are short on time?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="q-card">
+                        <span class="q-tag pain">Timeline & Inflation</span>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Study Constraints</h4>
+                        <ul class="q-list">
+                            <li>"How do you fit 40+ hours of exam preparation into your work week?"</li>
+                            <li>"What happens when you spend hours reading documentation but feel like you retained nothing?"</li>
+                            <li>"How much pressure do you feel from your company or the industry to get certified quickly?"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Gains Column -->
+                <div class="col-6">
+                    <h2 class="section-title" style="color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">✨ Gain Identification</h2>
+                    
+                    <div class="q-card">
+                        <span class="q-tag gain">Ideal Experience</span>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">The Magic Wand</h4>
+                        <ul class="q-list">
+                            <li>"If you could wave a magic wand and design the ultimate study guide, what would it look like?"</li>
+                            <li>"What does a 'successful' and satisfying 1-hour study block feel like to you?"</li>
+                            <li>"How do you know when you have actually mastered a complex system architecture?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="q-card">
+                        <span class="q-tag gain">Career Impact</span>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Value & Outcomes</h4>
+                        <ul class="q-list">
+                            <li>"How would passing this exam change your day-to-day work or job confidence?"</li>
+                            <li>"What is the biggest benefit of visual diagrams compared to text descriptions for your learning style?"</li>
+                            <li>"What are you hoping to achieve once this certification is on your resume/LinkedIn?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Stories & Past Actions -->
+        <section class="content-section animate-fade-in" style="margin-top: 3rem;">
+            <div class="card" style="border-left: 5px solid var(--color-primary);">
+                <span class="q-tag story">Qualitative Deep-Dive</span>
+                <h3 style="font-family: var(--font-heading); margin-bottom: 1rem; font-weight: 700;">🔍 Learning From Customer Stories (Past Behavior)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    People are poor predictors of their future behavior, but their <strong>past actions</strong> tell the truth. Always steer the interview towards concrete stories:
+                </p>
+                <div class="grid">
+                    <div class="col-4">
+                        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 10px;">
+                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">How They Acted</h5>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+                                Ask: <em>"Tell me about the last certification you prepared for. Walk me through exactly what you bought, clicked, and read first."</em>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 10px;">
+                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">How They Solve It Today</h5>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+                                Ask: <em>"What workarounds do you currently use when a concept is too complex? How much time or money do you spend doing that?"</em>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 10px;">
+                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">The Budget Test</h5>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+                                Ask: <em>"What other courses, books, or prep tools have you paid for out of your own pocket in the past 12 months?"</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Call-to-Action -->
+        <section class="content-section animate-fade-in" style="text-align: center; margin-top: 3rem;">
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Ready to find candidates and conduct interviews?</p>
+            <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="cd-watering-holes.html" class="btn btn-primary">🌐 Locate Watering Holes & Scripts</a>
+                <a href="cd-interview-recording.html" class="btn btn-secondary">📝 Open Interview Recorder & Tracker</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Discovery Interview Hub.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

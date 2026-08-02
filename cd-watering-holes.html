@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watering Holes & Outreach Scripts | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .location-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-fast);
+        }
+        .location-card:hover {
+            border-color: var(--border-accent);
+            background: rgba(99, 102, 241, 0.04);
+            transform: translateY(-2px);
+        }
+        .script-box {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+        .copy-script-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        .copy-script-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Back Link -->
+        <a href="stage-customer-discovery.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Stage 1 (Customer Discovery)
+        </a>
+
+        <!-- Hero Section -->
+        <section class="hero animate-fade-in" style="padding: 2rem 0 3rem; text-align: left;">
+            <span class="badge">Customer Discovery Intercepts</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🌐 Customer <span>Watering Holes &amp; Outreach</span></h1>
+            <p class="hero-subtitle" style="margin: 0; max-width: 800px;">
+                Where does our target customer hang out? This blueprint defines our physical and digital intercept channels and provides copy-paste scripts to secure customer interviews.
+            </p>
+        </section>
+
+        <!-- Watering Holes Directory -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📍 High-Yield Customer Watering Holes</h2>
+            <div class="grid">
+                <!-- Location 1 -->
+                <div class="col-4">
+                    <div class="location-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.75rem;">🗺️</div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Triton Square</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem;">
+                            <strong>Physical Plaza &amp; Tech Hub:</strong> Large business complex hosting tech offices, consultancy firms, and cloud divisions.
+                        </p>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.75rem;">Best For: Face-to-Face Intercepts</span>
+                    </div>
+                </div>
+                <!-- Location 2 -->
+                <div class="col-4">
+                    <div class="location-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.75rem;">☕</div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Venture Coffee Meetups</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem;">
+                            <strong>Weekly Networking Events:</strong> Local coffee shops hosting morning engineering huddles, tech standups, and developer networks.
+                        </p>
+                        <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #a5b4fc; font-size: 0.75rem;">Best For: Soft Warm Introductions</span>
+                    </div>
+                </div>
+                <!-- Location 3 -->
+                <div class="col-4">
+                    <div class="location-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.75rem;">📚</div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Weekend Cohorts</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem;">
+                            <strong>Online Groups &amp; Forums:</strong> Active Discord servers, Reddit subreddits, Slack workspaces, and Telegram study groups.
+                        </p>
+                        <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; font-size: 0.75rem;">Best For: High-Volume Digital Outreach</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outreach Scripts -->
+        <section class="content-section animate-fade-in" style="margin-top: 3rem;">
+            <h2 class="section-title">💬 Outreach Scripts (Qualitative Engagement)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">
+                Use these structured scripts to initiate conversations. Always customize them with details of the candidate's focus area (e.g. AWS, Kubernetes, Claude).
+            </p>
+
+            <!-- Script 1 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h4 style="color: var(--color-primary); font-family: var(--font-heading); margin-bottom: 0.5rem; font-weight: 700;">Template A: Teams / Slack / LinkedIn Outreach (Professional)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Ideal for connecting with colleagues or warm developer contacts.
+                </p>
+                <div class="script-box" id="script-a">
+                    <button class="copy-script-btn" onclick="copyText('script-a-text', this)">📋 Copy</button>
+                    <span id="script-a-text">"Hi [Name], I noticed you have been preparing for the AI Architect exam / technical certifications. I'm currently running a brief qualitative study on what makes study guides dry versus effective for busy developers. I am not selling anything—just doing a 10-minute research project on study timelines and frustration pain points. Would you be open to sharing your experience over a quick virtual coffee?"</span>
+                </div>
+            </div>
+
+            <!-- Script 2 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h4 style="color: var(--color-info); font-family: var(--font-heading); margin-bottom: 0.5rem; font-weight: 700;">Template B: X (Twitter) / Social Media DM (Casual &amp; Direct)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Best for digital cold outreach to candidates sharing exam preparation updates.
+                </p>
+                <div class="script-box" id="script-b">
+                    <button class="copy-script-btn" onclick="copyText('script-b-text', this)">📋 Copy</button>
+                    <span id="script-b-text">"Hey [Name]! Saw your tweet about studying for the Claude AI Architect exam. I'm doing research on developer certification study pains (focusing on visual vs text learning). Not pitching anything, just trying to understand what sucks most about prep. Do you have 5 mins for a quick chat? Cheers!"</span>
+                </div>
+            </div>
+
+            <!-- Script 3 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h4 style="color: var(--color-success); font-family: var(--font-heading); margin-bottom: 0.5rem; font-weight: 700;">Template C: Face-to-Face Intercept Script (Triton Square / Coffee shop)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Designed to approach developers casually holding papers or reading tablets during lunch or coffee meetups.
+                </p>
+                <div class="script-box" id="script-c">
+                    <button class="copy-script-btn" onclick="copyText('script-c-text', this)">📋 Copy</button>
+                    <span id="script-c-text">"Hi! Excuse me, sorry to interrupt. I saw you were looking at cloud architecture diagrams / study guides. I'm Rifat, and I'm currently conducting customer discovery interviews on why technical training material is so hard to digest. Are you currently studying for a certification? I'd love to ask you two quick questions about your study experience—I promise I'm not selling anything!"</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation CTAs -->
+        <section class="content-section animate-fade-in" style="text-align: center; margin-top: 3rem;">
+            <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="cd-interview-guide.html" class="btn btn-secondary">🎤 View Interview Guide &amp; Questions</a>
+                <a href="cd-interview-recording.html" class="btn btn-primary">📝 Record Interviews &amp; Track Outreach</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Discovery Interview Hub.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script>
+        function copyText(elementId, btn) {
+            var text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                var originalText = btn.innerHTML;
+                btn.innerHTML = "✅ Copied!";
+                btn.style.background = "var(--gradient-success)";
+                btn.style.color = "#fff";
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.style.background = "";
+                    btn.style.color = "";
+                }, 2000);
+            }).catch(function(err) {
+                console.error("Failed to copy script: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
