@@ -2,6 +2,15 @@
 
 This document explains the strategic rationale and business validation architecture for Rifat Erdem Sahin's **AI Certification Helper** customer development portal, constructed under Steve Blank's framework.
 
+## 🚀 Mandatory Workflow Mandates
+
+- **Post-Task Validation:** Upon completing a task (especially page updates), always:
+    1. Perform the project's build step (none exists).
+    2. Start/Restart the local application server (typically Python HTTP server on port `8000`).
+    3. Open the specific updated page in the default browser for visual/functional verification.
+    4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
+    5. Output clickable links to that updated page at the very end of your final response.
+
 ---
 
 ## 🗺️ Visual Architecture Strategy

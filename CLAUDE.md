@@ -2,6 +2,15 @@
 
 Guidance for a future Claude Code session working in this repository.
 
+## Mandatory Workflow Mandates
+
+Upon completing any task (especially page updates), always:
+1. Perform the project's build step (none exists).
+2. Start/Restart the local application server (typically Python HTTP server on port `8000`).
+3. Open the specific updated pages in the default browser using the Mac CLI `open` command (e.g., `open http://localhost:8000/bmc-channels.html`).
+4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
+5. Display clickable links to that updated page at the very end of your final response.
+
 ## What this project is
 
 A static HTML/CSS/JS site (no build step, no framework, no bundler — just open the

@@ -12,6 +12,7 @@ Use this document alongside [CLAUDE.md](file:///Users/rifaterdemsahin/projects/A
 Upon completing any page or configuration updates, AI agents **MUST** execute the following steps:
 1. **Server Verification:** Check if the local server is running (typically Python HTTP server on port `8000`). If not active, start/restart it in the background using `python3 -m http.server 8000`.
 2. **Visual/Functional Verification:** Open the specific updated pages in the default browser using the Mac CLI `open` command (e.g. `open http://localhost:8000/bmc-channels.html`).
+3. **GitHub Verification & Deployment:** Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the GitHub Pages deployment to complete.
 
 ### 2. Output Links to Updated Pages
 Whenever you create or update an HTML page or web resource, **ALWAYS** display clickable links to that updated page at the very end of your final response:
