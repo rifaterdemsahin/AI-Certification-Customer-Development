@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Verify / Pivot Gate | Customer Discovery Process</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Back Link -->
+        <a href="../stage-customer-discovery.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Stage 1 (Customer Discovery)
+        </a>
+
+        <!-- Page Spec Header -->
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Flowchart Node 4</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">Verify / Pivot Gate</h1>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Node:</span>
+                            <span class="info-value">4. Verify / Pivot Gate</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Flow Location:</span>
+                            <span class="info-value">Customer Discovery Threshold</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Objective:</span>
+                            <span class="info-value">Decide to pivot or transition to validation</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Owner:</span>
+                            <span class="info-value">Rifat Erdem Sahin</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">Making the Decision</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                At this stage, we compare the measured results against our initial hypotheses. If the retention target (&ge;40%) and signup conversion (&ge;5%) are met, we verify our Discovery and transition to Customer Validation. Otherwise, we pivot.
+            </p>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="border-left: 4px solid var(--color-success);">
+                        <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-success);">Verify (Proceed)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                            All target metrics match. We proceed to Stage 2 (Customer Validation) to test the cohort sales structure, price elasticity, and long-term marketing funnel plans.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="border-left: 4px solid var(--color-warning);">
+                        <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-warning);">Pivot (Adapt)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                            If retention is &lt;40%, we pivot. Pivoting may include: changing the video graphics style, updating curriculum complexity, changing the targeted certification, or adjusting script writing pacing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bidirectional Navigation -->
+        <section class="content-section animate-fade-in" style="margin-top: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="test-solution.html" class="btn btn-secondary">&larr; Prev: 3. Test Solution Hypotheses</a>
+                <a href="../stage-customer-validation.html" class="btn" style="background: var(--gradient-success);">Proceed to Customer Validation &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Sanity Check (Missing Questions & Risks) -->
+        <section class="content-section animate-fade-in" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h2 class="section-title" style="color: var(--color-warning);">⚠️ Sanity Check: Missing Questions & Risks</h2>
+            <div class="card" style="background: rgba(245, 158, 11, 0.02); border-color: rgba(245, 158, 11, 0.2);">
+                <div class="grid">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Missing Questions:</h4>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li>What is the exit criteria for calling a pivot a failure?</li>
+                            <li>How many pivot iterations are allowed before shutting down the project?</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Key Risks:</h4>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li><strong>Sunk Cost Fallacy:</strong> The founder might refuse to pivot even if metrics are poor, continuing to invest time and energy into boring video styles.</li>
+                            <li><strong>Premature Validation:</strong> Proceeding to validation too quickly because of a single video outlier with high views, without establishing general curriculum interest.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Discovery Node.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="../nav.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

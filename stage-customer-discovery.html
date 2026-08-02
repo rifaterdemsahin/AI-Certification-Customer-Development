@@ -172,6 +172,91 @@
                 </div>
             </div>
         </section>
+
+        <!-- Discovery Flowchart Section -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">Customer Discovery Flowchart</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Click on any node in the flowchart below to explore the detailed hypotheses, testing methods, and decisions:
+            </p>
+            <div style="width: 100%; max-width: 900px; margin: 0 auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="100%" height="auto" style="background: rgba(255,255,255,0.01); border-radius:12px; border: 1px solid var(--border-color); padding: 1.5rem; display: block;">
+                  <defs>
+                    <style>
+                      .svg-link { cursor: pointer; text-decoration: none; }
+                      .svg-link:hover rect { stroke: #10b981; fill: rgba(99, 102, 241, 0.2); transition: 0.3s; }
+                      .svg-link:hover text { fill: #10b981; transition: 0.3s; }
+                    </style>
+                  </defs>
+
+                  <!-- Step 1 Node -->
+                  <a href="discovery/state-hypotheses.html" class="svg-link">
+                    <rect x="10" y="30" width="160" height="80" rx="12" fill="rgba(17, 24, 39, 0.8)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="2" />
+                    <text x="90" y="65" fill="#ffffff" font-size="13" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">1. State Hypotheses</text>
+                    <text x="90" y="85" fill="#9ca3af" font-size="10" font-family="'Inter', sans-serif" text-anchor="middle">Formulate Core Specs</text>
+                  </a>
+
+                  <!-- Arrow 1 -->
+                  <path d="M 180 70 L 205 70" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3" marker-end="url(#arrow)" />
+
+                  <!-- Step 2 Node -->
+                  <a href="discovery/test-problem.html" class="svg-link">
+                    <rect x="215" y="30" width="160" height="80" rx="12" fill="rgba(17, 24, 39, 0.8)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="2" />
+                    <text x="295" y="65" fill="#ffffff" font-size="13" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">2. Test Problem</text>
+                    <text x="295" y="85" fill="#9ca3af" font-size="10" font-family="'Inter', sans-serif" text-anchor="middle">Interview Pain Points</text>
+                  </a>
+
+                  <!-- Arrow 2 -->
+                  <path d="M 385 70 L 410 70" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3" marker-end="url(#arrow)" />
+
+                  <!-- Step 3 Node -->
+                  <a href="discovery/test-solution.html" class="svg-link">
+                    <rect x="420" y="30" width="160" height="80" rx="12" fill="rgba(17, 24, 39, 0.8)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="2" />
+                    <text x="500" y="65" fill="#ffffff" font-size="13" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">3. Test Solution</text>
+                    <text x="500" y="85" fill="#9ca3af" font-size="10" font-family="'Inter', sans-serif" text-anchor="middle">YouTube Content MVP</text>
+                  </a>
+
+                  <!-- Arrow 3 -->
+                  <path d="M 590 70 L 615 70" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3" marker-end="url(#arrow)" />
+
+                  <!-- Step 4 Node (Verify/Pivot) -->
+                  <a href="discovery/verify-pivot.html" class="svg-link">
+                    <rect x="625" y="30" width="160" height="80" rx="12" fill="rgba(17, 24, 39, 0.8)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="2" />
+                    <text x="705" y="65" fill="#ffffff" font-size="13" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">4. Verify / Pivot</text>
+                    <text x="705" y="85" fill="#9ca3af" font-size="10" font-family="'Inter', sans-serif" text-anchor="middle">Gate Thresholds</text>
+                  </a>
+                  
+                  <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.4)" />
+                    </marker>
+                  </defs>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Sanity Check (Missing Questions & Risks) -->
+        <section class="content-section animate-fade-in" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h2 class="section-title" style="color: var(--color-warning);">⚠️ Sanity Check: Missing Questions & Risks</h2>
+            <div class="card" style="background: rgba(245, 158, 11, 0.02); border-color: rgba(245, 158, 11, 0.2);">
+                <div class="grid">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Missing Questions:</h4>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li>Have we identified the exact profile details of early adopters who will pay for mock exam preparation?</li>
+                            <li>What specific animation styles yield the absolute highest retention rate?</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Key Risks:</h4>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li><strong>Time Commitment Risk:</strong> Designing animations is very time-consuming; Rifat could face editing fatigue before achieving standard organic traction.</li>
+                            <li><strong>Hypothesis Invalidity:</strong> Organic YouTube views do not guarantee willingness to join cohorts or pay for subscription access.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>

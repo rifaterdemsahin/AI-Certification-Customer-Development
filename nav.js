@@ -1,15 +1,19 @@
 // Shared site header/navigation, built once and injected into #site-header.
 // Organizes links into logical groups (Hub / Stages / Strategy / Business Model / Growth / Components / Docs)
 // and marks the current page's link as active based on the URL filename.
+// Includes a global search index and a shared cookie note-taking mechanism.
 (function () {
+    var isSubdir = location.pathname.includes('/discovery/');
+    var pathPrefix = isSubdir ? '../' : '';
+
     var currentFile = (location.pathname.split('/').pop() || 'index.html');
     if (currentFile === '') currentFile = 'index.html';
 
     // [href, label] pairs. Query-string hrefs are matched by their base filename + src param.
     var groups = [
-        { type: 'link', href: 'index.html', label: 'Hub' },
+        { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
-            type: 'dropdown', label: 'Stages', items: [
+            type: 'dropdown', label: 'Stages', emoji: '🗺️', className: 'nav-stages', items: [
                 ['stage-customer-discovery.html', '1. Discovery'],
                 ['stage-customer-validation.html', '2. Validation'],
                 ['stage-customer-creation.html', '3. Creation'],
@@ -17,7 +21,7 @@
             ]
         },
         {
-            type: 'dropdown', label: 'Discovery Process', items: [
+            type: 'dropdown', label: 'Discovery Process', emoji: '📍', className: 'nav-discovery', items: [
                 ['cd-process.html', '📍 Process Overview'],
                 ['cd-hypotheses.html', '1. Hypothesis'],
                 ['cd-hyp-product.html', '&nbsp;&nbsp;↳ Product Hypothesis'],
@@ -44,7 +48,7 @@
             ]
         },
         {
-            type: 'dropdown', label: 'Strategy', items: [
+            type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
                 ['hypothesis.html', 'Hypothesis'],
                 ['focus.html', 'Focus'],
                 ['target-audience.html', 'Target Audience'],
@@ -54,7 +58,7 @@
             ]
         },
         {
-            type: 'dropdown', label: 'Business Model', items: [
+            type: 'dropdown', label: 'Business Model', emoji: '📊', className: 'nav-business', items: [
                 ['business-model-canvas.html', 'Business Model Canvas'],
                 ['value-proposition.html', 'Value Proposition'],
                 ['bmc-customer-segments.html', 'Customer Segments'],
@@ -68,7 +72,7 @@
             ]
         },
         {
-            type: 'dropdown', label: 'Growth', items: [
+            type: 'dropdown', label: 'Growth', emoji: '📈', className: 'nav-growth', items: [
                 ['sales-pipeline.html', 'Sales Pipeline'],
                 ['flywheel.html', 'Flywheel'],
                 ['quality-gates.html', 'Quality Gates'],
@@ -76,7 +80,7 @@
             ]
         },
         {
-            type: 'dropdown', label: 'Components', items: [
+            type: 'dropdown', label: 'Components', emoji: '🧩', className: 'nav-components', items: [
                 ['comp-problem-solution.html', 'Problem-Solution Fit'],
                 ['comp-mvp.html', 'MVP'],
                 ['comp-market.html', 'Market &amp; Audience'],
@@ -89,7 +93,7 @@
             ]
         },
         {
-            type: 'dropdown', label: 'Docs', items: [
+            type: 'dropdown', label: 'Docs', emoji: '📄', className: 'nav-docs', items: [
                 ['markdown_renderer.html?src=README.md', 'README'],
                 ['markdown_renderer.html?src=gemini.md', 'Project Rationale'],
                 ['markdown_renderer.html?src=HYPOTHESIS.md', 'Hypothesis Tracker Full Doc'],
@@ -101,51 +105,793 @@
         }
     ];
 
+    // Search Index representing all pages for full-text and tag matching
+    var searchIndex = [
+        { url: 'index.html', title: 'Customer Development Hub', desc: 'Home hub mapping all stages, business validation frameworks, and milestones.', cat: 'Hub', tags: 'home dashboard main index' },
+        { url: 'stage-customer-discovery.html', title: '1. Customer Discovery Stage', desc: 'First phase of customer development focused on problem-solution fit and testing core customer pain points.', cat: 'Stage', tags: 'problem solution mvp validation first' },
+        { url: 'stage-customer-validation.html', title: '2. Customer Validation Stage', desc: 'Second phase to build a repeatable, scalable sales blueprint and verify product-market fit.', cat: 'Stage', tags: 'sales roadmap pricing validation product market' },
+        { url: 'stage-customer-creation.html', title: '3. Customer Creation Stage', desc: 'Third phase to drive demand, acquire users at scale, and verify retention triggers.', cat: 'Stage', tags: 'demand growth viral acquisition' },
+        { url: 'stage-company-building.html', title: '4. Company Building Stage', desc: 'Final phase to transition from startup to structured department execution and scaling.', cat: 'Stage', tags: 'scale operations structure department team' },
+        { url: 'cd-process.html', title: 'Discovery Process Overview', desc: 'Detailed overview of the 4 steps of Customer Discovery (State, Test, Validate, Exit).', cat: 'Process', tags: 'steps overview summary outline' },
+        { url: 'cd-hypotheses.html', title: 'Phase 1: State Hypotheses', desc: 'Defining the core business canvas assumptions and developer pain points.', cat: 'Process', tags: 'assumptions developers canvas' },
+        { url: 'cd-hyp-product.html', title: 'Product Hypothesis', desc: 'Hypothesis testing features, pricing, and visual delivery model for the training video assets.', cat: 'Process', tags: 'features pricing video assets' },
+        { url: 'cd-hyp-customer-problem.html', title: 'Customer & Problem Hypothesis', desc: 'Understanding certification stress, study timelines, and visual learning needs.', cat: 'Process', tags: 'stress study timeline needs' },
+        { url: 'cd-hyp-distribution-pricing.html', title: 'Distribution & Pricing Hypothesis', desc: 'Hypotheses on YouTube memberships, $10/mo mock prep access, and cohort revenue metrics.', cat: 'Process', tags: 'youtube membership subscription cost cohort' },
+        { url: 'cd-hyp-demand-creation.html', title: 'Demand Creation Hypothesis', desc: 'Assumptions about organic YouTube search, SEO search terms, and viral watch-loops.', cat: 'Process', tags: 'seo search loops youtube traffic' },
+        { url: 'cd-hyp-market-type.html', title: 'Market Type Hypothesis', desc: 'Positioning the helper in an existing exam prep market with a resegmented focus on rich animations.', cat: 'Process', tags: 'positioning market segmentation animation' },
+        { url: 'cd-hyp-competitive.html', title: 'Competitive Hypothesis', desc: 'Analyzing Udemy courses, cloud providers\' official prep, and our unique visual edge.', cat: 'Process', tags: 'udemy competitors cloud official visual edge' },
+        { url: 'cd-test-problem.html', title: 'Phase 2: Test Problem Hypothesis', desc: 'Engaging early adopters, launching surveys, and running problem interviews.', cat: 'Process', tags: 'surveys interviews feedback adopters' },
+        { url: 'cd-tp-first-contacts.html', title: 'First Contacts & Outreach', desc: 'Strategy for reaching out to developers, students, and certification candidates.', cat: 'Process', tags: 'outreach developer groups email' },
+        { url: 'cd-tp-problem-presentation.html', title: 'Problem Presentation Guide', desc: 'Framework for pitching the identified developer pain points during discovery calls.', cat: 'Process', tags: 'pitch presentation discovery calls' },
+        { url: 'cd-tp-customer-understanding.html', title: 'Customer Understanding Deep Dive', desc: 'Analyzing target user behaviors, motivations, and pain points in software certifications.', cat: 'Process', tags: 'behaviors motivations certification' },
+        { url: 'cd-tp-market-knowledge.html', title: 'Market Knowledge Synthesis', desc: 'Understanding market segments, size, and readiness to pay for visual guides.', cat: 'Process', tags: 'market segments size willing to pay' },
+        { url: 'cd-test-product.html', title: 'Phase 3: Test Product Hypothesis', desc: 'Pitching the MVP, testing animated content, and measuring feedback loops.', cat: 'Process', tags: 'mvp animation feedback loops demo' },
+        { url: 'cd-tpr-first-reality-check.html', title: 'First Reality Check', desc: 'Initial validation checkpoint for early signups and content engagement.', cat: 'Process', tags: 'validation checkpoint engagement signups' },
+        { url: 'cd-tpr-product-presentation.html', title: 'Product Presentation & Demo', desc: 'Presenting the MVP animated guides to prospective users to gauge reactions.', cat: 'Process', tags: 'demo pitch product slides' },
+        { url: 'cd-tpr-more-customer-visits.html', title: 'Expanding Customer Visits', desc: 'Iterative testing phase with broader user groups to refine validation statistics.', cat: 'Process', tags: 'testing groups scale validation' },
+        { url: 'cd-tpr-second-reality-check.html', title: 'Second Reality Check', desc: 'Final validation of problem-solution alignment before business model verification.', cat: 'Process', tags: 'final check validation alignment' },
+        { url: 'cd-verify.html', title: 'Phase 4: Verify, Iterate, or Exit', desc: 'Consolidating all validation feedback and determining if we exit to Validation stage or pivot.', cat: 'Process', tags: 'exit verify pivot iterate' },
+        { url: 'cd-verify-product.html', title: 'Verify the Product MVP', desc: 'Ensuring the MVP solves the core retention issues and provides high-value exam prep.', cat: 'Process', tags: 'verify mvp retention value' },
+        { url: 'cd-verify-problem.html', title: 'Verify the Problem Fit', desc: 'Confirming that target students face real, severe pain points with existing training.', cat: 'Process', tags: 'verify problem pain points study' },
+        { url: 'cd-verify-business-model.html', title: 'Verify the Business Model Fit', desc: 'Analyzing pricing model, customer acquisition cost, and revenue sustainability.', cat: 'Process', tags: 'verify business model pricing cost sustainability' },
+        { url: 'cd-verify-iterate-exit.html', title: 'Iterate or Exit Gate', desc: 'The ultimate decision gate for Rifat: do we proceed, pivot, or stop?', cat: 'Process', tags: 'decision gate trigger pivot exit' },
+        { url: 'hypothesis.html', title: 'Core Business Hypotheses', desc: 'Comprehensive dashboard tracking all customer, value prop, and distribution hypotheses.', cat: 'Strategy', tags: 'dashboard hypotheses tracking assumptions' },
+        { url: 'focus.html', title: 'Strategic Focus', desc: 'Where we focus our immediate energy: animations, YouTube playlists, mock exams.', cat: 'Strategy', tags: 'focus energy priority list roadmap' },
+        { url: 'target-audience.html', title: 'Target Audience Analysis', desc: 'Persona details of early-adopter developers, study timelines, and motivations.', cat: 'Strategy', tags: 'personas developers study timeline profiles' },
+        { url: 'risk-analysis.html', title: 'Key Risks & Mitigations', desc: 'Analysis of production fatigue, pricing models, content copycats, and platforms.', cat: 'Strategy', tags: 'risks mitigation fatigue pricing copycats' },
+        { url: 'requirements.html', title: 'Product & Technical Requirements', desc: 'Specs for hosting, animation software, mock testing platform, and automation rules.', cat: 'Strategy', tags: 'technical requirements hosting software specs' },
+        { url: 'business-plan-summary.html', title: 'Business Plan Summary', desc: 'High-level summary of business objectives, market dynamics, and milestones.', cat: 'Strategy', tags: 'summary business plan objectives milestones' },
+        { url: 'business-model-canvas.html', title: 'Business Model Canvas (BMC)', desc: 'The master 9-box canvas showing partners, key actions, value prop, channels, and revenue.', cat: 'Business Model', tags: 'canvas bmc partners actions value revenue' },
+        { url: 'value-proposition.html', title: 'Value Proposition Canvas', desc: 'Mapping user pains/gains directly to our features and product services.', cat: 'Business Model', tags: 'value proposition pains gains features benefits' },
+        { url: 'bmc-customer-segments.html', title: 'BMC: Customer Segments', desc: 'Target cohorts, early adopters, and certification candidate segment definition.', cat: 'Business Model', tags: 'segments cohorts early adopters candidate' },
+        { url: 'bmc-channels.html', title: 'BMC: Channels', desc: 'Distribution channels including YouTube, LinkedIn, organic search, and newsletters.', cat: 'Business Model', tags: 'channels distribution youtube linkedin newsletter' },
+        { url: 'bmc-customer-relationships.html', title: 'BMC: Customer Relationships', desc: 'Self-service video access, discord community membership, and live Q&As.', cat: 'Business Model', tags: 'relationships self service discord community q&a' },
+        { url: 'bmc-revenue-streams.html', title: 'BMC: Revenue Streams', desc: 'YouTube Memberships, mockup exam prep, high-ticket cohort bootcamps, and run-rates.', cat: 'Business Model', tags: 'revenue income youtube membership cohort pricing' },
+        { url: 'bmc-key-resources.html', title: 'BMC: Key Resources', desc: 'Animation assets, study material, tech architecture blueprints, and cloud infrastructure.', cat: 'Business Model', tags: 'resources assets study blueprint infrastructure' },
+        { url: 'bmc-key-activities.html', title: 'BMC: Key Activities', desc: 'Video script writing, timeline editing, mockup exam creation, and developer outreach.', cat: 'Business Model', tags: 'activities scripts editing mockup outreach' },
+        { url: 'bmc-key-partners.html', title: 'BMC: Key Partners', desc: 'Cloud platforms, exam beta-testers, online developer groups, and video editors.', cat: 'Business Model', tags: 'partners beta-testers editors cloud groups' },
+        { url: 'bmc-cost-structure.html', title: 'BMC: Cost Structure', desc: 'Fixed/variable costs, animation software licenses, hosting, and freelance editor fees.', cat: 'Business Model', tags: 'costs fixed variable software licensing hosting fees' },
+        { url: 'sales-pipeline.html', title: 'Sales Pipeline & Funnel', desc: 'Visualization of stages from YouTube view to subscription and cohort signup.', cat: 'Growth', tags: 'pipeline funnel conversion stages youtube subscription' },
+        { url: 'flywheel.html', title: 'Customer Growth Flywheel', desc: 'Frictionless acquisition loops, retention programs, and graduate referral engines.', cat: 'Growth', tags: 'flywheel loops acquisition retention referral' },
+        { url: 'quality-gates.html', title: 'Quality Gates & Triggers', desc: 'Defined milestones to move from discovery to validation, creation, and building.', cat: 'Growth', tags: 'gates triggers milestones thresholds' },
+        { url: 'test-metrics.html', title: 'Test Metrics & Verification', desc: 'Key performance indicators, watch-time thresholds, sign-up targets, and margins.', cat: 'Growth', tags: 'metrics verification kpi thresholds target' },
+        { url: 'comp-problem-solution.html', title: 'Component: Problem-Solution Fit', desc: 'Validating that study guides solve the core certification retention issues.', cat: 'Component', tags: 'problem solution fit validation' },
+        { url: 'comp-mvp.html', title: 'Component: Minimum Viable Product (MVP)', desc: 'Blueprint for the first 3 animated videos and a simple practice test page.', cat: 'Component', tags: 'mvp blueprint videos practice test' },
+        { url: 'comp-market.html', title: 'Component: Market & Target Audience', desc: 'Detailed target market size, growth rates, and candidate segmentations.', cat: 'Component', tags: 'market size growth segmentation audience' },
+        { url: 'comp-business-model.html', title: 'Component: Business Model', desc: 'Pricing tiers, target margins, and path to initial cohort goal.', cat: 'Component', tags: 'business model pricing margins path goal' },
+        { url: 'comp-funnel.html', title: 'Component: Funnel & Channels', desc: 'Acquisition pathways, youtube click-throughs, and discord sign-ups.', cat: 'Component', tags: 'funnel pathways youtube click discord sign-up' },
+        { url: 'comp-pmf.html', title: 'Component: Product-Market Fit', desc: 'Analyzing survey results, renewal rates, and student reference score.', cat: 'Component', tags: 'pmf survey renewal reference score' },
+        { url: 'comp-roadmap.html', title: 'Component: Sales & Marketing Roadmap', desc: 'Timeline of marketing releases, launches, and promotional cohort sequences.', cat: 'Component', tags: 'roadmap timeline marketing launch cohort' },
+        { url: 'comp-creation-validation.html', title: 'Component: Creation Validation & Triggers', desc: 'The thresholds for transition (40% watch rate, $10,000 gross).', cat: 'Component', tags: 'creation validation thresholds trigger gate' },
+        { url: 'comp-scale-organization.html', title: 'Component: Scale Organization', desc: 'Structure of hiring freelance editors, assistants, and community leads.', cat: 'Component', tags: 'scale organization hiring structure team roles' },
+        { url: 'discovery/state-hypotheses.html', title: 'Discovery: State Hypotheses Detail', desc: 'State the core hypotheses and target audience segment criteria.', cat: 'Discovery Detail', tags: 'hypotheses audience segments criteria state' },
+        { url: 'discovery/test-problem.html', title: 'Discovery: Test Problem Detail', desc: 'Test problem pain points and early adopter responses.', cat: 'Discovery Detail', tags: 'test problem pain points adopters responses' },
+        { url: 'discovery/test-solution.html', title: 'Discovery: Test Solution Detail', desc: 'Test the MVP solution and check watch time / signup numbers.', cat: 'Discovery Detail', tags: 'test solution mvp watch time signup' },
+        { url: 'discovery/verify-pivot.html', title: 'Discovery: Verify or Pivot Detail', desc: 'The final discovery verify-pivot checklist and scaling gate.', cat: 'Discovery Detail', tags: 'verify pivot checklist scaling gate threshold' }
+    ];
+
+    // Build current page URL (relative to root)
+    var currentPageUrl = currentFile;
+    if (isSubdir) {
+        currentPageUrl = 'discovery/' + currentPageUrl;
+    }
+    if (location.search) {
+        currentPageUrl += location.search;
+    }
+
+    function getPageTitleByUrl(url) {
+        for (var i = 0; i < searchIndex.length; i++) {
+            if (searchIndex[i].url === url || (url.indexOf(searchIndex[i].url) !== -1 && searchIndex[i].url !== 'index.html')) {
+                return searchIndex[i].title;
+            }
+        }
+        var cleanTitle = document.title.replace(' | AI Certification Helper', '');
+        return cleanTitle || 'Current Page';
+    }
+
+    var currentPageTitle = getPageTitleByUrl(currentPageUrl);
+
     function isActive(href) {
         var hrefFile = href.split('?')[0];
         var hrefQuery = href.split('?')[1] || '';
-        if (hrefFile !== currentFile) return false;
+        
+        var hrefFileName = hrefFile.split('/').pop();
+        if (hrefFileName !== currentFile) return false;
+        
         if (!hrefQuery) return true;
         var currentQuery = location.search.replace(/^\?/, '');
         return hrefQuery === currentQuery;
     }
 
-    function linkHtml(href, label) {
+    function linkHtml(href, label, className) {
         var active = isActive(href) ? ' active' : '';
-        return '<li><a href="' + href + '" class="nav-link' + active + '">' + label + '</a></li>';
+        var finalHref = href.indexOf('http') === 0 ? href : (pathPrefix + href);
+        var cls = className ? (' ' + className) : '';
+        return '<li><a href="' + finalHref + '" class="nav-link' + cls + active + '">' + label + '</a></li>';
     }
 
+    // Build Navigation HTML
     var html = '<nav class="nav-container">' +
-        '<a href="index.html" class="logo">' +
+        '<a href="' + pathPrefix + 'index.html" class="logo">' +
         '<div class="logo-icon">AI</div>' +
         '<span class="logo-text">AI Cert Helper</span>' +
         '</a>' +
         '<ul class="nav-menu">';
 
     groups.forEach(function (group) {
+        var labelWithEmoji = group.emoji + ' ' + group.label;
         if (group.type === 'link') {
-            html += linkHtml(group.href, group.label);
+            html += linkHtml(group.href, labelWithEmoji, group.className);
         } else {
+            var hasActiveChild = false;
+            group.items.forEach(function (item) {
+                if (isActive(item[0])) {
+                    hasActiveChild = true;
+                }
+            });
+            var activeClass = hasActiveChild ? ' active' : '';
             html += '<li class="nav-dropdown">' +
-                '<span class="nav-dropdown-toggle" tabindex="0">' + group.label + ' &#9662;</span>' +
+                '<span class="nav-dropdown-toggle ' + group.className + activeClass + '" tabindex="0">' + labelWithEmoji + ' &#9662;</span>' +
                 '<ul class="nav-dropdown-menu">';
             group.items.forEach(function (item) {
-                html += linkHtml(item[0], item[1]);
+                html += linkHtml(item[0], item[1], group.className);
             });
             html += '</ul></li>';
         }
     });
 
+    // Append Search and Notes action items
+    html += '<li class="nav-menu-action">' +
+        '<button id="nav-search-btn" class="nav-action-btn" title="Search pages (Ctrl+K or 🔍)">' +
+        '<span>🔍</span> Search' +
+        '</button>' +
+        '</li>';
+    html += '<li class="nav-menu-action">' +
+        '<button id="nav-notes-btn" class="nav-action-btn" title="My Notes">' +
+        '<span>📝</span> Notes<span id="nav-notes-badge" class="badge-dot" style="display:none;"></span>' +
+        '</button>' +
+        '</li>';
+
     html += '</ul></nav>';
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var mount = document.getElementById('site-header');
-        if (mount) mount.innerHTML = html;
-    });
+    // Modal and Drawer HTML to inject
+    var searchModalHtml = 
+        '<div id="search-modal" class="modal-overlay">' +
+        '  <div class="modal-content">' +
+        '    <div class="modal-header">' +
+        '      <h3>🔍 Search Project Pages</h3>' +
+        '      <button class="modal-close-btn" id="close-search-btn">&times;</button>' +
+        '    </div>' +
+        '    <div class="modal-body">' +
+        '      <div class="search-input-wrapper">' +
+        '        <span class="search-input-icon">🔍</span>' +
+        '        <input type="text" id="search-input" placeholder="Type page title, category, or keyword..." autocomplete="off">' +
+        '      </div>' +
+        '      <div id="search-results" class="search-results-list"></div>' +
+        '    </div>' +
+        '    <div class="modal-footer">' +
+        '      <span class="keyboard-tip">Navigate with <kbd>↑</kbd> <kbd>↓</kbd>, <kbd>Enter</kbd> to open</span>' +
+        '      <span class="keyboard-tip">Press <kbd>Esc</kbd> to close</span>' +
+        '    </div>' +
+        '  </div>' +
+        '</div>';
 
-    // Also try immediate mount in case script runs after DOM is already parsed for this node.
+    var notesDrawerHtml =
+        '<div id="notes-drawer" class="drawer-overlay">' +
+        '  <div class="drawer-content">' +
+        '    <div class="drawer-header">' +
+        '      <h3>📝 Workspace Notes</h3>' +
+        '      <button class="drawer-close-btn" id="close-notes-btn">&times;</button>' +
+        '    </div>' +
+        '    <div class="drawer-body">' +
+        '      <div class="current-page-indicator">' +
+        '        <span class="indicator-label">Adding note to:</span>' +
+        '        <span class="indicator-value" id="notes-current-page-title"></span>' +
+        '      </div>' +
+        '      <div class="add-note-form">' +
+        '        <textarea id="note-textarea" placeholder="Write a note for this page..." rows="3"></textarea>' +
+        '        <button id="add-note-btn" class="btn btn-primary">Add Note to Page</button>' +
+        '      </div>' +
+        '      <div class="notes-divider"></div>' +
+        '      <div class="notes-list-header">' +
+        '        <h4>All Saved Notes (<span id="notes-count">0</span>)</h4>' +
+        '      </div>' +
+        '      <div id="notes-list" class="notes-list-container"></div>' +
+        '    </div>' +
+        '    <div class="drawer-footer">' +
+        '      <button id="copy-notes-btn" class="btn btn-secondary">📋 Copy All (Markdown)</button>' +
+        '      <button id="clear-notes-btn" class="btn btn-danger">🗑️ Clear All</button>' +
+        '    </div>' +
+        '  </div>' +
+        '</div>';
+
+    // Cookie Utilities
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (encodeURIComponent(value) || "")  + expires + "; path=/; SameSite=Lax";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length,c.length));
+        }
+        return null;
+    }
+
+    function getNotes() {
+        var raw = getCookie('site_notes');
+        if (!raw) return [];
+        try {
+            return JSON.parse(raw);
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function saveNotes(notes) {
+        setCookie('site_notes', JSON.stringify(notes), 365);
+    }
+
+    function escapeHtml(text) {
+        var map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
+    function renderNotes() {
+        var notes = getNotes();
+        var listContainer = document.getElementById('notes-list');
+        var notesCountEl = document.getElementById('notes-count');
+        var badgeEl = document.getElementById('nav-notes-badge');
+        
+        if (notesCountEl) notesCountEl.textContent = notes.length;
+        
+        // Update nav badge
+        if (badgeEl) {
+            if (notes.length > 0) {
+                badgeEl.style.display = 'inline-block';
+            } else {
+                badgeEl.style.display = 'none';
+            }
+        }
+        
+        if (!listContainer) return;
+        
+        if (notes.length === 0) {
+            listContainer.innerHTML = 
+                '<div class="note-empty-state">' +
+                '  <span style="font-size: 2rem;">📝</span>' +
+                '  <p>No notes taken yet.</p>' +
+                '  <p style="font-size: 0.8rem; color: var(--text-muted);">Use the box above to write notes for this page. They will save in a cookie and be accessible from any page!</p>' +
+                '</div>';
+            return;
+        }
+        
+        var notesHtml = '';
+        for (var i = notes.length - 1; i >= 0; i--) {
+            var note = notes[i];
+            var finalNoteUrl = note.pageUrl.indexOf('http') === 0 ? note.pageUrl : (pathPrefix + note.pageUrl);
+            
+            notesHtml += 
+                '<div class="note-item">' +
+                '  <div class="note-item-header">' +
+                '    <a href="' + finalNoteUrl + '" class="note-item-page">' + note.pageTitle + '</a>' +
+                '    <button class="note-delete-btn" data-id="' + note.id + '" title="Delete Note">🗑️</button>' +
+                '  </div>' +
+                '  <div class="note-item-text">' + escapeHtml(note.text) + '</div>' +
+                '  <div class="note-item-date">' + note.date + '</div>' +
+                '</div>';
+        }
+        listContainer.innerHTML = notesHtml;
+        
+        // Attach delete events
+        var deleteBtns = listContainer.querySelectorAll('.note-delete-btn');
+        deleteBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var id = parseInt(this.getAttribute('data-id'), 10);
+                deleteNote(id);
+            });
+        });
+    }
+
+    function addNote(text) {
+        if (!text.trim()) return;
+        var notes = getNotes();
+        var now = new Date();
+        var dateString = now.toLocaleString('en-US', { 
+            month: 'short', 
+            day: 'numeric', 
+            year: 'numeric',
+            hour: '2-digit', 
+            minute: '2-digit' 
+        });
+        
+        var newNote = {
+            id: Date.now(),
+            pageUrl: currentPageUrl,
+            pageTitle: currentPageTitle,
+            text: text,
+            date: dateString
+        };
+        
+        notes.push(newNote);
+        saveNotes(notes);
+        renderNotes();
+    }
+
+    function deleteNote(id) {
+        var notes = getNotes();
+        var filtered = notes.filter(function(note) {
+            return note.id !== id;
+        });
+        saveNotes(filtered);
+        renderNotes();
+    }
+
+    function clearNotes() {
+        if (confirm('Are you sure you want to clear all your saved notes? This will delete the cookie.')) {
+            saveNotes([]);
+            renderNotes();
+        }
+    }
+
+    function copyNotes() {
+        var notes = getNotes();
+        if (notes.length === 0) {
+            alert('No notes to copy!');
+            return;
+        }
+        
+        var md = '# AI Certification Helper - Workspace Notes\n';
+        md += '*Generated on: ' + new Date().toLocaleDateString() + '*\n\n';
+        
+        notes.forEach(function(note) {
+            var absoluteUrl = location.protocol + '//' + location.host + (location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/' + pathPrefix + note.pageUrl).replace(/\/\.\.\//g, '/').replace(/\/+/g, '/');
+            if (location.protocol === 'file:') {
+                var currentPath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
+                var resolvedPath = (currentPath + '/' + pathPrefix + note.pageUrl);
+                var stack = [];
+                var parts = resolvedPath.split('/');
+                for (var p = 0; p < parts.length; p++) {
+                    if (parts[p] === '..') {
+                        stack.pop();
+                    } else if (parts[p] !== '.' && parts[p] !== '') {
+                        stack.push(parts[p]);
+                    }
+                }
+                absoluteUrl = 'file:///' + stack.join('/');
+            }
+            
+            md += '### [' + note.pageTitle + '](' + absoluteUrl + ')\n';
+            md += '*Saved on: ' + note.date + '*\n\n';
+            md += note.text + '\n\n';
+            md += '---\n\n';
+        });
+        
+        md = md.substring(0, md.length - 5);
+        
+        var copyBtn = document.getElementById('copy-notes-btn');
+        var originalText = copyBtn.innerHTML;
+        
+        navigator.clipboard.writeText(md).then(function() {
+            copyBtn.innerHTML = '✅ Copied to Clipboard!';
+            copyBtn.style.background = 'var(--gradient-success)';
+            setTimeout(function() {
+                copyBtn.innerHTML = originalText;
+                copyBtn.style.background = '';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            var textarea = document.createElement('textarea');
+            textarea.value = md;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                copyBtn.innerHTML = '✅ Copied to Clipboard!';
+                copyBtn.style.background = 'var(--gradient-success)';
+                setTimeout(function() {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.style.background = '';
+                }, 2000);
+            } catch (err2) {
+                alert('Could not copy automatically. Please copy the text from the console or retry.');
+                console.log(md);
+            }
+            document.body.removeChild(textarea);
+        });
+    }
+
+    // Search Logic
+    var selectedSearchResultIndex = -1;
+
+    function renderSearchResults(query) {
+        var resultsContainer = document.getElementById('search-results');
+        if (!resultsContainer) return;
+        
+        if (!query.trim()) {
+            var categories = {};
+            searchIndex.forEach(function(item) {
+                if (!categories[item.cat]) categories[item.cat] = [];
+                categories[item.cat].push(item);
+            });
+            
+            var suggestionsHtml = '<div style="margin-bottom: 1rem;"><h4 style="font-size:0.9rem; color:var(--text-muted); margin-bottom: 0.5rem;">Browse Categories</h4><div style="display:flex; flex-wrap:wrap; gap:0.5rem;">';
+            Object.keys(categories).forEach(function(cat) {
+                suggestionsHtml += '<span class="search-result-category search-cat-suggest" style="cursor:pointer;" data-category="' + cat + '">' + cat + '</span>';
+            });
+            suggestionsHtml += '</div></div>';
+            
+            suggestionsHtml += '<div><h4 style="font-size:0.9rem; color:var(--text-muted); margin-bottom: 0.5rem;">Quick Links</h4><div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">';
+            var quickLinks = [
+                { url: 'index.html', title: 'Customer Development Hub' },
+                { url: 'stage-customer-discovery.html', title: '1. Customer Discovery' },
+                { url: 'stage-customer-validation.html', title: '2. Customer Validation' },
+                { url: 'business-model-canvas.html', title: 'Business Model Canvas' }
+            ];
+            quickLinks.forEach(function(link) {
+                var finalLink = pathPrefix + link.url;
+                suggestionsHtml += '<a href="' + finalLink + '" class="search-result-item" style="padding:0.6rem 0.8rem;"><div class="search-result-title" style="font-size:0.9rem; margin:0;">' + link.title + '</div></a>';
+            });
+            suggestionsHtml += '</div></div>';
+            
+            resultsContainer.innerHTML = suggestionsHtml;
+            selectedSearchResultIndex = -1;
+
+            // Bind click events on suggestions
+            resultsContainer.querySelectorAll('.search-cat-suggest').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    var cat = this.getAttribute('data-category');
+                    var input = document.getElementById('search-input');
+                    if (input) {
+                        input.value = cat;
+                        renderSearchResults(cat);
+                    }
+                });
+            });
+            return;
+        }
+        
+        var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+        var scoredResults = [];
+        
+        searchIndex.forEach(function(item) {
+            var score = 0;
+            var titleLower = item.title.toLowerCase();
+            var descLower = item.desc.toLowerCase();
+            var catLower = item.cat.toLowerCase();
+            var tagsLower = item.tags.toLowerCase();
+            
+            terms.forEach(function(term) {
+                if (catLower === term) score += 20;
+                else if (catLower.indexOf(term) !== -1) score += 5;
+                
+                if (titleLower === term) score += 50;
+                else if (titleLower.indexOf(' ' + term) !== -1 || titleLower.indexOf(term + ' ') !== -1) score += 20;
+                else if (titleLower.indexOf(term) !== -1) score += 10;
+                
+                if (descLower.indexOf(term) !== -1) score += 5;
+                if (tagsLower.indexOf(term) !== -1) score += 8;
+            });
+            
+            if (score > 0) {
+                scoredResults.push({
+                    item: item,
+                    score: score
+                });
+            }
+        });
+        
+        scoredResults.sort(function(a, b) {
+            return b.score - a.score;
+        });
+        
+        if (scoredResults.length === 0) {
+            resultsContainer.innerHTML = '<div class="search-no-results">No pages found matching "' + escapeHtml(query) + '"</div>';
+            selectedSearchResultIndex = -1;
+            return;
+        }
+        
+        var topResults = scoredResults.slice(0, 8);
+        var resultsHtml = '';
+        topResults.forEach(function(res, index) {
+            var item = res.item;
+            var finalUrl = item.url.indexOf('http') === 0 ? item.url : (pathPrefix + item.url);
+            
+            var titleDisplay = escapeHtml(item.title);
+            var descDisplay = escapeHtml(item.desc);
+            
+            terms.forEach(function(term) {
+                var regex = new RegExp('(' + escapeRegExp(term) + ')', 'gi');
+                titleDisplay = titleDisplay.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #fff; border-radius: 2px; padding: 0 2px;">$1</mark>');
+                descDisplay = descDisplay.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.2); color: #fff; border-radius: 2px; padding: 0 2px;">$1</mark>');
+            });
+            
+            resultsHtml += 
+                '<a href="' + finalUrl + '" class="search-result-item" data-index="' + index + '">' +
+                '  <div class="search-result-info">' +
+                '    <div class="search-result-title">' + titleDisplay + '</div>' +
+                '    <div class="search-result-desc">' + descDisplay + '</div>' +
+                '  </div>' +
+                '  <span class="search-result-category">' + item.cat + '</span>' +
+                '</a>';
+        });
+        
+        resultsContainer.innerHTML = resultsHtml;
+        selectedSearchResultIndex = -1;
+        
+        var resultItems = resultsContainer.querySelectorAll('.search-result-item');
+        resultItems.forEach(function(item, idx) {
+            item.addEventListener('mouseenter', function() {
+                setSelectedResult(idx);
+            });
+        });
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function setSelectedResult(index) {
+        var resultsContainer = document.getElementById('search-results');
+        if (!resultsContainer) return;
+        var items = resultsContainer.querySelectorAll('.search-result-item');
+        
+        if (selectedSearchResultIndex >= 0 && selectedSearchResultIndex < items.length) {
+            items[selectedSearchResultIndex].classList.remove('selected');
+        }
+        
+        selectedSearchResultIndex = index;
+        
+        if (selectedSearchResultIndex >= 0 && selectedSearchResultIndex < items.length) {
+            items[selectedSearchResultIndex].classList.add('selected');
+            items[selectedSearchResultIndex].scrollIntoView({ block: 'nearest' });
+        }
+    }
+
+    // Toggle Overlays
+    function openSearch() {
+        var modal = document.getElementById('search-modal');
+        if (!modal) return;
+        closeNotesQuietly();
+        modal.classList.add('open');
+        document.body.classList.add('overlay-open');
+        
+        var searchBtn = document.getElementById('nav-search-btn');
+        if (searchBtn) searchBtn.classList.add('active');
+        
+        var input = document.getElementById('search-input');
+        if (input) {
+            input.value = '';
+            input.focus();
+            renderSearchResults('');
+        }
+    }
+
+    function closeSearch() {
+        var modal = document.getElementById('search-modal');
+        if (!modal) return;
+        modal.classList.remove('open');
+        
+        var searchBtn = document.getElementById('nav-search-btn');
+        if (searchBtn) searchBtn.classList.remove('active');
+        
+        if (!document.getElementById('notes-drawer').classList.contains('open')) {
+            document.body.classList.remove('overlay-open');
+        }
+    }
+
+    function openNotes() {
+        var drawer = document.getElementById('notes-drawer');
+        if (!drawer) return;
+        closeSearchQuietly();
+        drawer.classList.add('open');
+        document.body.classList.add('overlay-open');
+        
+        var notesBtn = document.getElementById('nav-notes-btn');
+        if (notesBtn) notesBtn.classList.add('active');
+        
+        var textarea = document.getElementById('note-textarea');
+        if (textarea) {
+            textarea.value = '';
+            textarea.focus();
+        }
+        var pageTitleEl = document.getElementById('notes-current-page-title');
+        if (pageTitleEl) {
+            pageTitleEl.textContent = currentPageTitle;
+        }
+        renderNotes();
+    }
+
+    function closeNotes() {
+        var drawer = document.getElementById('notes-drawer');
+        if (!drawer) return;
+        drawer.classList.remove('open');
+        
+        var notesBtn = document.getElementById('nav-notes-btn');
+        if (notesBtn) notesBtn.classList.remove('active');
+        
+        if (!document.getElementById('search-modal').classList.contains('open')) {
+            document.body.classList.remove('overlay-open');
+        }
+    }
+    
+    function closeSearchQuietly() {
+        var modal = document.getElementById('search-modal');
+        if (modal) modal.classList.remove('open');
+        var searchBtn = document.getElementById('nav-search-btn');
+        if (searchBtn) searchBtn.classList.remove('active');
+    }
+    
+    function closeNotesQuietly() {
+        var drawer = document.getElementById('notes-drawer');
+        if (drawer) drawer.classList.remove('open');
+        var notesBtn = document.getElementById('nav-notes-btn');
+        if (notesBtn) notesBtn.classList.remove('active');
+    }
+
+    // Initialize overlays and events
+    function initOverlays() {
+        if (document.getElementById('workspace-overlays-container')) return;
+        
+        var overlayDiv = document.createElement('div');
+        overlayDiv.id = 'workspace-overlays-container';
+        overlayDiv.innerHTML = searchModalHtml + notesDrawerHtml;
+        document.body.appendChild(overlayDiv);
+        
+        var searchBtn = document.getElementById('nav-search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var searchModalOpen = document.getElementById('search-modal').classList.contains('open');
+                if (searchModalOpen) closeSearch();
+                else openSearch();
+            });
+        }
+        
+        var closeSearchBtn = document.getElementById('close-search-btn');
+        if (closeSearchBtn) {
+            closeSearchBtn.addEventListener('click', closeSearch);
+        }
+        
+        var searchModal = document.getElementById('search-modal');
+        if (searchModal) {
+            searchModal.addEventListener('click', function(e) {
+                if (e.target === searchModal) {
+                    closeSearch();
+                }
+            });
+        }
+        
+        var searchInput = document.getElementById('search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                renderSearchResults(this.value);
+            });
+            
+            searchInput.addEventListener('keydown', function(e) {
+                var resultsContainer = document.getElementById('search-results');
+                if (!resultsContainer) return;
+                var items = resultsContainer.querySelectorAll('.search-result-item');
+                
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (items.length > 0) {
+                        var nextIdx = (selectedSearchResultIndex + 1) % items.length;
+                        setSelectedResult(nextIdx);
+                    }
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (items.length > 0) {
+                        var prevIdx = selectedSearchResultIndex - 1;
+                        if (prevIdx < 0) prevIdx = items.length - 1;
+                        setSelectedResult(prevIdx);
+                    }
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (selectedSearchResultIndex >= 0 && selectedSearchResultIndex < items.length) {
+                        items[selectedSearchResultIndex].click();
+                    } else if (items.length > 0) {
+                        items[0].click();
+                    }
+                }
+            });
+        }
+        
+        var notesBtn = document.getElementById('nav-notes-btn');
+        if (notesBtn) {
+            notesBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var notesDrawerOpen = document.getElementById('notes-drawer').classList.contains('open');
+                if (notesDrawerOpen) closeNotes();
+                else openNotes();
+            });
+        }
+        
+        var closeNotesBtn = document.getElementById('close-notes-btn');
+        if (closeNotesBtn) {
+            closeNotesBtn.addEventListener('click', closeNotes);
+        }
+        
+        var notesDrawer = document.getElementById('notes-drawer');
+        if (notesDrawer) {
+            notesDrawer.addEventListener('click', function(e) {
+                if (e.target === notesDrawer) {
+                    closeNotes();
+                }
+            });
+        }
+        
+        var addNoteBtn = document.getElementById('add-note-btn');
+        var noteTextarea = document.getElementById('note-textarea');
+        if (addNoteBtn && noteTextarea) {
+            addNoteBtn.addEventListener('click', function() {
+                addNote(noteTextarea.value);
+                noteTextarea.value = '';
+            });
+            noteTextarea.addEventListener('keydown', function(e) {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    addNoteBtn.click();
+                }
+            });
+        }
+        
+        var copyNotesBtn = document.getElementById('copy-notes-btn');
+        if (copyNotesBtn) {
+            copyNotesBtn.addEventListener('click', copyNotes);
+        }
+        
+        var clearNotesBtn = document.getElementById('clear-notes-btn');
+        if (clearNotesBtn) {
+            clearNotesBtn.addEventListener('click', clearNotes);
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                var searchModalOpen = document.getElementById('search-modal').classList.contains('open');
+                if (searchModalOpen) {
+                    closeSearch();
+                } else {
+                    openSearch();
+                }
+            } else if (e.key === 'Escape') {
+                closeSearch();
+                closeNotes();
+            }
+        });
+        
+        renderNotes();
+    }
+
+    // Mount header
+    function mountHeader() {
+        var mount = document.getElementById('site-header');
+        if (mount) {
+            mount.innerHTML = html;
+            // Initialize overlays after mounting header to ensure elements are ready
+            initOverlays();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', mountHeader);
+
     if (document.readyState !== 'loading') {
-        var mountNow = document.getElementById('site-header');
-        if (mountNow) mountNow.innerHTML = html;
+        mountHeader();
     }
 })();
