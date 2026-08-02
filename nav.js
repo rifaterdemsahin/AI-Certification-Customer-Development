@@ -14,10 +14,10 @@
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
             type: 'dropdown', label: 'Stages', emoji: '🗺️', className: 'nav-stages', items: [
-                ['stage-customer-discovery.html', '1. Discovery'],
-                ['stage-customer-validation.html', '2. Validation'],
-                ['stage-customer-creation.html', '3. Creation'],
-                ['stage-company-building.html', '4. Building']
+                ['stage-customer-discovery.html', '🔍 1. Discovery'],
+                ['stage-customer-validation.html', '📈 2. Validation'],
+                ['stage-customer-creation.html', '⚡ 3. Creation'],
+                ['stage-company-building.html', '🏢 4. Building']
             ]
         },
         {
@@ -26,84 +26,84 @@
                 ['cd-interview-guide.html', '🎤 Interview Guide'],
                 ['cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
                 ['cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
-                ['cd-hypotheses.html', '1. Hypothesis'],
-                ['cd-hyp-product.html', '&nbsp;&nbsp;↳ Product Hypothesis'],
-                ['cd-hyp-customer-problem.html', '&nbsp;&nbsp;↳ Customer &amp; Problem Hypothesis'],
-                ['cd-hyp-distribution-pricing.html', '&nbsp;&nbsp;↳ Distribution &amp; Pricing Hypothesis'],
-                ['cd-hyp-demand-creation.html', '&nbsp;&nbsp;↳ Demand Creation Hypothesis'],
-                ['cd-hyp-market-type.html', '&nbsp;&nbsp;↳ Market Type Hypothesis'],
-                ['cd-hyp-competitive.html', '&nbsp;&nbsp;↳ Competitive Hypothesis'],
-                ['cd-test-problem.html', '2. Test Problem Hypothesis'],
-                ['cd-tp-first-contacts.html', '&nbsp;&nbsp;↳ First Contacts'],
-                ['cd-tp-problem-presentation.html', '&nbsp;&nbsp;↳ Problem Presentation'],
-                ['cd-tp-customer-understanding.html', '&nbsp;&nbsp;↳ Customer Understanding'],
-                ['cd-tp-market-knowledge.html', '&nbsp;&nbsp;↳ Market Knowledge'],
-                ['cd-test-product.html', '3. Test Product Hypothesis'],
-                ['cd-tpr-first-reality-check.html', '&nbsp;&nbsp;↳ First Reality Check'],
-                ['cd-tpr-product-presentation.html', '&nbsp;&nbsp;↳ Product Presentation'],
-                ['cd-tpr-more-customer-visits.html', '&nbsp;&nbsp;↳ More Customer Visits'],
-                ['cd-tpr-second-reality-check.html', '&nbsp;&nbsp;↳ Second Reality Check'],
-                ['cd-verify.html', '4. Verify'],
-                ['cd-verify-product.html', '&nbsp;&nbsp;↳ Verify The Product'],
-                ['cd-verify-problem.html', '&nbsp;&nbsp;↳ Verify The Problem'],
-                ['cd-verify-business-model.html', '&nbsp;&nbsp;↳ Verify The Business Model'],
-                ['cd-verify-iterate-exit.html', '&nbsp;&nbsp;↳ Iterate Or Exit']
+                ['cd-hypotheses.html', '💭 1. Hypothesis'],
+                ['cd-hyp-product.html', '&nbsp;&nbsp;↳ 📦 Product Hypothesis'],
+                ['cd-hyp-customer-problem.html', '&nbsp;&nbsp;↳ 👥 Customer &amp; Problem Hypothesis'],
+                ['cd-hyp-distribution-pricing.html', '&nbsp;&nbsp;↳ 💰 Distribution &amp; Pricing Hypothesis'],
+                ['cd-hyp-demand-creation.html', '&nbsp;&nbsp;↳ 📣 Demand Creation Hypothesis'],
+                ['cd-hyp-market-type.html', '&nbsp;&nbsp;↳ 🏛️ Market Type Hypothesis'],
+                ['cd-hyp-competitive.html', '&nbsp;&nbsp;↳ ⚔️ Competitive Hypothesis'],
+                ['cd-test-problem.html', '🧪 2. Test Problem Hypothesis'],
+                ['cd-tp-first-contacts.html', '&nbsp;&nbsp;↳ 🤝 First Contacts'],
+                ['cd-tp-problem-presentation.html', '&nbsp;&nbsp;↳ 📊 Problem Presentation'],
+                ['cd-tp-customer-understanding.html', '&nbsp;&nbsp;↳ 🧠 Customer Understanding'],
+                ['cd-tp-market-knowledge.html', '&nbsp;&nbsp;↳ 🌐 Market Knowledge'],
+                ['cd-test-product.html', '🛠️ 3. Test Product Hypothesis'],
+                ['cd-tpr-first-reality-check.html', '&nbsp;&nbsp;↳ ⚠️ First Reality Check'],
+                ['cd-tpr-product-presentation.html', '&nbsp;&nbsp;↳ 🖥️ Product Presentation'],
+                ['cd-tpr-more-customer-visits.html', '&nbsp;&nbsp;↳ 👥 More Customer Visits'],
+                ['cd-tpr-second-reality-check.html', '&nbsp;&nbsp;↳ ⚠️ Second Reality Check'],
+                ['cd-verify.html', '🏁 4. Verify'],
+                ['cd-verify-product.html', '&nbsp;&nbsp;↳ 🛠️ Verify The Product'],
+                ['cd-verify-problem.html', '&nbsp;&nbsp;↳ 🛑 Verify The Problem'],
+                ['cd-verify-business-model.html', '&nbsp;&nbsp;↳ 📊 Verify The Business Model'],
+                ['cd-verify-iterate-exit.html', '&nbsp;&nbsp;↳ 🚪 Iterate Or Exit']
             ]
         },
         {
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
-                ['hypothesis.html', 'Hypothesis'],
-                ['focus.html', 'Focus'],
-                ['target-audience.html', 'Target Audience'],
-                ['risk-analysis.html', 'Risk Analysis'],
-                ['requirements.html', 'Requirements'],
-                ['business-plan-summary.html', 'Business Plan Summary']
+                ['hypothesis.html', '💭 Hypothesis'],
+                ['focus.html', '🎯 Focus'],
+                ['target-audience.html', '👥 Target Audience'],
+                ['risk-analysis.html', '⚠️ Risk Analysis'],
+                ['requirements.html', '📋 Requirements'],
+                ['business-plan-summary.html', '📄 Business Plan Summary']
             ]
         },
         {
             type: 'dropdown', label: 'Business Model', emoji: '📊', className: 'nav-business', items: [
-                ['business-model-canvas.html', 'Business Model Canvas'],
-                ['value-proposition.html', 'Value Proposition'],
-                ['bmc-customer-segments.html', 'Customer Segments'],
-                ['bmc-channels.html', 'Channels'],
-                ['bmc-customer-relationships.html', 'Customer Relationships'],
-                ['bmc-revenue-streams.html', 'Revenue Streams'],
-                ['bmc-key-resources.html', 'Key Resources'],
-                ['bmc-key-activities.html', 'Key Activities'],
-                ['bmc-key-partners.html', 'Key Partners'],
-                ['bmc-cost-structure.html', 'Cost Structure']
+                ['business-model-canvas.html', '🖼️ Business Model Canvas'],
+                ['value-proposition.html', '💎 Value Proposition'],
+                ['bmc-customer-segments.html', '👥 Customer Segments'],
+                ['bmc-channels.html', '📣 Channels'],
+                ['bmc-customer-relationships.html', '🤝 Customer Relationships'],
+                ['bmc-revenue-streams.html', '💰 Revenue Streams'],
+                ['bmc-key-resources.html', '🏗️ Key Resources'],
+                ['bmc-key-activities.html', '⚙️ Key Activities'],
+                ['bmc-key-partners.html', '🤝 Key Partners'],
+                ['bmc-cost-structure.html', '📉 Cost Structure']
             ]
         },
         {
             type: 'dropdown', label: 'Growth', emoji: '📈', className: 'nav-growth', items: [
-                ['sales-pipeline.html', 'Sales Pipeline'],
-                ['flywheel.html', 'Flywheel'],
-                ['quality-gates.html', 'Quality Gates'],
-                ['test-metrics.html', 'Test & Metrics']
+                ['sales-pipeline.html', '📊 Sales Pipeline'],
+                ['flywheel.html', '🔄 Flywheel'],
+                ['quality-gates.html', '🚪 Quality Gates'],
+                ['test-metrics.html', '📈 Test &amp; Metrics']
             ]
         },
         {
             type: 'dropdown', label: 'Components', emoji: '🧩', className: 'nav-components', items: [
-                ['comp-problem-solution.html', 'Problem-Solution Fit'],
-                ['comp-mvp.html', 'MVP'],
-                ['comp-market.html', 'Market &amp; Audience'],
-                ['comp-business-model.html', 'Business Model'],
-                ['comp-funnel.html', 'Funnel &amp; Channels'],
-                ['comp-pmf.html', 'Product-Market Fit'],
-                ['comp-roadmap.html', 'Sales &amp; Marketing Roadmap'],
-                ['comp-creation-validation.html', 'Creation Validation &amp; Triggers'],
-                ['comp-scale-organization.html', 'Scale Organization']
+                ['comp-problem-solution.html', '🛑 Problem-Solution Fit'],
+                ['comp-mvp.html', '📦 MVP'],
+                ['comp-market.html', '🌐 Market &amp; Audience'],
+                ['comp-business-model.html', '📊 Business Model'],
+                ['comp-funnel.html', '📣 Funnel &amp; Channels'],
+                ['comp-pmf.html', '💎 Product-Market Fit'],
+                ['comp-roadmap.html', '🗺️ Sales &amp; Marketing Roadmap'],
+                ['comp-creation-validation.html', '⚡ Creation Validation &amp; Triggers'],
+                ['comp-scale-organization.html', '🏢 Scale Organization']
             ]
         },
         {
             type: 'dropdown', label: 'Docs', emoji: '📄', className: 'nav-docs', items: [
-                ['markdown_renderer.html?src=README.md', 'README'],
-                ['markdown_renderer.html?src=gemini.md', 'Project Rationale'],
-                ['markdown_renderer.html?src=HYPOTHESIS.md', 'Hypothesis Tracker Full Doc'],
-                ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', 'Acidity Check Report'],
-                ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', 'Market Validation Argument'],
-                ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', 'AI Adoption &amp; Skills Gap'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.0.md', 'Exam Prep &amp; Student Behavior']
+                ['markdown_renderer.html?src=README.md', '📖 README'],
+                ['markdown_renderer.html?src=gemini.md', '🧠 Project Rationale'],
+                ['markdown_renderer.html?src=HYPOTHESIS.md', '📊 Hypothesis Tracker Full Doc'],
+                ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report'],
+                ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
+                ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '🤖 AI Adoption &amp; Skills Gap'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.0.md', '🧠 Exam Prep &amp; Student Behavior']
             ]
         }
     ];
