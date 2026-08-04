@@ -48,7 +48,7 @@
                         </li>
                         <li class="info-item">
                             <span class="info-label">Current Status:</span>
-                            <span class="info-value" style="color: var(--color-warning);">Hypothesized</span>
+                            <span class="info-value" style="color: var(--color-warning);">🟡 In Testing &mdash; first data point</span>
                         </li>
                     </ul>
                 </div>
@@ -153,6 +153,37 @@
             </div>
         </section>
 
+        <!-- First Real Evidence -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📈 First Real Evidence: Published Video Data</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    The first published MVP video &mdash; <a href="https://youtu.be/F8IBooe3bXY" target="_blank" style="color: var(--color-primary); text-decoration: underline;">youtu.be/F8IBooe3bXY</a> &mdash; has real YouTube Studio Analytics attached, logged 2026-08-04. This is the same 68%-class data point tracked on the <a href="content-analysis.html" style="color: var(--color-primary); text-decoration: underline;">Content Analysis</a> log and <a href="evidence-map.html" style="color: var(--color-primary); text-decoration: underline;">Evidence Map</a>.
+                </p>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-val" style="color: var(--color-success);">68.5%</div>
+                        <div class="metric-lbl">Average percentage viewed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-val">0:07</div>
+                        <div class="metric-lbl">Average view duration</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-val">40</div>
+                        <div class="metric-lbl">Views since published</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-val">0.1 hrs</div>
+                        <div class="metric-lbl">Watch time since published</div>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 0.9rem;">
+                    <strong>Reading this data point:</strong> the 68.5% average percentage viewed clears the &gt;40% MVP watch gate defined above &mdash; the video-quality signal is real, not just hypothesized. YouTube's own "typical performance" comparison shows this video is currently running below the channel's usual reach (40 views vs. ~210 typical, 0.1 vs. ~5 watch-time hours), and subscriber change from the video is not yet measurable. In other words: small audience so far, but the people who do watch, watch to the end &mdash; a retention win, not yet a reach or subscriber-growth win (that's <a href="hypothesis.html" style="color: var(--color-primary); text-decoration: underline;">H13</a>'s bar). One video is a data point, not the catalog-wide average <a href="hypothesis.html" style="color: var(--color-primary); text-decoration: underline;">H10</a> requires.
+                </p>
+            </div>
+        </section>
+
         <!-- MVP Animation Demo -->
         <section class="content-section animate-fade-in">
             <h2 class="section-title">🎥 MVP Animation Sample</h2>
@@ -194,9 +225,14 @@
     </main>
 
     <footer>
-        <div class="footer-container">
-            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
-            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added the first real published-video evidence (68.5% avg. percentage viewed on youtu.be/F8IBooe3bXY) with a link to the full <a href="content-analysis.html" style="color: var(--color-primary); text-decoration: underline;">Content Analysis</a> log (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/comp-mvp.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/comp-mvp.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
         </div>
     </footer>
 
