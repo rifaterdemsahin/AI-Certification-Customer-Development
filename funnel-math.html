@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funnel Math | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="comp-funnel.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Funnel &amp; Channels Spec
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-info);">
+            <span class="badge" style="background-color: rgba(6, 182, 212, 0.15); color: #cffafe; border-color: rgba(6, 182, 212, 0.3);">Growth &middot; Funnel Math</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🧮 Funnel Math: Views Needed &rarr; $10,000</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Acidity check Finding F5: <code>comp-funnel.html</code> (H7: 10% video&rarr;newsletter CTR, 2% newsletter&rarr;cohort) and <code>comp-business-model.html</code> (H4: 1% of views&rarr;$10/mo membership) describe <strong>two different funnels to two different offers</strong>, and neither was ever worked backward into "views needed to hit the $10k gate." This page does that arithmetic explicitly.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎯 The Target</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary);">
+                    The Stage 2&rarr;3 exit gate (H9, see <a href="stage-customer-creation.html" style="color: var(--color-info);">Stage 3</a>) is <strong>$10,000</strong> gross from a cohort launch. At the stated $250 cohort price point, that's <strong>40 paying seats</strong> in one launch window (or 20 seats at the $500 end of the range &mdash; this page uses 40 &times; $250 as the worked example throughout).
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📣 Path A &mdash; The Cohort Funnel (H7)</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Working backward from 40 cohort buyers through H7's stated conversion rates:</p>
+                <div class="grid">
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">40</div>
+                            <div class="metric-lbl">Cohort buyers needed</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">2,000</div>
+                            <div class="metric-lbl">Newsletter subs needed (40 &divide; 2%)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">20,000</div>
+                            <div class="metric-lbl">Video views needed (2,000 &divide; 10%)</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1.5rem;"><strong>Result: ~20,000 total video views, spread across the catalog, are needed to fill a 40-seat cohort at H7's stated rates.</strong></p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">👥 Path B &mdash; The Membership Funnel (H4)</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    H4 converts views directly into $10/mo members, not cohort seats &mdash; a different offer with recurring, not lump-sum, revenue. Per <a href="unit-economics.html" style="color: var(--color-info);">Unit Economics</a>, a member who stays 10 months is worth $100 lifetime. To reach $10,000 through membership revenue alone:
+                </p>
+                <div class="grid">
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">100</div>
+                            <div class="metric-lbl">10-month members needed (100 &times; $100 = $10,000)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">10,000</div>
+                            <div class="metric-lbl">Video views needed (100 &divide; 1%)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">~10 months</div>
+                            <div class="metric-lbl">Time for that $10,000 to fully accrue</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spec-box" style="border-left-color: var(--color-warning); margin-top: 1.5rem;">
+                    <div class="spec-title">⚠️ Why Path A and Path B aren't interchangeable</div>
+                    <div class="spec-desc">Path A produces $10,000 in a single launch window; Path B produces the same $10,000 only after ~10 months of retained subscriptions. Treating H4 as an alternate route to the same gate (as the site implicitly does today) confuses a lump-sum revenue test with a slow-drip retention test &mdash; they answer different questions. The $10k gate, as currently written, is effectively a <strong>cohort-launch gate (Path A)</strong>, not a membership gate, unless it's explicitly redefined as cumulative revenue over a stated window.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Sensitivity: How Much the Funnel Assumptions Matter</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Path A's 20,000-view estimate is only as good as the 10%/2% assumptions behind it. Nothing in the repo has measured either rate yet (both H4 and H7 are still Hypothesized/In Testing). Varying them shows the real range of uncertainty:</p>
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Scenario</th>
+                            <th style="padding: 0.75rem 0.5rem;">View&rarr;Newsletter CTR</th>
+                            <th style="padding: 0.75rem 0.5rem;">Newsletter&rarr;Cohort Conv.</th>
+                            <th style="padding: 0.75rem 0.5rem;">Views needed for 40 seats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem;">Conservative</td>
+                            <td style="padding: 0.75rem 0.5rem;">5%</td>
+                            <td style="padding: 0.75rem 0.5rem;">1%</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong>80,000</strong></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem;">Stated in H7 (base case)</td>
+                            <td style="padding: 0.75rem 0.5rem;">10%</td>
+                            <td style="padding: 0.75rem 0.5rem;">2%</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong>20,000</strong></td>
+                        </tr>
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem;">Optimistic</td>
+                            <td style="padding: 0.75rem 0.5rem;">15%</td>
+                            <td style="padding: 0.75rem 0.5rem;">3%</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong>~8,900</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--text-secondary); margin-top: 1.5rem;">
+                    The real requirement could be anywhere from ~9,000 to 80,000 views depending on which assumption holds &mdash; an 8x range. Worth noting: the H13 subscriber-growth target (baseline ~30 &rarr; ~30,000, see <a href="hypothesis.html" style="color: var(--color-info);">Hypothesis Tracker</a>) is the same order of magnitude as the base-case 20,000-view figure, which is a useful cross-check once real view/subscriber data exists.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">✅ Recommended Fix</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">📏</span><span style="color: var(--text-secondary);">Instrument real view&rarr;CTR&rarr;newsletter&rarr;cohort numbers starting with the free Sunday cohort funnel (see <a href="test-plan.html" style="color: var(--color-info);">Test Plan</a>) instead of carrying forward two uncombined guesses.</span></li>
+                    <li><span class="emoji">🔀</span><span style="color: var(--text-secondary);">Decide explicitly whether H4 (membership) counts toward the $10k gate at all, or whether the gate is Path A (cohort) only &mdash; see <a href="validation-repeat-gate.html" style="color: var(--color-info);">Validation Repeat Gate</a> for the revised gate definition.</span></li>
+                    <li><span class="emoji">🧮</span><span style="color: var(--text-secondary);">Re-run this worked calculation once real CTR/conversion data exists, and replace the sensitivity table above with actuals.</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; backward-calculated views-needed-for-$10k arithmetic reconciling H4 and H7, addressing acidity check Finding F5 (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/funnel-math.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/funnel-math.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

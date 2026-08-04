@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Economics | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="bmc-revenue-streams.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to BMC: Revenue Streams
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-success);">
+            <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #a7f3d0; border-color: rgba(16, 185, 129, 0.3);">Growth &middot; Unit Economics</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">💵 Unit Economics</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Per-customer economics for both revenue lines, priced against the founder's real opportunity cost as an <strong>inside-IR35 contractor at &pound;525/day</strong>. This is the per-unit companion to <a href="cost-side-model.html" style="color: var(--color-success);">Cost-Side Model</a>, which covers the business-level cost stack.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧑‍💻 The Founder's Time Benchmark</h2>
+            <div class="card">
+                <div class="grid">
+                    <div class="col-6">
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">Day rate:</span><span class="info-value">&pound;525/day, inside IR35</span></li>
+                            <li class="info-item"><span class="info-label">Implied hourly (8hr day):</span><span class="info-value">&pound;65.63/hr</span></li>
+                            <li class="info-item"><span class="info-label">Illustrative USD:</span><span class="info-value">~$83/hr (at an illustrative $1.27/&pound; rate &mdash; confirm the live FX rate before using this for real decisions)</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                            This isn't lost contracting income directly &mdash; content and cohort work happen in contract-free hours (see <a href="single-founder-bandwidth.html" style="color: var(--color-success);">Single-Founder Bandwidth</a>), not during paid contract time. But it's the best available number for what an hour of the founder's skilled time is worth, so it's used throughout this page as the opportunity-cost yardstick against which cohort and membership pricing is measured.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⭐ Cohort Seat: $250 / 8 Weeks</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    The $250 tier buys 8 weeks of live, 1-on-1 supported sessions (reviews and feedback included), delivered in the existing weekly Sunday 9&ndash;11pm slot.
+                </p>
+                <div class="grid">
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">16 hrs</div>
+                            <div class="metric-lbl">Live delivery time (8 wks &times; 2 hrs)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">$15.63/hr</div>
+                            <div class="metric-lbl">Revenue per live-delivery hour, per seat</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val">~19%</div>
+                            <div class="metric-lbl">Of the ~$83/hr contracting benchmark</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spec-box" style="border-left-color: var(--color-warning); margin-top: 1.5rem;">
+                    <div class="spec-title">⚠️ This is a subsidized validation price, not a scaled price</div>
+                    <div class="spec-desc">The $16/hr live-delivery rate holds per seat, but the same 2-hour Sunday block is shared across every attendee in the cohort &mdash; with 4 students in the room (the current average, per <a href="evidence-map.html" style="color: var(--color-warning);">Evidence Map</a>), that's 4 &times; $250 = $1,000 for 16 hours, or ~$62.50/hr, close to the founder's own benchmark. Below ~4 concurrent students, the founder is pricing well under his own time's worth; this doesn't count the unpaid review/feedback time between sessions, which isn't tracked anywhere yet.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">👥 Membership: $10/mo</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    A member who stays subscribed for 10 months is worth <strong>$100 in lifetime revenue</strong> &mdash; the LTV figure used throughout this site's funnel math.
+                </p>
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="metric-card">
+                            <div class="metric-val">$100</div>
+                            <div class="metric-lbl">LTV at a 10-month average membership</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="metric-card">
+                            <div class="metric-val">2.5</div>
+                            <div class="metric-lbl">10-month members = value of one $250 cohort seat</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">No churn/retention model backs the "10 months" figure yet (see H11 in acidity check F11) &mdash; treat $100 LTV as a working assumption, not a measured average.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💰 Costs Per Unit</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">🤖</span><span style="color: var(--text-secondary);"><strong>AI infrastructure &amp; inference:</strong> $100/month, fixed &mdash; not allocated per seat or per member, see <a href="cost-side-model.html" style="color: var(--color-success);">Cost-Side Model</a> for the break-even math against this fixed cost.</span></li>
+                    <li><span class="emoji">📺</span><span style="color: var(--text-secondary);"><strong>Distribution/hosting:</strong> $0 &mdash; YouTube is the platform of record for course delivery, so there's no separate LMS or video-hosting bill.</span></li>
+                    <li><span class="emoji">💳</span><span style="color: var(--text-secondary);"><strong>Payment processing fees:</strong> not itemized anywhere in the repo yet &mdash; a small, real percentage of every $10/mo and $250 transaction that should be priced in before treating gross revenue as margin.</span></li>
+                    <li><span class="emoji">🎯</span><span style="color: var(--text-secondary);"><strong>CAC:</strong> $0 &mdash; acquisition is organic YouTube/LinkedIn by design (see <a href="focus.html" style="color: var(--color-success);">Focus</a>), so the only real cost per unit is the founder's delivery time above.</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; per-unit economics for the $250 cohort seat and $10/mo membership, priced against the founder's &pound;525/day IR35 contracting benchmark (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/unit-economics.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/unit-economics.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

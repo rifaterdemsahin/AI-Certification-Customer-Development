@@ -1,3 +1,5 @@
+> **Superseded by [`acidity-check-report-v1.1.0.md`](acidity-check-report-v1.1.0.md) (2026-08-04).** This version is kept as the historical baseline; findings below are shown as originally written, unresolved.
+
 # Acidity Check Report — AI Certification Helper Customer Development Model
 
 **Version:** 1.0.0

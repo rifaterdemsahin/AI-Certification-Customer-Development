@@ -10,6 +10,7 @@ This document explains the strategic rationale and business validation architect
     3. Open the specific updated page in the default browser for visual/functional verification.
     4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
     5. Output clickable links to that updated page at the very end of your final response.
+- **Report Versioning:** `reports/*.md` files version by filename (`-v1.0.md`, `-v1.1.0.md`, ...), not in-place edits. When a finding in one of these reports is resolved or changes, create the next versioned file, mark the resolution status directly next to the original finding (don't delete it), and add a superseded-by banner to the old file. `HYPOTHESIS.md` follows the same "always show status, never silently resolve" rule via its own version field and Change Log.
 
 ---
 

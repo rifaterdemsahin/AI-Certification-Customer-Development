@@ -79,7 +79,13 @@ Page families:
 - Standalone strategy/growth pages: `hypothesis.html`, `focus.html`,
   `target-audience.html`, `risk-analysis.html`, `requirements.html`,
   `business-plan-summary.html`, `sales-pipeline.html`, `flywheel.html`,
-  `quality-gates.html`, `test-metrics.html`.
+  `quality-gates.html`, `test-metrics.html`, `competitive-analysis.html`,
+  `evidence-map.html`, `single-founder-bandwidth.html` (Strategy) and
+  `funnel-math.html`, `unit-economics.html`, `cost-side-model.html`,
+  `test-plan.html`, `validation-repeat-gate.html`, `advertisement.html` (Growth)
+  — the newer batch (added 2026-08-04) each exist to close one specific gap named
+  in `reports/acidity-check-report-v1.1.0.md` (F3-F7); read that report before
+  assuming one of those gaps is still open.
 - `markdown_renderer.html?src=PATH` — renders any `.md` file in the repo as styled
   HTML (see below).
 
@@ -108,7 +114,7 @@ nested/indented in the dropdown to show the phase → sub-page hierarchy) ·
 business plan summary) · **Business Model** (canvas overview + value prop + the 9
 `bmc-*.html` blocks) · **Growth** (sales pipeline, flywheel, quality gates, test &
 metrics) · **Components** (the original 9 `comp-*.html` specs) · **Docs** (README,
-project rationale, agent guidelines, hypothesis tracker, and the 4 `reports/*.md`
+project rationale, agent guidelines, hypothesis tracker, and the 5 `reports/*.md`
 files — all linked via `markdown_renderer.html?src=...` rather than as raw `.md`
 links, so they render as styled pages instead of downloading/showing raw text).
 
@@ -202,3 +208,29 @@ here (see any existing page) — it's not considered a code smell in this codeba
   thresholds, e.g. specific A/B test and pricing-test targets.
 - `HYPOTHESIS.md` — the full premise → conclusion → status ledger behind every
   number on the site; bump its version and changelog when a number changes.
+
+## Report versioning convention
+
+`reports/*.md` files carry their version in the filename (e.g.
+`acidity-check-report-v1.0.md`, `acidity-check-report-v1.1.0.md`), unlike
+`HYPOTHESIS.md`, which bumps a version field in place inside a single file. When a
+report needs a substantive re-assessment (new evidence resolves or partially
+resolves a finding, or a founder decision changes a premise):
+1. **Create a new versioned file** (`reports/<name>-vX.Y.0.md`) rather than editing
+   the old one in place — old versions stay as the historical record of what was
+   known/claimed at that point in time.
+2. **Mark each finding's resolution status explicitly, in place** — don't delete a
+   resolved finding, annotate it (e.g. "F1. ... → ✅ RESOLVED (date)." or "→ 🟡
+   PARTIALLY ADDRESSED.") so a reader can see what changed and why without diffing
+   two files.
+3. **Add a one-line superseded banner to the top of the old version** linking
+   forward to the new one (see the top of `reports/acidity-check-report-v1.0.md`
+   for the pattern), and keep both versions linked from `nav.js`'s Docs group so
+   neither becomes unreachable.
+4. **Update every cross-reference** to the old filename — check `HYPOTHESIS.md`'s
+   header, `nav.js`, and any page that cites the report by name.
+
+This mirrors `HYPOTHESIS.md`'s own status legend (✅ Validated / 🟡 In Testing / ⚪
+Planned / ⚠️ Claimed-unverified) — the goal in both cases is that nothing on this
+site is ever silently marked resolved or silently made to look permanently
+unresolved; the status is always visible and dated at the point it changed.

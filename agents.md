@@ -52,6 +52,16 @@ All web app page extensions or styles must uphold premium visual standards:
 
 ---
 
+## 📊 Report Versioning & Resolution Tracking
+
+`reports/*.md` files (e.g. `acidity-check-report-v1.0.md`) carry their version number **in the filename**, unlike `HYPOTHESIS.md`, which bumps a version field in place. When new evidence resolves, partially resolves, or changes a finding in one of these reports, AI agents **MUST NOT** silently edit the old file. Instead:
+1. **Create a new file** at the next version (`reports/<name>-vX.Y.0.md`) rather than overwriting the old one — old versions are the historical record.
+2. **Annotate each finding's resolution status in place**, e.g. `"F1. ... → ✅ RESOLVED (2026-08-01)."` or `"→ 🟡 PARTIALLY ADDRESSED."` — never delete a finding just because it's resolved.
+3. **Add a one-line superseded-by banner** at the top of the old file, linking forward to the new one.
+4. **Update every cross-reference** to the old filename: `HYPOTHESIS.md`'s header, `nav.js`'s Docs group, and any page citing the report by name.
+
+The same "always show status, never silently resolve" rule applies to `HYPOTHESIS.md` itself — bump its version field and Change Log (see the file's own header) rather than quietly rewriting a hypothesis's conclusion.
+
 ## 🗂️ Navigation & Link Integrity
 
 * **Single source of truth:** all top nav grouping lives in `nav.js`'s `groups`
