@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Analysis | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="todo.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Task List
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-info);">
+            <span class="badge" style="background-color: rgba(6, 182, 212, 0.15); color: #cffafe; border-color: rgba(6, 182, 212, 0.3);">Growth &middot; Content Analysis</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🎬 Content Analysis</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Where <a href="test-metrics.html" style="color: var(--color-info);">Test &amp; Metrics</a> defines the target retention threshold, this page tracks how each published animated video actually performs against it &mdash; the log behind <a href="hypothesis.html" style="color: var(--color-info);">H2</a>'s animated-format hypothesis and <a href="hypothesis.html" style="color: var(--color-info);">H10</a>'s catalog-wide MVP quality metric.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Per-Video Retention Log</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">The first real data point, logged 2026-08-04:</p>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-val" style="color: var(--color-success);">68%</div>
+                        <div class="metric-lbl">Average view retention</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-val">&gt;40%</div>
+                        <div class="metric-lbl">MVP target (H2 / H10)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-val">1</div>
+                        <div class="metric-lbl">Videos measured so far</div>
+                    </div>
+                </div>
+                <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 1.5rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Video</th>
+                            <th style="padding: 0.75rem 0.5rem;">Format</th>
+                            <th style="padding: 0.75rem 0.5rem;">Avg. retention</th>
+                            <th style="padding: 0.75rem 0.5rem;">Source</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.9rem;">
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem;">Animated short (first measured)</td>
+                            <td style="padding: 0.75rem 0.5rem;">Animated</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--color-success); font-weight: 600;">68%</td>
+                            <td style="padding: 0.75rem 0.5rem;">YouTube Studio Analytics</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.85rem;">
+                    One video clearing the target is not yet the catalog-wide average H10 requires, and no formal A/B test against a standard slide-deck format has run. As the 3-videos/week production baseline (see <a href="todo.html" style="color: var(--color-info);">Task List</a>) produces more published lessons, add each one's retention here to build a real trendline.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧮 What This Feeds</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-info);">
+                        <div class="spec-title">🎨 H2 &mdash; Animated format hypothesis</div>
+                        <div class="spec-desc">The first single-video proof point that animation clears the &gt;40% retention bar &mdash; see <a href="evidence-map.html" style="color: var(--color-info);">Evidence Map</a>.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-info);">
+                        <div class="spec-title">📦 H10 &mdash; Catalog-wide MVP quality metric</div>
+                        <div class="spec-desc">Needs every published video logged here to compute a real catalog-wide average, not just one video.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-info);">
+                        <div class="spec-title">📣 H7 &mdash; Funnel CTR/conversion rates</div>
+                        <div class="spec-desc">Retention data is a prerequisite for reconciling the funnel model against H4's view&rarr;membership figure &mdash; see <a href="funnel-math.html" style="color: var(--color-info);">Funnel Math</a>.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-info);">
+                        <div class="spec-title">📈 H13 &mdash; 1,000x subscriber growth</div>
+                        <div class="spec-desc">Higher-retention videos are the mechanism expected to drive per-video subscriber growth &mdash; see <a href="stage-customer-creation.html" style="color: var(--color-info);">Stage 3: Customer Creation</a>.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 See Also</h2>
+            <p style="color: var(--text-secondary);"><a href="todo.html" style="color: var(--color-info);">Task List</a> for the production baseline that feeds this log &middot; <a href="evidence-map.html" style="color: var(--color-info);">Evidence Map</a> for the full evidence writeup &middot; <a href="test-metrics.html" style="color: var(--color-info);">Test &amp; Metrics</a> for the target thresholds &middot; <a href="hypothesis.html" style="color: var(--color-info);">Hypothesis Tracker</a> for H2/H7/H10/H13.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; per-video retention log, seeded with the first real data point (68% on an animated short) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/content-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/content-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
