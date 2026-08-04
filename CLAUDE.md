@@ -10,6 +10,7 @@ Upon completing any task (especially page updates), always:
 3. Open the specific updated pages in the default browser using the Mac CLI `open` command (e.g., `open http://localhost:8000/bmc-channels.html`).
 4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
 5. Display clickable links to that updated page at the very end of your final response.
+6. Whenever a page is updated or a new page is added, link it to `HYPOTHESIS.md`: add or update the relevant hypothesis entry (premise → conclusion → status) to reference the page by filename, and cite the hypothesis ID (e.g. "see H10") from the page's content where it states a falsifiable claim. Bump `HYPOTHESIS.md`'s version and Change Log when you do this.
 
 ## What this project is
 

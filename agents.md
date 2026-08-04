@@ -30,6 +30,12 @@ For any page that receives functional or business content updates, the footer **
   </span>
   ```
 
+### 4. Hypothesis Linkage
+Whenever a page is updated or a new page is added, AI agents **MUST** cross-link it with `HYPOTHESIS.md`:
+* Add or update the relevant hypothesis entry (premise → conclusion → status) in `HYPOTHESIS.md` to reference the page by filename.
+* Cite the hypothesis ID (e.g. "see H10") from the page's own content wherever it states a falsifiable claim.
+* Bump `HYPOTHESIS.md`'s version field and Change Log whenever this linkage is added or changed.
+
 ---
 
 ## 💼 Core Business Principles & Context
