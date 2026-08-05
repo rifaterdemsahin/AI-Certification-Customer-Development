@@ -1,6 +1,6 @@
 # Hypothesis Tracker — AI Certification Helper
 
-**Version:** 1.11.1
+**Version:** 1.12.0
 **Date:** 2026-08-05
 **Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.1.0.md` (supersedes v1.0.0), `reports/market-validation-argument-v1.0.md`, `reports/ai-adoption-and-skills-gap-v1.0.md`, `reports/exam-prep-market-and-student-behavior-v1.0.md`, and `reports/business-model-confidence-v1.0.1.md` (a versioned, numeric confidence score computed over every hypothesis below, plus a whole-site integrity check — see `confidence-report.html`) where a status claim is not backed by evidence in the repo, or has since been resolved or changed by new research or a founder decision.
 
@@ -90,7 +90,7 @@
 ## Stage 3: Customer Creation
 
 ### H9 — $10,000 in Stage 2 revenue is the sole gate into Customer Creation (revised 2026-08-01)
-- **Source:** `comp-creation-validation.html`, `stage-customer-creation.html`, `gemini.md`
+- **Source:** `comp-creation-validation.html`, `stage-customer-creation.html`, `gemini.md`, `motivation.html`
 - **Premise 1:** Revenue is the strongest signal of real customer validation (stronger than survey or interest signals).
 - **Premise 2:** Customer Validation (Stage 2) must independently produce $10,000 worth of validated, paying customers before any Customer Creation or Company Building activity begins.
 - **Premise 3 (new):** This validation work is done solely by the founder, with no hires, specifically to keep the loop cheap and agile.
@@ -214,6 +214,7 @@
 
 ## Change Log
 
+- **v1.12.0** (2026-08-05): Scanned all 94 existing HTML pages and added `motivation.html` — a single "why this exists and how it makes money" synthesis page, tying the founder's motivation (H1, H2, H3, H8) to the three revenue streams (`bmc-revenue-streams.html`), the three ICP personas (`target-audience.html`, `bmc-customer-segments.html`), TAM/SAM/SOM sizing (H6), and the funnel arithmetic connecting views to the $10k gate (H4, H7, H9, H13). Also cites H11, H12, H15, H16, H17, H18. Registered in `nav.js`'s Strategy dropdown and search index, linked from `index.html`'s Strategy card, and cross-linked bidirectionally with `bmc-revenue-streams.html` and `target-audience.html`. Added `motivation.html` to H9's Source line as the primary money-gate hypothesis this page is built around. Includes a ready-to-use image-generation prompt for an infographic version of the ICP→funnel→revenue flow.
 - **v1.11.1** (2026-08-05): Added `calendar.html` — a chronological Milestone Calendar expanding H19's stage-level estimates into 17 individual named, dated events (5 already done, a "today" marker, and 11 estimated/date-TBD milestones spanning Discovery through Company Building). Registered in `nav.js`'s Growth dropdown and search index, linked from `index.html`, and cross-linked bidirectionally with `stage-timelines.html`. Updated H19's Source line to include the new page.
 - **v1.11.0** (2026-08-05): Added H19 (Cross-Stage) — founder-requested estimated start/exit date ranges for all four Customer Development stages, built from the single-founder bandwidth ceiling and pace already observed (8-week free cohort, 3-videos/week baseline). Created the new `stage-timelines.html` page (a table, an SVG horizontal timeline, and an explicit "estimates not commitments" caveat section), registered in `nav.js`'s Growth dropdown and search index, linked from `index.html`, and cross-linked bidirectionally with `quality-gates.html` and `single-founder-bandwidth.html`. Also documented on `stage-company-building.html` that the weekly audience follow-up / cohort-prep install reminders currently run manually by the founder (see `cohort-prep.html`) are a delegable task that moves to the Hire 2 Cohort Support Coordinator role — extends H11's existing coordinator-role premise, cross-linked bidirectionally with `cohort-prep.html`.
 - **v1.10.1** (2026-08-04): Re-ran the `business-model-sanity-check` skill and published `reports/business-model-confidence-v1.0.1.md` / `confidence-report.html` v1.0.1 — the Business Model Confidence Score rose from 38 to **44/100** (Site Integrity 60→80) after the 58-file uncommitted-work risk flagged in v1.0.0 was resolved: commit `ee6fc5f` committed all 58 files plus the newly added `cohort-prep.html` together. Hypothesis Validation Score is unchanged at 29/100 — no hypothesis status moved, only the site-integrity fix did. This demonstrates the versioning mechanism working as intended: re-run after a real change, publish a new version, never edit the prior one's numbers.

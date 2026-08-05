@@ -61,6 +61,7 @@
         },
         {
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
+                ['motivation.html', '🔥 Motivation'],
                 ['hypothesis.html', '💭 Hypothesis'],
                 ['focus.html', '🎯 Focus'],
                 ['target-audience.html', '👥 Target Audience'],
@@ -167,6 +168,7 @@
         { url: 'cd-verify-problem.html', title: 'Verify the Problem Fit', desc: 'Confirming that target students face real, severe pain points with existing training.', cat: 'Process', tags: 'verify problem pain points study' },
         { url: 'cd-verify-business-model.html', title: 'Verify the Business Model Fit', desc: 'Analyzing pricing model, customer acquisition cost, and revenue sustainability.', cat: 'Process', tags: 'verify business model pricing cost sustainability' },
         { url: 'cd-verify-iterate-exit.html', title: 'Iterate or Exit Gate', desc: 'The ultimate decision gate for Rifat: do we proceed, pivot, or stop?', cat: 'Process', tags: 'decision gate trigger pivot exit' },
+        { url: 'motivation.html', title: 'Motivation: Why & How This Makes Money', desc: 'Full-site synthesis of why the business exists, the three revenue streams, and the ICP personas tied to each one.', cat: 'Strategy', tags: 'motivation money revenue icp personas why founder' },
         { url: 'hypothesis.html', title: 'Core Business Hypotheses', desc: 'Comprehensive dashboard tracking all customer, value prop, and distribution hypotheses.', cat: 'Strategy', tags: 'dashboard hypotheses tracking assumptions' },
         { url: 'hyp-h1.html', title: 'H1 · Rising AI skills expectations', desc: 'Detail page with premise-conclusion-status SVG diagram for H1.', cat: 'Hypothesis Detail', tags: 'h1 hypothesis detail skills expectations svg diagram' },
         { url: 'hyp-h2.html', title: 'H2 · Animated content format', desc: 'Detail page with premise-conclusion-status SVG diagram for H2.', cat: 'Hypothesis Detail', tags: 'h2 hypothesis detail animated retention svg diagram' },
