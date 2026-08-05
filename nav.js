@@ -103,7 +103,8 @@
                 ['funnel-math.html', '🧮 Funnel Math'],
                 ['unit-economics.html', '💵 Unit Economics'],
                 ['cost-side-model.html', '📉 Cost-Side Model'],
-                ['validation-repeat-gate.html', '🚪 Validation Repeat Gate']
+                ['validation-repeat-gate.html', '🚪 Validation Repeat Gate'],
+                ['marketing-tactics.html', '📰 Marketing Tactics']
             ]
         },
         {
@@ -219,6 +220,7 @@
         { url: 'unit-economics.html', title: 'Unit Economics', desc: 'Per-seat and per-member economics for the $250 cohort and $10/mo membership, priced against the founder day-rate benchmark.', cat: 'Growth', tags: 'unit economics per seat per member margin day rate ir35' },
         { url: 'cost-side-model.html', title: 'Cost-Side Model', desc: 'Business-level cost stack, founder time-opportunity cost, and break-even math against the $100/mo infra cost.', cat: 'Growth', tags: 'cost side model break even infra opportunity cost' },
         { url: 'validation-repeat-gate.html', title: 'Validation Repeat Gate', desc: 'Revises the $10k Stage 2 exit gate to require 2 consecutive cohort launches instead of one.', cat: 'Growth', tags: 'validation repeat gate two launches revenue false positive' },
+        { url: 'marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines built on the Samuel Leeds urgency formula, each priced with a gain/loss ledger and a no-guarantee compliance rule.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds' },
         { url: 'todo.html', title: 'Task List', desc: 'Open production/build tasks: newsletter signup, 3-animations/week baseline, animated-video performance testing.', cat: 'Growth', tags: 'todo task list newsletter animations weekly baseline production' },
         { url: 'content-analysis.html', title: 'Content Analysis', desc: 'Per-video retention log tracking animated content performance against the 40% MVP target, seeded with a 68% first data point.', cat: 'Growth', tags: 'content analysis retention video performance analytics' },
         { url: 'cohort-prep.html', title: 'Cohort Prep', desc: 'Weekly WhatsApp/Discord install list and content preview that runs between live Sunday cohort sessions, so attendees arrive ready for hands-on work.', cat: 'Growth', tags: 'cohort prep whatsapp discord install setup weekly hands-on' },
