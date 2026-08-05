@@ -131,7 +131,8 @@
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report v1.0 (Historical)'],
                 ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
                 ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '🤖 AI Adoption &amp; Skills Gap'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.0.md', '🧠 Exam Prep &amp; Student Behavior']
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.0.md', '🧠 Exam Prep &amp; Student Behavior'],
+                ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification']
             ]
         }
     ];
