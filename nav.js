@@ -35,6 +35,7 @@
                 ['cd-interview-guide.html', '🎤 Interview Guide'],
                 ['cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
                 ['cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
+                ['cd-hypothesis-interview-questions.html', '🧪 Hypothesis Interview Questions'],
                 ['cd-hypotheses.html', '💭 1. Hypothesis'],
                 ['cd-hyp-product.html', '&nbsp;&nbsp;↳ 📦 Product Hypothesis'],
                 ['cd-hyp-customer-problem.html', '&nbsp;&nbsp;↳ 👥 Customer &amp; Problem Hypothesis'],
@@ -243,7 +244,8 @@
         { url: 'discovery/test-problem.html', title: 'Discovery: Test Problem Detail', desc: 'Test problem pain points and early adopter responses.', cat: 'Discovery Detail', tags: 'test problem pain points adopters responses' },
         { url: 'discovery/test-solution.html', title: 'Discovery: Test Solution Detail', desc: 'Test the MVP solution and check watch time / signup numbers.', cat: 'Discovery Detail', tags: 'test solution mvp watch time signup' },
         { url: 'discovery/verify-pivot.html', title: 'Discovery: Verify or Pivot Detail', desc: 'The final discovery verify-pivot checklist and scaling gate.', cat: 'Discovery Detail', tags: 'verify pivot checklist scaling gate threshold' },
-        { url: 'business-overview.html', title: 'Business Overview (One-Pager)', desc: 'Plain-language one-page reference for what the business does, who it is for, how it makes money, and current stage.', cat: 'References', tags: 'business overview one pager elevator pitch summary reference what does this do' }
+        { url: 'business-overview.html', title: 'Business Overview (One-Pager)', desc: 'Plain-language one-page reference for what the business does, who it is for, how it makes money, and current stage.', cat: 'References', tags: 'business overview one pager elevator pitch summary reference what does this do' },
+        { url: 'cd-hypothesis-interview-questions.html', title: 'Hypothesis Interview Questions', desc: 'Specific customer-interview questions mapped to every hypothesis (H1-H19), each with a listen-for cue for what would validate or kill it.', cat: 'Process', tags: 'interview questions hypothesis test validate kill customer discovery ask what to ask' }
     ];
 
     // Build current page URL (relative to root)
