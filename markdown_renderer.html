@@ -46,12 +46,24 @@
         }
 
         // Minimal, dependency-free markdown -> HTML converter.
+        // Returns { html: string, mermaidBlocks: string[] } -- mermaid source is applied
+        // as textContent after insertion (see below), never through innerHTML, so that
+        // literal "<br>" sequences inside node labels survive as text for Mermaid's own
+        // parser instead of being turned into real <br> elements by the browser first.
         function renderMarkdown(src) {
             // Extract SVG blocks before escaping HTML
             var svgBlocks = [];
             var placeholderSrc = src.replace(/<svg[\s\S]*?<\/svg>/gi, function(match) {
                 svgBlocks.push(match);
                 return '___SVG_PLACEHOLDER_' + (svgBlocks.length - 1) + '___';
+            });
+
+            // Extract ```mermaid fenced blocks before escaping, so the raw diagram
+            // source (including any literal "<br>" in node labels) is preserved exactly.
+            var mermaidBlocks = [];
+            placeholderSrc = placeholderSrc.replace(/```mermaid\n([\s\S]*?)\n```/g, function(match, code) {
+                mermaidBlocks.push(code);
+                return '___MERMAID_PLACEHOLDER_' + (mermaidBlocks.length - 1) + '___';
             });
 
             var escaped = escapeHtml(placeholderSrc);
@@ -69,6 +81,13 @@
                     listBuffer = [];
                     listType = null;
                 }
+            }
+
+            function splitTableRow(rowLine) {
+                var trimmed = rowLine.trim();
+                if (trimmed.charAt(0) === '|') trimmed = trimmed.slice(1);
+                if (trimmed.charAt(trimmed.length - 1) === '|') trimmed = trimmed.slice(0, -1);
+                return trimmed.split('|').map(function (c) { return c.trim(); });
             }
 
             function inlineFormat(text) {
@@ -91,6 +110,42 @@
                     flushList();
                     html.push(line.trim());
                     i++;
+                    continue;
+                }
+
+                // Mermaid placeholder block check -- emits an empty container; the raw
+                // source is assigned as textContent after insertion (see below).
+                var mermaidPlaceholderMatch = line.trim().match(/^___MERMAID_PLACEHOLDER_(\d+)___$/);
+                if (mermaidPlaceholderMatch) {
+                    flushList();
+                    html.push('<pre class="mermaid" data-mermaid-index="' + mermaidPlaceholderMatch[1] + '"></pre>');
+                    i++;
+                    continue;
+                }
+
+                // GFM-style table: a "| a | b |" row immediately followed by a
+                // "|---|---|" separator row.
+                var tableHeaderMatch = line.match(/^\s*\|(.+)\|\s*$/);
+                if (tableHeaderMatch && i + 1 < lines.length &&
+                    /^\s*\|?[\s:|-]+\|?\s*$/.test(lines[i + 1]) && /-/.test(lines[i + 1])) {
+                    flushList();
+                    var headerCells = splitTableRow(line);
+                    i += 2;
+                    var bodyRows = [];
+                    while (i < lines.length && /^\s*\|/.test(lines[i])) {
+                        bodyRows.push(splitTableRow(lines[i]));
+                        i++;
+                    }
+                    var tableHtml = '<div style="overflow-x:auto;"><table><thead><tr>';
+                    headerCells.forEach(function (c) { tableHtml += '<th>' + inlineFormat(c) + '</th>'; });
+                    tableHtml += '</tr></thead><tbody>';
+                    bodyRows.forEach(function (row) {
+                        tableHtml += '<tr>';
+                        row.forEach(function (c) { tableHtml += '<td>' + inlineFormat(c) + '</td>'; });
+                        tableHtml += '</tr>';
+                    });
+                    tableHtml += '</tbody></table></div>';
+                    html.push(tableHtml);
                     continue;
                 }
 
@@ -193,7 +248,40 @@
                 renderedHtml = renderedHtml.replace(placeholder, svgBlocks[j]);
             }
 
-            return renderedHtml;
+            return { html: renderedHtml, mermaidBlocks: mermaidBlocks };
+        }
+
+        // Mermaid is loaded from a CDN only when a document actually contains a
+        // ```mermaid block -- every other .md file on this site stays fully
+        // dependency-free/offline, per this page's usual convention. If the CDN
+        // is unreachable (offline), the raw diagram source stays visible as plain
+        // text inside the .mermaid <pre>, which is a reasonable degradation.
+        function loadMermaidThenRender() {
+            if (window.mermaid) {
+                runMermaid();
+                return;
+            }
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+            script.onload = runMermaid;
+            script.onerror = function () {
+                console.error('Could not load Mermaid from CDN; showing raw diagram source instead.');
+            };
+            document.head.appendChild(script);
+        }
+
+        function runMermaid() {
+            if (!window.mermaid) return;
+            var isLight = document.body.classList.contains('light-theme');
+            try {
+                window.mermaid.initialize({ startOnLoad: false, theme: isLight ? 'default' : 'dark', securityLevel: 'loose' });
+                var result = window.mermaid.run({ querySelector: '.mermaid' });
+                if (result && typeof result.catch === 'function') {
+                    result.catch(function (err) { console.error('Mermaid render error:', err); });
+                }
+            } catch (err) {
+                console.error('Mermaid render error:', err);
+            }
         }
 
         var params = new URLSearchParams(location.search);
@@ -216,7 +304,21 @@
                     var nameMatch = src.split('/').pop();
                     titleEl.textContent = nameMatch;
                     document.title = nameMatch + ' | AI Certification Helper';
-                    bodyEl.innerHTML = renderMarkdown(text);
+
+                    var rendered = renderMarkdown(text);
+                    bodyEl.innerHTML = rendered.html;
+
+                    // Assign raw mermaid source as textContent (not innerHTML) so that
+                    // literal "<br>" sequences inside node labels stay as text for
+                    // Mermaid's own parser instead of becoming real <br> elements.
+                    var mermaidEls = bodyEl.querySelectorAll('.mermaid[data-mermaid-index]');
+                    if (mermaidEls.length) {
+                        mermaidEls.forEach(function (el) {
+                            var idx = parseInt(el.getAttribute('data-mermaid-index'), 10);
+                            el.textContent = rendered.mermaidBlocks[idx] || '';
+                        });
+                        loadMermaidThenRender();
+                    }
                 })
                 .catch(function (err) {
                     titleEl.textContent = 'Could not load document';
