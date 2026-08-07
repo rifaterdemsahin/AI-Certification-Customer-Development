@@ -7,10 +7,11 @@ Guidance for a future Claude Code session working in this repository.
 Upon completing any task (especially page updates), always:
 1. Perform the project's build step (none exists).
 2. Start/Restart the local application server (typically Python HTTP server on port `8000`).
-3. Open the specific updated pages in the default browser using the Mac CLI `open` command (e.g., `open http://localhost:8000/bmc-channels.html`).
+3. Open **every** updated and newly-created page in the browser using the Mac CLI `open` command — not a representative sample. When a task touches N pages, open all N (e.g. `open -a "Google Chrome" http://localhost:8000/a.html http://localhost:8000/b.html ...` in one call). Per the user's global preference, use `open -a "Google Chrome"`, not the bare `open` command.
 4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
 5. Display clickable links to that updated page at the very end of your final response.
 6. Whenever a page is updated or a new page is added, link it to `HYPOTHESIS.md`: add or update the relevant hypothesis entry (premise → conclusion → status) to reference the page by filename, and cite the hypothesis ID (e.g. "see H10") from the page's content where it states a falsifiable claim. Bump `HYPOTHESIS.md`'s version and Change Log when you do this.
+7. Always re-run the `business-model-sanity-check` skill after a batch of page updates/additions and publish its new versioned report (`reports/business-model-confidence-vX.Y.Z.md` / `confidence-report.html`) — never skip this step, even if the score is expected to hold flat. If the score is below 100, `confidence-report.html` must explicitly outline, for each score component that isn't yet at its ceiling, what concrete evidence (data, measurement, or founder decision) would be needed to move it up — not just the number itself.
 
 ## What this project is
 
