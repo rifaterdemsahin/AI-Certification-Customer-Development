@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prep Demo | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../comp/comp-mvp.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to MVP Spec
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">For Prospects &middot; Interactive Demo</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🤖 Adaptive AI Prep — Concept Demo</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                A prototype demonstration of adaptive, explanation-driven practice &mdash; try a few sample questions below and watch the difficulty adjust. <strong>This is a concept demo with scripted content, not a live production AI system</strong> &mdash; the real MVP today is animated videos plus a simple practice test page, see <a href="../comp/comp-mvp.html" style="color: var(--color-primary);">MVP Spec</a>. This page previews the direction adaptive prep could take.
+            </p>
+        </div>
+
+        <div class="card" id="demo-card">
+            <div id="demo-area"></div>
+        </div>
+
+        <section class="content-section animate-fade-in" style="margin-top: 3rem;">
+            <div class="spec-box" style="border-left-color: var(--color-info);">
+                <div class="spec-title">📋 Requirements this concept would need</div>
+                <div class="spec-desc">A real version of this would require a maintained question bank mapped to the exam blueprint and a scoring/adaptivity engine &mdash; see <a href="../strategy/requirements.html" style="color: var(--color-info);">Product &amp; Technical Requirements</a>. Not yet built or committed to a roadmap; tracked as an idea, not a promise.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; interactive concept demo of adaptive AI-driven exam prep (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/ai-demo.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/ai-demo.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+    (function() {
+        var bank = {
+            easy: [
+                { q: 'What issues a Claude certification?', options: ['Anthropic, via Pearson VUE', 'This site directly', 'A third-party bootcamp'], correct: 0, explain: 'Correct — this company never issues the certification itself; Anthropic does, via a Pearson VUE-proctored exam.' },
+                { q: 'What does MVP stand for in this program?', options: ['Most Valuable Player', 'Minimum Viable Product', 'Maximum Video Production'], correct: 1, explain: 'Correct — Minimum Viable Product: the smallest version that proves the core problem is solved.' }
+            ],
+            hard: [
+                { q: 'A multi-agent system needs to cache repeated context across calls. Which technique reduces latency and cost here?', options: ['Prompt caching', 'Increasing max tokens', 'Disabling guardrails'], correct: 0, explain: 'Correct — prompt caching avoids reprocessing repeated context, cutting both latency and cost on repeated calls.' },
+                { q: 'For enterprise security in an agentic deployment, what should gate a model’s ability to take external actions?', options: ['User vibes', 'Explicit tool-use guardrails/permissions', 'Nothing, trust the model'], correct: 1, explain: 'Correct — explicit guardrails and permissioning on tool use are the standard control point for agentic actions.' }
+            ]
+        };
+        var level = 'easy';
+        var streak = 0;
+        var area = document.getElementById('demo-area');
+        var current = null;
+
+        function pick() {
+            var pool = bank[level];
+            current = pool[Math.floor(Math.random() * pool.length)];
+        }
+
+        function render() {
+            pick();
+            var html = '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">';
+            html += '<span class="status-pill" style="background: ' + (level === 'hard' ? 'rgba(239,68,68,0.15); color:#fecaca;' : 'rgba(16,185,129,0.15); color:#d1fae5;') + '">Difficulty: ' + (level === 'hard' ? 'Advanced' : 'Foundational') + '</span>';
+            html += '<span style="color:var(--text-secondary); font-size:0.85rem;">Streak: ' + streak + '</span>';
+            html += '</div>';
+            html += '<p style="color:var(--text-primary); font-weight:500; margin-bottom:1rem;">' + current.q + '</p>';
+            html += '<div style="display:flex; flex-direction:column; gap:0.6rem;" id="demo-options">';
+            current.options.forEach(function(opt, i) {
+                html += '<button class="btn btn-secondary demo-opt" data-i="' + i + '" style="text-align:left;">' + opt + '</button>';
+            });
+            html += '</div><div id="demo-feedback" style="margin-top:1rem;"></div>';
+            area.innerHTML = html;
+
+            var opts = area.querySelectorAll('.demo-opt');
+            opts.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    opts.forEach(function(b) { b.disabled = true; });
+                    var i = parseInt(btn.getAttribute('data-i'), 10);
+                    var fb = document.getElementById('demo-feedback');
+                    if (i === current.correct) {
+                        streak++;
+                        if (streak >= 2) level = 'hard';
+                        fb.innerHTML = '<div class="spec-box" style="border-left-color:var(--color-success);"><div class="spec-title">✅ Correct</div><div class="spec-desc">' + current.explain + '</div></div>';
+                    } else {
+                        streak = 0;
+                        level = 'easy';
+                        fb.innerHTML = '<div class="spec-box" style="border-left-color:var(--color-warning);"><div class="spec-title">❌ Not quite</div><div class="spec-desc">' + current.explain + '</div></div>';
+                    }
+                    var nextBtn = document.createElement('button');
+                    nextBtn.className = 'btn btn-primary';
+                    nextBtn.style.marginTop = '1rem';
+                    nextBtn.textContent = 'Next Question →';
+                    nextBtn.addEventListener('click', render);
+                    fb.appendChild(nextBtn);
+                });
+            });
+        }
+
+        render();
+    })();
+    </script>
+</body>
+</html>

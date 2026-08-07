@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Pages Dashboard</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--accent-cyan);">
+            <span class="badge">Dashboard Block</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📅 Latest Created & Updated Pages</h1>
+            <p style="color: var(--text-secondary);">Sort and search the recently added documents, canvas components, and strategic reports.</p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">Sort by:</span>
+                        <select id="sortSelect" onchange="sortPages()" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.5rem 1rem; border-radius: 6px; font-family: var(--font-body); outline: none; cursor: pointer;">
+                            <option value="update-desc">Latest Updated First</option>
+                            <option value="update-asc">Oldest Updated First</option>
+                            <option value="create-desc">Latest Created First</option>
+                            <option value="create-asc">Oldest Created First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 1rem 0.5rem;">Page Name</th>
+                            <th style="padding: 1rem 0.5rem;">Path</th>
+                            <th style="padding: 1rem 0.5rem;">Category</th>
+                            <th style="padding: 1rem 0.5rem;">Created Date</th>
+                            <th style="padding: 1rem 0.5rem;">Updated Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pagesTableBody">
+                        <!-- Populated dynamically by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 2rem 0;">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; text-align: center;">
+                Latest Change: Created Latest Pages Dashboard (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/latest-pages.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        var pagesData = [
+            {
+                name: "⚙️ Capital Relationships",
+                url: "../bmc/bmc-capital-relationships.html",
+                path: "5_Symbols/bmc/bmc-capital-relationships.html",
+                category: "Business Model",
+                created: "2026-08-07",
+                updated: "2026-08-07"
+            },
+            {
+                name: "💰 Surplus Value",
+                url: "../bmc/surplus-value.html",
+                path: "5_Symbols/bmc/surplus-value.html",
+                category: "Business Model",
+                created: "2026-08-07",
+                updated: "2026-08-07"
+            },
+            {
+                name: "🔄 Organic Growth",
+                url: "../growth/organic-growth.html",
+                path: "5_Symbols/growth/organic-growth.html",
+                category: "Growth",
+                created: "2026-08-07",
+                updated: "2026-08-07"
+            },
+            {
+                name: "📅 Latest Pages Dashboard",
+                url: "latest-pages.html",
+                path: "5_Symbols/dashboard/latest-pages.html",
+                category: "Dashboard",
+                created: "2026-08-07",
+                updated: "2026-08-07"
+            },
+            {
+                name: "⚔️ Competitive Analysis",
+                url: "../strategy/competitive-analysis.html",
+                path: "5_Symbols/strategy/competitive-analysis.html",
+                category: "Strategy",
+                created: "2026-08-06",
+                updated: "2026-08-06"
+            },
+            {
+                name: "🔍 Evidence Map",
+                url: "../strategy/evidence-map.html",
+                path: "5_Symbols/strategy/evidence-map.html",
+                category: "Strategy",
+                created: "2026-08-06",
+                updated: "2026-08-06"
+            },
+            {
+                name: "📦 Exam Prep Bundle",
+                url: "../product/exam-prep-product.html",
+                path: "5_Symbols/product/exam-prep-product.html",
+                category: "Product",
+                created: "2026-08-06",
+                updated: "2026-08-06"
+            },
+            {
+                name: "🧪 Confidence Report",
+                url: "confidence-report.html",
+                path: "5_Symbols/dashboard/confidence-report.html",
+                category: "Dashboard",
+                created: "2026-08-04",
+                updated: "2026-08-07"
+            },
+            {
+                name: "✅ Task List",
+                url: "todo.html",
+                path: "5_Symbols/dashboard/todo.html",
+                category: "Dashboard",
+                created: "2026-08-04",
+                updated: "2026-08-07"
+            },
+            {
+                name: "🗓️ Milestone Calendar",
+                url: "calendar.html",
+                path: "5_Symbols/dashboard/calendar.html",
+                category: "Dashboard",
+                created: "2026-08-04",
+                updated: "2026-08-07"
+            }
+        ];
+
+        function renderTable(data) {
+            var tbody = document.getElementById("pagesTableBody");
+            tbody.innerHTML = "";
+            data.forEach(function(page) {
+                var tr = document.createElement("tr");
+                tr.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+                tr.style.color = "var(--text-secondary)";
+                tr.innerHTML = `
+                    <td style="padding: 1rem 0.5rem; font-weight: 600;"><a href="${page.url}" style="color: var(--color-primary); text-decoration: none;">${page.name}</a></td>
+                    <td style="padding: 1rem 0.5rem; font-size: 0.85rem; font-family: monospace;">${page.path}</td>
+                    <td style="padding: 1rem 0.5rem;"><span class="badge" style="margin: 0; font-size: 0.75rem;">${page.category}</span></td>
+                    <td style="padding: 1rem 0.5rem;">${page.created}</td>
+                    <td style="padding: 1rem 0.5rem; color: var(--text-primary); font-weight: 500;">${page.updated}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function sortPages() {
+            var sortVal = document.getElementById("sortSelect").value;
+            var sorted = [].concat(pagesData);
+            sorted.sort(function(a, b) {
+                if (sortVal === "create-desc") return new Date(b.created) - new Date(a.created);
+                if (sortVal === "create-asc") return new Date(a.created) - new Date(b.created);
+                if (sortVal === "update-desc") return new Date(b.updated) - new Date(a.updated);
+                if (sortVal === "update-asc") return new Date(a.updated) - new Date(b.updated);
+                return 0;
+            });
+            renderTable(sorted);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            sortPages();
+        });
+    </script>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

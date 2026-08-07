@@ -1,3 +1,6 @@
+> [!WARNING]
+> This version is **superseded** by [v1.2.0](markdown_renderer.html?src=reports/business-model-confidence-v1.2.0.md).
+
 # Business Model Confidence Report — v1.1.0
 
 **Date:** 2026-08-07

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics Dashboard | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Growth &middot; Unified Dashboard</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📊 Metrics Dashboard</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                One screen for a decision-maker to see every key number tracked across the site &mdash; hypothesis validation, stage gates, and unit economics &mdash; without navigating between <a href="quality-gates.html" style="color: var(--color-primary);">Quality Gates</a>, <a href="test-metrics.html" style="color: var(--color-primary);">Test &amp; Metrics</a>, and <a href="../hypotheses/hypothesis.html" style="color: var(--color-primary);">Hypothesis Tracker</a> individually. Every number here is sourced from one of those pages &mdash; this page aggregates, it does not introduce new claims.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧪 Business Model Confidence</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-val">44/100</div>
+                    <div class="metric-lbl">Confidence Score (v1.0.3)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val">0/19</div>
+                    <div class="metric-lbl">Hypotheses Fully Validated</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val">80/100</div>
+                    <div class="metric-lbl">Site Integrity Score</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val">29/100</div>
+                    <div class="metric-lbl">Hypothesis Validation Score</div>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">Score has held flat across three consecutive re-runs &mdash; see <a href="../dashboard/confidence-report.html" style="color: var(--color-primary);">Business Model Confidence Report</a> for the full audit trail and why it hasn't moved yet.</p>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🚪 Stage Gate Progress</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-warning);">
+                        <div class="spec-title">💰 Stage 2 &rarr; 3 Exit Gate</div>
+                        <div class="spec-desc"><strong>$0 / $10,000</strong> combined across 2 required consecutive cohort launches &mdash; no paid launch has run yet. See <a href="validation-repeat-gate.html" style="color: var(--color-warning);">Validation Repeat Gate</a> and <a href="../hypotheses/hyp-h9.html" style="color: var(--color-warning);">H9</a>.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-info);">
+                        <div class="spec-title">📈 Stage 3 Subscriber Growth</div>
+                        <div class="spec-desc"><strong>~30 &rarr; ~30,000 target</strong> (1,000x). No growth data logged yet against this target &mdash; see <a href="../hypotheses/hyp-h13.html" style="color: var(--color-info);">H13</a>.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-success);">
+                        <div class="spec-title">🎬 MVP Video Quality Floor</div>
+                        <div class="spec-desc"><strong>68.5% retention</strong> on the first measured video, vs. a &gt;40% target. Single data point, not yet a catalog average &mdash; see <a href="../hypotheses/hyp-h10.html" style="color: var(--color-success);">H10</a> and <a href="content-analysis.html" style="color: var(--color-success);">Content Analysis</a>.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-primary);">
+                        <div class="spec-title">🏢 Stage 4 Hiring Trigger</div>
+                        <div class="spec-desc"><strong>$0 / $100,000 ARR</strong> &mdash; hiring (video editor, cohort coordinator, technical TAs) not yet triggered. See <a href="../stages/stage-company-building.html" style="color: var(--color-primary);">Company Building</a> and <a href="../hypotheses/hyp-h11.html" style="color: var(--color-primary);">H11</a>.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔄 Live Traction Signals</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height:100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem;">🗓️ Free Cohort Track Record</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">8 consecutive weeks (Jun&ndash;Jul 2026), growing beyond the original ~4/session baseline. See <a href="../hypotheses/hyp-h4.html" style="color: var(--color-primary);">H4</a>.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height:100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem;">🤝 Referral Signal</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">First organic word-of-mouth attendees confirmed (Brian, Sude), beyond founder-driven outreach. See <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> Premise 6.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height:100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem;">📬 Newsletter Funnel</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Dual capture points (LinkedIn + YouTube) live; &gt;5% signup target still unmeasured. See <a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                This dashboard is a read-only rollup. To change a number, update its source page and <a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-primary);">HYPOTHESIS.md</a> first &mdash; this page will drift out of date otherwise. See also <a href="../product/vc-deck.html" style="color: var(--color-primary);">VC Deck</a> for these same numbers framed as an investor narrative.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; unified metrics dashboard for decision-makers, aggregating Quality Gates, Test &amp; Metrics, and Hypothesis Tracker into one view (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/metrics-dashboard.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/metrics-dashboard.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

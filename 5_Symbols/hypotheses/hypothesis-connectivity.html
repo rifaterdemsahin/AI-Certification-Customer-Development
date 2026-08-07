@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Does "Not Connected" Mean? | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="hypothesis.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hypothesis Tracker
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Strategy · Dependency Map Explainer</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">What Does It Mean When a Hypothesis Isn't Connected?</h1>
+            <p style="color: var(--text-secondary); max-width: 70ch;">
+                <a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-primary);">HYPOTHESIS.md</a>'s
+                Dependency Map (added v1.16.0) gives every one of the 19 tracked hypotheses a <strong>Depends on</strong>
+                line (upstream prerequisites it explicitly cites) and a <strong>Feeds</strong> line (downstream hypotheses
+                that cite it back). Most hypotheses have at least one of those two edges. A handful don't &mdash; and "no
+                connection" means three genuinely different things depending on which edge is missing. This page defines
+                each pattern with the site's own real examples, so a disconnected node in <a href="hypothesis.html" style="color: var(--color-primary);">the pipeline diagram</a>
+                isn't misread as a uniform red flag.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Source:</span><span class="info-value">HYPOTHESIS.md &sect; Dependency Map</span></li>
+                        <li class="info-item"><span class="info-label">Tracked hypotheses:</span><span class="info-value">19 (H1&ndash;H19)</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Fully isolated:</span><span class="info-value" style="color: #ef4444;">1 (H14)</span></li>
+                        <li class="info-item"><span class="info-label">Foundational, uncited gap:</span><span class="info-value" style="color: var(--color-warning);">2 (H1, H6)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔀 Three Patterns, Not One</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height: 100%; display: flex; flex-direction: column; border-left: 4px solid #ef4444;">
+                        <span class="status-pill" style="color: #ef4444;">⚠️ Fully Isolated</span>
+                        <h3 class="card-title" style="font-size: 1.1rem; margin: 0.75rem 0;">No Depends on, no Feeds</h3>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); flex-grow: 1;">
+                            <p><strong>Example: <a href="hyp-h14.html" style="color: var(--color-primary);">H14</a></strong> (multi-certification market expansion). The tracker states it plainly: "independent, untested &mdash; no other hypothesis cites or is cited by H14 in the text."</p>
+                            <p style="margin-top: 0.5rem;">Nothing in the tracker currently relies on H14 being true, and H14 doesn't lean on any other hypothesis's result either. If H14 is validated or killed, it ripples nowhere else &mdash; a self-contained bet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; display: flex; flex-direction: column; border-left: 4px solid var(--color-warning);">
+                        <span class="status-pill" style="color: var(--color-warning);">🟡 Foundational, Uncited Gap</span>
+                        <h3 class="card-title" style="font-size: 1.1rem; margin: 0.75rem 0;">No Depends on, Feeds implied but not written</h3>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); flex-grow: 1;">
+                            <p><strong>Examples: <a href="hyp-h1.html" style="color: var(--color-primary);">H1</a> and <a href="hyp-h6.html" style="color: var(--color-primary);">H6</a></strong> (rising AI skills expectations; TAM/SAM/SOM sizing). Flagged in HYPOTHESIS.md as a "coverage gap": both logically underlie the Stage 3 channel bets (H12, H14, H16, H18) &mdash; a market too small or a skills-gap that isn't real would sink all four &mdash; but no hypothesis's own text cross-cites either one.</p>
+                            <p style="margin-top: 0.5rem;">This is a documentation weakness, not a business one: the reasoning exists in the site's narrative, just not as a traceable edge in the tracker.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; display: flex; flex-direction: column; border-left: 4px solid var(--color-info);">
+                        <span class="status-pill" style="color: var(--color-info);">🧪 Terminal Leaf</span>
+                        <h3 class="card-title" style="font-size: 1.1rem; margin: 0.75rem 0;">Has Depends on, no Feeds</h3>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); flex-grow: 1;">
+                            <p><strong>Examples: <a href="hyp-h8.html" style="color: var(--color-primary);">H8</a>, <a href="hyp-h10.html" style="color: var(--color-primary);">H10</a>, <a href="hyp-h16.html" style="color: var(--color-primary);">H16</a>, <a href="hyp-h18.html" style="color: var(--color-primary);">H18</a>, H19.</strong> Each cites at least one upstream hypothesis but nothing downstream cites it back.</p>
+                            <p style="margin-top: 0.5rem;">This is structurally normal &mdash; every dependency chain needs endpoints. These are conclusions the tracker is built <em>toward</em>, not claims other hypotheses are built <em>on</em>. No action item implied.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎯 What To Actually Do About Each One</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">⚠️</span><span style="color: var(--text-secondary);"><strong>Fully isolated (H14):</strong> lower priority to test right now &mdash; nothing else's status is blocked on it, so it's a safe one to defer while founder bandwidth is spent on hypotheses that gate other work (see <a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Bandwidth</a>).</span></li>
+                    <li><span class="emoji">🟡</span><span style="color: var(--text-secondary);"><strong>Foundational, uncited gap (H1, H6):</strong> worth an explicit cross-citation edit precisely because they're the two most-foundational premises on the site &mdash; a silent failure in either one would put H12, H14, H16, and H18 at risk without the tracker showing why. HYPOTHESIS.md already names this as an open to-do, not yet resolved.</span></li>
+                    <li><span class="emoji">🧪</span><span style="color: var(--text-secondary);"><strong>Terminal leaves (H8, H10, H16, H18, H19):</strong> no action needed &mdash; being a leaf is their intended role in the graph, not a gap to close.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Full Connectivity Table</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Reproduced from <a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-primary);">HYPOTHESIS.md</a>'s Dependency Map, with each row classified into one of the three patterns above.
+                </p>
+                <table class="sortable-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">ID</th>
+                            <th style="padding: 0.75rem 0.5rem;">Depends on</th>
+                            <th style="padding: 0.75rem 0.5rem;">Feeds</th>
+                            <th style="padding: 0.75rem 0.5rem;">Connectivity</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.88rem;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h1.html" style="color: var(--color-primary);">H1</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">&mdash; (logically underlies H3, H6, H8, H12, H14, uncited)</td><td style="padding: 0.6rem 0.5rem; color: var(--color-warning);">🟡 Foundational, uncited gap</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h2.html" style="color: var(--color-primary);">H2</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">H10, H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h3.html" style="color: var(--color-primary);">H3</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h4.html" style="color: var(--color-primary);">H4</a></td><td style="padding: 0.6rem 0.5rem;">None (unreconciled with peer H7)</td><td style="padding: 0.6rem 0.5rem;">H16, H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h5.html" style="color: var(--color-primary);">H5</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">H8, H9, H16</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h6.html" style="color: var(--color-primary);">H6</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">&mdash; (logically underlies H12, H14, H16, H18, uncited)</td><td style="padding: 0.6rem 0.5rem; color: var(--color-warning);">🟡 Foundational, uncited gap</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h7.html" style="color: var(--color-primary);">H7</a></td><td style="padding: 0.6rem 0.5rem;">None (unreconciled with peer H4)</td><td style="padding: 0.6rem 0.5rem;">H16</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h8.html" style="color: var(--color-primary);">H8</a></td><td style="padding: 0.6rem 0.5rem;">H5</td><td style="padding: 0.6rem 0.5rem;">&mdash;</td><td style="padding: 0.6rem 0.5rem; color: var(--color-info);">🧪 Terminal leaf</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h9.html" style="color: var(--color-primary);">H9</a></td><td style="padding: 0.6rem 0.5rem;">H5</td><td style="padding: 0.6rem 0.5rem;">H15, H16, H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h10.html" style="color: var(--color-primary);">H10</a></td><td style="padding: 0.6rem 0.5rem;">H2</td><td style="padding: 0.6rem 0.5rem;">&mdash; (superseded by H13)</td><td style="padding: 0.6rem 0.5rem; color: var(--color-info);">🧪 Terminal leaf</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h11.html" style="color: var(--color-primary);">H11</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">H15, H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h12.html" style="color: var(--color-primary);">H12</a></td><td style="padding: 0.6rem 0.5rem;">None</td><td style="padding: 0.6rem 0.5rem;">H17, H18</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h13.html" style="color: var(--color-primary);">H13</a></td><td style="padding: 0.6rem 0.5rem;">None (supersedes H10)</td><td style="padding: 0.6rem 0.5rem;">H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h14.html" style="color: var(--color-primary);">H14</a></td><td style="padding: 0.6rem 0.5rem;">None &mdash; independent, untested</td><td style="padding: 0.6rem 0.5rem;">&mdash;</td><td style="padding: 0.6rem 0.5rem; color: #ef4444;">⚠️ Fully isolated</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h15.html" style="color: var(--color-primary);">H15</a></td><td style="padding: 0.6rem 0.5rem;">H9, H11</td><td style="padding: 0.6rem 0.5rem;">H19</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h16.html" style="color: var(--color-primary);">H16</a></td><td style="padding: 0.6rem 0.5rem;">H4, H5, H7, H9</td><td style="padding: 0.6rem 0.5rem;">&mdash; (most heavily-gated node)</td><td style="padding: 0.6rem 0.5rem; color: var(--color-info);">🧪 Terminal leaf</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h17.html" style="color: var(--color-primary);">H17</a></td><td style="padding: 0.6rem 0.5rem;">H12</td><td style="padding: 0.6rem 0.5rem;">H18</td><td style="padding: 0.6rem 0.5rem;">✅ Connected</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;"><a href="hyp-h18.html" style="color: var(--color-primary);">H18</a></td><td style="padding: 0.6rem 0.5rem;">H12, H17</td><td style="padding: 0.6rem 0.5rem;">&mdash;</td><td style="padding: 0.6rem 0.5rem; color: var(--color-info);">🧪 Terminal leaf</td></tr>
+                        <tr style="color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem;">H19</td><td style="padding: 0.6rem 0.5rem;">H2, H3, H4, H9, H11, H13, H15</td><td style="padding: 0.6rem 0.5rem;">&mdash; (roll-up sink node)</td><td style="padding: 0.6rem 0.5rem; color: var(--color-info);">🧪 Terminal leaf</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Related</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="hypothesis.html" style="color: var(--color-primary);">Hypothesis Tracker &rarr;</a> the full dashboard, including the interactive pipeline/dependency diagram this page explains.</span></li>
+                    <li><span class="emoji">📊</span><span style="color: var(--text-secondary);"><a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-primary);">HYPOTHESIS.md &rarr;</a> the source Dependency Map table and its own gap notes.</span></li>
+                    <li><span class="emoji">🔍</span><span style="color: var(--text-secondary);"><a href="../strategy/evidence-map.html" style="color: var(--color-primary);">Evidence Map &rarr;</a> what evidence backs each hypothesis's status, a different axis than dependency connectivity.</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page explaining the three patterns behind a "disconnected" hypothesis in HYPOTHESIS.md's Dependency Map (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/hypothesis-connectivity.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

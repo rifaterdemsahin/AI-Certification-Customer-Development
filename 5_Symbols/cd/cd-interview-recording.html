@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Recording & Outreach Tracker | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+            font-family: var(--font-sans);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition-fast);
+        }
+        .form-control:focus {
+            border-color: var(--color-primary);
+            background: rgba(255,255,255,0.04);
+        }
+        .tracker-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .tracker-table th {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-primary);
+        }
+        .tracker-table tr:hover td {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .status-select {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            border-radius: 6px;
+            padding: 0.25rem 0.5rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .status-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+        .status-todo { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+        .status-contacted { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; }
+        .status-scheduled { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        .status-completed { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .status-thanked { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+        
+        .save-alert {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-left: 5px solid var(--color-success);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Back Link -->
+        <a href="../stages/stage-customer-discovery.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Stage 1 (Customer Discovery)
+        </a>
+
+        <!-- Hero Section -->
+        <section class="hero animate-fade-in" style="padding: 2rem 0 3rem; text-align: left;">
+            <span class="badge">Interview Workspace</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">📝 Discovery Interview <span>Recorder &amp; Tracker</span></h1>
+            <p class="hero-subtitle" style="margin: 0; max-width: 800px;">
+                Record qualitative candidate insights, track current workarounds, map their day-in-the-life study routines, and manage your follow-ups and thank-you templates. Not sure what to ask? See
+                <a href="cd-hypothesis-interview-questions.html" style="color: var(--color-primary);">Hypothesis Interview Questions</a>
+                for prompts mapped to each tracked hypothesis before you log answers here.
+            </p>
+        </section>
+
+        <!-- Main Workspace Grid -->
+        <div class="grid animate-fade-in">
+            <!-- Recorder Panel -->
+            <div class="col-6">
+                <div class="card" style="height: 100%;">
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 0.25rem; font-weight: 700;">🎤 Log Interview Insights</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        <strong>⚠️ Mandate Reminder:</strong> Keep your solution hidden. Focus 100% on listening and documenting stories.
+                    </p>
+
+                    <div id="save-success-alert" class="save-alert">
+                        <strong>✅ Interview Saved!</strong> The record has been pushed to the shared notes cookie and will display in the floating notes widget.
+                    </div>
+
+                    <form id="interview-form" onsubmit="saveInterview(event)">
+                        <div class="grid" style="gap: 0;">
+                            <div class="col-6" style="padding-right: 0.5rem;">
+                                <div class="form-group">
+                                    <label for="int-name">Candidate Name</label>
+                                    <input type="text" id="int-name" class="form-control" placeholder="e.g. John Doe" required>
+                                </div>
+                            </div>
+                            <div class="col-6" style="padding-left: 0.5rem;">
+                                <div class="form-group">
+                                    <label for="int-channel">Channel / Location</label>
+                                    <select id="int-channel" class="form-control" required>
+                                        <option value="Teams">Teams DM</option>
+                                        <option value="Face-to-Face">F2F (Triton Square)</option>
+                                        <option value="Meetup">F2F (Venture Coffee)</option>
+                                        <option value="X">X / Twitter DM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="int-referral">Referral / Connection Source</label>
+                            <input type="text" id="int-referral" class="form-control" placeholder="e.g. Referred by Alex or self-intercept">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="int-routine">Day-In / Day-Out (Study Routine & Habits)</label>
+                            <textarea id="int-routine" class="form-control" rows="2" placeholder="How do they study? When? How long?" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="int-workaround">Current Workarounds (How are they solving it today?)</label>
+                            <textarea id="int-workaround" class="form-control" rows="2" placeholder="e.g. Buying Udemy tests, parsing official PDFs with ChatGPT, asking senior TAs..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="int-stories">Past Actions & Stories</label>
+                            <textarea id="int-stories" class="form-control" rows="2" placeholder="What did they do in the past? What failed or went well?" required></textarea>
+                        </div>
+
+                        <div class="grid" style="gap: 0;">
+                            <div class="col-6" style="padding-right: 0.5rem;">
+                                <div class="form-group">
+                                    <label for="int-pains">Key Pains Identified</label>
+                                    <textarea id="int-pains" class="form-control" rows="2" placeholder="e.g. Time pressure, dry diagrams" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-6" style="padding-left: 0.5rem;">
+                                <div class="form-group">
+                                    <label for="int-gains">Key Gains Identified</label>
+                                    <textarea id="int-gains" class="form-control" rows="2" placeholder="e.g. Interactive tests, clear flowcharts" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">💾 Save Interview to Shared Cookie Notes</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Outreach Tracker Panel -->
+            <div class="col-6">
+                <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem; font-weight: 700;">📡 Outreach Contact Tracker</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                        Track your connections across Teams, Face-to-Face hubs, or X. Use templates below to send thank-you follow-ups.
+                    </p>
+
+                    <!-- Add Contact Form -->
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h5 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.85rem;">Add New Contact</h5>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="text" id="add-contact-name" class="form-control" style="padding: 0.4rem 0.6rem; font-size: 0.8rem;" placeholder="Name" required>
+                            <input type="text" id="add-contact-ref" class="form-control" style="padding: 0.4rem 0.6rem; font-size: 0.8rem;" placeholder="Referral" required>
+                            <select id="add-contact-channel" class="form-control" style="padding: 0.4rem 0.6rem; font-size: 0.8rem; width: 140px;">
+                                <option value="Teams">Teams</option>
+                                <option value="F2F">F2F</option>
+                                <option value="X">X (Twitter)</option>
+                            </select>
+                            <button onclick="addNewContact()" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Table -->
+                    <div style="flex: 1; overflow-x: auto;">
+                        <table class="tracker-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Channel</th>
+                                    <th>Referral Source</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tracker-body">
+                                <!-- Injected programmatically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Follow up templates summary -->
+                    <div style="margin-top: 1.5rem; background: rgba(99, 102, 241, 0.05); border: 1px solid var(--border-accent); border-radius: 8px; padding: 1rem;">
+                        <h5 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 0.85rem;">📋 Thank You Message Templates</h5>
+                        <p style="color: var(--text-secondary); font-size: 0.75rem; margin-bottom: 0.5rem;">
+                            Clicking <strong>"Thank"</strong> in actions will copy a personalized message directly to your clipboard.
+                        </p>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">
+                            <strong>F2F / Teams:</strong> "Hi [Name], thank you for sharing your study story today! Your workaround notes are invaluable..."<br>
+                            <strong>X / DM:</strong> "Hey [Name], thanks for chatting today! Helpful to hear how you parse dry docs..."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Discovery Interview Hub.</span>
+            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script>
+        // Default seed data for Outreach Tracker
+        var defaultContacts = [
+            { id: 1, name: "Sarah Chen", channel: "Teams", ref: "Referred by Alex (Lead Dev)", status: "Completed" },
+            { id: 2, name: "Marcus Brody", channel: "F2F", ref: "Triton Square intercept", status: "Contacted" },
+            { id: 3, name: "Emma Watson", channel: "X", ref: "Tech Twitter Spaces", status: "Thanked" }
+        ];
+
+        function getContacts() {
+            var raw = localStorage.getItem('outreach_contacts');
+            if (!raw) {
+                localStorage.setItem('outreach_contacts', JSON.stringify(defaultContacts));
+                return defaultContacts;
+            }
+            try {
+                return JSON.parse(raw);
+            } catch (e) {
+                return defaultContacts;
+            }
+        }
+
+        function saveContacts(contacts) {
+            localStorage.setItem('outreach_contacts', JSON.stringify(contacts));
+        }
+
+        function renderTracker() {
+            var contacts = getContacts();
+            var tbody = document.getElementById('tracker-body');
+            if (!tbody) return;
+            
+            var html = '';
+            contacts.forEach(function(contact) {
+                var badgeClass = 'status-todo';
+                if (contact.status === 'Contacted') badgeClass = 'status-contacted';
+                else if (contact.status === 'Scheduled') badgeClass = 'status-scheduled';
+                else if (contact.status === 'Completed') badgeClass = 'status-completed';
+                else if (contact.status === 'Thanked') badgeClass = 'status-thanked';
+
+                html += '<tr>' +
+                    '  <td style="font-weight: 500; color: var(--text-primary);">' + contact.name + '</td>' +
+                    '  <td>' + contact.channel + '</td>' +
+                    '  <td style="color: var(--text-secondary);">' + contact.ref + '</td>' +
+                    '  <td>' +
+                    '    <select class="status-select" onchange="updateContactStatus(' + contact.id + ', this.value)">' +
+                    '      <option value="TODO" ' + (contact.status === 'TODO' ? 'selected' : '') + '>TODO</option>' +
+                    '      <option value="Contacted" ' + (contact.status === 'Contacted' ? 'selected' : '') + '>Contacted</option>' +
+                    '      <option value="Scheduled" ' + (contact.status === 'Scheduled' ? 'selected' : '') + '>Scheduled</option>' +
+                    '      <option value="Completed" ' + (contact.status === 'Completed' ? 'selected' : '') + '>Completed</option>' +
+                    '      <option value="Thanked" ' + (contact.status === 'Thanked' ? 'selected' : '') + '>Thanked</option>' +
+                    '    </select>' +
+                    '  </td>' +
+                    '  <td>' +
+                    '    <div style="display: flex; gap: 0.25rem;">' +
+                    '      <button class="status-badge ' + badgeClass + '" style="border:none; cursor:default; font-size:0.7rem;">' + contact.status + '</button>' +
+                    '      <button onclick="thankContact(' + contact.id + ')" class="btn btn-secondary" style="padding:0.15rem 0.4rem; font-size:0.75rem;" title="Copy Thank You template">💬 Thank</button>' +
+                    '      <button onclick="deleteContact(' + contact.id + ')" class="btn btn-danger" style="padding:0.15rem 0.4rem; font-size:0.75rem;" title="Delete contact">🗑️</button>' +
+                    '    </div>' +
+                    '  </td>' +
+                    '</tr>';
+            });
+            
+            tbody.innerHTML = html || '<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No contacts tracked. Add one above!</td></tr>';
+        }
+
+        function updateContactStatus(id, newStatus) {
+            var contacts = getContacts();
+            contacts.forEach(function(c) {
+                if (c.id === id) {
+                    c.status = newStatus;
+                }
+            });
+            saveContacts(contacts);
+            renderTracker();
+        }
+
+        function addNewContact() {
+            var nameInput = document.getElementById('add-contact-name');
+            var refInput = document.getElementById('add-contact-ref');
+            var channelInput = document.getElementById('add-contact-channel');
+            
+            if (!nameInput.value.trim() || !refInput.value.trim()) {
+                alert('Please provide name and referral source.');
+                return;
+            }
+            
+            var contacts = getContacts();
+            var newContact = {
+                id: Date.now(),
+                name: nameInput.value.trim(),
+                channel: channelInput.value,
+                ref: refInput.value.trim(),
+                status: 'TODO'
+            };
+            
+            contacts.push(newContact);
+            saveContacts(contacts);
+            renderTracker();
+            
+            nameInput.value = '';
+            refInput.value = '';
+        }
+
+        function deleteContact(id) {
+            if (confirm('Delete this contact?')) {
+                var contacts = getContacts();
+                var filtered = contacts.filter(function(c) {
+                    return c.id !== id;
+                });
+                saveContacts(filtered);
+                renderTracker();
+            }
+        }
+
+        function thankContact(id) {
+            var contacts = getContacts();
+            var contact = contacts.find(function(c) { return c.id === id; });
+            if (!contact) return;
+            
+            var msg = "";
+            if (contact.channel === 'X') {
+                msg = "Hey " + contact.name + ", thanks for chatting about certification study pains today! Super helpful to hear how you parse dry cloud diagrams. Let me know if I can help you with anything in return! Cheers.";
+            } else {
+                msg = "Hi " + contact.name + ", thank you so much for taking the time to share your study story with me today! Your workaround feedback is incredibly helpful for my research. If you think of anyone else facing certification prep stress, I would appreciate a referral! Let's stay in touch. Thanks.";
+            }
+            
+            navigator.clipboard.writeText(msg).then(function() {
+                alert('Copied Thank You message for ' + contact.name + ' to clipboard!');
+                updateContactStatus(id, 'Thanked');
+            }).catch(function(err) {
+                alert('Error copying message: ' + err);
+            });
+        }
+
+        // Shared Cookie notes integration
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (encodeURIComponent(value) || "")  + expires + "; path=/; SameSite=Lax";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length,c.length));
+            }
+            return null;
+        }
+
+        function saveInterview(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('int-name').value;
+            var channel = document.getElementById('int-channel').value;
+            var referral = document.getElementById('int-referral').value;
+            var routine = document.getElementById('int-routine').value;
+            var workaround = document.getElementById('int-workaround').value;
+            var stories = document.getElementById('int-stories').value;
+            var pains = document.getElementById('int-pains').value;
+            var gains = document.getElementById('int-gains').value;
+
+            // Formulate note representation
+            var noteText = 
+                "Customer Interview Record:\n" +
+                "- Channel: " + channel + " (Referral: " + referral + ")\n" +
+                "- Routine: " + routine + "\n" +
+                "- Workaround: " + workaround + "\n" +
+                "- Stories: " + stories + "\n" +
+                "- Pains: " + pains + "\n" +
+                "- Gains: " + gains;
+            
+            // Read site_notes cookie
+            var siteNotesRaw = getCookie('site_notes');
+            var notes = [];
+            if (siteNotesRaw) {
+                try {
+                    notes = JSON.parse(siteNotesRaw);
+                } catch(e) {}
+            }
+            
+            var now = new Date();
+            var dateString = now.toLocaleString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+
+            var newNote = {
+                id: Date.now(),
+                pageUrl: 'cd-interview-recording.html',
+                pageTitle: 'Interview: ' + name,
+                text: noteText,
+                date: dateString
+            };
+
+            notes.push(newNote);
+            setCookie('site_notes', JSON.stringify(notes), 365);
+
+            // Trigger visual alert
+            var alertBox = document.getElementById('save-success-alert');
+            if (alertBox) {
+                alertBox.style.display = 'block';
+                setTimeout(function() {
+                    alertBox.style.display = 'none';
+                }, 5000);
+            }
+
+            // Trigger parent badge updates in navigation if globally accessible
+            if (window.renderNotes) {
+                window.renderNotes();
+            } else {
+                // If direct global reload is not mapped, check if nav-notes-badge element is accessible
+                var badgeEl = document.getElementById('nav-notes-badge');
+                if (badgeEl) {
+                    var rawNotes = getCookie('site_notes');
+                    var notesCount = 0;
+                    if (rawNotes) {
+                        try {
+                            notesCount = JSON.parse(rawNotes).length;
+                        } catch(e) {}
+                    }
+                    if (notesCount > 0) {
+                        badgeEl.textContent = notesCount;
+                        badgeEl.style.display = 'inline-flex';
+                    } else {
+                        badgeEl.style.display = 'none';
+                    }
+                }
+            }
+
+            // Add candidate to tracker if not already there
+            var contacts = getContacts();
+            var exists = contacts.some(function(c) { 
+                return c.name.toLowerCase() === name.toLowerCase(); 
+            });
+            
+            if (!exists) {
+                var newContact = {
+                    id: Date.now() + 1,
+                    name: name,
+                    channel: channel === 'Face-to-Face' ? 'F2F' : (channel === 'Meetup' ? 'F2F' : channel),
+                    ref: referral,
+                    status: 'Completed'
+                };
+                contacts.push(newContact);
+                saveContacts(contacts);
+                renderTracker();
+            }
+
+            document.getElementById('interview-form').reset();
+        }
+
+        // Init page
+        renderTracker();
+    </script>
+</body>
+</html>

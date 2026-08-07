@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Repeat Gate | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../stages/stage-customer-validation.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Stage 2 (Customer Validation)
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-warning);">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fef3c7; border-color: rgba(245, 158, 11, 0.3);">Growth &middot; Validation Gate</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🚪 Validation Repeat Gate</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Acidity check Finding F6, and the question <code>comp-creation-validation.html</code> itself flags but never answers: <em>"What if we hit the $10,000 target once but cannot repeat it?"</em> Launch-day revenue is inflated by the founder's personal network and one-off promotion &mdash; a single event is a false-positive risk for a decision this consequential. This page formalizes the fix: the Stage 2&rarr;3 gate requires the result to repeat.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔁 Old Gate vs. New Gate</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 4px solid var(--text-muted);">
+                        <span class="badge" style="background: rgba(255,255,255,0.05); color: var(--text-secondary); border: none;">PREVIOUS (<a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>, as originally written)</span>
+                        <h3 class="card-title" style="margin-top: 0.5rem; margin-bottom: 1rem;">Single Launch, $10,000</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">$10,000 gross from one cohort launch clears the gate outright. Vulnerable to a one-off spike from warm personal-network intros that doesn't reflect repeatable organic demand.</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 4px solid var(--color-warning); background: linear-gradient(180deg, rgba(245, 158, 11, 0.05) 0%, rgba(11, 15, 25, 0.7) 100%);">
+                        <span class="badge" style="background: var(--gradient-primary); color: #fff; border: none;">REVISED (this page)</span>
+                        <h3 class="card-title" style="margin-top: 0.5rem; margin-bottom: 1rem;">Two Consecutive Launches</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">The gate requires <strong>two consecutive cohort launches</strong>, combining to at least $10,000, before Stage 2&rarr;3 transition is considered cleared.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">✅ The Revised Gate, in Full</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">1️⃣</span><span style="color: var(--text-secondary);"><strong>Two consecutive cohort launches</strong>, back to back, each independently selling seats &mdash; not one launch counted twice.</span></li>
+                    <li><span class="emoji">💰</span><span style="color: var(--text-secondary);"><strong>Combined revenue &ge; $10,000</strong> across the two launches, at the existing $250&ndash;$500 pricing (see <a href="../comp/comp-business-model.html" style="color: var(--color-warning);">Business Model Spec</a>).</span></li>
+                    <li><span class="emoji">🌱</span><span style="color: var(--text-secondary);"><strong>Launch 2 must show organic replication</strong> &mdash; if launch 1's buyers were mostly warm personal-network intros, launch 2 needs to draw meaningfully from the free Sunday cohort funnel and general audience instead, or the "repeatable demand" claim isn't actually being tested.</span></li>
+                    <li><span class="emoji">📋</span><span style="color: var(--text-secondary);"><strong>Pre-launch waitlist tracked both times</strong> &mdash; per the existing mitigation in <a href="../strategy/risk-analysis.html" style="color: var(--color-warning);">Risk Analysis</a>, waitlist signal from the weekly free cohort should be logged before each launch date is committed to.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 How the Free Sunday Cohort Feeds This Gate</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary);">
+                    The weekly free Sunday 9&ndash;11pm cohort (see <a href="../strategy/evidence-map.html" style="color: var(--color-warning);">Evidence Map</a> and <a href="test-plan.html" style="color: var(--color-warning);">Test Plan</a>) is the pre-launch waitlist-building mechanism this gate relies on. It's also the same venue running the site's discovery interviews, so the population being converted into paid cohort launches 1 and 2 is the same population already being interviewed about the problem &mdash; making it possible to check whether launch 2's buyers are new/organic or the same warm contacts as launch 1.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h2 class="section-title" style="color: var(--color-warning);">⚠️ Open Question</h2>
+            <div class="card" style="background: rgba(245, 158, 11, 0.02); border-color: rgba(245, 158, 11, 0.2);">
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">This gate has not run yet &mdash; no cohort launch has been reported in the repo (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> status: Hypothesized). The two-launch structure is a design decision to reduce false-positive risk, not yet a tested process itself.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; revises <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a> to require 2 consecutive cohort launches instead of a single launch, addressing acidity check Finding F6 (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/validation-repeat-gate.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/validation-repeat-gate.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

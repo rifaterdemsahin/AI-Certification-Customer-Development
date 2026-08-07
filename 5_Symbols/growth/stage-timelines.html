@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Timeline Estimates | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="quality-gates.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Quality Gates
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-warning);">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fef3c7; border-color: rgba(245, 158, 11, 0.3);">Growth &middot; Timeline Planning</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📅 Stage Timeline Estimates</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <code>quality-gates.html</code> defines <em>what</em> clears each Steve Blank stage; this page estimates <em>when</em>. These are the founder's own projections, built from the pace already observed (the 8-week free Sunday cohort, the 3-videos/week production baseline) and the single-founder bandwidth ceiling &mdash; <strong>not measured outcomes.</strong> Nothing below is a promise or a deadline; it is a falsifiable estimate, tracked as <a href="../hypotheses/hypothesis.html" style="color: var(--color-warning);">H19</a> in the Hypothesis Tracker and due for revision at every real milestone (first paid cohort launch, $10k gate clearance, etc.).
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗺️ Timeline Overview</h2>
+            <div class="card">
+                <div class="svg-diagram" style="overflow-x: auto;">
+                    <svg viewBox="0 0 900 260" style="min-width: 640px; width: 100%;" role="img" aria-label="Horizontal timeline estimating each stage: Customer Discovery Jan to Dec 2026, Customer Validation June 2026 to Q2 2027, Customer Creation Q2 2027 through a widening uncertainty band into 2029, and Company Building starting around 2028 and continuing open-ended. A dashed line marks today, August 2026.">
+                        <!-- Year gridlines -->
+                        <line x1="90" y1="30" x2="90" y2="225" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <line x1="280" y1="30" x2="280" y2="225" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <line x1="470" y1="30" x2="470" y2="225" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <line x1="660" y1="30" x2="660" y2="225" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <line x1="850" y1="30" x2="850" y2="225" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <!-- Axis -->
+                        <line x1="90" y1="225" x2="850" y2="225" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                        <text x="185" y="242" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600" font-family="Inter, sans-serif">2026</text>
+                        <text x="375" y="242" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600" font-family="Inter, sans-serif">2027</text>
+                        <text x="565" y="242" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600" font-family="Inter, sans-serif">2028</text>
+                        <text x="755" y="242" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600" font-family="Inter, sans-serif">2029</text>
+
+                        <!-- Today marker (2026-08-05) -->
+                        <line x1="209" y1="24" x2="209" y2="225" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <text x="209" y="16" text-anchor="middle" fill="#f97316" font-size="10" font-weight="700" font-family="Inter, sans-serif">Today</text>
+
+                        <!-- Row labels -->
+                        <text x="6" y="56" fill="#c7d2fe" font-size="11" font-weight="700" font-family="Inter, sans-serif">🔍 1. Discovery</text>
+                        <text x="6" y="101" fill="#6ee7b7" font-size="11" font-weight="700" font-family="Inter, sans-serif">📈 2. Validation</text>
+                        <text x="6" y="146" fill="#fde68a" font-size="11" font-weight="700" font-family="Inter, sans-serif">⚡ 3. Creation</text>
+                        <text x="6" y="191" fill="#a5f3fc" font-size="11" font-weight="700" font-family="Inter, sans-serif">🏢 4. Building</text>
+
+                        <!-- Discovery bar: Jan-Dec 2026 -->
+                        <rect x="90" y="40" width="190" height="24" rx="6" fill="#6366f1" opacity="0.85"/>
+                        <text x="92" y="36" fill="#c7d2fe" font-size="9.5" font-family="Inter, sans-serif">Jan&ndash;Dec 2026</text>
+
+                        <!-- Validation bar: Jun 2026 - Q2 2027 -->
+                        <rect x="137.5" y="85" width="237.5" height="24" rx="6" fill="#10b981" opacity="0.85"/>
+                        <text x="139.5" y="81" fill="#6ee7b7" font-size="9.5" font-family="Inter, sans-serif">Jun 2026&ndash;Q2 2027</text>
+
+                        <!-- Creation bar: Q2 2027 solid to Q4 2028, uncertain tail to end 2029 -->
+                        <rect x="375" y="130" width="285" height="24" rx="6" fill="#f59e0b" opacity="0.9"/>
+                        <rect x="660" y="130" width="190" height="24" rx="6" fill="rgba(245,158,11,0.18)" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <text x="377" y="126" fill="#fde68a" font-size="9.5" font-family="Inter, sans-serif">Q2 2027&ndash;2029 (wide range)</text>
+
+                        <!-- Building bar: ~2028 onward, open-ended -->
+                        <rect x="470" y="175" width="380" height="24" rx="6" fill="#06b6d4" opacity="0.85"/>
+                        <polygon points="850,175 864,187 850,199" fill="#06b6d4" opacity="0.85"/>
+                        <text x="472" y="171" fill="#a5f3fc" font-size="9.5" font-family="Inter, sans-serif">~2028 &rarr; ongoing</text>
+                    </svg>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 1rem;">
+                    The dashed/lighter segment of the Customer Creation bar marks the widest uncertainty band on this page &mdash; the 1,000x subscriber-growth target (<a href="../hypotheses/hyp-h13.html" style="color: var(--color-warning);">H13</a>) has no historical compounding rate to project from yet. Company Building is drawn as open-ended (arrow, not a closing edge) because $100k ARR triggers an ongoing structural transition, not a fixed end date.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Estimated Duration Table</h2>
+            <div class="card">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 1rem 0.5rem;">Stage</th>
+                            <th style="padding: 1rem 0.5rem;">Status today (2026-08-05)</th>
+                            <th style="padding: 1rem 0.5rem;">Estimated start</th>
+                            <th style="padding: 1rem 0.5rem;">Estimated exit / gate</th>
+                            <th style="padding: 1rem 0.5rem;">Estimated duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>1. Discovery</strong></td>
+                            <td style="padding: 1rem 0.5rem;">🟡 Ongoing &mdash; H1 partially validated, H2 in testing, H3 in progress</td>
+                            <td style="padding: 1rem 0.5rem;">~Jan 2026</td>
+                            <td style="padding: 1rem 0.5rem;">~Q4 2026 &mdash; newsletter live with a measured signup rate (H3) and catalog-wide (not single-video) retention data (H2)</td>
+                            <td style="padding: 1rem 0.5rem;">~10&ndash;12 months, running in parallel with Validation via the same free cohort rather than as a hard sequential gate</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>2. Validation</strong></td>
+                            <td style="padding: 1rem 0.5rem;">⚪ Free-tier testing running; no paid launch yet</td>
+                            <td style="padding: 1rem 0.5rem;">~Jun 2026 (8-week free cohort start)</td>
+                            <td style="padding: 1rem 0.5rem;">~Q2 2027 &mdash; 2 consecutive paid launches combine to $10,000 (H9 repeat gate, see <a href="validation-repeat-gate.html" style="color: var(--color-primary);">Validation Repeat Gate</a>)</td>
+                            <td style="padding: 1rem 0.5rem;">~9 months from today, assuming no 3rd relaunch is needed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>3. Creation</strong></td>
+                            <td style="padding: 1rem 0.5rem;">⚪ Not started &mdash; gated behind Stage 2's $10k exit</td>
+                            <td style="padding: 1rem 0.5rem;">~Q2&ndash;Q3 2027</td>
+                            <td style="padding: 1rem 0.5rem;">Q4 2028 (optimistic) to 2029+ (if slower) &mdash; 30,000 subscribers, 1,000x the ~30 baseline (H13)</td>
+                            <td style="padding: 1rem 0.5rem;">18&ndash;30 months &mdash; widest uncertainty band of all four stages</td>
+                        </tr>
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>4. Building</strong></td>
+                            <td style="padding: 1rem 0.5rem;">⚪ Not started &mdash; gated behind $100k ARR</td>
+                            <td style="padding: 1rem 0.5rem;">~2028 (matches the Hire 1 video-editor target already set on <a href="../stages/stage-company-building.html" style="color: var(--color-primary);">Company Building</a>)</td>
+                            <td style="padding: 1rem 0.5rem;">Open-ended &mdash; a structural transition to full-time + hired team (H11, H15), not a fixed end date</td>
+                            <td style="padding: 1rem 0.5rem;">Ongoing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚠️ Why These Are Estimates, Not Commitments</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-warning);">
+                        <div class="spec-title">🧑‍💻 Single-founder bandwidth ceiling</div>
+                        <div class="spec-desc">Every stage above is produced and delivered by one person working a second job (see <a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-warning);">Single-Founder Bandwidth</a>). There is exactly one live delivery slot a week, which caps how fast any stage can move regardless of demand.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-warning);">
+                        <div class="spec-title">📈 Stage 3 has no compounding precedent</div>
+                        <div class="spec-desc">The 1,000x subscriber target (H13) has zero data points logged so far &mdash; the Q4 2028&ndash;2029 range on Creation is a placeholder band, not a projection from an observed growth curve.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-warning);">
+                        <div class="spec-title">🚪 The Stage 2 gate can slip</div>
+                        <div class="spec-desc">H9's repeat gate requires 2 consecutive paid launches to combine to $10k. If the first launch underperforms, a 3rd cycle is needed, directly pushing the Q2 2027 exit and every date after it.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-warning);">
+                        <div class="spec-title">🔁 Delegation could compress Stage 4's ramp</div>
+                        <div class="spec-desc">Handing weekly audience follow-up/cohort-prep reminders to a hired Cohort Support Coordinator (see <a href="../stages/stage-company-building.html" style="color: var(--color-warning);">Company Building</a>) frees founder time once Stage 4 is reached &mdash; a lever that could shorten later timelines but isn't reflected in the chart above since it only applies after the $100k ARR trigger.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sanity Check (Missing Questions & Risks) -->
+        <section class="content-section animate-fade-in" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h2 class="section-title" style="color: var(--color-warning);">⚠️ Sanity Check: Missing Questions &amp; Risks</h2>
+            <div class="card" style="background: rgba(245, 158, 11, 0.02); border-color: rgba(245, 158, 11, 0.2);">
+                <div class="grid">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Missing Questions:</h4>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li>What is the actual pace of a paid cohort launch cycle (marketing lead time to seats filled), versus the free cohort's 8-week precedent?</li>
+                            <li>Should this page log real dates as each milestone actually happens, turning the chart into an actuals-vs-estimate comparison?</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Key Risks:</h4>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li>Treating these estimates as commitments could create pressure that pushes toward the removed "guarantee" framing (see H8) applied to timing instead of outcomes.</li>
+                            <li>A slipped Stage 2 gate cascades through every later date, since Stage 3 and 4 start dates are both defined relative to it, not as fixed calendar targets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Related Hypotheses</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary);">This page is the source spec behind <strong>H19</strong> (new) in the <a href="../hypotheses/hypothesis.html" style="color: var(--color-primary);">Hypothesis Tracker</a> &mdash; the estimates above draw on <a href="../hypotheses/hyp-h4.html" style="color: var(--color-primary);">H4</a>, <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>, <a href="../hypotheses/hyp-h11.html" style="color: var(--color-primary);">H11</a>, <a href="../hypotheses/hyp-h13.html" style="color: var(--color-primary);">H13</a>, and <a href="../hypotheses/hyp-h15.html" style="color: var(--color-primary);">H15</a> for their underlying dates and gates.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 See Also</h2>
+            <p style="color: var(--text-secondary);"><a href="../dashboard/calendar.html" style="color: var(--color-primary);">Milestone Calendar</a> for these same estimates expanded into 17 individual named, dated events &middot; <a href="quality-gates.html" style="color: var(--color-primary);">Quality Gates</a> for the pass/fail criteria at each stage boundary &middot; <a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Bandwidth</a> for the weekly time ledger these estimates are constrained by &middot; <a href="validation-repeat-gate.html" style="color: var(--color-primary);">Validation Repeat Gate</a> for the 2-launch $10k mechanic driving the Stage 2 exit date &middot; <a href="../stages/stage-company-building.html" style="color: var(--color-primary);">Company Building</a> for the delegation plan that lightens founder load once Stage 4 starts &middot; <a href="test-plan.html" style="color: var(--color-primary);">Test Plan</a> for the execution calendar behind Stage 1&ndash;2.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Linked to the new Milestone Calendar page, which expands these estimates into 17 individual dated events (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/stage-timelines.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/stage-timelines.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

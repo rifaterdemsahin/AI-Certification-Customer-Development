@@ -1,133 +1,61 @@
-# 🧠 Project Rationale: AI Certification Helper
+# gemini.md
 
-This document explains the strategic rationale and business validation architecture for Rifat Erdem Sahin's **AI Certification Helper** customer development portal, constructed under Steve Blank's framework.
+Guidance for a future Gemini session working in this repository.
 
-## 🚀 Mandatory Workflow Mandates
+## Mandatory Workflow Mandates
 
-- **Post-Task Validation:** Upon completing a task (especially page updates), always:
-    1. Perform the project's build step (none exists).
-    2. Start/Restart the local application server (typically Python HTTP server on port `8000`).
-    3. Open the specific updated page in the default browser for visual/functional verification.
-    4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
-    5. Output clickable links to that updated page at the very end of your final response.
-- **Hypothesis Linkage:** Whenever a page is updated or a new page is added, link it to `HYPOTHESIS.md`: add or update the relevant hypothesis entry to reference the page by filename, and cite the hypothesis ID (e.g. "see H10") in the page's content wherever it states a falsifiable claim. Bump `HYPOTHESIS.md`'s version and Change Log when you do this.
-- **Report Versioning:** `reports/*.md` files version by filename (`-v1.0.md`, `-v1.1.0.md`, ...), not in-place edits. When a finding in one of these reports is resolved or changes, create the next versioned file, mark the resolution status directly next to the original finding (don't delete it), and add a superseded-by banner to the old file. `HYPOTHESIS.md` follows the same "always show status, never silently resolve" rule via its own version field and Change Log.
+Upon completing any task (especially page updates), always:
+1. Perform the project's build step (none exists).
+2. Start/Restart the local application server (typically Python HTTP server on port `8000`).
+3. Open **every** updated and newly-created page in the browser using the Mac CLI `open` command — not a representative sample. When a task touches N pages, open all N (e.g. `open -a "Google Chrome" http://localhost:8000/5_Symbols/stages/a.html http://localhost:8000/5_Symbols/bmc/b.html ...` in one call). Per the user's global preference, use `open -a "Google Chrome"`, not the bare `open` command.
+4. Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/bmc/bmc-channels.html`) and wait for the live GitHub Pages deployment to complete.
+5. Display clickable links to that updated page at the very end of your final response.
+6. Whenever a page is updated or a new page is added, link it to `HYPOTHESIS.md`: add or update the relevant hypothesis entry (premise &rarr; conclusion &rarr; status) to reference the page by relative path under `5_Symbols/`, and cite the hypothesis ID (e.g. "see H10") from the page's content where it states a falsifiable claim. Bump `HYPOTHESIS.md`'s version and Change Log when you do this.
+7. Always re-run the `business-model-sanity-check` skill after a batch of page updates/additions and publish its new versioned report (`reports/business-model-confidence-vX.Y.Z.md` / `5_Symbols/dashboard/confidence-report.html`) — never skip this step, even if the score is expected to hold flat. If the score is below 100, `5_Symbols/dashboard/confidence-report.html` must explicitly outline, for each score component that isn't yet at its ceiling, what concrete evidence (data, measurement, or founder decision) would be needed to move it up — not just the number itself.
 
----
+## What this project is
 
-## 🗺️ Visual Architecture Strategy
+A static HTML/CSS/JS site (no build step, no framework, no bundler — just open the files or serve the directory) documenting the Customer Development business plan (Steve Blank methodology) for **AI Certification Helper**, a business run by founder **Rifat Erdem Sahin**. The business: animated YouTube videos that teach AI/cloud certification content, funneling free viewers into a $10/mo prep membership and $250–$500 live cohort bootcamps aimed at the Claude Certified Architect – Professional exam (issued by Anthropic via Pearson VUE — this company never issues the certification itself).
 
-Below is a custom SVG schematic illustrating how traffic flows from organic search into our multi-tier monetization funnel, leading to the scaling trigger gate.
+Do not re-derive these facts from scratch in a future session — they are established and cross-referenced throughout the site:
+- **Founder:** Rifat Erdem Sahin, running this as a second job (not full-time; works a contract role, meaning YouTube and LinkedIn comments are batch-answered in weekly cycles).
+- **Primary Channels:** YouTube Courses & organic LinkedIn sharing (using Rifat Erdem Sahin's professional audience).
+- **$10,000 USD** cumulative cohort/course revenue = the Stage 2 &rarr; 3 (Customer Validation &rarr; Customer Creation) exit gate. See `5_Symbols/stages/stage-customer-creation.html`, `5_Symbols/stages/stage-customer-validation.html`, and `5_Symbols/growth/quality-gates.html`.
+- **1,000x subscriber growth per video** (baseline ~30 subscribers &rarr; ~30,000 target) = the primary Stage 3 (Customer Creation) metric. See `5_Symbols/stages/stage-customer-creation.html`.
+- **$100,000 annual run-rate** = the Stage 4 (Company Building) hiring trigger (freelance video editor, cohort support coordinator, technical TAs). See `5_Symbols/stages/stage-company-building.html`.
+- **>40% average watch retention** = an MVP-stage video-quality floor, not a stage gate (demoted from an earlier draft — see `HYPOTHESIS.md` H10).
+- All "guarantee of passing the exam" language has been deliberately removed site-wide; the value prop is live cohort practice/community, not a promised outcome.
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto" style="background:#0b0f19; border-radius:16px; border: 1px solid rgba(255,255,255,0.08); box-shadow:0 20px 40px rgba(0,0,0,0.5); font-family:'Outfit','Inter',sans-serif;">
-  <defs>
-    <linearGradient id="indigoTeal" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1" />
-      <stop offset="100%" stop-color="#06b6d4" />
-    </linearGradient>
-    <linearGradient id="goldOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#d97706" />
-    </linearGradient>
-    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#059669" />
-    </linearGradient>
-  </defs>
+The authoritative running log of every falsifiable claim on the site — with status (Validated / In Testing / Planned / Claimed-unverified) — is `HYPOTHESIS.md`. Read it before asserting a new business number; update it if you change one.
 
-  <!-- Title -->
-  <text x="40" y="50" fill="#ffffff" font-size="22" font-weight="800" letter-spacing="-0.025em">CUSTOMER DEVELOPMENT PIPELINE</text>
-  <text x="40" y="75" fill="#9ca3af" font-size="12" font-weight="500">Value Loop &amp; Conversion Logic</text>
+## Page conventions
 
-  <!-- Flow Blocks -->
-  
-  <!-- Block 1: Traffic Acquisition -->
-  <rect x="40" y="120" width="180" height="180" rx="16" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="2" />
-  <rect x="60" y="140" width="40" height="40" rx="10" fill="url(#indigoTeal)" />
-  <text x="80" y="165" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">🎬</text>
-  <text x="60" y="210" fill="#ffffff" font-size="16" font-weight="700">1. Discovery</text>
-  <text x="60" y="235" fill="#9ca3af" font-size="12">YouTube Course Tab</text>
-  <text x="60" y="255" fill="#9ca3af" font-size="12">Animated Guides</text>
-  <text x="60" y="275" fill="#6366f1" font-size="11" font-weight="700">Watch Target: &ge; 40%</text>
+Every page type follows the same body structure: a `.card` hero block with a `.badge` + `.info-list` (or a heading + intro paragraph for simpler pages), one or more `.content-section` blocks with a `.section-title`, a back-link near the top to the most relevant parent page, and the standard footer.
 
-  <!-- Connector 1 -->
-  <path d="M 230 210 L 270 210" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3" marker-end="url(#arrow)" />
-  <text x="250" y="195" fill="#9ca3af" font-size="12" text-anchor="middle">Click</text>
+Page families (all grouped inside `5_Symbols/` folder):
+- `index.html` — the hub in the repository root. Has the 4-stage flow diagram, the original "Page Spec Index" grid, and a "📐 Business Planning & Growth" grid.
+- `5_Symbols/stages/` — contains the 4 Steve Blank stages: `stage-customer-discovery.html`, `stage-customer-validation.html`, `stage-customer-creation.html`, `stage-company-building.html`. Each links out to its `5_Symbols/comp/comp-*.html` component specs.
+- `5_Symbols/cd/` — the detailed Customer Discovery process playbook: interview guide, watering holes/outreach, interview recording & tracker, `cd-process.html` overview, and the 4 phases (Hypothesis / Test Problem / Test Product / Verify), each with its own sub-pages.
+- `5_Symbols/discovery/` — `state-hypotheses.html`, `test-problem.html`, `test-solution.html`, `verify-pivot.html`. Deep-dive detail pages linked from the SVG diagram on `stage-customer-discovery.html`.
+- `5_Symbols/comp/` — detailed component specs tied to a specific stage (Problem-Solution Fit, MVP, Market, Business Model, Funnel, PMF, Roadmap, Creation Validation, Scale Organization).
+- `5_Symbols/bmc/` — the classic Business Model Canvas blocks (9 files) + `value-proposition.html` (which doubles as the detailed Value Proposition Canvas), `bmc-capital-relationships.html` (Capital Relationships page with Marxian analysis and tool breakdown), and `surplus-value.html` (Surplus Value Creation details).
+- `5_Symbols/hypotheses/` — the full hypothesis tracker dashboard `hypothesis.html`, `hypothesis-connectivity.html`, and `hyp-h1.html` &rarr; `hyp-h22.html` detail pages.
+- `5_Symbols/strategy/` — standalone strategy/growth pages: `motivation.html`, `focus.html`, `target-audience.html`, `risk-analysis.html`, `requirements.html`, `business-plan-summary.html`, `competitive-analysis.html`, `evidence-map.html`, `single-founder-bandwidth.html`, `why-certification.html`, `moat.html`, `maot.html`.
+- `5_Symbols/growth/` — `sales-pipeline.html`, `flywheel.html`, `quality-gates.html`, `stage-timelines.html`, `test-metrics.html`, `test-plan.html`, `content-analysis.html`, `cohort-prep.html`, `advertisement.html`, `funnel-math.html`, `unit-economics.html`, `cost-side-model.html`, `validation-repeat-gate.html`, `marketing-tactics.html`, `conversation-starters.html`, `metrics-dashboard.html`, `market-fit-channels.html`, `ai-demo.html`, `organic-growth.html`.
+- `5_Symbols/dashboard/` — `calendar.html` (Milestone Calendar), `todo.html` (Task List), `confidence-report.html` (Confidence Report), `latest-pages.html` (Latest Created/Updated Pages).
+- `5_Symbols/product/` — `partners.html`, `pitch-deck.html`, `vc-deck.html`, `self-assessment.html`, `discovery-journey.html`, `exam-prep-product.html`, `exam-performance-evidence.html`, `dictionary.html`.
+- `markdown_renderer.html?src=PATH` — in root, renders any `.md` file in the repo as styled HTML.
 
-  <!-- Block 2: Validation & Pricing -->
-  <rect x="290" y="120" width="180" height="180" rx="16" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="2" />
-  <rect x="310" y="140" width="40" height="40" rx="10" fill="url(#emeraldGrad)" />
-  <text x="330" y="165" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">💰</text>
-  <text x="310" y="210" fill="#ffffff" font-size="16" font-weight="700">2. Validation</text>
-  <text x="310" y="235" fill="#9ca3af" font-size="12">YouTube Membership</text>
-  <text x="310" y="255" fill="#9ca3af" font-size="12">$10/mo Exam Prep</text>
-  <text x="310" y="275" fill="#10b981" font-size="11" font-weight="700">Cohort: $10,000</text>
+When adding a new page: create the `.html` file with `<div id="site-header"></div>` near the top of `<body>` (no hand-written `<header>`), include the correct path to `nav.js` and `main.js` (e.g. `<script src="../../nav.js"></script>` for depth=2), then add the page path into the relevant group inside `nav.js`'s `groups` array and `searchIndex` array.
 
-  <!-- Connector 2 -->
-  <path d="M 480 210 L 520 210" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3" />
-  <text x="500" y="195" fill="#9ca3af" font-size="12" text-anchor="middle">Verify</text>
+## The shared nav.js pattern
 
-  <!-- Block 3: Scaling Gate -->
-  <rect x="540" y="120" width="220" height="180" rx="16" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(245, 158, 11, 0.3)" stroke-width="2" />
-  <rect x="560" y="140" width="40" height="40" rx="10" fill="url(#goldOrange)" />
-  <text x="580" y="165" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">🏢</text>
-  <text x="560" y="210" fill="#ffffff" font-size="16" font-weight="700">3. Scaling Gate</text>
-  <text x="560" y="235" fill="#9ca3af" font-size="12">Ongoing Second Job, Scaled Up</text>
-  <text x="560" y="255" fill="#9ca3af" font-size="12">Target Run-Rate: $100k</text>
-  <text x="560" y="275" fill="#f59e0b" font-size="11" font-weight="700">Hire Editor &amp; Assistants</text>
-  
-  <!-- Arrow marker definition -->
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.4)" />
-    </marker>
-  </defs>
-</svg>
+`nav.js` is the single source of truth for the site header/navigation. It dynamically builds the header markup and injects it into `#site-header`. It resolves URLs relatively by computing `pathPrefix` based on location (e.g. `../../` for files in `5_Symbols/bmc/`).
 
----
+## CSS class vocabulary (style.css)
 
-## 🎯 The Core Business Hypotheses
+Re-use CSS custom properties from `:root` in `style.css` (`var(--text-secondary)`, `var(--border-color)`, `var(--color-primary)`, `var(--color-success)`, `var(--color-warning)`, `var(--color-info)`, `var(--bg-card)`, etc.) rather than hardcoding colors. Use `.card`, `.badge`, `.info-list`, `.spec-box`, `.emoji-list`, `.metrics-grid`, `.metric-card`, `.status-pill`, and `.btn` classes.
 
-### 1. 🔍 Customer Discovery: Problem-Solution Fit
-*   **The Problem:** Standard technical documentation is expanding, while LLMs (e.g. Claude) evolve rapidly. Staff face immense skills inflation and feel forced to certify themselves under tight timelines, but existing video courses are dry and lack structured visual models.
-*   **The Solution:** Highly-animated technical training videos that distill architectural diagrams down to visual components, allowing developers to retain core information and pass certifications.
+## Report versioning convention
 
-### 2. 📈 Customer Validation: Revenue Repeatability
-*   **Freemium Distribution Funnel:** We rely on YouTube Course playlists and organic LinkedIn sharing (leveraging Rifat Erdem Sahin's professional audience) to capture organic search and network traffic.
-*   **Low Ticket ($10/mo):** Converts general watchers into community members to practice mock exams.
-*   **High Ticket ($250 - $500):** Cohort bootcamps (4-8 weeks) provide hands-on architectural reviews. The verification milestone is **$10,000 in gross revenue from a single course launch**.
-
-### 3. ⚡ Customer Creation: Operational Threshold
-*   Rather than transitioning to full-time study guide creation blindly, we set a logical trigger gate:
-    *   **Validation Exit Gate (Stage 2 → 3):** $10,000 (USD) worth of validated customers generated from Customer Validation, achieved solely by the founder to keep the loop agile — required before any Customer Creation or Company Building work begins.
-    *   **Customer Creation Metric (Stage 3 focus):** 1,000x subscriber growth per published video, measured against the current baseline of roughly 30 subscribers.
-*   Upon clearing the validation gate, founder **Rifat Erdem Sahin** does **not** transition full-time. He keeps his primary job and runs this as an ongoing second job, devoting evenings and weekends to research, content production, and cohort support. YouTube and LinkedIn comments are batch-answered in weekly cycles because Rifat works a contract role during this content generation phase.
-
-### 4. 🏢 Company Building: Hiring & System Automation
-*   Scaling occurs at **$100,000/year** run rate.
-*   The system hires:
-    1.  **Freelance Video Editor:** To offload timeline animation, asset compilation, and vocal leveling.
-    2.  **Cohort Support Coordinator:** To handle scheduling, student onboarding, calendars, and subscriptions.
-    3.  **Technical TAs:** Former graduates who assist students 1-on-1 with code blueprints.
-
----
-
-## 🎤 Customer Discovery Interview Framework & Watering Holes (Init)
-
-This section maps out the qualitative customer validation protocol, aligning our face-to-face and online outreach channels.
-
-### 1. The Listening Mandate (Rule #1)
-*   **No Solution Pitching:** The founder must **never** mention the animated video course solution during the discovery phase. Pitching activates defenses and biases feedback.
-*   **Focus on Stories:** Ask candidates to recount specific past behaviors (how they acted, what they bought, what they failed at) rather than speculative future behaviors.
-
-### 2. High-Yield Open-Ended Questions
-*   **Pains:** "What sucks the most about official certification documentation?" "Tell me about the last time you got stuck on a cloud diagram—how did you solve it?"
-*   **Gains:** "What does a highly efficient study session feel like?" "How would passing this exam change your career status?"
-
-### 3. Core Watering Holes
-*   **Triton Square:** Physical business plaza where enterprise developers and IT staff gather (face-to-face intercepts during lunch hours).
-*   **Venture Coffee Meetups:** Weekly tech-focused meetups where local engineers discuss upskilling.
-*   **Weekend Cohorts:** Discord and Slack study groups where certification candidates actively trade exam tips.
-
-### 4. Qualitative Exit Criterion
-*   Successfully complete **30 customer interviews** detailing the "Day in the Life" of certification prep, capturing current workarounds, before finalizing the MVP video themes.
+`reports/*.md` files carry their version in the filename (e.g. `acidity-check-report-v1.2.0.md`). Create a new versioned file rather than editing in place, add a superseded banner at the top of the old file linking to the new one, and update all cross-references in `HYPOTHESIS.md` and `nav.js`.

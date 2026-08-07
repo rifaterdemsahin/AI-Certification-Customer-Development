@@ -11,13 +11,13 @@ Use this document alongside [CLAUDE.md](file:///Users/rifaterdemsahin/projects/A
 ### 1. Post-Task Validation
 Upon completing any page or configuration updates, AI agents **MUST** execute the following steps:
 1. **Server Verification:** Check if the local server is running (typically Python HTTP server on port `8000`). If not active, start/restart it in the background using `python3 -m http.server 8000`.
-2. **Visual/Functional Verification:** Open the specific updated pages in the default browser using the Mac CLI `open` command (e.g. `open http://localhost:8000/bmc-channels.html`).
-3. **GitHub Verification & Deployment:** Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/bmc-channels.html`) and wait for the GitHub Pages deployment to complete.
+2. **Visual/Functional Verification:** Open the specific updated pages in the default browser using the Mac CLI `open` command (e.g. `open http://localhost:8000/5_Symbols/bmc/bmc-channels.html`).
+3. **GitHub Verification & Deployment:** Open the specific GitHub page with the related update/history (e.g., `open https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/bmc/bmc-channels.html`) and wait for the GitHub Pages deployment to complete.
 
 ### 2. Output Links to Updated Pages
 Whenever you create or update an HTML page or web resource, **ALWAYS** display clickable links to that updated page at the very end of your final response:
-* Provide the absolute file path link (`file://` scheme, e.g., `[bmc-channels.html](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/bmc-channels.html)`).
-* Provide the localhost HTTP link (e.g., `http://localhost:8000/bmc-channels.html`).
+* Provide the absolute file path link (`file://` scheme, e.g., `[bmc-channels.html](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/5_Symbols/bmc/bmc-channels.html)`).
+* Provide the localhost HTTP link (e.g., `http://localhost:8000/5_Symbols/bmc/bmc-channels.html`).
 
 ### 3. Footer Revision Tracking
 For any page that receives functional or business content updates, the footer **MUST** be updated to track the change.
@@ -26,13 +26,13 @@ For any page that receives functional or business content updates, the footer **
 * **Format:**
   ```html
   <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-      Latest Change: [Description of last change] (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/[filename].html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+      Latest Change: [Description of last change] (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/[group]/[filename].html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
   </span>
   ```
 
 ### 4. Hypothesis Linkage
 Whenever a page is updated or a new page is added, AI agents **MUST** cross-link it with `HYPOTHESIS.md`:
-* Add or update the relevant hypothesis entry (premise → conclusion → status) in `HYPOTHESIS.md` to reference the page by filename.
+* Add or update the relevant hypothesis entry (premise → conclusion → status) in `HYPOTHESIS.md` to reference the page by relative path.
 * Cite the hypothesis ID (e.g. "see H10") from the page's own content wherever it states a falsifiable claim.
 * Bump `HYPOTHESIS.md`'s version field and Change Log whenever this linkage is added or changed.
 
@@ -60,7 +60,7 @@ All web app page extensions or styles must uphold premium visual standards:
 
 ## 📊 Report Versioning & Resolution Tracking
 
-`reports/*.md` files (e.g. `acidity-check-report-v1.0.md`) carry their version number **in the filename**, unlike `HYPOTHESIS.md`, which bumps a version field in place. When new evidence resolves, partially resolves, or changes a finding in one of these reports, AI agents **MUST NOT** silently edit the old file. Instead:
+`reports/*.md` files (e.g. `acidity-check-report-v1.2.0.md`) carry their version number **in the filename**, unlike `HYPOTHESIS.md`, which bumps a version field in place. When new evidence resolves, partially resolves, or changes a finding in one of these reports, AI agents **MUST NOT** silently edit the old file. Instead:
 1. **Create a new file** at the next version (`reports/<name>-vX.Y.0.md`) rather than overwriting the old one — old versions are the historical record.
 2. **Annotate each finding's resolution status in place**, e.g. `"F1. ... → ✅ RESOLVED (2026-08-01)."` or `"→ 🟡 PARTIALLY ADDRESSED."` — never delete a finding just because it's resolved.
 3. **Add a one-line superseded-by banner** at the top of the old file, linking forward to the new one.
@@ -70,27 +70,16 @@ The same "always show status, never silently resolve" rule applies to `HYPOTHESI
 
 ## 🗂️ Navigation & Link Integrity
 
-* **Single source of truth:** all top nav grouping lives in `nav.js`'s `groups`
-  array (see `CLAUDE.md`'s "Nav groups" list for the current order/contents). Never
-  hand-write a `<header>` on a page — grep for `<header>` across `*.html` after any
-  nav change; it should never match.
-* **Before adding a page:** pick the nav group it logically belongs to (or add a new
-  group) and add it to `groups`, plus a `searchIndex` entry so it's findable via
-  🔍 Search.
-* **Before renaming or removing a page:** grep its filename across `*.html` and
-  `nav.js` — a link left dangling in `groups`, `searchIndex`, or another page's body
-  is the most common way this site breaks.
-* **Detail pages don't have to live in the top nav:** `discovery/*.html` is a
-  deliberate example — reachable from `stage-customer-discovery.html`'s diagram and
-  from Search, not from a dropdown, because it's contextual detail rather than a
-  top-level destination. Prefer this pattern over cramming every sub-page into the
-  nav when a parent page can link to it directly instead.
+* **Single source of truth:** all top nav grouping lives in `nav.js`'s `groups` array. Never hand-write a `<header>` on a page — grep for `<header>` across `*.html` after any nav change; it should never match.
+* **Before adding a page:** pick the nav group it logically belongs to (or add a new group) and add it to `groups`, plus a `searchIndex` entry so it's findable via 🔍 Search.
+* **Before renaming or removing a page:** grep its filename across `*.html` and `nav.js` — a link left dangling in `groups`, `searchIndex`, or another page's body is the most common way this site breaks.
+* **Detail pages don't have to live in the top nav:** `5_Symbols/discovery/*.html` is a deliberate example — reachable from stage discovery's diagram and from Search, not from a dropdown. Prefer this pattern over cramming every sub-page into the nav when a parent page can link to it directly instead.
 
 ---
 
 ## 📝 Document Synchronization Rule
 
 When updating a business fact or primary parameter (such as channel lists, pricing, or comments schedule), the agent **MUST** update all of the following in tandem:
-1. The relevant specific `bmc-*.html` or `comp-*.html` files.
-2. The high-level [business-model-canvas.html](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/business-model-canvas.html) overview.
+1. The relevant specific `5_Symbols/[group]/bmc-*.html` or `5_Symbols/[group]/comp-*.html` files.
+2. The high-level [business-model-canvas.html](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/5_Symbols/bmc/business-model-canvas.html) overview.
 3. The model memory files: [CLAUDE.md](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/CLAUDE.md), [gemini.md](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/gemini.md), and [agents.md](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/agents.md).

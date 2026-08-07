@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost-Side Model | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../bmc/bmc-cost-structure.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to BMC: Cost Structure
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-warning);">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fef3c7; border-color: rgba(245, 158, 11, 0.3);">Growth &middot; Cost-Side Model</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📉 Cost-Side Model</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Acidity check Finding F7: every metric this site tracks is top-line (views, retention, revenue) &mdash; nothing prices out the cost side. This page is the business-level cost stack; see <a href="unit-economics.html" style="color: var(--color-warning);">Unit Economics</a> for the per-customer version of the same math.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💳 What Actually Costs Cash Today</h2>
+            <div class="card">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 1rem 0.5rem;">Line item</th>
+                            <th style="padding: 1rem 0.5rem;">Monthly</th>
+                            <th style="padding: 1rem 0.5rem;">Annualized</th>
+                            <th style="padding: 1rem 0.5rem;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;">AI infrastructure &amp; inference</td>
+                            <td style="padding: 1rem 0.5rem;">$100</td>
+                            <td style="padding: 1rem 0.5rem;">$1,200</td>
+                            <td style="padding: 1rem 0.5rem;">Active, only recurring hard cash cost identified</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;">Video hosting / LMS</td>
+                            <td style="padding: 1rem 0.5rem;">$0</td>
+                            <td style="padding: 1rem 0.5rem;">$0</td>
+                            <td style="padding: 1rem 0.5rem;">YouTube used as the platform, avoids this cost entirely</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;">Payment processing fees</td>
+                            <td style="padding: 1rem 0.5rem;">Unmodeled</td>
+                            <td style="padding: 1rem 0.5rem;">Unmodeled</td>
+                            <td style="padding: 1rem 0.5rem;">Gap &mdash; a real % of every transaction, not yet tracked</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;">Refund reserve</td>
+                            <td style="padding: 1rem 0.5rem;">$0</td>
+                            <td style="padding: 1rem 0.5rem;">$0</td>
+                            <td style="padding: 1rem 0.5rem;">No exam-pass guarantee is offered (F8 resolved), so no refund liability is being reserved against</td>
+                        </tr>
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;">Freelance editor / cohort coordinator / TAs</td>
+                            <td style="padding: 1rem 0.5rem;">$0</td>
+                            <td style="padding: 1rem 0.5rem;">$0</td>
+                            <td style="padding: 1rem 0.5rem;">Deferred until the $100k ARR hiring trigger (<a href="../hypotheses/hyp-h11.html" style="color: var(--color-primary);">H11</a>, see <a href="../stages/stage-company-building.html" style="color: var(--color-warning);">Company Building</a>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--text-secondary); margin-top: 1.5rem;">
+                    <strong>Total known hard cash cost today: $100/month ($1,200/year)</strong> &mdash; against the $100,000 ARR Stage 4 hiring trigger, that's under 1.2% of the threshold. Almost all of the "margin" the business is currently running on is founder time, not cash, which is exactly what the time-cost model below prices out.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⏱️ The Real Cost: Founder Time</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Content production, live cohort delivery, and 1-on-1 feedback all run through one person, valued against his &pound;525/day inside-IR35 contracting rate (see <a href="unit-economics.html" style="color: var(--color-warning);">Unit Economics</a> for the hourly breakdown, and <a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-warning);">Single-Founder Bandwidth</a> for the weekly time ledger this is built on).
+                </p>
+                <div class="spec-box" style="border-left-color: var(--color-info); margin: 0;">
+                    <div class="spec-title">📌 This is opportunity cost, not lost income</div>
+                    <div class="spec-desc">Because content/cohort work happens in contract-free evening and weekend hours, it isn't directly displacing paid contracting time. It is still a real cost in foregone rest and personal time, and becomes an actual lost-income cost whenever weekend contract extension work is available and turned down in favor of this project.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚖️ Break-Even Math</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Membership vs. fixed infra cost</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">$100/month infra &divide; $10/mo per member = <strong>10 active members</strong> needed just to cover the fixed cash cost, before any founder time is counted.</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Cohort vs. fixed infra cost</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">A single $250 cohort seat covers <strong>2.5 months</strong> of the $100/month infra bill outright &mdash; the fixed cash floor is trivially easy to clear; the founder-time cost is the real constraint (see <a href="unit-economics.html" style="color: var(--color-warning);">Unit Economics</a>).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h2 class="section-title" style="color: var(--color-warning);">⚠️ What's Still Missing</h2>
+            <div class="card" style="background: rgba(245, 158, 11, 0.02); border-color: rgba(245, 158, 11, 0.2);">
+                <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>Payment processing fees are still not itemized against any revenue line.</li>
+                    <li>No cost model exists yet for the three Stage 4 hires against whether $100k ARR actually leaves enough margin to pay them (acidity Finding F7, still open).</li>
+                    <li>No cost-of-living/runway model has been checked against the founder's planned full-time transition at the $100k ARR threshold (<a href="../hypotheses/hyp-h15.html" style="color: var(--color-primary);">H15</a>).</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; business-level cost stack and break-even math, addressing acidity check Finding F7 (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/cost-side-model.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/cost-side-model.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
