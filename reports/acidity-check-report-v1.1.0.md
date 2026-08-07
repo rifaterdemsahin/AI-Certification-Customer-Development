@@ -1,3 +1,5 @@
+> **Superseded by [`acidity-check-report-v1.2.0.md`](acidity-check-report-v1.2.0.md) (2026-08-07)** — F9 (pricing-ladder gap) upgraded from STILL OPEN to PARTIALLY ADDRESSED following the $29 Exam Prep Bundle addition. This version is kept as the historical record of findings as of 2026-08-04.
+
 # Acidity Check Report v1.1 — AI Certification Helper Customer Development Model
 
 **Version:** 1.1.0
