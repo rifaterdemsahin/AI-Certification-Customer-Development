@@ -70,7 +70,15 @@
                 ['business-plan-summary.html', '📄 Business Plan Summary'],
                 ['competitive-analysis.html', '⚔️ Competitive Analysis'],
                 ['evidence-map.html', '🔍 Evidence Map'],
-                ['single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth']
+                ['hypothesis-connectivity.html', '🔀 Hypothesis Connectivity'],
+                ['single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
+                ['vc-deck.html', '🎤 VC Deck'],
+                ['pitch-deck.html', '📋 5-Minute Pitch Deck'],
+                ['why-certification.html', '🏅 Why Certification Matters'],
+                ['self-assessment.html', '🧭 Self-Assessment'],
+                ['discovery-journey.html', '🧭 The Discovery Journey'],
+                ['moat.html', '🛡️ Defensive Capabilities & Moat'],
+                ['maot.html', '✨ MAOT Framework']
             ]
         },
         {
@@ -84,7 +92,9 @@
                 ['bmc-key-resources.html', '🏗️ Key Resources'],
                 ['bmc-key-activities.html', '⚙️ Key Activities'],
                 ['bmc-key-partners.html', '🤝 Key Partners'],
-                ['bmc-cost-structure.html', '📉 Cost Structure']
+                ['bmc-cost-structure.html', '📉 Cost Structure'],
+                ['partners.html', '🤝 Partner With Us'],
+                ['exam-prep-product.html', '📦 Exam Prep Bundle ($29)']
             ]
         },
         {
@@ -104,7 +114,11 @@
                 ['unit-economics.html', '💵 Unit Economics'],
                 ['cost-side-model.html', '📉 Cost-Side Model'],
                 ['validation-repeat-gate.html', '🚪 Validation Repeat Gate'],
-                ['marketing-tactics.html', '📰 Marketing Tactics']
+                ['marketing-tactics.html', '📰 Marketing Tactics'],
+                ['conversation-starters.html', '🗣️ Conversation Starters'],
+                ['metrics-dashboard.html', '📊 Metrics Dashboard'],
+                ['market-fit-channels.html', '🔄 Market Fit & Channels'],
+                ['ai-demo.html', '🤖 AI Prep Demo']
             ]
         },
         {
@@ -198,7 +212,23 @@
         { url: 'business-plan-summary.html', title: 'Business Plan Summary', desc: 'High-level summary of business objectives, market dynamics, and milestones.', cat: 'Strategy', tags: 'summary business plan objectives milestones' },
         { url: 'competitive-analysis.html', title: 'Competitive Analysis', desc: 'Udemy/Coursera, official vendor training, and YouTube educators compared against this program, and why this is different.', cat: 'Strategy', tags: 'competitive analysis udemy coursera official vendor youtube educators alternatives' },
         { url: 'evidence-map.html', title: 'Evidence Map', desc: 'Every hypothesis matched to its evidence source, including the Sunday free-cohort discovery-interview method.', cat: 'Strategy', tags: 'evidence map hypothesis sources sunday cohort discovery interviews' },
+        { url: 'hypothesis-connectivity.html', title: 'What Does "Not Connected" Mean?', desc: 'Explains the three patterns behind a disconnected hypothesis in the Dependency Map: fully isolated, foundational-uncited gap, and terminal leaf.', cat: 'Strategy', tags: 'connectivity dependency map isolated orphan gap terminal leaf depends on feeds' },
         { url: 'single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
+        { url: 'vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
+        { url: 'pitch-deck.html', title: '5-Minute Pitch Deck', desc: 'Single-scroll executive-review summary of the business with links to full detail on every claim.', cat: 'Strategy', tags: 'pitch deck 5 minute executive summary tldr' },
+        { url: 'why-certification.html', title: 'Why Certification Matters', desc: 'Prospect-facing case for AI certification: pay premiums, employer partner-tier gating, and FDE hiring growth.', cat: 'Strategy', tags: 'why certification matters career prospects employer value' },
+        { url: 'self-assessment.html', title: 'Self-Assessment', desc: 'Interactive 3-question quiz routing prospects to the free cohort, the $29 bundle, membership, or live cohort.', cat: 'Strategy', tags: 'self assessment quiz recommendation which offer fits me' },
+        { url: 'discovery-journey.html', title: 'The Discovery Journey', desc: 'Prospect-facing plain-language guide to what happens in a customer discovery call and how to join.', cat: 'Strategy', tags: 'discovery journey prospect interview join customer development' },
+        { url: 'moat.html', title: 'Defensive Capabilities & Moat', desc: 'Honest investor-facing look at what is and isn\'t defensible: founder-market fit, content catalog, network effects, and the thin spots.', cat: 'Strategy', tags: 'moat defensive competitive advantage investors thin spots' },
+        { url: 'maot.html', title: 'MAOT — Minimum Awesome Outcome Threshold', desc: 'A customer-development framework concept: the delight threshold beyond MVP where organic referral starts, tracked as H20.', cat: 'Strategy', tags: 'maot minimum awesome outcome threshold delight referral framework h20' },
+        { url: 'partners.html', title: 'Partner With Us', desc: 'Outward-facing invitation for corporate training, content/co-instructor, and referral partnerships.', cat: 'Business Model', tags: 'partners partnership corporate b2b co-instructor referral' },
+        { url: 'exam-prep-product.html', title: 'Exam Prep Bundle ($29)', desc: 'One-time $29 SKU — memory cards, prep exam, and mock exam — positioned alongside the membership and live cohort tiers, tracked as H21.', cat: 'Business Model', tags: 'exam prep bundle 29 dollars memory cards mock exam product h21' },
+        { url: 'conversation-starters.html', title: 'Conversation Starters for Events', desc: 'Networking swipe file of one-line openers and role-play scripts for events and meetups.', cat: 'Growth', tags: 'conversation starters events networking role play openers pitch' },
+        { url: 'metrics-dashboard.html', title: 'Metrics Dashboard', desc: 'Unified decision-maker view of confidence score, stage-gate progress, and live traction signals in one screen.', cat: 'Growth', tags: 'metrics dashboard decision makers unified kpi rollup' },
+        { url: 'market-fit-channels.html', title: 'Market Fit & Channels', desc: 'Customer-facing demonstration of real traction signals and the channels people actually use to find the program.', cat: 'Growth', tags: 'market fit channels demonstration customers signals traction' },
+        { url: 'ai-demo.html', title: 'Adaptive AI Prep — Concept Demo', desc: 'Interactive concept demo of adaptive, explanation-driven practice questions that adjust difficulty.', cat: 'Growth', tags: 'ai demo adaptive interactive practice concept prototype' },
+        { url: 'hyp-h20.html', title: 'H20 · MAOT predicts organic referral', desc: 'Detail page with premise-conclusion-status SVG diagram for H20.', cat: 'Hypothesis Detail', tags: 'h20 hypothesis detail maot referral delight svg diagram' },
+        { url: 'hyp-h21.html', title: 'H21 · $29 Exam Prep Bundle entry SKU', desc: 'Detail page with premise-conclusion-status SVG diagram for H21.', cat: 'Hypothesis Detail', tags: 'h21 hypothesis detail exam prep bundle 29 sku svg diagram' },
         { url: 'business-model-canvas.html', title: 'Business Model Canvas (BMC)', desc: 'The master 9-box canvas showing partners, key actions, value prop, channels, and revenue.', cat: 'Business Model', tags: 'canvas bmc partners actions value revenue' },
         { url: 'value-proposition.html', title: 'Value Proposition Canvas', desc: 'Mapping user pains/gains directly to our features and product services.', cat: 'Business Model', tags: 'value proposition pains gains features benefits' },
         { url: 'bmc-customer-segments.html', title: 'BMC: Customer Segments', desc: 'Target cohorts, early adopters, and certification candidate segment definition.', cat: 'Business Model', tags: 'segments cohorts early adopters candidate' },
@@ -993,13 +1023,425 @@
         if (notesBtn) notesBtn.classList.remove('active');
     }
 
+    // ==========================================
+    // Guided Tour Data and Logic
+    // ==========================================
+    var tourStops = [
+        {
+            url: 'index.html',
+            title: 'Customer Development Hub',
+            desc: 'The starting point. It maps all stages, business validation frameworks, and milestones in Steve Blank\'s framework.',
+            emoji: '🏠'
+        },
+        {
+            url: 'motivation.html',
+            title: 'Founder Motivation & ICP',
+            desc: 'The strategic \'why\' of the project. Understand Rifat\'s personal rules, target personas, revenue streams, and exit gates.',
+            emoji: '🔥'
+        },
+        {
+            url: 'cd-process.html',
+            title: 'Discovery Process Overview',
+            desc: 'The roadmap for Customer Discovery: State, Test, Validate, and Exit.',
+            emoji: '📍'
+        },
+        {
+            url: 'cd-watering-holes.html',
+            title: 'Watering Holes & Outreach',
+            desc: 'Where early adopters gather (Triton Square, meetups, cohorts) and outreach templates.',
+            emoji: '🌐'
+        },
+        {
+            url: 'cd-interview-guide.html',
+            title: 'Qualitative Interview Guide',
+            desc: 'The core customer development interview script, focusing on customer story gathering and pain/gain signals.',
+            emoji: '🎤'
+        },
+        {
+            url: 'cd-interview-recording.html',
+            title: 'Interview Recording & Tracker',
+            desc: 'The live CRM of customer discovery conversations and follow-up copy templates.',
+            emoji: '📝'
+        },
+        {
+            url: 'business-model-canvas.html',
+            title: 'Business Model Canvas',
+            desc: 'The full 9-box view of the business model. See how value, segments, and costs connect.',
+            emoji: '🖼️'
+        },
+        {
+            url: 'value-proposition.html',
+            title: 'Value Proposition Canvas',
+            desc: 'Connecting customer pains and gains directly to the training video MVP features.',
+            emoji: '💎'
+        },
+        {
+            url: 'bmc-revenue-streams.html',
+            title: 'Revenue Streams & Pricing',
+            desc: 'Monetization details: low-ticket mock exams ($10/mo) and high-ticket cohorts ($250-$500).',
+            emoji: '💰'
+        },
+        {
+            url: 'hypothesis.html',
+            title: 'Hypothesis Dashboard',
+            desc: 'The single source of truth tracking all 19 hypotheses (H1 to H19) and their validation status.',
+            emoji: '💭'
+        },
+        {
+            url: 'hypothesis-connectivity.html',
+            title: 'Hypothesis Dependency Map',
+            desc: 'The dependency maps explaining foundational gaps, isolated assumptions, and leaf nodes.',
+            emoji: '🔀'
+        },
+        {
+            url: 'unit-economics.html',
+            title: 'Unit Economics & Funnel Math',
+            desc: 'Financial metrics and ROI calculations showing profitability and sustainability gates.',
+            emoji: '💵'
+        },
+        {
+            url: 'comp-roadmap.html',
+            title: 'Sales & Marketing Roadmap',
+            desc: 'Copywriting swipe files, positioning strategies, and scaling triggers.',
+            emoji: '🗺️'
+        },
+        {
+            url: 'calendar.html',
+            title: 'Milestone Calendar',
+            desc: 'The chronological timeline tracking actual done/TBD dates for the project.',
+            emoji: '📅'
+        },
+        {
+            url: 'confidence-report.html',
+            title: 'Business Model Confidence Report',
+            desc: 'The final numeric verification sanity check scoring all hypotheses and site links.',
+            emoji: '🧪'
+        }
+    ];
+
+    var relatedConceptsOverride = {
+        'index.html': [
+            { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' },
+            { url: 'business-model-canvas.html', title: 'Business Model Canvas', emoji: '🖼️' },
+            { url: 'hypothesis.html', title: 'Hypothesis Tracker', emoji: '💭' }
+        ],
+        'motivation.html': [
+            { url: 'target-audience.html', title: 'ICP Personas', emoji: '👥' },
+            { url: 'bmc-revenue-streams.html', title: 'Revenue Streams', emoji: '💰' },
+            { url: 'funnel-math.html', title: 'Funnel Math', emoji: '🧮' },
+            { url: 'marketing-tactics.html', title: 'Marketing Swipe File', emoji: '📰' }
+        ],
+        'cd-process.html': [
+            { url: 'stage-customer-discovery.html', title: 'Discovery Stage', emoji: '🔍' },
+            { url: 'cd-interview-guide.html', title: 'Interview Guide', emoji: '🎤' },
+            { url: 'cd-watering-holes.html', title: 'Watering Holes', emoji: '🌐' }
+        ],
+        'cd-watering-holes.html': [
+            { url: 'cd-interview-guide.html', title: 'Interview Guide', emoji: '🎤' },
+            { url: 'cd-interview-recording.html', title: 'Interview Tracker', emoji: '📝' },
+            { url: 'cd-process.html', title: 'Process Overview', emoji: '📍' }
+        ],
+        'cd-interview-guide.html': [
+            { url: 'cd-interview-recording.html', title: 'Interview Tracker', emoji: '📝' },
+            { url: 'cd-watering-holes.html', title: 'Watering Holes', emoji: '🌐' },
+            { url: 'cd-process.html', title: 'Process Overview', emoji: '📍' }
+        ],
+        'cd-interview-recording.html': [
+            { url: 'cd-interview-guide.html', title: 'Interview Guide', emoji: '🎤' },
+            { url: 'cd-watering-holes.html', title: 'Watering Holes', emoji: '🌐' },
+            { url: 'evidence-map.html', title: 'Evidence Map', emoji: '🔍' }
+        ],
+        'business-model-canvas.html': [
+            { url: 'value-proposition.html', title: 'Value Prop Canvas', emoji: '💎' },
+            { url: 'bmc-revenue-streams.html', title: 'Revenue Streams', emoji: '💰' },
+            { url: 'bmc-channels.html', title: 'Channels', emoji: '📣' },
+            { url: 'bmc-cost-structure.html', title: 'Cost Structure', emoji: '📉' }
+        ],
+        'value-proposition.html': [
+            { url: 'business-model-canvas.html', title: 'Business Model Canvas', emoji: '🖼️' },
+            { url: 'bmc-customer-segments.html', title: 'Customer Segments', emoji: '👥' },
+            { url: 'comp-mvp.html', title: 'MVP Product Details', emoji: '📦' }
+        ],
+        'bmc-revenue-streams.html': [
+            { url: 'business-model-canvas.html', title: 'Business Model Canvas', emoji: '🖼️' },
+            { url: 'unit-economics.html', title: 'Unit Economics', emoji: '💵' },
+            { url: 'funnel-math.html', title: 'Funnel Math', emoji: '🧮' },
+            { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' }
+        ],
+        'hypothesis.html': [
+            { url: 'hypothesis-connectivity.html', title: 'Dependency Map', emoji: '🔀' },
+            { url: 'confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
+            { url: 'calendar.html', title: 'Milestone Calendar', emoji: '📅' }
+        ],
+        'hypothesis-connectivity.html': [
+            { url: 'hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: 'confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
+            { url: 'stage-timelines.html', title: 'Stage Timelines', emoji: '📅' }
+        ],
+        'unit-economics.html': [
+            { url: 'funnel-math.html', title: 'Funnel Math', emoji: '🧮' },
+            { url: 'cost-side-model.html', title: 'Cost-Side Model', emoji: '📉' },
+            { url: 'bmc-cost-structure.html', title: 'BMC Cost Structure', emoji: '📉' }
+        ],
+        'comp-roadmap.html': [
+            { url: 'marketing-tactics.html', title: 'Marketing Swipe File', emoji: '📰' },
+            { url: 'calendar.html', title: 'Milestone Calendar', emoji: '📅' },
+            { url: 'sales-pipeline.html', title: 'Sales Pipeline', emoji: '📊' }
+        ],
+        'calendar.html': [
+            { url: 'stage-timelines.html', title: 'Stage Timelines', emoji: '📅' },
+            { url: 'quality-gates.html', title: 'Quality Gates', emoji: '🚪' },
+            { url: 'todo.html', title: 'Task List', emoji: '✅' }
+        ],
+        'confidence-report.html': [
+            { url: 'hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: 'quality-gates.html', title: 'Quality Gates', emoji: '🚪' },
+            { url: 'evidence-map.html', title: 'Evidence Map', emoji: '🔍' }
+        ]
+    };
+
+    function getPageTitleFromSearchIndex(file) {
+        for (var i = 0; i < searchIndex.length; i++) {
+            if (searchIndex[i].url === file) {
+                return searchIndex[i].title;
+            }
+        }
+        var clean = file.replace('.html', '').replace(/-/g, ' ');
+        return clean.charAt(0).toUpperCase() + clean.slice(1);
+    }
+
+    function findCurrentTourIndex() {
+        for (var i = 0; i < tourStops.length; i++) {
+            if (tourStops[i].url === currentFile) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function findParentTourIndex() {
+        if (currentFile.indexOf('hyp-h') === 0) {
+            return 9; // Hypothesis tracker stop index is 9
+        }
+        if (currentFile.indexOf('cd-hyp-') === 0 || currentFile.indexOf('cd-tp-') === 0 || currentFile.indexOf('cd-tpr-') === 0 || currentFile.indexOf('cd-verify-') === 0) {
+            return 2; // Process overview stop index is 2
+        }
+        if (currentFile.indexOf('bmc-') === 0) {
+            return 6; // Business model canvas stop index is 6
+        }
+        if (currentFile.indexOf('comp-') === 0) {
+            return 12; // Sales/marketing roadmap stop index is 12
+        }
+        return -1;
+    }
+
+    function getRelatedConceptsForPage(file) {
+        if (relatedConceptsOverride[file]) {
+            return relatedConceptsOverride[file];
+        }
+
+        var currentCat = null;
+        for (var i = 0; i < searchIndex.length; i++) {
+            if (searchIndex[i].url === file) {
+                currentCat = searchIndex[i].cat;
+                break;
+            }
+        }
+
+        var related = [];
+        if (currentCat) {
+            for (var j = 0; j < searchIndex.length; j++) {
+                var item = searchIndex[j];
+                if (item.url !== file && item.cat === currentCat) {
+                    related.push({
+                        url: item.url,
+                        title: item.title,
+                        emoji: getEmojiForCategory(item.cat)
+                    });
+                    if (related.length >= 3) break;
+                }
+            }
+        }
+
+        if (related.length < 3) {
+            var fallbacks = [
+                { url: 'index.html', title: 'Customer Development Hub', emoji: '🏠' },
+                { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' },
+                { url: 'hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' }
+            ];
+            for (var k = 0; k < fallbacks.length; k++) {
+                if (fallbacks[k].url !== file && !related.some(function(r) { return r.url === fallbacks[k].url; })) {
+                    related.push(fallbacks[k]);
+                    if (related.length >= 3) break;
+                }
+            }
+        }
+
+        return related;
+    }
+
+    function getEmojiForCategory(cat) {
+        switch(cat) {
+            case 'Hub': return '🏠';
+            case 'Stage': return '🗺️';
+            case 'Process': return '📍';
+            case 'Strategy': return '🎯';
+            case 'Business Model': return '📊';
+            case 'Growth': return '📈';
+            case 'Components': return '🧩';
+            case 'Docs': return '📄';
+            case 'Hypothesis Detail': return '💭';
+            default: return '🔗';
+        }
+    }
+
+    function buildTourHtml() {
+        var currentStopIdx = findCurrentTourIndex();
+        var isCurrentStop = currentStopIdx !== -1;
+        var stepNumText = "";
+        var stepTitleText = "";
+        var stepDescText = "";
+        var progressPercent = 0;
+
+        if (isCurrentStop) {
+            var stop = tourStops[currentStopIdx];
+            stepNumText = "Stop " + (currentStopIdx + 1) + " of " + tourStops.length;
+            stepTitleText = stop.emoji + " " + stop.title;
+            stepDescText = stop.desc;
+            progressPercent = Math.round(((currentStopIdx + 1) / tourStops.length) * 100);
+        } else {
+            var parentStopIdx = findParentTourIndex();
+            if (parentStopIdx !== -1) {
+                var parentStop = tourStops[parentStopIdx];
+                stepNumText = "Custom Exploration";
+                stepTitleText = "Exploring: " + getPageTitleFromSearchIndex(currentFile);
+                stepDescText = "This page provides details related to Stop " + (parentStopIdx + 1) + ": " + parentStop.title + ".";
+                progressPercent = Math.round(((parentStopIdx + 0.5) / tourStops.length) * 100);
+            } else {
+                stepNumText = "Custom Exploration";
+                stepTitleText = getPageTitleFromSearchIndex(currentFile);
+                stepDescText = "You are currently exploring a supporting page in the customer development framework.";
+                progressPercent = 0;
+            }
+        }
+
+        var relatedLinksHtml = "";
+        var related = getRelatedConceptsForPage(currentFile);
+        if (related && related.length > 0) {
+            relatedLinksHtml += '<div class="tour-related-section">' +
+                '<span class="tour-section-title">Related Concepts</span>' +
+                '<div class="tour-related-grid">';
+            related.forEach(function(item) {
+                var finalHref = item.url.indexOf('http') === 0 ? item.url : (pathPrefix + item.url);
+                var emoji = item.emoji || '🔗';
+                relatedLinksHtml += '<a href="' + finalHref + '" class="tour-related-item">' +
+                    '<span class="emoji">' + emoji + '</span> ' +
+                    '<span>' + item.title + '</span>' +
+                    '</a>';
+            });
+            relatedLinksHtml += '</div></div>';
+        }
+
+        var selectOptionsHtml = '<option value="">🧭 Select Tour Stop...</option>';
+        tourStops.forEach(function(stop, idx) {
+            var selected = (idx === currentStopIdx) ? ' selected' : '';
+            selectOptionsHtml += '<option value="' + stop.url + '"' + selected + '>' + (idx + 1) + '. ' + stop.emoji + ' ' + stop.title + '</option>';
+        });
+
+        var prevDisabled = currentStopIdx <= 0 ? ' disabled' : '';
+        var nextDisabled = (currentStopIdx === -1 || currentStopIdx >= tourStops.length - 1) ? ' disabled' : '';
+
+        var prevHref = currentStopIdx > 0 ? (pathPrefix + tourStops[currentStopIdx - 1].url) : '#';
+        var nextHref = (currentStopIdx !== -1 && currentStopIdx < tourStops.length - 1) ? (pathPrefix + tourStops[currentStopIdx + 1].url) : '#';
+
+        var openClass = (getCookie('site_tour_open') === 'true') ? ' open' : '';
+
+        var tourHtml = 
+            '<div class="tour-container">' +
+            '  <button id="tour-fab-btn" class="tour-fab" title="Start Guided Tour">' +
+            '    <span>🧭</span>' +
+            '    <span>Guided Tour</span>' +
+            '    <span class="badge">' + (currentStopIdx !== -1 ? (currentStopIdx + 1) + '/' + tourStops.length : 'Explore') + '</span>' +
+            '  </button>' +
+            '  <div id="tour-card-panel" class="tour-card' + openClass + '">' +
+            '    <div class="tour-header">' +
+            '      <h4>🧭 Site Tour Guide</h4>' +
+            '      <button id="tour-close-btn" class="tour-close-btn" title="Collapse Tour">&times;</button>' +
+            '    </div>' +
+            '    <div class="tour-body">' +
+            '      <div class="tour-step-info">' +
+            '        <span class="tour-step-indicator">' + stepNumText + '</span>' +
+            '        <span class="tour-step-title">' + stepTitleText + '</span>' +
+            '        <p class="tour-step-desc">' + stepDescText + '</p>' +
+            '      </div>' +
+            '      <div class="tour-progress-container">' +
+            '        <div class="tour-progress-bar" style="width: ' + progressPercent + '%;"></div>' +
+            '      </div>' +
+            relatedLinksHtml +
+            '    </div>' +
+            '    <div class="tour-footer">' +
+            '      <div class="tour-actions">' +
+            '        <a href="' + prevHref + '" id="tour-prev-btn" class="tour-btn' + (prevDisabled ? ' disabled' : '') + '"' + prevDisabled + '>◀ Prev Stop</a>' +
+            '        <a href="' + nextHref + '" id="tour-next-btn" class="tour-btn btn-next' + (nextDisabled ? ' disabled' : '') + '"' + nextDisabled + '>Next Stop ▶</a>' +
+            '      </div>' +
+            '      <div class="tour-select-wrapper">' +
+            '        <select id="tour-select-box" class="tour-select">' +
+            selectOptionsHtml +
+            '        </select>' +
+            '      </div>' +
+            '    </div>' +
+            '  </div>' +
+            '</div>';
+
+        return tourHtml;
+    }
+
+    function initTourEvents() {
+        var tourFabBtn = document.getElementById('tour-fab-btn');
+        var tourCardPanel = document.getElementById('tour-card-panel');
+        var tourCloseBtn = document.getElementById('tour-close-btn');
+        var tourSelectBox = document.getElementById('tour-select-box');
+
+        if (tourFabBtn && tourCardPanel) {
+            tourFabBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var isOpen = tourCardPanel.classList.contains('open');
+                if (isOpen) {
+                    tourCardPanel.classList.remove('open');
+                    setCookie('site_tour_open', 'false', 30);
+                } else {
+                    tourCardPanel.classList.add('open');
+                    setCookie('site_tour_open', 'true', 30);
+                }
+            });
+        }
+
+        if (tourCloseBtn && tourCardPanel) {
+            tourCloseBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                tourCardPanel.classList.remove('open');
+                setCookie('site_tour_open', 'false', 30);
+            });
+        }
+
+        if (tourSelectBox) {
+            tourSelectBox.addEventListener('change', function() {
+                var url = this.value;
+                if (url) {
+                    var finalHref = url.indexOf('http') === 0 ? url : (pathPrefix + url);
+                    window.location.href = finalHref;
+                }
+            });
+        }
+    }
+
     // Initialize overlays and events
     function initOverlays() {
         if (document.getElementById('workspace-overlays-container')) return;
-        
+
         var overlayDiv = document.createElement('div');
         overlayDiv.id = 'workspace-overlays-container';
-        overlayDiv.innerHTML = searchModalHtml + notesDrawerHtml;
+        overlayDiv.innerHTML = searchModalHtml + notesDrawerHtml + buildTourHtml();
         document.body.appendChild(overlayDiv);
         
         var closeSearchBtn = document.getElementById('close-search-btn');
@@ -1145,6 +1587,7 @@
         });
         
         renderNotes();
+        initTourEvents();
     }
 
     function bindHeaderButtons() {

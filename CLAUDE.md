@@ -152,6 +152,7 @@ end of `.nav-menu`, each backed by logic inside the same IIFE:
   the saved theme is applied as early as nav.js executes to minimize flash, but a
   brief flash of the default dark theme on first paint is expected and out of scope
   to fully eliminate without an inline head script on every page.
+- **🧭 Guided Tour Widget** (floating helper) — rendered globally on all pages via `nav.js` (logic) and `style.css` (layout and styling). Floats at the bottom-left of the screen. When expanded, it offers a 15-stop sequential guided tour through the site's primary pages (index, motivation, processes, BMC, hypotheses, unit economics, roadmaps, milestones, and confidence checks). Includes custom descriptions, a progress tracker, prev/next buttons, and a dropdown selector. It also dynamically displays a "Related Concepts" grid linking to semantic siblings for the current page (with fallback to search index categories), enabling easy site scanning. The open/collapsed state is remembered across page changes via the `site_tour_open` cookie.
 
 ## The markdown_renderer.html pattern
 

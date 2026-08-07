@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Assessment | AI Certification Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="why-certification.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Why Certification Matters
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">For Prospects &middot; 2-Minute Quiz</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🧭 Self-Assessment</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Three quick questions, then a straight recommendation &mdash; no email required to see your result. Nothing here is a promise of exam success; see the disclaimer at the end.
+            </p>
+        </div>
+
+        <div class="card" id="quiz-card">
+            <div id="quiz-questions"></div>
+            <div id="quiz-result" style="display:none;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; interactive self-assessment quiz routing prospects to a fitting offer (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/self-assessment.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/self-assessment.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script>
+    (function() {
+        var questions = [
+            {
+                q: 'When is your exam (or target date)?',
+                options: [
+                    { label: 'Within the next month', val: 'urgent' },
+                    { label: '1–3 months out', val: 'soon' },
+                    { label: 'Not scheduled yet, just exploring', val: 'exploring' }
+                ]
+            },
+            {
+                q: 'What’s your budget for prep right now?',
+                options: [
+                    { label: '$0 — just want to see if this is worth it', val: 'free' },
+                    { label: 'Under $50, one-time', val: 'low' },
+                    { label: '$100+ for structured, live support', val: 'high' }
+                ]
+            },
+            {
+                q: 'How do you prefer to study?',
+                options: [
+                    { label: 'Solo, self-paced, on my own schedule', val: 'solo' },
+                    { label: 'With a live group for accountability', val: 'group' }
+                ]
+            }
+        ];
+        var answers = [];
+        var qIndex = 0;
+        var qArea = document.getElementById('quiz-questions');
+        var resultArea = document.getElementById('quiz-result');
+
+        function renderQuestion() {
+            var q = questions[qIndex];
+            var html = '<h3 class="card-title" style="margin-bottom:1rem;">Question ' + (qIndex + 1) + ' of ' + questions.length + '</h3>';
+            html += '<p style="color:var(--text-primary); font-weight:500; margin-bottom:1rem;">' + q.q + '</p>';
+            html += '<div style="display:flex; flex-direction:column; gap:0.75rem;">';
+            q.options.forEach(function(opt, i) {
+                html += '<button class="btn btn-secondary quiz-opt" data-val="' + opt.val + '" style="text-align:left;">' + opt.label + '</button>';
+            });
+            html += '</div>';
+            qArea.innerHTML = html;
+
+            var buttons = qArea.querySelectorAll('.quiz-opt');
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    answers.push(btn.getAttribute('data-val'));
+                    qIndex++;
+                    if (qIndex < questions.length) {
+                        renderQuestion();
+                    } else {
+                        showResult();
+                    }
+                });
+            });
+        }
+
+        function showResult() {
+            qArea.style.display = 'none';
+            resultArea.style.display = 'block';
+
+            var urgency = answers[0], budget = answers[1], style = answers[2];
+            var title, desc, link, linkLabel;
+
+            if (budget === 'free') {
+                title = '🌙 Start with the Free Sunday Cohort';
+                desc = 'No cost, live, and you’ll get a real feel for the format before spending anything.';
+                link = 'cd-watering-holes.html'; linkLabel = 'How to Join';
+            } else if (budget === 'low' || (urgency === 'urgent' && style === 'solo')) {
+                title = '📦 The $29 Exam Prep Bundle fits best';
+                desc = 'Memory cards, a prep exam, and a mock exam — self-paced, one-time cost, good for a tight timeline.';
+                link = 'exam-prep-product.html'; linkLabel = 'See the Bundle';
+            } else if (style === 'group' && budget === 'high') {
+                title = '🎓 The $250–$500 Live Cohort fits best';
+                desc = 'Live, structured, real-time problem-solving with peer accountability — the highest-support option.';
+                link = 'value-proposition.html'; linkLabel = 'See the Value Proposition';
+            } else {
+                title = '💳 The $10/mo Membership fits best';
+                desc = 'Recorded cohort replays and ongoing access at low commitment — a middle path between free and live.';
+                link = 'bmc-revenue-streams.html'; linkLabel = 'See Revenue Streams';
+            }
+
+            resultArea.innerHTML =
+                '<h3 class="card-title" style="margin-bottom:0.75rem;">' + title + '</h3>' +
+                '<p style="color:var(--text-secondary); margin-bottom:1.5rem;">' + desc + '</p>' +
+                '<a href="' + link + '" class="btn btn-primary" style="margin-right:0.75rem;">' + linkLabel + '</a>' +
+                '<button id="quiz-restart" class="btn btn-secondary">Restart</button>' +
+                '<p style="color:var(--text-secondary); font-size:0.8rem; margin-top:1.5rem;">⚠️ This is a self-serve suggestion, not a guarantee of exam success — Anthropic alone issues the certification via Pearson VUE.</p>';
+
+            document.getElementById('quiz-restart').addEventListener('click', function() {
+                answers = [];
+                qIndex = 0;
+                qArea.style.display = 'block';
+                resultArea.style.display = 'none';
+                renderQuestion();
+            });
+        }
+
+        renderQuestion();
+    })();
+    </script>
+</body>
+</html>
