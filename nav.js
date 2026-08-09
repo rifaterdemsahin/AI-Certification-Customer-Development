@@ -81,6 +81,7 @@
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
                 ['5_Symbols/product/pitch-deck.html', '📋 5-Minute Pitch Deck'],
+                ['5_Symbols/product/one-pager.html', '📋 Copy-Paste One-Pager'],
                 ['5_Symbols/strategy/why-certification.html', '🏅 Why Certification Matters'],
                 ['5_Symbols/product/self-assessment.html', '🧭 Self-Assessment'],
                 ['5_Symbols/product/discovery-journey.html', '🧭 The Discovery Journey'],
@@ -239,6 +240,7 @@
         { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
         { url: '5_Symbols/product/vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
         { url: '5_Symbols/product/pitch-deck.html', title: '5-Minute Pitch Deck', desc: 'Single-scroll executive-review summary of the business with links to full detail on every claim.', cat: 'Strategy', tags: 'pitch deck 5 minute executive summary tldr' },
+        { url: '5_Symbols/product/one-pager.html', title: 'Copy-Paste One-Pager', desc: 'Plain-text business analysis summary sized to paste into external idea-validation sites and forums.', cat: 'Strategy', tags: 'one pager copy paste validation summary plain text external' },
         { url: '5_Symbols/strategy/why-certification.html', title: 'Why Certification Matters', desc: 'Prospect-facing case for AI certification: pay premiums, employer partner-tier gating, and FDE hiring growth.', cat: 'Strategy', tags: 'why certification matters career prospects employer value' },
         { url: '5_Symbols/product/self-assessment.html', title: 'Self-Assessment', desc: 'Interactive 3-question quiz routing prospects to the free cohort, the $29 bundle, membership, or live cohort.', cat: 'Strategy', tags: 'self assessment quiz recommendation which offer fits me' },
         { url: '5_Symbols/product/discovery-journey.html', title: 'The Discovery Journey', desc: 'Prospect-facing plain-language guide to what happens in a customer discovery call and how to join.', cat: 'Strategy', tags: 'discovery journey prospect interview join customer development' },
@@ -298,8 +300,11 @@
 
     // Build current page URL (relative to root)
     var currentPageUrl = currentFile;
-    if (isSubdir) {
-        currentPageUrl = 'discovery/' + currentPageUrl;
+    var pathSegments = location.pathname.split('/');
+    if (pathPrefix === '../../') {
+        currentPageUrl = pathSegments.slice(-3).join('/');
+    } else if (pathPrefix === '../') {
+        currentPageUrl = pathSegments.slice(-2).join('/');
     }
     if (location.search) {
         currentPageUrl += location.search;

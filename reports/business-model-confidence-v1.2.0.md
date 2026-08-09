@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.2.0
 
+> **Superseded by [v1.3.0](business-model-confidence-v1.3.0.md)** (2026-08-09) — that run's full-repo link scan found this version's "0 broken links" claim was wrong (75 real broken links existed, missed by this scan); v1.3.0 fixes them and is the current version.
+
 **Date:** 2026-08-07
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.1.0:** minor bump — since v1.1.0 (2026-08-07), the entire project was refactored into a structured directory hierarchy under `5_Symbols/`, all paths in `nav.js` and pages were resolved relatively, four new pages were added (Capital Relationships, Surplus Value, Organic Growth, and Latest Pages Dashboard), and H22 (Talent Placement Vision) was added to the tracker. **Result: the overall score lands at exactly 44/100 (displays 44), with the hypothesis validation score at 27.5 and site integrity score holding flat at 82.5.**
