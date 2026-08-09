@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Map | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-info);">
+            <span class="badge" style="background-color: rgba(6, 182, 212, 0.15); color: #cffafe; border-color: rgba(6, 182, 212, 0.3);">Dashboard &middot; Site Map</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🗺️ Site Map</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Every page on the site in one place, built live from <code>nav.js</code>'s own search index &mdash; the same data that powers the header search &mdash; so this list can't drift out of sync with the real navigation. Search across titles, categories, and keywords, or switch between a <strong>Logical</strong> view (grouped the way the site is actually organized) and an <strong>A&ndash;Z</strong> view (every page, alphabetically).
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <div class="card" style="position: sticky; top: 0.75rem; z-index: 5; backdrop-filter: blur(8px);">
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                    <div style="flex: 1 1 280px; position: relative; min-width: 240px;">
+                        <span aria-hidden="true" style="position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%); opacity: 0.6;">🔍</span>
+                        <input
+                            type="text"
+                            id="sitemap-search"
+                            placeholder="Search pages by title, category, or keyword&hellip;"
+                            autocomplete="off"
+                            style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.4rem; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem; outline: none;"
+                        >
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span style="color: var(--text-secondary); font-size: 0.85rem;">Sort:</span>
+                        <button type="button" id="sitemap-sort-logical" class="btn" style="padding: 0.55rem 1rem; font-size: 0.85rem;">🗺️ Logical</button>
+                        <button type="button" id="sitemap-sort-az" class="btn btn-secondary" style="padding: 0.55rem 1rem; font-size: 0.85rem;">🔤 A&ndash;Z</button>
+                    </div>
+                </div>
+                <p id="sitemap-count" style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem; margin-bottom: 0;">Loading&hellip;</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <div id="sitemap-results"><p style="color: var(--text-secondary);">Loading site map&hellip;</p></div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 See Also</h2>
+            <p style="color: var(--text-secondary);"><a href="latest-pages.html" style="color: var(--color-primary);">Latest Pages Dashboard</a> for what's been created or updated most recently, rather than the full static structure &middot; <a href="../hypotheses/hypothesis.html" style="color: var(--color-primary);">Hypothesis Tracker</a> and <a href="confidence-report.html" style="color: var(--color-primary);">Confidence Report</a> for the business-content view of the site, not just its navigation structure.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; a searchable Site Map with Logical and A&ndash;Z sort modes, built live from <code>nav.js</code>'s search index (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/sitemap.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/dashboard/sitemap.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        (function () {
+            var pathPrefix = '../../';
+
+            // Display order + icon for each searchIndex "cat" value, matching the site's
+            // real information architecture (Hub -> Stages -> Discovery -> Strategy ->
+            // Business Model -> Growth -> Components -> Hypotheses -> Dashboard -> Docs -> References).
+            var CATEGORY_ORDER = [
+                { cat: 'Hub', label: 'Hub', emoji: '🏠' },
+                { cat: 'Stage', label: 'Stages', emoji: '🗺️' },
+                { cat: 'Process', label: 'Discovery Process', emoji: '📍' },
+                { cat: 'Discovery Detail', label: 'Discovery Deep-Dives', emoji: '🔎' },
+                { cat: 'Strategy', label: 'Strategy', emoji: '🎯' },
+                { cat: 'Business Model', label: 'Business Model', emoji: '📊' },
+                { cat: 'Growth', label: 'Growth', emoji: '📈' },
+                { cat: 'Component', label: 'Components', emoji: '🧩' },
+                { cat: 'Hypothesis Detail', label: 'Hypothesis Details', emoji: '💭' },
+                { cat: 'Dashboard', label: 'Dashboard', emoji: '🖥️' },
+                { cat: 'Docs', label: 'Docs', emoji: '📄' },
+                { cat: 'References', label: 'References', emoji: '📎' }
+            ];
+
+            var allPages = [];
+            var currentSort = 'logical';
+            var currentQuery = '';
+
+            function escapeHtml(str) {
+                return String(str).replace(/[&<>"']/g, function (c) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+                });
+            }
+
+            function resolveHref(url) {
+                if (/^https?:\/\//.test(url)) return url;
+                return pathPrefix + url;
+            }
+
+            function init() {
+                if (!window.__siteMapData || !window.__siteMapData.searchIndex) {
+                    document.getElementById('sitemap-results').innerHTML =
+                        '<p style="color: var(--color-warning);">Site map data did not load &mdash; nav.js may have failed to initialize.</p>';
+                    return;
+                }
+                allPages = window.__siteMapData.searchIndex.slice();
+                render();
+
+                document.getElementById('sitemap-search').addEventListener('input', function (e) {
+                    currentQuery = e.target.value;
+                    render();
+                });
+
+                document.getElementById('sitemap-sort-logical').addEventListener('click', function () {
+                    setSort('logical');
+                });
+                document.getElementById('sitemap-sort-az').addEventListener('click', function () {
+                    setSort('az');
+                });
+            }
+
+            function setSort(mode) {
+                currentSort = mode;
+                var logicalBtn = document.getElementById('sitemap-sort-logical');
+                var azBtn = document.getElementById('sitemap-sort-az');
+                logicalBtn.className = mode === 'logical' ? 'btn' : 'btn btn-secondary';
+                azBtn.className = mode === 'az' ? 'btn' : 'btn btn-secondary';
+                render();
+            }
+
+            // Simple substring relevance score across title/cat/tags/desc, heavily
+            // weighted toward title matches. Empty query = everything, score 0.
+            function filterAndScore(query) {
+                var q = query.trim().toLowerCase();
+                if (!q) {
+                    return allPages.map(function (item) { return { item: item, score: 0 }; });
+                }
+                var terms = q.split(/\s+/).filter(Boolean);
+                var results = [];
+                allPages.forEach(function (item) {
+                    var titleLower = item.title.toLowerCase();
+                    var descLower = item.desc.toLowerCase();
+                    var catLower = item.cat.toLowerCase();
+                    var tagsLower = item.tags.toLowerCase();
+                    var score = 0;
+                    var matchedAll = true;
+                    terms.forEach(function (term) {
+                        var termScore = 0;
+                        if (titleLower === term) termScore += 50;
+                        else if (titleLower.indexOf(term) !== -1) termScore += 20;
+                        if (catLower.indexOf(term) !== -1) termScore += 10;
+                        if (tagsLower.indexOf(term) !== -1) termScore += 8;
+                        if (descLower.indexOf(term) !== -1) termScore += 4;
+                        if (termScore === 0) matchedAll = false;
+                        score += termScore;
+                    });
+                    if (matchedAll) results.push({ item: item, score: score });
+                });
+                results.sort(function (a, b) { return b.score - a.score; });
+                return results;
+            }
+
+            function pageCardHtml(item) {
+                return '' +
+                    '<a href="' + resolveHref(item.url) + '" class="spec-box" style="display: block; text-decoration: none; margin: 0;">' +
+                    '  <div class="spec-title" style="display: flex; justify-content: space-between; gap: 0.75rem; align-items: baseline;">' +
+                    '    <span>' + escapeHtml(item.title) + '</span>' +
+                    '    <span class="badge" style="margin: 0; font-size: 0.7rem; flex-shrink: 0;">' + escapeHtml(item.cat) + '</span>' +
+                    '  </div>' +
+                    '  <div class="spec-desc">' + escapeHtml(item.desc) + '</div>' +
+                    '  <div style="font-family: monospace; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">' + escapeHtml(item.url) + '</div>' +
+                    '</a>';
+            }
+
+            function renderLogical(results) {
+                var byCat = {};
+                results.forEach(function (r) {
+                    var cat = r.item.cat;
+                    if (!byCat[cat]) byCat[cat] = [];
+                    byCat[cat].push(r.item);
+                });
+
+                var html = '';
+                CATEGORY_ORDER.forEach(function (group) {
+                    var items = byCat[group.cat];
+                    if (!items || !items.length) return;
+                    items.sort(function (a, b) { return a.title.localeCompare(b.title); });
+                    html += '<div class="card" style="margin-bottom: 1.5rem;">' +
+                        '<h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 1rem;">' + group.emoji + ' ' + group.label + ' <span style="color: var(--text-muted); font-weight: 400; font-size: 0.85rem;">(' + items.length + ')</span></h3>' +
+                        '<div class="grid">' +
+                        items.map(function (item) { return '<div class="col-6">' + pageCardHtml(item) + '</div>'; }).join('') +
+                        '</div></div>';
+                });
+
+                // Any category present in data but not in CATEGORY_ORDER (safety net if nav.js grows a new cat)
+                var knownCats = CATEGORY_ORDER.map(function (g) { return g.cat; });
+                Object.keys(byCat).forEach(function (cat) {
+                    if (knownCats.indexOf(cat) !== -1) return;
+                    var items = byCat[cat];
+                    items.sort(function (a, b) { return a.title.localeCompare(b.title); });
+                    html += '<div class="card" style="margin-bottom: 1.5rem;">' +
+                        '<h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 1rem;">🗂️ ' + escapeHtml(cat) + ' <span style="color: var(--text-muted); font-weight: 400; font-size: 0.85rem;">(' + items.length + ')</span></h3>' +
+                        '<div class="grid">' +
+                        items.map(function (item) { return '<div class="col-6">' + pageCardHtml(item) + '</div>'; }).join('') +
+                        '</div></div>';
+                });
+
+                return html;
+            }
+
+            function renderAZ(results) {
+                var items = results.map(function (r) { return r.item; });
+                items.sort(function (a, b) { return a.title.localeCompare(b.title); });
+
+                var byLetter = {};
+                items.forEach(function (item) {
+                    var clean = item.title.replace(/[^A-Za-z0-9]/, '').charAt(0).toUpperCase();
+                    var letter = /[A-Z0-9]/.test(clean) ? clean : '#';
+                    if (!byLetter[letter]) byLetter[letter] = [];
+                    byLetter[letter].push(item);
+                });
+
+                var letters = Object.keys(byLetter).sort();
+                var html = '';
+                letters.forEach(function (letter) {
+                    html += '<div class="card" style="margin-bottom: 1.5rem;">' +
+                        '<h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 1rem; color: var(--color-primary);">' + letter + ' <span style="color: var(--text-muted); font-weight: 400; font-size: 0.85rem;">(' + byLetter[letter].length + ')</span></h3>' +
+                        '<div class="grid">' +
+                        byLetter[letter].map(function (item) { return '<div class="col-6">' + pageCardHtml(item) + '</div>'; }).join('') +
+                        '</div></div>';
+                });
+                return html;
+            }
+
+            function render() {
+                var results = filterAndScore(currentQuery);
+                var resultsContainer = document.getElementById('sitemap-results');
+                var countEl = document.getElementById('sitemap-count');
+
+                countEl.textContent = 'Showing ' + results.length + ' of ' + allPages.length + ' pages' + (currentQuery.trim() ? ' matching "' + currentQuery.trim() + '"' : '') + ', sorted ' + (currentSort === 'logical' ? 'logically by site section' : 'alphabetically A–Z') + '.';
+
+                if (!results.length) {
+                    resultsContainer.innerHTML = '<p style="color: var(--text-secondary);">No pages found matching "' + escapeHtml(currentQuery) + '".</p>';
+                    return;
+                }
+
+                resultsContainer.innerHTML = currentSort === 'logical' ? renderLogical(results) : renderAZ(results);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>

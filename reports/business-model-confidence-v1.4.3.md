@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.4.3
 
+> **Superseded by [v1.4.4](business-model-confidence-v1.4.4.md)** (2026-08-09) — that run adds `sitemap.html`, a navigation-tooling page with no business claim; score holds flat at 40/100.
+
 **Date:** 2026-08-09
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.4.2:** patch bump — no new hypothesis crossed a status tier and no new check category was added. This run follows an update to `5_Symbols/growth/90-day-execution-plan.html`: (1) a Day-by-Day Calendar section was appended, expanding all 90 days into per-date rows (grouped by phase, each marked Cohort or Production/prep, with the 3 phase-exit checkpoints called out); (2) a date off-by-one found while generating that calendar was corrected — the plan's end date is **2026-11-06**, not 2026-11-07 as originally published in v1.34.0/v1.4.2 (Day 1 = Aug 9, so Day 90 = Aug 9 + 89 days = Nov 6; the 13-Sunday-cohort count is unaffected, since Nov 7 was never a Sunday either). **Result: the overall score holds flat at 40/100.** Hypothesis Validation holds flat at 27.5 (28/100) — no hypothesis status changed. Site Integrity holds flat at 67.5: the appended calendar adds 0 new `href`s (plain date/text rows only) so it introduces 0 broken links and doesn't change orphan-page status; the pre-existing `5_Symbols/markdown_renderer.html` orphan (−15) and the acidity-check findings are unchanged.
