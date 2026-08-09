@@ -115,6 +115,7 @@
                 ['5_Symbols/growth/organic-growth.html', '🔄 Organic Growth Strategy'],
                 ['5_Symbols/growth/quality-gates.html', '🚪 Quality Gates'],
                 ['5_Symbols/growth/stage-timelines.html', '📅 Stage Timelines'],
+                ['5_Symbols/growth/90-day-execution-plan.html', '🗓️ 90-Day Execution Plan'],
                 ['5_Symbols/dashboard/calendar.html', '🗓️ Milestone Calendar'],
                 ['5_Symbols/growth/test-metrics.html', '📈 Test &amp; Metrics'],
                 ['5_Symbols/growth/test-plan.html', '🧪 Test Plan'],
@@ -271,6 +272,7 @@
         { url: '5_Symbols/growth/flywheel.html', title: 'Customer Growth Flywheel', desc: 'Frictionless acquisition loops, retention programs, and graduate referral engines.', cat: 'Growth', tags: 'flywheel loops acquisition retention referral' },
         { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates & Triggers', desc: 'Defined milestones to move from discovery to validation, creation, and building.', cat: 'Growth', tags: 'gates triggers milestones thresholds' },
         { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timeline Estimates', desc: 'Estimated start/exit date ranges for each of the four Customer Development stages, with a horizontal timeline diagram and a founder-bandwidth caveat.', cat: 'Growth', tags: 'timeline estimate schedule dates gantt stage duration' },
+        { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Execution Plan', desc: 'Dated 2026-08-09 to 2026-11-07 execution plan in 3 phases, operationalizing H19 stage estimates into a weekly cadence and milestone checklist.', cat: 'Growth', tags: '90 day execution plan phases weeks sprint schedule milestones checklist launch readiness' },
         { url: '5_Symbols/dashboard/calendar.html', title: 'Milestone Calendar', desc: 'Chronological list of 17 named, dated milestones past and projected, expanding the H19 stage-timeline estimates into individual events.', cat: 'Growth', tags: 'calendar milestones dates schedule roadmap timeline events' },
         { url: '5_Symbols/growth/test-metrics.html', title: 'Test Metrics & Verification', desc: 'Key performance indicators, watch-time thresholds, sign-up targets, and margins.', cat: 'Growth', tags: 'metrics verification kpi thresholds target' },
         { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', desc: 'Execution calendar built around the weekly Sunday free cohort: discovery interviews, funnel instrumentation, cohort launches, onsite pilots.', cat: 'Growth', tags: 'test plan execution calendar sunday cohort discovery interviews cadence' },
@@ -1223,7 +1225,13 @@
         ],
         '5_Symbols/dashboard/calendar.html': [
             { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timelines', emoji: '📅' },
+            { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Execution Plan', emoji: '🗓️' },
             { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates', emoji: '🚪' },
+            { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
+        ],
+        '5_Symbols/growth/90-day-execution-plan.html': [
+            { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timelines', emoji: '📅' },
+            { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', emoji: '🧪' },
             { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
         ],
         '5_Symbols/dashboard/confidence-report.html': [

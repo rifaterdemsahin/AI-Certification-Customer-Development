@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.4.1
 
+> **Superseded by [v1.4.2](business-model-confidence-v1.4.2.md)** (2026-08-09) — that run adds `90-day-execution-plan.html`; score holds flat at 40/100.
+
 **Date:** 2026-08-09
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.4.0:** patch bump — no new hypothesis crossed a status tier and no new check category was added. Two things happened since v1.4.0: (1) `5_Symbols/product/dictionary.html` gained a "Moat" glossary entry and `5_Symbols/strategy/evidence-map.html` gained an "External Review: Grok Feedback on the One-Pager" section — both content additions, not hypothesis-status changes; (2) this run's fresh orphan-page scan (Step 3, check 2) found a genuinely new finding: **`5_Symbols/markdown_renderer.html` is an orphaned duplicate** of the root `markdown_renderer.html`, unreferenced anywhere in the site or `nav.js` — left behind by the 5_Symbols/ refactor and missed by v1.3.0's link-fix pass (that pass checked broken links, not orphans). **Result: the overall score is 40/100, down from 41/100.** Hypothesis Validation holds flat at 27.5 (28/100). Site Integrity drops from 72.5 to 67.5: the temporary −10 uncommitted-work deduction clears (this batch is committed as part of this same run), but is replaced by a new −15 orphaned-page deduction.
