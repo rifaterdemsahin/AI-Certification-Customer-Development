@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discipline 3 &middot; Keep a Compelling Scoreboard | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .scoreboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .scoreboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .progress-bar-container {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            height: 10px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .progress-bar {
+            height: 100%;
+            border-radius: 9999px;
+        }
+        .scoreboard-metric {
+            margin-bottom: 1.5rem;
+        }
+        .scoreboard-metric-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="4dx-execution-crisis.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Execution Crisis Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Discipline 3 &middot; Visibility</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📊 Keep a Compelling Scoreboard</h1>
+            <span class="status-pill" style="color: var(--color-info);">Step 3 of 4</span>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 1.1rem; max-width: 75ch;">
+                <strong>The Problem:</strong> If the scoreboard is complex, buried in spreadsheet directories, or only shows lag measures, the team doesn't know where they stand. Accountability fades when people cannot easily determine if they are winning or losing.
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💡 The Solution: The 5-Second Rule</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary);">
+                    A compelling scoreboard must pass the **5-Second Rule**: Any observer (or the founder himself) must be able to look at the scoreboard and, in 5 seconds or less, tell exactly whether the business is **winning** or **losing**. It must display both:
+                </p>
+                <ul class="emoji-list" style="margin-top: 1rem;">
+                    <li><span class="emoji">📊</span><span style="color: var(--text-secondary);"><strong>Lag Measures:</strong> Where we stand relative to our ultimate WIG milestones (e.g., $10k validation revenue).</span></li>
+                    <li><span class="emoji">⚙️</span><span style="color: var(--text-secondary);"><strong>Lead Measures:</strong> Whether we completed the high-leverage weekly behaviors that drive the lag indicators.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏆 Live WIG Scoreboard &middot; AI Certification Helper</h2>
+            <div class="card" style="border-left: 4px solid var(--color-primary); background: rgba(139, 92, 246, 0.01);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="font-family: var(--font-heading); color: var(--text-primary);">Current Execution Status</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Last Updated: 2026-08-09</p>
+                    </div>
+                    <span class="status-pill" style="background-color: rgba(245, 158, 11, 0.15); color: #fef3c7; border-color: rgba(245, 158, 11, 0.3); font-size: 0.9rem; padding: 0.5rem 1rem;">
+                        ⚠️ SLIGHTLY BEHIND (Outreach Target Lagging)
+                    </span>
+                </div>
+            </div>
+
+            <div class="scoreboard-grid">
+                <!-- WIG 1 Scoreboard -->
+                <div class="card">
+                    <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-primary);">💰 WIG 1: Validation Revenue</h3>
+                        <span class="status-pill" style="color: var(--color-warning);">In Testing</span>
+                    </div>
+
+                    <!-- Lag Metric -->
+                    <div class="scoreboard-metric">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LAG:</strong> Gross validation revenue</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">$0 / $10,000 (0%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%; background: var(--gradient-success);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Metric 1 -->
+                    <div class="scoreboard-metric">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LEAD:</strong> LinkedIn Outreach DMs (This Week)</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">15 / 20 (75%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 75%; background: var(--color-warning);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Metric 2 -->
+                    <div class="scoreboard-metric" style="margin-bottom: 0;">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LEAD:</strong> Sunday cohort attendance (This Week)</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">82% / 80% (102%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 100%; background: var(--color-success);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WIG 2 Scoreboard -->
+                <div class="card">
+                    <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-primary);">🎬 WIG 2: Content MVP Quality</h3>
+                        <span class="status-pill" style="color: var(--color-success);">Winning</span>
+                    </div>
+
+                    <!-- Lag Metric 1 -->
+                    <div class="scoreboard-metric">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LAG:</strong> Average watch retention (5 lessons)</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">42% / 40% (105%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 100%; background: var(--color-success);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lag Metric 2 -->
+                    <div class="scoreboard-metric">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LAG:</strong> Organic Subscriber Count</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">45 / 100 (45%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 45%; background: var(--color-warning);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Metric 1 -->
+                    <div class="scoreboard-metric">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LEAD:</strong> Animation density (Visuals per minute)</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">3.5 / 3.0 (116%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 100%; background: var(--color-success);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Metric 2 -->
+                    <div class="scoreboard-metric" style="margin-bottom: 0;">
+                        <div class="scoreboard-metric-header">
+                            <span><strong>LEAD:</strong> Script editing passes</span>
+                            <span style="color: var(--text-primary); font-weight: 600;">2 / 2 (100%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 100%; background: var(--color-success);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="display: flex; justify-content: space-between; align-items: center; margin-top: 4rem;">
+            <a href="4dx-discipline-2.html" class="btn btn-secondary">&larr; Discipline 2</a>
+            <a href="4dx-discipline-4.html" class="btn">Next: Discipline 4 &rarr;</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Initial creation of the Scoreboard page (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/execution/4dx-discipline-3.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/execution/4dx-discipline-3.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

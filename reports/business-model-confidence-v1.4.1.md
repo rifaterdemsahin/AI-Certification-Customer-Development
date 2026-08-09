@@ -1,3 +1,5 @@
+> **Superseded by [v1.5.0](business-model-confidence-v1.5.0.md)** (2026-08-09) — this run adds H23 (4DX Weekly Accountable Rhythm), removes the duplicate `5_Symbols/markdown_renderer.html` orphan, and bumps the overall score to 42/100.
+
 # Business Model Confidence Report — v1.4.1
 
 > **Superseded by [v1.4.2](business-model-confidence-v1.4.2.md)** (2026-08-09) — that run adds `90-day-execution-plan.html`; score holds flat at 40/100.

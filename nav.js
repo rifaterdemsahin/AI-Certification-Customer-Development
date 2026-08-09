@@ -135,6 +135,15 @@
             ]
         },
         {
+            type: 'dropdown', label: 'Execution', emoji: '🌪️', className: 'nav-execution', items: [
+                ['5_Symbols/execution/4dx-execution-crisis.html', '🌪️ The Execution Crisis'],
+                ['5_Symbols/execution/4dx-discipline-1.html', '🎯 1. Focus on WIG'],
+                ['5_Symbols/execution/4dx-discipline-2.html', '⚖️ 2. Act on Leads'],
+                ['5_Symbols/execution/4dx-discipline-3.html', '📊 3. Keep Scoreboard'],
+                ['5_Symbols/execution/4dx-discipline-4.html', '🔄 4. Create Cadence']
+            ]
+        },
+        {
             type: 'dropdown', label: 'Components', emoji: '🧩', className: 'nav-components', items: [
                 ['5_Symbols/comp/comp-problem-solution.html', '🛑 Problem-Solution Fit'],
                 ['5_Symbols/comp/comp-mvp.html', '📦 MVP'],
@@ -173,6 +182,12 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'The Execution Crisis Overview', desc: '4DX overview hub mapping whirlwind vs strategic goals.', cat: 'Execution', tags: '4dx execution crisis whirlwind strategy roadmap overview' },
+        { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus on WIG', desc: 'Narrowing focus to 1-2 Wildly Important Goals to protect bandwidth.', cat: 'Execution', tags: '4dx execution focus wildly important goal wig baseline formula' },
+        { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Act on Lead Measures', desc: 'Leveraging predictive, influenceable lead measures instead of lag measures.', cat: 'Execution', tags: '4dx execution leverage lead lag measure metrics predictive influenceable' },
+        { url: '5_Symbols/execution/4dx-discipline-3.html', title: 'Discipline 3: Keep Scoreboard', desc: 'Visual scoreboard passing the 5-second rule of winning or losing.', cat: 'Execution', tags: '4dx execution visibility visual scoreboard winning losing 5 second rule' },
+        { url: '5_Symbols/execution/4dx-discipline-4.html', title: 'Discipline 4: Create Cadence of Accountability', desc: 'Establishing weekly self-audit WIG meetings and commitment rhythm.', cat: 'Execution', tags: '4dx execution rhythm weekly meeting commitments cadence self audit roadmap' },
+        { url: '5_Symbols/hypotheses/hyp-h23.html', title: 'H23: 4DX Weekly Accountable Rhythm', desc: 'Hypothesis detailing premises and conclusion of execution cadence.', cat: 'Strategy', tags: 'hypothesis h23 4dx rhythm weekly commitment self audit' },
         { url: '5_Symbols/bmc/bmc-capital-relationships.html', title: 'Capital Relationships', desc: 'Analyzing Constant Capital (tools), Variable Capital (labor), and Marxian surplus in the ecosystem.', cat: 'Business Model', tags: 'capital infrastructure tools marx marxian constant variable relationships' },
         { url: '5_Symbols/bmc/surplus-value.html', title: 'Surplus Value Creation', desc: 'Explaining how surplus value is generated from intellectual labor and infinite digital reproducibility.', cat: 'Business Model', tags: 'surplus value marx labor reproduction cost profit value' },
         { url: '5_Symbols/growth/organic-growth.html', title: 'Organic Growth Strategy', desc: 'Acquisition flywheels, YouTube search loops, and LinkedIn certification viral sharing.', cat: 'Growth', tags: 'organic growth strategy marketing viral loops linkedin search acquisition' },
@@ -1155,6 +1170,36 @@
     ];
 
     var relatedConceptsOverride = {
+        '5_Symbols/execution/4dx-execution-crisis.html': [
+            { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus', emoji: '🎯' },
+            { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Lead Measures', emoji: '⚖️' },
+            { url: '5_Symbols/execution/4dx-discipline-3.html', title: 'Discipline 3: Scoreboard', emoji: '📊' },
+            { url: '5_Symbols/execution/4dx-discipline-4.html', title: 'Discipline 4: Cadence', emoji: '🔄' }
+        ],
+        '5_Symbols/execution/4dx-discipline-1.html': [
+            { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'Execution Overview', emoji: '🌪️' },
+            { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Lead Measures', emoji: '⚖️' },
+            { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates', emoji: '🚦' }
+        ],
+        '5_Symbols/execution/4dx-discipline-2.html': [
+            { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus', emoji: '🎯' },
+            { url: '5_Symbols/execution/4dx-discipline-3.html', title: 'Discipline 3: Scoreboard', emoji: '📊' },
+            { url: '5_Symbols/growth/test-metrics.html', title: 'Test Metrics', emoji: '🧬' }
+        ],
+        '5_Symbols/execution/4dx-discipline-3.html': [
+            { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Lead Measures', emoji: '⚖️' },
+            { url: '5_Symbols/execution/4dx-discipline-4.html', title: 'Discipline 4: Cadence', emoji: '🔄' },
+            { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
+        ],
+        '5_Symbols/execution/4dx-discipline-4.html': [
+            { url: '5_Symbols/execution/4dx-discipline-3.html', title: 'Discipline 3: Scoreboard', emoji: '📊' },
+            { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'Execution Overview', emoji: '🌪️' },
+            { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Founder Bandwidth', emoji: '🧑‍💻' }
+        ],
+        '5_Symbols/hypotheses/hyp-h23.html': [
+            { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Tracker', emoji: '💭' },
+            { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'Execution Overview', emoji: '🌪️' }
+        ],
         'index.html': [
             { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' },
             { url: '5_Symbols/bmc/business-model-canvas.html', title: 'Business Model Canvas', emoji: '🖼️' },

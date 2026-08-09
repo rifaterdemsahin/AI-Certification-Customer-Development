@@ -94,8 +94,8 @@ js_lines = ",\n".join(
     for l, u in MENU
 )
 block = f"debugMenu: [\n{js_lines}\n      ]"
-pat = re.compile(r"debugMenu: \[.*?\n      \]", re.DOTALL)
-for f in ("index.html", "5_Symbols/markdown_renderer.html"):
+pat = re.compile(r"debugMenu: \[.*?\n\s*\]", re.DOTALL)
+for f in ("index.html", "markdown_renderer.html"):
     p = f"{ROOT}/{f}"
     s = open(p).read()
     s2, n = pat.subn(block, s)
