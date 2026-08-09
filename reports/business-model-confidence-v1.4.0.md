@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.4.0
 
+> **Superseded by [v1.4.1](business-model-confidence-v1.4.1.md)** (2026-08-09) — that run clears this version's temporary uncommitted-work deduction but finds a new orphaned page (`5_Symbols/markdown_renderer.html`), net score 40/100.
+
 **Date:** 2026-08-09
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.3.0:** minor bump — updated H11 (delegated weekday cohorts managed by TAs independently of founder time) and H14 (expanded AI certification scope to Nvidia, Microsoft, and Google to decrease Claude dependency and expand paid market reach) across stage specifications, components, hypotheses detail pages, dashboard, and memory files. **Result: the overall score remains 41/100 (and will clear to 44/100 once committed). Hypothesis Validation is unchanged at 27.5/100 (displayed 28). Site Integrity remains at 72.5 this run, including the −10 uncommitted-work deduction which is expected to clear once the batch is committed.**
