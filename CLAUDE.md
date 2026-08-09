@@ -15,14 +15,14 @@ Upon completing any task (especially page updates), always:
 
 ## What this project is
 
-A static HTML/CSS/JS site (no build step, no framework, no bundler — just open the files or serve the directory) documenting the Customer Development business plan (Steve Blank methodology) for **AI Certification Helper**, a business run by founder **Rifat Erdem Sahin**. The business: animated YouTube videos that teach AI/cloud certification content, funneling free viewers into a $10/mo prep membership and $250–$500 live cohort bootcamps aimed at the Claude Certified Architect – Professional exam (issued by Anthropic via Pearson VUE — this company never issues the certification itself).
+A static HTML/CSS/JS site (no build step, no framework, no bundler — just open the files or serve the directory) documenting the Customer Development business plan (Steve Blank methodology) for **AI Certification Helper**, a business run by founder **Rifat Erdem Sahin**. The business: animated YouTube videos that teach AI/cloud certification content, funneling free viewers into a $10/mo prep membership and $250–$500 live cohort bootcamps initially aimed at the Claude Certified Architect – Professional exam (issued by Anthropic via Pearson VUE), expanding in Stage 3 to other prominent certifications (Nvidia, Microsoft, Google) to decrease Claude-only dependency and expand paid market reach.
 
 Do not re-derive these facts from scratch in a future session — they are established and cross-referenced throughout the site:
 - **Founder:** Rifat Erdem Sahin, running this as a second job (not full-time; works a contract role, meaning YouTube and LinkedIn comments are batch-answered in weekly cycles).
 - **Primary Channels:** YouTube Courses & organic LinkedIn sharing (using Rifat Erdem Sahin's professional audience).
 - **$10,000 USD** cumulative cohort/course revenue = the Stage 2 &rarr; 3 (Customer Validation &rarr; Customer Creation) exit gate. See `5_Symbols/stages/stage-customer-creation.html`, `5_Symbols/stages/stage-customer-validation.html`, and `5_Symbols/growth/quality-gates.html`.
-- **1,000x subscriber growth per video** (baseline ~30 subscribers &rarr; ~30,000 target) = the primary Stage 3 (Customer Creation) metric. See `5_Symbols/stages/stage-customer-creation.html`.
-- **$100,000 annual run-rate** = the Stage 4 (Company Building) hiring trigger (freelance video editor, cohort support coordinator, technical TAs). See `5_Symbols/stages/stage-company-building.html`.
+- **1,000x subscriber growth per video** (baseline ~30 subscribers &rarr; ~30,000 target) = the primary Stage 3 (Customer Creation) metric, coupled with multi-certification expansion (Nvidia, Microsoft, Google) to expand reach. See `5_Symbols/stages/stage-customer-creation.html`.
+- **$100,000 annual run-rate** = the Stage 4 (Company Building) hiring trigger to delegate core operations. Multiple cohorts are managed on weekday schedules run independently of Rifat's time, facilitated by support coordinators and TAs. See `5_Symbols/stages/stage-company-building.html`.
 - **>40% average watch retention** = an MVP-stage video-quality floor, not a stage gate (demoted from an earlier draft — see `HYPOTHESIS.md` H10).
 - All "guarantee of passing the exam" language has been deliberately removed site-wide; the value prop is live cohort practice/community, not a promised outcome.
 

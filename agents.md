@@ -43,8 +43,8 @@ Whenever a page is updated or a new page is added, AI agents **MUST** cross-link
 AI agents must align all content, strategy proposals, and specs with the following constraints:
 * **Founder & Contract Status:** Rifat Erdem Sahin is running this as a second job. He works a contract role, meaning YouTube and LinkedIn comments are batch-answered in **weekly cycles** during the content generation phase.
 * **Organic Distribution Channels:** Primary channels are YouTube Courses and organic LinkedIn sharing (specifically leveraging Rifat Erdem Sahin's professional audience).
-* **Validation Exit Gate:** $10,000 in gross revenue from a single course/cohort launch before transition to Stage 3 (Customer Creation).
-* **Operational Scaling Gate:** Hire video editors and cohort assistants only after hitting a $100,000/year ARR run-rate.
+* **Validation Exit Gate:** $10,000 in gross revenue from 2 consecutive cohort launches before transition to Stage 3 (Customer Creation).
+* **Operational Scaling Gate:** Hire video editors, cohort coordinators, and TAs after hitting a $100,000/year ARR run-rate. Multiple cohorts are managed on weekday schedules run independently of Rifat's time, facilitated by TAs. In Stage 3, curriculum expands to Nvidia, Microsoft, and Google AI certifications to decrease dependency on Claude and expand reach.
 
 ---
 

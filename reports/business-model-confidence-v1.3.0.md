@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.3.0
 
+> **Superseded by [v1.4.0](business-model-confidence-v1.4.0.md)** (2026-08-09) — that run updates H11 (weekday cohorts run by TAs) and H14 (Nvidia, Microsoft, Google certifications) across spec, memory, and dashboard files.
+
 **Date:** 2026-08-09
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.2.0:** minor bump — added `5_Symbols/product/one-pager.html` (a plain-text, copy-paste business summary for external validation sites), and a full re-scan of every `href` on the whole site found **75 real broken links** that v1.2.0's scan missed — a regression from the `03b7d85` folder-refactor commit, concentrated in root-level pages (`motivation.html` alone had 40 broken links) and in `dictionary.html` references from sibling directories. All 75 were fixed and verified in this same run (0 remain). **Result: the overall score is 41/100, down from 44/100 — not because the business got worse, but because this run's scan is honest about a temporary uncommitted-work state (this batch of fixes + the new page) that v1.2.0's scan didn't have. Hypothesis Validation is unchanged at 27.5/100 (displayed 28). Site Integrity drops from 82.5 to 72.5 this run, purely from the −10 uncommitted-work deduction — expected to clear immediately once this batch is committed, the same pattern seen between v1.0.0 (38) and v1.0.1 (44).**

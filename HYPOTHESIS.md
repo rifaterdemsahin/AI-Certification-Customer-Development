@@ -1,6 +1,6 @@
 # Hypothesis Tracker — AI Certification Helper
 
-**Version:** 1.30.0
+**Version:** 1.32.0
 **Date:** 2026-08-09
 **Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.1.0.md` (supersedes v1.0.0), `reports/market-validation-argument-v1.0.md`, `reports/ai-adoption-and-skills-gap-v1.0.md`, `reports/exam-prep-market-and-student-behavior-v1.0.md`, and `reports/business-model-confidence-v1.0.3.md` (a versioned, numeric confidence score computed over every hypothesis below, plus a whole-site integrity check — see `confidence-report.html`) where a status claim is not backed by evidence in the repo, or has since been resolved or changed by new research or a founder decision.
 
@@ -221,12 +221,12 @@ flowchart LR
 - **Conclusion:** These firms have a structural, revenue-linked, bulk-purchase incentive to pay for staff Claude certification prep — a potentially larger and more predictable channel than the individual YouTube funnel this business model currently relies on exclusively.
 - **Status:** ⚪ Planned — this is a new, untested hypothesis. No firm has been asked directly whether it would pay for bulk cohort seats to hit its practitioner quota. Recommended first experiment: contact 3–5 Claude Partner Network "Registered"-tier firms and ask directly (see market-validation-argument-v1.0.md, Section 6). **Reclassified 2026-08-02:** this is corporate bulk-sales demand generation, which belongs alongside Stage 3's other Customer Creation metrics (H10, H13) rather than as a Stage 2 addendum. **New third-party confirmation (2026-08-07):** Premise 2's named example — Capgemini — is no longer speculative. Charles Andrews, Senior Consultant at Capgemini Invent (a real, named discovery-call contact already cited in H3/H5/H8/H21), publicly posted on LinkedIn that Capgemini Invent directly sponsored his Anthropic Partner Network certificate and training material, and stated he is pursuing the Developer certificate next. This is a real, on-the-record instance of exactly the employer-sponsored bulk-certification mechanic Premise 2 describes — not evidence this specific business captured any of that spend, but strong confirmation the mechanic itself is real and active today, not a hypothetical. Source: [LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7491458332940046336/). See `exam-performance-evidence.html`.
 
-### H14 — Multi-certification market expansion increases Stage 3 reach (new, 2026-08-02)
-- **Source:** Founder note via Workspace Notes
+### H14 — Multi-certification market expansion focusing on AI certifications increases paid market reach (updated 2026-08-09)
+- **Source:** Founder note via Workspace Notes; `stage-customer-creation.html`, `comp-creation-validation.html`
 - **Depends on:** None — independent, untested Stage 3 hypothesis. No other hypothesis cites or is cited by H14 in the text.
 - **Premise 1:** The Claude Certified Architect audience alone caps total addressable reach at one vendor's certification ecosystem.
-- **Premise 2:** Developers pursuing AI/cloud certification broadly also seek Nvidia, Azure, and AWS AI credentials, not just Anthropic's.
-- **Conclusion:** Expanding the content catalog to cover Nvidia, Azure, and AWS AI certifications alongside Claude will increase Stage 3 (Customer Creation) market reach beyond the current single-vendor scope.
+- **Premise 2:** Developers pursuing AI/cloud certification broadly also seek Nvidia, Microsoft (Azure), and Google (Gemini) credentials, not just Anthropic's.
+- **Conclusion:** Expanding the content catalog to cover Nvidia, Microsoft, and Google AI certifications alongside Claude will decrease dependency on Claude and increase Stage 3 (Customer Creation) paid market reach.
 - **Status:** ⚪ Planned — no multi-vendor content has been produced yet; this is a new, untested hypothesis.
 
 ### H16 — Paid advertisement is viable only post-validation, gated by a sustainability check (new, 2026-08-02)
@@ -259,13 +259,13 @@ flowchart LR
 
 ## Stage 4: Company Building
 
-### H11 — $100,000 ARR is the right threshold to begin hiring
-- **Source:** `comp-scale-organization.html`
+### H11 — $100,000 ARR triggers hiring for weekday cohorts run by TAs (updated 2026-08-09)
+- **Source:** `comp-scale-organization.html`, `stage-company-building.html`
 - **Depends on:** None — foundational Stage 4 hiring premise. Structurally follows Stage 3 revenue growth (H13), though no hypothesis text explicitly ties H11's figure to a specific Stage 3 result. Feeds H15 (explicit — the $100k ARR trigger for the founder's full-time transition) and H19 (Company Building start date).
-- **Premise 1:** Founder-led production, marketing, and support has a hard ceiling on throughput.
-- **Premise 2:** A freelance video editor, cohort coordinator, and technical TAs can absorb that load without degrading student experience.
-- **Conclusion:** At $100k ARR, hiring these three roles lets the business scale past the founder's personal capacity.
-- **Status:** ⚪ Hypothesized. **Note:** no cost model exists for these hires against the $100k figure (i.e., whether $100k ARR actually leaves enough margin to pay three roles) — see acidity check Finding F7.
+- **Premise 1:** Founder-led teaching, support, and video production caps total capacity at scale.
+- **Premise 2:** Hires (coordinator to manage multiple cohorts on weekday schedules, and TAs to run weekday cohorts independently of founder time) can scale operations without degrading student experience.
+- **Conclusion:** Hitting $100k ARR triggers hiring video editors, support coordinators, and TAs to run weekday cohorts independently of Rifat Erdem Sahin's active time.
+- **Status:** ⚪ Hypothesized (updated 2026-08-09 to reflect weekday cohort management by TAs independently of Rifat's time).
 
 ### H15 — Founder transitions to full-time at the Stage 4 threshold (new, 2026-08-02)
 - **Source:** Founder note via Workspace Notes; `stage-company-building.html`
@@ -379,6 +379,8 @@ Added 2026-08-05 (v1.16.0): each hypothesis above now carries its own **Depends 
 
 ## Change Log
 
+- **v1.32.0** (2026-08-09): Updated H14 (focusing on Nvidia, Microsoft, and Google AI certifications to expand reach and decrease dependency on Claude) and H11 (managing multiple cohorts on weekdays independently of founder time, facilitated by TAs). Synchronized changes across stages, components, and memory files.
+- **v1.31.0** (2026-08-09): Added a "Moat" glossary entry to `5_Symbols/product/dictionary.html` (distinct from the similarly-named "MAOT" entry), defining the term as used on `5_Symbols/product/one-pager.html` and cross-linking to the full `5_Symbols/strategy/moat.html` page. No new hypothesis — restates existing H8/H12-sourced moat claims. Also fixed `dictionary.html` itself being missing from `nav.js`'s Strategy dropdown and search index (it existed as an orphan page reachable only by direct link since v1.30.0's link-fix pass); it is now registered in both.
 - **v1.30.0** (2026-08-09): Re-ran the `business-model-sanity-check` skill and published `reports/business-model-confidence-v1.3.0.md` / `confidence-report.html` v1.3.0. **Overall score is 41/100, down from 44/100** — Hypothesis Validation holds flat at 27.5 (28/100, no hypothesis crossed a status tier); Site Integrity drops from 82.5 to 72.5 purely from a temporary uncommitted-work deduction (this batch of changes was still uncommitted at scan time — same pattern as v1.0.0→v1.0.1, expected to clear once committed). The real finding this run: a full-repo link scan uncovered **75 real broken links** that v1.2.0's report had incorrectly scored as "0 broken links" — a regression from the `03b7d85` 5_Symbols/ refactor commit, concentrated in root-level `motivation.html` (40 broken links) and `exam-topics.html` (5), plus 7 `dictionary.html` references from sibling directories missing the `../product/` prefix, and smaller cases across 15 other files. All 75 were fixed in place across 21 files and verified at 0 remaining in this same session.
 - **v1.29.0** (2026-08-09): Added `5_Symbols/product/one-pager.html` — a single plain-text, copy-paste business analysis summary (one-line pitch, problem, solution, who it's for, market sizing, traction, unit economics, moat, risks, milestones, and the self-assessed 28/100 confidence score) distilled from every page on the site, sized for pasting into external idea-validation forums and sites rather than for browsing in-site. Not a new hypothesis — it restates existing claims from H1, H2, H5, H6, H9, H12, H13 and the confidence report, each linked back to its source in a "Where Each Claim Comes From" section. Registered in `nav.js`'s Strategy dropdown and search index, linked bidirectionally from `business-plan-summary.html` and `business-overview.html`.
 - **v1.27.0** (2026-08-07): Added real third-party confirmation to H12 and H8: Charles Andrews (Senior Consultant at Capgemini Invent, a real named discovery-call contact already cited in H3/H5/H8/H21) publicly posted on LinkedIn that Capgemini Invent sponsored his Anthropic Partner Network certification and training, and that he's pursuing the Developer certificate next. This upgrades H12 Premise 2's previously speculative "Capgemini already reimburses certification costs" citation to a real, on-the-record example, and confirms H8's "organic LinkedIn badge sharing" target metric describes a real, already-happening behavior in this market (not our own program's graduate, but the underlying mechanic proven real). Propagated to `hyp-h12.html`, `hyp-h8.html`, and a new section on `exam-performance-evidence.html`. Post content summarized rather than reproduced verbatim (copyright); linked directly instead.

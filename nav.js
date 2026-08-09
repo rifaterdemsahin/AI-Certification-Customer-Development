@@ -86,7 +86,8 @@
                 ['5_Symbols/product/self-assessment.html', '🧭 Self-Assessment'],
                 ['5_Symbols/product/discovery-journey.html', '🧭 The Discovery Journey'],
                 ['5_Symbols/strategy/moat.html', '🛡️ Defensive Capabilities & Moat'],
-                ['5_Symbols/strategy/maot.html', '✨ MAOT Framework']
+                ['5_Symbols/strategy/maot.html', '✨ MAOT Framework'],
+                ['5_Symbols/product/dictionary.html', '📖 Dictionary & Glossary']
             ]
         },
         {
@@ -246,6 +247,7 @@
         { url: '5_Symbols/product/discovery-journey.html', title: 'The Discovery Journey', desc: 'Prospect-facing plain-language guide to what happens in a customer discovery call and how to join.', cat: 'Strategy', tags: 'discovery journey prospect interview join customer development' },
         { url: '5_Symbols/strategy/moat.html', title: 'Defensive Capabilities & Moat', desc: 'Honest investor-facing look at what is and isn\'t defensible: founder-market fit, content catalog, network effects, and the thin spots.', cat: 'Strategy', tags: 'moat defensive competitive advantage investors thin spots' },
         { url: '5_Symbols/strategy/maot.html', title: 'MAOT — Minimum Awesome Outcome Threshold', desc: 'A customer-development framework concept: the delight threshold beyond MVP where organic referral starts, tracked as H20.', cat: 'Strategy', tags: 'maot minimum awesome outcome threshold delight referral framework h20' },
+        { url: '5_Symbols/product/dictionary.html', title: 'Dictionary & Glossary', desc: 'Every acronym and piece of jargon used across the site, defined in one place, with reference links back to where each one is used.', cat: 'Strategy', tags: 'dictionary glossary acronyms jargon definitions terms moat maot arr cac ltv' },
         { url: '5_Symbols/product/partners.html', title: 'Partner With Us', desc: 'Outward-facing invitation for corporate training, content/co-instructor, and referral partnerships.', cat: 'Business Model', tags: 'partners partnership corporate b2b co-instructor referral' },
         { url: '5_Symbols/product/exam-prep-product.html', title: 'Exam Prep Bundle ($29)', desc: 'One-time $29 SKU — memory cards, prep exam, and mock exam — positioned alongside the membership and live cohort tiers, tracked as H21.', cat: 'Business Model', tags: 'exam prep bundle 29 dollars memory cards mock exam product h21' },
         { url: '5_Symbols/growth/conversation-starters.html', title: 'Conversation Starters for Events', desc: 'Networking swipe file of one-line openers and role-play scripts for events and meetups.', cat: 'Growth', tags: 'conversation starters events networking role play openers pitch' },
