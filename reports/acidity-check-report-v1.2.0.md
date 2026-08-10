@@ -1,3 +1,5 @@
+> **Superseded by [`acidity-check-report-v1.3.0.md`](acidity-check-report-v1.3.0.md) (2026-08-10)** — added F12, certification access possibly gated to Anthropic Partner Network firms. This version is kept as the historical record of findings as of 2026-08-07.
+
 # Acidity Check Report v1.2 — AI Certification Helper Customer Development Model
 
 **Version:** 1.2.0
