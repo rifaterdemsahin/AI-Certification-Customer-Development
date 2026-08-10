@@ -39,6 +39,7 @@
                 ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
                 ['5_Symbols/cd/cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
+                ['5_Symbols/cd/archived-interview-transcripts.html', '📂 Archived Transcripts'],
                 ['5_Symbols/cd/cd-hypothesis-interview-questions.html', '🧪 Hypothesis Interview Questions'],
                 ['5_Symbols/cd/cd-hypotheses.html', '💭 1. Hypothesis'],
                 ['5_Symbols/cd/cd-hyp-product.html', '&nbsp;&nbsp;↳ 📦 Product Hypothesis'],
@@ -170,7 +171,7 @@
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report v1.0 (Historical)'],
                 ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
                 ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '🤖 AI Adoption &amp; Skills Gap'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.0.md', '🧠 Exam Prep &amp; Student Behavior'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior'],
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification']
             ]
         },
@@ -197,6 +198,7 @@
         { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Customer Discovery Interview Guide', desc: 'Playbook of open-ended pains/gains questions, past behavior stories, and listening guidelines.', cat: 'Process', tags: 'interview questions open ended pains gains guide' },
         { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Customer Watering Holes & Outreach', desc: 'Outreach blueprint mapping Triton Square, Venture Coffee meetups, and cohorts with ready-to-use scripts.', cat: 'Process', tags: 'watering holes triton square venture coffee cohorts scripts outreach slack dms' },
         { url: '5_Symbols/cd/cd-interview-recording.html', title: 'Interview Recording & Tracker', desc: 'Qualitative interview recording tool (day-in-the-life, current workarounds) and outreach tracker with copyable thank you followups.', cat: 'Process', tags: 'interview log recording tracker contacts referral thank you' },
+        { url: '5_Symbols/cd/archived-interview-transcripts.html', title: 'Archived Interview Transcripts', desc: 'Detailed qualitative interview notes and transcript archives from customer discovery sessions.', cat: 'Process', tags: 'interview transcript archived notes sude charles marianna' },
         { url: '5_Symbols/stages/stage-customer-discovery.html', title: '1. Customer Discovery Stage', desc: 'First phase of customer development focused on problem-solution fit and testing core customer pain points.', cat: 'Stage', tags: 'problem solution mvp validation first' },
         { url: '5_Symbols/stages/stage-customer-validation.html', title: '2. Customer Validation Stage', desc: 'Second phase to build a repeatable, scalable sales blueprint and verify product-market fit.', cat: 'Stage', tags: 'sales roadmap pricing validation product market' },
         { url: '5_Symbols/stages/stage-customer-creation.html', title: '3. Customer Creation Stage', desc: 'Third phase to drive demand, acquire users at scale, and verify retention triggers.', cat: 'Stage', tags: 'demand growth viral acquisition' },
@@ -1115,6 +1117,12 @@
             emoji: '📝'
         },
         {
+            url: '5_Symbols/cd/archived-interview-transcripts.html',
+            title: 'Archived Interview Transcripts',
+            desc: 'Detailed qualitative interview notes and transcript archives from customer discovery sessions.',
+            emoji: '📂'
+        },
+        {
             url: '5_Symbols/bmc/business-model-canvas.html',
             title: 'Business Model Canvas',
             desc: 'The full 9-box view of the business model. See how value, segments, and costs connect.',
@@ -1231,6 +1239,11 @@
             { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Interview Guide', emoji: '🎤' },
             { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Watering Holes', emoji: '🌐' },
             { url: '5_Symbols/strategy/evidence-map.html', title: 'Evidence Map', emoji: '🔍' }
+        ],
+        '5_Symbols/cd/archived-interview-transcripts.html': [
+            { url: '5_Symbols/cd/cd-interview-recording.html', title: 'Interview Tracker', emoji: '📝' },
+            { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Interview Guide', emoji: '🎤' },
+            { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Watering Holes', emoji: '🌐' }
         ],
         '5_Symbols/bmc/business-model-canvas.html': [
             { url: '5_Symbols/bmc/value-proposition.html', title: 'Value Prop Canvas', emoji: '💎' },

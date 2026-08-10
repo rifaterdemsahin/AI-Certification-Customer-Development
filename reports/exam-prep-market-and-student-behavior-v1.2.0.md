@@ -1,10 +1,8 @@
-> **Superseded by [`exam-prep-market-and-student-behavior-v1.1.0.md`](exam-prep-market-and-student-behavior-v1.1.0.md) (2026-08-10)** — added qualitative customer discovery interview insights (dated 2026-08-10) validating learning preferences, hands-on prep gaps, exam-pricing elasticity (£75/Associate vs £125/Developer), and local LLM/Red Hat AI interest. This version is kept as the historical record of findings as of 2026-08-01.
-
 # Certification Market Size & Student Exam-Prep Behavior
 
-**Version:** 1.0.0
-**Date:** 2026-08-01
-**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams (specifically Pearson VUE-delivered exams, the same delivery platform Anthropic uses for Claude Certified exams), and the role employer payment plays in student behavior and urgency. This is the demand-side counterpart to `reports/market-validation-argument-v1.0.md` (which covered the enterprise/partner-tier demand mechanism) and `reports/ai-adoption-and-skills-gap-v1.0.md` (which covered why the skills gap exists).
+**Version:** 1.2.0
+**Date:** 2026-08-10
+**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version incorporates Sude's qualitative customer discovery interview insights (dated 2026-08-10) validating Second Brain automation preferences, spaced repetition needs, and technical friction points alongside the existing corporate practitioner data from Charles and Speaker 2.
 
 ---
 
@@ -30,7 +28,7 @@
 
 ## 3. How Students Actually Prepare — and Why the Fear of Failing Drives Behavior
 
-Certification exams relevant here (CompTIA, PMP, cloud certifications, and now Claude Certified exams) share a common delivery model via **Pearson VUE**, operating over 5,000 physical test centers worldwide plus **OnVUE**, its online-proctored option (human proctor watching via webcam, strict environment rules: quiet private room, no second monitor, no phone in reach, mandatory system check beforehand). This is the identical delivery mechanism the Claude Certification Program uses.
+Official exams (CompTIA, PMP, cloud certifications, and now Claude Certified exams) share a common delivery model via **Pearson VUE**, operating over 5,000 physical test centers worldwide plus **OnVUE**, its online-proctored option (human proctor watching via webcam, strict environment rules: quiet private room, no second monitor, no phone in reach, mandatory system check beforehand). This is the identical delivery mechanism the Claude Certification Program uses.
 
 Key behavioral facts about how candidates prepare, and why:
 
@@ -45,6 +43,41 @@ Key behavioral facts about how candidates prepare, and why:
 1. **The core insight validated:** most of the time, it is not the individual absorbing the exam cost out of pocket — it's the employer, either informally (reimbursement) or structurally (Anthropic's own Partner Network practitioner quotas). The paying customer and the exam-taker are frequently different people, which changes who the marketing and sales motion should target (see H12 in `HYPOTHESIS.md`, the IT-consulting/government-contractor B2B channel).
 2. **Failure-avoidance, not just learning, is a sellable outcome.** The 25–40% failure rates on comparable exams, combined with full-price non-discounted retakes and the added psychological cost of failing an employer-sponsored exam, mean "helping you pass on the first attempt" is a distinct, higher-value promise than "helping you learn the material" — this is worth reflecting explicitly in the site's PMF and marketing copy (`comp-pmf.html`).
 3. **Format rehearsal is part of the product, not an afterthought.** Because OnVUE's proctoring mechanics are themselves a stated source of anxiety, a prep cohort that includes a mock proctored-exam run-through (environment setup, timing, webcam etiquette) addresses a real, documented gap competitors focused purely on content may be missing.
+
+---
+
+## 5. Qualitative Customer Discovery Interview Findings (2026-08-10)
+
+This section summarizes qualitative findings from on-the-record discovery interviews with technical practitioners and students.
+
+### A. Corporate Practitioners (Charles & Speaker 2)
+* **Difficulty & Exam Structure (Associate Level Fit):** Charles noted that entry-level/associate certification material feels designed more for project managers than technical staff. It focuses heavily on workflow sequences and requirement-gathering steps rather than hands-on technical execution. He scored 705 on the Associate exam (where 700 is the passing score) and confirmed it is mostly composed of abstract terms.
+* **Passability Floor:** Charles felt there was a "50/50" chance of passing the Associate exam using common sense alone without dedicated study. This supports offering a lower-barrier entry product ($29 Exam Prep Bundle) for the Associate tier, as the stakes are perceived to be lower.
+* **Engagement with Core Concepts:** Both speakers agreed the learning material itself is engaging and valuable, particularly highlighting topics like token usage, context windows, sampling techniques, model non-determinism, and testing/evaluation metrics.
+* **Willingness to Apply Practical Skills:** Charles expressed a strong desire to apply the knowledge practically, citing past frustration with AWS where they earned three certifications but only ever used them for auditing. They want to avoid "paper-only" credentials.
+* **Receipt for Learning:** Speaker 2 views acquiring certifications as a valid "receipt" for personal learning, distinct from useless credential hoarding.
+* **Career Impact:** Charles sees AI learning as vital for long-term career growth, though not immediately applicable to his current day-to-day role.
+* **Organizational Enthusiasm vs. Friction:** While Charles expressed doubt about **[Organization]** implementing AI soon at his team level, Speaker 2 highlighted leadership enthusiasm, citing corporate investments in GPUs and Palantir projects.
+* **Future Certification Trajectory:**
+  * **Professional Tiers:** Charles is planning to sit for the Developer Certification next, which represents a higher financial and technical commitment (£125 vs. £75 for Associate). He plans to take this exam in the next 2 weeks.
+  * **Regional/Sovereign Constraints:** Both discussed pursuing Red Hat AI certification, driven by internal interest and the UK requirement to run local LLMs rather than relying on external APIs (e.g., Claude or DeepSeek) due to compliance/PII concerns.
+* **Theoretical Knowledge vs. Hands-On Practice (The Theory Gap):** Charles admitted that his AI knowledge is currently mostly theoretical and he urgently needs hands-on practice.
+* **Hands-on Concepts in Demand (Speaker 2):**
+  * Setting up local Model Context Protocol (MCP) clients/servers and Retrieval-Augmented Generation (RAG).
+  * Building personal assistants/"Second Brains" indexing personal data (emails, drive files) into a local knowledge graph for sub-second semantic retrieval.
+  * Advanced retrieval techniques: chunking, semantic search, and using vector databases like Qdrant.
+  * **Takeaway:** This directly validates the core value proposition of our live cohorts (structured hands-on practice, local environment builds, MCP, RAG) over simple self-study or theoretical official materials.
+
+### B. Workspace Automation & Spaced-Repetition Needs (Sude)
+* **Obsidian / Second Brain Appeal:** Sude was highly motivated by setting up Obsidian and watching the cohort recording, which inspired her to construct a local "Second Brain" to manage her workflow.
+* **Spaced Repetition Review Loop:** A major pain point identified is **context loss and time waste** caused by constantly returning to old AI chat threads to re-read confusing points or past struggles. She expressed a clear need for an automated prompt system that cues her to review studied topics on her schedule (e.g., within 3 days of learning).
+* **Continuous Chat Syncing:** She wants to connect Obsidian to browser-based chats (ChatGPT/Claude) to regularly and automatically generate structured notes for pinned chats, categorizing them under headings like *Learning, Lessons/Courses, Personal Life, General Knowledge, Artificial Intelligence, and AI Certified Architect*.
+* **Web App Learning Guide:** She wants to export these synchronized files into a clean web application serving as a reminder and learning guide with separate menu sections (e.g., displaying pinned chats and weekly focus areas under *Claude Certified Architect*).
+* **Technical Implementation Friction:** Sude struggled with specific implementation hurdles:
+  * Understanding and structuring workspaces using the PARA method.
+  * Deploying/hosting platforms (e.g., Cloudflare).
+  * Background execution logic (whether Obsidian/Claude must remain running in the background constantly to keep files updated).
+  * **Takeaway:** These gaps confirm that students face high cognitive load when trying to build automated local AI systems themselves, validating the premium pricing of live cohorts that offer guided environment builds, PARA templates, and background worker hosting.
 
 ---
 
@@ -66,9 +99,13 @@ Key behavioral facts about how candidates prepare, and why:
 - [Series 7 Certification Cost 2026 — Series7Study](https://series7study.com/blog/series-7-certification-cost)
 - [Cloud Skills Shortage 2025: Your 6-Figure Certification Strategy](https://learn-azure-aws.beehiiv.com/p/the-cloud-skills-gap-is-exploding-in-2025)
 - [The Latest Cloud Computing Statistics (updated October 2025) — AAG IT Support](https://aag-it.com/the-latest-cloud-computing-statistics/)
+- **Primary Source 1 (2026-08-10):** Customer Discovery Interview with Charles & Speaker 2, large corporate organisation.
+- **Primary Source 2 (2026-08-10):** Customer Discovery Interview with Sude, Sunday Cohort student.
 
 ---
 
 ## Change Log
 
+- **v1.2.0** (2026-08-10): Incorporated qualitative customer discovery interview insights from Sude (dated 2026-08-10) validating Second Brain automation, context loss/spaced repetition needs, and setup friction points (PARA, Cloudflare, background workers).
+- **v1.1.0** (2026-08-10): Incorporated qualitative customer discovery interview insights from Charles and Speaker 2 (dated 2026-08-10), validating skills demand, hands-on prep gaps, exam-pricing elasticity (£75/Associate vs £125/Developer), and local LLM/Red Hat AI interest.
 - **v1.0.0** (2026-08-01): Initial market-size and student exam-prep behavior research, covering certification market growth, employer payment prevalence, and Pearson VUE proctoring/failure-anxiety dynamics.
