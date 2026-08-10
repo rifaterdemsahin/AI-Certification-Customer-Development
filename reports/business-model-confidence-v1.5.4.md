@@ -1,32 +1,30 @@
-> **Superseded by [`business-model-confidence-v1.5.4.md`](business-model-confidence-v1.5.4.md) (2026-08-10)** — re-run check after committing the working tree to clear the temporary uncommitted work deduction. This version is kept as the historical record of findings as of 2026-08-10.
-
-# Business Model Confidence Report — v1.5.3
+# Business Model Confidence Report — v1.5.4
 
 **Date:** 2026-08-10
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.5.2:** patch bump — incorporated Sude's qualitative customer discovery interview findings from 2026-08-10 (Second Brain Obsidian automation, context loss/spaced repetition review needs within 3 days, PARA/Cloudflare implementation friction) into H5, H8, H20, and H21. Refined behavior report references to v1.2.0. Corrected the acidity check still-open findings deduction to include F12 (total 3 findings open: F2, F11, F12), which properly moves the still-open deduction from −10 to −15, adjusting the Site Integrity Score to 67.5 and Overall Score to 40/100 (holds in Low-moderate band).
+**What changed vs. v1.5.3:** patch bump — re-run check after committing the working tree. This clears the temporary −10 uncommitted-work deduction, raising the Site Integrity Score to 77.5 and the Overall Score to 43/100.
 
 ---
 
 ## Overall Score
 
-# 40 / 100 — Low-moderate confidence
+# 43 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at 28.7% (29/100). Site Integrity adjusts to 67.5% (including a −15 deduction for 3 still-open acidity findings and a temporary −10 uncommitted-work deduction).
+> Hypothesis Validation holds at 28.7% (29/100). Site Integrity rises to 77.5% as all pending work has been successfully committed to repository history (uncommitted work deduction is now 0).
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
-        = round(0.7 × 28.70 + 0.3 × 67.50)
-        = round(20.09 + 20.25)
-        = round(40.34)
-        = 40
+        = round(0.7 × 28.70 + 0.3 × 77.50)
+        = round(20.09 + 23.25)
+        = round(43.34)
+        = 43
 ```
 
-| Sub-score | v1.5.2 | v1.5.3 | Change |
+| Sub-score | v1.5.3 | v1.5.4 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 28.7 / 100 | **28.7 / 100** | 0.0 |
-| Site Integrity Score | 72.5 / 100 | **67.5 / 100** | -5.0 |
-| **Overall** | **42 / 100** | **40 / 100** | **-2** |
+| Site Integrity Score | 67.5 / 100 | **77.5 / 100** | +10.0 |
+| **Overall** | **40 / 100** | **43 / 100** | **+3** |
 
 ---
 
@@ -64,29 +62,27 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 ---
 
-## Site Integrity Score — 67.5/100 (adjusted)
+## Site Integrity Score — 77.5/100 (raised)
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.5.2 | v1.5.3 | Deduction | Rationale |
+| # | Finding | v1.5.3 | v1.5.4 | Deduction | Rationale |
 |---|---|---|---|---|---|
-| 1 | Acidity-check findings still open (F2, F11, F12) | −10 | −15 | −15 | F12 correctly factored at −5 (bringing total to 3 findings) |
+| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | F12 correctly factored at −5 (bringing total to 3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 23 rows match their entries. |
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
 | 5 | Orphaned pages | 0 | 0 | 0 | Resolved. sitemaps and tools are clean. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
-| 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction — active batch of changes is uncommitted. |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | 0 | 0 | Cleared to 0 as all files are successfully committed to repository |
 
-**Total deductions: 32.5 → Site Integrity Score: 67.5**
+**Total deductions: 22.5 → Site Integrity Score: 77.5**
 
 ---
 
 ## What Would Move the Score
 
-**Highest leverage right now is committing the active changes**, which will clear the −10 uncommitted-work deduction and return Site Integrity to **77.5** (overall **44/100**).
-
-Beyond that, the highest-leverage *business* action is unchanged: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score.
+The highest-leverage *business* action is unchanged: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score.
 
 ---
 
@@ -94,7 +90,8 @@ Beyond that, the highest-leverage *business* action is unchanged: **H9** (the $1
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.5.3 | 2026-08-10 | 40 / 100 (Low-moderate) | Incorporated Sude's qualitative customer discovery interview insights (dated 2026-08-10) into H5, H8, H20, and H21; adjusted Site Integrity acidity check deduction to accurately include F1 |
+| v1.5.4 | 2026-08-10 | 43 / 100 (Low-moderate) | Cleared −10 temporary uncommitted-work deduction after staging and committing work |
+| v1.5.3 | 2026-08-10 | 40 / 100 (Low-moderate) | Incorporated Sude's qualitative customer discovery interview insights (dated 2026-08-10) into H5, H8, H20, and H21; adjusted Site Integrity acidity check deduction to include F12 |
 | v1.5.2 | 2026-08-10 | 42 / 100 (Low-moderate) | Incorporated qualitative customer discovery interview findings from 2026-08-10 into H1, H3, H5, H8, H14, H21; overall score holds flat at 42/100 |
 | v1.5.1 | 2026-08-10 | 42 / 100 (Low-moderate) | Added Brian's qualitative cohort feedback as H5 (Premise 5/6) and H20 evidence; overall score holds flat at 42/100 |
 | v1.5.0 | 2026-08-09 | 42 / 100 (Low-moderate) | Created execution pages and added H23 (validation 29/100); deleted orphaned duplicate renderer `5_Symbols/markdown_renderer.html` (+15 site integrity); −10 temporary uncommitted-work deduction |
