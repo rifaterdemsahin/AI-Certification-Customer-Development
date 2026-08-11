@@ -173,6 +173,7 @@
                 ['markdown_renderer.html?src=HYPOTHESIS.md', '📊 Hypothesis Tracker Full Doc'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Business Model Confidence Report'],
                 ['5_Symbols/dashboard/latest-pages.html', '📅 Latest Created/Updated Pages'],
+                ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.3.0.md', '🧪 Acidity Check Report v1.3'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.2.0.md', '🧪 Acidity Check Report v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.1.0.md', '🧪 Acidity Check Report v1.1 (Historical)'],
@@ -206,6 +207,7 @@
         { url: '5_Symbols/bmc/surplus-value.html', title: 'Surplus Value Creation', desc: 'Explaining how surplus value is generated from intellectual labor and infinite digital reproducibility.', cat: 'Business Model', tags: 'surplus value marx labor reproduction cost profit value' },
         { url: '5_Symbols/growth/organic-growth.html', title: 'Organic Growth Strategy', desc: 'Acquisition flywheels, YouTube search loops, and LinkedIn certification viral sharing.', cat: 'Growth', tags: 'organic growth strategy marketing viral loops linkedin search acquisition' },
         { url: '5_Symbols/dashboard/latest-pages.html', title: 'Latest Created & Updated Pages', desc: 'Dashboard tracking recently created and updated pages, sortable by dates.', cat: 'Dashboard', tags: 'latest created updated pages dates calendar sorting index' },
+        { url: '5_Symbols/dashboard/sitemap.html', title: 'Site Map', desc: 'Every page on the site, searchable, with Logical (by section) and A-Z sort modes, built live from this same search index.', cat: 'Dashboard', tags: 'sitemap site map search sort az alphabetical logical directory all pages index' },
         { url: 'index.html', title: 'Customer Development Hub', desc: 'Home hub mapping all stages, business validation frameworks, and milestones.', cat: 'Hub', tags: 'home dashboard main index' },
         { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Customer Discovery Interview Guide', desc: 'Playbook of open-ended pains/gains questions, past behavior stories, and listening guidelines.', cat: 'Process', tags: 'interview questions open ended pains gains guide' },
         { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Customer Watering Holes & Outreach', desc: 'Outreach blueprint mapping Triton Square, Venture Coffee meetups, and cohorts with ready-to-use scripts.', cat: 'Process', tags: 'watering holes triton square venture coffee cohorts scripts outreach slack dms' },
@@ -338,6 +340,10 @@
         { url: 'business-overview.html', title: 'Business Overview (One-Pager)', desc: 'Plain-language one-page reference for what the business does, who it is for, how it makes money, and current stage.', cat: 'References', tags: 'business overview one pager elevator pitch summary reference what does this do' },
         { url: '5_Symbols/cd/cd-hypothesis-interview-questions.html', title: 'Hypothesis Interview Questions', desc: 'Specific customer-interview questions mapped to every hypothesis (H1-H19), each with a listen-for cue for what would validate or kill it.', cat: 'Process', tags: 'interview questions hypothesis test validate kill customer discovery ask what to ask' }
     ];
+
+    // Exposed read-only so other pages (e.g. the Site Map) can build their own views
+    // from this same data instead of hand-maintaining a second copy that can drift.
+    window.__siteMapData = { groups: groups, searchIndex: searchIndex };
 
     // Build current page URL (relative to root)
     var currentPageUrl = currentFile;
@@ -1311,6 +1317,11 @@
             { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timelines', emoji: '📅' },
             { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', emoji: '🧪' },
             { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
+        ],
+        '5_Symbols/dashboard/sitemap.html': [
+            { url: '5_Symbols/dashboard/latest-pages.html', title: 'Latest Pages', emoji: '📅' },
+            { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: 'index.html', title: 'Hub', emoji: '🏠' }
         ],
         '5_Symbols/dashboard/confidence-report.html': [
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },

@@ -1,4 +1,4 @@
-> **Superseded by [`business-model-confidence-v1.7.0.md`](business-model-confidence-v1.7.0.md) (2026-08-11)** — This version is kept as the historical record.
+> **Superseded by [`business-model-confidence-v1.8.0.md`](business-model-confidence-v1.8.0.md) (2026-08-11)** — This version is kept as the historical record.
 
 # Business Model Confidence Report — v1.6.5
 
