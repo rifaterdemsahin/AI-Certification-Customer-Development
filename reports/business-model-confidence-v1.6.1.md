@@ -1,10 +1,10 @@
-> **Superseded by [`business-model-confidence-v1.6.1.md`](business-model-confidence-v1.6.1.md) (2026-08-11)** — added Skool LMS integration page, linked to H5, H8, and H21. This version is kept as the historical record of confidence scores as of 2026-08-11.
+> **Superseded by [`business-model-confidence-v1.6.2.md`](business-model-confidence-v1.6.2.md) (2026-08-11)** — added Claude Partner Strategy. This version is kept as the historical record of findings as of 2026-08-11.
 
-# Business Model Confidence Report — v1.6.0
+# Business Model Confidence Report — v1.6.1
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.5.7:** Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content to trace greed, fear, and insecurity drivers. Bumps version tracker to v1.6.0. Overall score rises to 41 in uncommitted state (Validation rises to 29.8% [30/100] with the addition of H24, Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
+**What changed vs. v1.6.0:** Added Skool LMS & Community Integration page (`skool-lms-integration.html`) and registered it as the platform delivery hub. Linked it to hypotheses H5, H8, and H21. Overall score remains at 41 in the uncommitted state (Validation holds at 29.8% [30/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
 
 ---
 
@@ -12,7 +12,7 @@
 
 # 41 / 100 — Low-moderate confidence
 
-> Hypothesis Validation rises to 29.8% (30/100). Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will rise to 44 once committed.
+> Hypothesis Validation holds at 29.8% (30/100). Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will rise to 44 once committed.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
@@ -22,11 +22,11 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 41
 ```
 
-| Sub-score | v1.5.7 | v1.6.0 | Change |
+| Sub-score | v1.6.0 | v1.6.1 | Change |
 |---|---|---|---|
-| Hypothesis Validation Score | 28.7 / 100 | **29.8 / 100** | +1.1 |
+| Hypothesis Validation Score | 29.8 / 100 | **29.8 / 100** | 0.0 |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
-| **Overall** | **40 / 100** | **41 / 100** | **+1** |
+| **Overall** | **41 / 100** | **41 / 100** | **0.0** |
 
 ---
 
@@ -61,7 +61,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H23 | 4DX weekly accountable rhythm overcomes whirlwind | 🟡 In Testing | 55 |
 | H24 | Emotional Pain Drivers (fear, greed, insecurity) | 🟡 In Testing | 55 |
 
-**Sum:** 715 across 24 hypotheses → 715 / 24 = **29.791… → 30/100** (up from 29/100).
+**Sum:** 715 across 24 hypotheses → 715 / 24 = **29.791… → 30/100** (rounded).
 
 ---
 
@@ -69,13 +69,13 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.5.7 | v1.6.0 | Deduction | Rationale |
+| # | Finding | v1.6.0 | v1.6.1 | Deduction | Rationale |
 |---|---|---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 24 rows match their entries. |
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
-| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Pain points page registered in nav dropdown and search index. |
+| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Skool LMS page registered in nav dropdown and search index. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
 | 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction due to uncommitted working tree. |
 
@@ -93,6 +93,7 @@ The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gat
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
+| v1.6.1 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool LMS & Community Integration page (`skool-lms-integration.html`) and linked to H5, H8, H21; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.0 | 2026-08-11 | 41 / 100 (Low-moderate) | Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content; Validation rises to 29.8% (30/100); −10 temporary uncommitted-work deduction |
 | v1.5.7 | 2026-08-11 | 40 / 100 (Low-moderate) | Added Tuncer's qualitative interview data, published behavior report v1.3.0, and updated all references/details across the project; −10 temporary uncommitted-work deduction |
 | v1.5.6 | 2026-08-11 | 40 / 100 (Low-moderate) | Created `skills-gap.html`, added Delivery Pilots persona, updated stage focuses, and added Skool/badge timelines and live sample widget; −10 temporary uncommitted-work deduction |

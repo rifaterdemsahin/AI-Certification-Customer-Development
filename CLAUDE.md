@@ -25,6 +25,7 @@ Do not re-derive these facts from scratch in a future session — they are estab
 - **$100,000 annual run-rate** = the Stage 4 (Company Building) hiring trigger to delegate core operations. Multiple cohorts are managed on weekday schedules run independently of Rifat's time, facilitated by support coordinators and TAs. See `5_Symbols/stages/stage-company-building.html`.
 - **>40% average watch retention** = an MVP-stage video-quality floor, not a stage gate (demoted from an earlier draft — see `HYPOTHESIS.md` H10).
 - All "guarantee of passing the exam" language has been deliberately removed site-wide; the value prop is live cohort practice/community, not a promised outcome.
+- **LMS Platform:** Skool is designated as the off-the-shelf LMS/community platform starting in Stage 2 (Customer Validation) to host resources, events, billing, and peer discussions, avoiding custom platform code.
 
 The authoritative running log of every falsifiable claim on the site — with status (Validated / In Testing / Planned / Claimed-unverified) — is `HYPOTHESIS.md`. Read it before asserting a new business number; update it if you change one.
 

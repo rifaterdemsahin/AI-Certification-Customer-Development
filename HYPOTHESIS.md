@@ -1,6 +1,6 @@
 # Hypothesis Tracker — AI Certification Helper
 
-**Version:** 1.45.0
+**Version:** 1.47.0
 **Date:** 2026-08-11
 **Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.3.0.md` (supersedes v1.2.0), `reports/market-validation-argument-v1.0.md`, `reports/ai-adoption-and-skills-gap-v1.0.md`, `reports/exam-prep-market-and-student-behavior-v1.3.0.md` (supersedes v1.2.0), and `reports/business-model-confidence-v1.5.6.md` (a versioned, numeric confidence score computed over every hypothesis below, plus a whole-site integrity check — see `confidence-report.html`) where a status claim is not backed by evidence in the repo, or has since been resolved or changed by new research or a founder decision.
 
@@ -145,7 +145,7 @@ flowchart LR
 - **Status:** 🟡 **In Testing (upgraded 2026-08-02)** — no longer untested: a free weekly cohort has run for 8 consecutive weeks (June–July 2026) with a steady audience of ~4 attendees per session. This validates that free content converts into repeat live engagement; the specific 1% view→paid-membership conversion figure is still unmeasured. **Production capacity decision (added 2026-08-04):** the funnel's top-of-funnel input is gated by content volume, so the founder has set a baseline goal of **3 animated videos produced per week** and has reallocated the time he previously spent watching video content toward creating animations instead, to grow the number of views feeding this funnel. Tracked as an open task in `todo.html`. **New (2026-08-05):** the free Sunday cohort's audience is now growing beyond the original ~4/session baseline recorded above — an updated exact headcount has not yet been logged, so this is tracked as a directional trend to confirm with a real number at the next session, not yet a revised figure for the ~1% conversion target itself.
 
 ### H5 — Cohorts sell out organically without paid ads
-- **Source:** `comp-business-model.html`
+- **Source:** `comp-business-model.html`, `product/skool-lms-integration.html`
 - **Depends on:** None — foundational Stage 2 cohort premise. Feeds H9 (explicit — this is the literal revenue basis of the $10k gate), H8 (Premise 4/5's free-cohort mechanics are cited as live peer-accountability evidence), and H16 (the organic-acquisition baseline any paid-ad CAC would be benchmarked against).
 - **Premise 1:** Cohort announcements reach an engaged audience via video callouts and the newsletter list.
 - **Premise 2 (revised 2026-08-01):** That audience is willing to pay $250–500 for live-streamed, real-time problem-solving sessions, community membership, and the discipline/network that comes with them — **not** for a promised exam outcome. The founder has explicitly clarified: "we do not grant the passing of the exam, the certification" — that is issued solely by Anthropic via Pearson VUE.
@@ -174,7 +174,7 @@ flowchart LR
 - **Status:** ⚪ Hypothesized. **Note:** this funnel model does not numerically reconcile with H4's "1% of views" claim — the two describe different conversion paths to different offers and haven't been unified into one funnel model (flagged in the acidity check, Finding F5). **Scope clarified (2026-08-02):** funnel targeting and all content produced are scoped specifically to exam-prep search intent, not general AI education. **Next step (added 2026-08-04):** measuring how individual animated videos actually perform (retention, not just clicks) is a prerequisite to reconciling this funnel model — tracked as an open task in `todo.html` and given its own page at `content-analysis.html`. **New (2026-08-05):** the LinkedIn-side capture point (see H3's dual capture points) is now a real, live artifact — a [LinkedIn Newsletter](https://www.linkedin.com/newsletters/7490354292390940672/) has been created to carry this funnel's top-of-funnel traffic. No click-through or conversion numbers are logged against it yet, so the 10%/2% targets remain unmeasured — this is funnel infrastructure now existing to measure against, not a result.
 
 ### H21 — $29 Exam Prep Bundle is a viable low-friction entry SKU (new, 2026-08-07)
-- **Source:** `exam-prep-product.html`, `bmc-revenue-streams.html`
+- **Source:** `exam-prep-product.html`, `bmc-revenue-streams.html`, `product/skool-lms-integration.html`
 - **Depends on:** None — new, independent Stage 2 product hypothesis. Related to H5 (delivery-model precedent for tiering offers) but not a blocking dependency.
 - **Premise 1:** Some prospects want a fast, self-paced way to test the offer before committing to the $10/mo membership or the $250–$500 live cohort.
 - **Premise 2:** Memory cards + a prep exam + a mock exam, bundled as one $29 one-time purchase, covers a distinct, lower-commitment use case that neither existing tier serves directly.
@@ -184,7 +184,7 @@ flowchart LR
 - **Status:** ⚪ Planned — a newly proposed SKU; not yet built, priced, or sold. No conversion or cannibalization data exists yet, though Premise 4's behavior pattern is real, observed evidence supporting the underlying customer need. See `hyp-h21.html`, `exam-prep-product.html`, and `self-assessment.html` (the quiz that routes prospects toward this or another tier). **New (2026-08-10):** Discovery interview confirms the Associate exam is perceived as workflow/PM-heavy, with a "50/50" pass rate via common sense alone. This confirms that candidates seek low-friction, lower-commitment entry prep SKUs (like the $29 Mock Exam bundle) for Associate, while saving high-ticket cohorts for hands-on Developer tiers. See `reports/exam-prep-market-and-student-behavior-v1.3.0.md`.
 
 ### H8 — Product-Market Fit (PMF): the cohort program gets students certified
-- **Source:** `comp-pmf.html`
+- **Source:** `comp-pmf.html`, `product/skool-lms-integration.html`
 - **PMF stands for:** Product-Market Fit — the point at which an offer satisfies real, strong market demand well enough that customers seek it out, get value from it, and recommend it on their own, without being sold.
 - **Depends on:** H5 (Premises 4–5's free-cohort mechanics — the Sunday session and its WhatsApp community — are the live evidence cited for Premise 2's peer-accountability claim). Related to H10 (both were touched by the 2026-08-01 no-guarantee clarification, not a strict dependency).
 - **Premise 1:** The cohort curriculum covers the full scope of the target certification (model orchestration, latency config, multi-agent design, prompt caching, enterprise security), delivered through live-streamed sessions where the community solves real problems together in real time.
@@ -228,7 +228,7 @@ flowchart LR
 - **Status:** ⚪ Planned — no subscriber-growth data has been reported yet against this target. Recommended next step: log subscriber count at each video publish date to start building a real growth curve against the 1,000x target.
 
 ### H12 — IT consulting/government-contractor firms are a viable B2B demand channel (moved here from the Stage 2 addendum, 2026-08-02)
-- **Source:** `reports/market-validation-argument-v1.0.md` (not yet reflected in any site page), `marketing-tactics.html`
+- **Source:** `reports/market-validation-argument-v1.0.md` (not yet reflected in any site page), `marketing-tactics.html`, `5_Symbols/strategy/claude-partner-strategy.html`
 - **Depends on:** None — independent new Stage 3 channel hypothesis. Feeds H17 (gets its first real-world pilot test via the Marianna partnership) and H18 (extended geographically).
 - **Premise 1:** Anthropic's Claude Partner Network gates consulting-firm tier status on certified-practitioner headcount (10 for Select, 100 for Preferred, 1,000 for Global Premier), the same mechanic AWS uses in its own Partner Network.
 - **Premise 2:** Large government-facing IT consultancies (e.g., Capgemini, DXC) are already named Anthropic ecosystem partners, already reimburse cloud certification costs generally, and operate in a government-contracting world (see DoD Directive 8140) where mandated staff certification is already normal practice.
@@ -406,6 +406,8 @@ Added 2026-08-05 (v1.16.0): each hypothesis above now carries its own **Depends 
 
 ## Change Log
 
+- **v1.47.0** (2026-08-11): Created Claude Partner Strategy page (`claude-partner-strategy.html`) detailing CPN Services Program (Select Tier) benefits and mapping them to Steve Blank's Customer Development stages, cross-linking to H12, H1, H6, and H17. Bumps version tracker to v1.47.0.
+- **v1.46.0** (2026-08-11): Added Skool LMS & Community Integration page (`skool-lms-integration.html`) and cross-linked it to H5, H8, and H21 as the platform delivery hub. Bumps version tracker to v1.46.0.
 - **v1.45.0** (2026-08-11): Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content to trace greed, fear, and insecurity drivers. Bumps version tracker to v1.45.0.
 - **v1.44.0** (2026-08-11): Incorporated qualitative customer discovery interview insights from Tuncer (dated 2026-08-11) into H1, H3, H5, H8, H14, and H21, validating career boosting and version configuration risks. Published `reports/exam-prep-market-and-student-behavior-v1.3.0.md` (supersedes v1.2.0). Bumps version tracker to v1.44.0.
 - **v1.43.0** (2026-08-11): Added Enterprise AI Skills Gap page (`skills-gap.html`), updated `target-audience.html` with Digital Immigrants as Delivery Pilots, and added stage focuses, Skool integration timelines, student badges, and cohort live-sample assessments to Stage 3 & 4 pages. Bumps version tracker to v1.43.0.
