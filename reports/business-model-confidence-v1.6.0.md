@@ -1,35 +1,34 @@
-<!-- SUPERSEDED BY v1.5.6 -->
-# Business Model Confidence Report — v1.5.5
+# Business Model Confidence Report — v1.6.0
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.5.4:** patch bump — updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add no-code vs enterprise tooling comparison. Hypothesis validation score holds flat at 28.7% and Site Integrity holds at 77.5%.
+**What changed vs. v1.5.7:** Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content to trace greed, fear, and insecurity drivers. Bumps version tracker to v1.6.0. Overall score rises to 41 in uncommitted state (Validation rises to 29.8% [30/100] with the addition of H24, Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
 
 ---
 
 ## Overall Score
 
-# 43 / 100 — Low-moderate confidence
+# 41 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at 28.7% (29/100). Site Integrity holds at 77.5% in the committed state (uncommitted work deduction is 0).
+> Hypothesis Validation rises to 29.8% (30/100). Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will rise to 44 once committed.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
-        = round(0.7 × 28.70 + 0.3 × 77.50)
-        = round(20.09 + 23.25)
-        = round(43.34)
-        = 43
+        = round(0.7 × 29.79 + 0.3 × 67.50)
+        = round(20.85 + 20.25)
+        = round(41.1)
+        = 41
 ```
 
-| Sub-score | v1.5.4 | v1.5.5 | Change |
+| Sub-score | v1.5.7 | v1.6.0 | Change |
 |---|---|---|---|
-| Hypothesis Validation Score | 28.7 / 100 | **28.7 / 100** | 0.0 |
-| Site Integrity Score | 77.5 / 100 | **77.5 / 100** | 0.0 |
-| **Overall** | **43 / 100** | **43 / 100** | **0** |
+| Hypothesis Validation Score | 28.7 / 100 | **29.8 / 100** | +1.1 |
+| Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
+| **Overall** | **40 / 100** | **41 / 100** | **+1** |
 
 ---
 
-## Hypothesis Validation Score — 28.7/100 (displayed 29/100)
+## Hypothesis Validation Score — 29.8/100 (displayed 30/100)
 
 Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
@@ -58,32 +57,33 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H21 | $29 Exam Prep Bundle is a viable entry SKU | ⚪ Planned | 20 |
 | H22 | Certified-talent placement (FDE model) Stage 4 vision | ⚪ Planned | 20 |
 | H23 | 4DX weekly accountable rhythm overcomes whirlwind | 🟡 In Testing | 55 |
+| H24 | Emotional Pain Drivers (fear, greed, insecurity) | 🟡 In Testing | 55 |
 
-**Sum:** 660 across 23 hypotheses → 660 / 23 = **28.695… → 29/100** (unchanged).
+**Sum:** 715 across 24 hypotheses → 715 / 24 = **29.791… → 30/100** (up from 29/100).
 
 ---
 
-## Site Integrity Score — 77.5/100 (unchanged)
+## Site Integrity Score — 67.5/100 (unchanged)
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.5.4 | v1.5.5 | Deduction | Rationale |
+| # | Finding | v1.5.7 | v1.6.0 | Deduction | Rationale |
 |---|---|---|---|---|---|
-| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | F12 correctly factored at −5 (bringing total to 3 findings) |
+| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
-| 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 23 rows match their entries. |
+| 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 24 rows match their entries. |
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
-| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. sitemaps and tools are clean. |
+| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Pain points page registered in nav dropdown and search index. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
-| 7 | Uncommitted work (`git status --porcelain`) | 0 | 0 | 0 | Cleared to 0 when committed to repository history |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction due to uncommitted working tree. |
 
-**Total deductions: 22.5 → Site Integrity Score: 77.5**
+**Total deductions: 32.5 → Site Integrity Score: 67.5**
 
 ---
 
 ## What Would Move the Score
 
-The highest-leverage *business* action is unchanged: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score.
+The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score.
 
 ---
 
@@ -91,20 +91,12 @@ The highest-leverage *business* action is unchanged: **H9** (the $10k Stage 2→
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
+| v1.6.0 | 2026-08-11 | 41 / 100 (Low-moderate) | Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content; Validation rises to 29.8% (30/100); −10 temporary uncommitted-work deduction |
+| v1.5.7 | 2026-08-11 | 40 / 100 (Low-moderate) | Added Tuncer's qualitative interview data, published behavior report v1.3.0, and updated all references/details across the project; −10 temporary uncommitted-work deduction |
+| v1.5.6 | 2026-08-11 | 40 / 100 (Low-moderate) | Created `skills-gap.html`, added Delivery Pilots persona, updated stage focuses, and added Skool/badge timelines and live sample widget; −10 temporary uncommitted-work deduction |
 | v1.5.5 | 2026-08-11 | 43 / 100 (Low-moderate) | Updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add stage tooling comparison (no-code vs enterprise) |
 | v1.5.4 | 2026-08-10 | 43 / 100 (Low-moderate) | Cleared −10 temporary uncommitted-work deduction after staging and committing work |
 | v1.5.3 | 2026-08-10 | 40 / 100 (Low-moderate) | Incorporated Sude's qualitative customer discovery interview insights (dated 2026-08-10) into H5, H8, H20, and H21; adjusted Site Integrity acidity check deduction to include F12 |
 | v1.5.2 | 2026-08-10 | 42 / 100 (Low-moderate) | Incorporated qualitative customer discovery interview findings from 2026-08-10 into H1, H3, H5, H8, H14, H21; overall score holds flat at 42/100 |
-| v1.5.1 | 2026-08-10 | 42 / 100 (Low-moderate) | Added Brian's qualitative cohort feedback as H5 (Premise 5/6) and H20 evidence; overall score holds flat at 42/100 |
+| v1.5.1 | 2026-08-10 | 42 / 100 (Low-moderate) | Added Brian's qualitative feedback as H5 (Premise 5/6) and H20 evidence; overall score holds flat at 42/100 |
 | v1.5.0 | 2026-08-09 | 42 / 100 (Low-moderate) | Created execution pages and added H23 (validation 29/100); deleted orphaned duplicate renderer `5_Symbols/markdown_renderer.html` (+15 site integrity); −10 temporary uncommitted-work deduction |
-| v1.4.3 | 2026-08-09 | 40 / 100 (Low-moderate) | Day-by-Day Calendar appended; Nov 7 → Nov 6 off-by-one corrected; score holds flat |
-| v1.4.2 | 2026-08-09 | 40 / 100 (Low-moderate) | 90-Day Execution Plan added; score holds flat |
-| v1.4.1 | 2026-08-09 | 40 / 100 (Low-moderate) | Moat glossary entry + Grok external-review evidence added; uncommitted-work deduction cleared but replaced by new orphaned-page finding |
-| v1.4.0 | 2026-08-09 | 41 / 100 (Low-moderate) | H11 and H14 updated with weekday TA cohorts and Nvidia, Microsoft, Google certifications; temporary uncommitted-work deduction |
-| v1.3.0 | 2026-08-09 | 41 / 100 (Low-moderate) | One-Pager added; 75 broken links found & fixed; temporary uncommitted-work deduction |
-| v1.2.0 | 2026-08-07 | 44 / 100 (Low-moderate) | Folder refactoring into 5_Symbols/ completed; H22 added (validation moves to 27.5) |
-| v1.1.0 | 2026-08-07 | 44 / 100 (Low-moderate) | H20/H21 added (validation ↓), F9 upgraded (integrity ↑) — net unchanged |
-| v1.0.3 | 2026-08-05 | 44 / 100 (Low-moderate) | Unchanged — added independent Perplexity verification of H6, no tier change |
-| v1.0.2 | 2026-08-05 | 44 / 100 (Low-moderate) | Unchanged — 19 hypotheses / 100 pages re-scanned, no tier or integrity change |
-| v1.0.1 | 2026-08-04 | 44 / 100 (Low-moderate) | 58-file uncommitted-work risk resolved |
-| v1.0.0 | 2026-08-04 | 38 / 100 (Low-moderate) | Initial version |

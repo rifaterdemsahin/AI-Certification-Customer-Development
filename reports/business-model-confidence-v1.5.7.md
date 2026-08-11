@@ -1,31 +1,32 @@
-<!-- SUPERSEDED BY v1.5.6 -->
-# Business Model Confidence Report — v1.5.5
+# Business Model Confidence Report — v1.5.7
+
+> ⚠️ **SUPERSEDED:** This report is superseded by [Business Model Confidence Report v1.6.0](markdown_renderer.html?src=reports/business-model-confidence-v1.6.0.md).
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.5.4:** patch bump — updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add no-code vs enterprise tooling comparison. Hypothesis validation score holds flat at 28.7% and Site Integrity holds at 77.5%.
+**What changed vs. v1.5.6:** Added Tuncer's qualitative discovery interview transcript (career acceleration, tech leverage, and version configuration risks) to `archived-interview-transcripts.html`, published `reports/exam-prep-market-and-student-behavior-v1.3.0.md` (supersedes v1.2.0), updated all reports references across H1, H3, H5, H8, H14, H21 detail pages, `nav.js` Docs menu, `evidence-map.html`, and `HYPOTHESIS.md` to point to the new `v1.3.0` report, and bumped `HYPOTHESIS.md` to `v1.44.0`. Overall score holds at 40 (Validation 28.7%, Site Integrity 67.5% due to −10 uncommitted-work deduction).
 
 ---
 
 ## Overall Score
 
-# 43 / 100 — Low-moderate confidence
+# 40 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at 28.7% (29/100). Site Integrity holds at 77.5% in the committed state (uncommitted work deduction is 0).
+> Hypothesis Validation holds at 28.7% (29/100). Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will revert to 43 once committed.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
-        = round(0.7 × 28.70 + 0.3 × 77.50)
-        = round(20.09 + 23.25)
-        = round(43.34)
-        = 43
+        = round(0.7 × 28.70 + 0.3 × 67.50)
+        = round(20.09 + 20.25)
+        = round(40.34)
+        = 40
 ```
 
-| Sub-score | v1.5.4 | v1.5.5 | Change |
+| Sub-score | v1.5.6 | v1.5.7 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 28.7 / 100 | **28.7 / 100** | 0.0 |
-| Site Integrity Score | 77.5 / 100 | **77.5 / 100** | 0.0 |
-| **Overall** | **43 / 100** | **43 / 100** | **0** |
+| Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
+| **Overall** | **40 / 100** | **40 / 100** | **0** |
 
 ---
 
@@ -63,21 +64,21 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 ---
 
-## Site Integrity Score — 77.5/100 (unchanged)
+## Site Integrity Score — 67.5/100 (unchanged)
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.5.4 | v1.5.5 | Deduction | Rationale |
+| # | Finding | v1.5.6 | v1.5.7 | Deduction | Rationale |
 |---|---|---|---|---|---|
-| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | F12 correctly factored at −5 (bringing total to 3 findings) |
+| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 23 rows match their entries. |
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
-| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. sitemaps and tools are clean. |
+| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Skills gap and transcripts page linked via Nav, index, and target audience. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
-| 7 | Uncommitted work (`git status --porcelain`) | 0 | 0 | 0 | Cleared to 0 when committed to repository history |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction due to uncommitted working tree. |
 
-**Total deductions: 22.5 → Site Integrity Score: 77.5**
+**Total deductions: 32.5 → Site Integrity Score: 67.5**
 
 ---
 
@@ -91,11 +92,13 @@ The highest-leverage *business* action is unchanged: **H9** (the $10k Stage 2→
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
+| v1.5.7 | 2026-08-11 | 40 / 100 (Low-moderate) | Added Tuncer's qualitative interview data, published behavior report v1.3.0, and updated all references/details across the project; −10 temporary uncommitted-work deduction |
+| v1.5.6 | 2026-08-11 | 40 / 100 (Low-moderate) | Created `skills-gap.html`, added Delivery Pilots persona, updated stage focuses, and added Skool/badge timelines and live sample widget; −10 temporary uncommitted-work deduction |
 | v1.5.5 | 2026-08-11 | 43 / 100 (Low-moderate) | Updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add stage tooling comparison (no-code vs enterprise) |
 | v1.5.4 | 2026-08-10 | 43 / 100 (Low-moderate) | Cleared −10 temporary uncommitted-work deduction after staging and committing work |
 | v1.5.3 | 2026-08-10 | 40 / 100 (Low-moderate) | Incorporated Sude's qualitative customer discovery interview insights (dated 2026-08-10) into H5, H8, H20, and H21; adjusted Site Integrity acidity check deduction to include F12 |
 | v1.5.2 | 2026-08-10 | 42 / 100 (Low-moderate) | Incorporated qualitative customer discovery interview findings from 2026-08-10 into H1, H3, H5, H8, H14, H21; overall score holds flat at 42/100 |
-| v1.5.1 | 2026-08-10 | 42 / 100 (Low-moderate) | Added Brian's qualitative cohort feedback as H5 (Premise 5/6) and H20 evidence; overall score holds flat at 42/100 |
+| v1.5.1 | 2026-08-10 | 42 / 100 (Low-moderate) | Added Brian's qualitative feedback as H5 (Premise 5/6) and H20 evidence; overall score holds flat at 42/100 |
 | v1.5.0 | 2026-08-09 | 42 / 100 (Low-moderate) | Created execution pages and added H23 (validation 29/100); deleted orphaned duplicate renderer `5_Symbols/markdown_renderer.html` (+15 site integrity); −10 temporary uncommitted-work deduction |
 | v1.4.3 | 2026-08-09 | 40 / 100 (Low-moderate) | Day-by-Day Calendar appended; Nov 7 → Nov 6 off-by-one corrected; score holds flat |
 | v1.4.2 | 2026-08-09 | 40 / 100 (Low-moderate) | 90-Day Execution Plan added; score holds flat |

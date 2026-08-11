@@ -1,9 +1,8 @@
-<!-- SUPERSEDED BY reports/exam-prep-market-and-student-behavior-v1.3.0.md -->
 # Certification Market Size & Student Exam-Prep Behavior
 
-**Version:** 1.2.0
-**Date:** 2026-08-10
-**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version incorporates Sude's qualitative customer discovery interview insights (dated 2026-08-10) validating Second Brain automation preferences, spaced repetition needs, and technical friction points alongside the existing corporate practitioner data from Charles and Speaker 2.
+**Version:** 1.3.0
+**Date:** 2026-08-11
+**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version incorporates Tuncer's qualitative customer discovery interview insights (dated 2026-08-11) validating career acceleration, technology leverage, and version configuration risks, alongside Sude's, Charles's, and corporate practitioner data.
 
 ---
 
@@ -47,7 +46,7 @@ Key behavioral facts about how candidates prepare, and why:
 
 ---
 
-## 5. Qualitative Customer Discovery Interview Findings (2026-08-10)
+## 5. Qualitative Customer Discovery Interview Findings
 
 This section summarizes qualitative findings from on-the-record discovery interviews with technical practitioners and students.
 
@@ -80,6 +79,12 @@ This section summarizes qualitative findings from on-the-record discovery interv
   * Background execution logic (whether Obsidian/Claude must remain running in the background constantly to keep files updated).
   * **Takeaway:** These gaps confirm that students face high cognitive load when trying to build automated local AI systems themselves, validating the premium pricing of live cohorts that offer guided environment builds, PARA templates, and background worker hosting.
 
+### C. AI Self-Learning & Version Configuration Risks (Tuncer)
+* **Career Acceleration via AI:** Tuncer highlighted that senior professionals are adding new advanced skills with AI self-learning, boosting their careers to top tiers for the first time.
+* **Technology Leverage:** Due to AI support, candidates can now work with and leverage many more technical stacks than before, lowering adoption barriers.
+* **Implementation Version Risks:** A critical pain point is that missing config/AI skills make teams lose massive time and energy if AI is implemented in the wrong version or with incorrect configuration settings.
+  * **Takeaway:** This directly validates the enterprise skills gap hypothesis (**H1**), highlighting that structured credentials are vital to ensure correct versioning and implementation architecture.
+
 ---
 
 ## Sources
@@ -102,11 +107,13 @@ This section summarizes qualitative findings from on-the-record discovery interv
 - [The Latest Cloud Computing Statistics (updated October 2025) — AAG IT Support](https://aag-it.com/the-latest-cloud-computing-statistics/)
 - **Primary Source 1 (2026-08-10):** Customer Discovery Interview with Charles & Speaker 2, large corporate organisation.
 - **Primary Source 2 (2026-08-10):** Customer Discovery Interview with Sude, Sunday Cohort student.
+- **Primary Source 3 (2026-08-11):** Customer Discovery Interview with Tuncer, Senior IT Professional.
 
 ---
 
 ## Change Log
 
+- **v1.3.0** (2026-08-11): Incorporated qualitative customer discovery interview insights from Tuncer (dated 2026-08-11) validating career acceleration, technology leverage, and version configuration risks.
 - **v1.2.0** (2026-08-10): Incorporated qualitative customer discovery interview insights from Sude (dated 2026-08-10) validating Second Brain automation, context loss/spaced repetition needs, and setup friction points (PARA, Cloudflare, background workers).
 - **v1.1.0** (2026-08-10): Incorporated qualitative customer discovery interview insights from Charles and Speaker 2 (dated 2026-08-10), validating skills demand, hands-on prep gaps, exam-pricing elasticity (£75/Associate vs £125/Developer), and local LLM/Red Hat AI interest.
 - **v1.0.0** (2026-08-01): Initial market-size and student exam-prep behavior research, covering certification market growth, employer payment prevalence, and Pearson VUE proctoring/failure-anxiety dynamics.
