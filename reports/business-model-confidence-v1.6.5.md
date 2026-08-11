@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.6.5
 
+> **Superseded by [v1.7.0](business-model-confidence-v1.7.0.md)** (2026-08-11) — that run adds `sitemap.html` and a fresh full-repo re-scan finds 3 pre-existing broken links plus H24 missing from the Summary Table; overall score drops to 38/100.
+
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.6.4:** Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing customer JTBD, unspoken market insights, value chain, table stakes, and Vonos.ai progress tracking/expensing. Overall score remains at 41 (Validation holds at 29.8% [30/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
