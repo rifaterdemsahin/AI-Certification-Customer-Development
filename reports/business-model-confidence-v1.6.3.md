@@ -1,11 +1,8 @@
-# Business Model Confidence Report — v1.6.2
-
-> [!NOTE]
-> **SUPERSEDED:** This report has been superseded by [v1.6.3](business-model-confidence-v1.6.3.md).
+# Business Model Confidence Report — v1.6.3
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.6.1:** Added Claude Partner Strategy page (`claude-partner-strategy.html`) detailing CPN Services Program (Select Tier) benefits and mapping them to Steve Blank's Customer Development stages, cross-linking to H12, H1, H6, and H17. Overall score remains at 41 in the uncommitted state (Validation holds at 29.8% [30/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
+**What changed vs. v1.6.2:** Added Skool vs. YouTube platform comparison page (`skool-vs-youtube.html`) and cross-linked it to H4, H5, H7, and H8. Overall score remains at 41 (Validation holds at 29.8% [30/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
 
 ---
 
@@ -23,7 +20,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 41
 ```
 
-| Sub-score | v1.6.1 | v1.6.2 | Change |
+| Sub-score | v1.6.2 | v1.6.3 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 29.8 / 100 | **29.8 / 100** | 0.0 |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
@@ -70,13 +67,13 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.6.1 | v1.6.2 | Deduction | Rationale |
+| # | Finding | v1.6.2 | v1.6.3 | Deduction | Rationale |
 |---|---|---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 24 rows match their entries. |
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
-| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Claude Partner Strategy page registered in nav dropdown and search index. |
+| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Skool vs. YouTube comparison page registered in nav dropdown and search index. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
 | 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction due to uncommitted working tree. |
 
@@ -94,12 +91,13 @@ The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gat
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
+| v1.6.3 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and linked to H4, H5, H7, H8; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.2 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Claude Partner Strategy page (`claude-partner-strategy.html`) detailing CPN Services Program (Select Tier) benefits and mapping them to Steve Blank's Customer Development stages, cross-linking to H12, H1, H6, and H17; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.1 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool LMS & Community Integration page (`skool-lms-integration.html`) and linked to H5, H8, H21; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.0 | 2026-08-11 | 41 / 100 (Low-moderate) | Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content; Validation rises to 29.8% (30/100); −10 temporary uncommitted-work deduction |
-| v1.5.7 | 2026-08-11 | 40 / 100 (Low-moderate) | Added Tuncer's qualitative interview data, published behavior report v1.3.0, and updated all references/details across the project; −10 temporary uncommitted-work deduction |
+| v1.5.7 | 2026-08-11 | 40 / 100 (Low-moderate) | Added Tuncer's qualitative interview data, published behavior report v1.3.0, and updated all references across the project; −10 temporary uncommitted-work deduction |
 | v1.5.6 | 2026-08-11 | 40 / 100 (Low-moderate) | Created `skills-gap.html`, added Delivery Pilots persona, updated stage focuses, and added Skool/badge timelines and live sample widget; −10 temporary uncommitted-work deduction |
-| v1.5.5 | 2026-08-11 | 43 / 100 (Low-moderate) | Updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add stage tooling comparison (no-code vs enterprise) |
+| v1.5.5 | 2026-08-11 | 43 / 100 (Low-moderate) | Updated `bmc-channels.html` with volunteer discovery strategy and no-code vs enterprise tool comparison |
 | v1.5.4 | 2026-08-10 | 43 / 100 (Low-moderate) | Cleared −10 temporary uncommitted-work deduction after staging and committing work |
 | v1.5.3 | 2026-08-10 | 40 / 100 (Low-moderate) | Incorporated Sude's qualitative customer discovery interview insights (dated 2026-08-10) into H5, H8, H20, and H21; adjusted Site Integrity acidity check deduction to include F12 |
 | v1.5.2 | 2026-08-10 | 42 / 100 (Low-moderate) | Incorporated qualitative customer discovery interview findings from 2026-08-10 into H1, H3, H5, H8, H14, H21; overall score holds flat at 42/100 |

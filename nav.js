@@ -84,6 +84,8 @@
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
                 ['5_Symbols/product/pitch-deck.html', '📋 5-Minute Pitch Deck'],
                 ['5_Symbols/product/one-pager.html', '📋 Copy-Paste One-Pager'],
+                ['5_Symbols/product/idea.html', '💡 Tell Us About Your Idea'],
+                ['5_Symbols/strategy/market-reality-check.html', '⚖️ Market Reality Check'],
                 ['5_Symbols/strategy/why-certification.html', '🏅 Why Certification Matters'],
                 ['5_Symbols/strategy/skills-gap.html', '💼 Enterprise AI Skills Gap'],
                 ['5_Symbols/product/self-assessment.html', '🧭 Self-Assessment'],
@@ -110,7 +112,8 @@
                 ['5_Symbols/bmc/bmc-cost-structure.html', '📉 Cost Structure'],
                 ['5_Symbols/product/partners.html', '🤝 Partner With Us'],
                 ['5_Symbols/product/exam-prep-product.html', '📦 Exam Prep Bundle ($29)'],
-                ['5_Symbols/product/skool-lms-integration.html', '🏫 Skool LMS Integration']
+                ['5_Symbols/product/skool-lms-integration.html', '🏫 Skool LMS Integration'],
+                ['5_Symbols/product/skool-vs-youtube.html', '⚖️ Skool vs. YouTube Comparison']
             ]
         },
         {
@@ -191,6 +194,7 @@
     var searchIndex = [
         { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'The Execution Crisis Overview', desc: '4DX overview hub mapping whirlwind vs strategic goals.', cat: 'Execution', tags: '4dx execution crisis whirlwind strategy roadmap overview' },
         { url: '5_Symbols/product/skool-lms-integration.html', title: 'Skool LMS & Community Integration', desc: 'Rationale, stage-by-stage playbook, and risks of utilizing Skool as the off-the-shelf LMS/community platform.', cat: 'Business Model', tags: 'skool lms platform community tools validation member cohort' },
+        { url: '5_Symbols/product/skool-vs-youtube.html', title: 'Skool vs. YouTube Course Delivery', desc: 'Comparison of Skool vs. YouTube for course delivery, highlighting structured community learning vs. open media platforms.', cat: 'Business Model', tags: 'skool youtube platform comparison classroom community monetization channels' },
         { url: '5_Symbols/strategy/claude-partner-strategy.html', title: 'Claude Partner Strategy', desc: 'Strategic analysis of when and why to become a Claude Partner, mapping active partner benefits to customer development stages.', cat: 'Strategy', tags: 'claude partner cpn network services select benefits licensing credentials' },
         { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus on WIG', desc: 'Narrowing focus to 1-2 Wildly Important Goals to protect bandwidth.', cat: 'Execution', tags: '4dx execution focus wildly important goal wig baseline formula' },
         { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Act on Lead Measures', desc: 'Leveraging predictive, influenceable lead measures instead of lag measures.', cat: 'Execution', tags: '4dx execution leverage lead lag measure metrics predictive influenceable' },
@@ -268,6 +272,8 @@
         { url: '5_Symbols/product/vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
         { url: '5_Symbols/product/pitch-deck.html', title: '5-Minute Pitch Deck', desc: 'Single-scroll executive-review summary of the business with links to full detail on every claim.', cat: 'Strategy', tags: 'pitch deck 5 minute executive summary tldr' },
         { url: '5_Symbols/product/one-pager.html', title: 'Copy-Paste One-Pager', desc: 'Plain-text business analysis summary sized to paste into external idea-validation sites and forums.', cat: 'Strategy', tags: 'one pager copy paste validation summary plain text external' },
+        { url: '5_Symbols/product/idea.html', title: 'Tell Us About Your Idea', desc: 'A detailed one-page overview of the business idea: what is built, problem solved, differences, target customer, and opportunity size.', cat: 'Strategy', tags: 'idea elevator pitch problem solution customer opportunity business summary YC YCombinator' },
+        { url: '5_Symbols/strategy/market-reality-check.html', title: 'Your Market Reality Check', desc: 'Evaluation of the customer job-to-be-done, value chain dynamics, category table stakes, and Vonos.ai visual integration.', cat: 'Strategy', tags: 'market reality check stress test job to be done value chain vonos table stakes' },
         { url: '5_Symbols/strategy/why-certification.html', title: 'Why Certification Matters', desc: 'Prospect-facing case for AI certification: pay premiums, employer partner-tier gating, and FDE hiring growth.', cat: 'Strategy', tags: 'why certification matters career prospects employer value' },
         { url: '5_Symbols/strategy/skills-gap.html', title: 'Enterprise AI Skills Gap', desc: 'Why AI and agentic systems open a skills gap, how Digital Immigrants act as Delivery Pilots, and the stage focuses.', cat: 'Strategy', tags: 'skills gap enterprise delivery pilots digital immigrants skool badges live samples assessment' },
         { url: '5_Symbols/product/self-assessment.html', title: 'Self-Assessment', desc: 'Interactive 3-question quiz routing prospects to the free cohort, the $29 bundle, membership, or live cohort.', cat: 'Strategy', tags: 'self assessment quiz recommendation which offer fits me' },
