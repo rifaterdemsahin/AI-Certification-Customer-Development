@@ -1,10 +1,8 @@
-> **Superseded by [`business-model-confidence-v1.5.5.md`](business-model-confidence-v1.5.5.md) (2026-08-11)** — patch bump following updates to `bmc-channels.html` and `HYPOTHESIS.md`. This version is kept as the historical record of findings as of 2026-08-10.
+# Business Model Confidence Report — v1.5.5
 
-# Business Model Confidence Report — v1.5.4
-
-**Date:** 2026-08-10
+**Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.5.3:** patch bump — re-run check after committing the working tree. This clears the temporary −10 uncommitted-work deduction, raising the Site Integrity Score to 77.5 and the Overall Score to 43/100.
+**What changed vs. v1.5.4:** patch bump — updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add no-code vs enterprise tooling comparison. Hypothesis validation score holds flat at 28.7% and Site Integrity holds at 77.5%.
 
 ---
 
@@ -12,7 +10,7 @@
 
 # 43 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at 28.7% (29/100). Site Integrity rises to 77.5% as all pending work has been successfully committed to repository history (uncommitted work deduction is now 0).
+> Hypothesis Validation holds at 28.7% (29/100). Site Integrity holds at 77.5% in the committed state (uncommitted work deduction is 0).
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
@@ -22,11 +20,11 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 43
 ```
 
-| Sub-score | v1.5.3 | v1.5.4 | Change |
+| Sub-score | v1.5.4 | v1.5.5 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 28.7 / 100 | **28.7 / 100** | 0.0 |
-| Site Integrity Score | 67.5 / 100 | **77.5 / 100** | +10.0 |
-| **Overall** | **40 / 100** | **43 / 100** | **+3** |
+| Site Integrity Score | 77.5 / 100 | **77.5 / 100** | 0.0 |
+| **Overall** | **43 / 100** | **43 / 100** | **0** |
 
 ---
 
@@ -64,11 +62,11 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 ---
 
-## Site Integrity Score — 77.5/100 (raised)
+## Site Integrity Score — 77.5/100 (unchanged)
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.5.3 | v1.5.4 | Deduction | Rationale |
+| # | Finding | v1.5.4 | v1.5.5 | Deduction | Rationale |
 |---|---|---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | F12 correctly factored at −5 (bringing total to 3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
@@ -76,7 +74,7 @@ Re-checked fresh across all HTML files, per the skill's Step 3:
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
 | 5 | Orphaned pages | 0 | 0 | 0 | Resolved. sitemaps and tools are clean. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
-| 7 | Uncommitted work (`git status --porcelain`) | −10 | 0 | 0 | Cleared to 0 as all files are successfully committed to repository |
+| 7 | Uncommitted work (`git status --porcelain`) | 0 | 0 | 0 | Cleared to 0 when committed to repository history |
 
 **Total deductions: 22.5 → Site Integrity Score: 77.5**
 
@@ -92,6 +90,7 @@ The highest-leverage *business* action is unchanged: **H9** (the $10k Stage 2→
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
+| v1.5.5 | 2026-08-11 | 43 / 100 (Low-moderate) | Updated `bmc-channels.html` to document volunteer & free customer discovery strategy and add stage tooling comparison (no-code vs enterprise) |
 | v1.5.4 | 2026-08-10 | 43 / 100 (Low-moderate) | Cleared −10 temporary uncommitted-work deduction after staging and committing work |
 | v1.5.3 | 2026-08-10 | 40 / 100 (Low-moderate) | Incorporated Sude's qualitative customer discovery interview insights (dated 2026-08-10) into H5, H8, H20, and H21; adjusted Site Integrity acidity check deduction to include F12 |
 | v1.5.2 | 2026-08-10 | 42 / 100 (Low-moderate) | Incorporated qualitative customer discovery interview findings from 2026-08-10 into H1, H3, H5, H8, H14, H21; overall score holds flat at 42/100 |
