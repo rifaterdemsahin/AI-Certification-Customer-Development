@@ -1,4 +1,4 @@
-> **Superseded by [v1.6.7](business-model-confidence-v1.6.7.md).**
+> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md)**, which merges this branch's H5 upgrade with `main`'s Site Map batch.
 
 # Business Model Confidence Report — v1.6.6
 

@@ -1,4 +1,4 @@
-> **Superseded by [v1.6.6](business-model-confidence-v1.6.6.md).**
+> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md)** — this version's history forked into two parallel runs (v1.6.6→v1.6.7 on `claude/skool-setup-signups-6w38wa`, v1.7.0 on `main`) that were later merged back together as v1.7.1.
 
 # Business Model Confidence Report — v1.6.5
 
