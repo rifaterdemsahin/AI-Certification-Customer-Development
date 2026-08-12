@@ -1,8 +1,8 @@
-# Business Model Confidence Report — v1.7.2
+# Business Model Confidence Report — v1.9.2
 
 **Date:** 2026-08-12
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.7.1:** Added H28 (YouTube engagement rate benchmark — expected like/comment/total-engagement rates, the one channel-health dimension none of H2/H7/H10/H13 covered) and its supporting pages `5_Symbols/growth/youtube-channel-metrics.html` and `5_Symbols/hypotheses/hyp-h28.html`. Also fixed the 2 broken-link targets v1.7.1 surfaced (`hyp-h19.html` referenced from `hyp-h23.html` and `evidence-map.html` now point to the real `stage-timelines.html`; `idea.html`'s `target-audience.html` link now carries the correct `../strategy/` prefix), and filled a pre-existing gap where H24 was missing from the Summary Table and Dependency Map despite having its own full entry since v1.45.0.
+**What changed vs. v1.9.1:** Added H28 (YouTube engagement rate benchmark — expected like/comment/total-engagement rates, the one channel-health dimension none of H2/H7/H10/H13 covered) and its supporting pages `5_Symbols/growth/youtube-channel-metrics.html` and `5_Symbols/hypotheses/hyp-h28.html`. Also fixed the 2 broken-link targets v1.9.1 surfaced (`hyp-h19.html` referenced from `hyp-h23.html` and `evidence-map.html` now point to the real `stage-timelines.html`; `idea.html`'s `target-audience.html` link now carries the correct `../strategy/` prefix), and filled a pre-existing gap where H24 was missing from the Summary Table and Dependency Map despite having its own full entry since v1.45.0.
 
 ---
 
@@ -10,7 +10,7 @@
 
 # 42 / 100 — Low-moderate confidence
 
-> Hypothesis Validation dips slightly to 30.4% (30/100) — the new H28 (⚪ Planned, score 20) pulls the 26-hypothesis average down a fraction from 30.8%. Site Integrity recovers fully from 52.5 to 67.5 — this run's link-scan finds **zero real broken links** (the 2 targets v1.7.1 surfaced are now fixed), which more than offsets H28's drag on the business-confidence side. Still carries the usual −10 temporary uncommitted-work deduction, which clears once this batch is committed.
+> Hypothesis Validation dips slightly to 30.4% (30/100) — the new H28 (⚪ Planned, score 20) pulls the 26-hypothesis average down a fraction from 30.8%. Site Integrity recovers fully from 52.5 to 67.5 — this run's link-scan finds **zero real broken links** (the 2 targets v1.9.1 surfaced are now fixed), which more than offsets H28's drag on the business-confidence side. Still carries the usual −10 temporary uncommitted-work deduction, which clears once this batch is committed.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
@@ -20,7 +20,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 42
 ```
 
-| Sub-score | v1.7.1 | v1.7.2 | Change |
+| Sub-score | v1.9.1 | v1.9.2 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 30.8 / 100 | **30.4 / 100** | −0.4 |
 | Site Integrity Score | 52.5 / 100 | **67.5 / 100** | +15.0 |
@@ -30,7 +30,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
 
 ## Hypothesis Validation Score — 30.38/100 (displayed 30/100)
 
-Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`. All 25 pre-existing hypotheses hold the same status emoji as v1.7.1. H28 is new this run.
+Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`. All 25 pre-existing hypotheses hold the same status emoji as v1.9.1. H28 is new this run.
 
 | ID | Hypothesis | Status | Score |
 |---|---|---|---|
@@ -69,7 +69,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.7.1 | v1.7.2 | Deduction | Rationale |
+| # | Finding | v1.9.1 | v1.9.2 | Deduction | Rationale |
 |---|---|---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) — not re-audited this run, carried forward. |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) — carried forward. |
@@ -96,6 +96,6 @@ Re-checked fresh across all HTML files, per the skill's Step 3:
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.7.2 | 2026-08-12 | 42 / 100 (Low-moderate) | Added H28 (YouTube engagement rate benchmark) and its pages; fixed 2 broken-link targets (+15 Site Integrity); backfilled H24's missing Summary Table/Dependency Map rows; −10 temporary uncommitted-work deduction |
-| v1.7.1 | 2026-08-12 | 37 / 100 (Low-moderate) | Founder configured 7 live cohort classrooms in Skool; created `sales-marketing-roadmap.html`; added curriculum-scope evidence to H5, H8, H14; surfaced 2 pre-existing broken-link targets (−15, new); −10 temporary uncommitted-work deduction |
-| v1.7.0 and earlier | — | — | See `reports/business-model-confidence-v1.7.1.md` for the full prior history. |
+| v1.9.2 | 2026-08-12 | 42 / 100 (Low-moderate) | Added H28 (YouTube engagement rate benchmark) and its pages; fixed 2 broken-link targets (+15 Site Integrity); backfilled H24's missing Summary Table/Dependency Map rows; −10 temporary uncommitted-work deduction |
+| v1.9.1 | 2026-08-12 | 37 / 100 (Low-moderate) | Founder configured 7 live cohort classrooms in Skool; created `sales-marketing-roadmap.html`; added curriculum-scope evidence to H5, H8, H14; surfaced 2 pre-existing broken-link targets (−15, new); −10 temporary uncommitted-work deduction |
+| v1.9.0 and earlier | — | — | See `reports/business-model-confidence-v1.9.1.md` for the full prior history. |

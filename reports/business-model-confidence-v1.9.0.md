@@ -1,6 +1,6 @@
-# Business Model Confidence Report — v1.7.0
+# Business Model Confidence Report — v1.9.0
 
-> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md).**
+> **Superseded by [v1.9.1](business-model-confidence-v1.9.1.md).**
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
@@ -22,7 +22,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 42
 ```
 
-| Sub-score | v1.6.5 | v1.7.0 | Change |
+| Sub-score | v1.6.5 | v1.9.0 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 29.8 / 100 | **30.8 / 100** | +1.0 |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
@@ -70,7 +70,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.6.5 | v1.7.0 | Deduction | Rationale |
+| # | Finding | v1.6.5 | v1.9.0 | Deduction | Rationale |
 |---|---|---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
@@ -94,7 +94,7 @@ The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gat
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.7.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
+| v1.9.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
 | v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing JTBD, unspoken insights, value chain, table stakes, and Vonos.ai visual integration; −10 temporary uncommitted-work deduction |
 | v1.6.4 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Tell Us About Your Idea" page (`5_Symbols/product/idea.html`) and linked to it from Business Plan Summary; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.3 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and linked to H4, H5, H7, H8; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |

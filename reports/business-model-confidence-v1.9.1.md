@@ -1,10 +1,10 @@
-# Business Model Confidence Report — v1.7.1
+# Business Model Confidence Report — v1.9.1
 
-> **Superseded by [v1.7.2](business-model-confidence-v1.7.2.md).**
+> **Superseded by [v1.9.2](business-model-confidence-v1.9.2.md).**
 
 **Date:** 2026-08-12
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.7.0:** Founder configured 7 live cohort classrooms in Skool (Foundations → Agentic Architectures → Multi-Agent Patterns → Claude Code CLI & Personal Automation → Certification/RAG/Guardrails → Forward Deployed Engineering → Second Brain). Created `5_Symbols/growth/sales-marketing-roadmap.html` and cross-linked it from `skool-lms-integration.html` and `skool-vs-youtube.html`. Added curriculum-scope evidence to H5, H8, and H14 — no hypothesis changed status emoji, so the Hypothesis Validation Score holds flat. This run also surfaces 3 pre-existing broken-link occurrences (2 distinct targets) that earlier report versions did not catch — patch bump, no new check category.
+**What changed vs. v1.9.0:** Founder configured 7 live cohort classrooms in Skool (Foundations → Agentic Architectures → Multi-Agent Patterns → Claude Code CLI & Personal Automation → Certification/RAG/Guardrails → Forward Deployed Engineering → Second Brain). Created `5_Symbols/growth/sales-marketing-roadmap.html` and cross-linked it from `skool-lms-integration.html` and `skool-vs-youtube.html`. Added curriculum-scope evidence to H5, H8, and H14 — no hypothesis changed status emoji, so the Hypothesis Validation Score holds flat. This run also surfaces 3 pre-existing broken-link occurrences (2 distinct targets) that earlier report versions did not catch — patch bump, no new check category.
 
 ---
 
@@ -22,7 +22,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 37
 ```
 
-| Sub-score | v1.7.0 | v1.7.1 | Change |
+| Sub-score | v1.9.0 | v1.9.1 | Change |
 |---|---|---|---|
 | Hypothesis Validation Score | 30.8 / 100 | **30.8 / 100** | 0.0 |
 | Site Integrity Score | 67.5 / 100 | **52.5 / 100** | −15.0 |
@@ -32,7 +32,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
 
 ## Hypothesis Validation Score — 30.8/100 (displayed 31/100)
 
-Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`. All 25 hypotheses hold the same status emoji as v1.7.0 — H5, H8, and H14 gained new curriculum-scope evidence text (the 7-cohort Skool sequence) but none crossed a status threshold, since enrollment/conversion/multi-vendor-content data is still unmeasured.
+Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`. All 25 hypotheses hold the same status emoji as v1.9.0 — H5, H8, and H14 gained new curriculum-scope evidence text (the 7-cohort Skool sequence) but none crossed a status threshold, since enrollment/conversion/multi-vendor-content data is still unmeasured.
 
 | ID | Hypothesis | Status | Score |
 |---|---|---|---|
@@ -70,9 +70,9 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.7.0 | v1.7.1 | Deduction | Rationale |
+| # | Finding | v1.9.0 | v1.9.1 | Deduction | Rationale |
 |---|---|---|---|---|---|
-| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) — not re-audited this run, carried forward from v1.7.0. |
+| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) — not re-audited this run, carried forward from v1.9.0. |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) — carried forward. |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 25 rows match their entries. |
 | 4 | Broken local links | 0 | **−15** | **−15** | **Newly surfaced this run** (not introduced by this batch): a full-repo `href` scan found 3 real broken-link occurrences across 2 distinct targets — `hyp-h19.html` does not exist but is linked from `5_Symbols/hypotheses/hyp-h23.html` and `5_Symbols/strategy/evidence-map.html`; `target-audience.html` is linked without a path prefix from `5_Symbols/product/idea.html` (the real file lives at `5_Symbols/strategy/target-audience.html`). Pre-existing; earlier report versions did not catch this. |
@@ -96,12 +96,12 @@ Two distinct levers this run:
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.7.1 | 2026-08-12 | 37 / 100 (Low-moderate) | Founder configured 7 live cohort classrooms in Skool; created `sales-marketing-roadmap.html`; added curriculum-scope evidence to H5, H8, H14; surfaced 2 pre-existing broken-link targets (−15, new); −10 temporary uncommitted-work deduction |
-| v1.7.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
+| v1.9.1 | 2026-08-12 | 37 / 100 (Low-moderate) | Founder configured 7 live cohort classrooms in Skool; created `sales-marketing-roadmap.html`; added curriculum-scope evidence to H5, H8, H14; surfaced 2 pre-existing broken-link targets (−15, new); −10 temporary uncommitted-work deduction |
+| v1.9.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
 | v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing JTBD, unspoken insights, value chain, table stakes, and Vonos.ai visual integration; −10 temporary uncommitted-work deduction |
 | v1.6.4 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Tell Us About Your Idea" page (`5_Symbols/product/idea.html`) and linked to it from Business Plan Summary; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.3 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and linked to H4, H5, H7, H8; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.2 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Claude Partner Strategy page (`claude-partner-strategy.html`) detailing CPN Services Program (Select Tier) benefits and mapping them to Steve Blank's Customer Development stages, cross-linking to H12, H1, H6, and H17; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.1 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool LMS & Community Integration page (`skool-lms-integration.html`) and linked to H5, H8, H21; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.0 | 2026-08-11 | 41 / 100 (Low-moderate) | Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content; Validation rises to 29.8% (30/100); −10 temporary uncommitted-work deduction |
-| v1.5.7 and earlier | — | — | See `reports/business-model-confidence-v1.7.0.md` for the full prior history. |
+| v1.5.7 and earlier | — | — | See `reports/business-model-confidence-v1.9.0.md` for the full prior history. |
