@@ -1,3 +1,5 @@
+> **Superseded by [`business-model-confidence-v1.8.1.md`](business-model-confidence-v1.8.1.md) (2026-08-11)** — that run merges a third concurrent branch (YouTube Titles → Skool Content Mapping) into this reconciled state and commits the merge, clearing the uncommitted-work deduction this report was still carrying. Kept as the historical record.
+
 # Business Model Confidence Report — v1.8.0
 
 **Date:** 2026-08-11
