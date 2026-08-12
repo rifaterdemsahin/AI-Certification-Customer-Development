@@ -1,6 +1,6 @@
-# Business Model Confidence Report — v1.6.5
+> **Superseded by [`business-model-confidence-v1.8.0.md`](business-model-confidence-v1.8.0.md) (2026-08-11)** — This version is kept as the historical record.
 
-> **Superseded by [v1.7.0](business-model-confidence-v1.7.0.md)** (2026-08-11) — that run adds `sitemap.html` and a fresh full-repo re-scan finds 3 pre-existing broken links plus H24 missing from the Summary Table; overall score drops to 38/100.
+# Business Model Confidence Report — v1.6.5
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)

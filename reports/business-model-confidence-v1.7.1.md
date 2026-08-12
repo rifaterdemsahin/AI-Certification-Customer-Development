@@ -1,3 +1,5 @@
+> **Superseded by [`business-model-confidence-v1.8.1.md`](business-model-confidence-v1.8.1.md) (2026-08-11)** — `main` had independently reconciled a Site Map branch with a new H25 hypothesis before this branch merged in, publishing `v1.8.0`; this branch's own fixes and this report are folded into the follow-up `v1.8.1` merge run. Kept as the historical record of this branch's pre-merge state.
+
 # Business Model Confidence Report — v1.7.1
 
 **Date:** 2026-08-11

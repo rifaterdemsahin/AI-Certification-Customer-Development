@@ -1,4 +1,4 @@
-> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md).**
+> **Superseded by [`business-model-confidence-v1.8.0.md`](business-model-confidence-v1.8.0.md) (2026-08-11)** — that run merges this branch (`main`'s Site Map addition) with a concurrent branch that added H25 and fixed the 3 broken links / H24 table omission this report flagged but didn't fix. Kept as the historical record.
 
 # Business Model Confidence Report — v1.7.0
 
