@@ -4,7 +4,7 @@
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.6.5:** Added H25 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and created the corresponding strategy detail page `5_Symbols/strategy/practice-exams-gap.html`. Overall score rises to **42 / 100** (Hypothesis Validation rises to 30.8% [31/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction).
+**What changed vs. v1.6.5:** Added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and created the corresponding strategy detail page `5_Symbols/strategy/practice-exams-gap.html`. Overall score rises to **42 / 100** (Hypothesis Validation rises to 30.8% [31/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction).
 
 ---
 
@@ -60,7 +60,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H22 | Certified-talent placement (FDE model) Stage 4 vision | ⚪ Planned | 20 |
 | H23 | 4DX weekly accountable rhythm overcomes whirlwind | 🟡 In Testing | 55 |
 | H24 | Emotional Pain Drivers (fear, greed, insecurity) | 🟡 In Testing | 55 |
-| H25 | Practice exam & question bank gap is a critical value blocker | 🟡 In Testing | 55 |
+| H27 | Practice exam & question bank gap is a critical value blocker | 🟡 In Testing | 55 |
 
 **Sum:** 770 across 25 hypotheses → 770 / 25 = **30.80% → 31/100** (rounded).
 
@@ -94,7 +94,7 @@ The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gat
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.7.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H25 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
+| v1.7.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
 | v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing JTBD, unspoken insights, value chain, table stakes, and Vonos.ai visual integration; −10 temporary uncommitted-work deduction |
 | v1.6.4 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Tell Us About Your Idea" page (`5_Symbols/product/idea.html`) and linked to it from Business Plan Summary; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.3 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and linked to H4, H5, H7, H8; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
