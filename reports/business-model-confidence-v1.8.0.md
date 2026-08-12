@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.8.0
 
+> **Superseded by [v1.9.3](business-model-confidence-v1.9.3.md).**
+
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.7.0:** Two branches shipped work in parallel and both independently ran this skill, landing on the same `v1.7.0` filename with two different scores computed against two different snapshots of the repo:

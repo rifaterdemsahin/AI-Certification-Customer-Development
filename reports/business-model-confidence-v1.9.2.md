@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.9.2
 
+> **Superseded by [v1.9.3](business-model-confidence-v1.9.3.md).**
+
 **Date:** 2026-08-12
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.9.1:** Added H28 (YouTube engagement rate benchmark — expected like/comment/total-engagement rates, the one channel-health dimension none of H2/H7/H10/H13 covered) and its supporting pages `5_Symbols/growth/youtube-channel-metrics.html` and `5_Symbols/hypotheses/hyp-h28.html`. Also fixed the 2 broken-link targets v1.9.1 surfaced (`hyp-h19.html` referenced from `hyp-h23.html` and `evidence-map.html` now point to the real `stage-timelines.html`; `idea.html`'s `target-audience.html` link now carries the correct `../strategy/` prefix), and filled a pre-existing gap where H24 was missing from the Summary Table and Dependency Map despite having its own full entry since v1.45.0.
