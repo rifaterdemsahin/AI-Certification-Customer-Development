@@ -1,3 +1,5 @@
+> **Superseded by [`business-model-confidence-v1.9.4.md`](business-model-confidence-v1.9.4.md) (2026-08-12)** — founder-only Skool board seeding sanity check; hypothesis validation and overall score hold flat at 41. Kept as historical record.
+
 # Business Model Confidence Report — v1.9.3
 
 **Date:** 2026-08-12

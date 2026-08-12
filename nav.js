@@ -115,7 +115,9 @@
                 ['5_Symbols/product/partners.html', '🤝 Partner With Us'],
                 ['5_Symbols/product/exam-prep-product.html', '📦 Exam Prep Bundle ($29)'],
                 ['5_Symbols/product/skool-lms-integration.html', '🏫 Skool LMS Integration'],
-                ['5_Symbols/product/skool-vs-youtube.html', '⚖️ Skool vs. YouTube Comparison']
+                ['5_Symbols/product/skool-vs-youtube.html', '⚖️ Skool vs. YouTube Comparison'],
+                ['5_Symbols/product/youtube-skool-handoff.html', '🔄 YouTube → Skool Handoff'],
+                ['5_Symbols/product/skool-posting-sanity-check.html', '✅ Skool Posting Sanity Check']
             ]
         },
         {
@@ -203,6 +205,8 @@
         { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'The Execution Crisis Overview', desc: '4DX overview hub mapping whirlwind vs strategic goals.', cat: 'Execution', tags: '4dx execution crisis whirlwind strategy roadmap overview' },
         { url: '5_Symbols/product/skool-lms-integration.html', title: 'Skool LMS & Community Integration', desc: 'Rationale, stage-by-stage playbook, and risks of utilizing Skool as the off-the-shelf LMS/community platform.', cat: 'Business Model', tags: 'skool lms platform community tools validation member cohort' },
         { url: '5_Symbols/product/skool-vs-youtube.html', title: 'Skool vs. YouTube Course Delivery', desc: 'Comparison of Skool vs. YouTube for course delivery, highlighting structured community learning vs. open media platforms.', cat: 'Business Model', tags: 'skool youtube platform comparison classroom community monetization channels' },
+        { url: '5_Symbols/product/youtube-skool-handoff.html', title: 'YouTube / LinkedIn → Skool Audience Handoff', desc: 'Fixed order: YouTube and LinkedIn acquire; CTAs hand off; Skool delivers Classroom, forum, calendar, and billing as Stage 2 only.', cat: 'Business Model', tags: 'youtube skool handoff acquisition delivery linkedin order funnel stage 2 lms' },
+        { url: '5_Symbols/product/skool-posting-sanity-check.html', title: 'Skool Founder Posting Sanity Check', desc: 'Verdict on founder-only board posting and Classroom build: right for Stage 2 if paired with warm invites; board is not acquisition.', cat: 'Business Model', tags: 'skool posting sanity check founder community board invite warm cohort stage 2' },
         { url: '5_Symbols/strategy/claude-partner-strategy.html', title: 'Claude Partner Strategy', desc: 'Strategic analysis of when and why to become a Claude Partner, mapping active partner benefits to customer development stages.', cat: 'Strategy', tags: 'claude partner cpn network services select benefits licensing credentials' },
         { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus on WIG', desc: 'Narrowing focus to 1-2 Wildly Important Goals to protect bandwidth.', cat: 'Execution', tags: '4dx execution focus wildly important goal wig baseline formula' },
         { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Act on Lead Measures', desc: 'Leveraging predictive, influenceable lead measures instead of lag measures.', cat: 'Execution', tags: '4dx execution leverage lead lag measure metrics predictive influenceable' },
