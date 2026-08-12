@@ -119,6 +119,7 @@
         },
         {
             type: 'dropdown', label: 'Growth', emoji: '📈', className: 'nav-growth', items: [
+                ['5_Symbols/growth/sales-marketing-roadmap.html', '🗺️ Sales &amp; Marketing Roadmap'],
                 ['5_Symbols/growth/sales-pipeline.html', '📊 Sales Pipeline'],
                 ['5_Symbols/growth/flywheel.html', '🔄 Flywheel'],
                 ['5_Symbols/growth/organic-growth.html', '🔄 Organic Growth Strategy'],
@@ -130,6 +131,7 @@
                 ['5_Symbols/growth/test-plan.html', '🧪 Test Plan'],
                 ['5_Symbols/dashboard/todo.html', '✅ Task List'],
                 ['5_Symbols/growth/content-analysis.html', '🎬 Content Analysis'],
+                ['5_Symbols/growth/youtube-channel-metrics.html', '📺 YouTube Channel Metrics'],
                 ['5_Symbols/growth/cohort-prep.html', '🧰 Cohort Prep'],
                 ['5_Symbols/growth/advertisement.html', '📣 Paid Advertisement'],
                 ['5_Symbols/growth/funnel-math.html', '🧮 Funnel Math'],
@@ -193,6 +195,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/growth/sales-marketing-roadmap.html', title: 'Sales & Marketing Roadmap', desc: 'Maps the 7-cohort Skool curriculum sequence (Foundations through Second Brain) to funnel stages, offers, and multi-cert expansion.', cat: 'Growth', tags: 'sales marketing roadmap skool cohorts curriculum funnel sequence forward deployed engineering second brain' },
         { url: '5_Symbols/strategy/practice-exams-gap.html', title: 'Practice Exam & Question Bank Gap', desc: 'Analysis of the critical product gap (lack of blueprint-mapped practice exams) and mitigation roadmap.', cat: 'Strategy', tags: 'practice exams question banks mock test blueprint validation gap risk' },
         { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'The Execution Crisis Overview', desc: '4DX overview hub mapping whirlwind vs strategic goals.', cat: 'Execution', tags: '4dx execution crisis whirlwind strategy roadmap overview' },
         { url: '5_Symbols/product/skool-lms-integration.html', title: 'Skool LMS & Community Integration', desc: 'Rationale, stage-by-stage playbook, and risks of utilizing Skool as the off-the-shelf LMS/community platform.', cat: 'Business Model', tags: 'skool lms platform community tools validation member cohort' },
@@ -320,6 +323,8 @@
         { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines built on the Samuel Leeds urgency formula, each priced with a gain/loss ledger and a no-guarantee compliance rule.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds' },
         { url: '5_Symbols/dashboard/todo.html', title: 'Task List', desc: 'Open production/build tasks: newsletter signup, 3-animations/week baseline, animated-video performance testing.', cat: 'Growth', tags: 'todo task list newsletter animations weekly baseline production' },
         { url: '5_Symbols/growth/content-analysis.html', title: 'Content Analysis', desc: 'Per-video retention log tracking animated content performance against the 40% MVP target, seeded with a 68% first data point.', cat: 'Growth', tags: 'content analysis retention video performance analytics' },
+        { url: '5_Symbols/growth/youtube-channel-metrics.html', title: 'YouTube Channel Metrics', desc: 'Unified watch-time, views, and engagement view with expected-rate targets, including new H26 engagement-rate benchmarks.', cat: 'Growth', tags: 'youtube channel metrics watch time views engagement rate ctr likes comments subscribers' },
+        { url: '5_Symbols/hypotheses/hyp-h26.html', title: 'H26 · YouTube Engagement Rate Benchmark', desc: 'Detail page with premise-conclusion-status SVG diagram for H26.', cat: 'Hypothesis Detail', tags: 'h26 hypothesis detail youtube engagement rate likes comments ctr svg diagram' },
         { url: '5_Symbols/growth/cohort-prep.html', title: 'Cohort Prep', desc: 'Weekly WhatsApp/Discord install list and content preview that runs between live Sunday cohort sessions, so attendees arrive ready for hands-on work.', cat: 'Growth', tags: 'cohort prep whatsapp discord install setup weekly hands-on' },
         { url: '5_Symbols/comp/comp-problem-solution.html', title: 'Component: Problem-Solution Fit', desc: 'Validating that study guides solve the core certification retention issues.', cat: 'Component', tags: 'problem solution fit validation' },
         { url: '5_Symbols/comp/comp-mvp.html', title: 'Component: Minimum Viable Product (MVP)', desc: 'Blueprint for the first 3 animated videos and a simple practice test page.', cat: 'Component', tags: 'mvp blueprint videos practice test' },

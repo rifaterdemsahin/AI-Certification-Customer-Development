@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.7.0
 
+> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md).**
+
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
 **What changed vs. v1.6.5:** Added H25 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and created the corresponding strategy detail page `5_Symbols/strategy/practice-exams-gap.html`. Overall score rises to **42 / 100** (Hypothesis Validation rises to 30.8% [31/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction).
