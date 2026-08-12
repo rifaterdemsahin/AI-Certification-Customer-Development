@@ -73,6 +73,7 @@
                 ['5_Symbols/strategy/target-audience.html', '👥 Target Audience'],
                 ['5_Symbols/strategy/pain-points.html', '🎭 Customer Pain Points'],
                 ['5_Symbols/strategy/risk-analysis.html', '⚠️ Risk Analysis'],
+                ['5_Symbols/strategy/practice-exams-gap.html', '⚠️ Practice Exam Gap'],
                 ['5_Symbols/strategy/requirements.html', '📋 Requirements'],
                 ['exam-topics.html', '📚 Exam Topic Blueprint'],
                 ['5_Symbols/strategy/business-plan-summary.html', '📄 Business Plan Summary'],
@@ -192,6 +193,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/practice-exams-gap.html', title: 'Practice Exam & Question Bank Gap', desc: 'Analysis of the critical product gap (lack of blueprint-mapped practice exams) and mitigation roadmap.', cat: 'Strategy', tags: 'practice exams question banks mock test blueprint validation gap risk' },
         { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'The Execution Crisis Overview', desc: '4DX overview hub mapping whirlwind vs strategic goals.', cat: 'Execution', tags: '4dx execution crisis whirlwind strategy roadmap overview' },
         { url: '5_Symbols/product/skool-lms-integration.html', title: 'Skool LMS & Community Integration', desc: 'Rationale, stage-by-stage playbook, and risks of utilizing Skool as the off-the-shelf LMS/community platform.', cat: 'Business Model', tags: 'skool lms platform community tools validation member cohort' },
         { url: '5_Symbols/product/skool-vs-youtube.html', title: 'Skool vs. YouTube Course Delivery', desc: 'Comparison of Skool vs. YouTube for course delivery, highlighting structured community learning vs. open media platforms.', cat: 'Business Model', tags: 'skool youtube platform comparison classroom community monetization channels' },

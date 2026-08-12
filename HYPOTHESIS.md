@@ -1,8 +1,8 @@
 # Hypothesis Tracker — AI Certification Helper
 
-**Version:** 1.50.0
+**Version:** 1.51.0
 **Date:** 2026-08-11
-**Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.3.0.md` (supersedes v1.2.0), `reports/market-validation-argument-v1.0.md`, `reports/ai-adoption-and-skills-gap-v1.0.md`, `reports/exam-prep-market-and-student-behavior-v1.3.0.md` (supersedes v1.2.0), and `reports/business-model-confidence-v1.5.6.md` (a versioned, numeric confidence score computed over every hypothesis below, plus a whole-site integrity check — see `confidence-report.html`) where a status claim is not backed by evidence in the repo, or has since been resolved or changed by new research or a founder decision.
+**Purpose:** Consolidate every hypothesis stated across the site's stage/component pages into a single premise → conclusion → status record, so progress toward validating (or killing) each one can be tracked in one place. Cross-referenced against `reports/acidity-check-report-v1.3.0.md` (supersedes v1.2.0), `reports/market-validation-argument-v1.0.md`, `reports/ai-adoption-and-skills-gap-v1.0.md`, `reports/exam-prep-market-and-student-behavior-v1.3.0.md` (supersedes v1.2.0), and `reports/business-model-confidence-v1.7.0.md` (a versioned, numeric confidence score computed over every hypothesis below, plus a whole-site integrity check — see `confidence-report.html`) where a status claim is not backed by evidence in the repo, or has since been resolved or changed by new research or a founder decision.
 
 ## Visual Pipeline & Dependency Map
 
@@ -29,6 +29,7 @@ flowchart LR
         H7["H7: Funnel CTR/Rates<br>(Hypothesized)"]:::planned
         H8["H8: Exam-Ready PMF<br>(Hypothesized)"]:::planned
         H21["H21: $29 Exam Prep Bundle<br>(Planned)"]:::planned
+        H25["H25: Practice Exam Gap<br>(In Testing)"]:::testing
     end
 
     subgraph Creation ["3. Customer Creation"]
@@ -79,6 +80,8 @@ flowchart LR
     H6 --> H22
     H13 --> H22
     H19 --> H23
+    H25 --> H21
+    H25 --> H8
 ```
 
 **Status legend:**
@@ -175,7 +178,7 @@ flowchart LR
 
 ### H21 — $29 Exam Prep Bundle is a viable low-friction entry SKU (new, 2026-08-07)
 - **Source:** `exam-prep-product.html`, `bmc-revenue-streams.html`, `product/skool-lms-integration.html`
-- **Depends on:** None — new, independent Stage 2 product hypothesis. Related to H5 (delivery-model precedent for tiering offers) but not a blocking dependency.
+- **Depends on:** H25 (explicit — H25's practice-exam gap is the value-blocker this SKU solves).
 - **Premise 1:** Some prospects want a fast, self-paced way to test the offer before committing to the $10/mo membership or the $250–$500 live cohort.
 - **Premise 2:** Memory cards + a prep exam + a mock exam, bundled as one $29 one-time purchase, covers a distinct, lower-commitment use case that neither existing tier serves directly.
 - **Premise 3:** This is additive, not a replacement — it should not cannibalize live-cohort or membership revenue if positioned correctly as an entry product. **Clarified 2026-08-07:** the bundle's content is not exclusive material — it is already included within both the $10/mo membership and the $250–$500 live cohort. The $29 price exists purely for prospects who want only this piece without subscribing or booking a live seat, so cannibalization risk is structurally low: anyone who'd value the fuller offer still has every reason to pay more for it.
@@ -183,10 +186,19 @@ flowchart LR
 - **Conclusion:** Offering the $29 bundle alongside the existing tiers will convert a segment of prospects who wouldn't have purchased the higher-commitment options, without materially cannibalizing them.
 - **Status:** ⚪ Planned — a newly proposed SKU; not yet built, priced, or sold. No conversion or cannibalization data exists yet, though Premise 4's behavior pattern is real, observed evidence supporting the underlying customer need. See `hyp-h21.html`, `exam-prep-product.html`, and `self-assessment.html` (the quiz that routes prospects toward this or another tier). **New (2026-08-10):** Discovery interview confirms the Associate exam is perceived as workflow/PM-heavy, with a "50/50" pass rate via common sense alone. This confirms that candidates seek low-friction, lower-commitment entry prep SKUs (like the $29 Mock Exam bundle) for Associate, while saving high-ticket cohorts for hands-on Developer tiers. See `reports/exam-prep-market-and-student-behavior-v1.3.0.md`.
 
+### H25 — Lacking blueprint-mapped practice exams & question banks is a critical value blocker for buyers (new, 2026-08-11)
+- **Source:** `5_Symbols/strategy/practice-exams-gap.html`, `5_Symbols/strategy/risk-analysis.html`
+- **Depends on:** None — foundational Stage 2 product value risk. Feeds H8, H21.
+- **Premise 1:** Candidates book Pearson VUE exams roughly 3 weeks out and shift study behavior from theory to retrieval practice.
+- **Premise 2:** Standard mock exams and question banks are the single most critical asset that anxious buyers seek during this phase.
+- **Conclusion:** Without official blueprint-mapped practice exams/question banks, the customer development value proposition is incomplete and conversions will stall.
+- **Experiment:** Launch a pilot question bank on Skool/WhatsApp mapped to official blueprint domains and track attendee demand.
+- **Status:** 🟡 **In Testing (new, 2026-08-11)** — Sunday live cohorts are actively piloting hands-on architectural problem-solving sessions, and the $29 Exam Prep Bundle includes mock tests to address this gap. See `5_Symbols/strategy/practice-exams-gap.html`.
+
 ### H8 — Product-Market Fit (PMF): the cohort program gets students certified
 - **Source:** `comp-pmf.html`, `product/skool-lms-integration.html`, `product/skool-vs-youtube.html`
 - **PMF stands for:** Product-Market Fit — the point at which an offer satisfies real, strong market demand well enough that customers seek it out, get value from it, and recommend it on their own, without being sold.
-- **Depends on:** H5 (Premises 4–5's free-cohort mechanics — the Sunday session and its WhatsApp community — are the live evidence cited for Premise 2's peer-accountability claim). Related to H10 (both were touched by the 2026-08-01 no-guarantee clarification, not a strict dependency).
+- **Depends on:** H5 (Premises 4–5's free-cohort mechanics — the Sunday session and its WhatsApp community — are the live evidence cited for Premise 2's peer-accountability claim), H25 (explicit — H25's identified practice-exam gap informs the cohort's curriculum pivot). Related to H10 (both were touched by the 2026-08-01 no-guarantee clarification, not a strict dependency).
 - **Premise 1:** The cohort curriculum covers the full scope of the target certification (model orchestration, latency config, multi-agent design, prompt caching, enterprise security), delivered through live-streamed sessions where the community solves real problems together in real time.
 - **Premise 2:** Structured live instruction and peer accountability outperform self-study for exam readiness.
 - **Premise 3 (added 2026-08-01):** The company does not grant, administer, or guarantee the certification itself — Anthropic alone issues it via a Pearson VUE-proctored exam. ">80% pass rate," "NPS >50," and "LinkedIn badge sharing" are internal metrics the company tracks to judge its own program quality, not promises made to students.
@@ -360,6 +372,7 @@ flowchart LR
 | H21 | $29 Exam Prep Bundle is a viable entry SKU (new) | ⚪ Planned |
 | H22 | Certified-talent delivery placement (FDE model), Stage 4 vision (new) | ⚪ Planned |
 | H23 | 4DX weekly accountable rhythm overcomes whirlwind (new) | 🟡 In Testing |
+| H25 | Practice exam & question bank gap is a critical value blocker | 🟡 In Testing |
 
 **Overall:** 0 of 23 hypotheses are fully validated with cited evidence, 1 is partially validated, and 1 (TAM/SAM/SOM sizing) is still marked complete in a source page with only partial external grounding. As of v1.7.0, H2 has its first real single-video data point (68.5% retention, well above the 40% target); H1 and H6 have new external corroboration (competing vendor certifications, the Forward Deployed Engineer hiring trend); H5 and H8 have new field evidence from the free Sunday cohort's actual channel mechanics and organic WhatsApp community; and H9's 2-launch repeat gate has been independently reconfirmed by the founder. The certification-existence blocker on H8 has been cleared by external research (v1.1.0). As of v1.2.0, the founder has made two explicit decisions rather than pending hypotheses: (1) the $10k Stage 2 gate is executed solo for agility and does **not** trigger a full-time transition — it stays an ongoing second job — and (2) the primary Stage 3 success metric is now 1,000x subscriber growth per video (H13), not the 40% retention figure (H10, demoted to a quality floor). As of v1.4.0: H4 has real supporting data (an 8-week, ~4-attendee free weekly cohort) and is upgraded to In Testing; H12 moved from a Stage 2 addendum into Stage 3 as a Customer Creation-scale channel; and two new Stage 3/4 hypotheses were added — H14 (multi-certification expansion) and H15 (founder goes full-time at the $100k ARR / Stage 4 threshold, explicitly distinct from the H9 decision to stay part-time at the Stage 3 gate). As of v1.5.0: added H16, opening a conditional, CAC/LTV-gated path to paid advertisement in Stage 3 — organic stays primary through Stage 2 by design (H5, `focus.html`), and paid spend is never a default. As of v1.6.0: added H17 (onsite Cambridge + corporate pilot with Marianna); revised H9 into a 2-launch repeat gate closing acidity Finding F6; and cross-linked a batch of new supporting pages (competitive analysis, funnel math, unit economics, cost-side model, evidence map, test plan, single-founder bandwidth, validation repeat gate) that collectively address acidity Findings F3, F4, F5, F6, and F7. As of v1.9.0: added H18, an international extension of H17/H12 proposing UK/Europe/USA onsite corporate channels once the Cambridge pilot's founder-tracked confidence score, built from iterative feedback dialogues with Marianna, clears a bar for expansion. As of v1.20.0: added H20 (MAOT — the delight threshold beyond MVP where organic referral starts, `maot.html`) and H21 (a new $29 one-time Exam Prep Bundle SKU, `exam-prep-product.html`), alongside a batch of 13 new audience-specific pages (investor, prospect, and partner-facing) built on top of the existing strategy/business-model content. As of v1.28.0: refactored all HTML files under 5_Symbols/ with resolved relative links and updated nav.js prefix, added four new pages (bmc-capital-relationships.html, surplus-value.html, organic-growth.html, latest-pages.html), and published the v1.2.0 confidence report (overall score 44/100). As of v1.29.0–v1.30.0: added `5_Symbols/product/one-pager.html` (a plain-text copy-paste business summary for external validation sites) and published the v1.3.0 confidence report. As of v1.34.0: added H23 (4DX Weekly Accountable Rhythm) and its associated overview and discipline pages under `5_Symbols/execution/`.
 
@@ -378,7 +391,7 @@ Added 2026-08-05 (v1.16.0): each hypothesis above now carries its own **Depends 
 | H5 | None — foundational | H8, H9, H16 |
 | H6 | None — foundational | (no explicit cross-citation found; logically underlies H12, H14, H16, H18 — see gap note below) |
 | H7 | None — foundational (unreconciled with peer H4) | H16 |
-| H8 | H5 | — |
+| H8 | H5, H25 | — |
 | H9 | H5 | H15, H16, H19 |
 | H10 | H2 | — (superseded by H13 as primary Stage 3 gate) |
 | H11 | None — foundational | H15, H19 |
@@ -391,9 +404,10 @@ Added 2026-08-05 (v1.16.0): each hypothesis above now carries its own **Depends 
 | H18 | H12, H17 | — |
 | H19 | H2, H3, H4, H9, H11, H13, H15 | — (most dependent single node — a synthesis, not new evidence) |
 | H20 | H5, H8 | — |
-| H21 | None — independent, untested | — |
+| H21 | H25 | — |
 | H22 | H6, H12, H13 | — |
 | H23 | H9, H11, H19 | — |
+| H25 | None — foundational | H8, H21 |
 
 **Notes:**
 - **Peer conflict, not a dependency:** H4 and H7 describe two different, numerically unreconciled conversion funnels to the same destination (acidity check Finding F5) — see `funnel-math.html`.
@@ -406,6 +420,7 @@ Added 2026-08-05 (v1.16.0): each hypothesis above now carries its own **Depends 
 
 ## Change Log
 
+- **v1.51.0** (2026-08-11): Added H25 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and created the corresponding strategy detail page `5_Symbols/strategy/practice-exams-gap.html`. Bumps version tracker to v1.51.0.
 - **v1.50.0** (2026-08-11): Added 'Your Market Reality Check' page (`5_Symbols/strategy/market-reality-check.html`) detailing the real job-to-be-done, unspoken market insights, individual vs corporate value chain dynamics, category table stakes, and Vonos.ai progress tracking/expensing visual reference. Cross-linked it to H12 and updated the Version to v1.50.0.
 - **v1.49.0** (2026-08-11): Added 'Tell Us About Your Idea' page (`5_Symbols/product/idea.html`) explaining the elevator pitch, product ecosystem, AI skills gap problem, differentiator strategy, ideal customer, and TAM/SAM/SOM opportunity size. Cross-linked it to the Business Plan Summary and registered it in the Strategy dropdown menu and search index. Bumps version tracker to v1.49.0.
 - **v1.48.0** (2026-08-11): Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and cross-linked it to H4, H5, H7, and H8. Bumps version tracker to v1.48.0.
