@@ -88,6 +88,7 @@
                 ['5_Symbols/product/idea.html', '💡 Tell Us About Your Idea'],
                 ['5_Symbols/strategy/market-reality-check.html', '⚖️ Market Reality Check'],
                 ['5_Symbols/strategy/why-certification.html', '🏅 Why Certification Matters'],
+                ['5_Symbols/strategy/cert-value-ai-era.html', '🎓 Cert Value in the AI Era'],
                 ['5_Symbols/strategy/skills-gap.html', '💼 Enterprise AI Skills Gap'],
                 ['5_Symbols/product/self-assessment.html', '🧭 Self-Assessment'],
                 ['5_Symbols/product/discovery-journey.html', '🧭 The Discovery Journey'],
@@ -175,6 +176,7 @@
                 ['markdown_renderer.html?src=HYPOTHESIS.md', '📊 Hypothesis Tracker Full Doc'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Business Model Confidence Report'],
                 ['5_Symbols/dashboard/latest-pages.html', '📅 Latest Created/Updated Pages'],
+                ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.3.0.md', '🧪 Acidity Check Report v1.3'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.2.0.md', '🧪 Acidity Check Report v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.1.0.md', '🧪 Acidity Check Report v1.1 (Historical)'],
@@ -210,6 +212,7 @@
         { url: '5_Symbols/bmc/surplus-value.html', title: 'Surplus Value Creation', desc: 'Explaining how surplus value is generated from intellectual labor and infinite digital reproducibility.', cat: 'Business Model', tags: 'surplus value marx labor reproduction cost profit value' },
         { url: '5_Symbols/growth/organic-growth.html', title: 'Organic Growth Strategy', desc: 'Acquisition flywheels, YouTube search loops, and LinkedIn certification viral sharing.', cat: 'Growth', tags: 'organic growth strategy marketing viral loops linkedin search acquisition' },
         { url: '5_Symbols/dashboard/latest-pages.html', title: 'Latest Created & Updated Pages', desc: 'Dashboard tracking recently created and updated pages, sortable by dates.', cat: 'Dashboard', tags: 'latest created updated pages dates calendar sorting index' },
+        { url: '5_Symbols/dashboard/sitemap.html', title: 'Site Map', desc: 'Every page on the site, searchable, with Logical (by section) and A-Z sort modes, built live from this same search index.', cat: 'Dashboard', tags: 'sitemap site map search sort az alphabetical logical directory all pages index' },
         { url: 'index.html', title: 'Customer Development Hub', desc: 'Home hub mapping all stages, business validation frameworks, and milestones.', cat: 'Hub', tags: 'home dashboard main index' },
         { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Customer Discovery Interview Guide', desc: 'Playbook of open-ended pains/gains questions, past behavior stories, and listening guidelines.', cat: 'Process', tags: 'interview questions open ended pains gains guide' },
         { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Customer Watering Holes & Outreach', desc: 'Outreach blueprint mapping Triton Square, Venture Coffee meetups, and cohorts with ready-to-use scripts.', cat: 'Process', tags: 'watering holes triton square venture coffee cohorts scripts outreach slack dms' },
@@ -280,6 +283,7 @@
         { url: '5_Symbols/product/idea.html', title: 'Tell Us About Your Idea', desc: 'A detailed one-page overview of the business idea: what is built, problem solved, differences, target customer, and opportunity size.', cat: 'Strategy', tags: 'idea elevator pitch problem solution customer opportunity business summary YC YCombinator' },
         { url: '5_Symbols/strategy/market-reality-check.html', title: 'Your Market Reality Check', desc: 'Evaluation of the customer job-to-be-done, value chain dynamics, category table stakes, and Vonos.ai visual integration.', cat: 'Strategy', tags: 'market reality check stress test job to be done value chain vonos table stakes' },
         { url: '5_Symbols/strategy/why-certification.html', title: 'Why Certification Matters', desc: 'Prospect-facing case for AI certification: pay premiums, employer partner-tier gating, and FDE hiring growth.', cat: 'Strategy', tags: 'why certification matters career prospects employer value' },
+        { url: '5_Symbols/strategy/cert-value-ai-era.html', title: 'Cert Value in the AI Era', desc: 'Why certification value is bifurcating: memorization/trivia certs decline while judgement-verifying, scenario-based certs rise, tracked as H25.', cat: 'Strategy', tags: 'cert value ai era judgement recall bifurcation regulated procurement dod 8140 h25' },
         { url: '5_Symbols/strategy/skills-gap.html', title: 'Enterprise AI Skills Gap', desc: 'Why AI and agentic systems open a skills gap, how Digital Immigrants act as Delivery Pilots, and the stage focuses.', cat: 'Strategy', tags: 'skills gap enterprise delivery pilots digital immigrants skool badges live samples assessment' },
         { url: '5_Symbols/product/self-assessment.html', title: 'Self-Assessment', desc: 'Interactive 3-question quiz routing prospects to the free cohort, the $29 bundle, membership, or live cohort.', cat: 'Strategy', tags: 'self assessment quiz recommendation which offer fits me' },
         { url: '5_Symbols/product/discovery-journey.html', title: 'The Discovery Journey', desc: 'Prospect-facing plain-language guide to what happens in a customer discovery call and how to join.', cat: 'Strategy', tags: 'discovery journey prospect interview join customer development' },
@@ -297,6 +301,7 @@
         { url: '5_Symbols/hypotheses/hyp-h21.html', title: 'H21 · $29 Exam Prep Bundle entry SKU', desc: 'Detail page with premise-conclusion-status SVG diagram for H21.', cat: 'Hypothesis Detail', tags: 'h21 hypothesis detail exam prep bundle 29 sku svg diagram' },
         { url: '5_Symbols/hypotheses/hyp-h22.html', title: 'H22 · Certified-talent delivery placement (FDE model)', desc: 'Detail page with premise-conclusion-status SVG diagram for H22.', cat: 'Hypothesis Detail', tags: 'h22 hypothesis detail forward deployed engineer talent placement recruiting svg diagram' },
         { url: '5_Symbols/hypotheses/hyp-h24.html', title: 'H24 · Emotional Pain Drivers', desc: 'Detail page with premise-conclusion-status SVG diagram for H24.', cat: 'Hypothesis Detail', tags: 'h24 hypothesis detail emotional pain drivers greed fear insecurity svg diagram' },
+        { url: '5_Symbols/hypotheses/hyp-h25.html', title: 'H25 · Cert Value Bifurcation', desc: 'Detail page with premise-conclusion-status SVG diagram for H25.', cat: 'Hypothesis Detail', tags: 'h25 hypothesis detail cert value bifurcation judgement recall ai era svg diagram' },
         { url: '5_Symbols/bmc/business-model-canvas.html', title: 'Business Model Canvas (BMC)', desc: 'The master 9-box canvas showing partners, key actions, value prop, channels, and revenue.', cat: 'Business Model', tags: 'canvas bmc partners actions value revenue' },
         { url: '5_Symbols/bmc/value-proposition.html', title: 'Value Proposition Canvas', desc: 'Mapping user pains/gains directly to our features and product services.', cat: 'Business Model', tags: 'value proposition pains gains features benefits' },
         { url: '5_Symbols/bmc/bmc-customer-segments.html', title: 'BMC: Customer Segments', desc: 'Target cohorts, early adopters, and certification candidate segment definition.', cat: 'Business Model', tags: 'segments cohorts early adopters candidate' },
@@ -342,6 +347,10 @@
         { url: 'business-overview.html', title: 'Business Overview (One-Pager)', desc: 'Plain-language one-page reference for what the business does, who it is for, how it makes money, and current stage.', cat: 'References', tags: 'business overview one pager elevator pitch summary reference what does this do' },
         { url: '5_Symbols/cd/cd-hypothesis-interview-questions.html', title: 'Hypothesis Interview Questions', desc: 'Specific customer-interview questions mapped to every hypothesis (H1-H19), each with a listen-for cue for what would validate or kill it.', cat: 'Process', tags: 'interview questions hypothesis test validate kill customer discovery ask what to ask' }
     ];
+
+    // Exposed read-only so other pages (e.g. the Site Map) can build their own views
+    // from this same data instead of hand-maintaining a second copy that can drift.
+    window.__siteMapData = { groups: groups, searchIndex: searchIndex };
 
     // Build current page URL (relative to root)
     var currentPageUrl = currentFile;
@@ -1315,6 +1324,11 @@
             { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timelines', emoji: '📅' },
             { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', emoji: '🧪' },
             { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
+        ],
+        '5_Symbols/dashboard/sitemap.html': [
+            { url: '5_Symbols/dashboard/latest-pages.html', title: 'Latest Pages', emoji: '📅' },
+            { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: 'index.html', title: 'Hub', emoji: '🏠' }
         ],
         '5_Symbols/dashboard/confidence-report.html': [
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
