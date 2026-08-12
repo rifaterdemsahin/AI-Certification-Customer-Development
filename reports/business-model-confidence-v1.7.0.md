@@ -1,4 +1,4 @@
-> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md)**, which merges this batch's Site Map/broken-link/table findings with the Skool-launch branch's H5 upgrade — the 3 broken links and the missing H24 row are fixed there.
+> **Superseded by [v1.9.0](business-model-confidence-v1.9.0.md)** — this file's own branch (this report's line of descent: v1.7.0 → v1.7.1) and `main`'s independent merge (v1.7.0 → v1.8.0) were reconciled together as v1.9.0.
 
 # Business Model Confidence Report — v1.7.0
 

@@ -1,3 +1,5 @@
+> **Superseded by [v1.9.0](business-model-confidence-v1.9.0.md)**, which reconciles this branch's merge with `main`'s independent v1.8.0 merge (Site Map + H25).
+
 # Business Model Confidence Report — v1.7.1
 
 **Date:** 2026-08-11
