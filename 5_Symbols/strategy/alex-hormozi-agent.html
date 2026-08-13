@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Hormozi Agent | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .hz-quote {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin: 0 0 0.75rem;
+        }
+        .hz-quote::before { content: "“"; color: var(--color-warning); }
+        .hz-quote::after { content: "”"; color: var(--color-warning); }
+        .hz-attr { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .hz-eq {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+        .hz-frac {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+        .hz-num, .hz-den {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0.5rem;
+            align-items: stretch;
+        }
+        .hz-box {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.85rem 0.9rem;
+            background: rgba(255,255,255,0.03);
+            min-height: 92px;
+        }
+        .hz-box.up { border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.07); }
+        .hz-box.down { border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.07); }
+        .hz-box h4 { margin: 0 0 0.35rem; font-size: 0.92rem; }
+        .hz-box p { margin: 0; color: var(--text-secondary); font-size: 0.82rem; line-height: 1.45; }
+        .hz-op { color: var(--text-muted); font-size: 1.4rem; font-weight: 700; text-align: center; }
+        .hz-line { height: 2px; background: linear-gradient(90deg, transparent, var(--border-color), transparent); margin: 0.15rem 0; }
+        .hz-value-pill {
+            min-width: 140px;
+            text-align: center;
+            padding: 1.1rem 0.8rem;
+            border-radius: 16px;
+            border: 1px solid rgba(245,158,11,0.4);
+            background: rgba(245,158,11,0.1);
+        }
+        .hz-value-pill .n { font-family: var(--font-heading); font-size: 2.2rem; color: #fbbf24; line-height: 1; }
+        .hz-value-pill .l { color: var(--text-secondary); font-size: 0.78rem; margin-top: 0.35rem; }
+        .hz-core {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .hz-cell {
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.1rem 1.15rem;
+            min-height: 180px;
+        }
+        .hz-cell.warm { border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.06); }
+        .hz-cell.content { border-color: rgba(6,182,212,0.35); background: rgba(6,182,212,0.06); }
+        .hz-cell.cold { border-color: rgba(245,158,11,0.35); background: rgba(245,158,11,0.06); }
+        .hz-cell.ads { border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.06); }
+        .hz-cell h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+        .hz-meta { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.55rem; }
+        .hz-slider-row { margin-bottom: 1rem; }
+        .hz-slider-row label { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.35rem; }
+        .hz-slider-row input[type="range"] { width: 100%; accent-color: var(--color-primary); }
+        .hz-chat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-height: 420px;
+            overflow-y: auto;
+            padding-right: 0.25rem;
+        }
+        .hz-bubble {
+            max-width: 88%;
+            padding: 0.8rem 1rem;
+            border-radius: 14px;
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+        .hz-bubble.agent {
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.28);
+            color: var(--text-primary);
+        }
+        .hz-bubble.user {
+            align-self: flex-end;
+            background: rgba(99,102,241,0.12);
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+        .hz-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 0.25rem; }
+        .hz-chip {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+        .hz-chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .hz-form { display: flex; gap: 0.6rem; margin-top: 0.85rem; }
+        .hz-form input {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.7rem 0.9rem;
+            border-radius: 10px;
+            font-family: var(--font-body);
+        }
+        .hz-grade {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            padding: 0.18rem 0.5rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+        }
+        .hz-grade.a { color: #a7f3d0; background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); }
+        .hz-grade.b { color: #c7d2fe; background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.3); }
+        .hz-grade.c { color: #fde68a; background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3); }
+        .hz-grade.f { color: #fecaca; background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); }
+        .hz-stack { display: flex; flex-direction: column; gap: 0.55rem; }
+        .hz-stack-item {
+            display: grid;
+            grid-template-columns: 72px 1fr auto;
+            gap: 0.75rem;
+            align-items: center;
+            padding: 0.75rem 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+        }
+        .hz-stack-item .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-warning); }
+        @media (max-width: 800px) {
+            .hz-eq { grid-template-columns: 1fr; }
+            .hz-core { grid-template-columns: 1fr; }
+            .hz-num, .hz-den { grid-template-columns: 1fr; }
+            .hz-op { display: none; }
+            .hz-stack-item { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="focus.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Focus
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid #f59e0b;">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fde68a; border-color: rgba(245, 158, 11, 0.35);">Strategy · Offer + Leads Agent</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🏋️ Alex Hormozi Agent</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 82ch; line-height: 1.65;">
+                A blunt offer-and-leads audit of AI Certification Helper, written in the voice of the frameworks from <em>$100M Offers</em> and <em>$100M Leads</em>. It is not affiliated with Acquisition.com or Alex Hormozi. It applies those published ideas to this business's real SKUs, channels, and gates &mdash; especially <a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a> (will they pay), <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> (organic cohort sales), <a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a> ($29 bundle), <a href="practice-exams-gap.html" style="color: var(--color-primary);">H27</a> (practice-exam gap), and <a href="../hypotheses/hyp-h16.html" style="color: var(--color-primary);">H16</a> (ads only after the offer converts).
+            </p>
+        </div>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; padding: 0; overflow: hidden;">
+            <img src="alex-hormozi-agent-hero.jpg" alt="A dark war room with a gold offer box under a spotlight, chalkboard, and stacked books" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📌 The One-Line Verdict</h2>
+            <div class="card" style="background: rgba(245,158,11,0.07); border-color: rgba(245,158,11,0.35);">
+                <p class="hz-quote">You do not have a leads problem. You have a catalog. Catalogs confuse. Offers convert.</p>
+                <p class="hz-attr">Agent read of this business · $100M Offers first, then $100M Leads</p>
+                <p style="color: var(--text-secondary); margin: 1.1rem 0 0; max-width: 78ch; line-height: 1.65;">
+                    The niche is sharp (Claude Certified Architect, not "AI courses"). The dream is real (badge, job signal, fear of being left behind &mdash; see <a href="pain-points.html" style="color: var(--color-primary);">Pain Points</a>). The product pieces exist: animated guides, Sunday live, Skool, a $29 tripwire, a $10/mo membership, a $250 / $500 cohort. What is missing is one named Grand Slam Offer a stranger can say yes to without a 20-minute explanation. Until that offer is so good people feel stupid saying no, more YouTube views are just a louder hallway. See <a href="focus.html" style="color: var(--color-primary);">Focus</a> and <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>.
+                </p>
+            </div>
+            <div class="metrics-grid" style="margin-top: 1.5rem;">
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.35rem; color: #fbbf24;">Offer first</div>
+                    <div class="metric-lbl">$100M Offers before more traffic</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.35rem;">Warm + content</div>
+                    <div class="metric-lbl">$100M Leads Core Four for Stage 2</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.35rem;">$0 ads</div>
+                    <div class="metric-lbl">Correct. Ads amplify a working offer.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📚 The Two Books, Mapped Onto This Business</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 78ch;">
+                Hormozi's sequence is not optional. <em>$100M Offers</em> is the product. <em>$100M Leads</em> is the megaphone. This site already agrees with the second half of that sequence on <a href="../growth/when-to-advertise.html" style="color: var(--color-primary);">When to Start Paid Ads</a>. The agent is here to force the first half.
+            </p>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #f59e0b;">
+                        <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;">$100M Offers</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.75rem;">How to make an offer so good people feel stupid saying no</p>
+                        <ul class="emoji-list">
+                            <li><span class="emoji">1</span><span style="color: var(--text-secondary);"><strong>Grand Slam Offer</strong> &mdash; one named package that cannot be compared to Udemy by price.</span></li>
+                            <li><span class="emoji">2</span><span style="color: var(--text-secondary);"><strong>Value Equation</strong> &mdash; raise dream and certainty; crush delay and effort.</span></li>
+                            <li><span class="emoji">3</span><span style="color: var(--text-secondary);"><strong>Stack</strong> &mdash; break the offer into priced bonuses, then give the stack.</span></li>
+                            <li><span class="emoji">4</span><span style="color: var(--text-secondary);"><strong>Guarantee the process</strong>, never a Pearson VUE pass. Site rule still holds.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid var(--color-info);">
+                        <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;">$100M Leads</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.75rem;">How to get strangers to want to buy your stuff</p>
+                        <ul class="emoji-list">
+                            <li><span class="emoji">1</span><span style="color: var(--text-secondary);"><strong>Core Four</strong> &mdash; warm outreach, posted content, cold outreach, paid ads.</span></li>
+                            <li><span class="emoji">2</span><span style="color: var(--text-secondary);"><strong>Lead magnet</strong> &mdash; a free thing so good it would sell, traded for contact.</span></li>
+                            <li><span class="emoji">3</span><span style="color: var(--text-secondary);"><strong>Rule of 100</strong> &mdash; 100 minutes or 100 actions a day on the working channels.</span></li>
+                            <li><span class="emoji">4</span><span style="color: var(--text-secondary);"><strong>More / Better / New</strong> &mdash; volume first, then quality, then a new channel.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧮 Value Equation · $100M Offers</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Value = (Dream Outcome &times; Perceived Likelihood of Achievement) &divide; (Time Delay &times; Effort &amp; Sacrifice). Raise the top. Crush the bottom. Perception is what the buyer feels, not what the founder intends. This is the same problem <a href="../bmc/value-proposition.html" style="color: var(--color-primary);">Value Proposition</a> names, scored the Hormozi way.
+            </p>
+
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div class="hz-eq">
+                    <div class="hz-frac">
+                        <div class="hz-num">
+                            <div class="hz-box up">
+                                <h4 style="color: var(--color-success);">Dream Outcome ↑</h4>
+                                <p>Pass Claude Architect. Keep the job. Wear the badge. Not "learn AI."</p>
+                            </div>
+                            <div class="hz-op">&times;</div>
+                            <div class="hz-box up">
+                                <h4 style="color: var(--color-success);">Likelihood ↑</h4>
+                                <p>Proof, process, mocks, live reps. This is the weak term today (see <a href="practice-exams-gap.html" style="color: var(--color-primary);">H27</a>).</p>
+                            </div>
+                        </div>
+                        <div class="hz-line"></div>
+                        <div class="hz-den">
+                            <div class="hz-box down">
+                                <h4 style="color: #fca5a5;">Time Delay ↓</h4>
+                                <p>Sunday-only plus weeks of self-study. The exam date is the real clock.</p>
+                            </div>
+                            <div class="hz-op">&times;</div>
+                            <div class="hz-box down">
+                                <h4 style="color: #fca5a5;">Effort &amp; Sacrifice ↓</h4>
+                                <p>They still hunt questions, set up tools, and book Pearson VUE alone.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hz-op">=</div>
+                    <div class="hz-value-pill">
+                        <div class="n" id="hz-live-value">0.70</div>
+                        <div class="l">Perceived value score<br>(today's preset)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
+                        <div class="spec-title">What is already strong</div>
+                        <div class="spec-desc">The dream is specific and expensive in the buyer's life. A named, proctored cert is not a hobby course. Niching to Claude Architect instead of "all AI certs" is the correct <em>$100M Offers</em> move. Do not expand to Nvidia / Microsoft / Google until one offer prints (<a href="../hypotheses/hyp-h14.html" style="color: var(--color-primary);">H14</a> waits).</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: #ef4444; height: 100%;">
+                        <div class="spec-title">What is killing the fraction</div>
+                        <div class="spec-desc">Likelihood is low because the practice-exam bank is still a gap (<a href="practice-exams-gap.html" style="color: var(--color-primary);">Practice Exam Gap</a>), the one public pass was meetup motivation not product use, and pass-the-exam language was correctly stripped without being replaced by a process guarantee. Delay and effort stay high because live is one Sunday slot on a second-job calendar.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎛️ Agent Desk · Score the Offer</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Move the sliders. The agent talks back in Hormozi cadence. Presets load this business today versus a Grand Slam target. Numbers are founder judgments, not measured conversion.
+            </p>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card">
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+                            <button type="button" class="btn btn-secondary" id="hz-preset-today">Load today</button>
+                            <button type="button" class="btn btn-secondary" id="hz-preset-slam">Load Grand Slam</button>
+                        </div>
+                        <div class="hz-slider-row">
+                            <label>Dream Outcome <strong id="v-dream">78</strong></label>
+                            <input type="range" id="s-dream" min="10" max="100" value="78">
+                        </div>
+                        <div class="hz-slider-row">
+                            <label>Perceived Likelihood <strong id="v-like">38</strong></label>
+                            <input type="range" id="s-like" min="10" max="100" value="38">
+                        </div>
+                        <div class="hz-slider-row">
+                            <label>Time Delay (higher = worse) <strong id="v-time">62</strong></label>
+                            <input type="range" id="s-time" min="10" max="100" value="62">
+                        </div>
+                        <div class="hz-slider-row">
+                            <label>Effort &amp; Sacrifice (higher = worse) <strong id="v-effort">68</strong></label>
+                            <input type="range" id="s-effort" min="10" max="100" value="68">
+                        </div>
+                        <div class="metrics-grid" style="margin-top: 0.5rem;">
+                            <div class="metric-card">
+                                <div class="metric-val" id="hz-score">0.70</div>
+                                <div class="metric-lbl">Value score</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-val" id="hz-band" style="font-size: 1.2rem;">Weak offer</div>
+                                <div class="metric-lbl">Agent band</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <p class="hz-attr" style="margin-bottom: 0.6rem;">Live feedback</p>
+                        <p class="hz-quote" id="hz-live-quote" style="font-size: 1.15rem;">The dream is expensive. Belief is cheap. Nobody pays $500 to hope.</p>
+                        <p id="hz-live-body" style="color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                            Raise likelihood before you raise traffic. Ship the mock. Name the process guarantee. Put a clock on the next 21 days, not "join whenever."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💬 Ask the Agent</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+                    Type a question about this business's offer or leads. Answers are a local rule engine in Hormozi voice, grounded in the pages on this site &mdash; not a live model and not Hormozi himself.
+                </p>
+                <div class="hz-chips">
+                    <button type="button" class="hz-chip" data-q="Is my offer a Grand Slam?">Is my offer a Grand Slam?</button>
+                    <button type="button" class="hz-chip" data-q="Should I raise the price?">Should I raise the price?</button>
+                    <button type="button" class="hz-chip" data-q="How do I get more leads?">How do I get more leads?</button>
+                    <button type="button" class="hz-chip" data-q="Should I run ads?">Should I run ads?</button>
+                    <button type="button" class="hz-chip" data-q="What about a guarantee?">What about a guarantee?</button>
+                    <button type="button" class="hz-chip" data-q="Is the $29 bundle the lead magnet?">Is the $29 bundle the lead magnet?</button>
+                </div>
+                <div class="hz-chat" id="hz-chat">
+                    <div class="hz-bubble agent">Alright. Show me the offer. Not the website. Not the 150 planning pages. The thing a stranger can buy this week that makes them feel stupid saying no. What have you got?</div>
+                </div>
+                <form class="hz-form" id="hz-form">
+                    <input type="text" id="hz-input" placeholder="Ask about the offer, price, leads, ads, Sunday cohort…" autocomplete="off">
+                    <button type="submit" class="btn">Ask</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📦 Offer Audit · What You Actually Sell</h2>
+            <div class="card animate-fade-in" style="margin-bottom: 1.5rem; padding: 0; overflow: hidden;">
+                <img src="alex-hormozi-offers.jpg" alt="A gold crate surrounded by stacked bonus parcels in a dark gym, the Grand Slam Offer metaphor" style="width: 100%; height: auto; display: block;">
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Hormozi's line: a single offer is worth less than the same offer broken into parts and stacked as bonuses. Right now the site lists SKUs. That is a menu. Grade each line the way he would.
+            </p>
+            <div class="card" style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.85rem 0.5rem;">SKU</th>
+                            <th style="padding: 0.85rem 0.5rem;">Price</th>
+                            <th style="padding: 0.85rem 0.5rem;">Hormozi read</th>
+                            <th style="padding: 0.85rem 0.5rem;">Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Sunday live + Skool replay</td>
+                            <td style="padding: 0.85rem 0.5rem;">Free discovery</td>
+                            <td style="padding: 0.85rem 0.5rem;">This is a $2,000/hour founder lead magnet disguised as a product. Fine for discovery. Fatal if it stays the main offer. See <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>.</td>
+                            <td style="padding: 0.85rem 0.5rem;"><span class="hz-grade c">C · discovery</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;"><a href="../product/exam-prep-product.html" style="color: var(--color-primary);">Exam Prep Bundle</a></td>
+                            <td style="padding: 0.85rem 0.5rem;">$29 one-time</td>
+                            <td style="padding: 0.85rem 0.5rem;">Correct tripwire price. Incomplete product until the question bank exists (<a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a>, <a href="practice-exams-gap.html" style="color: var(--color-primary);">H27</a>). Do not advertise a mock you cannot sit.</td>
+                            <td style="padding: 0.85rem 0.5rem;"><span class="hz-grade c">C · unfinished</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Membership</td>
+                            <td style="padding: 0.85rem 0.5rem;">$10 / month</td>
+                            <td style="padding: 0.85rem 0.5rem;">Continuity is good. $10 is a rounding error on a career exam. It will not fund the business and it trains the market to expect cheap. Use it as the vault, not the hero offer.</td>
+                            <td style="padding: 0.85rem 0.5rem;"><span class="hz-grade b">B · vault</span></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.85rem 0.5rem;">Live cohort join</td>
+                            <td style="padding: 0.85rem 0.5rem;">$250 / 3 mo · $500 / year</td>
+                            <td style="padding: 0.85rem 0.5rem;">This should be the Grand Slam and it is not named like one. Price is below the pain. Raise the stack, then the price. Do not compete with Udemy. See <a href="../growth/unit-economics.html" style="color: var(--color-primary);">Unit Economics</a>.</td>
+                            <td style="padding: 0.85rem 0.5rem;"><span class="hz-grade c">C · underbuilt</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧱 The Stack You Should Be Selling</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                One named offer. Everything else is a bonus on the receipt, not a separate aisle. Working name for the agent: <strong>Architect Exam Sprint</strong> &mdash; 21 days, live Sunday plus weekday async, mock before they book Pearson VUE.
+            </p>
+            <div class="hz-stack">
+                <div class="hz-stack-item">
+                    <div class="tag">Core</div>
+                    <div>
+                        <strong>Live Architect Exam Sprint</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Sunday screen-share labs + weekday prep list. This is the thing they buy.</div>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem;">$497–$997 when the stack is real</div>
+                </div>
+                <div class="hz-stack-item">
+                    <div class="tag">Bonus 1</div>
+                    <div>
+                        <strong>Blueprint-mapped mock + prep exam</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">The emotional close. Charles's pattern: mock pass → calm. Until H27 ships, do not pretend this is done.</div>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem;">Would-be $149</div>
+                </div>
+                <div class="hz-stack-item">
+                    <div class="tag">Bonus 2</div>
+                    <div>
+                        <strong>Animated blueprint vault</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">The YouTube catalog, sequenced, not a dump. Already your differentiator (<a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a>).</div>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem;">Would-be $99</div>
+                </div>
+                <div class="hz-stack-item">
+                    <div class="tag">Bonus 3</div>
+                    <div>
+                        <strong>Memory cards + install list</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Cuts setup sacrifice. You already run this on WhatsApp (<a href="../growth/cohort-prep.html" style="color: var(--color-primary);">Cohort Prep</a>).</div>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem;">Would-be $49</div>
+                </div>
+                <div class="hz-stack-item">
+                    <div class="tag">Bonus 4</div>
+                    <div>
+                        <strong>Skool classroom replay + peer board</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Delivery layer, not the acquisition layer. See <a href="../product/youtube-skool-handoff.html" style="color: var(--color-primary);">YouTube → Skool Handoff</a>.</div>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem;">Would-be $10/mo</div>
+                </div>
+                <div class="hz-stack-item">
+                    <div class="tag">Risk reverse</div>
+                    <div>
+                        <strong>Process guarantee, not a pass guarantee</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">If they attend, sit the mock, and still feel unready, they get another sprint or their money back. Anthropic still issues the cert. Never promise the badge.</div>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem;">Raises likelihood</div>
+                </div>
+            </div>
+            <div class="spec-box" style="border-left-color: var(--color-warning); margin-top: 1.25rem;">
+                <div class="spec-title">Receipt math the buyer should see</div>
+                <div class="spec-desc">Sprint $997 + mock $149 + vault $99 + cards $49 + community $120/year &asymp; <strong>$1,414 of named value</strong> against a $497–$997 cash price. That is a Grand Slam shape. Today's $250 / $500 with an unfinished mock is a discount on an incomplete stack. Price last. Stack first.</div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📣 Core Four · $100M Leads</h2>
+            <div class="card" style="margin-bottom: 1.5rem; padding: 0; overflow: hidden;">
+                <img src="alex-hormozi-leads.jpg" alt="Four glowing paths — handshake, stage, phone hallway, billboard tunnel — converging on one door" style="width: 100%; height: auto; display: block;">
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                All advertising is two axes: warm vs cold audience, one-to-one vs one-to-many. That gives four plays. This business is allowed two of them until <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a> clears.
+            </p>
+
+            <div class="card" style="margin-bottom: 1.5rem; overflow-x: auto;">
+                <svg class="svg-diagram" viewBox="0 0 860 360" style="max-width: 100%; width: 100%; height: auto;" role="img" aria-label="Core Four grid: warm outreach, posted content, cold outreach, paid ads">
+                    <text x="430" y="28" text-anchor="middle" fill="var(--text-muted)" font-size="12" font-family="Inter, sans-serif">Audience →</text>
+                    <text x="28" y="190" text-anchor="middle" fill="var(--text-muted)" font-size="12" font-family="Inter, sans-serif" transform="rotate(-90 28 190)">Reach →</text>
+                    <text x="250" y="52" text-anchor="middle" fill="#a7f3d0" font-size="13" font-weight="700" font-family="Inter, sans-serif">WARM (knows you)</text>
+                    <text x="610" y="52" text-anchor="middle" fill="#fde68a" font-size="13" font-weight="700" font-family="Inter, sans-serif">COLD (strangers)</text>
+
+                    <rect x="80" y="68" width="340" height="120" rx="14" fill="rgba(16,185,129,0.10)" stroke="#10b981" stroke-width="1.6"/>
+                    <text x="250" y="98" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700" font-family="Outfit, sans-serif">1. Warm outreach</text>
+                    <text x="250" y="122" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-family="Inter, sans-serif">1-to-1 · LinkedIn, WhatsApp, watering holes</text>
+                    <text x="250" y="144" text-anchor="middle" fill="var(--text-muted)" font-size="12" font-family="Inter, sans-serif">DO THIS WEEK · underused</text>
+                    <text x="250" y="166" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="Inter, sans-serif">Ask who they know. Do not only post.</text>
+
+                    <rect x="440" y="68" width="340" height="120" rx="14" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="1.6"/>
+                    <text x="610" y="98" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="700" font-family="Outfit, sans-serif">2. Cold outreach</text>
+                    <text x="610" y="122" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-family="Inter, sans-serif">1-to-1 · strangers, DMs, lists</text>
+                    <text x="610" y="144" text-anchor="middle" fill="var(--text-muted)" font-size="12" font-family="Inter, sans-serif">Optional · after warm list is worked</text>
+                    <text x="610" y="166" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-family="Inter, sans-serif">Not the Stage 2 bottleneck</text>
+
+                    <rect x="80" y="204" width="340" height="120" rx="14" fill="rgba(6,182,212,0.10)" stroke="#06b6d4" stroke-width="1.6"/>
+                    <text x="250" y="234" text-anchor="middle" fill="#67e8f9" font-size="14" font-weight="700" font-family="Outfit, sans-serif">3. Posted content</text>
+                    <text x="250" y="258" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-family="Inter, sans-serif">1-to-many · YouTube + LinkedIn</text>
+                    <text x="250" y="280" text-anchor="middle" fill="var(--text-muted)" font-size="12" font-family="Inter, sans-serif">THE BET · already chosen</text>
+                    <text x="250" y="302" text-anchor="middle" fill="#67e8f9" font-size="11" font-family="Inter, sans-serif">Needs a CTA into one offer</text>
+
+                    <rect x="440" y="204" width="340" height="120" rx="14" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.6"/>
+                    <text x="610" y="234" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="700" font-family="Outfit, sans-serif">4. Paid ads</text>
+                    <text x="610" y="258" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-family="Inter, sans-serif">1-to-many · rented attention</text>
+                    <text x="610" y="280" text-anchor="middle" fill="var(--text-muted)" font-size="12" font-family="Inter, sans-serif">LOCKED · H16 / H9</text>
+                    <text x="610" y="302" text-anchor="middle" fill="#fca5a5" font-size="11" font-family="Inter, sans-serif">Amplifies. Does not invent demand.</text>
+                </svg>
+            </div>
+
+            <div class="hz-core">
+                <div class="hz-cell warm">
+                    <div class="hz-meta">Warm · 1-to-1</div>
+                    <h3>Work the list you already have</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0;">Marianna, Sude, Bayo, Charles, Baris, the WhatsApp room, LinkedIn colleagues. Hormozi starts here because trust is prepaid. Ask: "Who else is sitting the Architect exam this quarter?" That is <a href="../cd/cd-watering-holes.html" style="color: var(--color-primary);">Watering Holes</a>, not a content calendar.</p>
+                </div>
+                <div class="hz-cell content">
+                    <div class="hz-meta">Warm/public · 1-to-many</div>
+                    <h3>Post, then point at one door</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0;">YouTube and LinkedIn are the right public play. The miss is the handoff. Every video needs one CTA to one offer, not a sitemap. Titles already map on <a href="../growth/youtube-titles-skool-mapping.html" style="color: var(--color-primary);">Titles → Skool</a>. Use them.</p>
+                </div>
+                <div class="hz-cell cold">
+                    <div class="hz-meta">Cold · 1-to-1</div>
+                    <h3>After the warm list is empty</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0;">Cold DMs to strangers are optional volume. A second-job founder should not open this channel until warm outreach and weekly content are at the Rule of 100. Bandwidth is the constraint &mdash; see <a href="single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Bandwidth</a>.</p>
+                </div>
+                <div class="hz-cell ads">
+                    <div class="hz-meta">Cold · 1-to-many</div>
+                    <h3>Do not buy strangers yet</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0;">Hormozi and this site agree. Ads are a multiplier on a converting offer. <a href="../growth/when-to-advertise.html" style="color: var(--color-primary);">When to Start Paid Ads</a> is the lock. If organic viewers will not buy, paid strangers will not buy either.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧲 Lead Magnet vs. Free Cohort</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.6rem;">What Hormozi means by lead magnet</h3>
+                        <p style="color: var(--text-secondary);">A free thing so useful it could sell, given in exchange for a way to follow up. Not a 2-hour live workshop that consumes the founder's only Sunday night. Not a planning site. A cheatsheet, a 20-question diagnostic, or a 12-minute "book your exam in 21 days" briefing that ends on an email capture.</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.6rem;">What you are doing instead</h3>
+                        <p style="color: var(--text-secondary);">The Sunday session is discovery gold and delivery-expensive. Keep it for people who already raised their hand. Put a smaller magnet in front of YouTube and LinkedIn so H3's newsletter actually gets a denominator. The $29 bundle is a tripwire, not a magnet &mdash; magnets are free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💯 Rule of 100 · Second-Job Version</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Hormozi's volume rule: 100 minutes of outreach, or 100 minutes of content, or 100 paid-ad dollars &mdash; every day. You do not have that day. Translate it to a weekly 100 the founder can actually keep.
+                </p>
+                <div class="grid">
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val" style="font-size: 1.3rem;">30</div>
+                            <div class="metric-lbl">Warm reach-outs / week (who else is testing?)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val" style="font-size: 1.3rem;">3</div>
+                            <div class="metric-lbl">Animated videos / week (already the H4 baseline)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card">
+                            <div class="metric-val" style="font-size: 1.3rem;">70</div>
+                            <div class="metric-lbl">Minutes of named-offer CTAs on those posts</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin: 1rem 0 0;">
+                    More, then better, then new. Do not open a fifth channel. Do not write another planning page. The scoreboard is paid seats toward <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>, not site page count.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗓️ Do This Week</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">1</span><span style="color: var(--text-secondary);"><strong>Name the offer.</strong> One sentence: "21-day Architect Exam Sprint. Live Sundays. Mock before you book. $X." Put that sentence on YouTube, LinkedIn, and Skool. Not four SKUs.</span></li>
+                    <li><span class="emoji">2</span><span style="color: var(--text-secondary);"><strong>Ship likelihood.</strong> Publish the next slice of the practice bank (<a href="practice-exams-gap.html" style="color: var(--color-primary);">H27</a>). A Grand Slam with no mock is a story.</span></li>
+                    <li><span class="emoji">3</span><span style="color: var(--text-secondary);"><strong>Write the process guarantee.</strong> Attendance + mock + extra sprint or money back. Still no pass promise.</span></li>
+                    <li><span class="emoji">4</span><span style="color: var(--text-secondary);"><strong>Work the warm list.</strong> Thirty personal asks. Founding seats first (<a href="../product/skool-founding-members.html" style="color: var(--color-primary);">Marianna, Sude, Bayo</a>).</span></li>
+                    <li><span class="emoji">5</span><span style="color: var(--text-secondary);"><strong>Point every video at one door.</strong> Use <a href="../growth/marketing-tactics.html" style="color: var(--color-primary);">Marketing Tactics</a> headlines, land them on the sprint, not the hub.</span></li>
+                    <li><span class="emoji">6</span><span style="color: var(--text-secondary);"><strong>Leave ads off.</strong> The agent and <a href="../growth/when-to-advertise.html" style="color: var(--color-primary);">When to Advertise</a> say the same thing.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Related Pages</h2>
+            <div class="grid">
+                <div class="col-3"><a href="../bmc/value-proposition.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Value Proposition</a></div>
+                <div class="col-3"><a href="../product/exam-prep-product.html" class="btn btn-secondary" style="width:100%; justify-content:center;">$29 Bundle</a></div>
+                <div class="col-3"><a href="practice-exams-gap.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Practice Exam Gap</a></div>
+                <div class="col-3"><a href="../growth/when-to-advertise.html" class="btn btn-secondary" style="width:100%; justify-content:center;">When to Advertise</a></div>
+                <div class="col-3"><a href="../growth/organic-growth.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Organic Growth</a></div>
+                <div class="col-3"><a href="../growth/marketing-tactics.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Marketing Tactics</a></div>
+                <div class="col-3"><a href="../growth/unit-economics.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Unit Economics</a></div>
+                <div class="col-3"><a href="focus.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Focus</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: New page &mdash; Hormozi-style offer + leads agent applying $100M Offers and $100M Leads to this business (<a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>, <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a>) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/strategy/alex-hormozi-agent.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var dream = document.getElementById('s-dream');
+            var like = document.getElementById('s-like');
+            var time = document.getElementById('s-time');
+            var effort = document.getElementById('s-effort');
+            var inputs = [dream, like, time, effort];
+
+            function valueOf() {
+                var d = +dream.value, l = +like.value, t = +time.value, e = +effort.value;
+                return (d * l) / (t * e);
+            }
+
+            function band(v) {
+                if (v >= 3) return { label: 'Grand Slam shape', quote: 'Now it is so good they feel stupid saying no. Charge more. Then get more of the same people.', body: 'Only now do you earn the right to talk about leads volume. Keep ads off until two paid launches print.' };
+                if (v >= 1.5) return { label: 'Sellable', quote: 'This can sell to people who already trust you. Strangers will still hesitate.', body: 'You raised belief or cut friction. Finish the mock and the process guarantee before you chase cold traffic.' };
+                if (v >= 0.8) return { label: 'Soft offer', quote: 'Friends will come. Buyers will stall. That is an offer problem, not a marketing problem.', body: 'Likelihood or effort is still the leak. A longer YouTube video will not fix a weak fraction.' };
+                return { label: 'Weak offer', quote: 'The dream is expensive. Belief is cheap. Nobody pays $500 to hope.', body: 'Raise likelihood before you raise traffic. Ship the mock. Name the process guarantee. Put a clock on the next 21 days, not "join whenever."' };
+            }
+
+            function render() {
+                document.getElementById('v-dream').textContent = dream.value;
+                document.getElementById('v-like').textContent = like.value;
+                document.getElementById('v-time').textContent = time.value;
+                document.getElementById('v-effort').textContent = effort.value;
+                var v = valueOf();
+                var shown = v.toFixed(2);
+                document.getElementById('hz-score').textContent = shown;
+                document.getElementById('hz-live-value').textContent = shown;
+                var b = band(v);
+                document.getElementById('hz-band').textContent = b.label;
+                document.getElementById('hz-live-quote').textContent = b.quote;
+                document.getElementById('hz-live-body').textContent = b.body;
+            }
+
+            inputs.forEach(function (el) { el.addEventListener('input', render); });
+
+            document.getElementById('hz-preset-today').addEventListener('click', function () {
+                dream.value = 78; like.value = 38; time.value = 62; effort.value = 68; render();
+            });
+            document.getElementById('hz-preset-slam').addEventListener('click', function () {
+                dream.value = 90; like.value = 82; time.value = 28; effort.value = 25; render();
+            });
+
+            var replies = [
+                { keys: ['grand', 'slam', 'offer good', 'is my offer'], text: 'No. You have a menu: free Sunday, $29, $10/mo, $250, $500. A Grand Slam is one named package with a stack, a clock, and a process guarantee. Pick the Architect Exam Sprint. Make everything else a bonus on the receipt. Then ask a stranger to repeat the offer back. If they cannot, it is not an offer yet.' },
+                { keys: ['price', 'raise', 'charge', '500', '250', 'expensive'], text: 'You are underpriced for a career exam and over-explained for a $250 ticket. Do not raise the number on an unfinished mock. Finish the stack so the price looks obvious. Hormozi charges premium because the value equation is loud. Your $10 membership is a vault. Your hero price should look like a promotion, not a raise, once the bonuses are named.' },
+                { keys: ['lead', 'leads', 'more people', 'audience', 'subscribers'], text: 'Leads are not the bottleneck. Conversion of people who already know you is. Work the warm list: thirty asks this week. Point every YouTube video at one door. Then, and only then, make more content. More strangers into a fuzzy offer is a more expensive hallway.' },
+                { keys: ['ad', 'ads', 'paid', 'facebook', 'advertise'], text: 'Do not run ads. $100M Leads puts paid last because it multiplies whatever you already have. You have an unproven paid conversion and an open $10k gate. When to Advertise on this site already said it. I am not nicer than that page.' },
+                { keys: ['guarantee', 'refund', 'pass', 'promise'], text: 'Never guarantee the Pearson VUE result. Anthropic issues the cert. Guarantee the process: show up, sit the mock, if you are still unready you get another sprint or your money back. That raises perceived likelihood without lying. The site stripped pass language for a reason. Keep it stripped.' },
+                { keys: ['29', 'bundle', 'tripwire', 'magnet'], text: 'The $29 bundle is a tripwire, not a lead magnet. Magnets are free and collect a follow-up path. Tripwires take money from people already leaning in. Do not sell a mock that is not sit-able. H27 is the leak in the value equation. Ship questions before you polish the sales page.' },
+                { keys: ['sunday', 'cohort', 'skool', 'workshop'], text: 'Sunday is your gym floor. It is also the most expensive hour you have. Use it for people who already raised a hand, not as the top-of-funnel. Put a 12-minute diagnostic or cheatsheet in front of YouTube so the live room stays hot. Skool delivers. It does not acquire.' },
+                { keys: ['youtube', 'content', 'video', 'linkedin'], text: 'Posted content is the right 1-to-many play. The miss is the CTA. Every video should end on the named sprint, not "check the site." Three videos a week plus a warm-outreach block is your Rule of 100. Do not start a newsletter-of-the-week until the offer sentence is tattooed on the end screen.' },
+                { keys: ['niche', 'nvidia', 'microsoft', 'google', 'expand'], text: 'Stay on Claude Architect. Niching is how you get a Grand Slam. Multi-cert expansion is Stage 3 theater until two paid launches combine to $10k. Breadth is how Udemy competes. You cannot out-catalog them. You can out-offer them in one exam.' },
+                { keys: ['what should i do', 'this week', 'next', 'focus'], text: 'Name the sprint. Ship the next mock questions. Write the process guarantee. Ask thirty people who already know you. Point every post at one door. Leave ads off. That is the whole week. Planning pages do not move H3 or H9.' }
+            ];
+
+            function answer(q) {
+                var s = q.toLowerCase();
+                for (var i = 0; i < replies.length; i++) {
+                    for (var k = 0; k < replies[i].keys.length; k++) {
+                        if (s.indexOf(replies[i].keys[k]) !== -1) return replies[i].text;
+                    }
+                }
+                return 'Say it simpler. Is this about the offer, the price, the leads, the ads, or the guarantee? I only coach those. If you are asking how to look busy, go publish the mock and ask thirty people. That is the work.';
+            }
+
+            var chat = document.getElementById('hz-chat');
+            function push(role, text) {
+                var d = document.createElement('div');
+                d.className = 'hz-bubble ' + role;
+                d.textContent = text;
+                chat.appendChild(d);
+                chat.scrollTop = chat.scrollHeight;
+            }
+
+            function ask(q) {
+                q = (q || '').trim();
+                if (!q) return;
+                push('user', q);
+                push('agent', answer(q));
+            }
+
+            document.getElementById('hz-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                var input = document.getElementById('hz-input');
+                ask(input.value);
+                input.value = '';
+            });
+            document.querySelectorAll('.hz-chip').forEach(function (btn) {
+                btn.addEventListener('click', function () { ask(btn.getAttribute('data-q')); });
+            });
+
+            render();
+        })();
+    </script>
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

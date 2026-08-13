@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal versus Noise | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .sn-bar-wrap { display: flex; height: 8px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.06); min-width: 88px; }
+        .sn-bar-s { background: var(--color-success); height: 100%; }
+        .sn-bar-n { background: var(--color-warning); height: 100%; opacity: 0.85; }
+        .sn-quad { position: relative; height: 420px; border: 1px solid var(--border-color); border-radius: 12px; background:
+            linear-gradient(to right, rgba(16,185,129,0.07) 0 50%, rgba(245,158,11,0.06) 50% 100%),
+            linear-gradient(to top, rgba(239,68,68,0.07) 0 50%, rgba(16,185,129,0.05) 50% 100%);
+            overflow: hidden;
+        }
+        .sn-quad-label { position: absolute; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); opacity: 0.75; font-weight: 600; }
+        .sn-dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, 50%); cursor: pointer; border: 1px solid rgba(255,255,255,0.35); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+        .sn-dot:hover, .sn-dot.is-active { transform: translate(-50%, 50%) scale(1.7); z-index: 3; box-shadow: 0 0 0 4px rgba(99,102,241,0.35); }
+        .sn-dot.q-read { background: var(--color-success); }
+        .sn-dot.q-extract { background: var(--color-info); }
+        .sn-dot.q-reference { background: var(--color-primary); }
+        .sn-dot.q-defer { background: var(--color-warning); }
+        .sn-axis-x, .sn-axis-y { position: absolute; color: var(--text-secondary); font-size: 0.75rem; }
+        .sn-table-wrap { overflow-x: auto; }
+        .sn-table th { cursor: pointer; user-select: none; white-space: nowrap; }
+        .sn-table th:hover { color: var(--color-primary); }
+        .sn-pill { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 0.18rem 0.5rem; border-radius: 999px; border: 1px solid var(--border-color); letter-spacing: 0.02em; }
+        .sn-pill.read { color: #a7f3d0; background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); }
+        .sn-pill.extract { color: #cffafe; background: rgba(6,182,212,0.15); border-color: rgba(6,182,212,0.3); }
+        .sn-pill.reference { color: #c7d2fe; background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.3); }
+        .sn-pill.defer { color: #fde68a; background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3); }
+        .sn-controls select, .sn-controls input, .sn-controls button {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary);
+            padding: 0.55rem 0.85rem; border-radius: 8px; font-family: var(--font-body); outline: none;
+        }
+        .sn-controls button.is-on { border-color: var(--color-primary); color: var(--color-primary); }
+        #sn-detail { min-height: 4.5rem; }
+        .light-theme .sn-quad { background:
+            linear-gradient(to right, rgba(16,185,129,0.08) 0 50%, rgba(245,158,11,0.08) 50% 100%),
+            linear-gradient(to top, rgba(239,68,68,0.07) 0 50%, rgba(16,185,129,0.06) 50% 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../hypotheses/hypothesis.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hypothesis Tracker
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid var(--color-info);">
+            <span class="badge" style="background-color: rgba(6, 182, 212, 0.15); color: #cffafe; border-color: rgba(6, 182, 212, 0.3);">Strategy &middot; Attention Filter</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📡 Signal versus Noise</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 82ch; line-height: 1.65;">
+                Every page and current report on this site, scored and sorted by how much it would change a founder decision this week versus how much attention it burns without changing one. The filter is <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>: until two consecutive paid cohorts combine to $10,000, field evidence and current-stage gates are signal; Stage 3/4 theater, unverified TAM, and duplicate restatements are noise. See <a href="evidence-map.html" style="color: var(--color-primary);">Evidence Map</a> for what actually backs each hypothesis, and <a href="single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Bandwidth</a> for why this ranking exists.
+            </p>
+        </div>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; padding: 0; overflow: hidden;">
+            <img src="signal-versus-noise-hero.jpg" alt="A single cyan waveform cutting through a wall of noisy CRT screens in a dark control room" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧮 Scoring Rubric</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-left: 4px solid var(--color-success);">
+                        <h3 class="card-title" style="font-size: 1.15rem;">Signal (0–100)</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">Would this change what Rifat does this week toward interviews, paid conversion, or the $10k gate?</p>
+                        <ul class="emoji-list">
+                            <li><span class="emoji">90+</span><span style="color: var(--text-secondary);">First-party field evidence (interviews, Studio numbers, exam scores, live signups).</span></li>
+                            <li><span class="emoji">70–89</span><span style="color: var(--text-secondary);">Current-stage operating decision or evidence tracker (gates, unit economics, hypothesis status).</span></li>
+                            <li><span class="emoji">45–69</span><span style="color: var(--text-secondary);">Working model for Discovery/Validation — useful, not yet proof.</span></li>
+                            <li><span class="emoji">0–44</span><span style="color: var(--text-secondary);">Future-stage plan, duplicate restatement, prospect/investor theater, or nav-only.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-left: 4px solid var(--color-warning);">
+                        <h3 class="card-title" style="font-size: 1.15rem;">Noise (0–100)</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">How much attention does this burn without changing a decision?</p>
+                        <ul class="emoji-list">
+                            <li><span class="emoji">+35</span><span style="color: var(--text-secondary);">Future-stage work (Creation, Building, hiring, 1,000x growth, paid ads) presented as current.</span></li>
+                            <li><span class="emoji">+25</span><span style="color: var(--text-secondary);">Duplicate BMC/funnel restatement, or unverified TAM treated as settled (see <a href="../hypotheses/hyp-h6.html" style="color: var(--color-primary);">H6</a>).</span></li>
+                            <li><span class="emoji">+20</span><span style="color: var(--text-secondary);">Investor/prospect theater with no new evidence.</span></li>
+                            <li><span class="emoji">+15</span><span style="color: var(--text-secondary);">Framework overlay (4DX, MAOT, Marxian surplus) that does not change this week's work.</span></li>
+                            <li><span class="emoji">+10</span><span style="color: var(--text-secondary);">Meta navigation (sitemap, glossary, latest-pages).</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">
+                <strong>Net</strong> = Signal − Noise. <strong>Ratio</strong> = Signal ÷ max(Noise, 1). Quadrants: <span class="sn-pill read">Read first</span> Signal ≥ 70 and Noise ≤ 35 &nbsp; <span class="sn-pill extract">Extract</span> Signal ≥ 70 and Noise &gt; 35 &nbsp; <span class="sn-pill reference">Reference</span> everything in between &nbsp; <span class="sn-pill defer">Defer</span> Signal &lt; 50 and Noise ≥ 50. Scores are founder-attention judgments, not page quality grades — a well-written Stage 4 page is still noise <em>this week</em>.
+            </p>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Catalog Snapshot</h2>
+            <div class="metrics-grid" id="sn-metrics"></div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗺️ Quadrant Map</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">X = noise (left clean, right loud). Y = signal (bottom weak, top strong). Hover a dot, or click it to jump the table.</p>
+                <div class="sn-quad" id="sn-quad">
+                    <span class="sn-quad-label" style="top: 10px; left: 12px;">Read first</span>
+                    <span class="sn-quad-label" style="top: 10px; right: 12px;">Extract the evidence</span>
+                    <span class="sn-quad-label" style="bottom: 28px; left: 12px;">Reference when needed</span>
+                    <span class="sn-quad-label" style="bottom: 28px; right: 12px;">Defer</span>
+                    <span class="sn-axis-x" style="bottom: 6px; left: 50%; transform: translateX(-50%);">Noise →</span>
+                    <span class="sn-axis-y" style="top: 50%; left: 8px; transform: rotate(-90deg); transform-origin: left center;">← Signal</span>
+                </div>
+                <p id="sn-detail" style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.92rem;">Hover a point to read why it scored that way.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🥇 Ranked Lists</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Highest net signal</h3>
+                        <ol id="sn-top-signal" style="color: var(--text-secondary); padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.92rem;"></ol>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Highest noise (defer first)</h3>
+                        <ol id="sn-top-noise" style="color: var(--text-secondary); padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.92rem;"></ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Full Catalog, Sorted</h2>
+            <div class="card">
+                <div class="sn-controls" style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem;">
+                    <input type="search" id="sn-search" placeholder="Search title, category, or why…" style="flex: 1 1 240px; min-width: 200px;">
+                    <select id="sn-quad-filter">
+                        <option value="all">All quadrants</option>
+                        <option value="read">Read first</option>
+                        <option value="extract">Extract</option>
+                        <option value="reference">Reference</option>
+                        <option value="defer">Defer</option>
+                    </select>
+                    <select id="sn-cat-filter">
+                        <option value="all">All categories</option>
+                    </select>
+                    <select id="sn-sort">
+                        <option value="net-desc">Net (high → low)</option>
+                        <option value="signal-desc">Signal (high → low)</option>
+                        <option value="noise-desc">Noise (high → low)</option>
+                        <option value="ratio-desc">Ratio (high → low)</option>
+                        <option value="name-asc">Name (A → Z)</option>
+                    </select>
+                </div>
+                <p id="sn-count" style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem;"></p>
+                <div class="sn-table-wrap">
+                    <table class="sn-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="name">Page</th>
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="cat">Category</th>
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="signal">Signal</th>
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="noise">Noise</th>
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="net">Net</th>
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="ratio">Ratio</th>
+                                <th style="padding: 0.75rem 0.5rem;">Mix</th>
+                                <th style="padding: 0.75rem 0.5rem;" data-sort="quad">Quadrant</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sn-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗓️ What This Means This Week</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    A second-job founder with weekly comment cycles cannot productively consume 150+ planning pages. The ranking is an attention budget, not a deletion list. See <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>, <a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>, <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, and <a href="focus.html" style="color: var(--color-primary);">Focus</a>.
+                </p>
+                <ul class="emoji-list">
+                    <li><span class="emoji">1️⃣</span><span style="color: var(--text-secondary);"><strong>Read the high-net set first:</strong> interview transcripts, exam-performance evidence, content analysis, evidence map, hypothesis tracker, bandwidth ledger, quality / repeat gates.</span></li>
+                    <li><span class="emoji">2️⃣</span><span style="color: var(--text-secondary);"><strong>Do the work those pages name:</strong> Sunday cohort, discovery interviews, Skool Classroom replay, animated-guide publishing, paid-seat ask. Planning pages do not move <a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>.</span></li>
+                    <li><span class="emoji">3️⃣</span><span style="color: var(--text-secondary);"><strong>Defer Stage 3/4, TAM theater, and swipe files</strong> until two consecutive paid launches combine to $10k. Those pages stay on the site as future-stage memory — they are not this week's work.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 See Also</h2>
+            <p style="color: var(--text-secondary);">
+                <a href="evidence-map.html" style="color: var(--color-primary);">Evidence Map</a> matches each hypothesis to what backs it &middot;
+                <a href="../dashboard/confidence-report.html" style="color: var(--color-primary);">Confidence Report</a> scores validation, not attention &middot;
+                <a href="../dashboard/sitemap.html" style="color: var(--color-primary);">Site Map</a> lists every page without ranking it &middot;
+                <a href="focus.html" style="color: var(--color-primary);">Focus</a> states the one problem in scope &middot;
+                <a href="single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Bandwidth</a> is the time constraint this ranking respects.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added <a href="../product/skool-founding-members.html" style="color: var(--color-primary);">Skool Steps &amp; Founding Members</a> to the ranking (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/strategy/signal-versus-noise.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        (function () {
+            var ITEMS = [
+                { name: "Archived Interview Transcripts", url: "../cd/archived-interview-transcripts.html", cat: "Discovery", signal: 96, noise: 8, why: "Raw customer words (Sude, Charles, Tuncer, Brian). Highest-leverage field evidence on the site." },
+                { name: "Candidate Exam Performance Evidence", url: "../product/exam-performance-evidence.html", cat: "Strategy", signal: 92, noise: 12, why: "Real 917/1000 pass, carefully scoped as motivation-channel evidence, not product evidence." },
+                { name: "Exam Prep & Student Behavior v1.4", url: "../../markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.4.0.md", cat: "Docs", signal: 90, noise: 12, why: "Synthesizes the interview batch into buyer behavior. Current research, not theater." },
+                { name: "Content Analysis", url: "../growth/content-analysis.html", cat: "Growth", signal: 90, noise: 14, why: "Only published retention number (68.5%, n=1). Honest about sample size." },
+                { name: "Hypothesis Tracker (full doc)", url: "../../markdown_renderer.html?src=HYPOTHESIS.md", cat: "Docs", signal: 88, noise: 15, why: "Premise → conclusion → status for every claim. The source of truth." },
+                { name: "Evidence Map", url: "evidence-map.html", cat: "Strategy", signal: 88, noise: 18, why: "Shows what is backed vs empty. Decision filter for which bets are live." },
+                { name: "Core Business Hypotheses", url: "../hypotheses/hypothesis.html", cat: "Strategy", signal: 86, noise: 16, why: "Dashboard of every live bet. Status, not prose." },
+                { name: "Single-Founder Bandwidth", url: "single-founder-bandwidth.html", cat: "Strategy", signal: 86, noise: 14, why: "The real constraint. Time ledger that makes Stage 3/4 pages noise this week." },
+                { name: "Validation Repeat Gate", url: "../growth/validation-repeat-gate.html", cat: "Growth", signal: 85, noise: 16, why: "Two consecutive paid launches, not one warm-network spike. The H9 mechanic." },
+                { name: "Quality Gates", url: "../growth/quality-gates.html", cat: "Growth", signal: 84, noise: 18, why: "Numeric stage exits. Tells you what not to work on yet." },
+                { name: "Interview Recording & Tracker", url: "../cd/cd-interview-recording.html", cat: "Discovery", signal: 84, noise: 16, why: "Working log for the interviews that actually move H1/H3/H5/H8." },
+                { name: "Acidity Check Report v1.3", url: "../../markdown_renderer.html?src=reports/acidity-check-report-v1.3.0.md", cat: "Docs", signal: 84, noise: 16, why: "Independent critique of overclaim. Still the best 'what is fake' document." },
+                { name: "YouTube Channel Metrics", url: "../growth/youtube-channel-metrics.html", cat: "Growth", signal: 83, noise: 20, why: "Studio numbers plus H28 targets. Signal is the measured row, not the benchmark." },
+                { name: "2-Hour Workshop Upload", url: "../product/skool-workshop-upload.html", cat: "Business Model", signal: 82, noise: 14, why: "Closed operational decision: Classroom replay, not YouTube, not H10." },
+                { name: "Workshop Upload Sanity Check", url: "../../markdown_renderer.html?src=reports/skool-workshop-upload-sanity-check-v1.0.md", cat: "Docs", signal: 82, noise: 14, why: "The written verdict behind the upload rule." },
+                { name: "Exam Topic Blueprint", url: "../../exam-topics.html", cat: "Strategy", signal: 80, noise: 16, why: "Official topic list. Curriculum sequencing depends on this, not on TAM." },
+                { name: "YouTube → Skool Handoff", url: "../product/youtube-skool-handoff.html", cat: "Business Model", signal: 80, noise: 18, why: "Fixed channel order. Stops the 'post on Skool to acquire' mistake." },
+                { name: "Watering Holes & Outreach", url: "../cd/cd-watering-holes.html", cat: "Discovery", signal: 80, noise: 18, why: "Where interviews actually happen (Triton Square, Venture Coffee, Sunday cohort)." },
+                { name: "Unit Economics", url: "../growth/unit-economics.html", cat: "Growth", signal: 80, noise: 22, why: "Per-seat math vs founder day-rate. Assumptions are marked; the arithmetic is the signal." },
+                { name: "Skool Steps & Founding Members", url: "../product/skool-founding-members.html", cat: "Business Model", signal: 80, noise: 14, why: "This week's action: invite Marianna, Sude, Bayo. Named seats, not paid enrollments." },
+                { name: "Skool Posting Sanity Check", url: "../product/skool-posting-sanity-check.html", cat: "Business Model", signal: 78, noise: 16, why: "Board is not acquisition. Stops a real Stage 2 failure mode." },
+                { name: "Founder Posting Sanity Check (report)", url: "../../markdown_renderer.html?src=reports/skool-founder-posting-sanity-check-v1.0.md", cat: "Docs", signal: 78, noise: 16, why: "Written verdict: Classroom + warm invites, not board-only." },
+                { name: "Practice Exam Gap", url: "practice-exams-gap.html", cat: "Strategy", signal: 78, noise: 22, why: "H27 value-blocker. Buyers have named this gap in interviews." },
+                { name: "Cost-Side Model", url: "../growth/cost-side-model.html", cat: "Growth", signal: 78, noise: 20, why: "Infra + founder opportunity cost. Honest about $0 cash burn vs time burn." },
+                { name: "Test Plan", url: "../growth/test-plan.html", cat: "Growth", signal: 78, noise: 20, why: "Sunday-cohort cadence for interviews and funnel instrumentation." },
+                { name: "Hypothesis Interview Questions", url: "../cd/cd-hypothesis-interview-questions.html", cat: "Discovery", signal: 76, noise: 16, why: "Kill/validate questions mapped to H1–H19. Use before more strategy pages." },
+                { name: "Business Model Confidence Report", url: "../dashboard/confidence-report.html", cat: "Docs", signal: 76, noise: 18, why: "Numeric honesty: 45/100. Integrity score, not a growth story." },
+                { name: "Confidence Report v1.9.11", url: "../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.11.md", cat: "Docs", signal: 76, noise: 18, why: "Auditable math behind the 45/100 number." },
+                { name: "Focus", url: "focus.html", cat: "Strategy", signal: 76, noise: 20, why: "One problem, explicit defer list. Complements this ranking." },
+                { name: "H5 · Cohorts sell out organically", url: "../hypotheses/hyp-h5.html", cat: "Hypothesis", signal: 76, noise: 22, why: "In testing: 8 Skool signups, Sunday mechanics. Closest path to H9." },
+                { name: "H2 · Animated content format", url: "../hypotheses/hyp-h2.html", cat: "Hypothesis", signal: 75, noise: 20, why: "68.5% first data point. Still n=1 — read the number, ignore the extrapolation." },
+                { name: "H10 · >40% video retention", url: "../hypotheses/hyp-h10.html", cat: "Hypothesis", signal: 74, noise: 20, why: "MVP quality floor, correctly demoted from a stage gate." },
+                { name: "H1 · Rising AI skills expectations", url: "../hypotheses/hyp-h1.html", cat: "Hypothesis", signal: 74, noise: 22, why: "Partially validated by vendor certs + interviews. Problem existence, not willingness to pay." },
+                { name: "H9 · $10k exit gate", url: "../hypotheses/hyp-h9.html", cat: "Hypothesis", signal: 74, noise: 16, why: "The filter this page uses. Decided, not yet earned." },
+                { name: "H3 · Audience will pay", url: "../hypotheses/hyp-h3.html", cat: "Hypothesis", signal: 74, noise: 24, why: "The unproven bet. Every other revenue page is noise until this moves." },
+                { name: "Interview Guide", url: "../cd/cd-interview-guide.html", cat: "Discovery", signal: 74, noise: 18, why: "How to run the interviews. Playbook with a job this week." },
+                { name: "Task List", url: "../dashboard/todo.html", cat: "Growth", signal: 74, noise: 16, why: "Open production tasks. Action, not narrative." },
+                { name: "H24 · Emotional Pain Drivers", url: "../hypotheses/hyp-h24.html", cat: "Hypothesis", signal: 72, noise: 24, why: "In testing from interviews (fear/greed/insecurity). Informs copy, not TAM." },
+                { name: "H4 · ~1% free-to-paid", url: "../hypotheses/hyp-h4.html", cat: "Hypothesis", signal: 72, noise: 26, why: "In testing on a thin Sunday-cohort sample. Treat rates as hypotheses." },
+                { name: "H27 · Practice exam gap (in tracker)", url: "../../markdown_renderer.html?src=HYPOTHESIS.md", cat: "Hypothesis", signal: 72, noise: 20, why: "In testing; 2 of 60 questions started. No standalone hyp-h27 page yet — scored from the tracker entry and practice-exams-gap.html." },
+                { name: "VC Constructive Feedback", url: "../product/vc-feedback.html", cat: "Strategy", signal: 72, noise: 26, why: "Honest inversion of the deck. Use the close-the-note list; skip the theater." },
+                { name: "90-Day Execution Plan", url: "../growth/90-day-execution-plan.html", cat: "Growth", signal: 72, noise: 28, why: "Dated near-term calendar. Signal is this quarter; later weeks are estimates." },
+                { name: "Cohort Prep", url: "../growth/cohort-prep.html", cat: "Growth", signal: 72, noise: 20, why: "Weekly install list so Sunday attendees arrive ready. Operational." },
+                { name: "R.A.I.S.E. Starting Point", url: "raise.html", cat: "Strategy", signal: 70, noise: 22, why: "Founder origin for H1. Useful once; rereading is narrative." },
+                { name: "Content Format: Short vs Long", url: "../growth/content-format.html", cat: "Growth", signal: 70, noise: 24, why: "Placement rule that stops publishing the workshop to public YouTube." },
+                { name: "Skool LMS Integration", url: "../product/skool-lms-integration.html", cat: "Business Model", signal: 70, noise: 26, why: "Stage 2 platform decision, already made. Re-reading is low yield." },
+                { name: "H8 · Exam-ready PMF", url: "../hypotheses/hyp-h8.html", cat: "Hypothesis", signal: 68, noise: 28, why: "Peer WhatsApp + interviews. Still hypothesized as PMF; don't treat as proven." },
+                { name: "Pain Points", url: "pain-points.html", cat: "Strategy", signal: 68, noise: 24, why: "Emotional drivers from interviews. Informs conversation starters, not pricing." },
+                { name: "Value Proposition", url: "../bmc/value-proposition.html", cat: "Business Model", signal: 68, noise: 26, why: "Pains → features map. Working model; not yet paid-validated." },
+                { name: "Target Audience", url: "target-audience.html", cat: "Strategy", signal: 66, noise: 26, why: "ICP sketch grounded in interviews. Personas without purchase data stay mid-signal." },
+                { name: "Business Model Canvas", url: "../bmc/business-model-canvas.html", cat: "Business Model", signal: 66, noise: 30, why: "Master 9-box. Signal is the overview; the 9 child pages add duplication." },
+                { name: "1. Customer Discovery Stage", url: "../stages/stage-customer-discovery.html", cat: "Stage", signal: 64, noise: 28, why: "Current stage hub. Useful map; detail lives on child pages." },
+                { name: "Competitive Analysis", url: "competitive-analysis.html", cat: "Strategy", signal: 64, noise: 28, why: "Udemy / official / YouTube alternatives. Directional, not a win/loss dataset." },
+                { name: "BMC: Channels", url: "../bmc/bmc-channels.html", cat: "Business Model", signal: 64, noise: 28, why: "YouTube + LinkedIn organic is decided. Restates the handoff page." },
+                { name: "Copy-Paste One-Pager", url: "../product/one-pager.html", cat: "Strategy", signal: 62, noise: 24, why: "Compression for external validation. High utility, no new evidence." },
+                { name: "2. Customer Validation Stage", url: "../stages/stage-customer-validation.html", cat: "Stage", signal: 62, noise: 30, why: "Next-stage hub. Useful once paid seats exist; until then a map." },
+                { name: "Risk Analysis", url: "risk-analysis.html", cat: "Strategy", signal: 62, noise: 30, why: "Named risks (bandwidth, copycats, platform). Some future-stage items inflate noise." },
+                { name: "BMC: Revenue Streams", url: "../bmc/bmc-revenue-streams.html", cat: "Business Model", signal: 62, noise: 32, why: "$10 / $29 / $250–$500 are decided SKUs. Revenue itself is still $0." },
+                { name: "BMC: Customer Segments", url: "../bmc/bmc-customer-segments.html", cat: "Business Model", signal: 62, noise: 30, why: "Segment definition. Overlaps target-audience.html." },
+                { name: "Market Validation Argument", url: "../../markdown_renderer.html?src=reports/market-validation-argument-v1.0.md", cat: "Docs", signal: 62, noise: 28, why: "External-research argument. Useful context; not first-party proof." },
+                { name: "Market Reality Check", url: "market-reality-check.html", cat: "Strategy", signal: 60, noise: 36, why: "JTBD is sharp; some confidence labels outrun the interview n." },
+                { name: "Funnel Math", url: "../growth/funnel-math.html", cat: "Growth", signal: 60, noise: 34, why: "Honest arithmetic on unvalidated H4/H7 rates. Use as sensitivity, not forecast." },
+                { name: "BMC: Cost Structure", url: "../bmc/bmc-cost-structure.html", cat: "Business Model", signal: 60, noise: 30, why: "Cost stack. Overlaps cost-side-model with less math." },
+                { name: "H21 · $29 Exam Prep Bundle", url: "../hypotheses/hyp-h21.html", cat: "Hypothesis", signal: 58, noise: 34, why: "Planned SKU. Interview support exists; no purchases yet." },
+                { name: "Motivation", url: "../../motivation.html", cat: "Strategy", signal: 58, noise: 32, why: "Why the business exists. Read once; weekly rereads are narrative." },
+                { name: "Business Overview (One-Pager)", url: "../../business-overview.html", cat: "References", signal: 58, noise: 22, why: "Plain-language summary. Compression, not evidence." },
+                { name: "Moat", url: "moat.html", cat: "Strategy", signal: 58, noise: 34, why: "Honest 'thin today'. Investor-facing; does not change this week's work." },
+                { name: "Test Metrics", url: "../growth/test-metrics.html", cat: "Growth", signal: 58, noise: 30, why: "KPI list. Targets without measurements are mid-signal." },
+                { name: "Sales & Marketing Roadmap", url: "../growth/sales-marketing-roadmap.html", cat: "Growth", signal: 58, noise: 34, why: "7 Skool classrooms exist. Sequence is real; paid mapping is not." },
+                { name: "BMC: Customer Relationships", url: "../bmc/bmc-customer-relationships.html", cat: "Business Model", signal: 58, noise: 32, why: "Sunday + WhatsApp + Skool. Restates H5 mechanics." },
+                { name: "AI Adoption & Skills Gap report", url: "../../markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md", cat: "Docs", signal: 58, noise: 30, why: "External skills-gap research. Supports H1; not willingness to pay." },
+                { name: "Skool vs YouTube", url: "../product/skool-vs-youtube.html", cat: "Business Model", signal: 56, noise: 28, why: "Comparison after the handoff decision. Mostly restatement." },
+                { name: "Skills Gap", url: "skills-gap.html", cat: "Strategy", signal: 56, noise: 34, why: "Enterprise framing. Directional; Delivery-Pilot language can overclaim." },
+                { name: "BMC: Key Activities", url: "../bmc/bmc-key-activities.html", cat: "Business Model", signal: 56, noise: 34, why: "Scripts, editing, outreach. Duplicate of the todo / bandwidth pages." },
+                { name: "Discovery Process Overview", url: "../cd/cd-process.html", cat: "Discovery", signal: 55, noise: 32, why: "Blank 4-step map. Orientation, not evidence." },
+                { name: "Signal versus Noise (this page)", url: "signal-versus-noise.html", cat: "Strategy", signal: 55, noise: 18, why: "Attention filter. Useful meta; not field evidence. See H9." },
+                { name: "YouTube Titles → Skool Mapping", url: "../growth/youtube-titles-skool-mapping.html", cat: "Growth", signal: 54, noise: 32, why: "Eight title ideas mapped to offers. Drafts, not measured CTR." },
+                { name: "BMC: Key Resources", url: "../bmc/bmc-key-resources.html", cat: "Business Model", signal: 54, noise: 36, why: "Assets list. Low decision yield after the first read." },
+                { name: "Exam Prep Bundle ($29)", url: "../product/exam-prep-product.html", cat: "Business Model", signal: 54, noise: 36, why: "SKU page for an unpurchased product. Build after H27 questions exist." },
+                { name: "Business Plan Summary", url: "business-plan-summary.html", cat: "Strategy", signal: 54, noise: 36, why: "High-level restatement of pages that already exist." },
+                { name: "H23 · 4DX weekly rhythm", url: "../hypotheses/hyp-h23.html", cat: "Hypothesis", signal: 54, noise: 36, why: "In testing as an execution habit. Overlay, not a market bet." },
+                { name: "Metrics Dashboard", url: "../growth/metrics-dashboard.html", cat: "Growth", signal: 52, noise: 38, why: "Rollup of other pages. Convenient; no new measurements." },
+                { name: "BMC: Key Partners", url: "../bmc/bmc-key-partners.html", cat: "Business Model", signal: 52, noise: 38, why: "Mostly prospective partners. Capgemini signal is thin." },
+                { name: "Cert Value in the AI Era", url: "cert-value-ai-era.html", cat: "Strategy", signal: 52, noise: 38, why: "H25 thesis. Plausible research, no buyer test yet." },
+                { name: "Component: Creation Validation", url: "../comp/comp-creation-validation.html", cat: "Component", signal: 50, noise: 40, why: "Holds the $10k / 40% numbers. Overlaps quality-gates." },
+                { name: "Why Certification Matters", url: "why-certification.html", cat: "Strategy", signal: 50, noise: 36, why: "Prospect-facing case. Fine for a landing page; not founder work." },
+                { name: "Sales Pipeline", url: "../growth/sales-pipeline.html", cat: "Growth", signal: 50, noise: 40, why: "Funnel drawing on unvalidated rates." },
+                { name: "Component: Problem-Solution Fit", url: "../comp/comp-problem-solution.html", cat: "Component", signal: 48, noise: 38, why: "Stage-1 spec. Overlaps focus + discovery." },
+                { name: "TAM/SAM/SOM Verification", url: "../../markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md", cat: "Docs", signal: 48, noise: 55, why: "Useful as a 'these numbers are soft' warning. The TAM itself is still H6 noise." },
+                { name: "H25 · Cert value bifurcation", url: "../hypotheses/hyp-h25.html", cat: "Hypothesis", signal: 48, noise: 40, why: "Planned thesis. Does not change this week's cohort." },
+                { name: "Discipline 1: Focus on WIG", url: "../execution/4dx-discipline-1.html", cat: "Execution", signal: 48, noise: 40, why: "Useful reminder to pick one WIG. The WIG is already H9." },
+                { name: "Component: MVP", url: "../comp/comp-mvp.html", cat: "Component", signal: 46, noise: 40, why: "3 videos + practice test. Overlaps todo + H10." },
+                { name: "H7 · Funnel conversion rates", url: "../hypotheses/hyp-h7.html", cat: "Hypothesis", signal: 46, noise: 44, why: "Hypothesized CTRs. Do not plan ads or spend from this page." },
+                { name: "The Execution Crisis", url: "../execution/4dx-execution-crisis.html", cat: "Execution", signal: 46, noise: 44, why: "4DX framing. Helps only if the weekly WIG meeting actually happens." },
+                { name: "5-Minute Pitch Deck", url: "../product/pitch-deck.html", cat: "Strategy", signal: 44, noise: 48, why: "Executive restatement. No new evidence; raise is out of scope (H9)." },
+                { name: "Component: Business Model", url: "../comp/comp-business-model.html", cat: "Component", signal: 44, noise: 42, why: "Pricing restatement of BMC + unit economics." },
+                { name: "Tell Us About Your Idea", url: "../product/idea.html", cat: "Strategy", signal: 42, noise: 42, why: "YC-style summary. Compression of pages you already have." },
+                { name: "H6 · TAM/SAM/SOM", url: "../hypotheses/hyp-h6.html", cat: "Hypothesis", signal: 42, noise: 72, why: "Claimed-unverified. FDE hiring growth is a proxy, not demand for this exam." },
+                { name: "Milestone Calendar", url: "../dashboard/calendar.html", cat: "Growth", signal: 42, noise: 36, why: "Named dates. Useful; several dates are still estimates (H19)." },
+                { name: "Component: Funnel & Channels", url: "../comp/comp-funnel.html", cat: "Component", signal: 42, noise: 44, why: "Overlaps sales-pipeline + handoff." },
+                { name: "Discipline 2: Act on Leads", url: "../execution/4dx-discipline-2.html", cat: "Execution", signal: 42, noise: 46, why: "Lead vs lag is right; the leads are interviews and published videos, not this page." },
+                { name: "Discipline 4: Cadence", url: "../execution/4dx-discipline-4.html", cat: "Execution", signal: 42, noise: 46, why: "Weekly meeting design. Only signal if the meeting exists." },
+                { name: "Customer Hub (index)", url: "../../index.html", cat: "Hub", signal: 42, noise: 18, why: "Navigation. Low noise, low decision content." },
+                { name: "Phase 1: State Hypotheses", url: "../cd/cd-hypotheses.html", cat: "Discovery", signal: 42, noise: 40, why: "Blank phase page. The live bets live on hypothesis.html." },
+                { name: "H19 via Stage Timelines", url: "../growth/stage-timelines.html", cat: "Growth", signal: 40, noise: 42, why: "Estimated dates. Bandwidth caveat is the only hard part." },
+                { name: "Organic Growth Strategy", url: "../growth/organic-growth.html", cat: "Growth", signal: 40, noise: 50, why: "Loops described; compounding not yet measured." },
+                { name: "Component: Product-Market Fit", url: "../comp/comp-pmf.html", cat: "Component", signal: 40, noise: 46, why: "PMF page before paid repeat. Premature." },
+                { name: "MAOT Framework", url: "maot.html", cat: "Strategy", signal: 40, noise: 48, why: "Delight threshold (H20). Conceptually clean; no referral metric yet." },
+                { name: "H20 · MAOT predicts referral", url: "../hypotheses/hyp-h20.html", cat: "Hypothesis", signal: 40, noise: 48, why: "Brian/Sude are early delight signals, not a referral engine." },
+                { name: "Customer & Problem Hypothesis", url: "../cd/cd-hyp-customer-problem.html", cat: "Discovery", signal: 40, noise: 42, why: "Duplicates H1/H24/pain-points." },
+                { name: "Product Hypothesis", url: "../cd/cd-hyp-product.html", cat: "Discovery", signal: 40, noise: 42, why: "Duplicates H2/H10/MVP." },
+                { name: "Phase 2: Test Problem", url: "../cd/cd-test-problem.html", cat: "Discovery", signal: 40, noise: 40, why: "Process wrapper around work already on test-plan." },
+                { name: "Distribution & Pricing Hypothesis", url: "../cd/cd-hyp-distribution-pricing.html", cat: "Discovery", signal: 38, noise: 44, why: "Duplicates revenue + H3/H21." },
+                { name: "Hypothesis Connectivity", url: "../hypotheses/hypothesis-connectivity.html", cat: "Strategy", signal: 38, noise: 22, why: "Explains map topology. Meta, low noise." },
+                { name: "H28 · YouTube engagement benchmark", url: "../hypotheses/hyp-h28.html", cat: "Hypothesis", signal: 38, noise: 44, why: "Planned rates. Wait for more videos before managing to this." },
+                { name: "VC Deck", url: "../product/vc-deck.html", cat: "Strategy", signal: 38, noise: 62, why: "Raise is out of scope until H9. Well-made theater." },
+                { name: "Component: Sales & Marketing Roadmap", url: "../comp/comp-roadmap.html", cat: "Component", signal: 38, noise: 48, why: "Duplicates sales-marketing-roadmap.html." },
+                { name: "Requirements", url: "requirements.html", cat: "Strategy", signal: 38, noise: 42, why: "Tooling list. Won't-have is useful; the rest is inventory." },
+                { name: "Demand Creation Hypothesis", url: "../cd/cd-hyp-demand-creation.html", cat: "Discovery", signal: 38, noise: 46, why: "SEO/viral loops with no measured query set." },
+                { name: "Verify, Iterate, or Exit", url: "../cd/cd-verify.html", cat: "Discovery", signal: 38, noise: 40, why: "Gate language. The real gate is validation-repeat-gate.html." },
+                { name: "Iterate or Exit Gate", url: "../cd/cd-verify-iterate-exit.html", cat: "Discovery", signal: 38, noise: 40, why: "Same gate, second copy." },
+                { name: "Verify the Business Model", url: "../cd/cd-verify-business-model.html", cat: "Discovery", signal: 38, noise: 42, why: "Cannot verify a model at $0 revenue." },
+                { name: "First Contacts & Outreach", url: "../cd/cd-tp-first-contacts.html", cat: "Discovery", signal: 38, noise: 42, why: "Overlaps watering-holes." },
+                { name: "Competitive Hypothesis", url: "../cd/cd-hyp-competitive.html", cat: "Discovery", signal: 36, noise: 44, why: "Duplicates competitive-analysis." },
+                { name: "Market Type Hypothesis", url: "../cd/cd-hyp-market-type.html", cat: "Discovery", signal: 36, noise: 44, why: "Resegmented existing market. Classification, not evidence." },
+                { name: "H14 · Multi-cert expansion", url: "../hypotheses/hyp-h14.html", cat: "Hypothesis", signal: 36, noise: 56, why: "Explicitly out of scope on Focus. Stage 3 memory." },
+                { name: "H12 · B2B / consulting channel", url: "../hypotheses/hyp-h12.html", cat: "Hypothesis", signal: 36, noise: 58, why: "Capgemini anecdote. Not a channel yet." },
+                { name: "Component: Market & Audience", url: "../comp/comp-market.html", cat: "Component", signal: 36, noise: 58, why: "Carries H6 sizing. High noise for that reason." },
+                { name: "Claude Partner Strategy", url: "claude-partner-strategy.html", cat: "Strategy", signal: 36, noise: 52, why: "Future partnership timing. Not this week's work." },
+                { name: "Customer Understanding", url: "../cd/cd-tp-customer-understanding.html", cat: "Discovery", signal: 36, noise: 44, why: "Duplicates pain-points + interviews." },
+                { name: "Phase 3: Test Product", url: "../cd/cd-test-product.html", cat: "Discovery", signal: 36, noise: 44, why: "Process wrapper. The test is publish-and-measure." },
+                { name: "Verify the Product", url: "../cd/cd-verify-product.html", cat: "Discovery", signal: 36, noise: 42, why: "Overlaps H10/H8." },
+                { name: "Verify the Problem", url: "../cd/cd-verify-problem.html", cat: "Discovery", signal: 36, noise: 42, why: "Overlaps H1/H24." },
+                { name: "Problem Presentation", url: "../cd/cd-tp-problem-presentation.html", cat: "Discovery", signal: 34, noise: 46, why: "Pitch script. Use conversation-starters or just talk." },
+                { name: "The Discovery Journey", url: "../product/discovery-journey.html", cat: "Strategy", signal: 34, noise: 42, why: "Prospect-facing explainer of a call. Not founder work." },
+                { name: "Conversation Starters", url: "../growth/conversation-starters.html", cat: "Growth", signal: 34, noise: 50, why: "Swipe file. Fine for an event night; not a weekly read." },
+                { name: "Flywheel", url: "../growth/flywheel.html", cat: "Growth", signal: 34, noise: 56, why: "Pretty loop on unproven conversion. Classic planning theater." },
+                { name: "Market Knowledge Synthesis", url: "../cd/cd-tp-market-knowledge.html", cat: "Discovery", signal: 34, noise: 48, why: "Duplicates H6 + skills-gap." },
+                { name: "First Reality Check", url: "../cd/cd-tpr-first-reality-check.html", cat: "Discovery", signal: 34, noise: 46, why: "Blank checkpoint with no new numbers." },
+                { name: "Discovery: State Hypotheses detail", url: "../discovery/state-hypotheses.html", cat: "Discovery", signal: 34, noise: 44, why: "Third copy of the hypothesis phase." },
+                { name: "Self-Assessment", url: "../product/self-assessment.html", cat: "Strategy", signal: 32, noise: 48, why: "Prospect quiz routing to unpaid offers." },
+                { name: "H17 · Cambridge + Marianna pilot", url: "../hypotheses/hyp-h17.html", cat: "Hypothesis", signal: 32, noise: 62, why: "Planned onsite. Bandwidth-hostile this quarter." },
+                { name: "Product Presentation & Demo", url: "../cd/cd-tpr-product-presentation.html", cat: "Discovery", signal: 32, noise: 48, why: "Demo script for an MVP still being filmed." },
+                { name: "More Customer Visits", url: "../cd/cd-tpr-more-customer-visits.html", cat: "Discovery", signal: 32, noise: 48, why: "Scale the visits — that's watering-holes, not this page." },
+                { name: "Second Reality Check", url: "../cd/cd-tpr-second-reality-check.html", cat: "Discovery", signal: 32, noise: 48, why: "Blank checkpoint, no data attached." },
+                { name: "Discovery: Test Problem detail", url: "../discovery/test-problem.html", cat: "Discovery", signal: 32, noise: 46, why: "Fourth copy of test-problem." },
+                { name: "Discovery: Test Solution detail", url: "../discovery/test-solution.html", cat: "Discovery", signal: 32, noise: 46, why: "Duplicates test-product / H10." },
+                { name: "Discovery: Verify or Pivot", url: "../discovery/verify-pivot.html", cat: "Discovery", signal: 32, noise: 46, why: "Duplicates cd-verify pages." },
+                { name: "Discipline 3: Scoreboard", url: "../execution/4dx-discipline-3.html", cat: "Execution", signal: 32, noise: 48, why: "The scoreboard is confidence-report + content-analysis, not this explainer." },
+                { name: "3. Customer Creation Stage", url: "../stages/stage-customer-creation.html", cat: "Stage", signal: 30, noise: 68, why: "Stage 3 hub. Premature until H9 clears." },
+                { name: "H16 · Paid ads post-validation", url: "../hypotheses/hyp-h16.html", cat: "Hypothesis", signal: 30, noise: 66, why: "Correctly gated — which makes reading it this week noise." },
+                { name: "Market Fit & Channels", url: "../growth/market-fit-channels.html", cat: "Growth", signal: 30, noise: 50, why: "Customer-facing traction page with thin traction." },
+                { name: "Dictionary & Glossary", url: "../product/dictionary.html", cat: "Strategy", signal: 28, noise: 12, why: "Definitions. Low noise, almost no decision content." },
+                { name: "H11 · $100k ARR hire trigger", url: "../hypotheses/hyp-h11.html", cat: "Hypothesis", signal: 28, noise: 68, why: "Stage 4 memory. Hiring now would be the failure mode." },
+                { name: "Marketing Tactics (headline swipe)", url: "../growth/marketing-tactics.html", cat: "Growth", signal: 28, noise: 64, why: "Eight untested headlines. Copy without a paid ask is noise." },
+                { name: "When to Advertise", url: "../growth/when-to-advertise.html", cat: "Growth", signal: 28, noise: 62, why: "Correct 'not yet' answer. One sentence would do." },
+                { name: "Paid Advertisement", url: "../growth/advertisement.html", cat: "Growth", signal: 26, noise: 70, why: "Channel menu for a $0-CAC stage. Do not open this week." },
+                { name: "H15 · Full-time transition", url: "../hypotheses/hyp-h15.html", cat: "Hypothesis", signal: 26, noise: 70, why: "Already decided: stay second-job. Rereading is anxiety, not signal." },
+                { name: "Partner With Us", url: "../product/partners.html", cat: "Business Model", signal: 26, noise: 58, why: "Outbound partner page before repeatable paid delivery." },
+                { name: "4. Company Building Stage", url: "../stages/stage-company-building.html", cat: "Stage", signal: 24, noise: 76, why: "Departments, TAs, weekday cohorts. Pure future-stage." },
+                { name: "H13 · 1,000x subscriber growth", url: "../hypotheses/hyp-h13.html", cat: "Hypothesis", signal: 24, noise: 74, why: "Stage 3 metric. Managing to this now is how Discovery dies." },
+                { name: "Site Map", url: "../dashboard/sitemap.html", cat: "Dashboard", signal: 22, noise: 10, why: "Nav utility. Not business content." },
+                { name: "H18 · International onsite", url: "../hypotheses/hyp-h18.html", cat: "Hypothesis", signal: 22, noise: 76, why: "UK/EU/USA onsite. Downstream of an unrun Cambridge pilot." },
+                { name: "H22 · Talent placement / FDE", url: "../hypotheses/hyp-h22.html", cat: "Hypothesis", signal: 22, noise: 74, why: "Stage 4 vision. VC-feedback already flagged this as skip." },
+                { name: "Component: Scale Organization", url: "../comp/comp-scale-organization.html", cat: "Component", signal: 22, noise: 78, why: "Hiring chart at $0 revenue." },
+                { name: "Capital Relationships", url: "../bmc/bmc-capital-relationships.html", cat: "Business Model", signal: 22, noise: 70, why: "Marxian constant/variable capital overlay. No operating decision." },
+                { name: "Latest Pages Dashboard", url: "../dashboard/latest-pages.html", cat: "Dashboard", signal: 20, noise: 10, why: "Changelog of the site, not the business." },
+                { name: "Adaptive AI Prep Demo", url: "../growth/ai-demo.html", cat: "Growth", signal: 20, noise: 68, why: "Prototype of a product that is not the MVP. Build-trap." },
+                { name: "Surplus Value Creation", url: "../bmc/surplus-value.html", cat: "Business Model", signal: 18, noise: 74, why: "Theory of digital reproducibility. Interesting; not a weekly input." },
+                { name: "Historical report versions (archive)", url: "../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.10.md", cat: "Docs", signal: 12, noise: 40, why: "Superseded confidence/acidity/exam-prep versions. Keep as history; do not reread." }
+            ];
+
+            function quadOf(item) {
+                if (item.signal >= 70 && item.noise <= 35) return 'read';
+                if (item.signal >= 70 && item.noise > 35) return 'extract';
+                if (item.signal < 50 && item.noise >= 50) return 'defer';
+                return 'reference';
+            }
+
+            function netOf(item) { return item.signal - item.noise; }
+            function ratioOf(item) { return item.signal / Math.max(item.noise, 1); }
+
+            var QUAD_LABEL = {
+                read: 'Read first',
+                extract: 'Extract',
+                reference: 'Reference',
+                defer: 'Defer'
+            };
+
+            ITEMS.forEach(function (item, i) {
+                item.id = 'sn-' + i;
+                item.quad = quadOf(item);
+                item.net = netOf(item);
+                item.ratio = ratioOf(item);
+            });
+
+            var metrics = document.getElementById('sn-metrics');
+            var n = ITEMS.length;
+            var avgS = Math.round(ITEMS.reduce(function (a, b) { return a + b.signal; }, 0) / n);
+            var avgN = Math.round(ITEMS.reduce(function (a, b) { return a + b.noise; }, 0) / n);
+            var counts = { read: 0, extract: 0, reference: 0, defer: 0 };
+            ITEMS.forEach(function (item) { counts[item.quad]++; });
+            metrics.innerHTML =
+                '<div class="metric-card"><div class="metric-val">' + n + '</div><div class="metric-lbl">Items scored</div></div>' +
+                '<div class="metric-card"><div class="metric-val" style="color: var(--color-success);">' + avgS + '</div><div class="metric-lbl">Average signal</div></div>' +
+                '<div class="metric-card"><div class="metric-val" style="color: var(--color-warning);">' + avgN + '</div><div class="metric-lbl">Average noise</div></div>' +
+                '<div class="metric-card"><div class="metric-val">' + counts.read + '</div><div class="metric-lbl">Read first</div></div>' +
+                '<div class="metric-card"><div class="metric-val" style="color: var(--color-warning);">' + counts.defer + '</div><div class="metric-lbl">Defer</div></div>';
+
+            var quadEl = document.getElementById('sn-quad');
+            var detailEl = document.getElementById('sn-detail');
+            ITEMS.forEach(function (item) {
+                var dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'sn-dot q-' + item.quad;
+                dot.style.left = (6 + (item.noise / 100) * 88) + '%';
+                dot.style.bottom = (8 + (item.signal / 100) * 82) + '%';
+                dot.title = item.name + '  S' + item.signal + ' / N' + item.noise;
+                dot.setAttribute('aria-label', item.name);
+                dot.addEventListener('mouseenter', function () {
+                    detailEl.innerHTML = '<strong style="color: var(--text-primary);">' + item.name + '</strong> · Signal ' + item.signal + ' · Noise ' + item.noise + ' · Net ' + item.net +
+                        ' · <span class="sn-pill ' + item.quad + '">' + QUAD_LABEL[item.quad] + '</span><br>' + item.why;
+                });
+                dot.addEventListener('click', function () {
+                    var row = document.getElementById(item.id);
+                    if (row) {
+                        row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        row.style.background = 'rgba(99,102,241,0.12)';
+                        setTimeout(function () { row.style.background = ''; }, 1600);
+                    }
+                });
+                quadEl.appendChild(dot);
+            });
+
+            function linkFor(item) {
+                return '<a href="' + item.url + '" style="color: var(--color-primary);">' + item.name + '</a>';
+            }
+
+            var topS = ITEMS.slice().sort(function (a, b) { return b.net - a.net; }).slice(0, 10);
+            document.getElementById('sn-top-signal').innerHTML = topS.map(function (item) {
+                return '<li>' + linkFor(item) + ' <span style="opacity:0.75;">net ' + item.net + ' (S' + item.signal + ' / N' + item.noise + ')</span></li>';
+            }).join('');
+
+            var topN = ITEMS.slice().sort(function (a, b) { return b.noise - a.noise || a.signal - b.signal; }).slice(0, 10);
+            document.getElementById('sn-top-noise').innerHTML = topN.map(function (item) {
+                return '<li>' + linkFor(item) + ' <span style="opacity:0.75;">N' + item.noise + ' (S' + item.signal + ')</span></li>';
+            }).join('');
+
+            var catSel = document.getElementById('sn-cat-filter');
+            var cats = [];
+            ITEMS.forEach(function (item) {
+                if (cats.indexOf(item.cat) === -1) cats.push(item.cat);
+            });
+            cats.sort();
+            cats.forEach(function (cat) {
+                var opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                catSel.appendChild(opt);
+            });
+
+            var tbody = document.getElementById('sn-tbody');
+            var searchEl = document.getElementById('sn-search');
+            var quadFilter = document.getElementById('sn-quad-filter');
+            var sortEl = document.getElementById('sn-sort');
+            var countEl = document.getElementById('sn-count');
+
+            function sortItems(list, key) {
+                var copy = list.slice();
+                copy.sort(function (a, b) {
+                    if (key === 'name-asc' || key === 'name') return a.name.localeCompare(b.name);
+                    if (key === 'signal-desc' || key === 'signal') return b.signal - a.signal || a.name.localeCompare(b.name);
+                    if (key === 'noise-desc' || key === 'noise') return b.noise - a.noise || a.name.localeCompare(b.name);
+                    if (key === 'ratio-desc' || key === 'ratio') return b.ratio - a.ratio || a.name.localeCompare(b.name);
+                    if (key === 'cat') return a.cat.localeCompare(b.cat) || b.net - a.net;
+                    if (key === 'quad') return a.quad.localeCompare(b.quad) || b.net - a.net;
+                    return b.net - a.net || a.name.localeCompare(b.name);
+                });
+                return copy;
+            }
+
+            function render() {
+                var q = (searchEl.value || '').toLowerCase();
+                var quad = quadFilter.value;
+                var cat = catSel.value;
+                var filtered = ITEMS.filter(function (item) {
+                    if (quad !== 'all' && item.quad !== quad) return false;
+                    if (cat !== 'all' && item.cat !== cat) return false;
+                    if (!q) return true;
+                    return (item.name + ' ' + item.cat + ' ' + item.why).toLowerCase().indexOf(q) !== -1;
+                });
+                filtered = sortItems(filtered, sortEl.value);
+                countEl.textContent = 'Showing ' + filtered.length + ' of ' + n + ' · default sort is net (signal − noise).';
+                tbody.innerHTML = filtered.map(function (item) {
+                    var mix = item.signal + item.noise;
+                    var sPct = mix ? Math.round((item.signal / mix) * 100) : 0;
+                    var nPct = 100 - sPct;
+                    var netColor = item.net >= 50 ? 'var(--color-success)' : (item.net >= 0 ? 'var(--color-info)' : 'var(--color-warning)');
+                    return '<tr id="' + item.id + '" style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">' +
+                        '<td style="padding: 0.65rem 0.5rem;">' + linkFor(item) + '<div style="font-size: 0.78rem; opacity: 0.8; max-width: 42ch; margin-top: 0.2rem;">' + item.why + '</div></td>' +
+                        '<td style="padding: 0.65rem 0.5rem; white-space: nowrap;">' + item.cat + '</td>' +
+                        '<td style="padding: 0.65rem 0.5rem; color: var(--color-success); font-weight: 600;">' + item.signal + '</td>' +
+                        '<td style="padding: 0.65rem 0.5rem; color: var(--color-warning); font-weight: 600;">' + item.noise + '</td>' +
+                        '<td style="padding: 0.65rem 0.5rem; color: ' + netColor + '; font-weight: 700;">' + item.net + '</td>' +
+                        '<td style="padding: 0.65rem 0.5rem;">' + item.ratio.toFixed(2) + '</td>' +
+                        '<td style="padding: 0.65rem 0.5rem;"><div class="sn-bar-wrap"><span class="sn-bar-s" style="width:' + sPct + '%;"></span><span class="sn-bar-n" style="width:' + nPct + '%;"></span></div></td>' +
+                        '<td style="padding: 0.65rem 0.5rem;"><span class="sn-pill ' + item.quad + '">' + QUAD_LABEL[item.quad] + '</span></td>' +
+                        '</tr>';
+                }).join('');
+            }
+
+            searchEl.addEventListener('input', render);
+            quadFilter.addEventListener('change', render);
+            catSel.addEventListener('change', render);
+            sortEl.addEventListener('change', render);
+
+            Array.prototype.forEach.call(document.querySelectorAll('.sn-table th[data-sort]'), function (th) {
+                th.addEventListener('click', function () {
+                    var key = th.getAttribute('data-sort');
+                    var map = { name: 'name-asc', signal: 'signal-desc', noise: 'noise-desc', net: 'net-desc', ratio: 'ratio-desc', cat: 'cat', quad: 'quad' };
+                    sortEl.value = map[key] || 'net-desc';
+                    render();
+                });
+            });
+
+            render();
+        })();
+    </script>
+</body>
+</html>

@@ -80,11 +80,13 @@
                 ['5_Symbols/strategy/business-plan-summary.html', '📄 Business Plan Summary'],
                 ['5_Symbols/strategy/competitive-analysis.html', '⚔️ Competitive Analysis'],
                 ['5_Symbols/strategy/evidence-map.html', '🔍 Evidence Map'],
+                ['5_Symbols/strategy/signal-versus-noise.html', '📡 Signal versus Noise'],
                 ['5_Symbols/product/exam-performance-evidence.html', '📊 Candidate Exam Performance Evidence'],
                 ['5_Symbols/hypotheses/hypothesis-connectivity.html', '🔀 Hypothesis Connectivity'],
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
                 ['5_Symbols/product/vc-feedback.html', '🏦 VC Constructive Feedback'],
+                ['5_Symbols/strategy/alex-hormozi-agent.html', '🏋️ Alex Hormozi Agent'],
                 ['5_Symbols/product/pitch-deck.html', '📋 5-Minute Pitch Deck'],
                 ['5_Symbols/product/one-pager.html', '📋 Copy-Paste One-Pager'],
                 ['5_Symbols/product/idea.html', '💡 Tell Us About Your Idea'],
@@ -120,7 +122,8 @@
                 ['5_Symbols/product/skool-vs-youtube.html', '⚖️ Skool vs. YouTube Comparison'],
                 ['5_Symbols/product/youtube-skool-handoff.html', '🔄 YouTube → Skool Handoff'],
                 ['5_Symbols/product/skool-posting-sanity-check.html', '✅ Skool Posting Sanity Check'],
-                ['5_Symbols/product/skool-workshop-upload.html', '🎥 2-Hour Workshop Upload']
+                ['5_Symbols/product/skool-workshop-upload.html', '🎥 2-Hour Workshop Upload'],
+                ['5_Symbols/product/skool-founding-members.html', '🏫 Skool Steps & Founding Members']
             ]
         },
         {
@@ -141,6 +144,7 @@
                 ['5_Symbols/growth/youtube-channel-metrics.html', '📺 YouTube Channel Metrics'],
                 ['5_Symbols/growth/cohort-prep.html', '🧰 Cohort Prep'],
                 ['5_Symbols/growth/advertisement.html', '📣 Paid Advertisement'],
+                ['5_Symbols/growth/when-to-advertise.html', '🚦 When to Start Paid Ads'],
                 ['5_Symbols/growth/funnel-math.html', '🧮 Funnel Math'],
                 ['5_Symbols/growth/unit-economics.html', '💵 Unit Economics'],
                 ['5_Symbols/growth/cost-side-model.html', '📉 Cost-Side Model'],
@@ -214,6 +218,7 @@
         { url: '5_Symbols/product/youtube-skool-handoff.html', title: 'YouTube / LinkedIn → Skool Audience Handoff', desc: 'Fixed order: YouTube and LinkedIn acquire; CTAs hand off; Skool delivers Classroom, forum, calendar, and billing as Stage 2 only.', cat: 'Business Model', tags: 'youtube skool handoff acquisition delivery linkedin order funnel stage 2 lms' },
         { url: '5_Symbols/product/skool-posting-sanity-check.html', title: 'Skool Founder Posting Sanity Check', desc: 'Verdict on founder-only board posting and Classroom build: right for Stage 2 if paired with warm invites; board is not acquisition.', cat: 'Business Model', tags: 'skool posting sanity check founder community board invite warm cohort stage 2' },
         { url: '5_Symbols/product/skool-workshop-upload.html', title: '2-Hour Workshop Upload Sanity Check', desc: 'Upload the Sunday 2-hour workshop to Skool Classroom as the replay archive, not the course, and never as a public YouTube video.', cat: 'Business Model', tags: 'skool workshop upload replay classroom 2 hour sunday recording timestamps h5 h10' },
+        { url: '5_Symbols/product/skool-founding-members.html', title: 'Skool Steps & Founding Members', desc: 'Skool community-course checklist (9 steps) with Marianna, Sude, and Bayo named as the first 3 founding members.', cat: 'Business Model', tags: 'skool founding members marianna sude bayo first 3 community course steps 10 true regulars' },
         { url: '5_Symbols/strategy/claude-partner-strategy.html', title: 'Claude Partner Strategy', desc: 'Strategic analysis of when and why to become a Claude Partner, mapping active partner benefits to customer development stages.', cat: 'Strategy', tags: 'claude partner cpn network services select benefits licensing credentials' },
         { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus on WIG', desc: 'Narrowing focus to 1-2 Wildly Important Goals to protect bandwidth.', cat: 'Execution', tags: '4dx execution focus wildly important goal wig baseline formula' },
         { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Act on Lead Measures', desc: 'Leveraging predictive, influenceable lead measures instead of lag measures.', cat: 'Execution', tags: '4dx execution leverage lead lag measure metrics predictive influenceable' },
@@ -286,12 +291,14 @@
         { url: '5_Symbols/strategy/business-plan-summary.html', title: 'Business Plan Summary', desc: 'High-level summary of business objectives, market dynamics, and milestones.', cat: 'Strategy', tags: 'summary business plan objectives milestones' },
         { url: '5_Symbols/strategy/competitive-analysis.html', title: 'Competitive Analysis', desc: 'Udemy/Coursera, official vendor training, and YouTube educators compared against this program, and why this is different.', cat: 'Strategy', tags: 'competitive analysis udemy coursera official vendor youtube educators alternatives' },
         { url: '5_Symbols/strategy/evidence-map.html', title: 'Evidence Map', desc: 'Every hypothesis matched to its evidence source, including the Sunday free-cohort discovery-interview method.', cat: 'Strategy', tags: 'evidence map hypothesis sources sunday cohort discovery interviews' },
+        { url: '5_Symbols/strategy/signal-versus-noise.html', title: 'Signal versus Noise', desc: 'Every page and current report scored and sorted by decision-changing signal vs attention-burning noise, filtered by the H9 $10k gate.', cat: 'Strategy', tags: 'signal noise ranking attention filter evidence theater h9 sort catalog' },
         { url: '5_Symbols/product/exam-performance-evidence.html', title: 'Candidate Exam Performance Evidence', desc: 'A real, anonymized candidate exam pass driven by meetup motivation, not product use -- what it does and does not prove.', cat: 'Strategy', tags: 'candidate exam performance evidence meetup motivation skilljar anonymized pass score' },
         { url: 'exam-topics.html', title: 'Exam Topic Blueprint', desc: 'Full official topic list for the Associate (19 topics, real mastery data) and Architect (30 topics) exams, grouped for curriculum sequencing.', cat: 'Strategy', tags: 'exam topics blueprint curriculum associate architect foundations professional domains' },
         { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'What Does "Not Connected" Mean?', desc: 'Explains the three patterns behind a disconnected hypothesis in the Dependency Map: fully isolated, foundational-uncited gap, and terminal leaf.', cat: 'Strategy', tags: 'connectivity dependency map isolated orphan gap terminal leaf depends on feeds' },
         { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
         { url: '5_Symbols/product/vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
         { url: '5_Symbols/product/vc-feedback.html', title: 'VC Constructive Feedback', desc: 'The memo a constructive venture partner would write after the deck: eight cited notes, rationale, and what evidence would close each one.', cat: 'Strategy', tags: 'vc feedback constructive investor memo default alive graham andreessen gurley thiel raise' },
+        { url: '5_Symbols/strategy/alex-hormozi-agent.html', title: 'Alex Hormozi Agent', desc: 'Blunt offer-and-leads audit in Hormozi voice from $100M Offers and $100M Leads: value equation, Grand Slam stack, Core Four, and a local ask-the-agent desk.', cat: 'Strategy', tags: 'alex hormozi agent 100m offers 100m leads grand slam value equation core four lead magnet rule of 100' },
         { url: '5_Symbols/product/pitch-deck.html', title: '5-Minute Pitch Deck', desc: 'Single-scroll executive-review summary of the business with links to full detail on every claim.', cat: 'Strategy', tags: 'pitch deck 5 minute executive summary tldr' },
         { url: '5_Symbols/product/one-pager.html', title: 'Copy-Paste One-Pager', desc: 'Plain-text business analysis summary sized to paste into external idea-validation sites and forums.', cat: 'Strategy', tags: 'one pager copy paste validation summary plain text external' },
         { url: '5_Symbols/product/idea.html', title: 'Tell Us About Your Idea', desc: 'A detailed one-page overview of the business idea: what is built, problem solved, differences, target customer, and opportunity size.', cat: 'Strategy', tags: 'idea elevator pitch problem solution customer opportunity business summary YC YCombinator' },
@@ -335,6 +342,7 @@
         { url: '5_Symbols/growth/test-metrics.html', title: 'Test Metrics & Verification', desc: 'Key performance indicators, watch-time thresholds, sign-up targets, and margins.', cat: 'Growth', tags: 'metrics verification kpi thresholds target' },
         { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', desc: 'Execution calendar built around the weekly Sunday free cohort: discovery interviews, funnel instrumentation, cohort launches, onsite pilots.', cat: 'Growth', tags: 'test plan execution calendar sunday cohort discovery interviews cadence' },
         { url: '5_Symbols/growth/advertisement.html', title: 'Paid Advertisement', desc: 'Conditional, post-validation paid ad channels (YouTube, LinkedIn, Google Search, Reddit, newsletters) gated by a CAC/LTV sustainability check.', cat: 'Growth', tags: 'paid ads advertising cac ltv youtube linkedin google reddit sponsorship' },
+        { url: '5_Symbols/growth/when-to-advertise.html', title: 'When to Start Paid Advertisements', desc: 'Timing gate for paid ads: what to do instead of advertising, when spend is forbidden, and when a capped CAC/LTV test becomes an option.', cat: 'Growth', tags: 'when to advertise paid ads timing gate organic first do not advertise cac ltv h16' },
         { url: '5_Symbols/growth/funnel-math.html', title: 'Funnel Math', desc: 'Backward-calculated views-needed-for-$10k arithmetic reconciling the H4 and H7 funnel models, with a sensitivity table.', cat: 'Growth', tags: 'funnel math views needed calculation ctr conversion sensitivity' },
         { url: '5_Symbols/growth/unit-economics.html', title: 'Unit Economics', desc: 'Per-seat and per-member economics for the $250 cohort and $10/mo membership, priced against the founder day-rate benchmark.', cat: 'Growth', tags: 'unit economics per seat per member margin day rate ir35' },
         { url: '5_Symbols/growth/cost-side-model.html', title: 'Cost-Side Model', desc: 'Business-level cost stack, founder time-opportunity cost, and break-even math against the $100/mo infra cost.', cat: 'Growth', tags: 'cost side model break even infra opportunity cost' },
@@ -1318,7 +1326,14 @@
         '5_Symbols/hypotheses/hypothesis.html': [
             { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'Dependency Map', emoji: '🔀' },
             { url: '5_Symbols/dashboard/confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
+            { url: '5_Symbols/strategy/signal-versus-noise.html', title: 'Signal versus Noise', emoji: '📡' },
             { url: '5_Symbols/dashboard/calendar.html', title: 'Milestone Calendar', emoji: '📅' }
+        ],
+        '5_Symbols/strategy/signal-versus-noise.html': [
+            { url: '5_Symbols/strategy/evidence-map.html', title: 'Evidence Map', emoji: '🔍' },
+            { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: '5_Symbols/strategy/focus.html', title: 'Focus', emoji: '🎯' },
+            { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Founder Bandwidth', emoji: '🧑‍💻' }
         ],
         '5_Symbols/hypotheses/hypothesis-connectivity.html': [
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
