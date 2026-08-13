@@ -1,3 +1,5 @@
+> **Superseded by [v1.9.16](business-model-confidence-v1.9.16.md) (2026-08-13)** — that run adds the 10-true-regulars Skool milestone. Kept as the historical record.
+
 # Business Model Confidence Report — v1.9.15
 
 **Date:** 2026-08-13  
