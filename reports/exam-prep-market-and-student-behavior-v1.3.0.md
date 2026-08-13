@@ -1,3 +1,5 @@
+> **Superseded by [`exam-prep-market-and-student-behavior-v1.4.0.md`](exam-prep-market-and-student-behavior-v1.4.0.md) (2026-08-12)** — added Sude's 2026-08-12 Second Brain activation follow-up (staging + Concepts vault; pinned-chat automation; daily confusion/reminder loop). This version is kept as the historical record of findings as of 2026-08-11.
+
 # Certification Market Size & Student Exam-Prep Behavior
 
 **Version:** 1.3.0

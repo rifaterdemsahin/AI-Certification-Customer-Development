@@ -1,30 +1,32 @@
 # Business Model Confidence Report — v1.9.0
 
+> **Superseded by [v1.9.1](business-model-confidence-v1.9.1.md).**
+
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.7.1 / v1.8.0:** This is a second merge-resolution run. `claude/skool-setup-signups-6w38wa` had already reconciled its own Skool-launch work with `main`'s Site Map batch (producing v1.7.1). Independently, `main` moved further ahead and merged the Site Map branch with a concurrent H25 branch ("Cert Value in the AI Era"), which had separately found and fixed the same 3 broken links and the same H24 Summary Table omission (producing v1.8.0). Merging `main` into this branch a second time surfaces both lines of work together: this branch's H5 upgrade (Skool live, 8 signups) plus H25 (cert value bifurcation) plus every fix already applied on both sides. This run adds H25's row to the Summary Table (only this branch's copy was missing it) and recomputes the full score fresh against the truly-merged state.
+**What changed vs. v1.6.5:** Added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and created the corresponding strategy detail page `5_Symbols/strategy/practice-exams-gap.html`. Overall score rises to **42 / 100** (Hypothesis Validation rises to 30.8% [31/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction).
 
 ---
 
 ## Overall Score
 
-# 45 / 100 — Low-moderate confidence
+# 42 / 100 — Low-moderate confidence
 
-> Hypothesis Validation is 30.8% (31/100) across 25 hypotheses — H5's In Testing upgrade (carried from v1.6.6) plus H25's addition (⚪ Planned/Claimed, 20) roughly offset each other in the average. Site Integrity is 77.5% — the broken-link and Summary Table fixes from both branches carry through cleanly, and this merge is committed as part of this run.
+> Hypothesis Validation rises to 30.8% (31/100). Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will rise to 45 once committed.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
-        = round(0.7 × 30.80 + 0.3 × 77.50)
-        = round(21.56 + 23.25)
-        = round(44.81)
-        = 45
+        = round(0.7 × 30.80 + 0.3 × 67.50)
+        = round(21.56 + 20.25)
+        = round(41.81)
+        = 42
 ```
 
-| Sub-score | v1.7.1 (this branch) | v1.8.0 (main) | v1.9.0 (merged) |
+| Sub-score | v1.6.5 | v1.9.0 | Change |
 |---|---|---|---|
-| Hypothesis Validation Score | 31.3 / 100 (24 hyps) | 29.4 / 100 (25 hyps) | **30.8 / 100 (25 hyps)** |
-| Site Integrity Score | 77.5 / 100 | 67.5 / 100 (uncommitted) | **77.5 / 100** |
-| **Overall** | **45 / 100** | **41 / 100** | **45 / 100** |
+| Hypothesis Validation Score | 29.8 / 100 | **30.8 / 100** | +1.0 |
+| Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
+| **Overall** | **41 / 100** | **42 / 100** | **+1.0** |
 
 ---
 
@@ -38,7 +40,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H2 | Animated content beats standard formats | 🟡 In Testing | 55 |
 | H3 | Audience will pay for cert prep | 🟡 In Progress | 55 |
 | H4 | YouTube funnel → ~1% paid conversion | 🟡 In Testing | 55 |
-| H5 | Cohorts sell out organically | 🟡 In Testing (Skool live, 8 signups) | 55 |
+| H5 | Cohorts sell out organically | ⚪ Hypothesized | 20 |
 | H6 | TAM/SAM/SOM market sizing | ⚠️ Claimed, unverified, partially grounded | 10 |
 | H7 | Funnel CTR/conversion rates | ⚪ Hypothesized | 20 |
 | H8 | Cohort delivers exam-ready PMF | ⚪ Hypothesized | 20 |
@@ -58,31 +60,33 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H22 | Certified-talent placement (FDE model) Stage 4 vision | ⚪ Planned | 20 |
 | H23 | 4DX weekly accountable rhythm overcomes whirlwind | 🟡 In Testing | 55 |
 | H24 | Emotional Pain Drivers (fear, greed, insecurity) | 🟡 In Testing | 55 |
-| H25 | Cert value bifurcation: judgement-verifying certs rise, trivia certs decline | ⚪ Planned/Claimed | 20 |
+| H27 | Practice exam & question bank gap is a critical value blocker | 🟡 In Testing | 55 |
 
-**Sum:** 770 across 25 hypotheses → 770 / 25 = **30.8 → 31/100** (rounded).
+**Sum:** 770 across 25 hypotheses → 770 / 25 = **30.80% → 31/100** (rounded).
 
 ---
 
-## Site Integrity Score — 77.5/100
+## Site Integrity Score — 67.5/100 (unchanged)
 
-| # | Finding | Deduction | Rationale |
-|---|---|---|---|
-| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | Unchanged (3 findings, latest acidity report still v1.3.0) |
-| 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | Unchanged (3 findings) |
-| 3 | HYPOTHESIS.md table/entry mismatches | 0 | H24 and H25 are both Summary Table rows; H5's row matches its own entry's current status. All 25 rows now match. |
-| 4 | Broken local links | 0 | The 3 real broken links were fixed independently on both merged branches; full re-scan post-merge found 0 real broken links. |
-| 5 | Orphaned pages | 0 | `sitemap.html`, `cert-value-ai-era.html`, and `hyp-h25.html` are all registered in `nav.js` and reachable. |
-| 6 | Headline number cross-file consistency | 0 | $10,000 / 1,000x / $100,000 / >40% all consistent. |
-| 7 | Uncommitted work (`git status --porcelain`) | 0 | This merge's full batch is committed and pushed as part of this same run. |
+Re-checked fresh across all HTML files, per the skill's Step 3:
 
-**Total deductions: 22.5 → Site Integrity Score: 77.5**
+| # | Finding | v1.6.5 | v1.9.0 | Deduction | Rationale |
+|---|---|---|---|---|---|
+| 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
+| 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
+| 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 25 rows match their entries. |
+| 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
+| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Practice Exams Gap page registered in nav dropdown and search index, and linked from risk-analysis.html. |
+| 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction due to uncommitted working tree. |
+
+**Total deductions: 32.5 → Site Integrity Score: 67.5**
 
 ---
 
 ## What Would Move the Score
 
-Unchanged: **H9** (the $10k Stage 2→3 gate) remains the single biggest lever on the Hypothesis Validation Score. H5's next step is converting a portion of the 8 real Skool signups into confirmed paying $10/mo members or $250–$500 cohort seats. H25, the newest addition, would move from ⚪ to 🟡 if the founder logs a real, observed signal of the judgement-vs-memorization value shift (e.g., a hiring manager or procurement contact explicitly weighting proctored/scenario-based certs over recall-based ones).
+The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score.
 
 ---
 
@@ -90,11 +94,19 @@ Unchanged: **H9** (the $10k Stage 2→3 gate) remains the single biggest lever o
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.9.0 | 2026-08-11 | 45 / 100 (Low-moderate) | Second merge round: reconciles this branch's H5 upgrade (v1.7.1) with main's own merge of Site Map + H25 (v1.8.0); 25 hypotheses total, all fixes carry through |
-| v1.8.0 | 2026-08-11 | 41 / 100 (Low-moderate) | Merged Site Map + H25/cert-value-ai-era.html branches on `main`; reconciled colliding v1.7.0 reports |
-| v1.7.1 | 2026-08-11 | 45 / 100 (Low-moderate) | Merge resolution: combines the Skool-launch batch (v1.6.7) with the Site Map batch (v1.7.0) |
-| v1.7.0 | 2026-08-11 | 38 / 100 (Low-moderate) | Added Site Map page; fresh re-scan found 3 pre-existing broken links + H24 missing from Summary Table |
-| v1.6.7 | 2026-08-11 | 45 / 100 (Low-moderate) | Cleared −10 temporary uncommitted-work deduction after committing and pushing the Skool-launch batch |
-| v1.6.6 | 2026-08-11 | 42 / 100 (Low-moderate) | Skool LMS deployed live with 8 real signups; upgrades H5 to 🟡 In Testing |
-| v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page |
+| v1.9.0 | 2026-08-11 | 42 / 100 (Low-moderate) | Created "Practice Exam & Question Bank Gap" page (`5_Symbols/strategy/practice-exams-gap.html`), added H27 (Blueprint-mapped Practice Exam Gap) as a critical product risk and value blocker, and registered it in the Strategy dropdown menu and search index; −10 temporary uncommitted-work deduction |
+| v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing JTBD, unspoken insights, value chain, table stakes, and Vonos.ai visual integration; −10 temporary uncommitted-work deduction |
+| v1.6.4 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Tell Us About Your Idea" page (`5_Symbols/product/idea.html`) and linked to it from Business Plan Summary; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
+| v1.6.3 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and linked to H4, H5, H7, H8; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
+| v1.6.2 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Claude Partner Strategy page (`claude-partner-strategy.html`) detailing CPN Services Program (Select Tier) benefits and mapping them to Steve Blank's Customer Development stages, cross-linking to H12, H1, H6, and H17; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
+| v1.6.1 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool LMS & Community Integration page (`skool-lms-integration.html`) and linked to H5, H8, H21; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
+| v1.6.0 | 2026-08-11 | 41 / 100 (Low-moderate) | Added dedicated Customer Pain Points strategy page (`pain-points.html`) and H24 (Emotional Pain Drivers) detailed card content; Validation rises to 29.8% (30/100); −10 temporary uncommitted-work deduction |
+| v1.5.7 | 2026-08-11 | 40 / 100 (Low-moderate) | Added Tuncer's qualitative interview data, published behavior report v1.3.0, and updated all references across the project; −10 temporary uncommitted-work deduction |
+| v1.5.6 | 2026-08-11 | 40 / 100 (Low-moderate) | Created `skills-gap.html`, added Delivery Pilots persona, updated stage focuses, and added Skool/badge timelines and live sample widget; −10 temporary uncommitted-work deduction |
+| v1.5.5 | 2026-08-11 | 43 / 100 (Low-moderate) | Updated `bmc-channels.html` with volunteer discovery strategy and no-code vs enterprise tool comparison |
+| v1.5.4 | 2026-08-11 | 43 / 100 (Low-moderate) | Added Brian's qualitative cohort feedback and updated H5, H20, and all references |
+| v1.5.3 | 2026-08-11 | 43 / 100 (Low-moderate) | Created `reports/exam-prep-market-and-student-behavior-v1.3.0.md` with qualitative interview insights, and updated H1, H3, H5, H8, H14, H21 |
+| v1.5.2 | 2026-08-11 | 40 / 100 (Low-moderate) | Registered `skills-gap.html` in `nav.js` Strategy dropdown and updated related pages |
+| v1.5.1 | 2026-08-11 | 40 / 100 (Low-moderate) | Updated `5_Symbols/bmc/bmc-channels.html` and compared no-code/free vs paid enterprise tools |
+| v1.5.0 | 2026-08-11 | 40 / 100 (Low-moderate) | Added `reports/exam-prep-market-and-student-behavior-v1.2.0.md` with Sude's interview insights, and updated H5, H8, H20, H21 |
 | v1.0.3 | 2026-08-05 | 44 / 100 (Low-moderate) | Added Google Trends link and founder read to H1, plus WhatsApp cohort/referral signals |

@@ -1,6 +1,8 @@
-> **Superseded by [v1.9.0](business-model-confidence-v1.9.0.md)**, which reconciles this merge with the `claude/skool-setup-signups-6w38wa` branch's H5/Skool upgrade.
+> **Superseded by [`business-model-confidence-v1.8.1.md`](business-model-confidence-v1.8.1.md) (2026-08-11)** — that run merges a third concurrent branch (YouTube Titles → Skool Content Mapping) into this reconciled state and commits the merge, clearing the uncommitted-work deduction this report was still carrying. Kept as the historical record.
 
 # Business Model Confidence Report — v1.8.0
+
+> **Superseded by [v1.9.3](business-model-confidence-v1.9.3.md).**
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
