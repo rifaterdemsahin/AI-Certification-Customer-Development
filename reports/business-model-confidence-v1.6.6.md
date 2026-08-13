@@ -1,36 +1,36 @@
-> **Superseded by [v1.9.0](business-model-confidence-v1.9.0.md)** — this version's history forked into two parallel merge chains (v1.6.6→v1.6.7→v1.7.1 on `claude/skool-setup-signups-6w38wa`, v1.7.0→v1.8.0 on `main`) that were reconciled a second time as v1.9.0.
+> **Superseded by [v1.7.1](business-model-confidence-v1.7.1.md)**, which merges this branch's H5 upgrade with `main`'s Site Map batch.
 
-# Business Model Confidence Report — v1.6.5
+# Business Model Confidence Report — v1.6.6
 
 **Date:** 2026-08-11
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.6.4:** Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing customer JTBD, unspoken market insights, value chain, table stakes, and Vonos.ai progress tracking/expensing. Overall score remains at 41 (Validation holds at 29.8% [30/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed.
+**What changed vs. v1.6.5:** The founder deployed the Skool LMS live (skool.com): uploaded all 8 recorded free-cohort sessions to Classroom, configured membership levels and his bio, and shared the invite link — 8 people signed up. This is real, measured evidence directly on H5's conclusion (not yet the paid-enrollment target itself), and upgrades H5 from ⚪ Hypothesized (20) to 🟡 In Testing (55) — the same evidentiary bar used to upgrade H4. Hypothesis Validation rises from 29.8% to 31.25% (30 → 31/100). Site Integrity holds at 67.5% (a new, distinct batch of uncommitted work — this Skool-launch batch — still carries the −10 temporary deduction until committed).
 
 ---
 
 ## Overall Score
 
-# 41 / 100 — Low-moderate confidence
+# 42 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at 29.8% (30/100). Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will rise to 44 once committed.
+> Hypothesis Validation rises to 31.3% (31/100) on H5's upgrade. Site Integrity holds at 67.5% in the uncommitted state (uncommitted work deduction is −10). Will rise to 45 once committed.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
-        = round(0.7 × 29.79 + 0.3 × 67.50)
-        = round(20.85 + 20.25)
-        = round(41.1)
-        = 41
+        = round(0.7 × 31.25 + 0.3 × 67.50)
+        = round(21.875 + 20.25)
+        = round(42.125)
+        = 42
 ```
 
-| Sub-score | v1.6.4 | v1.6.5 | Change |
+| Sub-score | v1.6.5 | v1.6.6 | Change |
 |---|---|---|---|
-| Hypothesis Validation Score | 29.8 / 100 | **29.8 / 100** | 0.0 |
+| Hypothesis Validation Score | 29.8 / 100 | **31.3 / 100** | +1.5 |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** | 0.0 |
-| **Overall** | **41 / 100** | **41 / 100** | **0.0** |
+| **Overall** | **41 / 100** | **42 / 100** | **+1** |
 
 ---
 
-## Hypothesis Validation Score — 29.8/100 (displayed 30/100)
+## Hypothesis Validation Score — 31.3/100 (displayed 31/100)
 
 Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
@@ -40,7 +40,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H2 | Animated content beats standard formats | 🟡 In Testing | 55 |
 | H3 | Audience will pay for cert prep | 🟡 In Progress | 55 |
 | H4 | YouTube funnel → ~1% paid conversion | 🟡 In Testing | 55 |
-| H5 | Cohorts sell out organically | ⚪ Hypothesized | 20 |
+| H5 | Cohorts sell out organically | 🟡 In Testing (upgraded — Skool live, 8 signups) | 55 |
 | H6 | TAM/SAM/SOM market sizing | ⚠️ Claimed, unverified, partially grounded | 10 |
 | H7 | Funnel CTR/conversion rates | ⚪ Hypothesized | 20 |
 | H8 | Cohort delivers exam-ready PMF | ⚪ Hypothesized | 20 |
@@ -61,7 +61,7 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 | H23 | 4DX weekly accountable rhythm overcomes whirlwind | 🟡 In Testing | 55 |
 | H24 | Emotional Pain Drivers (fear, greed, insecurity) | 🟡 In Testing | 55 |
 
-**Sum:** 715 across 24 hypotheses → 715 / 24 = **29.791… → 30/100** (rounded).
+**Sum:** 750 across 24 hypotheses → 750 / 24 = **31.25 → 31/100** (rounded).
 
 ---
 
@@ -69,15 +69,15 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 Re-checked fresh across all HTML files, per the skill's Step 3:
 
-| # | Finding | v1.6.4 | v1.6.5 | Deduction | Rationale |
+| # | Finding | v1.6.5 | v1.6.6 | Deduction | Rationale |
 |---|---|---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | −15 | −15 | Unchanged (3 findings) |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | −7.5 | −7.5 | Unchanged (3 findings) |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | 0 | 0 | All 24 rows match their entries. |
 | 4 | Broken local links | 0 | 0 | 0 | Full-repo scan, 0 real broken links |
-| 5 | Orphaned pages | 0 | 0 | 0 | Resolved. Market Reality Check page registered in nav dropdown and search index, and linked from business plan summary / index.html. |
+| 5 | Orphaned pages | 0 | 0 | 0 | No new pages added this run — nothing to orphan. |
 | 6 | Headline number cross-file consistency | 0 | 0 | 0 | Consistent. |
-| 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | Temporary deduction due to uncommitted working tree. |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | −10 | −10 | New, distinct batch (Skool-launch page/hypothesis/dashboard updates) still uncommitted at scan time. |
 
 **Total deductions: 32.5 → Site Integrity Score: 67.5**
 
@@ -85,7 +85,7 @@ Re-checked fresh across all HTML files, per the skill's Step 3:
 
 ## What Would Move the Score
 
-The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score.
+The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gate) — two consecutive paid cohort launches combining to $10,000 — since it gates H15, H16, and H19 downstream and is the single biggest lever on the Hypothesis Validation Score. H5's own next lever, now that real Skool signups exist, is converting a portion of those (and future) signups into confirmed paying $10/mo members or $250–$500 cohort seats — H5 cannot cross to ✅ Validated on community joins alone.
 
 ---
 
@@ -93,7 +93,8 @@ The highest-leverage *business* action remains: **H9** (the $10k Stage 2→3 gat
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing JTBD, unspoken insights, value chain, table stakes, and Vonos.ai visual integration; −10 temporary uncommitted-work deduction |
+| v1.6.6 | 2026-08-11 | 42 / 100 (Low-moderate) | Skool LMS deployed live (8 recordings uploaded, levels + bio configured, link shared) with 8 real signups; upgrades H5 to 🟡 In Testing; −10 temporary uncommitted-work deduction |
+| v1.6.5 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Your Market Reality Check" page (`5_Symbols/strategy/market-reality-check.html`) detailing customer JTBD, unspoken market insights, value chain, table stakes, and Vonos.ai progress tracking/expensing. Overall score remains at 41 (Validation holds at 29.8% [30/100], Site Integrity holds at 67.5% due to −10 uncommitted-work deduction). Will rise to 44 once committed. |
 | v1.6.4 | 2026-08-11 | 41 / 100 (Low-moderate) | Created "Tell Us About Your Idea" page (`5_Symbols/product/idea.html`) and linked to it from Business Plan Summary; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.3 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Skool vs. YouTube comparison page (`skool-vs-youtube.html`) and linked to H4, H5, H7, H8; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |
 | v1.6.2 | 2026-08-11 | 41 / 100 (Low-moderate) | Added Claude Partner Strategy page (`claude-partner-strategy.html`) detailing CPN Services Program (Select Tier) benefits and mapping them to Steve Blank's Customer Development stages, cross-linking to H12, H1, H6, and H17; Validation and Site Integrity hold flat; −10 temporary uncommitted-work deduction |

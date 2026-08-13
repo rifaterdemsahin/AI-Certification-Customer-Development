@@ -1,3 +1,5 @@
+> **Superseded by [v1.9.11](business-model-confidence-v1.9.11.md) (2026-08-13)** — that run merges PR #9 (H5 upgraded to In Testing on 8 Skool signups) and clears the uncommitted-work deduction. Kept as the historical record.
+
 # Business Model Confidence Report — v1.9.10
 
 **Date:** 2026-08-13  
