@@ -67,6 +67,7 @@
         },
         {
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
+                ['5_Symbols/strategy/raise.html', '🚀 R.A.I.S.E.'],
                 ['motivation.html', '🔥 Motivation'],
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis'],
                 ['5_Symbols/strategy/focus.html', '🎯 Focus'],
@@ -83,6 +84,7 @@
                 ['5_Symbols/hypotheses/hypothesis-connectivity.html', '🔀 Hypothesis Connectivity'],
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
+                ['5_Symbols/product/vc-feedback.html', '🏦 VC Constructive Feedback'],
                 ['5_Symbols/product/pitch-deck.html', '📋 5-Minute Pitch Deck'],
                 ['5_Symbols/product/one-pager.html', '📋 Copy-Paste One-Pager'],
                 ['5_Symbols/product/idea.html', '💡 Tell Us About Your Idea'],
@@ -134,6 +136,7 @@
                 ['5_Symbols/growth/test-plan.html', '🧪 Test Plan'],
                 ['5_Symbols/dashboard/todo.html', '✅ Task List'],
                 ['5_Symbols/growth/content-analysis.html', '🎬 Content Analysis'],
+                ['5_Symbols/growth/content-format.html', '🎬 Short vs Long Form'],
                 ['5_Symbols/growth/youtube-channel-metrics.html', '📺 YouTube Channel Metrics'],
                 ['5_Symbols/growth/cohort-prep.html', '🧰 Cohort Prep'],
                 ['5_Symbols/growth/advertisement.html', '📣 Paid Advertisement'],
@@ -186,7 +189,8 @@
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report v1.0 (Historical)'],
                 ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
                 ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '🤖 AI Adoption &amp; Skills Gap'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.3.0.md', '🧠 Exam Prep &amp; Student Behavior'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.4.0.md', '🧠 Exam Prep &amp; Student Behavior'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.3.0.md', '🧠 Exam Prep &amp; Student Behavior v1.3 (Historical)'],
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification']
             ]
@@ -200,6 +204,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/growth/content-format.html', title: 'Content Format: Short vs Long Form', desc: 'Where animated videos, workshops, and course-based videos live on YouTube, LinkedIn, and Skool — with the rationale for each.', cat: 'Growth', tags: 'short form long form youtube shorts linkedin skool animated workshop course format placement' },
         { url: '5_Symbols/growth/sales-marketing-roadmap.html', title: 'Sales & Marketing Roadmap', desc: 'Maps the 7-cohort Skool curriculum sequence (Foundations through Second Brain) to funnel stages, offers, and multi-cert expansion.', cat: 'Growth', tags: 'sales marketing roadmap skool cohorts curriculum funnel sequence forward deployed engineering second brain' },
         { url: '5_Symbols/strategy/practice-exams-gap.html', title: 'Practice Exam & Question Bank Gap', desc: 'Analysis of the critical product gap (lack of blueprint-mapped practice exams) and mitigation roadmap.', cat: 'Strategy', tags: 'practice exams question banks mock test blueprint validation gap risk' },
         { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'The Execution Crisis Overview', desc: '4DX overview hub mapping whirlwind vs strategic goals.', cat: 'Execution', tags: '4dx execution crisis whirlwind strategy roadmap overview' },
@@ -250,6 +255,7 @@
         { url: '5_Symbols/cd/cd-verify-problem.html', title: 'Verify the Problem Fit', desc: 'Confirming that target students face real, severe pain points with existing training.', cat: 'Process', tags: 'verify problem pain points study' },
         { url: '5_Symbols/cd/cd-verify-business-model.html', title: 'Verify the Business Model Fit', desc: 'Analyzing pricing model, customer acquisition cost, and revenue sustainability.', cat: 'Process', tags: 'verify business model pricing cost sustainability' },
         { url: '5_Symbols/cd/cd-verify-iterate-exit.html', title: 'Iterate or Exit Gate', desc: 'The ultimate decision gate for Rifat: do we proceed, pivot, or stop?', cat: 'Process', tags: 'decision gate trigger pivot exit' },
+        { url: '5_Symbols/strategy/raise.html', title: 'R.A.I.S.E. — The Starting Point', desc: 'Rapid Artificial Intelligence Increases Skills Expectations: the founder origin, IT background, learning-systems pain, and why proctored exams are the path.', cat: 'Strategy', tags: 'raise starting point founder origin it learning systems proctored exam self-learning h1' },
         { url: 'motivation.html', title: 'Motivation: Why & How This Makes Money', desc: 'Full-site synthesis of why the business exists, the three revenue streams, and the ICP personas tied to each one.', cat: 'Strategy', tags: 'motivation money revenue icp personas why founder' },
         { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Core Business Hypotheses', desc: 'Comprehensive dashboard tracking all customer, value prop, and distribution hypotheses.', cat: 'Strategy', tags: 'dashboard hypotheses tracking assumptions' },
         { url: '5_Symbols/hypotheses/hyp-h1.html', title: 'H1 · Rising AI skills expectations', desc: 'Detail page with premise-conclusion-status SVG diagram for H1.', cat: 'Hypothesis Detail', tags: 'h1 hypothesis detail skills expectations svg diagram' },
@@ -283,6 +289,7 @@
         { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'What Does "Not Connected" Mean?', desc: 'Explains the three patterns behind a disconnected hypothesis in the Dependency Map: fully isolated, foundational-uncited gap, and terminal leaf.', cat: 'Strategy', tags: 'connectivity dependency map isolated orphan gap terminal leaf depends on feeds' },
         { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
         { url: '5_Symbols/product/vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
+        { url: '5_Symbols/product/vc-feedback.html', title: 'VC Constructive Feedback', desc: 'The memo a constructive venture partner would write after the deck: eight cited notes, rationale, and what evidence would close each one.', cat: 'Strategy', tags: 'vc feedback constructive investor memo default alive graham andreessen gurley thiel raise' },
         { url: '5_Symbols/product/pitch-deck.html', title: '5-Minute Pitch Deck', desc: 'Single-scroll executive-review summary of the business with links to full detail on every claim.', cat: 'Strategy', tags: 'pitch deck 5 minute executive summary tldr' },
         { url: '5_Symbols/product/one-pager.html', title: 'Copy-Paste One-Pager', desc: 'Plain-text business analysis summary sized to paste into external idea-validation sites and forums.', cat: 'Strategy', tags: 'one pager copy paste validation summary plain text external' },
         { url: '5_Symbols/product/idea.html', title: 'Tell Us About Your Idea', desc: 'A detailed one-page overview of the business idea: what is built, problem solved, differences, target customer, and opportunity size.', cat: 'Strategy', tags: 'idea elevator pitch problem solution customer opportunity business summary YC YCombinator' },
@@ -1252,7 +1259,13 @@
             { url: '5_Symbols/bmc/business-model-canvas.html', title: 'Business Model Canvas', emoji: '🖼️' },
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Tracker', emoji: '💭' }
         ],
+        '5_Symbols/strategy/raise.html': [
+            { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' },
+            { url: '5_Symbols/strategy/why-certification.html', title: 'Why Certification', emoji: '🏅' },
+            { url: '5_Symbols/hypotheses/hyp-h1.html', title: 'H1 Skills Expectations', emoji: '🔍' }
+        ],
         'motivation.html': [
+            { url: '5_Symbols/strategy/raise.html', title: 'R.A.I.S.E. Starting Point', emoji: '🚀' },
             { url: '5_Symbols/strategy/target-audience.html', title: 'ICP Personas', emoji: '👥' },
             { url: '5_Symbols/bmc/bmc-revenue-streams.html', title: 'Revenue Streams', emoji: '💰' },
             { url: '5_Symbols/growth/funnel-math.html', title: 'Funnel Math', emoji: '🧮' },

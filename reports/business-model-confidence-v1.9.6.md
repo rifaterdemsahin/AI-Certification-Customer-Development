@@ -1,10 +1,10 @@
-> **Superseded by [`business-model-confidence-v1.9.6.md`](business-model-confidence-v1.9.6.md) (2026-08-12)** — added Sude's 2026-08-12 Second Brain activation follow-up. This version is kept as the historical record of the 41/100 score as of the YouTube → Skool handoff run.
+> **Superseded by [`business-model-confidence-v1.9.7.md`](business-model-confidence-v1.9.7.md) (2026-08-13)** — added R.A.I.S.E. starting-point page. This version is kept as the historical record of the 41/100 score as of the Sude 12 Aug archive run.
 
-# Business Model Confidence Report — v1.9.5
+# Business Model Confidence Report — v1.9.6
 
 **Date:** 2026-08-12  
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)  
-**What changed vs. v1.9.4:** Added `5_Symbols/product/youtube-skool-handoff.html` documenting the fixed platform order: YouTube/LinkedIn = acquisition; Skool = Stage 2 delivery (Classroom + forum + calendar + billing); CTAs/warm invites = the handoff bridge. Registered in `nav.js`, linked from LMS / Skool-vs-YouTube / organic-growth / posting-sanity-check / latest-pages. Source lines updated on H4, H5, H7, H8. No new hypothesis; no hypothesis status-tier change.
+**What changed vs. v1.9.5:** patch bump — archived Sude's 2026-08-12 WhatsApp follow-up on `5_Symbols/cd/archived-interview-transcripts.html` (focus entry): she moved from 10 Aug intent to a working staging + Concepts Second Brain trained on one chat, with a planned pinned-chat automation and daily confusion/reminder loop. Evidence added to H5, H8, and H20; published `reports/exam-prep-market-and-student-behavior-v1.4.0.md`. No hypothesis status-tier change.
 
 ---
 
@@ -12,7 +12,7 @@
 
 # 41 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at **30.0/100** (27 hypotheses; no status emoji changes). Site Integrity holds at **67.5/100** (0 broken links on the new page; registered in nav + cross-linked; −10 uncommitted-work for this batch including prior uncommitted Skool ops work; acidity findings carried forward). Overall remains **41**.
+> Hypothesis Validation holds at **30.0/100** (27 hypotheses; no status emoji changes). Site Integrity holds at **67.5/100** (0 broken links; 0 orphans; −10 uncommitted-work for this distinct Sude-archive batch; acidity findings carried forward). Overall remains **41**. A low-moderate score at this stage is expected — most Stage 2/3 bets are still open.
 
 ```
 overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score)
@@ -22,7 +22,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
         = 41
 ```
 
-| Sub-score | v1.9.4 | v1.9.5 (this run) |
+| Sub-score | v1.9.5 | v1.9.6 (this run) |
 |---|---|---|
 | Hypothesis Validation Score | 30.0 / 100 | **30.0 / 100** |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** |
@@ -32,7 +32,7 @@ overall = round(0.7 × Hypothesis Validation Score + 0.3 × Site Integrity Score
 
 ## Hypothesis Validation Score — 30/100
 
-Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`. All 27 hypotheses keep the same status emoji as v1.9.4.
+Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`. All 27 hypotheses keep the same status emoji as v1.9.5.
 
 | ID | Hypothesis (one line) | Status | Score |
 |---|---|---|---|
@@ -66,6 +66,8 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 
 **Sum:** 810 across 27 hypotheses → 810 / 27 = **30.00% → 30/100**.
 
+H5 / H8 / H20 received new qualitative evidence this run (Sude's 48-hour Second Brain activation) but none crossed a status tier: still no paid enrollments, no exam-pass/NPS data, no counted referral.
+
 ---
 
 ## Site Integrity Score — 67.5/100
@@ -74,25 +76,30 @@ Re-derived fresh from each hypothesis's own **Status:** line in `HYPOTHESIS.md`.
 |---|---|---|---|
 | 1 | Acidity-check findings still open (F2, F11, F12) | −15 | Carried forward from `acidity-check-report-v1.3.0.md` (3 still-open findings). |
 | 2 | Acidity-check findings partially addressed (F3, F7, F9) | −7.5 | Carried forward (3 partial findings). |
-| 3 | HYPOTHESIS.md table/entry mismatches | 0 | No new mismatches introduced. |
-| 4 | Broken local links | 0 | New handoff page: 0 broken local hrefs. Prior H27 → `practice-exams-gap.html` fix still holds. |
-| 5 | Orphaned pages | 0 | `youtube-skool-handoff.html` in `nav.js` groups + searchIndex; inbound links from LMS, skool-vs-youtube, organic-growth, posting-sanity-check, latest-pages. |
-| 6 | Headline number cross-file consistency | 0 | Unchanged. |
-| 7 | Uncommitted work (`git status --porcelain`) | −10 | Distinct open batch includes handoff page + prior Skool posting-sanity work still uncommitted. Clears once committed. |
+| 3 | HYPOTHESIS.md table/entry mismatches | 0 | Leading status emoji matches the Summary Table for every hypothesis. |
+| 4 | Broken local links | 0 | Fresh scan of all `*.html` hrefs (scripts stripped): 0 broken local targets. |
+| 5 | Orphaned pages | 0 | Every `*.html` except `index.html` is reachable via an href or `nav.js`. |
+| 6 | Headline number cross-file consistency | 0 | $10,000 / $100,000 / 1,000x / >40% appear only in USD and the canonical figures; no £10,000 contradiction on live pages. |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | Distinct new batch: Sude archive follow-up + H5/H8/H20/evidence-map/behavior-report v1.4.0. Prior v1.9.5 handoff batch is already on `main`. Clears once this batch is committed. |
 
 **Total deductions: 32.5 → Site Integrity Score: 67.5**
+
+Uncommitted-work grouping (this batch):
+
+- Modified: `5_Symbols/cd/archived-interview-transcripts.html`, `cd-interview-recording.html`, `hyp-h5.html`, `hyp-h8.html`, `hyp-h20.html`, `evidence-map.html`, `latest-pages.html`, `HYPOTHESIS.md`, `nav.js`, `reports/exam-prep-market-and-student-behavior-v1.3.0.md` (supersede banner).
+- Untracked: `reports/exam-prep-market-and-student-behavior-v1.4.0.md` (plus this report and the confidence-report.html update).
+
+All of the above are one coherent feature: archive Sude's 12 Aug activation follow-up and cross-link it.
 
 ---
 
 ## Business finding (this run, not scored as a new hypothesis)
 
-**Platform order is now a first-class page, not only an implication of the comparison pages.**
+**Session → homework in 48 hours is now a logged activation pattern, not just a thank-you.**
 
-- **Acquire outside:** YouTube + LinkedIn (+ meetups / WhatsApp free cohort) own discovery and reach.
-- **Handoff bridge:** video/description CTAs, LinkedIn newsletter links, warm WhatsApp invites into Skool.
-- **Deliver inside:** Skool = Stage 2 Classroom + forum + calendar + billing — not a Stage 1 discovery tool.
+Sude (Sunday cohort, WhatsApp) went from "I'll deep dive" + a full Second Brain sketch (10 Aug) to a working vault (12 Aug): sample chats in a staging folder, extracted concepts in a Concepts folder, trained from one chat history, with a planned routine to auto-pull pinned chats and a daily reminder of what she was confused about. PARA / Cloudflare / background-worker friction from 10 Aug did not block a first version.
 
-This codifies the same boundary as `skool-posting-sanity-check.html` without changing H4/H5/H7/H8 status tiers. Full page: `5_Symbols/product/youtube-skool-handoff.html`.
+This is H8 Premise 2 and H20 delight/activation evidence. It is **not** H5 paid-enrollment evidence and does not move any status tier. Full thread: `5_Symbols/cd/archived-interview-transcripts.html`. Behavior report: `reports/exam-prep-market-and-student-behavior-v1.4.0.md`.
 
 ---
 
@@ -102,15 +109,15 @@ This codifies the same boundary as `skool-posting-sanity-check.html` without cha
 
 | Component | Current | Ceiling | What would raise it |
 |---|---|---|---|
-| **Hypothesis Validation (30 → higher)** | Average of 27 statuses | 100 if all ✅ | Highest leverage: **H9** two consecutive paid cohort launches combining to **$10,000**. Next cheap move: **H27** question bank well past 2/60 with logged attendee demand. **H5/H8** need non-founder Skool threads + paid enrollment after warm handoff from YouTube/LinkedIn/WhatsApp. |
+| **Hypothesis Validation (30 → higher)** | Average of 27 statuses | 100 if all ✅ | Highest leverage: **H9** two consecutive paid cohort launches combining to **$10,000**. Next cheap move: **H27** question bank well past 2/60 with logged attendee demand. **H5/H8** need paid enrollment (Sude's vault is activation, not payment) and non-founder Skool threads after warm handoff. **H20** needs a counted referral from an activated student like Sude, not only stack customization. |
 | **Acidity still-open (−15)** | F2, F11, F12 open | 0 deduction | Resolve F12 (individual exam access); F2 evidence or demote wording; F11 churn/renewal for $10/mo. |
 | **Acidity partial (−7.5)** | F3, F7, F9 | 0 deduction | Deepen single-founder mitigation; unit-economics fees; pricing ladder evidence. |
-| **Uncommitted work (−10)** | This batch uncommitted | 0 | Commit handoff page + remaining Skool ops files. Site Integrity → **77.5**, overall → **44**. |
+| **Uncommitted work (−10)** | This Sude-archive batch uncommitted | 0 | Commit archive + H5/H8/H20 + behavior report v1.4.0. Site Integrity → **77.5**, overall → **44**. |
 | **Broken links / orphans** | Already 0 | Hold | Keep registering new pages in `nav.js` before considering them done. |
 
 1. **Commit this batch** — clears −10 immediately (overall 41 → 44).
-2. **Operate the handoff** — YouTube/LinkedIn CTA + warm WhatsApp invite into Skool (prerequisite for H5/H8 board-side evidence).
-3. **H9** remains the single biggest business lever on the Hypothesis Validation Score.
+2. **H9** remains the single biggest business lever on the Hypothesis Validation Score.
+3. **Convert Sude-class activation into a counted H20 referral or a paid H5 seat** — the vault proves delight; it does not yet prove willingness to pay.
 4. **H27** remains the cheapest hypothesis to move next via Classroom production + demand logging.
 
 ---
@@ -119,7 +126,8 @@ This codifies the same boundary as `skool-posting-sanity-check.html` without cha
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| **v1.9.5** | 2026-08-12 | **41 / 100** (Low-moderate) | YouTube → Skool handoff page (order + rationale); H4/H5/H7/H8 source links; score holds flat |
+| **v1.9.6** | 2026-08-12 | **41 / 100** (Low-moderate) | Sude 2026-08-12 Second Brain activation follow-up archived; H5/H8/H20 evidence; behavior report v1.4.0; score holds flat |
+| v1.9.5 | 2026-08-12 | 41 / 100 (Low-moderate) | YouTube → Skool handoff page (order + rationale); H4/H5/H7/H8 source links; score holds flat |
 | v1.9.4 | 2026-08-12 | 41 / 100 (Low-moderate) | Founder-only Skool board seeding sanity check + page/report; H5/H8 operational evidence; score holds flat |
 | v1.9.3 | 2026-08-12 | 41 / 100 (Low-moderate) | Branch reconciliation; H27/H28; 27 hypotheses |
 | v1.9.2 | 2026-08-12 | 42 / 100 (Low-moderate) | Broken-link fixes; Site Integrity recover |
