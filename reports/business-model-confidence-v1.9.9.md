@@ -1,3 +1,5 @@
+> **Superseded by [`business-model-confidence-v1.9.10.md`](business-model-confidence-v1.9.10.md) (2026-08-13)** — that run adds the 2-hour Skool workshop-upload sanity check. This version is kept as the historical record.
+
 # Business Model Confidence Report — v1.9.9
 
 **Date:** 2026-08-13  
