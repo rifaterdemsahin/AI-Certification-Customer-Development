@@ -26,6 +26,34 @@
 
         <!-- Archived Transcripts -->
         <section class="content-section animate-fade-in">
+            <!-- Bora Transcript -->
+            <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--color-info);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                    <strong style="color: var(--color-primary); font-size: 1.1rem;">Bora &mdash; Discovery Feedback (2026-08-14)</strong>
+                    <span class="status-pill" style="font-size: 0.75rem; background: rgba(6, 182, 212, 0.1); color: var(--color-info); border: 1px solid rgba(6, 182, 212, 0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Context: Discord / Obsidian background automation and context capacity validation</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                    <p style="background: rgba(6, 182, 212, 0.06); border-left: 3px solid var(--color-info); padding: 0.6rem 1rem; border-radius: 4px; margin-bottom: 1.25rem; color: var(--text-primary);">
+                        <strong>Why this entry is important:</strong> Bora represents the practitioner who started with standard web-clippers but abandoned curation due to manual folder organization friction. He explicitly validates the need for background sync automation, while bringing forward key constraints: the impact of Obsidian/MCP server queries on chat context window consumption.
+                    </p>
+
+                    <h4 style="color: var(--text-primary); margin: 0 0 0.75rem; font-size: 0.95rem;">🗣️ Verbatim Interview &amp; Chat Snippets</h4>
+                    <p style="font-style: italic; background: rgba(255, 255, 255, 0.01); border-left: 3px solid var(--color-info); padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 1.5rem; color: var(--text-primary);">
+                        &ldquo;I first started to collect relevant content via the browser's web-clipper extension but soon after I found that putting them in relevant subfolders on Obsidian is a lot of manual work; eventually I gave it up updating them. It really needs automation just like the ones on vibe-coding platforms via GitHub synching.&rdquo;
+                    </p>
+                    <p style="font-style: italic; background: rgba(255, 255, 255, 0.01); border-left: 3px solid var(--color-info); padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 1.5rem; color: var(--text-primary);">
+                        &ldquo;Yep, an MCP server would be nice, pulling the chat logs and sorting them in Obsidian for me. But would that take up space in the context window in every chat session?&rdquo;
+                    </p>
+
+                    <h4 style="color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 0.95rem;">🔍 Key Takeaways &amp; Design Implications</h4>
+                    <ul class="emoji-list" style="margin-bottom: 1.5rem; padding-left: 1.25rem;">
+                        <li><span class="emoji">⚙️</span><strong>Manual Curation Friction:</strong> Friction in manual clippers/sorting blocks long-term PKM maintenance, proving background log-capture automation is a core value blocker (supports <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>).</li>
+                        <li><span class="emoji">💾</span><strong>Context window limits are front-of-mind:</strong> Tech-savvy developers worry about MCP or vault ingestion loading excessive files, wasting context space.</li>
+                        <li><span class="emoji">🛠️</span><strong>Architecture Validation:</strong> Rifat's hybrid database stack (Google Drive, Neo4j, Qdrant, Redis) addresses this by indexing and searching outside the context window, feeding only highly relevant pieces to Claude.</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- Sude Follow-up Transcript -->
             <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--color-success);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
@@ -217,7 +245,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Added Sude&rsquo;s 2026-08-12 WhatsApp follow-up (staging + Concepts vault; pinned-chat automation; daily confusion/reminder loop) as the focus entry, with the original 10 Aug Turkish thread archived below it (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/archived-interview-transcripts.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Added Bora customer discovery feedback on Obsidian background automation and context capacity validation (2026-08-14) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/archived-interview-transcripts.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </div>
     </footer>

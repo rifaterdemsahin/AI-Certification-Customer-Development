@@ -1,12 +1,8 @@
 # Certification Market Size & Student Exam-Prep Behavior
 
-> [!IMPORTANT]
-> This version has been superseded by [v1.5.0](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/reports/exam-prep-market-and-student-behavior-v1.5.0.md).
-> See [the updated report on live page](http://localhost:8000/markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.5.0.md).
-
-**Version:** 1.4.0
-**Date:** 2026-08-12
-**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version adds Sude's 2026-08-12 WhatsApp follow-up — she moved from describing a Second Brain to standing up a working staging + Concepts vault — alongside Tuncer's, Charles's, and corporate practitioner data.
+**Version:** 1.5.0
+**Date:** 2026-08-14
+**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version adds the qualitative customer discovery findings for Bora's background automation preferences, context window concerns, and Rifat Erdem Şahin's multi-source hybrid database stack proof-of-concept.
 
 ---
 
@@ -26,7 +22,7 @@
 - 97% of IT decision-makers say certified staff add measurable value to their organization; 22% put that value at $30,000 or more per certified employee.
 - The majority of IT decision-makers report that certification costs are recouped through increased productivity, faster troubleshooting, and fewer skills gaps on the team.
 - 56% of IT decision-makers report having a formal plan in place to train (and by extension, certify) existing staff.
-- This matches the user-supplied indicator that started this research: Capgemini reimburses employees for cloud certification exam fees and treats certification as a lever that raises billable rates on client engagements (see `reports/market-validation-argument-v1.0.md`, Section 2) — this is not an isolated anecdote, it is standard industry behavior with a measured ROI employers already track.
+- This matches the user-supplied indicator that started this research: Capgemini reimbursement policies for cloud certification exams, where certification functions as a credential that raises billable client rates (see `reports/market-validation-argument-v1.0.md`, Section 2).
 
 ---
 
@@ -48,6 +44,8 @@ Key behavioral facts about how candidates prepare, and why:
 2. **Failure-avoidance, not just learning, is a sellable outcome.** The 25–40% failure rates on comparable exams, combined with full-price non-discounted retakes and the added psychological cost of failing an employer-sponsored exam, mean "helping you pass on the first attempt" is a distinct, higher-value promise than "helping you learn the material" — this is worth reflecting explicitly in the site's PMF and marketing copy (`comp-pmf.html`).
 3. **Format rehearsal is part of the product, not an afterthought.** Because OnVUE's proctoring mechanics are themselves a stated source of anxiety, a prep cohort that includes a mock proctored-exam run-through (environment setup, timing, webcam etiquette) addresses a real, documented gap competitors focused purely on content may be missing.
 4. **Session → homework in 48 hours is a live activation pattern.** Sude's 2026-08-12 follow-up shows a free Sunday session plus the recording can produce independent implementation of the Second Brain stack mid-week. That is a PMF/delight precursor (H8, H20), not yet a paid conversion (H5 enrollment counts still untested).
+5. **Background Automation & Graph taxonomy is a highly-valued product direction.** Bora's feedback demonstrates that manual note curation and folder organization in Obsidian are high-friction tasks that cause users to abandon Second Brain upkeep. A successful solution must focus on continuous background ingestion (e.g., via MCP server sync) similar to vibe-coding/GitHub flows.
+6. **Minimize Context Window bloat via Multi-Source Hybrid Retrieval.** To address Bora's concern that an MCP server pulling logs into Obsidian will consume excessive context window capacity during chats, the system architecture must route queries through a multi-tier database stack (FTS, Graph relationships, files/structure, vector search, caching) rather than naive, full-vault uploads.
 
 ---
 
@@ -95,6 +93,12 @@ This section summarizes qualitative findings from on-the-record discovery interv
 * **Implementation Version Risks:** A critical pain point is that missing config/AI skills make teams lose massive time and energy if AI is implemented in the wrong version or with incorrect configuration settings.
   * **Takeaway:** This directly validates the enterprise skills gap hypothesis (**H1**), highlighting that structured credentials are vital to ensure correct versioning and implementation architecture.
 
+### D. Obsidian background automation & Context Window capacity (Bora)
+* **High Curation Friction:** Bora reported that browser extensions (web-clippers) and manual note organization in Obsidian vaults (sorting into subfolders) represent too much manual effort. This friction leads users to abandon updating their vaults over time.
+* **Desire for Background Automation:** Similar to vibe-coding setups with GitHub syncing, Bora wants background-sync automation (such as an Obsidian MCP server) that handles log ingestion and sorting without human intervention.
+* **Context Window Capacity Anxiety:** A significant technical concern is whether loading local Obsidian chat logs through an MCP server will consume too much context window capacity during active chat sessions, reducing room for active reasoning.
+* **Takeaway:** This validates that automated curation is a hard requirement for Second Brain retention, and highlights context-capacity anxiety as a key customer constraint. This supports minimizing context size by routing queries through a multi-tier database stack (FTS, graphs, vectors, caching) instead of naive vault loading.
+
 ---
 
 ## Sources
@@ -118,11 +122,13 @@ This section summarizes qualitative findings from on-the-record discovery interv
 - **Primary Source 1 (2026-08-10):** Customer Discovery Interview with Charles & Speaker 2, large corporate organisation.
 - **Primary Source 2 (2026-08-10 + follow-up 2026-08-12):** Customer Discovery Interview with Sude, Sunday Cohort student; WhatsApp follow-up documenting a working staging + Concepts Second Brain.
 - **Primary Source 3 (2026-08-11):** Customer Discovery Interview with Tuncer, Senior IT Professional.
+- **Primary Source 4 (2026-08-14):** Customer Discovery Feedback with Bora on Obsidian background automation, taxonomy, and context window limitations.
 
 ---
 
 ## Change Log
 
+- **v1.5.0** (2026-08-14): Incorporated qualitative customer discovery feedback from Bora and architectural stack requirements on Obsidian background automation, taxonomy structure, and context window mitigation.
 - **v1.4.0** (2026-08-12): Added Sude's 2026-08-12 WhatsApp follow-up: working staging + Concepts vault trained from one chat history; planned pinned-chat automation; daily reminder of confused sections / architectures to focus on. PARA/Cloudflare friction did not block first activation. Full thread archived at `5_Symbols/cd/archived-interview-transcripts.html`.
 - **v1.3.0** (2026-08-11): Incorporated qualitative customer discovery interview insights from Tuncer (dated 2026-08-11) validating career acceleration, technology leverage, and version configuration risks.
 - **v1.2.0** (2026-08-10): Incorporated qualitative customer discovery interview insights from Sude (dated 2026-08-10) validating Second Brain automation, context loss/spaced repetition needs, and setup friction points (PARA, Cloudflare, background workers).
