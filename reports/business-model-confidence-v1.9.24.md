@@ -1,10 +1,8 @@
-> **Superseded by** [`reports/business-model-confidence-v1.9.23.md`](business-model-confidence-v1.9.23.md).
-
-# Business Model Confidence Report — v1.9.22
+# Business Model Confidence Report — v1.9.24
 
 **Date:** 2026-08-14  
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)  
-**What changed vs. v1.9.21:** Incorporated qualitative customer discovery feedback from Bora and architectural stack requirements on Obsidian background automation, taxonomy structure, and context window capacity. Added the evidence to H5 and H8 (status tiers unchanged). Published `reports/exam-prep-market-and-student-behavior-v1.5.0.md` (supersedes v1.4.0).
+**What changed vs. v1.9.23:** patch re-run after promoting the weekly operating loop on `5_Symbols/dashboard/todo.html` into a first-class Recurring Tasks section (weekly video production, Sunday live cohort, Skool community answers, weekly YouTube comment batch). One-off backlog stays below. No hypothesis status-tier change.
 
 ---
 
@@ -12,7 +10,7 @@
 
 # 43 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at **32.1/100** (28 hypotheses; no status emoji changes). Site Integrity holds at **67.5/100** — same uncommitted batch (Bora discovery feedback, Obsidian sync/MCP background automation requirements, multi-source hybrid database stack POC, v1.5.0 behavior report, Perplexity R.A.I.S.E. validation, H1 isolation page, golden-rules, etc.). Does not stack a second −10. Overall remains **43**. Committing the tree restores Integrity to 77.5 and the overall score to **46**.
+> Hypothesis Validation holds at **32.1/100** (28 hypotheses; no status emoji changes). Site Integrity holds at **67.5/100** — same uncommitted batch, now also including the Recurring Tasks loop on `todo.html`. Does not stack a second −10. Overall remains **43**. Committing the tree restores Integrity to 77.5 and the overall score to **46**.
 
 ```
 overall = round(0.7 × 32.14 + 0.3 × 67.50)
@@ -21,7 +19,7 @@ overall = round(0.7 × 32.14 + 0.3 × 67.50)
         = 43
 ```
 
-| Sub-score | v1.9.21 | v1.9.22 (this run) |
+| Sub-score | v1.9.23 | v1.9.24 (this run) |
 |---|---|---|
 | Hypothesis Validation Score | 32.1 / 100 | **32.1 / 100** |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** |
@@ -33,7 +31,7 @@ A low-moderate score at Customer Discovery / early Validation is expected. It me
 
 ## Hypothesis Validation Score — 32/100
 
-Re-derived from each hypothesis's own **Status:** line. All 28 keep the same leading emoji as v1.9.21. Sum 900 / 28 = **32.14**.
+Re-derived from each hypothesis's own **Status:** line. All 28 keep the same leading emoji as v1.9.23. Sum 900 / 28 = **32.14**. H4 and H29 Source / status notes now cite the Recurring Tasks loop on `dashboard/todo.html` — weekly videos, Sunday cohort, Skool answers, YouTube comment batch. Status tiers unchanged.
 
 | ID | Hypothesis | Status | Score |
 |---|---|---|---|
@@ -75,10 +73,10 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 | 1 | Acidity still open (F2, F11, F12) | −15 | Unchanged |
 | 2 | Acidity partial (F3, F7, F9) | −7.5 | Unchanged |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | All 28 Summary Table rows match their own Status-line leading emoji |
-| 4 | Broken local links | 0 | Fresh scan: 0 real broken `href`s. |
-| 5 | Orphaned pages | 0 | All pages registered in `nav.js` groups and search index. |
-| 6 | Headline number consistency | 0 | $10,000 / 1,000x / $100,000 / >40% unchanged. |
-| 7 | Uncommitted work (`git status --porcelain`) | −10 | Same open batch of changes. This run adds `reports/exam-prep-market-and-student-behavior-v1.5.0.md` + edits to `nav.js`, `HYPOTHESIS.md`, `hyp-h5.html`, `hyp-h8.html`, `signal-versus-noise.html`, `evidence-map.html`, and `confidence-report.html`. Does not stack a second −10. Clears once committed. |
+| 4 | Broken local links | 0 | Fresh scan, `<script>` stripped: 0 real broken `href`s |
+| 5 | Orphaned pages | 0 | No new pages. `todo.html` already in `nav.js` groups + searchIndex |
+| 6 | Headline number consistency | 0 | $10,000 / 1,000x / $100,000 / >40% unchanged |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | Same open batch. This run adds the Recurring Tasks loop on `todo.html` (videos, Sunday cohort, Skool answers, YouTube comments) plus H4/H29/listen-more/90-day/nav/latest-pages cites. Does not stack a second −10. Clears once committed. |
 
 **Total deductions: 32.5 → 67.5**
 
@@ -88,8 +86,8 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 
 1. **Commit this batch** — Site Integrity 67.5 → 77.5, overall **43 → 46**.
 2. **Highest-leverage business action remains H9** — two consecutive paid launches combining to $10,000.
-3. **F12 (&minus;5)** — direct confirmation with Anthropic / Pearson VUE that individual, non-Partner registration is possible.
-4. **H5 is still In Testing** — convert a portion of Skool waitlist signups into a real 20–40-student *paid* enrollment count.
+3. **F12 (−5)** — direct confirmation with Anthropic / Pearson VUE that individual, non-Partner registration is possible.
+4. **H5 is still In Testing** — convert a portion of Skool waitlist signups into a real 20–40-student *paid* enrollment count. A recurring Sunday row on the Task List is not that conversion.
 
 ---
 
@@ -98,10 +96,10 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 **Hypothesis Validation (32.1 / 100)** — not at its ceiling:
 - H9 → two paid launches summing to $10,000.
 - H8 → 10 true regulars logged under the four-week un-poked definition.
-- H29 → a logged listen:speak series plus one audience-originated change shipped and credited by name.
+- H29 → a logged listen:speak series plus one audience-originated change shipped and credited by name. The Recurring Tasks loop (daily Skool answers + weekly YouTube comment batch) is the practice; it is not the series.
 - H5 → paid enrollments, not more named invites or community joins.
 - H20 → a formal referral-count/NPS series.
-- H4 / H7 → measured view→click→paid rates.
+- H4 / H7 → measured view→click→paid rates. The 3-videos/week recurring row is capacity, not a conversion measurement.
 - H27 → question bank shipped, plus attendee-demand data from a pilot batch.
 - H1 → an exported monthly search-volume series or direct confirmation on F12.
 
@@ -121,10 +119,10 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| **v1.9.22** | 2026-08-14 | **43 / 100** | Added Bora customer discovery feedback on Obsidian background automation and context capacity; score holds flat |
+| **v1.9.24** | 2026-08-14 | **43 / 100** | Recurring Tasks loop on todo.html (videos, Sunday cohort, Skool answers, YouTube comments); score holds flat |
+| v1.9.23 | 2026-08-14 | 43 / 100 | Daily Skool hello / connect / notification pass; public count 10 members; score holds flat |
+| v1.9.22 | 2026-08-14 | 43 / 100 | Added Bora customer discovery feedback on Obsidian background automation and context capacity; score holds flat |
 | v1.9.21 | 2026-08-14 | 43 / 100 | Incorporated Perplexity R.A.I.S.E. validation report and H1 conclusion nuance; score holds flat |
 | v1.9.20 | 2026-08-14 | 43 / 100 | H1 isolation page (why no arrows; leave-it-alone); score holds flat at 43 |
 | v1.9.19 | 2026-08-13 | 43 / 100 | H5 named pair: Bihar invited Sude; genuine connection > mass marketing; score holds flat at 43 |
 | v1.9.18 | 2026-08-13 | 43 / 100 | H29 listen more than you speak / audience cocreation; Validation 31.3 → 32.1; overall 42 → 43 |
-| v1.9.17 | 2026-08-13 | 42 / 100 | Golden rules of community building (don't lecture / friendships / culture); score holds flat at 42 |
-| v1.9.16 | 2026-08-13 | 42 / 100 | 10 true regulars Skool milestone + calendar entry; score holds flat at 42 |
