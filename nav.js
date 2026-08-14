@@ -83,6 +83,7 @@
                 ['5_Symbols/strategy/signal-versus-noise.html', '📡 Signal versus Noise'],
                 ['5_Symbols/product/exam-performance-evidence.html', '📊 Candidate Exam Performance Evidence'],
                 ['5_Symbols/hypotheses/hypothesis-connectivity.html', '🔀 Hypothesis Connectivity'],
+                ['5_Symbols/hypotheses/h1-not-connected.html', '🟡 Why H1 Sits Alone'],
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/strategy/listen-more-than-you-speak.html', '👂 Listen More Than You Speak'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
@@ -300,6 +301,7 @@
         { url: '5_Symbols/product/exam-performance-evidence.html', title: 'Candidate Exam Performance Evidence', desc: 'A real, anonymized candidate exam pass driven by meetup motivation, not product use -- what it does and does not prove.', cat: 'Strategy', tags: 'candidate exam performance evidence meetup motivation skilljar anonymized pass score' },
         { url: 'exam-topics.html', title: 'Exam Topic Blueprint', desc: 'Full official topic list for the Associate (19 topics, real mastery data) and Architect (30 topics) exams, grouped for curriculum sequencing.', cat: 'Strategy', tags: 'exam topics blueprint curriculum associate architect foundations professional domains' },
         { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'What Does "Not Connected" Mean?', desc: 'Explains the three patterns behind a disconnected hypothesis in the Dependency Map: fully isolated, foundational-uncited gap, and terminal leaf.', cat: 'Strategy', tags: 'connectivity dependency map isolated orphan gap terminal leaf depends on feeds' },
+        { url: '5_Symbols/hypotheses/h1-not-connected.html', title: 'Why H1 Sits Alone', desc: 'Why H1 has no arrows on the tracker, whether that isolation is a risk, what it says about the business, and whether to leave it alone.', cat: 'Strategy', tags: 'h1 isolation not connected foundational uncited gap leave alone f12 partner network' },
         { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
         { url: '5_Symbols/strategy/listen-more-than-you-speak.html', title: 'Listen More Than You Speak', desc: 'Rifat Erdem Sahin\'s Stage 1-2 role: collect feedback, listen more than he speaks, and let the audience cocreate the next shipped change.', cat: 'Strategy', tags: 'listen more than you speak founder role feedback cocreate customer development h29 sunday skool' },
         { url: '5_Symbols/hypotheses/hyp-h29.html', title: 'H29 · Listen More Than You Speak', desc: 'Detail page with premise-conclusion-status SVG diagram for H29: founder-as-listener and audience cocreation.', cat: 'Hypothesis Detail', tags: 'h29 hypothesis detail listen speak feedback cocreate founder role svg diagram' },
@@ -1279,7 +1281,8 @@
         '5_Symbols/strategy/raise.html': [
             { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' },
             { url: '5_Symbols/strategy/why-certification.html', title: 'Why Certification', emoji: '🏅' },
-            { url: '5_Symbols/hypotheses/hyp-h1.html', title: 'H1 Skills Expectations', emoji: '🔍' }
+            { url: '5_Symbols/hypotheses/hyp-h1.html', title: 'H1 Skills Expectations', emoji: '🔍' },
+            { url: '5_Symbols/hypotheses/h1-not-connected.html', title: 'Why H1 Sits Alone', emoji: '🟡' }
         ],
         'motivation.html': [
             { url: '5_Symbols/strategy/raise.html', title: 'R.A.I.S.E. Starting Point', emoji: '🚀' },
@@ -1332,6 +1335,7 @@
         ],
         '5_Symbols/hypotheses/hypothesis.html': [
             { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'Dependency Map', emoji: '🔀' },
+            { url: '5_Symbols/hypotheses/h1-not-connected.html', title: 'Why H1 Sits Alone', emoji: '🟡' },
             { url: '5_Symbols/dashboard/confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
             { url: '5_Symbols/strategy/signal-versus-noise.html', title: 'Signal versus Noise', emoji: '📡' },
             { url: '5_Symbols/dashboard/calendar.html', title: 'Milestone Calendar', emoji: '📅' }
@@ -1344,8 +1348,15 @@
         ],
         '5_Symbols/hypotheses/hypothesis-connectivity.html': [
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: '5_Symbols/hypotheses/h1-not-connected.html', title: 'Why H1 Sits Alone', emoji: '🟡' },
             { url: '5_Symbols/dashboard/confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
             { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timelines', emoji: '📅' }
+        ],
+        '5_Symbols/hypotheses/h1-not-connected.html': [
+            { url: '5_Symbols/hypotheses/hyp-h1.html', title: 'H1 Detail', emoji: '🔍' },
+            { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'Dependency Map', emoji: '🔀' },
+            { url: '5_Symbols/strategy/risk-analysis.html', title: 'Risk Analysis', emoji: '⚠️' }
         ],
         '5_Symbols/growth/unit-economics.html': [
             { url: '5_Symbols/growth/funnel-math.html', title: 'Funnel Math', emoji: '🧮' },
