@@ -1,10 +1,10 @@
-> **Superseded by** [`business-model-confidence-v1.9.26.md`](business-model-confidence-v1.9.26.md).
+> **Superseded by** [`business-model-confidence-v1.9.27.md`](business-model-confidence-v1.9.27.md).
 
-# Business Model Confidence Report — v1.9.25
+# Business Model Confidence Report — v1.9.26
 
 **Date:** 2026-08-14  
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)  
-**What changed vs. v1.9.24:** Created the new `5_Symbols/strategy/leverages.html` page documenting founder leverages (IT experience, YouTube reach, and Venture Coffee meetups) using Ali Abdaal's MILES framework and Alex Hormozi's leverage insights. Added Strategy dropdown navigation and search index registration. Cross-linked from index.html, focus.html, and moat.html. Refined H1, H2, H3, H8, H12, H17, and H18 sources. Re-ran confidence report.
+**What changed vs. v1.9.25:** patch re-run, no new check categories. Added `5_Symbols/product/skool-delivery-pilot-offer.html` — Hormozi rewrite of the live Delivery Pilot Skool plans (Standard / Premium / VIP → Peek $0 / Sit In $1 / Share Screen $250/year) so a stranger can preview the Sunday room before buying the live-share seat. New H5 Premise 9. Not a paid-enrollment signal. Status tiers unchanged.
 
 ---
 
@@ -12,7 +12,7 @@
 
 # 43 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at **32.1/100** (28 hypotheses; no status emoji changes). Site Integrity holds at **67.5/100** — same uncommitted batch, now also including the Leverages & Unfair Advantages strategy page. Does not stack a second −10. Overall remains **43**. Committing the tree restores Integrity to 77.5 and the overall score to **46**.
+> Hypothesis Validation holds at **32.1/100** (28 hypotheses; no status emoji changes). Site Integrity holds at **67.5/100** — same uncommitted batch, now also including the Delivery Pilot Offer page. Does not stack a second −10. Overall remains **43**. Committing the tree restores Integrity to 77.5 and the overall score to **46**.
 
 ```
 overall = round(0.7 × 32.14 + 0.3 × 67.50)
@@ -21,7 +21,7 @@ overall = round(0.7 × 32.14 + 0.3 × 67.50)
         = 43
 ```
 
-| Sub-score | v1.9.24 | v1.9.25 (this run) |
+| Sub-score | v1.9.25 | v1.9.26 (this run) |
 |---|---|---|
 | Hypothesis Validation Score | 32.1 / 100 | **32.1 / 100** |
 | Site Integrity Score | 67.5 / 100 | **67.5 / 100** |
@@ -33,7 +33,7 @@ A low-moderate score at Customer Discovery / early Validation is expected. It me
 
 ## Hypothesis Validation Score — 32/100
 
-Re-derived from each hypothesis's own **Status:** line. All 28 keep the same leading emoji as v1.9.24. Sum 900 / 28 = **32.14**. H1, H2, H3, H8, H12, H17, and H18 now cite `strategy/leverages.html` as a supporting resource outlining Rifat's IT experience, YouTube reach, and Venture Coffee networking leverages. Status tiers unchanged.
+Re-derived from each hypothesis's own **Status:** line. All 28 keep the same leading emoji as v1.9.25. Sum 900 / 28 = **32.14**. H5 now has Premise 9 (Skool checkout preview ramp) and cites `product/skool-delivery-pilot-offer.html`. Status tier unchanged — $0 and $1 joins are not paid enrollments.
 
 | ID | Hypothesis | Status | Score |
 |---|---|---|---|
@@ -75,10 +75,10 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 | 1 | Acidity still open (F2, F11, F12) | −15 | Unchanged |
 | 2 | Acidity partial (F3, F7, F9) | −7.5 | Unchanged |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | All 28 Summary Table rows match their own Status-line leading emoji |
-| 4 | Broken local links | 0 | Fresh scan, `<script>` stripped: 0 real broken `href`s |
-| 5 | Orphaned pages | 0 | No orphaned pages. `leverages.html` is registered in `nav.js` groups + searchIndex |
-| 6 | Headline number consistency | 0 | $10,000 / 1,000x / $100,000 / >40% unchanged |
-| 7 | Uncommitted work (`git status --porcelain`) | −10 | Same open batch. This run adds the leverages strategy page plus focus/moat/nav/latest-pages cites. Does not stack a second −10. Clears once committed. |
+| 4 | Broken local links | 0 | Fresh scan: 5 `href` hits were all JS template strings (`$2`, `' + link + '`, etc.), not real files. 0 real broken links |
+| 5 | Orphaned pages | 0 | `skool-delivery-pilot-offer.html` is registered in `nav.js` groups + searchIndex and inbound-linked |
+| 6 | Headline number consistency | 0 | $10,000 / 1,000x / $100,000 / >40% unchanged. $0/$1/$250-year is documented as a checkout experiment, not a replacement of the $10/mo + $250–$500 model |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | Same open batch. This run adds the Delivery Pilot Offer page + hero, H5 Premise 9, and related cites. Does not stack a second −10. Clears once committed. |
 
 **Total deductions: 32.5 → 67.5**
 
@@ -89,7 +89,7 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 1. **Commit this batch** — Site Integrity 67.5 → 77.5, overall **43 → 46**.
 2. **Highest-leverage business action remains H9** — two consecutive paid launches combining to $10,000.
 3. **F12 (−5)** — direct confirmation with Anthropic / Pearson VUE that individual, non-Partner registration is possible.
-4. **H5 is still In Testing** — convert a portion of Skool waitlist signups into a real 20–40-student *paid* enrollment count.
+4. **H5 is still In Testing** — a Peek / Sit In join is not a paid enrollment. To cross: convert a portion of those (or new) signups into a real 20–40-student *paid* Share Screen / $250–$500 count.
 
 ---
 
@@ -99,7 +99,7 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 - H9 → two paid launches summing to $10,000.
 - H8 → 10 true regulars logged under the four-week un-poked definition.
 - H29 → a logged Sunday listen:speak series plus one audience-originated change shipped and credited by name.
-- H5 → paid enrollments, not more named invites or community joins.
+- H5 → paid Share Screen / $250–$500 enrollments, not more $0/$1 community joins.
 - H20 → a formal referral-count/NPS series.
 - H4 / H7 → measured view→click→paid rates.
 - H27 → question bank shipped, plus attendee-demand data from a pilot batch.
@@ -121,11 +121,7 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| **v1.9.25** | 2026-08-14 | **43 / 100** | Added Leverages & Unfair Advantages page detailing founder assets using the MILES framework; score holds flat |
+| **v1.9.26** | 2026-08-14 | **43 / 100** | Delivery Pilot Offer rewrite (Peek / Sit In / Share Screen); H5 Premise 9; score holds flat |
+| v1.9.25 | 2026-08-14 | 43 / 100 | Added Leverages & Unfair Advantages page detailing founder assets using the MILES framework; score holds flat |
 | v1.9.24 | 2026-08-14 | 43 / 100 | Recurring Tasks loop on todo.html (videos, Sunday cohort, Skool answers, YouTube comments); score holds flat |
 | v1.9.23 | 2026-08-14 | 43 / 100 | Daily Skool hello / connect / notification pass; public count 10 members; score holds flat |
-| v1.9.22 | 2026-08-14 | 43 / 100 | Added Bora customer discovery feedback on Obsidian background automation and context capacity; score holds flat |
-| v1.9.21 | 2026-08-14 | 43 / 100 | Incorporated Perplexity R.A.I.S.E. validation report and H1 conclusion nuance; score holds flat |
-| v1.9.20 | 2026-08-14 | 43 / 100 | H1 isolation page (why no arrows; leave-it-alone); score holds at 43 |
-| v1.9.19 | 2026-08-13 | 43 / 100 | H5 named pair: Bihar invited Sude; genuine connection > mass marketing; score holds at 43 |
-| v1.9.18 | 2026-08-13 | 43 / 100 | H29 listen more than you speak / audience cocreation; Validation 31.3 → 32.1; overall 42 → 43 |

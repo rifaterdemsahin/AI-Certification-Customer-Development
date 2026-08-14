@@ -128,7 +128,10 @@
                 ['5_Symbols/product/skool-workshop-upload.html', '🎥 2-Hour Workshop Upload'],
                 ['5_Symbols/product/skool-founding-members.html', '🏫 Skool Steps & Founding Members'],
                 ['5_Symbols/product/skool-community-golden-rules.html', '🌟 Golden Rules of Community Building'],
-                ['5_Symbols/product/skool-10-true-regulars.html', '🔟 10 True Regulars in Skool']
+                ['5_Symbols/product/skool-10-true-regulars.html', '🔟 10 True Regulars in Skool'],
+                ['5_Symbols/product/skool-delivery-pilot-offer.html', '🚪 Delivery Pilot Offer'],
+                ['5_Symbols/product/skool-about.html', '📝 Delivery Pilot About'],
+                ['5_Symbols/product/skool-discoverability-keywords.html', '🔑 Discoverability Keywords']
             ]
         },
         {
@@ -204,7 +207,8 @@
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.3.0.md', '🧠 Exam Prep &amp; Student Behavior v1.3 (Historical)'],
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification'],
-                ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation']
+                ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation'],
+                ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0']
             ]
         },
         {
@@ -228,6 +232,10 @@
         { url: '5_Symbols/product/skool-founding-members.html', title: 'Skool Steps & Founding Members', desc: 'Skool community-course checklist (9 steps) with Marianna, Sude, and Bayo named as the first 3 founding members.', cat: 'Business Model', tags: 'skool founding members marianna sude bayo first 3 community course steps 10 true regulars' },
         { url: '5_Symbols/product/skool-community-golden-rules.html', title: 'Golden Rules of Community Building', desc: 'Skool\'s 3 golden rules — don\'t lecture, build friendships, curate culture — mapped onto Delivery Pilot as the playbook from founding members to 10 true regulars.', cat: 'Business Model', tags: 'skool golden rules community building party lecture friendships culture vase founding members h8' },
         { url: '5_Symbols/product/skool-10-true-regulars.html', title: '10 True Regulars in Skool', desc: 'Stage 2 community milestone: ten people who post or attend Sunday without a founder poke. Rationale, counting rules, and why signups are not regulars.', cat: 'Business Model', tags: 'skool 10 true regulars milestone community engagement h8 founding members step 5' },
+        { url: '5_Symbols/product/skool-delivery-pilot-offer.html', title: 'Delivery Pilot Offer — Peek · Sit In · Share Screen', desc: 'Live Freemium checkout (Standard $0 / Premium $1 / VIP $250/year) rewritten as Peek / Sit In / Share Screen. Preview the Sunday room before buying the live-share seat.', cat: 'Business Model', tags: 'skool delivery pilot offer peek sit in share screen hormozi tripwire cohort pricing freemium standard premium vip h5' },
+        { url: 'markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', title: 'Skool Pricing Feedback v1.0.0', desc: 'Founder-confirmed Freemium entitlements graded: keep $0 / $1 / $250, rename Standard / Premium / VIP, cap VIP 1:1.', cat: 'Docs', tags: 'skool pricing feedback freemium standard premium vip peek sit share h5' },
+        { url: '5_Symbols/product/skool-about.html', title: 'Delivery Pilot About — Skool About copy', desc: 'Paste-ready About tab for skool.com/delivery-pilot-8938/about. Replaces the get-certified listing line. Maps each block to system pages.', cat: 'Business Model', tags: 'skool about delivery pilot listing description sunday practice room peek sit share h5' },
+        { url: '5_Symbols/product/skool-discoverability-keywords.html', title: 'Discoverability Keywords — Skool Keywords config', desc: 'Recommended tags and keywords for Skool discoverability under group settings, categorized by intent and mapped to system pages.', cat: 'Business Model', tags: 'skool keywords discoverability tags search settings traffic acquisition organic h5 h7' },
         { url: '5_Symbols/strategy/claude-partner-strategy.html', title: 'Claude Partner Strategy', desc: 'Strategic analysis of when and why to become a Claude Partner, mapping active partner benefits to customer development stages.', cat: 'Strategy', tags: 'claude partner cpn network services select benefits licensing credentials' },
         { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus on WIG', desc: 'Narrowing focus to 1-2 Wildly Important Goals to protect bandwidth.', cat: 'Execution', tags: '4dx execution focus wildly important goal wig baseline formula' },
         { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Act on Lead Measures', desc: 'Leveraging predictive, influenceable lead measures instead of lag measures.', cat: 'Execution', tags: '4dx execution leverage lead lag measure metrics predictive influenceable' },

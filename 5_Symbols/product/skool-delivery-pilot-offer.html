@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Pilot Offer — Peek · Sit In · Share Screen | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.1rem;
+            align-items: stretch;
+        }
+        .offer-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 1.4rem 1.25rem 1.25rem;
+            border-radius: 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            min-height: 100%;
+        }
+        .offer-card.featured {
+            border-color: rgba(245, 158, 11, 0.45);
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.10), rgba(255,255,255,0.02));
+            box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.12), 0 18px 40px rgba(0,0,0,0.25);
+            transform: translateY(-6px);
+        }
+        .offer-kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 0.45rem;
+        }
+        .offer-card.featured .offer-kicker { color: #fbbf24; }
+        .offer-name {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            margin: 0 0 0.2rem;
+        }
+        .offer-was {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 0.65rem;
+        }
+        .offer-price {
+            font-family: var(--font-heading);
+            font-size: 2.15rem;
+            line-height: 1;
+            margin: 0.2rem 0 0.15rem;
+        }
+        .offer-cadence { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 0.85rem; }
+        .offer-one-liner {
+            color: var(--text-primary);
+            font-weight: 600;
+            line-height: 1.45;
+            margin: 0 0 0.9rem;
+            min-height: 3.1em;
+        }
+        .offer-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            flex: 1;
+        }
+        .offer-list li {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.45;
+            padding-left: 1.15rem;
+            position: relative;
+        }
+        .offer-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        .offer-list li.lock { opacity: 0.55; }
+        .offer-list li.lock::before { content: "–"; color: var(--text-muted); }
+        .offer-cta { width: 100%; text-align: center; margin-top: auto; }
+        .ribbon {
+            position: absolute;
+            top: -0.7rem;
+            right: 1rem;
+            background: #f59e0b;
+            color: #111827;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.6rem;
+            border-radius: 999px;
+        }
+        .copy-block {
+            background: rgba(0,0,0,0.28);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.05rem;
+            position: relative;
+        }
+        .copy-block pre {
+            margin: 0;
+            white-space: pre-wrap;
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.65rem;
+            right: 0.65rem;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+        }
+        @media (max-width: 900px) {
+            .offer-grid { grid-template-columns: 1fr; }
+            .offer-card.featured { transform: none; }
+            .offer-one-liner { min-height: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="skool-lms-integration.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Skool LMS &amp; Community Integration
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid #f59e0b;">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fde68a; border-color: rgba(245, 158, 11, 0.35);">Stage 2 &middot; Live Skool Checkout</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🚪 Delivery Pilot Offer</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 82ch; line-height: 1.65;">
+                Rewrite of the live Skool plans page. Stop selling Standard / Premium / VIP. Sell <strong>how close you sit to Sunday</strong>: peek the room, sit in listen-only, or share your screen. This is a preview ramp so a stranger can feel the cohort before they buy the seat. It is a checkout experiment, not a replacement of the $10/mo + $250&ndash;$500 revenue model (see <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>). Hormozi tactics from <a href="../strategy/alex-hormozi-agent.html" style="color: var(--color-primary);">$100M Offers</a> &mdash; not affiliated with Acquisition.com.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Page ID:</span><span class="info-value">skool-delivery-pilot-offer.html</span></li>
+                        <li class="info-item"><span class="info-label">Live storefront:</span><span class="info-value"><a href="https://www.skool.com/delivery-pilot-8938" target="_blank" style="color: var(--color-primary);">skool.com/delivery-pilot-8938</a></span></li>
+                        <li class="info-item"><span class="info-label">This week's action:</span><span class="info-value highlight-success">Rename plans + gate Peek + cap VIP 1:1</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Status:</span><span class="info-value" style="color: var(--color-warning);">🟡 Live Freemium confirmed &mdash; names still Standard / Premium / VIP</span></li>
+                        <li class="info-item"><span class="info-label">Linked Hypotheses:</span><span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>, <a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a></span></li>
+                        <li class="info-item"><span class="info-label">Related:</span><span class="info-value"><a href="../strategy/alex-hormozi-agent.html" style="color: var(--color-primary);">Hormozi Agent</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; padding: 0; overflow: hidden;">
+            <img src="skool-delivery-pilot-offer-hero.jpg" alt="Three glass doorways receding toward a glowing Sunday shared-screen workstation" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧾 Live checkout (founder-confirmed 2026-08-14)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                The creator set the community model to <strong>Freemium</strong>. Members join free and upgrade if they want more of Sunday. Prices are correct. Names and the VIP 1:1 promise are not. Full write-up: <a href="../../markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md" style="color: var(--color-primary);">Skool Pricing Feedback v1.0.0</a> (see <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> Premise 9).
+            </p>
+            <div class="card" style="overflow-x: auto; margin-bottom: 1.25rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.85rem 0.5rem;">Live name</th>
+                            <th style="padding: 0.85rem 0.5rem;">Price</th>
+                            <th style="padding: 0.85rem 0.5rem;">What Skool currently unlocks</th>
+                            <th style="padding: 0.85rem 0.5rem;">Keep / change</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Standard</td>
+                            <td style="padding: 0.85rem 0.5rem;">$0</td>
+                            <td style="padding: 0.85rem 0.5rem;">Posts, learning materials, welcome</td>
+                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Peek</strong>. Narrow &ldquo;learning materials&rdquo; to one sample.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Premium</td>
+                            <td style="padding: 0.85rem 0.5rem;">$1 / mo</td>
+                            <td style="padding: 0.85rem 0.5rem;">Recorded workshops + listen-only Sunday</td>
+                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Sit In</strong>. Do not let this card own &ldquo;cohort.&rdquo;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.85rem 0.5rem;">VIP</td>
+                            <td style="padding: 0.85rem 0.5rem;">$250 / year</td>
+                            <td style="padding: 0.85rem 0.5rem;">Screen-share, personal architecture help, founder setup reviews</td>
+                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Share Screen</strong>. Cap help to Sunday in the room &mdash; not on-demand 1:1.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: var(--color-success);">Ladder = A</div>
+                    <div class="metric-lbl">Freemium / $1 handshake / $250 seat</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: var(--color-warning);">Names = D</div>
+                    <div class="metric-lbl">Standard / Premium / VIP is a catalog</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: var(--color-warning);">VIP 1:1 = C</div>
+                    <div class="metric-lbl">$250/year cannot buy unbounded founder time</div>
+                </div>
+            </div>
+            <div class="spec-box" style="border-left-color: var(--color-warning); margin-top: 1.25rem;">
+                <div class="spec-title">Feedback in one line</div>
+                <div class="spec-desc">Keep the three prices. Change the three names. Cap what VIP promises. $0 and $1 are still not paid enrollments. This ladder does not replace $10/mo + $250 (3-month) / $500 (year) on <a href="../bmc/bmc-revenue-streams.html" style="color: var(--color-primary);">Revenue Streams</a>.</div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📌 How to position</h2>
+            <div class="card" style="background: rgba(245,158,11,0.07); border-color: rgba(245,158,11,0.35);">
+                <p style="font-family: var(--font-heading); font-size: 1.45rem; line-height: 1.4; margin: 0 0 0.85rem;">
+                    Position Delivery Pilot as a Sunday problem-solving room you can preview &mdash; not a membership, not a Claude course, not a status ladder.
+                </p>
+                <p style="color: var(--text-secondary); margin: 0 0 1rem; max-width: 78ch; line-height: 1.65;">
+                    The product is <strong>proximity to the live screen</strong>. YouTube already teaches. Skool should let someone feel the room in under two minutes, sit in this Sunday for a dollar, then pay $250/year only when they want <em>their</em> architecture reviewed. Hormozi: raise the dream and the likelihood, crush time and effort. Blank: this is still a test (see <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>) until someone pays for the live-share seat.
+                </p>
+                <p style="color: var(--text-secondary); margin: 0; max-width: 78ch; line-height: 1.65;">
+                    One sentence a stranger can repeat: <strong>&ldquo;Every Sunday at 9pm we solve Claude Architect problems live. Peek free. Sit in for $1. Share your screen for $250/year.&rdquo;</strong> We do not grant the certification (Anthropic does, via Pearson VUE). We run the practice room.
+                </p>
+            </div>
+            <div class="metrics-grid" style="margin-top: 1.5rem;">
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: #fbbf24;">Peek &rarr; Sit &rarr; Share</div>
+                    <div class="metric-lbl">Outcome names, not Standard / Premium / VIP</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem;">$1 is a handshake</div>
+                    <div class="metric-lbl">Tripwire so they show up. Not the cohort.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem;">$250 is the seat</div>
+                    <div class="metric-lbl">Live share is the scarce thing. Feature this card.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💳 Rewritten plans</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Replace Skool's &ldquo;Select your plan&rdquo; header with &ldquo;Pick how close you sit on Sunday.&rdquo; Keep the same three prices. Change the names, the promise, and what each button actually unlocks.
+            </p>
+            <div class="offer-grid">
+                <article class="offer-card">
+                    <div class="offer-kicker">Was Standard</div>
+                    <h3 class="offer-name">Peek</h3>
+                    <div class="offer-was">Join Standard</div>
+                    <div class="offer-price">$0</div>
+                    <div class="offer-cadence">/ month &middot; no card</div>
+                    <p class="offer-one-liner">See the room before you commit a Sunday night.</p>
+                    <ul class="offer-list">
+                        <li>Welcome post + next Sunday on the calendar</li>
+                        <li>One sample replay (or a 10-minute clip)</li>
+                        <li>Read the community board</li>
+                        <li class="lock">Live Sunday join stays locked</li>
+                        <li class="lock">Your screen stays locked</li>
+                    </ul>
+                    <a class="btn btn-secondary offer-cta" href="https://www.skool.com/delivery-pilot-8938" target="_blank" rel="noopener">Peek the room</a>
+                </article>
+                <article class="offer-card">
+                    <div class="offer-kicker">Was Premium &middot; &ldquo;Cohorts&rdquo;</div>
+                    <h3 class="offer-name">Sit In</h3>
+                    <div class="offer-was">Join Premium</div>
+                    <div class="offer-price">$1</div>
+                    <div class="offer-cadence">/ month &middot; cancel anytime</div>
+                    <p class="offer-one-liner">Listen this Sunday. Feel the cohort. Do not share yet.</p>
+                    <ul class="offer-list">
+                        <li>Everything in Peek</li>
+                        <li>Join Sunday live, listen-only</li>
+                        <li>More recorded workshops</li>
+                        <li>Post and reply on the board</li>
+                        <li class="lock">Screen share stays on Share Screen</li>
+                    </ul>
+                    <a class="btn btn-secondary offer-cta" href="https://www.skool.com/delivery-pilot-8938" target="_blank" rel="noopener">Sit in this Sunday</a>
+                </article>
+                <article class="offer-card featured">
+                    <div class="ribbon">The seat</div>
+                    <div class="offer-kicker">Was VIP &middot; Live Share</div>
+                    <h3 class="offer-name">Share Screen</h3>
+                    <div class="offer-was">Join VIP</div>
+                    <div class="offer-price">$250</div>
+                    <div class="offer-cadence">/ year &middot; ~$4.80 a week</div>
+                    <p class="offer-one-liner">Get unstuck on <em>your</em> architecture. That is the offer.</p>
+                    <ul class="offer-list">
+                        <li>Everything in Sit In</li>
+                        <li>Share your screen every Sunday</li>
+                        <li>Founder review of your setup</li>
+                        <li>Full Classroom + midweek install list</li>
+                        <li>All workshop replays for 12 months</li>
+                    </ul>
+                    <a class="btn offer-cta" href="https://www.skool.com/delivery-pilot-8938" target="_blank" rel="noopener">Share your screen</a>
+                </article>
+            </div>
+            <div class="spec-box" style="border-left-color: var(--color-warning); margin-top: 1.5rem;">
+                <div class="spec-title">Do not put the word &ldquo;Cohorts&rdquo; on the $1 plan</div>
+                <div class="spec-desc">The live page currently tags Premium with &ldquo;Cohorts&rdquo; and VIP with &ldquo;Live Share Cohorts.&rdquo; That trains the market that the cohort is a dollar. Hormozi: never let the cheap tier own the name of the scarce thing. $1 is listen-only preview. $250 owns &ldquo;cohort&rdquo; and &ldquo;live share.&rdquo;</div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">👀 Preview with ease &mdash; what to unlock</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Copy will not save a locked empty room. If Peek shows nothing, people bounce. Gate content in Skool so each price is a real next step, not a label.
+            </p>
+            <div class="card" style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.85rem 0.5rem;">Surface</th>
+                            <th style="padding: 0.85rem 0.5rem;">Peek $0</th>
+                            <th style="padding: 0.85rem 0.5rem;">Sit In $1</th>
+                            <th style="padding: 0.85rem 0.5rem;">Share Screen $250/yr</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">About + calendar</td>
+                            <td style="padding: 0.85rem 0.5rem;">Open</td>
+                            <td style="padding: 0.85rem 0.5rem;">Open</td>
+                            <td style="padding: 0.85rem 0.5rem;">Open</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Community board</td>
+                            <td style="padding: 0.85rem 0.5rem;">Read</td>
+                            <td style="padding: 0.85rem 0.5rem;">Post + reply</td>
+                            <td style="padding: 0.85rem 0.5rem;">Post + reply</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Classroom</td>
+                            <td style="padding: 0.85rem 0.5rem;">One sample lesson or clip</td>
+                            <td style="padding: 0.85rem 0.5rem;">Replay archive</td>
+                            <td style="padding: 0.85rem 0.5rem;">Full 7 classrooms</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 0.85rem 0.5rem;">Sunday live</td>
+                            <td style="padding: 0.85rem 0.5rem;">See the event only</td>
+                            <td style="padding: 0.85rem 0.5rem;">Join, listen-only</td>
+                            <td style="padding: 0.85rem 0.5rem;">Join + share screen</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.85rem 0.5rem;">Founder review</td>
+                            <td style="padding: 0.85rem 0.5rem;">No</td>
+                            <td style="padding: 0.85rem 0.5rem;">No</td>
+                            <td style="padding: 0.85rem 0.5rem;">Your architecture, live</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid" style="margin-top: 1.25rem;">
+                <div class="col-6">
+                    <div class="spec-box" style="height: 100%;">
+                        <div class="spec-title">The 90-second Peek</div>
+                        <div class="spec-desc">A new joiner should hit: (1) the one-sentence offer, (2) next Sunday 9pm on the calendar, (3) a playable sample. If those three are not free, preview is fake. Pin a &ldquo;Start here&rdquo; post that says exactly that.</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
+                        <div class="spec-title">Why $1 exists</div>
+                        <div class="spec-desc">It is not revenue. It is a Hormozi tripwire &mdash; a handshake so they show up. Free Sunday already proved people attend (~4/session, see H4 / H5). $1 filters lurkers without asking for $250 first. Cancel anytime. Do not dress it up as Premium.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏋️ Hormozi tactics on this page</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Value Equation</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+                            <strong>Dream:</strong> walk into the Claude Architect exam having already solved the hard problems out loud.<br>
+                            <strong>Likelihood:</strong> 11 people already in the room, 8 recorded Sundays, live every week &mdash; and you can preview before $250.<br>
+                            <strong>Time:</strong> next Sunday, not a 12-week course you start someday.<br>
+                            <strong>Effort:</strong> show up; the midweek install list kills setup sacrifice (see <a href="../growth/cohort-prep.html" style="color: var(--color-primary);">Cohort Prep</a>).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Stack the $250 receipt</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+                            Name the parts so $250 looks like theft, not a fee. Sunday live-share seat (~52 weeks) + founder review + full Classroom + all replays + install list + peer board. Do not compete with Udemy on price. Compete on &ldquo;your screen, reviewed.&rdquo; The agent page still wants a later <em>Architect Exam Sprint</em> at $497&ndash;$997 once the mock exists (<a href="../strategy/practice-exams-gap.html" style="color: var(--color-primary);">H27</a>). This week: stack first, take the first paid seat.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Magnet vs tripwire vs offer</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+                            Peek = lead magnet (free). Sit In = tripwire ($1 so they raise a hand). Share Screen = the offer. The $29 bundle stays a separate tripwire for people who only want mocks (<a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a>) &mdash; do not put it on this Skool join page or you recreate the catalog the Hormozi agent already graded a C.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Process reverse, never a pass promise</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+                            Peek is free. Sit In cancels any month. Share Screen: attend two Sundays, if you did not get a live review, cancel and keep what you used. Anthropic still issues the badge. Site-wide rule: no exam-pass guarantee language. That is a process guarantee &mdash; it raises likelihood without lying.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Paste this into Skool</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Group About, then each plan name + description. Buttons on Skool stay &ldquo;Join &hellip;&rdquo; &mdash; the plan name is what the buyer reads, so the name has to do the work.
+            </p>
+
+            <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.6rem;">Group listing line</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0 0 0.55rem;">Short field under the group name. Full About tab paste lives on <a href="skool-about.html" style="color: var(--color-primary);">Delivery Pilot About</a>.</p>
+            <div class="copy-block" style="margin-bottom: 1.25rem;">
+                <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-about">Copy</button>
+                <pre id="skool-about">Every Sunday at 9pm we solve Claude Architect problems live. Peek free. Sit in for $1. Share your screen for $250/year.</pre>
+            </div>
+
+            <div class="grid">
+                <div class="col-4">
+                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 1 &mdash; Peek</h3>
+                    <div class="copy-block">
+                        <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-peek">Copy</button>
+                        <pre id="skool-peek">Name: Peek
+Price: $0 / month
+
+See the room before you give us a Sunday night.
+
+Includes:
+• Welcome + next Sunday on the calendar
+• One sample replay
+• Read the board
+
+Does not include live join or screen share.</pre>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 2 &mdash; Sit In</h3>
+                    <div class="copy-block">
+                        <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-sit">Copy</button>
+                        <pre id="skool-sit">Name: Sit In
+Price: $1 / month
+
+Listen this Sunday. Feel the cohort. Cancel anytime.
+
+Includes everything in Peek, plus:
+• Join Sunday live (listen-only)
+• More recorded workshops
+• Post and reply on the board
+
+Screen share stays on Share Screen.</pre>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 3 &mdash; Share Screen</h3>
+                    <div class="copy-block">
+                        <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-share">Copy</button>
+                        <pre id="skool-share">Name: Share Screen
+Price: $250 / year
+
+The seat. Get unstuck on YOUR architecture.
+
+Includes everything in Sit In, plus:
+• Share your screen every Sunday
+• Founder review of your setup
+• Full Classroom + midweek install list
+• All workshop replays for 12 months
+
+~$4.80 a week. Cancel after two Sundays if you did not get a live review.</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚠️ What this is not</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">🚫</span><span style="color: var(--text-secondary);"><strong>Not the Grand Slam yet.</strong> The <a href="../strategy/alex-hormozi-agent.html" style="color: var(--color-primary);">Hormozi agent</a> still wants a named Architect Exam Sprint with a finished mock. This page makes the live checkout honest so people can preview. Price last. Stack first.</span></li>
+                    <li><span class="emoji">🚫</span><span style="color: var(--text-secondary);"><strong>Not a replacement of $10/mo + $250 (3 mo) / $500 (year).</strong> Those remain the Stage 2 revenue model on <a href="../bmc/bmc-revenue-streams.html" style="color: var(--color-primary);">Revenue Streams</a> and H5 Premise 3. $0 / $1 / $250-year is the Skool join-page experiment so the first paid conversion is an easy yes.</span></li>
+                    <li><span class="emoji">🚫</span><span style="color: var(--text-secondary);"><strong>Not paid enrollment until $250 clears.</strong> A $0 or $1 join is still a community signup, same bar as the current 11 members. H5 stays 🟡 In Testing. H9 does not move.</span></li>
+                    <li><span class="emoji">🚫</span><span style="color: var(--text-secondary);"><strong>Not &ldquo;get certified.&rdquo;</strong> The live About line currently says &ldquo;get certified as a Claude Architect.&rdquo; That is too close to a promised outcome. Replace it with the About copy above.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 See also</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">📝</span><span style="color: var(--text-secondary);"><a href="skool-about.html" style="color: var(--color-primary);">Delivery Pilot About</a> &mdash; full About-tab paste and the map back to system pages.</span></li>
+                    <li><span class="emoji">🏫</span><span style="color: var(--text-secondary);"><a href="skool-lms-integration.html" style="color: var(--color-primary);">Skool LMS Integration</a> &mdash; why the storefront lives here in Stage 2.</span></li>
+                    <li><span class="emoji">🏋️</span><span style="color: var(--text-secondary);"><a href="../strategy/alex-hormozi-agent.html" style="color: var(--color-primary);">Alex Hormozi Agent</a> &mdash; catalog vs Grand Slam, value equation, tripwire vs magnet.</span></li>
+                    <li><span class="emoji">💬</span><span style="color: var(--text-secondary);"><a href="../../markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md" style="color: var(--color-primary);">Skool Pricing Feedback v1.0.0</a> &mdash; founder-confirmed Freemium entitlements, graded. Not a paid-enrollment signal.</span></li>
+                    <li><span class="emoji">📈</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> &mdash; organic cohort sales; this page is Premise 9, not a status upgrade.</span></li>
+                    <li><span class="emoji">🧰</span><span style="color: var(--text-secondary);"><a href="../growth/cohort-prep.html" style="color: var(--color-primary);">Cohort Prep</a> &mdash; the midweek install list that cuts Sunday setup sacrifice.</span></li>
+                    <li><span class="emoji">🌟</span><span style="color: var(--text-secondary);"><a href="skool-community-golden-rules.html" style="color: var(--color-primary);">Golden Rules</a> &mdash; a preview room still has to be a party, not a lecture.</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Logged founder-confirmed Freemium entitlements (Standard $0 / Premium $1 / VIP $250) and graded them against Peek / Sit In / Share Screen (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-delivery-pilot-offer.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var el = document.getElementById(btn.getAttribute('data-copy'));
+                if (!el) return;
+                navigator.clipboard.writeText(el.textContent).then(function () {
+                    var prev = btn.textContent;
+                    btn.textContent = 'Copied';
+                    setTimeout(function () { btn.textContent = prev; }, 1600);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
