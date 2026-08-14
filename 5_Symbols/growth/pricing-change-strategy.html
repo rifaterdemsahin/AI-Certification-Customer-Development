@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Change Strategy & Milestone Roadmap | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .pricing-hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .pricing-hero-grid { grid-template-columns: 1fr; }
+        }
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .evolution-grid { grid-template-columns: 1fr; }
+            .evolution-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
+        }
+        .evolution-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            position: relative;
+        }
+        .evolution-card.current {
+            border-color: rgba(16, 185, 129, 0.4);
+            background: rgba(16, 185, 129, 0.04);
+        }
+        .evolution-card.target {
+            border-color: rgba(245, 158, 11, 0.4);
+            background: rgba(245, 158, 11, 0.04);
+        }
+        .evolution-arrow {
+            font-size: 2rem;
+            color: var(--text-muted);
+            text-align: center;
+            font-weight: 700;
+        }
+        .urgency-banner {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(245, 158, 11, 0.15));
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .milestone-timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+            margin: 1.5rem 0;
+        }
+        .milestone-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .milestone-dot {
+            position: absolute;
+            left: -2.6rem;
+            top: 0.2rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 3px solid var(--color-primary);
+        }
+        .milestone-dot.active {
+            border-color: #34d399;
+            background: #34d399;
+            box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+        }
+        .milestone-dot.target {
+            border-color: #f59e0b;
+        }
+        .price-badge {
+            font-size: 1.75rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin: 0.25rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="conversion-strategy.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Conversion Strategy
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-warning);">
+            <div class="pricing-hero-grid">
+                <div>
+                    <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fde68a; border-color: rgba(245, 158, 11, 0.3);">Growth &middot; Revenue Architecture</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">📈 Pricing Change Strategy &amp; Milestone Roadmap</h1>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Phase-by-phase pricing transition roadmap moving from current <strong>Validation Entry Rates</strong> ($1/mo &amp; $250/yr) to <strong>Mature Market Economics</strong> ($10/mo &amp; $1,000/yr). Tied directly to Customer Development stage gates, proving value, and creating authentic urgency for founding members.
+                    </p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem; text-align: center;">
+                    <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Current Validation Pilot</div>
+                    <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: #34d399; margin: 0.25rem 0;">$1 &middot; $250</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Founder-Confirmed Baseline (<a href="../product/skool-delivery-pilot-offer.html" style="color: var(--color-warning);">Offer Specs</a>)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Urgency Callout for Prospects -->
+        <div class="urgency-banner animate-fade-in">
+            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="font-size: 2rem;">⏳</div>
+                <div>
+                    <h3 style="font-size: 1.2rem; margin: 0 0 0.5rem; color: #fef08a;">Grandfathering Rule &amp; Authentic Scarcity</h3>
+                    <p style="color: var(--text-primary); font-size: 0.92rem; line-height: 1.5; margin: 0;">
+                        Every founding member who joins at today’s <strong>$1/month Sit In</strong> or <strong>$250/year Share Screen</strong> tier is <strong>permanently grandfathered</strong> at that rate for the lifetime of their active membership. Once milestone criteria are satisfied, new signups automatically step up to $10/mo and $1,000/yr.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier Price Evolution -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🪜 Tier Price Progression</h2>
+
+            <!-- Tier 2 Evolution -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #60a5fa;">Tier 2: "Sit In" (Observer / Community Membership)</h3>
+                <div class="evolution-grid">
+                    <div class="evolution-card current">
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7; margin-bottom: 0.5rem;">CURRENT: Stage 2 Validation</span>
+                        <div class="price-badge" style="color: #34d399;">$1 <span style="font-size: 0.9rem; color: var(--text-secondary);">/ month</span></div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+                            <strong>Purpose:</strong> Low-friction tripwire to build 10 true regulars in Skool (<a href="../product/skool-10-true-regulars.html" style="color: var(--color-info);">10 Regulars Spec</a>). Proves recurring engagement and fills the Sunday room.
+                        </p>
+                    </div>
+
+                    <div class="evolution-arrow">&rarr;</div>
+
+                    <div class="evolution-card target">
+                        <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fde68a; margin-bottom: 0.5rem;">TARGET: Customer Creation (Stage 3)</span>
+                        <div class="price-badge" style="color: #fbbf24;">$10 <span style="font-size: 0.9rem; color: var(--text-secondary);">/ month</span></div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+                            <strong>Standard Economics:</strong> The baseline membership model documented in <a href="../comp/comp-business-model.html" style="color: var(--color-warning);">BMC Revenue</a> and <a href="unit-economics.html" style="color: var(--color-warning);">Unit Economics</a>. Covers platform infrastructure and asynchronous workshop archives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3 Evolution -->
+            <div>
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #34d399;">Tier 3: "Share Screen" (VIP Live Cohort / Screen-Share Audits)</h3>
+                <div class="evolution-grid">
+                    <div class="evolution-card current">
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7; margin-bottom: 0.5rem;">CURRENT: Stage 2 Validation</span>
+                        <div class="price-badge" style="color: #34d399;">$250 <span style="font-size: 0.9rem; color: var(--text-secondary);">/ year</span></div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+                            <strong>Purpose:</strong> Validates willingness to pay for live screen-sharing and hands-on architecture audits (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-info);">H5</a>) to clear the $10,000 2-launch validation gate (<a href="validation-repeat-gate.html" style="color: var(--color-info);">Repeat Gate</a>).
+                        </p>
+                    </div>
+
+                    <div class="evolution-arrow">&rarr;</div>
+
+                    <div class="evolution-card target">
+                        <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fde68a; margin-bottom: 0.5rem;">TARGET: Company Building (Stage 4)</span>
+                        <div class="price-badge" style="color: #fbbf24;">$1,000 <span style="font-size: 0.9rem; color: var(--text-secondary);">/ year</span></div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+                            <strong>Enterprise &amp; Advanced Bootcamp:</strong> High-ticket multi-certification accelerator (Claude, Nvidia, Microsoft, Google) facilitated by full-time Teaching Assistants &amp; Support Coordinators (<a href="../stages/stage-company-building.html" style="color: var(--color-warning);">Stage 4</a>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Milestones to Trigger Price Changes -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎯 The 4 Hard Milestones Triggering Price Changes</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Prices never increase arbitrarily. Every step up is triggered by objective, observable business proof points:
+            </p>
+
+            <div class="milestone-timeline">
+                <!-- Milestone 1 -->
+                <div class="milestone-item">
+                    <div class="milestone-dot active"></div>
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <h3 style="font-size: 1.15rem; margin: 0;">Milestone 1: The "10 True Regulars" Activation (<a href="../product/skool-10-true-regulars.html" style="color: var(--color-primary);">Stage 2</a>)</h3>
+                            <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399;">In Progress (8/10 Joined)</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.5;">
+                            <strong>Condition:</strong> 10 active community members attending Sunday cohorts and posting weekly in Skool.<br>
+                            <strong>Price Action:</strong> Keep Tier 2 at $1/mo and Tier 3 at $250/yr to maximize initial activation and qualitative feedback.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="milestone-item">
+                    <div class="milestone-dot target"></div>
+                    <div class="card" style="border-left: 4px solid var(--color-warning);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <h3 style="font-size: 1.15rem; margin: 0; color: #fbbf24;">Milestone 2: First 50 Paid Tier 2 Members &rarr; Step to $5/mo</h3>
+                            <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Intermediate Stepping Gate</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.5;">
+                            <strong>Condition:</strong> Skool community reaches 50 members paying $1/mo.<br>
+                            <strong>Price Action:</strong> Close the $1/mo founding window; new Sit In members pay <strong>$5/mo</strong> (stepping stone to $10). Existing 50 members locked at $1 forever.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="milestone-item">
+                    <div class="milestone-dot target"></div>
+                    <div class="card" style="border-left: 4px solid #34d399;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <h3 style="font-size: 1.15rem; margin: 0; color: #34d399;">Milestone 3: The $10,000 Repeat Validation Gate (<a href="validation-repeat-gate.html" style="color: var(--color-success);">Stage 2 &rarr; 3 Exit</a>)</h3>
+                            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">Stage 3 Creation Trigger</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.5;">
+                            <strong>Condition:</strong> 40 cumulative $250 cohort seats sold across 2 consecutive cohort launches ($10,000 gross).<br>
+                            <strong>Price Action:</strong> 
+                            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.2rem; margin: 0.4rem 0 0;">
+                                <li><strong>Tier 2 Sit In:</strong> Permanently moves to <strong>$10/month</strong> (full BMC baseline).</li>
+                                <li><strong>Tier 3 Share Screen:</strong> Moves to <strong>$500/year</strong> (the upper bound of Stage 2 validation).</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="milestone-item">
+                    <div class="milestone-dot target"></div>
+                    <div class="card" style="border-left: 4px solid var(--color-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <h3 style="font-size: 1.15rem; margin: 0; color: #818cf8;">Milestone 4: $100k ARR Run-Rate &amp; TA Delegation (<a href="../stages/stage-company-building.html" style="color: var(--color-primary);">Stage 4 Building</a>)</h3>
+                            <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #c7d2fe;">Stage 4 Building Trigger</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.5;">
+                            <strong>Condition:</strong> Business generates $100,000/year ARR run-rate (<a href="../hypotheses/hyp-h11.html" style="color: var(--color-primary);">H11</a>), hiring video editors, cohort coordinators, and dedicated Teaching Assistants for multi-cert tracks (Nvidia, Microsoft, Google, Claude).<br>
+                            <strong>Price Action:</strong> VIP Share Screen evolves into an Enterprise/Pro Bootcamp at <strong>$1,000/year</strong> ($99/mo or $1,000 annual) with weekday live lab coverage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copywriting Swipe File for Urgency -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">📣 High-Urgency Copywriting Swipe File</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Ready-to-use callouts for YouTube video outros, Skool announcements, and LinkedIn posts:
+            </p>
+
+            <div class="grid">
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-warning); height: 100%;">
+                        <div class="spec-title" style="color: var(--color-warning);">Tier 2: $1/mo Founding Member Callout</div>
+                        <p style="font-weight: 700; margin: 0.4rem 0;">"Lock in $1/mo Before We Hit 50 Members."</p>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                            <em>"We are testing our live classroom tools with our first 50 founding members at $1/month. Once seat #50 joins, the subscription goes to $10/mo for all future students. Join today and you keep $1/mo for life."</em>
+                        </p>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">→ Place in YouTube pinned comments and description box (<a href="conversion-strategy.html" style="color: var(--color-warning);">Pillar 1</a>).</p>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
+                        <div class="spec-title" style="color: var(--color-success);">Tier 3: $250 Cohort Early-Access Callout</div>
+                        <p style="font-weight: 700; margin: 0.4rem 0;">"The $250 Screen-Sharing Seat Will Become $1,000."</p>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                            <em>"Right now you get live, direct architectural code reviews with Rifat every Sunday for $250/year. As we add multi-cert tracks and full-time TAs, this tier moves to $1,000/year. Grab your screen-share seat while it's still at validation pricing."</em>
+                        </p>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">→ Use during the last 15 minutes of Sunday Cohort (<a href="marketing-tactics.html" style="color: var(--color-success);">Live Selling Script</a>).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span class="footer-text">
+            &copy; 2026 AI Certification Helper &middot; Customer Development Framework (Steve Blank)
+        </span>
+        <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+            Latest Change: Initial creation of Pricing Change Strategy &amp; Milestone Roadmap ($1→$10 and $250→$1000 evolution with grandfathering urgency) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/pricing-change-strategy.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+        </span>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

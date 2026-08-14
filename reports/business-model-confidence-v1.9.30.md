@@ -1,31 +1,31 @@
-> **Superseded by** [`business-model-confidence-v1.9.30.md`](business-model-confidence-v1.9.30.md). Numbers below are the historical record for this run.
+> **Superseded by** [`business-model-confidence-v1.9.31.md`](business-model-confidence-v1.9.31.md). Numbers below are the historical record for this run.
 
-# Business Model Confidence Report — v1.9.29
+# Business Model Confidence Report — v1.9.30
 
 **Date:** 2026-08-14  
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)  
-**What changed vs. v1.9.28:** patch re-run, no new check categories. This push also lands founder-confirmed Freemium entitlements (`reports/skool-pricing-feedback-v1.0.0.md`, H5 Premise 9) plus `5_Symbols/product/skool-discoverability-keywords.html` (H5 Premise 10). Status tiers unchanged. The whole open batch is committed, so the −10 uncommitted-work deduction clears. Integrity 67.5 → 77.5; overall 43 → 46.
+**What changed vs. v1.9.29:** patch re-run, no new check categories. Adds `5_Symbols/product/skool-visibility.html` (H5 Premise 11 — set Delivery Pilot to Public so strangers can read the board; only members post). Status tiers unchanged. The visibility how-to is a new uncommitted batch, so the −10 uncommitted-work deduction returns. Integrity 77.5 → 67.5; overall 46 → 43.
 
 ---
 
 ## Overall Score
 
-# 46 / 100 — Low-moderate confidence
+# 43 / 100 — Low-moderate confidence
 
-> Hypothesis Validation holds at **32.1/100** (28 hypotheses; no status emoji changes). Site Integrity holds at **77.5/100** (0 broken links, 0 orphaned pages). Overall **46**.
+> Hypothesis Validation holds at **32.1/100** (28 hypotheses; no status emoji changes). Site Integrity drops to **67.5/100** on uncommitted work. Overall **43**.
 
 ```
-overall = round(0.7 × 32.14 + 0.3 × 77.50)
-        = round(22.50 + 23.25)
-        = round(45.75)
-        = 46
+overall = round(0.7 × 32.14 + 0.3 × 67.50)
+        = round(22.50 + 20.25)
+        = round(42.75)
+        = 43
 ```
 
-| Sub-score | v1.9.28 | v1.9.29 (this run) |
+| Sub-score | v1.9.29 | v1.9.30 (this run) |
 |---|---|---|
 | Hypothesis Validation Score | 32.1 / 100 | **32.1 / 100** |
-| Site Integrity Score | 77.5 / 100 | **77.5 / 100** |
-| **Overall** | **43 / 100** | **46 / 100** |
+| Site Integrity Score | 77.5 / 100 | **67.5 / 100** |
+| **Overall** | **46 / 100** | **43 / 100** |
 
 A low-moderate score at Customer Discovery / early Validation is expected. It means most bets are still open, not that the business is failing.
 
@@ -33,7 +33,7 @@ A low-moderate score at Customer Discovery / early Validation is expected. It me
 
 ## Hypothesis Validation Score — 32/100
 
-Re-derived from each hypothesis's own **Status:** line. All 28 keep the same leading emoji as v1.9.28. Sum 900 / 28 = **32.14**. H5 Premise 10 now records the Skool discoverability keywords setup and links to `product/skool-discoverability-keywords.html`. Status tier unchanged — confirming discoverability settings is not a paid enrollment.
+Re-derived from each hypothesis's own **Status:** line. All 28 keep the same leading emoji as v1.9.29. Sum 900 / 28 = **32.14**. H5 Premise 11 now records the Public vs Private visibility how-to and links to `product/skool-visibility.html`. Status tier unchanged — flipping the group to Public is not a paid enrollment.
 
 | ID | Hypothesis | Status | Score |
 |---|---|---|---|
@@ -68,27 +68,28 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 
 ---
 
-## Site Integrity Score — 77.5/100
+## Site Integrity Score — 67.5/100
 
 | # | Finding | Deduction | Notes |
 |---|---|---|---|
 | 1 | Acidity still open (F2, F11, F12) | −15 | Unchanged |
 | 2 | Acidity partial (F3, F7, F9) | −7.5 | Unchanged |
 | 3 | HYPOTHESIS.md table/entry mismatches | 0 | All 28 Summary Table rows match their own Status-line leading emoji |
-| 4 | Broken local links | 0 | Fresh scan of 170 HTML files (scripts stripped): 0 real broken `href`s after fixing the keywords page's H27 link to `practice-exams-gap.html` |
-| 5 | Orphaned pages | 0 | Discoverability keywords page registered in `nav.js` groups + searchIndex and inbound-linked from index.html and skool-about.html |
+| 4 | Broken local links | 0 | Fresh scan of 171 HTML files (scripts stripped): 0 real broken `href`s |
+| 5 | Orphaned pages | 0 | Visibility page registered in `nav.js` groups + searchIndex and inbound-linked from index.html, keywords, about, hyp-h5, dictionary, latest-pages |
 | 6 | Headline number consistency | 0 | $10,000 / 1,000x / $100,000 / >40% unchanged |
-| 7 | Uncommitted work (`git status --porcelain`) | 0 | This run commits and pushes the open batch (Delivery Pilot offer/about, pricing feedback v1.0.0, discoverability keywords, confidence v1.9.26–v1.9.29). Deduction clears. |
+| 7 | Uncommitted work (`git status --porcelain`) | −10 | New distinct batch: `skool-visibility.html` + hero, plus H5 Premise 11 / nav / index / keywords / about / dictionary / hyp-h5 / latest-pages / HYPOTHESIS.md edits. Not the same committed batch as v1.9.29. |
 
-**Total deductions: 22.5 → 77.5**
+**Total deductions: 32.5 → 67.5**
 
 ---
 
 ## What Would Move the Score
 
-1. **Highest-leverage business action remains H9** — two consecutive paid launches combining to $10,000.
-2. **F12 (−5)** — direct confirmation with Anthropic / Pearson VUE that individual, non-Partner registration is possible.
-3. **H5 is still In Testing** — confirming discoverability settings is not a paid enrollment. To cross: convert a portion of those (or new) signups into a real 20–40-student *paid* Share Screen / $250–$500 count.
+1. **Commit this visibility batch** — restores Integrity to 77.5 and the overall score to **46**.
+2. **Highest-leverage business action remains H9** — two consecutive paid launches combining to $10,000.
+3. **F12 (−5)** — direct confirmation with Anthropic / Pearson VUE that individual, non-Partner registration is possible.
+4. **H5 is still In Testing** — setting the group to Public is not a paid enrollment. To cross: convert a portion of those (or new) signups into a real 20–40-student *paid* Share Screen / $250–$500 count.
 
 ---
 
@@ -98,13 +99,14 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 - H9 → two paid launches summing to $10,000.
 - H8 → 10 true regulars logged under the four-week un-poked definition.
 - H29 → a logged Sunday listen:speak series plus one audience-originated change shipped and credited by name.
-- H5 → paid Share Screen / $250–$500 enrollments, not more $0/$1 community joins or a discoverability-keywords config.
+- H5 → paid Share Screen / $250–$500 enrollments, not more $0/$1 community joins, a keywords config, or a Public/Private toggle.
 - H20 → a formal referral-count/NPS series.
 - H4 / H7 → measured view→click→paid rates.
 - H27 → question bank shipped, plus attendee-demand data from a pilot batch.
 - H1 → an exported monthly search-volume series or direct confirmation on F12.
 
-**Site Integrity (77.5 / 100)** — now at the acidity-finding ceiling:
+**Site Integrity (67.5 / 100)** — below the acidity-finding ceiling because of uncommitted work:
+- Commit or drop the `skool-visibility.html` batch → +10, Integrity 77.5, overall 46.
 - Resolve acidity findings (F2 / F11 / F12 and F3 / F7 / F9).
   - F2: search-volume/job-scrape dataset behind H1.
   - F11: one full cohort of $10/mo churn/renewal data.
@@ -119,10 +121,8 @@ Re-derived from each hypothesis's own **Status:** line. All 28 keep the same lea
 
 | Version | Date | Overall Score | Note |
 |---|---|---|---|
-| **v1.9.29** | 2026-08-14 | **46 / 100** | Pricing feedback v1.0.0 + discoverability keywords committed; Integrity 67.5 → 77.5 |
+| **v1.9.30** | 2026-08-14 | **43 / 100** | Skool Visibility (Public vs Private) how-to + H5 Premise 11; uncommitted batch −10; Integrity 77.5 → 67.5 |
+| v1.9.29 | 2026-08-14 | 46 / 100 | Pricing feedback v1.0.0 + discoverability keywords committed; Integrity 67.5 → 77.5 |
 | v1.9.28 | 2026-08-14 | 43 / 100 | Live Freemium entitlements confirmed + pricing feedback v1.0.0; leftover keywords draft kept −10 |
 | v1.9.27 | 2026-08-14 | 43 / 100 | Delivery Pilot About copy (replaces “get certified” listing line); score holds flat |
 | v1.9.26 | 2026-08-14 | 43 / 100 | Delivery Pilot Offer rewrite (Peek / Sit In / Share Screen); H5 Premise 9; score holds flat |
-| v1.9.25 | 2026-08-14 | 43 / 100 | Added Leverages & Unfair Advantages page detailing founder assets using the MILES framework; score holds flat |
-| v1.9.24 | 2026-08-14 | 43 / 100 | Recurring Tasks loop on todo.html (videos, Sunday cohort, Skool answers, YouTube comments); score holds flat |
-| v1.9.23 | 2026-08-14 | 43 / 100 | Daily Skool hello / connect / notification pass; public count 10 members; score holds flat |

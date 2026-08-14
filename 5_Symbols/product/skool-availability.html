@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skool Availability Check | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .copy-block {
+            background: rgba(0,0,0,0.28);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.05rem;
+            position: relative;
+        }
+        .copy-block pre {
+            margin: 0;
+            white-space: pre-wrap;
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+        .map-table td, .map-table th {
+            padding: 0.85rem 1rem;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="skool-visibility.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Skool Visibility
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid var(--color-success);">
+            <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #a7f3d0; border-color: rgba(16, 185, 129, 0.35);">Stage 2 &middot; Live Availability Test</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📡 Skool Availability Check</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 82ch; line-height: 1.65;">
+                Logged-out test of <a href="https://www.skool.com/delivery-pilot-8938" target="_blank" rel="noopener" style="color: var(--color-primary);">skool.com/delivery-pilot-8938</a>. Confirms a stranger can reach the group and read the board after the founder set visibility to Public. See <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> Premise 11.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Page ID:</span><span class="info-value">skool-availability.html</span></li>
+                        <li class="info-item"><span class="info-label">Test:</span><span class="info-value"><code>5_Symbols/toolbox/skool_availability_check.py</code></span></li>
+                        <li class="info-item"><span class="info-label">Latest report:</span><span class="info-value"><a href="../../markdown_renderer.html?src=reports/skool-availability-v1.0.0.md" style="color: var(--color-primary);">v1.0.0</a></span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Last run:</span><span class="info-value" style="color: var(--color-success);">✅ PASS 11 / 11 gates &mdash; 2026-08-14 15:21 UTC</span></li>
+                        <li class="info-item"><span class="info-label">Linked Hypotheses:</span><span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a></span></li>
+                        <li class="info-item"><span class="info-label">Related:</span><span class="info-value"><a href="skool-visibility.html" style="color: var(--color-primary);">Visibility</a>, <a href="skool-about.html" style="color: var(--color-primary);">About</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">✅ Latest result</h2>
+            <div class="card" style="background: rgba(16,185,129,0.07); border-color: rgba(16,185,129,0.35);">
+                <p style="font-family: var(--font-heading); font-size: 1.45rem; line-height: 1.4; margin: 0 0 0.85rem;">
+                    Public is live. A stranger can read the board.
+                </p>
+                <p style="color: var(--text-secondary); margin: 0; max-width: 78ch; line-height: 1.65;">
+                    The script fetched the group with no Skool cookie. HTTP 200. <code>currentGroup.public = True</code>. <code>metadata.privacy = 0</code>. <strong>11 members</strong>, <strong>14 posts</strong>, next Cohort session Sunday 16 Aug 09:00 Europe/London. That is the Public state from <a href="skool-visibility.html" style="color: var(--color-primary);">Skool Visibility</a>. It is not a paid enrollment.
+                </p>
+            </div>
+            <div class="metrics-grid" style="margin-top: 1.25rem;">
+                <div class="metric-card"><div class="metric-val">200</div><div class="metric-lbl">Home status</div></div>
+                <div class="metric-card"><div class="metric-val">11</div><div class="metric-lbl">Members visible</div></div>
+                <div class="metric-card"><div class="metric-val">14</div><div class="metric-lbl">Posts visible</div></div>
+                <div class="metric-card"><div class="metric-val">475ms</div><div class="metric-lbl">Home response</div></div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧪 What the test checks</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 78ch;">
+                Gates fail the run. Observations warn only. The script never logs in and never posts.
+            </p>
+            <div class="card" style="overflow-x: auto; padding: 0;">
+                <table class="map-table" style="width: 100%; border-collapse: collapse; text-align: left; margin: 0;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); background: rgba(255,255,255,0.02);">
+                            <th>Kind</th>
+                            <th>Check</th>
+                            <th>v1.0.0</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td>Gate</td>
+                            <td>Home / About / Classroom / Calendar return HTTP 200</td>
+                            <td style="color: var(--color-success);">✅ 200</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td>Gate</td>
+                            <td><code>currentGroup.public === true</code> and <code>privacy === 0</code></td>
+                            <td style="color: var(--color-success);">✅ Public</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td>Gate</td>
+                            <td>At least one community post is readable without joining</td>
+                            <td style="color: var(--color-success);">✅ 14 posts</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td>Gate</td>
+                            <td>Member count is readable without joining</td>
+                            <td style="color: var(--color-success);">✅ 11</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td>Observe</td>
+                            <td>Listing line no longer says &ldquo;get certified&rdquo;</td>
+                            <td style="color: var(--color-warning);">⚠️ still live &mdash; paste <a href="skool-about.html" style="color: var(--color-primary);">About</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td>Observe</td>
+                            <td>About body uses Peek / Sit In</td>
+                            <td style="color: var(--color-success);">✅ in lpDescription</td>
+                        </tr>
+                        <tr>
+                            <td>Observe</td>
+                            <td>A non-founder post is visible</td>
+                            <td style="color: var(--color-success);">✅ Sude Ünal &mdash; Second Brain</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">▶️ How to re-run</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; max-width: 78ch;">
+                From the repo root. Exit <code>0</code> means every gate passed. Each run overwrites <code>reports/skool-availability-latest.json</code> and writes the next <code>reports/skool-availability-vX.Y.Z.md</code>.
+            </p>
+            <div class="copy-block">
+                <pre>python3 5_Symbols/toolbox/skool_availability_check.py</pre>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 What this does not prove</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">✍️</span><span style="color: var(--text-secondary);">A stranger can post. They should not. The script does not try.</span></li>
+                    <li><span class="emoji">🎥</span><span style="color: var(--text-secondary);">Classroom lessons are free. Public is a look-in. Sit In / Share Screen still gate Sunday and screen-share.</span></li>
+                    <li><span class="emoji">💵</span><span style="color: var(--text-secondary);">Anyone paid $10/mo or $250. 11 members is not 11 paid enrollments (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>).</span></li>
+                    <li><span class="emoji">📝</span><span style="color: var(--text-secondary);">The listing line is fixed. It still says &ldquo;get certified.&rdquo; Paste <a href="skool-about.html" style="color: var(--color-primary);">About</a>.</span></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" style="margin-top: 5rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+        <div class="container">
+            <p>&copy; 2026 AI Certification Helper. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; display: flex; flex-direction: column; align-items: center;">
+                <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                    Latest Change: v1.0.0 availability run &mdash; PASS 11/11, Public, 11 members, 14 posts (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-availability.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

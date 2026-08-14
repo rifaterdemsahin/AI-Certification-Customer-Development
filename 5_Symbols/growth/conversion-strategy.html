@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Strategy & Tactics | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .strategy-banner {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .strategy-banner {
+                grid-template-columns: 1fr;
+            }
+        }
+        .leak-card {
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            padding: 1.25rem;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .leak-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+        }
+        .leak-pill {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .leak-pill.severe { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+        .leak-pill.medium { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .leak-pill.opportunity { background: rgba(16, 185, 129, 0.2); color: #a7f3d0; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+        .tactic-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tactic-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tactic-tag {
+            font-size: 0.8rem;
+            background: rgba(99, 102, 241, 0.15);
+            color: #c7d2fe;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+        .advice-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+        .advice-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .advice-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .calculator-box {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.85));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="sales-pipeline.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Sales Pipeline
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <div class="strategy-banner">
+                <div>
+                    <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Growth &middot; Conversion Architecture</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🎯 Conversion Strategy &amp; Tactical Blueprint</h1>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Systematic audit of funnel conversion choke-points from free organic video impressions to paid recurring memberships and live $250&ndash;$500 Sunday screen-sharing cohorts. Grounded in empirical hypotheses (<a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>, <a href="../hypotheses/hyp-h4.html" style="color: var(--color-primary);">H4</a>, <a href="../hypotheses/hyp-h7.html" style="color: var(--color-primary);">H7</a>, <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>) and high-leverage conversion frameworks.
+                    </p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem; text-align: center;">
+                    <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Stage 2&rarr;3 Target Gate</div>
+                    <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: #34d399; margin: 0.35rem 0;">$10,000</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">40 Cohort Seats &times; $250 across 2 Launches (<a href="validation-repeat-gate.html" style="color: var(--color-info);">Repeat Gate</a>)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Funnel Diagnostic Section -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔍 Funnel Scan &amp; Leak Diagnostic</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Where prospective students drop off, why friction exists, and the specific metrics currently tracked across the architecture.
+            </p>
+
+            <div class="grid">
+                <!-- Leak 1 -->
+                <div class="col-4">
+                    <div class="leak-card" style="height: 100%;">
+                        <span class="leak-pill severe">Severe Drop-off</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">1. View &rarr; Link Click</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            <strong>Symptom:</strong> High video views with passive completion; viewers watch animated insights without expanding description boxes or clicking pinned links.
+                        </p>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.75rem 0;">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                            <strong>Assumed CTR:</strong> ~10% (<a href="../hypotheses/hyp-h7.html" style="color: var(--color-primary);">H7</a>)<br>
+                            <strong>Baseline Reality:</strong> Standard YouTube CTR is 1.5%&ndash;3% without dedicated verbal/visual bridges.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leak 2 -->
+                <div class="col-4">
+                    <div class="leak-card" style="height: 100%;">
+                        <span class="leak-pill medium">Bridge Friction</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">2. Newsletter &rarr; Skool Join</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            <strong>Symptom:</strong> Dual capture points (<a href="https://rifaterdemsahin.github.io/email-newsletter/" target="_blank" style="color: var(--color-primary);">email list</a> + LinkedIn) collect leads, but cold emails lack immediate, visceral urgency to log into Skool.
+                        </p>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.75rem 0;">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                            <strong>Conversion Metric:</strong> &gt;5% email signup (<a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>)<br>
+                            <strong>Fix:</strong> Instant redirect + welcome asset delivery inside Skool.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leak 3 -->
+                <div class="col-4">
+                    <div class="leak-card" style="height: 100%;">
+                        <span class="leak-pill opportunity">High Upside</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">3. Free Observer &rarr; VIP Cohort</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            <strong>Symptom:</strong> Sunday Free Cohort attendees (~4&ndash;10 regulars) attend weekly but remain passive lurkers without a formal upgrade path.
+                        </p>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.75rem 0;">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                            <strong>Offer Mechanism:</strong> Screen-sharing privileges &amp; live architecture teardowns for VIP ($250).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Conversion Strategies -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧭 The 4 Pillars of Conversion Strategy</h2>
+
+            <!-- Pillar 1 -->
+            <div class="tactic-box">
+                <div class="tactic-header">
+                    <div>
+                        <span class="tactic-tag">Pillar 1 &middot; Top-of-Funnel Conversion</span>
+                        <h3 style="font-size: 1.35rem; margin: 0.35rem 0 0;">The "In-Video Bridge" &amp; Irresistible Lead Asset</h3>
+                    </div>
+                    <span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #34d399; border-color: rgba(16, 185, 129, 0.2);">YouTube &rarr; Skool/Email</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                    Never tell viewers to "subscribe to my newsletter" or "join my link in bio." Instead, embed the asset naturally as the second half of the lesson they just watched.
+                </p>
+                <ul class="advice-list">
+                    <li><strong>Tactical Implementation:</strong> At minute 3:00 of an animated Claude Architecture video, show the complete Architecture Cheat Sheet / Exam Traps Matrix on screen with 3 blurred critical exam gotchas. State: <em>"The full high-res PDF and interactive quiz are unlocked for free in the Skool classroom below."</em></li>
+                    <li><strong>Channel Banner Alignment:</strong> Ensure cold channel visitors see the 3-part transformation hook on the <a href="youtube-banner.html" style="color: var(--color-primary); font-weight: 600;">📺 YouTube Top Banner</a>, which directly points toward the Skool link.</li>
+                    <li><strong>Dual Pinned Comments:</strong> Pin a top comment with an open-ended discussion question and the direct single-click access link.</li>
+                    <li><strong>Visual Annotation:</strong> Use animated on-screen arrows and sound effects pointing toward the description box during the 5-second outro.</li>
+                </ul>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="tactic-box">
+                <div class="tactic-header">
+                    <div>
+                        <span class="tactic-tag">Pillar 2 &middot; Value Ladder Engineering</span>
+                        <h3 style="font-size: 1.35rem; margin: 0.35rem 0 0;">Freemium Join Ramp with Hard Screen-Share Entitlements</h3>
+                    </div>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: #fbbf24; border-color: rgba(245, 158, 11, 0.2);">Russell Brunson Ladder</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                    Eliminate cognitive dissonance by giving clear names and tangible physical differences to every tier on <a href="../product/skool-delivery-pilot-offer.html" style="color: var(--color-warning);">Delivery Pilot Offer</a>:
+                </p>
+                <div class="grid" style="margin-top: 1rem;">
+                    <div class="col-4">
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+                            <div style="font-weight: 700; color: var(--text-primary);">Tier 1: Peek ($0)</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">Community feed access, view live chat transcript, download basic blueprints.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+                            <div style="font-weight: 700; color: #60a5fa;">Tier 2: Sit In ($1/mo or $10/mo)</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">Live Sunday audio/video broadcast feed, full mock exam database, Discord study room.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem;">
+                            <div style="font-weight: 700; color: #34d399;">Tier 3: Share Screen ($250/yr Cohort)</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">Active screen-share seat during Sunday lab, direct architecture code audit by Rifat.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="tactic-box">
+                <div class="tactic-header">
+                    <div>
+                        <span class="tactic-tag">Pillar 3 &middot; High-Ticket Conversion</span>
+                        <h3 style="font-size: 1.35rem; margin: 0.35rem 0 0;">The Sunday Live Conversion Engine</h3>
+                    </div>
+                    <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #f87171; border-color: rgba(239, 68, 68, 0.2);">Live Selling Script</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                    The free Sunday cohort is not just a study group &mdash; it is the primary live conversion showroom. Use the 3-step live transition during the last 15 minutes:
+                </p>
+                <ul class="advice-list">
+                    <li><strong>1. The "Hot Seat Demonstration":</strong> Bring up one VIP student to share their screen and troubleshoot a complex Anthropic Tool Use error live. Let the entire room watch the instant transformation.</li>
+                    <li><strong>2. The Cost of Inaction Contrast:</strong> Samuel Leeds formula (<a href="marketing-tactics.html" style="color: var(--color-warning);">see swipe file</a>) &mdash; <em>"You can spend the next 3 weeks guessing why Pearson VUE tests fail on scenario questions, or have your code audited with us every Sunday."</em></li>
+                    <li><strong>3. The Scarcity Anchor:</strong> <em>"We cap active screen-sharing seats to 10 per cohort to ensure everyone gets 15 minutes of live audit time. 6 seats are claimed for this cycle."</em></li>
+                </ul>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="tactic-box">
+                <div class="tactic-header">
+                    <div>
+                        <span class="tactic-tag">Pillar 4 &middot; Hormozi Value Equation Optimization</span>
+                        <h3 style="font-size: 1.35rem; margin: 0.35rem 0 0;">Maximizing Perceived Likelihood of Achievement</h3>
+                    </div>
+                    <span class="badge" style="background: rgba(147, 51, 234, 0.1); color: #c084fc; border-color: rgba(147, 51, 234, 0.2);">Hormozi Formula</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                    As proven on <a href="../strategy/alex-hormozi-agent.html" style="color: var(--color-primary);">Alex Hormozi Agent</a>, students don't hesitate because of the $250 price &mdash; they hesitate because they doubt whether <em>they</em> can pass (<a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a> imposter syndrome).
+                </p>
+                <ul class="advice-list">
+                    <li><strong>Dream Outcome (High):</strong> Frame the certification as an enterprise hiring armor &amp; contractor rate multiplier (£600&ndash;£800/day).</li>
+                    <li><strong>Perceived Likelihood (Maximize):</strong> Publish real mock score progression charts and candidate teardowns (<a href="../product/exam-performance-evidence.html" style="color: var(--color-primary);">Exam Evidence</a>).</li>
+                    <li><strong>Time Delay (Minimize):</strong> "From Day 1 to Exam Ready in 4 Sunday Sprints."</li>
+                    <li><strong>Effort &amp; Sacrifice (Minimize):</strong> Provide pre-built Anki flashcard decks, pre-configured Claude API test harnesses, and weekly install checklists (<a href="cohort-prep.html" style="color: var(--color-primary);">Cohort Prep</a>).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Interactive Conversion Calculator -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧮 Conversion Simulator &amp; Revenue Projection</h2>
+            <div class="calculator-box">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Simulate your monthly revenue based on YouTube view volume and conversion rate adjustments across the funnel.
+                </p>
+
+                <div class="grid">
+                    <div class="col-6">
+                        <div style="margin-bottom: 1.25rem;">
+                            <label style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                <span>Monthly YouTube Views</span>
+                                <strong id="lbl-views" style="color: var(--color-primary);">10,000</strong>
+                            </label>
+                            <input type="range" id="slider-views" min="1000" max="100000" step="1000" value="10000" style="width: 100%; accent-color: var(--color-primary);">
+                        </div>
+
+                        <div style="margin-bottom: 1.25rem;">
+                            <label style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                <span>View &rarr; Lead CTR (%)</span>
+                                <strong id="lbl-ctr" style="color: #60a5fa;">3.0%</strong>
+                            </label>
+                            <input type="range" id="slider-ctr" min="0.5" max="10.0" step="0.5" value="3.0" style="width: 100%; accent-color: #60a5fa;">
+                        </div>
+
+                        <div style="margin-bottom: 1.25rem;">
+                            <label style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                <span>Lead &rarr; Paid Membership Conv (%)</span>
+                                <strong id="lbl-mem-conv" style="color: #fbbf24;">4.0%</strong>
+                            </label>
+                            <input type="range" id="slider-mem-conv" min="0.5" max="10.0" step="0.5" value="4.0" style="width: 100%; accent-color: #fbbf24;">
+                        </div>
+
+                        <div style="margin-bottom: 1.25rem;">
+                            <label style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                <span>Lead &rarr; $250 Cohort Seat Conv (%)</span>
+                                <strong id="lbl-cohort-conv" style="color: #34d399;">2.0%</strong>
+                            </label>
+                            <input type="range" id="slider-cohort-conv" min="0.2" max="5.0" step="0.1" value="2.0" style="width: 100%; accent-color: #34d399;">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">Funnel Output Summary</h3>
+                                
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.9rem;">
+                                    <span style="color: var(--text-secondary);">Leads Generated / mo:</span>
+                                    <strong id="out-leads" style="color: #60a5fa;">300</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.9rem;">
+                                    <span style="color: var(--text-secondary);">$10/mo New Members:</span>
+                                    <strong id="out-members" style="color: #fbbf24;">12 ($120/mo)</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.9rem;">
+                                    <span style="color: var(--text-secondary);">$250 Cohort Seats:</span>
+                                    <strong id="out-cohort" style="color: #34d399;">6 ($1,500)</strong>
+                                </div>
+                            </div>
+
+                            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+                                <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Estimated Monthly Funnel Gross</div>
+                                <div id="out-total" style="font-family: var(--font-heading); font-size: 2.25rem; font-weight: 700; color: #34d399; margin: 0.25rem 0;">$1,620</div>
+                                <div id="out-gate-status" style="font-size: 0.8rem; color: var(--text-secondary);">16.2% of Stage 2 $10k Gate per launch</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concrete Founder Advice & Tactical Action Plan -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">💡 Tactical Advice for Founder (Rifat Erdem Sahin)</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-left: 4px solid var(--color-warning);">
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-warning);">🗓️ Weekly Batching &amp; Energy Alignment</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Since Rifat works a demanding IT contract role, do not attempt real-time daily DM selling.
+                        </p>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.5;">
+                            <li>Batch YouTube &amp; LinkedIn comments into <strong>one 45-minute block every Thursday evening</strong>.</li>
+                            <li>Run Sunday live screen-sharing cohort at 9:00 PM UK time as the single live synchronous event of the week.</li>
+                            <li>Redirect all 1:1 DMs with a canned snippet: <em>"Bring your screen and architecture repo to Sunday's lab!"</em></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-left: 4px solid var(--color-primary);">
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-primary);">🎬 Video Production Velocity (H4 / H10)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Conversion requires top-of-funnel fuel. Maintain the target pace of <strong>3 animated videos per week</strong>.
+                        </p>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.5;">
+                            <li>Reuse the validated 68.5% retention animation templates on Canva.</li>
+                            <li>Focus on narrow, highly search-dense exam objectives (e.g. <em>"Anthropic Function Calling vs AWS Bedrock Guardrails"</em>).</li>
+                            <li>Embed single high-intent CTA pointing directly to the Skool classroom resource vault.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span class="footer-text">
+            &copy; 2026 AI Certification Helper &middot; Customer Development Framework (Steve Blank)
+        </span>
+        <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+            Latest Change: Initial creation of Conversion Strategy &amp; Tactical Blueprint with funnel scan, Hormozi/Leeds tactics, and interactive simulator (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/conversion-strategy.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+        </span>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        // Interactive Funnel Calculator Logic
+        const sliderViews = document.getElementById('slider-views');
+        const sliderCtr = document.getElementById('slider-ctr');
+        const sliderMemConv = document.getElementById('slider-mem-conv');
+        const sliderCohortConv = document.getElementById('slider-cohort-conv');
+
+        const lblViews = document.getElementById('lbl-views');
+        const lblCtr = document.getElementById('lbl-ctr');
+        const lblMemConv = document.getElementById('lbl-mem-conv');
+        const lblCohortConv = document.getElementById('lbl-cohort-conv');
+
+        const outLeads = document.getElementById('out-leads');
+        const outMembers = document.getElementById('out-members');
+        const outCohort = document.getElementById('out-cohort');
+        const outTotal = document.getElementById('out-total');
+        const outGateStatus = document.getElementById('out-gate-status');
+
+        function updateCalculator() {
+            const views = parseInt(sliderViews.value, 10);
+            const ctr = parseFloat(sliderCtr.value);
+            const memConv = parseFloat(sliderMemConv.value);
+            const cohortConv = parseFloat(sliderCohortConv.value);
+
+            lblViews.textContent = views.toLocaleString();
+            lblCtr.textContent = ctr.toFixed(1) + '%';
+            lblMemConv.textContent = memConv.toFixed(1) + '%';
+            lblCohortConv.textContent = cohortConv.toFixed(1) + '%';
+
+            const leads = Math.round(views * (ctr / 100));
+            const members = Math.round(leads * (memConv / 100));
+            const cohortSeats = Math.round(leads * (cohortConv / 100));
+
+            const membershipRev = members * 10;
+            const cohortRev = cohortSeats * 250;
+            const totalRev = membershipRev + cohortRev;
+
+            outLeads.textContent = leads.toLocaleString();
+            outMembers.textContent = `${members} ($${membershipRev.toLocaleString()}/mo)`;
+            outCohort.textContent = `${cohortSeats} ($${cohortRev.toLocaleString()})`;
+            outTotal.textContent = `$${totalRev.toLocaleString()}`;
+
+            const gatePct = ((totalRev / 10000) * 100).toFixed(1);
+            outGateStatus.textContent = `${gatePct}% of Stage 2 $10k Gate ($10,000)`;
+        }
+
+        sliderViews.addEventListener('input', updateCalculator);
+        sliderCtr.addEventListener('input', updateCalculator);
+        sliderMemConv.addEventListener('input', updateCalculator);
+        sliderCohortConv.addEventListener('input', updateCalculator);
+
+        updateCalculator();
+    </script>
+</body>
+</html>

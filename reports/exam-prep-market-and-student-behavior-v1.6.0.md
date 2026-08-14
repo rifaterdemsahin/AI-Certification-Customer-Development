@@ -1,10 +1,8 @@
-> **Superseded by** [`exam-prep-market-and-student-behavior-v1.6.0.md`](exam-prep-market-and-student-behavior-v1.6.0.md) (2026-08-14) — added Mehmet's discovery feedback on immigrant vetting, proctored-exam value in institutional hires, and government MSP staffing.
-
 # Certification Market Size & Student Exam-Prep Behavior
 
-**Version:** 1.5.0
+**Version:** 1.6.0
 **Date:** 2026-08-14
-**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version adds the qualitative customer discovery findings for Bora's background automation preferences, context window concerns, and Rifat Erdem Şahin's multi-source hybrid database stack proof-of-concept.
+**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version adds Mehmet's discovery feedback: immigrant talent is poorly vetted, the old hiring check is no longer valid, and proctored certifications rise in value for institutional and government MSP hires.
 
 ---
 
@@ -48,6 +46,7 @@ Key behavioral facts about how candidates prepare, and why:
 4. **Session → homework in 48 hours is a live activation pattern.** Sude's 2026-08-12 follow-up shows a free Sunday session plus the recording can produce independent implementation of the Second Brain stack mid-week. That is a PMF/delight precursor (H8, H20), not yet a paid conversion (H5 enrollment counts still untested).
 5. **Background Automation & Graph taxonomy is a highly-valued product direction.** Bora's feedback demonstrates that manual note curation and folder organization in Obsidian are high-friction tasks that cause users to abandon Second Brain upkeep. A successful solution must focus on continuous background ingestion (e.g., via MCP server sync) similar to vibe-coding/GitHub flows.
 6. **Minimize Context Window bloat via Multi-Source Hybrid Retrieval.** To address Bora's concern that an MCP server pulling logs into Obsidian will consume excessive context window capacity during chats, the system architecture must route queries through a multi-tier database stack (FTS, Graph relationships, files/structure, vector search, caching) rather than naive, full-vault uploads.
+7. **Institutional hiring is where proctored certs gain value.** Mehmet's 2026-08-14 feedback: people — especially immigrant workers — are not vetted well. The old talent check (CV, years of experience, “wants to immigrate”) is no longer valid. Governments employing MSPs should staff certified people rather than a workforce selected only by immigration intent, if they want the best talent. That is H12 / H25 qualitative demand, not a paid enrollment.
 
 ---
 
@@ -101,6 +100,13 @@ This section summarizes qualitative findings from on-the-record discovery interv
 * **Context Window Capacity Anxiety:** A significant technical concern is whether loading local Obsidian chat logs through an MCP server will consume too much context window capacity during active chat sessions, reducing room for active reasoning.
 * **Takeaway:** This validates that automated curation is a hard requirement for Second Brain retention, and highlights context-capacity anxiety as a key customer constraint. This supports minimizing context size by routing queries through a multi-tier database stack (FTS, graphs, vectors, caching) instead of naive vault loading.
 
+### E. Immigrant vetting, institutional hires, and government MSPs (Mehmet)
+* **Vetting is weak, especially for immigrant workers:** Mehmet's read is that people are not vetted well when they work as immigrants. Résumés, years-of-experience, and “wants to move” are a poor substitute for a skill check.
+* **The old talent check is no longer valid:** AI-era output is cheap and abundant. An employer cannot tell from a portfolio or a self-description whether the person can actually do the work. The check that still holds is a proctored exam and a named certification.
+* **Proctored exams rise in institutional hires:** For firms and public buyers, the value of a Pearson VUE / OnVUE-style credential goes up — not down — because it is an independent, identity-bound signal.
+* **Governments employing MSPs should require certified people:** When a government hires a managed service provider, it should staff certified practitioners rather than a workforce selected only because they want to immigrate. The stated goal is to attract the best talent, not the most mobile workforce.
+* **Takeaway:** This is qualitative buyer-side demand for **H12** (government / MSP / institutional channel) and **H25** (proctored judgement-verifying certs rise as a screen). It also supports **H1** Premise 2 (certs as filters, not proof of genius). One named voice. Not a paid enrollment. Not a government policy citation. Full card: `5_Symbols/cd/archived-interview-transcripts.html`.
+
 ---
 
 ## Sources
@@ -125,11 +131,13 @@ This section summarizes qualitative findings from on-the-record discovery interv
 - **Primary Source 2 (2026-08-10 + follow-up 2026-08-12):** Customer Discovery Interview with Sude, Sunday Cohort student; WhatsApp follow-up documenting a working staging + Concepts Second Brain.
 - **Primary Source 3 (2026-08-11):** Customer Discovery Interview with Tuncer, Senior IT Professional.
 - **Primary Source 4 (2026-08-14):** Customer Discovery Feedback with Bora on Obsidian background automation, taxonomy, and context window limitations.
+- **Primary Source 5 (2026-08-14):** Customer Discovery Feedback with Mehmet on immigrant vetting, the failure of old talent checks, proctored-exam value in institutional hires, and government MSP staffing.
 
 ---
 
 ## Change Log
 
+- **v1.6.0** (2026-08-14): Incorporated Mehmet's discovery feedback: immigrant talent is poorly vetted; the old hiring check is no longer valid; proctored certifications rise in value for institutional hires; governments employing MSPs should use certified people to attract the best talent. Supports H1, H12, H25. Full card: `5_Symbols/cd/archived-interview-transcripts.html`.
 - **v1.5.0** (2026-08-14): Incorporated qualitative customer discovery feedback from Bora and architectural stack requirements on Obsidian background automation, taxonomy structure, and context window mitigation.
 - **v1.4.0** (2026-08-12): Added Sude's 2026-08-12 WhatsApp follow-up: working staging + Concepts vault trained from one chat history; planned pinned-chat automation; daily reminder of confused sections / architectures to focus on. PARA/Cloudflare friction did not block first activation. Full thread archived at `5_Symbols/cd/archived-interview-transcripts.html`.
 - **v1.3.0** (2026-08-11): Incorporated qualitative customer discovery interview insights from Tuncer (dated 2026-08-11) validating career acceleration, technology leverage, and version configuration risks.

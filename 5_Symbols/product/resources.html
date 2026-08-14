@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Resources & Tooling Directory | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .resource-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            height: 100%;
+        }
+        .resource-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--color-primary);
+        }
+        .resource-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .resource-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .resource-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+        .resource-btn:hover {
+            background: var(--color-primary);
+            color: #fff;
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-info);">
+            <span class="badge" style="background-color: rgba(6, 182, 212, 0.15); color: #cffafe; border-color: rgba(6, 182, 212, 0.3);">Documentation &middot; Tooling Index</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🌐 External Resources &amp; Tooling Directory</h1>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+                Centralized registry of all external design boards, live community platforms, newsletters, official certification portals, and testing tools utilized across the Customer Development framework.
+            </p>
+        </div>
+
+        <!-- Section 1: Canva & Visual Design Boards -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎨 Canva Design Boards &amp; Visual Assets</h2>
+            <div class="grid">
+                
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #60a5fa;">YouTube Graphics &middot; Master Header</div>
+                            <div class="resource-title">🖼️ YouTube Channel Top Banner</div>
+                            <p class="resource-desc">
+                                Live Canva design project for the 3-part transformational banner (No Experience &rarr; Split Brain &rarr; Get Certified in 90 Days). Configured for mobile and desktop safe zones. Linked on <a href="../growth/youtube-banner.html" style="color: var(--color-primary);">YouTube Banner Spec</a>.
+                            </p>
+                        </div>
+                        <a href="https://www.canva.com/design/DAFjSiuJm7U/H-YWVTOjf6C731PQnrIZ_g/edit" target="_blank" class="resource-btn" style="background: #2563eb; color: #fff; border-color: #2563eb;">
+                            🎨 Open YouTube Banner on Canva &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #fbbf24;">Content Production &middot; Animation</div>
+                            <div class="resource-title">🎬 Animation Design &amp; Storyboards</div>
+                            <p class="resource-desc">
+                                Canva animation planning board containing visual asset templates, storyboards, and short-form layout systems achieving 68.5% retention (<a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a>).
+                            </p>
+                        </div>
+                        <a href="https://www.canva.com/design/DAHRZe5KBoA/OJU0sL318CozUaTBpkdT2g/edit" target="_blank" class="resource-btn">
+                            🎨 Open Animation Board on Canva &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 2: Community & Live Storefronts -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏫 Live Community &amp; Learning Platforms</h2>
+            <div class="grid">
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #34d399;">LMS Platform &middot; Freemium Community</div>
+                            <div class="resource-title">🏫 Skool: Delivery Pilot Community</div>
+                            <p class="resource-desc">
+                                Live hosted community for weekly Sunday cohorts, workshop archives, and screen-sharing sessions. Public storefront at <a href="../product/skool-delivery-pilot-offer.html" style="color: var(--color-primary);">Delivery Pilot Offer</a>.
+                            </p>
+                        </div>
+                        <a href="https://www.skool.com/delivery-pilot-8938" target="_blank" class="resource-btn" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                            🚀 Open Skool Group (Delivery Pilot) &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #c084fc;">Landing &middot; About Tab</div>
+                            <div class="resource-title">📋 Skool About Page</div>
+                            <p class="resource-desc">
+                                Official public group listing and curriculum description tab. Mapped block-by-block on <a href="../product/skool-about.html" style="color: var(--color-primary);">Skool About Copy</a>.
+                            </p>
+                        </div>
+                        <a href="https://www.skool.com/delivery-pilot-8938/about" target="_blank" class="resource-btn">
+                            📄 View Skool About Tab &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 3: Dual Lead Capture & Social Feeds -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📬 Lead Capture &amp; Content Distribution</h2>
+            <div class="grid">
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #60a5fa;">Email List &middot; Capture Point A</div>
+                            <div class="resource-title">📧 Email Newsletter Signup</div>
+                            <p class="resource-desc">
+                                Live standalone capture form feeding our core email subscriber list (<a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>). Linked from YouTube video descriptions.
+                            </p>
+                        </div>
+                        <a href="https://rifaterdemsahin.github.io/email-newsletter/" target="_blank" class="resource-btn">
+                            📬 Open Email Signup Page &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #60a5fa;">Professional Network &middot; Capture Point B</div>
+                            <div class="resource-title">💼 LinkedIn Newsletter</div>
+                            <p class="resource-desc">
+                                Live LinkedIn newsletter publication leveraging Rifat Erdem Sahin's professional audience for organic distribution and lead capture (<a href="../hypotheses/hyp-h7.html" style="color: var(--color-primary);">H7</a>).
+                            </p>
+                        </div>
+                        <a href="https://www.linkedin.com/newsletters/7490354292390940672/" target="_blank" class="resource-btn">
+                            👔 Open LinkedIn Newsletter &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 4: Official Vendor & Certification Portals -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏛️ Official Certification &amp; Market Research Links</h2>
+            <div class="grid">
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #f87171;">Official Vendor &middot; Anthropic</div>
+                            <div class="resource-title">🎓 Claude Certified Architect (Anthropic)</div>
+                            <p class="resource-desc">
+                                Official credentialing details via Pearson VUE / OnVUE proctoring. Tracked in <a href="../../exam-topics.html" style="color: var(--color-primary);">Exam Topic Blueprint</a>.
+                            </p>
+                        </div>
+                        <a href="https://www.anthropic.com" target="_blank" class="resource-btn">
+                            🌐 Visit Anthropic &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #34d399;">Market Data &middot; Demand Signal</div>
+                            <div class="resource-title">📈 Google Trends: "AI Certification"</div>
+                            <p class="resource-desc">
+                                Worldwide all-time search interest index demonstrating continuous structural growth in AI certification demand (<a href="../hypotheses/hyp-h1.html" style="color: var(--color-primary);">H1</a>).
+                            </p>
+                        </div>
+                        <a href="https://trends.google.com/explore?q=ai%20certification&date=all&geo=Worldwide" target="_blank" class="resource-btn">
+                            📊 View Google Trends &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 5: Similar Businesses & Creator Benchmarks -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">⚔️ Similar Businesses &amp; Creator Benchmarks</h2>
+            <div class="grid">
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #f59e0b;">YouTube &rarr; Skool Benchmark</div>
+                            <div class="resource-title">📺 Nick Saraev (@nicksaraev)</div>
+                            <p class="resource-desc">
+                                Top-tier AI engineering creator running high-production YouTube tutorials funneling into thriving paid/freemium Skool communities. Key proof-of-concept for creator-led AI education funnels. Analyzed in <a href="../strategy/competitive-analysis.html" style="color: var(--color-primary);">Competitive Analysis</a>.
+                            </p>
+                        </div>
+                        <a href="https://www.youtube.com/@nicksaraev" target="_blank" class="resource-btn" style="background: rgba(239, 68, 68, 0.1); color: #f87171; border-color: rgba(239, 68, 68, 0.3);">
+                            ▶️ Visit Nick Saraev on YouTube &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="resource-card">
+                        <div>
+                            <div class="resource-category" style="color: #10b981;">Private Skool Benchmark ($97/mo)</div>
+                            <div class="resource-title">🚀 AI Architects (Stephen G. Pope)</div>
+                            <p class="resource-desc">
+                                Top-tier private AI builder community (214 members @ $97/mo = ~$20.7k MRR). Offers AI Engineering &amp; Business Clarity courses, live builds, weekly roundtables, and direct access to 30-year veteran builder Stephen G. Pope. Benchmarked on <a href="skool-similar-communities.html" style="color: var(--color-primary);">Similar Skool Communities</a>.
+                            </p>
+                        </div>
+                        <a href="skool-similar-communities.html" class="resource-btn" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                            🏛️ View AI Architects Benchmark Matrix &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span class="footer-text">
+            &copy; 2026 AI Certification Helper &middot; Customer Development Framework (Steve Blank)
+        </span>
+        <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+            Latest Change: Added AI Architects (Stephen G. Pope) to Similar Businesses &amp; Creator Benchmarks (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/resources.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+        </span>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
