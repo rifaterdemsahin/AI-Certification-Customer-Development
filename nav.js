@@ -86,6 +86,7 @@
                 ['5_Symbols/hypotheses/h1-not-connected.html', '🟡 Why H1 Sits Alone'],
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/strategy/listen-more-than-you-speak.html', '👂 Listen More Than You Speak'],
+                ['5_Symbols/strategy/reading-and-learning-guardrails.html', '📖 Reading & Learning Guardrails'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
                 ['5_Symbols/product/vc-feedback.html', '🏦 VC Constructive Feedback'],
                 ['5_Symbols/strategy/alex-hormozi-agent.html', '🏋️ Alex Hormozi Agent'],
@@ -135,7 +136,11 @@
                 ['5_Symbols/product/skool-visibility.html', '👁 Skool Visibility — Private vs Public'],
                 ['5_Symbols/product/skool-availability.html', '📡 Skool Availability Check'],
                 ['5_Symbols/product/skool-similar-communities.html', '🏛️ Similar Skool Communities'],
-                ['5_Symbols/product/grow-skool-traffic.html', '🚀 Grow Your Skool Traffic']
+                ['5_Symbols/product/grow-skool-traffic.html', '🚀 Grow Your Skool Traffic'],
+                ['5_Symbols/product/skool-monetization.html', '💰 How to Monetize Your Skool'],
+                ['5_Symbols/product/skool-offer-ideas.html', '💡 What You Can Offer on Skool'],
+                ['5_Symbols/product/member-bandwidth-guardrails.html', '🛡️ Member Bandwidth Guardrails'],
+                ['5_Symbols/product/skool-community-management.html', '🌱 Community Management (Garden)']
             ]
         },
         {
@@ -172,6 +177,8 @@
                 ['5_Symbols/growth/market-fit-channels.html', '🔄 Market Fit & Channels'],
                 ['5_Symbols/growth/linkedin-premium-decision.html', '💼 LinkedIn Premium Decision'],
                 ['5_Symbols/growth/skool-affiliate-roadmap.html', '🤝 Skool Affiliate Roadmap'],
+                ['5_Symbols/growth/skool-churn-retention.html', '🛡️ Reducing Churn &amp; Retention'],
+                ['5_Symbols/growth/skool-common-patterns.html', '🌟 Common Retention Patterns'],
                 ['5_Symbols/growth/ai-demo.html', '🤖 AI Prep Demo']
             ]
         },
@@ -254,8 +261,14 @@
         { url: '5_Symbols/product/skool-availability.html', title: 'Skool Availability Check', desc: 'Logged-out test of skool.com/delivery-pilot-8938. Confirms Public: HTTP 200, board readable, member count visible. Not a paid enrollment.', cat: 'Business Model', tags: 'skool availability public check test delivery-pilot-8938 h5' },
         { url: '5_Symbols/product/skool-similar-communities.html', title: 'Similar Skool Communities & Benchmarks', desc: 'Detailed analysis of Stephen G. Pope\'s AI Architects ($97/mo, 214 members) and competitor matrices for Stage 2 validation and pricing.', cat: 'Business Model', tags: 'skool similar communities benchmarks ai architects stephen pope 97 month pricing compare learn competitive h5 h8' },
         { url: '5_Symbols/product/grow-skool-traffic.html', title: 'Grow Your Skool Traffic', desc: 'Traffic generation framework covering social platforms, traditional channels, Skool discovery ranking, and 20% free vs 4% paid conversion benchmarks.', cat: 'Business Model', tags: 'skool traffic growth social youtube linkedin email conversion rates free 20 paid 4 discovery affiliate h5 h7' },
+        { url: '5_Symbols/product/skool-monetization.html', title: 'How to Monetize Your Skool', desc: 'Synthesis of the 6 Skool business models (Free, Subscription, Freemium, Tiers, 1-Time, Custom) and 4 stages of community evolution ($1B/yr benchmark).', cat: 'Business Model', tags: 'skool monetization business models freemium subscription tiers pricing income evolution h5 h8 h9' },
+        { url: '5_Symbols/product/skool-offer-ideas.html', title: 'What You Can Offer on Skool (Skool Games Inspiration)', desc: 'Catalog of 10 high-converting offer structures, modular blueprints, Sunday live hot-seats, and XP leaderboard unlockables inspired by Skool Games.', cat: 'Business Model', tags: 'skool offer ideas skool games inspiration gamification leaderboards levels modules bootcamp h1 h5 h8' },
+        { url: '5_Symbols/product/member-bandwidth-guardrails.html', title: 'Member Bandwidth Guardrails — Anti-Overload Metric', desc: 'Curriculum guardrails capping member study load at 3 to 4 hours/week to prevent cognitive burnout and cancellation churn (Al Jack Law).', cat: 'Business Model', tags: 'member bandwidth guardrails student cognitive load time budget overload churn 3 hours week al jack h2 h8' },
+        { url: '5_Symbols/product/skool-community-management.html', title: 'Skool Community Management — The Garden Playbook', desc: 'Operational garden framework: prune weeds (broken window theory), add water (new member care), daily 5-minute checklist, and zero-tolerance moderation.', cat: 'Business Model', tags: 'skool community management garden weeds water culture daily care moderation spam bullying broken windows h8 h29' },
         { url: '5_Symbols/growth/linkedin-premium-decision.html', title: 'LinkedIn Premium Decision & Top Profile CTA', desc: 'Customer Creation task comparing Career (£14.99/mo), Business (£29.99/mo), and Sales Navigator Core (£79.99/mo) to market Skool link directly on LinkedIn profile header.', cat: 'Growth', tags: 'linkedin premium career business sales navigator cta profile marketing traffic stage 3 customer creation h5 h12 h13' },
         { url: '5_Symbols/growth/skool-affiliate-roadmap.html', title: 'Skool Affiliate Timeline & Milestone Roadmap', desc: '4-stage activation roadmap and unit economics for launching the Skool affiliate program, gated behind the G3 $10,000 revenue milestone.', cat: 'Growth', tags: 'skool affiliate referral timeline milestone roadmap commission unit economics stage gates h5 h8 h9' },
+        { url: '5_Symbols/growth/skool-churn-retention.html', title: 'Reducing Churn & Maximizing Retention', desc: 'Tactical churn reduction framework covering leaky bucket dynamics, <5% retention benchmarks, 30-day cohort curves, and 5 tactical retention levers.', cat: 'Growth', tags: 'skool churn retention leaky bucket cohort curves onboarding ritual peer ties gamification h2 h8 h29' },
+        { url: '5_Symbols/growth/skool-common-patterns.html', title: 'Common Retention Patterns (Nick Saraev, Evelyn, Al Jack)', desc: 'The 6 battle-tested creator retention archetypes: daily care, lower-tier downsells, content deletion, weekly calls, annual discounts, and 1-on-1 culture.', cat: 'Growth', tags: 'skool common patterns retention nick saraev evelyn skate iq al jack annual discount downsell 1on1 culture h2 h5 h8' },
         { url: 'markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', title: 'Skool Availability v1.0.0', desc: 'First logged-out run: PASS 11/11 gates, Public, 11 members, 14 posts, Sude non-founder thread visible.', cat: 'Docs', tags: 'skool availability report public members posts h5' },
         { url: 'markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md', title: 'Exam Prep & Student Behavior v1.6.0', desc: 'Adds Mehmet: immigrant vetting is weak, old talent checks fail, proctored certs rise in institutional and government MSP hires.', cat: 'Docs', tags: 'mehmet immigrant vetting msp government proctored certification institutional h1 h12 h25' },
         { url: 'markdown_renderer.html?src=reports/score-fluctuation-analysis-v1.0.0.md', title: 'Score Fluctuation Analysis v1.0.0', desc: 'Detailed explanation of why the confidence score fluctuates (up to 46, down to 43) due to Git commit status (uncommitted work deductions).', cat: 'Docs', tags: 'score fluctuation analysis confidence report git commit status uncommitted work' },
@@ -339,6 +352,7 @@
         { url: '5_Symbols/hypotheses/h1-not-connected.html', title: 'Why H1 Sits Alone', desc: 'Why H1 has no arrows on the tracker, whether that isolation is a risk, what it says about the business, and whether to leave it alone.', cat: 'Strategy', tags: 'h1 isolation not connected foundational uncited gap leave alone f12 partner network' },
         { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
         { url: '5_Symbols/strategy/listen-more-than-you-speak.html', title: 'Listen More Than You Speak', desc: 'Rifat Erdem Sahin\'s Stage 1-2 role: collect feedback, listen more than he speaks, and let the audience cocreate the next shipped change.', cat: 'Strategy', tags: 'listen more than you speak founder role feedback cocreate customer development h29 sunday skool' },
+        { url: '5_Symbols/strategy/reading-and-learning-guardrails.html', title: 'Reading & Learning Guardrails', desc: 'Customer discovery starts with listening and deep reading, not posting. Enforces 4:1 reading-to-posting ratio and strict anti-broadcasting guardrails.', cat: 'Strategy', tags: 'reading learning guardrails listening customer discovery steve blank anti posting trap broadcast throttle 4:1 ratio h29' },
         { url: '5_Symbols/hypotheses/hyp-h29.html', title: 'H29 · Listen More Than You Speak', desc: 'Detail page with premise-conclusion-status SVG diagram for H29: founder-as-listener and audience cocreation.', cat: 'Hypothesis Detail', tags: 'h29 hypothesis detail listen speak feedback cocreate founder role svg diagram' },
         { url: '5_Symbols/product/vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
         { url: '5_Symbols/product/vc-feedback.html', title: 'VC Constructive Feedback', desc: 'The memo a constructive venture partner would write after the deck: eight cited notes, rationale, and what evidence would close each one.', cat: 'Strategy', tags: 'vc feedback constructive investor memo default alive graham andreessen gurley thiel raise' },
