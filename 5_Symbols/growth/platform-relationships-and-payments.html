@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Relationships & Payment Architecture | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../product/youtube-skool-handoff.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to YouTube &rarr; Skool Audience Handoff
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Ecosystem Architecture &middot; Revenue Settlement</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🌐 Platform Relationships &amp; Payment Settlement Architecture</h1>
+            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.5rem;">
+                A comprehensive operational blueprint defining the distinct functional roles of <strong>YouTube</strong>, <strong>LinkedIn</strong>, and <strong>Skool</strong> in the Customer Development pipeline, and clarifying the legal, merchant, and banking flow of customer payments settled by <strong>Delivery Pilot</strong>.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Page ID:</span>
+                            <span class="info-value">platform-relationships-and-payments.html</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Payment Organization:</span>
+                            <span class="info-value highlight-success">Delivery Pilot (Stripe Connect via Skool)</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Tri-Platform Rule:</span>
+                            <span class="info-value">Acquire (YT/LI) &rarr; Deliver &amp; Bill (Skool)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Acquisition Channels:</span>
+                            <span class="info-value"><a href="organic-growth.html" style="color: var(--color-primary);">Organic Growth</a>, <a href="../bmc/bmc-channels.html" style="color: var(--color-primary);">BMC Channels</a></span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Delivery Hub:</span>
+                            <span class="info-value"><a href="../product/skool-lms-integration.html" style="color: var(--color-primary);">Skool LMS Integration</a></span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Linked Hypotheses:</span>
+                            <span class="info-value">
+                                <a href="../hypotheses/hyp-h4.html" style="color: var(--color-primary);">H4</a>,
+                                <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>,
+                                <a href="../hypotheses/hyp-h7.html" style="color: var(--color-primary);">H7</a>,
+                                <a href="../hypotheses/hyp-h12.html" style="color: var(--color-primary);">H12</a>,
+                                <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Executive Summary -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📌 The Core Architecture at a Glance</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border-top: 4px solid #ef4444;">
+                        <h3 class="card-title" style="font-size: 1.1rem; color: #f87171; margin-bottom: 0.75rem;">📺 YouTube (Public Discovery)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">
+                            <strong>Role:</strong> Top-of-funnel reach, SEO search capture, animated visual courses, and high-trust authority building.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                            <strong>Payment Status:</strong> <em>Does NOT handle course/cohort billing.</em> Monetization via YouTube is avoided to prevent 30% cuts and split community attention.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border-top: 4px solid #0ea5e9;">
+                        <h3 class="card-title" style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.75rem;">💼 LinkedIn (Professional Graph)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">
+                            <strong>Role:</strong> B2B trust, certification social proof loops, contractor networking, and the <strong>Delivery Pilot Organization Page</strong> (actorCompanyId=26187296).
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                            <strong>Payment Status:</strong> <em>Does NOT process learner payments.</em> Rifat's 30k connection limit is preserved strictly for verified Skool community members.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border-top: 4px solid #10b981;">
+                        <h3 class="card-title" style="font-size: 1.1rem; color: #34d399; margin-bottom: 0.75rem;">🏫 Skool (Classroom &amp; Billing)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">
+                            <strong>Role:</strong> Stage 2 validation delivery engine, Classroom video replays, Sunday 9 PM live calendar, gamified peer forum, and native checkout.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                            <strong>Payment Status:</strong> <strong>Processes all subscription &amp; cohort payments</strong> via integrated Stripe Connect directly into <strong>Delivery Pilot</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Detailed Tri-Platform Role Matrix -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚖️ Tri-Platform Functional Comparison Matrix</h2>
+            <div class="card">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 720px;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                                <th style="padding: 1rem 0.75rem; width: 18%;">Dimension</th>
+                                <th style="padding: 1rem 0.75rem; width: 27%; color: #f87171;">📺 YouTube</th>
+                                <th style="padding: 1rem 0.75rem; width: 27%; color: #38bdf8;">💼 LinkedIn</th>
+                                <th style="padding: 1rem 0.75rem; width: 28%; color: #34d399;">🏫 Skool (Delivery Pilot)</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--text-secondary); font-size: 0.92rem;">
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 0.9rem 0.75rem; font-weight: 600; color: var(--text-primary);">Customer Dev Stage</td>
+                                <td style="padding: 0.9rem 0.75rem;">Stage 1 Discovery &amp; Stage 3 Creation Top-of-Funnel</td>
+                                <td style="padding: 0.9rem 0.75rem;">Stage 1 B2B Discovery &amp; Stage 3 Recruiter Promotion</td>
+                                <td style="padding: 0.9rem 0.75rem;"><strong>Stage 2 Customer Validation</strong> &amp; Ongoing Delivery</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 0.9rem 0.75rem; font-weight: 600; color: var(--text-primary);">Primary Job-To-Be-Done</td>
+                                <td style="padding: 0.9rem 0.75rem;">Attract organic searchers studying for Claude/AI exams</td>
+                                <td style="padding: 0.9rem 0.75rem;">Establish professional credibility, recruit contractors, reach recruiters</td>
+                                <td style="padding: 0.9rem 0.75rem;">Host courses, live sessions, peer discussions, and bill memberships</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 0.9rem 0.75rem; font-weight: 600; color: var(--text-primary);">Content Format</td>
+                                <td style="padding: 0.9rem 0.75rem;">Animated concept breakdowns (10–20 min), Shorts, YouTube Course tabs</td>
+                                <td style="padding: 0.9rem 0.75rem;">Newsletter articles, founder thoughts, member pass announcements, VIP updates</td>
+                                <td style="padding: 0.9rem 0.75rem;">2-hour Sunday workshop replays, 7 cohort modular paths, code files, checklists</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 0.9rem 0.75rem; font-weight: 600; color: var(--text-primary);">Audience Access</td>
+                                <td style="padding: 0.9rem 0.75rem;">100% Free &amp; Public (Indexed on Google/YouTube)</td>
+                                <td style="padding: 0.9rem 0.75rem;">Public Feed + 30,000 Capped 1st-Degree Connection Buffer</td>
+                                <td style="padding: 0.9rem 0.75rem;">Freemium Gateway (Peek $0 / Sit In $1/mo / Share Screen $250/yr)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 0.9rem 0.75rem; font-weight: 600; color: var(--text-primary);">Monetization &amp; Billing</td>
+                                <td style="padding: 0.9rem 0.75rem;">No direct payments (Free value &rarr; CTA to Skool)</td>
+                                <td style="padding: 0.9rem 0.75rem;">No direct payments (Referral link &rarr; CTA to Skool)</td>
+                                <td style="padding: 0.9rem 0.75rem;"><strong>Native Stripe Gateway:</strong> All tier payments handled here</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.9rem 0.75rem; font-weight: 600; color: var(--text-primary);">Outbound Handoff</td>
+                                <td style="padding: 0.9rem 0.75rem;">Pinned comments &amp; descriptions link to Skool</td>
+                                <td style="padding: 0.9rem 0.75rem;">Featured profile section &amp; weekly posts link to Skool</td>
+                                <td style="padding: 0.9rem 0.75rem;">Graduates share passed cert badges back onto LinkedIn &amp; YouTube</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Which Organisation Does the Payments? -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💳 Which Organisation Does the Payments?</h2>
+            <div class="card" style="border-left: 5px solid var(--color-success); background: rgba(16, 185, 129, 0.03);">
+                <h3 class="card-title" style="font-size: 1.3rem; color: var(--color-success); margin-bottom: 1rem;">
+                    🏢 The Payment Settlement Entity: <strong>Delivery Pilot</strong>
+                </h3>
+                <p style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 1rem;">
+                    All customer, membership, cohort, and corporate training payments are collected, invoiced, and legally settled under the founder's commercial venture: <strong style="color: var(--color-primary);">Delivery Pilot</strong>.
+                </p>
+                <div class="grid" style="margin-top: 1.5rem;">
+                    <div class="col-6">
+                        <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
+                            <div class="spec-title">💳 Skool / Individual Student Payments</div>
+                            <div class="spec-desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                <ul class="emoji-list">
+                                    <li><span class="emoji">⚙️</span><span style="color: var(--text-secondary);"><strong>Payment Engine:</strong> Skool integrates natively with <strong>Stripe Connect</strong>.</span></li>
+                                    <li><span class="emoji">🏦</span><span style="color: var(--text-secondary);"><strong>Merchant Account:</strong> The Stripe merchant account is directly owned and controlled by <strong>Delivery Pilot</strong>.</span></li>
+                                    <li><span class="emoji">💵</span><span style="color: var(--text-secondary);"><strong>Settlement:</strong> Member transactions ($1/mo Sit In, $10/mo membership, $250/yr VIP Share Screen) process through Stripe and payout directly to Delivery Pilot's business bank account.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="spec-box" style="border-left-color: var(--color-primary); height: 100%;">
+                            <div class="spec-title">🏢 B2B / Corporate Training Invoicing</div>
+                            <div class="spec-desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                <ul class="emoji-list">
+                                    <li><span class="emoji">📄</span><span style="color: var(--text-secondary);"><strong>Invoicing Entity:</strong> Invoices for enterprise cohort seats and corporate pilots (e.g. Marianna pilot, consulting firm bulk seats) are issued by <strong>Delivery Pilot</strong>.</span></li>
+                                    <li><span class="emoji">🏛️</span><span style="color: var(--text-secondary);"><strong>Direct Bank Transfer:</strong> B2B wire transfers (BACs / IBAN) settle directly into Delivery Pilot's corporate treasury.</span></li>
+                                    <li><span class="emoji">🚫</span><span style="color: var(--text-secondary);"><strong>No Third-Party Intermediaries:</strong> Neither YouTube LLC, Google, nor LinkedIn/Microsoft act as billing intermediaries.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. End-to-End Money & Audience Flow -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔄 End-to-End Audience &amp; Financial Settlement Flow</h2>
+            <div class="card">
+                <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); overflow-x: auto;">
+                    <div style="color: var(--color-primary); font-weight: bold; margin-bottom: 0.5rem;">[STAGE 1 &amp; 3: PUBLIC ACQUISITION]</div>
+                    &nbsp;&nbsp;📺 YouTube Video / Playlist &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 💼 LinkedIn Post / Company Page (Delivery Pilot)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CTA: skool.com/delivery-pilot-8938/about]<br>
+                    <br>
+                    <div style="color: var(--color-warning); font-weight: bold; margin-bottom: 0.5rem;">[STAGE 2: VALIDATION, CLASSROOM &amp; CHECKOUT]</div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🏫 Skool Delivery Pilot Hub<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Free Community (Peek: $0)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Premium Membership (Sit In: $1/mo or $10/mo)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── VIP Cohort Seat (Share Screen: $250/yr)<br>
+                    <br>
+                    <div style="color: var(--color-success); font-weight: bold; margin-bottom: 0.5rem;">[FINANCIAL SETTLEMENT &amp; TREASURY]</div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;💳 Stripe Connect Gateway<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🏢 <strong>DELIVERY PILOT Business Bank Account</strong><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Net revenue after ~2.9% + 30¢ Stripe fee)<br>
+                    <br>
+                    <div style="color: var(--color-info); font-weight: bold; margin-bottom: 0.5rem;">[THE REVERSE RETENTION &amp; PROMOTION LOOP]</div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🎓 Students Pass Claude Exam<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;💼 Monday VIP Claude Cowork &amp; Recruiter Showcase<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔄 Re-invest in YouTube Animated Content Production
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Operational Protocols & Rules -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🛡️ Strategic Guardrails</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-color: rgba(16, 185, 129, 0.35);">
+                        <h3 class="card-title" style="font-size: 1.05rem; color: var(--color-success); margin-bottom: 0.75rem;">Mandatory Best Practices</h3>
+                        <ul class="emoji-list">
+                            <li><span class="emoji">✅</span><span style="color: var(--text-secondary);"><strong>Centralized Checkout:</strong> Direct 100% of consumer transactions through Skool/Stripe to keep customer records unified in Delivery Pilot.</span></li>
+                            <li><span class="emoji">✅</span><span style="color: var(--text-secondary);"><strong>Evergreen Hub Posts:</strong> Update central Skool living hubs rather than spamming the board with announcement threads.</span></li>
+                            <li><span class="emoji">✅</span><span style="color: var(--text-secondary);"><strong>Connection Buffer:</strong> Restrict Rifat's personal LinkedIn invitations to verified Skool members to stay under the 30k limit.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-color: rgba(239, 68, 68, 0.35);">
+                        <h3 class="card-title" style="font-size: 1.05rem; color: var(--color-danger, #f87171); margin-bottom: 0.75rem;">Prohibited Pitfalls</h3>
+                        <ul class="emoji-list">
+                            <li><span class="emoji">❌</span><span style="color: var(--text-secondary);"><strong>Never split payments across platforms:</strong> Avoid enabling YouTube Channel Memberships or third-party Gumroad links that bypass Delivery Pilot's Skool hub.</span></li>
+                            <li><span class="emoji">❌</span><span style="color: var(--text-secondary);"><strong>Never treat Skool as top-of-funnel:</strong> Do not rely on cold board posts to find students; discovery happens on YouTube and LinkedIn.</span></li>
+                            <li><span class="emoji">❌</span><span style="color: var(--text-secondary);"><strong>Never accept non-community LinkedIn invites:</strong> Protect founder network bandwidth for paying and active Delivery Pilot members.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Cross-references -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📚 Related System Specs &amp; Dashboards</h2>
+            <div class="grid">
+                <div class="col-3"><a href="../product/youtube-skool-handoff.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Audience Handoff</a></div>
+                <div class="col-3"><a href="future-sponsors.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Future Sponsors</a></div>
+                <div class="col-3"><a href="linkedin-vip-cowork.html" class="btn btn-secondary" style="width:100%; justify-content:center;">LinkedIn 30k &amp; VIP Cowork</a></div>
+                <div class="col-3"><a href="../bmc/bmc-revenue-streams.html" class="btn btn-secondary" style="width:100%; justify-content:center;">BMC Revenue Streams</a></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Created comprehensive guide explaining YouTube, LinkedIn, Skool platform roles and Delivery Pilot payment settlement architecture (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/platform-relationships-and-payments.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/growth/platform-relationships-and-payments.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

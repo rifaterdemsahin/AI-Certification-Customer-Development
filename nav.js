@@ -194,6 +194,8 @@
                 ['5_Symbols/growth/skool-affiliate-roadmap.html', '🤝 Skool Affiliate Roadmap'],
                 ['5_Symbols/growth/skool-churn-retention.html', '🛡️ Reducing Churn &amp; Retention'],
                 ['5_Symbols/growth/skool-common-patterns.html', '🌟 Common Retention Patterns'],
+                ['5_Symbols/growth/platform-relationships-and-payments.html', '🌐 Platform Ecosystem &amp; Payments'],
+                ['5_Symbols/growth/future-sponsors.html', '🤝 Future Sponsors Roadmap'],
                 ['5_Symbols/growth/ai-demo.html', '🤖 AI Prep Demo']
             ]
         },
@@ -256,6 +258,8 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/growth/platform-relationships-and-payments.html', title: 'Platform Ecosystem & Payment Settlement Architecture', desc: 'Detailed roles of YouTube, LinkedIn, and Skool in the acquisition-delivery funnel, and how Delivery Pilot settles all member and cohort payments via Stripe.', cat: 'Growth', tags: 'platform relationships payments organization delivery pilot youtube linkedin skool stripe settlement merchant banking h4 h5 h7 h12 h30' },
+        { url: '5_Symbols/growth/future-sponsors.html', title: 'Future Sponsors & Strategic Sponsorship Roadmap', desc: 'Stage-gated sponsorship strategy for Stage 3/4 covering AI developer tooling, cloud providers, recruiter placements, and ethical guardrails.', cat: 'Growth', tags: 'future sponsors monetization sponsorships stage 3 4 brand partners cursor anthropic cloud recruiter placements advertising h13 h16' },
         { url: '5_Symbols/growth/content-format.html', title: 'Content Format: Short vs Long Form', desc: 'Where animated videos, workshops, and course-based videos live on YouTube, LinkedIn, and Skool — with the rationale for each.', cat: 'Growth', tags: 'short form long form youtube shorts linkedin skool animated workshop course format placement' },
         { url: '5_Symbols/growth/sales-marketing-roadmap.html', title: 'Sales & Marketing Roadmap', desc: 'Maps the 7-cohort Skool curriculum sequence (Foundations through Second Brain) to funnel stages, offers, and multi-cert expansion.', cat: 'Growth', tags: 'sales marketing roadmap skool cohorts curriculum funnel sequence forward deployed engineering second brain' },
         { url: '5_Symbols/strategy/practice-exams-gap.html', title: 'Practice Exam & Question Bank Gap', desc: 'Analysis of the critical product gap (lack of blueprint-mapped practice exams) and mitigation roadmap.', cat: 'Strategy', tags: 'practice exams question banks mock test blueprint validation gap risk' },
