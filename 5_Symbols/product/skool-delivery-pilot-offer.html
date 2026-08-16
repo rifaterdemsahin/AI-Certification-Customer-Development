@@ -177,29 +177,51 @@
                     <thead>
                         <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
                             <th style="padding: 0.85rem 0.5rem;">Live name</th>
-                            <th style="padding: 0.85rem 0.5rem;">Price</th>
-                            <th style="padding: 0.85rem 0.5rem;">What Skool currently unlocks</th>
-                            <th style="padding: 0.85rem 0.5rem;">Keep / change</th>
+                            <th style="padding: 0.85rem 0.5rem;">Price &amp; Urgency</th>
+                            <th style="padding: 0.85rem 0.5rem;">Live Skool Entitlements &amp; Benefits</th>
+                            <th style="padding: 0.85rem 0.5rem;">Recommended Alignment</th>
                         </tr>
                     </thead>
                     <tbody style="color: var(--text-secondary);">
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                            <td style="padding: 0.85rem 0.5rem;">Standard</td>
-                            <td style="padding: 0.85rem 0.5rem;">$0</td>
-                            <td style="padding: 0.85rem 0.5rem;">Posts, learning materials, welcome</td>
-                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Peek</strong>. Narrow &ldquo;learning materials&rdquo; to one sample.</td>
+                            <td style="padding: 0.85rem 0.5rem; font-weight: 600; color: var(--text-primary);">Standard</td>
+                            <td style="padding: 0.85rem 0.5rem;"><span class="badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7;">$0 (Free)</span></td>
+                            <td style="padding: 0.85rem 0.5rem;">
+                                • ✨ Jump right in and say hello <code>/meet</code><br>
+                                • 📝 Stay in the loop with community updates <code>/post</code><br>
+                                • 🎥 Level up your skills with cohort access <code>/learn</code>
+                            </td>
+                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Peek</strong>. Gate live streaming/sharing; keep board and sample replays open.</td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                            <td style="padding: 0.85rem 0.5rem;">Premium</td>
-                            <td style="padding: 0.85rem 0.5rem;">$1 / mo</td>
-                            <td style="padding: 0.85rem 0.5rem;">Recorded workshops + listen-only Sunday</td>
-                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Sit In</strong>. Do not let this card own &ldquo;cohort.&rdquo;</td>
+                            <td style="padding: 0.85rem 0.5rem; font-weight: 600; color: var(--text-primary);">Premium</td>
+                            <td style="padding: 0.85rem 0.5rem;">
+                                <span class="badge" style="background: rgba(59,130,246,0.15); color: #93c5fd;">$1 / mo</span><br>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">(Late reg: $10)</span>
+                            </td>
+                            <td style="padding: 0.85rem 0.5rem;">
+                                • 🚀 Master your cases in live, 2-hour weekly practice cohorts<br>
+                                • 📺 Replay every session anytime with full video recordings<br>
+                                • 💬 Drive the conversation in active group discussions<br>
+                                • 🎯 Bring your own real-world cases for expert guidance<br>
+                                • 🤖 Sharpen your AI skills and lock in your certification
+                            </td>
+                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Sit In</strong>. Tripwire handshake. Keep as listen-only preview so it doesn't cannibalize the $250 seat.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 0.85rem 0.5rem;">VIP</td>
-                            <td style="padding: 0.85rem 0.5rem;">$250 / year</td>
-                            <td style="padding: 0.85rem 0.5rem;">Screen-share, personal architecture help, founder setup reviews</td>
-                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Share Screen</strong>. Cap help to Sunday in the room &mdash; not on-demand 1:1.</td>
+                            <td style="padding: 0.85rem 0.5rem; font-weight: 600; color: #fbbf24;">VIP</td>
+                            <td style="padding: 0.85rem 0.5rem;">
+                                <span class="badge" style="background: rgba(245,158,11,0.15); color: #fde68a;">$250 / year</span><br>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">(Late reg: $1,000)</span>
+                            </td>
+                            <td style="padding: 0.85rem 0.5rem;">
+                                • 🔥 Claim "The Seat" and get completely unstuck on your architecture<br>
+                                • 📺 Take the stage and share your screen every Sunday<br>
+                                • 👑 Get a direct, high-impact review of your setup from the founder<br>
+                                • 🤝 <strong>Monday VIP Claude Cowork:</strong> Live collaborative AI work session optimizing your profile and portfolio<br>
+                                • 🧑‍✈️ <strong>Recruiter Promotion:</strong> Showcase your profile to tech recruiters over the Delivery Pilot network
+                            </td>
+                            <td style="padding: 0.85rem 0.5rem;">Rename <strong>Share Screen</strong>. Sunday live share + Monday VIP Claude Cowork &amp; recruiter promotion over Delivery Pilot.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -303,6 +325,8 @@
                         <li>Everything in Sit In</li>
                         <li>Share your screen every Sunday</li>
                         <li>Founder review of your setup</li>
+                        <li>Monday VIP Claude Cowork session</li>
+                        <li>Recruiter promotion via Delivery Pilot network</li>
                         <li>Full Classroom + midweek install list</li>
                         <li>All workshop replays for 12 months</li>
                     </ul>
@@ -436,55 +460,62 @@
 
             <div class="grid">
                 <div class="col-4">
-                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 1 &mdash; Peek</h3>
+                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 1 &mdash; Standard (Peek)</h3>
                     <div class="copy-block">
                         <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-peek">Copy</button>
-                        <pre id="skool-peek">Name: Peek
-Price: $0 / month
+                        <pre id="skool-peek">Name: Standard (Peek)
+Price: $0 / month (Free)
 
-See the room before you give us a Sunday night.
+See the room before you commit a Sunday night.
 
 Includes:
-• Welcome + next Sunday on the calendar
-• One sample replay
-• Read the board
+• ✨ Jump right in and say hello (/meet)
+• 📝 Stay in the loop with community updates (/post)
+• 🎥 Level up your skills with cohort access (/learn)
+• Next Sunday 9pm on the calendar
+• Read community discussions
 
-Does not include live join or screen share.</pre>
+Live screen-sharing stays on Share Screen.</pre>
                     </div>
                 </div>
                 <div class="col-4">
-                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 2 &mdash; Sit In</h3>
+                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 2 &mdash; Premium (Sit In)</h3>
                     <div class="copy-block">
                         <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-sit">Copy</button>
-                        <pre id="skool-sit">Name: Sit In
-Price: $1 / month
+                        <pre id="skool-sit">Name: Premium (Sit In)
+Price: $1 / month (Late registration: $10)
 
-Listen this Sunday. Feel the cohort. Cancel anytime.
+Master your cases in live, 2-hour weekly practice cohorts.
 
-Includes everything in Peek, plus:
-• Join Sunday live (listen-only)
-• More recorded workshops
-• Post and reply on the board
+Includes everything in Standard, plus:
+• 🚀 Master your cases in live, 2-hour weekly practice cohorts
+• 📺 Replay every session anytime with full video recordings
+• 💬 Drive the conversation in active group discussions
+• 🎯 Bring your own real-world cases for expert guidance
+• 🤖 Sharpen your AI skills and lock in your certification
 
-Screen share stays on Share Screen.</pre>
+Screen share stays on VIP / Share Screen.</pre>
                     </div>
                 </div>
                 <div class="col-4">
-                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 3 &mdash; Share Screen</h3>
+                    <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.55rem;">Plan 3 &mdash; VIP (Share Screen)</h3>
                     <div class="copy-block">
                         <button type="button" class="btn btn-secondary copy-btn" data-copy="skool-share">Copy</button>
-                        <pre id="skool-share">Name: Share Screen
-Price: $250 / year
+                        <pre id="skool-share">Name: VIP (Share Screen)
+Price: $250 / year (Late registration: $1,000)
 
-The seat. Get unstuck on YOUR architecture.
+Claim "The Seat" and get completely unstuck on your architecture.
 
-Includes everything in Sit In, plus:
-• Share your screen every Sunday
-• Founder review of your setup
+Includes everything in Premium, plus:
+• 🔥 Claim "The Seat" and get completely unstuck on your architecture
+• 📺 Take the stage and share your screen every Sunday
+• 👑 Get a direct, high-impact review of your setup from the founder
+• 🤝 Monday VIP Claude Cowork: Collaborative profile & portfolio optimization
+• 🧑‍✈️ Delivery Pilot network promotion: Showcase your profile directly to tech recruiters
+• Saturday 1-on-1 review time blocks (1pm-2pm, 3pm-4pm, 5pm-10pm)
 • Full Classroom + midweek install list
-• All workshop replays for 12 months
 
-~$4.80 a week. Cancel after two Sundays if you did not get a live review.</pre>
+Cancel after two Sundays if you did not get a live review.</pre>
                     </div>
                 </div>
             </div>
@@ -506,6 +537,7 @@ Includes everything in Sit In, plus:
             <h2 class="section-title">🔗 See also</h2>
             <div class="card">
                 <ul class="emoji-list">
+                    <li><span class="emoji">💼</span><span style="color: var(--text-secondary);"><a href="../growth/linkedin-vip-cowork.html" style="color: var(--color-primary);">LinkedIn 30k Cap &amp; Monday VIP Claude Cowork</a> &mdash; network gating and recruiter promotion strategy over Delivery Pilot.</span></li>
                     <li><span class="emoji">📝</span><span style="color: var(--text-secondary);"><a href="skool-about.html" style="color: var(--color-primary);">Delivery Pilot About</a> &mdash; full About-tab paste and the map back to system pages.</span></li>
                     <li><span class="emoji">🏫</span><span style="color: var(--text-secondary);"><a href="skool-lms-integration.html" style="color: var(--color-primary);">Skool LMS Integration</a> &mdash; why the storefront lives here in Stage 2.</span></li>
                     <li><span class="emoji">🏋️</span><span style="color: var(--text-secondary);"><a href="../strategy/alex-hormozi-agent.html" style="color: var(--color-primary);">Alex Hormozi Agent</a> &mdash; catalog vs Grand Slam, value equation, tripwire vs magnet.</span></li>
@@ -526,7 +558,7 @@ Includes everything in Sit In, plus:
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Logged founder-confirmed Freemium entitlements (Standard $0 / Premium $1 / VIP $250) and graded them against Peek / Sit In / Share Screen (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-delivery-pilot-offer.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Added Monday VIP Claude Cowork session and recruiter profile promotion over Delivery Pilot network to VIP tier (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-delivery-pilot-offer.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </div>
     </footer>

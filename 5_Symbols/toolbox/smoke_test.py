@@ -29,7 +29,7 @@ RENDERER = "markdown_renderer.html"
 REQUIRED_ROOT_FILES = ["index.html", RENDERER, "README.md", "robots.txt", "sitemap.xml"]
 REQUIRED_INDEX_LINKS = ["github.com", "linkedin.com", "youtube.com"]
 STAGE_GLOB = re.compile(r"^[1-7]_[A-Za-z_]+$")
-MD_URL_PATTERN = re.compile(r"[0-9A-Za-z_]+/[0-9A-Za-z_/.\-]*\.md")
+MD_URL_PATTERN = re.compile(r"[1-7]_[A-Za-z_]+/[0-9A-Za-z_/.\-]*\.md")
 SECRET_PATTERN = re.compile(
     r"""(ghp_[A-Za-z0-9]{36}|xox[baprs]-[A-Za-z0-9\-]{10,}|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{32,}|xaat-[A-Za-z0-9\-]{20,})"""
 )

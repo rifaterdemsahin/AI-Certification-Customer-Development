@@ -26,6 +26,8 @@ Do not re-derive these facts from scratch in a future session — they are estab
 - **>40% average watch retention** = an MVP-stage video-quality floor, not a stage gate (demoted from an earlier draft — see `HYPOTHESIS.md` H10).
 - All "guarantee of passing the exam" language has been deliberately removed site-wide; the value prop is live cohort practice/community, not a promised outcome.
 - **LMS Platform:** Skool is designated as the off-the-shelf LMS/community platform starting in Stage 2 (Customer Validation) to host resources, events, billing, and peer discussions, avoiding custom platform code.
+- **Founder Anti-Spam Guardrail (Skool):** To prevent notification clutter and spamming the community, founder posts are converted into evergreen living hubs (e.g. centralized "Courses" hub with Claude Architect nested inside) that are updated and nurtured in place rather than creating fragmented one-off announcement threads.
+- **LinkedIn Connection Cap & Monday VIP Claude Cowork:** Rifat Erdem Sahin is capped at 30,000 LinkedIn connections (`https://www.linkedin.com/mynetwork/grow/`); he strictly only adds verified Skool community members to preserve network capacity. On Mondays, Rifat hosts dedicated VIP Claude Cowork sessions to optimize profiles and promote VIP members directly to recruiters over the Delivery Pilot organization network.
 
 The authoritative running log of every falsifiable claim on the site — with status (Validated / In Testing / Planned / Claimed-unverified) — is `HYPOTHESIS.md`. Read it before asserting a new business number; update it if you change one.
 
