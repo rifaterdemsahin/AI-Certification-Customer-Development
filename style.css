@@ -187,6 +187,16 @@ header {
     border: 1px solid rgba(168, 85, 247, 0.3) !important;
 }
 
+.nav-favorites:hover, .nav-favorites:focus {
+    color: #facc15 !important;
+    background-color: rgba(250, 204, 21, 0.08) !important;
+}
+.nav-favorites.active {
+    color: #facc15 !important;
+    background-color: rgba(250, 204, 21, 0.12) !important;
+    border: 1px solid rgba(250, 204, 21, 0.3) !important;
+}
+
 .nav-stages:hover, .nav-stages:focus {
     color: #818cf8 !important;
     background-color: rgba(99, 102, 241, 0.08) !important;

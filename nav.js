@@ -26,6 +26,16 @@
     var groups = [
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
+            type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
+                ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas'],
+                ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis Tracker'],
+                ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report'],
+                ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages'],
+                ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
+                ['5_Symbols/dashboard/todo.html', '✅ Task List']
+            ]
+        },
+        {
             type: 'dropdown', label: 'Stages', emoji: '🗺️', className: 'nav-stages', items: [
                 ['5_Symbols/stages/stage-customer-discovery.html', '🔍 1. Discovery'],
                 ['5_Symbols/stages/stage-customer-validation.html', '📈 2. Validation'],
@@ -72,6 +82,7 @@
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis'],
                 ['5_Symbols/strategy/focus.html', '🎯 Focus'],
                 ['5_Symbols/strategy/target-audience.html', '👥 Target Audience'],
+                ['5_Symbols/strategy/delivery-pilot-roadmap.html', '🧑‍✈️ Delivery Pilot Roadmap'],
                 ['5_Symbols/strategy/pain-points.html', '🎭 Customer Pain Points'],
                 ['5_Symbols/strategy/risk-analysis.html', '⚠️ Risk Analysis'],
                 ['5_Symbols/strategy/practice-exams-gap.html', '⚠️ Practice Exam Gap'],
@@ -165,6 +176,7 @@
                 ['5_Symbols/growth/cohort-prep.html', '🧰 Cohort Prep'],
                 ['5_Symbols/growth/advertisement.html', '📣 Paid Advertisement'],
                 ['5_Symbols/growth/when-to-advertise.html', '🚦 When to Start Paid Ads'],
+                ['5_Symbols/growth/hormozi-vip-leadgen.html', '🏋️ Hormozi VIP Lead Gen'],
                 ['5_Symbols/growth/funnel-math.html', '🧮 Funnel Math'],
                 ['5_Symbols/growth/unit-economics.html', '💵 Unit Economics'],
                 ['5_Symbols/growth/pricing-change-strategy.html', '📈 Pricing Change Strategy'],
@@ -178,6 +190,7 @@
                 ['5_Symbols/growth/market-fit-channels.html', '🔄 Market Fit & Channels'],
                 ['5_Symbols/growth/linkedin-premium-decision.html', '💼 LinkedIn Premium Decision'],
                 ['5_Symbols/growth/linkedin-vip-cowork.html', '💼 LinkedIn 30k Cap &amp; VIP Cowork'],
+                ['5_Symbols/growth/linkedin-newsletter.html', '📰 LinkedIn Newsletter: Skool &amp; Community'],
                 ['5_Symbols/growth/skool-affiliate-roadmap.html', '🤝 Skool Affiliate Roadmap'],
                 ['5_Symbols/growth/skool-churn-retention.html', '🛡️ Reducing Churn &amp; Retention'],
                 ['5_Symbols/growth/skool-common-patterns.html', '🌟 Common Retention Patterns'],
@@ -270,6 +283,7 @@
         { url: '5_Symbols/product/community-rules-enforcement.html', title: 'Community Rules: Deletions, Bans & Suspensions Policy', desc: 'Comprehensive enforcement policy: when posts get deleted, when accounts are suspended (7-30 days), and zero-tolerance instant bans for harassment, scraping, and exam cheating.', cat: 'Business Model', tags: 'community rules deleted posts suspended banned moderation policy fast track bans appeals 3 strikes broken windows nda cheating h8 h29' },
         { url: '5_Symbols/growth/linkedin-premium-decision.html', title: 'LinkedIn Premium Decision & Top Profile CTA', desc: 'Customer Creation task comparing Career (£14.99/mo), Business (£29.99/mo), and Sales Navigator Core (£79.99/mo) to market Skool link directly on LinkedIn profile header.', cat: 'Growth', tags: 'linkedin premium career business sales navigator cta profile marketing traffic stage 3 customer creation h5 h12 h13' },
         { url: '5_Symbols/growth/linkedin-vip-cowork.html', title: 'LinkedIn 30k Network Cap & Monday VIP Claude Cowork', desc: 'Strategy for managing LinkedIn 30,000 connection limit by only adding verified Skool members, plus Monday VIP Claude Cowork recruiter promotion over Delivery Pilot.', cat: 'Growth', tags: 'linkedin network 30000 30k connections cap mynetwork grow skool members buffer monday vip claude cowork recruiters delivery pilot h5 h12' },
+        { url: '5_Symbols/growth/linkedin-newsletter.html', title: 'LinkedIn Newsletter: Skool & Community Blueprint', desc: 'Comprehensive LinkedIn newsletter editorial blueprint and article template introducing Skool and the Delivery Pilot community.', cat: 'Growth', tags: 'linkedin newsletter editorial skool community delivery pilot article fde contractors cloud claude certification h5 h30' },
         { url: '5_Symbols/growth/skool-affiliate-roadmap.html', title: 'Skool Affiliate Timeline & Milestone Roadmap', desc: '4-stage activation roadmap and unit economics for launching the Skool affiliate program, gated behind the G3 $10,000 revenue milestone.', cat: 'Growth', tags: 'skool affiliate referral timeline milestone roadmap commission unit economics stage gates h5 h8 h9' },
         { url: '5_Symbols/growth/skool-churn-retention.html', title: 'Reducing Churn & Maximizing Retention', desc: 'Tactical churn reduction framework covering leaky bucket dynamics, <5% retention benchmarks, 30-day cohort curves, and 5 tactical retention levers.', cat: 'Growth', tags: 'skool churn retention leaky bucket cohort curves onboarding ritual peer ties gamification h2 h8 h29' },
         { url: '5_Symbols/growth/skool-common-patterns.html', title: 'Common Retention Patterns (Nick Saraev, Evelyn, Al Jack)', desc: 'The 6 battle-tested creator retention archetypes: daily care, lower-tier downsells, content deletion, weekly calls, annual discounts, and 1-on-1 culture.', cat: 'Growth', tags: 'skool common patterns retention nick saraev evelyn skate iq al jack annual discount downsell 1on1 culture h2 h5 h8' },
@@ -357,7 +371,9 @@
         { url: '5_Symbols/strategy/single-founder-bandwidth.html', title: 'Single-Founder Bandwidth', desc: 'The founder weekly time ledger: contract day job, content production, and the Sunday live cohort slot.', cat: 'Strategy', tags: 'single founder bandwidth time ledger ir35 contractor sunday schedule' },
         { url: '5_Symbols/strategy/listen-more-than-you-speak.html', title: 'Listen More Than You Speak', desc: 'Rifat Erdem Sahin\'s Stage 1-2 role: collect feedback, listen more than he speaks, and let the audience cocreate the next shipped change.', cat: 'Strategy', tags: 'listen more than you speak founder role feedback cocreate customer development h29 sunday skool' },
         { url: '5_Symbols/strategy/reading-and-learning-guardrails.html', title: 'Reading & Learning Guardrails', desc: 'Customer discovery starts with listening and deep reading, not posting. Enforces 4:1 reading-to-posting ratio and strict anti-broadcasting guardrails.', cat: 'Strategy', tags: 'reading learning guardrails listening customer discovery steve blank anti posting trap broadcast throttle 4:1 ratio h29' },
+        { url: '5_Symbols/strategy/delivery-pilot-roadmap.html', title: 'Delivery Pilot Roadmap & Ultimate IT Contractor Guide', desc: '4-stage career transformation pipeline: hands-on training, Pearson VUE certification, VIP CV/recruiter cowork, and IT contracting mastery.', cat: 'Strategy', tags: 'delivery pilot roadmap ultimate it contractor course forward deployed engineer fde cv linkedin recruiter cowork ltd co ir35 day rate tenders rfp h30' },
         { url: '5_Symbols/hypotheses/hyp-h29.html', title: 'H29 · Listen More Than You Speak', desc: 'Detail page with premise-conclusion-status SVG diagram for H29: founder-as-listener and audience cocreation.', cat: 'Hypothesis Detail', tags: 'h29 hypothesis detail listen speak feedback cocreate founder role svg diagram' },
+        { url: '5_Symbols/hypotheses/hyp-h30.html', title: 'H30 · Delivery Pilot Career Transformation Roadmap', desc: 'Detail page with premise-conclusion-status SVG diagram for H30: Training → Certification → CV Promotion → IT Contractor Mastery.', cat: 'Hypothesis Detail', tags: 'h30 hypothesis detail delivery pilot roadmap ultimate it contractor forward deployed engineer cv recruiter cowork svg diagram' },
         { url: '5_Symbols/product/vc-deck.html', title: 'VC Deck', desc: 'Interactive slide-by-slide investor deck covering problem, solution, market, business model, traction, GTM, moat, and the ask.', cat: 'Strategy', tags: 'vc deck investor slides pitch interactive presentation' },
         { url: '5_Symbols/product/vc-feedback.html', title: 'VC Constructive Feedback', desc: 'The memo a constructive venture partner would write after the deck: eight cited notes, rationale, and what evidence would close each one.', cat: 'Strategy', tags: 'vc feedback constructive investor memo default alive graham andreessen gurley thiel raise' },
         { url: '5_Symbols/strategy/alex-hormozi-agent.html', title: 'Alex Hormozi Agent', desc: 'Blunt offer-and-leads audit in Hormozi voice from $100M Offers and $100M Leads: value equation, Grand Slam stack, Core Four, and a local ask-the-agent desk.', cat: 'Strategy', tags: 'alex hormozi agent 100m offers 100m leads grand slam value equation core four lead magnet rule of 100' },
@@ -407,6 +423,7 @@
         { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', desc: 'Execution calendar built around the weekly Sunday free cohort: discovery interviews, funnel instrumentation, cohort launches, onsite pilots.', cat: 'Growth', tags: 'test plan execution calendar sunday cohort discovery interviews cadence' },
         { url: '5_Symbols/growth/advertisement.html', title: 'Paid Advertisement', desc: 'Conditional, post-validation paid ad channels (YouTube, LinkedIn, Google Search, Reddit, newsletters) gated by a CAC/LTV sustainability check.', cat: 'Growth', tags: 'paid ads advertising cac ltv youtube linkedin google reddit sponsorship' },
         { url: '5_Symbols/growth/when-to-advertise.html', title: 'When to Start Paid Advertisements', desc: 'Timing gate for paid ads: what to do instead of advertising, when spend is forbidden, and when a capped CAC/LTV test becomes an option.', cat: 'Growth', tags: 'when to advertise paid ads timing gate organic first do not advertise cac ltv h16' },
+        { url: '5_Symbols/growth/hormozi-vip-leadgen.html', title: 'Hormozi Rainmaker VIP Lead Generation', desc: 'Alex Hormozi 5-step rainmaker lead generation engine converting paid Meta/LinkedIn leads into $250/yr VIP Tier and £500-£1000/day FDE contractors.', cat: 'Growth', tags: 'hormozi rainmaker lead generation paid ads speed to lead sms zapier crm vip tier fde contractor roas h16 h30' },
         { url: '5_Symbols/growth/funnel-math.html', title: 'Funnel Math', desc: 'Backward-calculated views-needed-for-$10k arithmetic reconciling the H4 and H7 funnel models, with a sensitivity table.', cat: 'Growth', tags: 'funnel math views needed calculation ctr conversion sensitivity' },
         { url: '5_Symbols/growth/unit-economics.html', title: 'Unit Economics', desc: 'Per-seat and per-member economics for the $250 cohort and $10/mo membership, priced against the founder day-rate benchmark.', cat: 'Growth', tags: 'unit economics per seat per member margin day rate ir35' },
         { url: '5_Symbols/growth/pricing-change-strategy.html', title: 'Pricing Change Strategy & Milestone Roadmap', desc: 'Transition roadmap for Tier 2 ($1→$10/mo) and Tier 3 ($250→$1,000/yr), triggered by 4 stage milestones with grandfathering rules.', cat: 'Growth', tags: 'pricing change strategy tier progression sit in share screen milestones grandfathering urgency' },
