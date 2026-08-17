@@ -51,6 +51,8 @@
                 ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
                 ['5_Symbols/cd/cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
+                ['5_Symbols/cd/cohort-session-8-analysis.html', '🎙️ Cohort Session 8 Analysis'],
+                ['5_Symbols/product/skool-membership-questions.html', '📝 Skool Membership Questions'],
                 ['5_Symbols/cd/archived-interview-transcripts.html', '📂 Archived Transcripts'],
                 ['5_Symbols/cd/cd-hypothesis-interview-questions.html', '🧪 Hypothesis Interview Questions'],
                 ['5_Symbols/cd/cd-hypotheses.html', '💭 1. Hypothesis'],
@@ -116,6 +118,10 @@
                 ['5_Symbols/strategy/moat.html', '🛡️ Defensive Capabilities & Moat'],
                 ['5_Symbols/strategy/maot.html', '✨ MAOT Framework'],
                 ['5_Symbols/strategy/claude-partner-strategy.html', '🤝 Claude Partner Strategy'],
+                ['5_Symbols/strategy/multi-platform-workflow.html', '🌐 Multi-Platform Workflow'],
+                ['5_Symbols/strategy/student-success.html', '🎓 Student Success &amp; Outcomes'],
+                ['5_Symbols/strategy/success-stories.html', '🌟 Success Stories &amp; Careers'],
+                ['5_Symbols/strategy/enterprise-partnerships.html', '🏢 Enterprise Partnerships &amp; B2B'],
                 ['5_Symbols/product/dictionary.html', '📖 Dictionary & Glossary']
             ]
         },
@@ -154,7 +160,11 @@
                 ['5_Symbols/product/skool-offer-ideas.html', '💡 What You Can Offer on Skool'],
                 ['5_Symbols/product/member-bandwidth-guardrails.html', '🛡️ Member Bandwidth Guardrails'],
                 ['5_Symbols/product/skool-community-management.html', '🌱 Community Management (Garden)'],
-                ['5_Symbols/product/community-rules-enforcement.html', '⚖️ Rules: Deletions, Bans &amp; Suspensions']
+                ['5_Symbols/product/community-rules-enforcement.html', '⚖️ Rules: Deletions, Bans &amp; Suspensions'],
+                ['5_Symbols/product/skool-level-2-posting-restriction.html', '🔒 Level 2 Posting Restriction'],
+                ['5_Symbols/product/skool-onboarding-checklist.html', '🚀 Onboarding Checklist Plugin'],
+                ['5_Symbols/product/skool-manual-member-invites.html', '✉️ Manual Invites & Tier Switch'],
+                ['5_Symbols/product/skool-new-joiner-welcome-and-faq.html', '👋 New Joiner Welcome &amp; FAQ']
             ]
         },
         {
@@ -164,6 +174,8 @@
                 ['5_Symbols/growth/conversion-strategy.html', '🎯 Conversion Strategy &amp; Tactics'],
                 ['5_Symbols/growth/flywheel.html', '🔄 Flywheel'],
                 ['5_Symbols/growth/organic-growth.html', '🔄 Organic Growth Strategy'],
+                ['5_Symbols/growth/free-educational-content-strategy.html', '🎬 Free Educational Content Strategy'],
+                ['5_Symbols/growth/skool-break-even.html', '⚖️ Skool Break-Even &amp; $99 Milestone'],
                 ['5_Symbols/growth/quality-gates.html', '🚪 Quality Gates'],
                 ['5_Symbols/growth/stage-timelines.html', '📅 Stage Timelines'],
                 ['5_Symbols/growth/90-day-execution-plan.html', '🗓️ 90-Day Execution Plan'],
@@ -198,6 +210,9 @@
                 ['5_Symbols/growth/skool-common-patterns.html', '🌟 Common Retention Patterns'],
                 ['5_Symbols/growth/platform-relationships-and-payments.html', '🌐 Platform Ecosystem &amp; Payments'],
                 ['5_Symbols/growth/future-sponsors.html', '🤝 Future Sponsors Roadmap'],
+                ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
+                ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style'],
+                ['5_Symbols/growth/community-building-score.html', '🌱 Community &amp; Model Score'],
                 ['5_Symbols/growth/ai-demo.html', '🤖 AI Prep Demo']
             ]
         },
@@ -246,6 +261,7 @@
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification'],
                 ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation'],
+                ['markdown_renderer.html?src=reports/cohort-session-8-analysis-v1.0.0.md', '🎙️ Cohort Session 8 Deep Dive v1.0'],
                 ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0'],
                 ['markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', '📡 Skool Availability v1.0'],
                 ['markdown_renderer.html?src=reports/score-fluctuation-analysis-v1.0.0.md', '📈 Score Fluctuation Analysis v1.0']
@@ -260,6 +276,15 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/product/skool-new-joiner-welcome-and-faq.html', title: 'New Joiner Welcome Message & FAQ Guide', desc: 'Copy-paste founder welcome message template, 4-step new joiner roadmap, and comprehensive FAQ explaining $0 cost start, no coding background required, and self-learning to AI certification.', cat: 'Product', tags: 'skool new joiner welcome message template faq non technical zero cost start no coding required self learning ai tools get certified claude architect forward deployed engineer h5 h8 h29 h30' },
+        { url: '5_Symbols/growth/community-building-score.html', title: 'Community Building & Business Model Confidence Score', desc: 'Detailed architectural connection between Skool community building, lecture-to-party pivot, 10 true regulars, and the numeric confidence score.', cat: 'Growth', tags: 'community building business model confidence score skool freemium peek sit in share screen lecture party listen speak 10 true regulars anti spam level 2 posting onboarding venture cafe cambridge triton square contractor fde h5 h8 h9 h20 h29 h30' },
+        { url: '5_Symbols/cd/cohort-session-8-analysis.html', title: 'AI Cohort Session 8 Deep-Dive Analysis', desc: 'Customer discovery, lecture-to-party pivot, 100k-file Second Brain hybrid retrieval, autonomous prediction trading, and contractor financials.', cat: 'Discovery', tags: 'cohort session 8 simulation customer discovery second brain para grep qdrant neo4j postgres polymarket kalshi hermes telegram cloudflare zero trust contractor h5 h8 h20 h26 h29 h30' },
+        { url: '5_Symbols/growth/free-educational-content-strategy.html', title: 'Free Educational Content Strategy', desc: 'Promote open-source platform code on GitHub and animated tutorials on YouTube using Google Flow and custom AI voiceovers with zero financial cash burn.', cat: 'Growth', tags: 'free educational content github youtube open source google flow ai voiceover zero cash burn sweat equity h2 h10' },
+        { url: '5_Symbols/growth/skool-break-even.html', title: 'Skool Break-Even & Pricing Evolution', desc: 'Financial cost recovery model for Skool $99/mo fixed fee across preview and cohort tiers, plus the milestone gate to transition pricing to $99/mo.', cat: 'Growth', tags: 'skool break even cost recovery unit economics milestone 99 month transition pricing freemium h5 h9' },
+        { url: '5_Symbols/strategy/multi-platform-workflow.html', title: 'Multi-Platform Workflow & Customer Journey', desc: 'Connecting Google services, GitHub codebase, YouTube traffic engine, and Skool community into an end-to-end customer journey.', cat: 'Strategy', tags: 'multi platform workflow customer journey google flow github youtube skool orchestration pipeline h5 h30' },
+        { url: '5_Symbols/strategy/student-success.html', title: 'Student Success & Tangible Outcomes', desc: 'Tracking core engineering outcomes: Claude Architect pass rates, £500–£1,000/day contractor placements, GitHub portfolios, and recruiter conversions.', cat: 'Strategy', tags: 'student success tangible outcomes cert pass rate contractor daily rate github proof of work recruiter placement retention h8 h30' },
+        { url: '5_Symbols/strategy/success-stories.html', title: 'Success Stories & Career Transformations', desc: 'Real member proof (Sude, Marianna, Charles) getting certified and landing high-paying jobs as an organic marketing growth engine.', cat: 'Strategy', tags: 'success stories case studies sude marianna charles career transformation job offer marketing proof viral loop contractor certification h5 h8 h20 h30' },
+        { url: '5_Symbols/strategy/enterprise-partnerships.html', title: 'Enterprise Partnerships & B2B Expansion', desc: 'Leveraging audience scale and student success stories to secure bulk corporate training contracts and high-value developer brand sponsorships.', cat: 'Strategy', tags: 'enterprise partnerships b2b expansion corporate training brand sponsorships partner network anthropic cambridge marianna h12 h17 h18' },
         { url: '5_Symbols/growth/platform-relationships-and-payments.html', title: 'Platform Ecosystem & Payment Settlement Architecture', desc: 'Detailed roles of YouTube, LinkedIn, and Skool in the acquisition-delivery funnel, and how Delivery Pilot settles all member and cohort payments via Stripe.', cat: 'Growth', tags: 'platform relationships payments organization delivery pilot youtube linkedin skool stripe settlement merchant banking h4 h5 h7 h12 h30' },
         { url: '5_Symbols/growth/future-sponsors.html', title: 'Future Sponsors & Strategic Sponsorship Roadmap', desc: 'Stage-gated sponsorship strategy for Stage 3/4 covering AI developer tooling, cloud providers, recruiter placements, and ethical guardrails.', cat: 'Growth', tags: 'future sponsors monetization sponsorships stage 3 4 brand partners cursor anthropic cloud recruiter placements advertising h13 h16' },
         { url: '5_Symbols/growth/content-format.html', title: 'Content Format: Short vs Long Form', desc: 'Where animated videos, workshops, and course-based videos live on YouTube, LinkedIn, and Skool — with the rationale for each.', cat: 'Growth', tags: 'short form long form youtube shorts linkedin skool animated workshop course format placement' },
@@ -287,6 +312,10 @@
         { url: '5_Symbols/product/member-bandwidth-guardrails.html', title: 'Member Bandwidth Guardrails — Anti-Overload Metric', desc: 'Curriculum guardrails capping member study load at 3 to 4 hours/week to prevent cognitive burnout and cancellation churn (Al Jack Law).', cat: 'Business Model', tags: 'member bandwidth guardrails student cognitive load time budget overload churn 3 hours week al jack h2 h8' },
         { url: '5_Symbols/product/skool-community-management.html', title: 'Skool Community Management — The Garden Playbook', desc: 'Operational garden framework: prune weeds (broken window theory), add water (new member care), daily 5-minute checklist, and zero-tolerance moderation.', cat: 'Business Model', tags: 'skool community management garden weeds water culture daily care moderation spam bullying broken windows h8 h29' },
         { url: '5_Symbols/product/community-rules-enforcement.html', title: 'Community Rules: Deletions, Bans & Suspensions Policy', desc: 'Comprehensive enforcement policy: when posts get deleted, when accounts are suspended (7-30 days), and zero-tolerance instant bans for harassment, scraping, and exam cheating.', cat: 'Business Model', tags: 'community rules deleted posts suspended banned moderation policy fast track bans appeals 3 strikes broken windows nda cheating h8 h29' },
+        { url: '5_Symbols/product/skool-level-2-posting-restriction.html', title: 'Skool Level 2 Posting Restriction Milestone', desc: 'Admin setup, modal copy, and 5-point comment engagement gate to unlock standalone posting, filtering spam and nurturing 10 true regulars.', cat: 'Business Model', tags: 'skool level 2 posting restriction plugins settings 5 points comment likes anti-spam broken windows gamification leaderboards h5 h8 h29' },
+        { url: '5_Symbols/product/skool-onboarding-checklist.html', title: 'Skool Onboarding Checklist & Welcome Milestone', desc: 'Admin setup and 3-step member activation widget (60s video, comment on post, download mobile app) driving Day-1 retention and Stage 3 customer creation.', cat: 'Business Model', tags: 'skool onboarding checklist welcome plugin 60s video comment mobile app download churn retention customer creation h5 h8 h13' },
+        { url: '5_Symbols/product/skool-manual-member-invites.html', title: 'Skool Manual Member Invites & Tier Assignment', desc: 'Admin playbook for sending direct email invitations and switching members to Premium or VIP tiers at $0 cost without Stripe friction.', cat: 'Business Model', tags: 'skool manual invites email settings invite members tier switch comp complimentary free upgrade founding members h5 h8 h30' },
+        { url: '5_Symbols/product/skool-membership-questions.html', title: 'Skool Membership Questions & Customer Discovery Intake', desc: '4 AI knowledge pillars diagnostic plus open-ended customer discovery text box ("What do you hope to get out of the group?") on join intake.', cat: 'Discovery Process', tags: 'skool membership questions join intake customer discovery 4 ai pillars voc voice of customer hope to get out of group h3 h8 h24 h30' },
         { url: '5_Symbols/growth/linkedin-premium-decision.html', title: 'LinkedIn Premium Decision & Top Profile CTA', desc: 'Customer Creation task comparing Career (£14.99/mo), Business (£29.99/mo), and Sales Navigator Core (£79.99/mo) to market Skool link directly on LinkedIn profile header.', cat: 'Growth', tags: 'linkedin premium career business sales navigator cta profile marketing traffic stage 3 customer creation h5 h12 h13' },
         { url: '5_Symbols/growth/linkedin-vip-cowork.html', title: 'LinkedIn 30k Network Cap & Monday VIP Claude Cowork', desc: 'Strategy for managing LinkedIn 30,000 connection limit by only adding verified Skool members, plus Monday VIP Claude Cowork recruiter promotion over Delivery Pilot.', cat: 'Growth', tags: 'linkedin network 30000 30k connections cap mynetwork grow skool members buffer monday vip claude cowork recruiters delivery pilot h5 h12' },
         { url: '5_Symbols/growth/linkedin-newsletter.html', title: 'LinkedIn Newsletter: Skool & Community Blueprint', desc: 'Comprehensive LinkedIn newsletter editorial blueprint and article template introducing Skool and the Delivery Pilot community.', cat: 'Growth', tags: 'linkedin newsletter editorial skool community delivery pilot article fde contractors cloud claude certification h5 h30' },

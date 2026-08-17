@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cohort Session 8 Analysis | Customer Discovery & Architecture</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .arch-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-normal);
+        }
+        .arch-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        .arch-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        
+        .stack-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .stack-table th, .stack-table td {
+            padding: 0.85rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .stack-table th {
+            background: rgba(255, 255, 255, 0.03);
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .stack-table tr:hover td {
+            background: rgba(255, 255, 255, 0.015);
+        }
+        
+        .quote-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Back Link -->
+        <a href="cd-interview-recording.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Customer Discovery &amp; Interviews
+        </a>
+
+        <!-- Hero Section -->
+        <section class="hero animate-fade-in" style="padding: 2rem 0 3rem; text-align: left;">
+            <span class="badge">Cohort Simulation &amp; Architecture</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🎙️ AI Cohort Session 8: <span>Deep-Dive Analysis</span></h1>
+            <p class="hero-subtitle" style="margin: 0; max-width: 850px;">
+                Comprehensive qualitative and technical breakdown of AI Cohort Session 8. Validating the <strong>Lecture &rarr; Party</strong> format pivot (<a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>), 100k-file Second Brain hybrid retrieval (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>), autonomous prediction trading agents, serverless staging pipelines, and IT contractor administration synergy (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).
+            </p>
+        </section>
+
+        <!-- Metrics Overview -->
+        <section class="content-section animate-fade-in">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value">4</span>
+                    <span class="metric-label">Active Participants</span>
+                    <span class="metric-desc" style="font-size: 0.75rem; color: var(--text-secondary);">Rifat, Bora, Sude, Marianna</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">2h 15m</span>
+                    <span class="metric-label">Interactive Screen Share</span>
+                    <span class="metric-desc" style="font-size: 0.75rem; color: var(--text-secondary);">Collaborative live code &amp; demos</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">100k+</span>
+                    <span class="metric-label">Second Brain Files Indexed</span>
+                    <span class="metric-desc" style="font-size: 0.75rem; color: var(--text-secondary);">~100 GB vault via Tiered Search</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">200k+</span>
+                    <span class="metric-label">Graph Relationships</span>
+                    <span class="metric-desc" style="font-size: 0.75rem; color: var(--text-secondary);">Neo4j on Fly.io entity mapping</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: The Lecture -> Party Pivot -->
+        <section class="content-section animate-fade-in">
+            <div class="card" style="border-left: 5px solid var(--color-success);">
+                <h2 class="section-title" style="margin-top: 0;">🎉 1. The "Lecture &rarr; Party" Format Pivot (<a href="../strategy/listen-more-than-you-speak.html" style="color: var(--color-primary);">H29</a>)</h2>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    In Session 8, founder Rifat Erdem Sahin explicitly pivoted the cohort dynamic from an instructional monologue to a participant-led collaborative party. Instead of lecturing on theory, the facilitator opened the floor, prompted attendees to share their screens, and focused on facilitating discussion between practitioners.
+                </p>
+                <div class="quote-box">
+                    &ldquo;We are trying to move this format from a lecture to a party to make sure that I'm not trying to lecture people. We are trying to have a good time about what we are doing here... feel free that if this starts to feel like a lecture, call it out!&rdquo; &mdash; <strong>Rifat Erdem Sahin (Session 8 Host)</strong>
+                </div>
+                <div class="quote-box" style="border-left-color: var(--color-success);">
+                    &ldquo;Today’s session was great! Covering multiple topics in a single session really broadened my perspective and helped me learn so much more. At least for me, the pace of learning felt much faster compared to the previous sessions. Thank you so much, and have a wonderful evening! ☺️☘️&rdquo; &mdash; <strong>Attendee Spontaneous Feedback (<a href="../hypotheses/hyp-h20.html" style="color: var(--color-primary);">H20</a>)</strong>
+                </div>
+                <ul class="emoji-list" style="margin-top: 1rem; padding-left: 1.25rem;">
+                    <li><span class="emoji">👂</span><strong>Speaking Turn Ratio:</strong> Founder facilitated 395 conversational turns while drawing out 141 turns from Bora, 68 from Sude, and 65 from Marianna, creating balanced multi-directional dialogue.</li>
+                    <li><span class="emoji">⚡</span><strong>High Density &amp; Breadth:</strong> Connecting disparate tools (trading bots, cloud workers, knowledge graphs, contractor receipts) in one session accelerates learning velocity.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Four Core Architectures -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏗️ 2. Four Core Technical Architectures Demonstrated</h2>
+            <div class="arch-grid">
+                <!-- Arch 1 -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-blue">Architecture 1</span>
+                        <h3 style="margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--text-primary);">🧠 Multi-Tiered Second Brain (PARA)</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                            Solves the 100k-file / 100 GB LLM context window blowout through a 4-tier hybrid retrieval pipeline: Grep &rarr; Google Drive 5TB OCR &rarr; Qdrant Vector &rarr; Neo4j Graph.
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0 0 1rem;">
+                            <li>Organized via PARA (Projects, Areas, Resources, Archive)</li>
+                            <li>Keeps token consumption near zero by injecting only targeted sub-graphs</li>
+                            <li>Synchronized via automated Rclone PAP (Pull-Push-Archive)</li>
+                        </ul>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                        Key Links: <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5 (PKM Vault)</a> &middot; <a href="../product/resources.html" style="color: var(--color-primary);">Tooling</a>
+                    </div>
+                </div>
+
+                <!-- Arch 2 -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-purple">Architecture 2</span>
+                        <h3 style="margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--text-primary);">📈 Autonomous Prediction Trading</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                            24/7 background algorithmic execution on prediction markets (Polymarket / Kalshi) leveraging low-latency weather telemetry delta (~100ms advantage).
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0 0 1rem;">
+                            <li>Hermes Autonomous Agent hosted on low-latency Ireland VPS</li>
+                            <li>Zero frontend complexity: complete command &amp; alert interface via Telegram</li>
+                            <li>Strict mathematical edge verification before market execution</li>
+                        </ul>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                        Participant: Bora &middot; <a href="../hypotheses/hyp-h26.html" style="color: var(--color-primary);">H26 (FDE Persona)</a>
+                    </div>
+                </div>
+
+                <!-- Arch 3 -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-green">Architecture 3</span>
+                        <h3 style="margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--text-primary);">👩‍💻 Serverless Staging &amp; Cloudflare</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                            Zero-cold-start web app deployed on Cloudflare Workers and guarded with Cloudflare Zero Trust authentication to auto-sort raw chat logs.
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0 0 1rem;">
+                            <li>Automated pipeline routes raw chat sessions into Obsidian staging vault</li>
+                            <li>Extracts concept confusion points and schedules daily retention reminders</li>
+                            <li>Built and launched from scratch in under 48 hours</li>
+                        </ul>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                        Participant: Sude &middot; <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8 (Cohort PMF)</a>
+                    </div>
+                </div>
+
+                <!-- Arch 4 -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-amber">Architecture 4</span>
+                        <h3 style="margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--text-primary);">🌟 Enterprise &amp; Research Ingestion</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                            Automated pipeline ingesting longevity science papers, unstructured PDFs, and historical email communications for zero-friction CRM tracking.
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0 0 1rem;">
+                            <li>Ingests global scientific research into Claude/Obsidian knowledge nodes</li>
+                            <li>Extracts contact history to automate background relationship tracking</li>
+                            <li>Eliminates manual CRM entry friction</li>
+                        </ul>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                        Participant: Marianna &middot; <a href="../hypotheses/hyp-h17.html" style="color: var(--color-primary);">H17 (Enterprise Pilot)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Technology Stack Reference -->
+        <section class="content-section animate-fade-in">
+            <div class="card">
+                <h2 class="section-title" style="margin-top: 0;">🛠️ 3. Full Technology Stack &amp; Architecture Reference</h2>
+                <table class="stack-table">
+                    <thead>
+                        <tr>
+                            <th>Layer / Domain</th>
+                            <th>Tool / Service</th>
+                            <th>Role &amp; Architectural Purpose</th>
+                            <th>Token / Performance Edge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: #60a5fa;">Orchestration</strong></td>
+                            <td><code>LangChain &amp; LangGraph</code></td>
+                            <td>Frontal cortex query router; routes requests across databases and background daemons</td>
+                            <td>Selects 2-5 high-relevance nodes, preventing prompt overflow</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #c084fc;">Autonomous Agent</strong></td>
+                            <td><code>Hermes Agent</code></td>
+                            <td>24/7 background executor on Ireland VPS; connects via Telegram webhook</td>
+                            <td>Zero browser/UI overhead; instant push notifications</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #34d399;">Knowledge Vault</strong></td>
+                            <td><code>Obsidian Vault (PARA)</code></td>
+                            <td>Markdown-based knowledge base for project tracking, staging, and local UI</td>
+                            <td>Zero cloud dependency; instant local file-system speed</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #fbbf24;">Graph Database</strong></td>
+                            <td><code>Neo4j (Fly.io)</code></td>
+                            <td>Maps 200,000+ relationships across entities, projects, corporate contacts, locations</td>
+                            <td>Enables multi-hop sub-graph traversal without raw text dump</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #60a5fa;">Vector Database</strong></td>
+                            <td><code>Qdrant (Fly.io)</code></td>
+                            <td>High-dimensional semantic vector search for unstructured documents</td>
+                            <td>~20ms semantic similarity lookup</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #c084fc;">Relational DB</strong></td>
+                            <td><code>EDB Postgres</code></td>
+                            <td>Maintains transactional integrity and schemas for receipts/invoices</td>
+                            <td>ACID compliance for contractor accounting</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #34d399;">Document Archive</strong></td>
+                            <td><code>Google Shared Drives (5TB)</code></td>
+                            <td>Large-scale OCR, full-text indexing, and native image recognition</td>
+                            <td>Offloads binary storage while keeping text searchable</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #fbbf24;">Data Sync</strong></td>
+                            <td><code>Rclone (PAP Pipeline)</code></td>
+                            <td>Automated Pull-Push-Archive script syncing Proxmox, local nodes, cloud DBs</td>
+                            <td>Hands-off background replication</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #60a5fa;">Edge &amp; Security</strong></td>
+                            <td><code>Cloudflare Workers &amp; Zero Trust</code></td>
+                            <td>Serverless web dashboard hosting behind Identity-Aware Proxy (IAP)</td>
+                            <td>Global sub-50ms edge latency with zero attack surface</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #34d399;">Marketplace</strong></td>
+                            <td><code>Polymarket &amp; Kalshi</code></td>
+                            <td>High-frequency binary prediction platform executed via automated bots</td>
+                            <td>Latency arbitrage on weather telemetry (~100ms delta)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 4: Contractor Financial Administration -->
+        <section class="content-section animate-fade-in">
+            <div class="card" style="border-left: 5px solid var(--color-warning);">
+                <h2 class="section-title" style="margin-top: 0;">💼 4. IT Contractor Financial Administration (<a href="../strategy/delivery-pilot-roadmap.html" style="color: var(--color-primary);">H30</a>)</h2>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    During the second hour of Session 8, Rifat demonstrated the contractor administrative workflows embedded in the Second Brain. For £500–£1,000+/day independent contractors, tax compliance, invoice tracking, and receipt extraction represent persistent friction.
+                </p>
+                <div class="quote-box" style="border-left-color: var(--color-warning);">
+                    &ldquo;It has all the invoices. How many days I have worked... because I am a contractor, I have to do this stuff. I ask a question, the report creates another report and opens up the top 5 receipts automatically... and in Neo4j, I get all the relationships because Uber is related to Peter's field, Peter's field is related to my costs.&rdquo; &mdash; <strong>Rifat Erdem Sahin</strong>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                    This live demo directly validates the <strong>Delivery Pilot Transformation Roadmap (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>)</strong>: community members care about the full contractor pipeline—from certification and hands-on tooling to automated administrative survival and enterprise co-bidding.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: Physical Community Pipeline & Next Steps -->
+        <section class="content-section animate-fade-in">
+            <div class="card">
+                <h2 class="section-title" style="margin-top: 0;">📅 5. In-Person Meetups &amp; Next Cohort Workshop</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">📍 Venture Café Cambridge</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 0.75rem;">
+                            Weekly Thursday community meetups in September at <strong>Cambridge Glass House</strong> (CB2). Serving as a local watering hole for biotech, AI researchers, and contractors.
+                        </p>
+                        <span class="status-pill" style="font-size: 0.75rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa;">Physical In-Person Funnel</span>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">📍 London Triton Square</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 0.75rem;">
+                            Weekly Thursday evening meetups near <strong>Anthropic UK Headquarters</strong> at Triton Square, London (NW1). Connecting enterprise practitioners and Claude builders.
+                        </p>
+                        <span class="status-pill" style="font-size: 0.75rem; background: rgba(168, 85, 247, 0.1); color: #c084fc;">Anthropic Hub Proximity</span>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">🧪 Next Hands-On Workshop</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 0.75rem;">
+                            Upcoming cohort live coding session: Step-by-step configuration of <strong>LangChain, LangGraph, and Google Drive OCR</strong> integrations.
+                        </p>
+                        <span class="status-pill" style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.1); color: var(--color-success);">Hands-On Build Lab</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Source Artifacts Link -->
+        <section class="content-section animate-fade-in">
+            <div class="card" style="background: rgba(255, 255, 255, 0.015); border: 1px dashed var(--border-color);">
+                <h3 style="margin: 0 0 0.75rem; font-size: 1.1rem; color: var(--text-primary);">📂 Source Session Files &amp; Full Documentation</h3>
+                <ul class="emoji-list" style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-secondary);">
+                    <li><span class="emoji">📄</span><strong>PDF Summary &amp; References:</strong> <a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/blob/main/3_Simulation/Cohorts/session8_AI_Cohort_Summary_and_References.pdf" target="_blank" style="color: var(--color-primary);">3_Simulation/Cohorts/session8_AI_Cohort_Summary_and_References.pdf</a></li>
+                    <li><span class="emoji">📝</span><strong>Full Session Transcript:</strong> <a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/blob/main/3_Simulation/Cohorts/session8_AI_Cohort_Transcript.pdf" target="_blank" style="color: var(--color-primary);">3_Simulation/Cohorts/session8_AI_Cohort_Transcript.pdf</a></li>
+                    <li><span class="emoji">📊</span><strong>Detailed Analysis Markdown Report:</strong> <a href="../../markdown_renderer.html?src=reports/cohort-session-8-analysis-v1.0.0.md" style="color: var(--color-primary);">reports/cohort-session-8-analysis-v1.0.0.md</a></li>
+                    <li><span class="emoji">🤖</span><strong>Cohort Analyzer Skill:</strong> <code>.agents/skills/cohort-session-analyzer/SKILL.md</code></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Discovery &amp; Cohort Simulation.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Created AI Cohort Session 8 deep-dive analysis page documenting Lecture &rarr; Party pivot, Second Brain tiered retrieval, HFT bot, and contractor financials (2026-08-17) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cohort-session-8-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/cohort-session-8-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
