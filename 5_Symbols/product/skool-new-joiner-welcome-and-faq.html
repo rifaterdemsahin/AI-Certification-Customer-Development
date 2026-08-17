@@ -286,16 +286,83 @@ Delivery Pilot</div>
             </div>
         </section>
 
-        <!-- Section 4: Operational Integration -->
+        <!-- Section 4: Recurring Onboarding Gap Discovery Check-Ins -->
         <section class="content-section animate-fade-in" style="margin-top: 2.5rem;">
-            <h2 class="section-title">🔗 4. Operational Integration &amp; Hypothesis Linkage</h2>
+            <h2 class="section-title">🔍 4. Recurring Onboarding Gap Discovery Check-Ins (Founder Active Listening Loops)</h2>
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+                    In accordance with Steve Blank's Customer Development framework and the <em>Listen More Than You Speak</em> ethos (<a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>), founder <strong>Rifat Erdem Sahin</strong> runs recurring check-ins with new members <strong>while they are actively going through the onboarding process</strong>. The primary objective is not to lecture or sell, but to <strong>discover friction gaps</strong>, tool confusion, and unaddressed learning desires.
+                </p>
+
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="card" style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2); height: 100%;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                                <span class="badge badge-info" style="font-size: 0.75rem;">Day 3 Cadence</span>
+                                <h3 style="margin: 0; font-size: 1.05rem; color: #38bdf8;">Setup &amp; Navigation Check-In</h3>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem;">
+                                Sent via Skool DM or comment ping to members who joined 72 hours ago:
+                            </p>
+                            <div class="copy-box" id="day3CheckIn" style="font-size: 0.85rem; padding: 0.75rem; background: rgba(0,0,0,0.3); border-radius: 6px; margin-bottom: 0.75rem;">Hey [First Name], checking in on you! 👋
+
+I saw you joined a few days ago. While you're looking around the community:
+
+1. Did you run into any blockers or confusion while going through the onboarding checklist?
+2. Was there any AI tool or setup (Claude, Second Brain, Cursor) you found tricky to get started with?
+3. What is the #1 question or problem you want us to tackle live in this Sunday's cohort (21:00 UK)?
+
+Zero pressure—even one sentence helps us make the community better for you!</div>
+                            <button class="btn btn-primary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;" onclick="navigator.clipboard.writeText(document.getElementById('day3CheckIn').innerText); this.innerText='Copied Day 3 DM! ✨'; setTimeout(()=>this.innerText='📋 Copy Day 3 DM', 2000);">
+                                📋 Copy Day 3 DM
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); height: 100%;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                                <span class="badge badge-success" style="font-size: 0.75rem;">Day 7 (Post-Cohort)</span>
+                                <h3 style="margin: 0; font-size: 1.05rem; color: #34d399;">Post-Live Cohort Reflection</h3>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem;">
+                                Sent on Monday following the Sunday 21:00 UK live session:
+                            </p>
+                            <div class="copy-box" id="day7CheckIn" style="font-size: 0.85rem; padding: 0.75rem; background: rgba(0,0,0,0.3); border-radius: 6px; margin-bottom: 0.75rem;">Hey [First Name], hope you had a great weekend! 🚀
+
+Following up on our live Sunday cohort session:
+
+1. Did the screen-sharing Party Format feel collaborative, or was anything hard to follow?
+2. What part of the live AI workflow felt like the biggest gap in your current day-to-day workflow?
+3. Are you aiming for an industry certification, or primarily building AI tools to save time?
+
+Your answers help me tailor the upcoming templates and practice modules for you!</div>
+                            <button class="btn btn-primary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;" onclick="navigator.clipboard.writeText(document.getElementById('day7CheckIn').innerText); this.innerText='Copied Day 7 DM! ✨'; setTimeout(()=>this.innerText='📋 Copy Day 7 DM', 2000);">
+                                📋 Copy Day 7 DM
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spec-box" style="margin-top: 1.25rem; background: rgba(245, 158, 11, 0.08); border-left: 4px solid #f59e0b; padding: 0.85rem 1.25rem; border-radius: 8px;">
+                    <div style="font-weight: 700; color: #f59e0b; margin-bottom: 0.25rem;">📝 Continuous Customer Discovery Feedback Loop:</div>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.55; margin: 0;">
+                        Every friction point, confusion note, and tool request gathered from these check-ins is logged in <a href="../cd/cd-interview-recording.html" style="color: var(--color-primary);">Customer Discovery Interview Tracker</a> and synthesized during the weekly operating review to update the onboarding checklist, classroom modules, and <a href="../growth/community-building-score.html" style="color: var(--color-primary);">Confidence Scoring Model</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Operational Integration -->
+        <section class="content-section animate-fade-in" style="margin-top: 2.5rem;">
+            <h2 class="section-title">🔗 5. Operational Integration &amp; Hypothesis Linkage</h2>
             <div class="card">
                 <ul class="emoji-list">
                     <li><span class="emoji">🌟</span><span style="color: var(--text-secondary);"><a href="skool-community-golden-rules.html" style="color: var(--color-primary);">Golden Rules of Community Building</a> &mdash; community ethos, friendly moderation, and non-judgmental environment.</span></li>
                     <li><span class="emoji">🚀</span><span style="color: var(--text-secondary);"><a href="skool-onboarding-checklist.html" style="color: var(--color-primary);">Skool Onboarding Checklist Plugin</a> &mdash; 5 interactive steps that guide members immediately upon admission.</span></li>
-                    <li><span class="emoji">🔒</span><span style="color: var(--text-secondary);"><a href="skool-level-2-posting-restriction.html" style="color: var(--color-primary);">Level 2 Posting Restriction Policy</a> &mdash; gamification gate that maintains high signal-to-noise across the board.</span></li>
+                    <li><span class="emoji">🔍</span><span style="color: var(--text-secondary);"><a href="../dashboard/todo.html" style="color: var(--color-primary);">Task List Operating System</a> &mdash; active recurring loop for Day 3 and Day 7 onboarding gap check-ins.</span></li>
                     <li><span class="emoji">🎙️</span><span style="color: var(--text-secondary);"><a href="../cd/cohort-session-8-analysis.html" style="color: var(--color-primary);">AI Cohort Session 8 Analysis</a> &mdash; empirical evidence of the collaborative Party Format in action.</span></li>
-                    <li><span class="emoji">📈</span><span style="color: var(--text-secondary);"><a href="../growth/community-building-score.html" style="color: var(--color-primary);">Community Building &amp; Confidence Score</a> &mdash; how welcoming onboarding drives the business model score from 46 toward 100.</span></li>
+                    <li><span class="emoji">📈</span><span style="color: var(--text-secondary);"><a href="../growth/community-building-score.html" style="color: var(--color-primary);">Community Building &amp; Confidence Score</a> &mdash; how welcoming onboarding and gap listening drives the score toward 100.</span></li>
                 </ul>
             </div>
         </section>
@@ -309,7 +376,7 @@ Delivery Pilot</div>
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Updated live cohort times to 21:00 PM UK London time; recorded founder initial welcome DM &amp; FAQ post completion (2026-08-17) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Added recurring Onboarding Gap Discovery check-in scripts (Day 3 &amp; Day 7) and linked to continuous Customer Discovery operating loop (2026-08-17) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </div>
     </footer>
