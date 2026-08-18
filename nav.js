@@ -27,6 +27,7 @@
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
+                ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing'],
                 ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
                 ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style'],
                 ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas'],
@@ -229,6 +230,7 @@
             type: 'dropdown', label: 'Components', emoji: '🧩', className: 'nav-components', items: [
                 ['5_Symbols/comp/comp-problem-solution.html', '🛑 Problem-Solution Fit'],
                 ['5_Symbols/comp/comp-mvp.html', '📦 MVP'],
+                ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing'],
                 ['5_Symbols/comp/comp-market.html', '🌐 Market &amp; Audience'],
                 ['5_Symbols/comp/comp-business-model.html', '📊 Business Model'],
                 ['5_Symbols/comp/comp-funnel.html', '📣 Funnel &amp; Channels'],
@@ -254,13 +256,15 @@
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report v1.0 (Historical)'],
                 ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
                 ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '🤖 AI Adoption &amp; Skills Gap'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md', '🧠 Exam Prep &amp; Student Behavior'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.7.0.md', '🧠 Exam Prep &amp; Student Behavior'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md', '🧠 Exam Prep &amp; Student Behavior v1.6 (Historical)'],
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.5.0.md', '🧠 Exam Prep &amp; Student Behavior v1.5 (Historical)'],
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.4.0.md', '🧠 Exam Prep &amp; Student Behavior v1.4 (Historical)'],
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.3.0.md', '🧠 Exam Prep &amp; Student Behavior v1.3 (Historical)'],
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification'],
                 ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation'],
+                ['markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md', '👤 Baran G CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/cohort-session-8-analysis-v1.0.0.md', '🎙️ Cohort Session 8 Deep Dive v1.0'],
                 ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0'],
                 ['markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', '📡 Skool Availability v1.0'],
@@ -276,6 +280,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md', title: 'Customer Discovery Report: Baran G Interview', desc: 'Qualitative analysis of Baran G customer interview on tabular AI agent automation, Excel data processing, time scarcity, and presentation outputs.', cat: 'Docs', tags: 'baran g customer discovery interview tabular excel agents time pressure emotional drivers h24 h17 h30 report' },
         { url: '5_Symbols/product/skool-new-joiner-welcome-and-faq.html', title: 'New Joiner Welcome Message & FAQ Guide', desc: 'Copy-paste founder welcome message template, 4-step new joiner roadmap, and comprehensive FAQ explaining $0 cost start, no coding background required, and self-learning to AI certification.', cat: 'Product', tags: 'skool new joiner welcome message template faq non technical zero cost start no coding required self learning ai tools get certified claude architect forward deployed engineer h5 h8 h29 h30' },
         { url: '5_Symbols/growth/community-building-score.html', title: 'Community Building & Business Model Confidence Score', desc: 'Detailed architectural connection between Skool community building, lecture-to-party pivot, 10 true regulars, and the numeric confidence score.', cat: 'Growth', tags: 'community building business model confidence score skool freemium peek sit in share screen lecture party listen speak 10 true regulars anti spam level 2 posting onboarding venture cafe cambridge triton square contractor fde h5 h8 h9 h20 h29 h30' },
         { url: '5_Symbols/cd/cohort-session-8-analysis.html', title: 'AI Cohort Session 8 Deep-Dive Analysis', desc: 'Customer discovery, lecture-to-party pivot, 100k-file Second Brain hybrid retrieval, autonomous prediction trading, and contractor financials.', cat: 'Discovery', tags: 'cohort session 8 simulation customer discovery second brain para grep qdrant neo4j postgres polymarket kalshi hermes telegram cloudflare zero trust contractor h5 h8 h20 h26 h29 h30' },
@@ -325,6 +330,7 @@
         { url: '5_Symbols/growth/reverse-response-marketing.html', title: 'Reverse Response Marketing', desc: 'A three-step framework for viral marketing through reverse engineering and controversial second brain insights.', cat: 'Growth', tags: 'reverse response marketing strategy viral controversial second brain high-performing posts production skills' },
         { url: '5_Symbols/growth/roger-rabbit-animation.html', title: 'Roger Rabbit Animation Style', desc: 'Using mixed-reality Roger Rabbit style animations as our signature format to test the market.', cat: 'Growth', tags: 'roger rabbit animation mixed reality style signature format reverse response marketing test market' },
         { url: 'markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', title: 'Skool Availability v1.0.0', desc: 'First logged-out run: PASS 11/11 gates, Public, 11 members, 14 posts, Sude non-founder thread visible.', cat: 'Docs', tags: 'skool availability report public members posts h5' },
+        { url: 'markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.7.0.md', title: 'Exam Prep & Student Behavior v1.7.0', desc: 'Adds Bora Session 8 follow-up discovery: session stacking cognitive fatigue, vacation/noise constraints, boat cruise, and mid-week async course binge study.', cat: 'Docs', tags: 'bora customer discovery session 8 fatigue stacked sessions vacation boat cruise async binge study exam prep h5 h8 h20 h26 h29' },
         { url: 'markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md', title: 'Exam Prep & Student Behavior v1.6.0', desc: 'Adds Mehmet: immigrant vetting is weak, old talent checks fail, proctored certs rise in institutional and government MSP hires.', cat: 'Docs', tags: 'mehmet immigrant vetting msp government proctored certification institutional h1 h12 h25' },
         { url: 'markdown_renderer.html?src=reports/score-fluctuation-analysis-v1.0.0.md', title: 'Score Fluctuation Analysis v1.0.0', desc: 'Detailed explanation of why the confidence score fluctuates (up to 46, down to 43) due to Git commit status (uncommitted work deductions).', cat: 'Docs', tags: 'score fluctuation analysis confidence report git commit status uncommitted work' },
         { url: '5_Symbols/strategy/claude-partner-strategy.html', title: 'Claude Partner Strategy', desc: 'Strategic analysis of when and why to become a Claude Partner, mapping active partner benefits to customer development stages.', cat: 'Strategy', tags: 'claude partner cpn network services select benefits licensing credentials' },
@@ -342,7 +348,7 @@
         { url: 'index.html', title: 'Customer Development Hub', desc: 'Home hub mapping all stages, business validation frameworks, and milestones.', cat: 'Hub', tags: 'home dashboard main index' },
         { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Customer Discovery Interview Guide', desc: 'Playbook of open-ended pains/gains questions, past behavior stories, and listening guidelines.', cat: 'Process', tags: 'interview questions open ended pains gains guide' },
         { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Customer Watering Holes & Outreach', desc: 'Outreach blueprint mapping Triton Square, Venture Coffee meetups, and cohorts with ready-to-use scripts.', cat: 'Process', tags: 'watering holes triton square venture coffee cohorts scripts outreach slack dms' },
-        { url: '5_Symbols/cd/cd-interview-recording.html', title: 'Interview Recording & Tracker', desc: 'Qualitative interview recording tool (day-in-the-life, current workarounds) and outreach tracker with copyable thank you followups.', cat: 'Process', tags: 'interview log recording tracker contacts referral thank you' },
+        { url: '5_Symbols/cd/cd-interview-recording.html', title: 'Interview Recording Workspace', desc: 'Qualitative interview recording tool with multi-select hypothesis mapping (H1–H30), markdown file download, and shared cookie notes sync.', cat: 'Process', tags: 'interview log recording tracker multi select hypotheses download notes cookie' },
         { url: '5_Symbols/cd/archived-interview-transcripts.html', title: 'Archived Interview Transcripts', desc: 'Detailed qualitative interview notes and transcript archives from customer discovery sessions.', cat: 'Process', tags: 'interview transcript archived notes sude charles marianna' },
         { url: '5_Symbols/stages/stage-customer-discovery.html', title: '1. Customer Discovery Stage', desc: 'First phase of customer development focused on problem-solution fit and testing core customer pain points.', cat: 'Stage', tags: 'problem solution mvp validation first' },
         { url: '5_Symbols/stages/stage-customer-validation.html', title: '2. Customer Validation Stage', desc: 'Second phase to build a repeatable, scalable sales blueprint and verify product-market fit.', cat: 'Stage', tags: 'sales roadmap pricing validation product market' },
@@ -477,6 +483,7 @@
         { url: '5_Symbols/growth/cohort-prep.html', title: 'Cohort Prep', desc: 'Weekly WhatsApp/Discord install list and content preview that runs between live Sunday cohort sessions, so attendees arrive ready for hands-on work.', cat: 'Growth', tags: 'cohort prep whatsapp discord install setup weekly hands-on' },
         { url: '5_Symbols/comp/comp-problem-solution.html', title: 'Component: Problem-Solution Fit', desc: 'Validating that study guides solve the core certification retention issues.', cat: 'Component', tags: 'problem solution fit validation' },
         { url: '5_Symbols/comp/comp-mvp.html', title: 'Component: Minimum Viable Product (MVP)', desc: 'Blueprint for the first 3 animated videos and a simple practice test page.', cat: 'Component', tags: 'mvp blueprint videos practice test' },
+        { url: '5_Symbols/comp/comp-mvp-separation.html', title: 'Component: MVP Product vs. Marketing Separation & Remediation', desc: 'Critical decoupling audit separating acquisition marketing materials (YouTube animations) from core product materials (Skool cohort, Sunday screen-share, practice exams).', cat: 'Component', tags: 'mvp product marketing separation decoupling fixes remediation youtube skool cohort' },
         { url: '5_Symbols/comp/comp-market.html', title: 'Component: Market & Target Audience', desc: 'Detailed target market size, growth rates, and candidate segmentations.', cat: 'Component', tags: 'market size growth segmentation audience' },
         { url: '5_Symbols/comp/comp-business-model.html', title: 'Component: Business Model', desc: 'Pricing tiers, target margins, and path to initial cohort goal.', cat: 'Component', tags: 'business model pricing margins path goal' },
         { url: '5_Symbols/comp/comp-funnel.html', title: 'Component: Funnel & Channels', desc: 'Acquisition pathways, youtube click-throughs, and discord sign-ups.', cat: 'Component', tags: 'funnel pathways youtube click discord sign-up' },

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Recording & Outreach Tracker | AI Certification Helper</title>
+    <title>Interview Recording | AI Certification Helper</title>
     <link rel="stylesheet" href="../../style.css">
     <style>
         .form-group {
@@ -32,49 +32,6 @@
             border-color: var(--color-primary);
             background: rgba(255,255,255,0.04);
         }
-        .tracker-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .tracker-table th, .tracker-table td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .tracker-table th {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--text-primary);
-        }
-        .tracker-table tr:hover td {
-            background: rgba(255, 255, 255, 0.01);
-        }
-        .status-select {
-            background: rgba(17, 24, 39, 0.9);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            font-size: 0.8rem;
-            border-radius: 6px;
-            padding: 0.25rem 0.5rem;
-            outline: none;
-            cursor: pointer;
-        }
-        .status-badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            text-transform: uppercase;
-        }
-        .status-todo { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
-        .status-contacted { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; }
-        .status-scheduled { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-        .status-completed { background: rgba(16, 185, 129, 0.15); color: #34d399; }
-        .status-thanked { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
         
         .save-alert {
             background: rgba(16, 185, 129, 0.1);
@@ -84,6 +41,67 @@
             padding: 1rem;
             margin-bottom: 1.5rem;
             display: none;
+        }
+
+        /* Multi-Select Hypothesis Styling */
+        .hyp-selector-container {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.85rem;
+            margin-top: 0.4rem;
+        }
+        .hyp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.5rem;
+            max-height: 250px;
+            overflow-y: auto;
+            padding-right: 0.4rem;
+            margin-top: 0.6rem;
+        }
+        .hyp-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.45rem 0.6rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            user-select: none;
+        }
+        .hyp-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        .hyp-item.selected {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--color-primary);
+        }
+        .hyp-item input[type="checkbox"] {
+            margin-top: 0.2rem;
+            cursor: pointer;
+            accent-color: var(--color-primary);
+        }
+        .hyp-item-label {
+            font-size: 0.8rem;
+            line-height: 1.35;
+            color: var(--text-secondary);
+        }
+        .hyp-item.selected .hyp-item-label {
+            color: var(--text-primary);
+        }
+        .hyp-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #a5b4fc;
+            background: rgba(99, 102, 241, 0.2);
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 0.25rem;
         }
     </style>
 </head>
@@ -97,151 +115,329 @@
         </a>
 
         <!-- Hero Section -->
-        <section class="hero animate-fade-in" style="padding: 2rem 0 3rem; text-align: left;">
+        <section class="hero animate-fade-in" style="padding: 2rem 0 2.5rem; text-align: left;">
             <span class="badge">Interview Workspace</span>
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">📝 Discovery Interview <span>Recorder &amp; Tracker</span></h1>
-            <p class="hero-subtitle" style="margin: 0; max-width: 800px;">
-                Record qualitative candidate insights, track current workarounds, map their day-in-the-life study routines, and manage your follow-ups and thank-you templates. Not sure what to ask? See
-                <a href="cd-hypothesis-interview-questions.html" style="color: var(--color-primary);">Hypothesis Interview Questions</a>
-                for prompts mapped to each tracked hypothesis before you log answers here.
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">📝 Discovery Interview <span>Recorder</span></h1>
+            <p class="hero-subtitle" style="margin: 0; max-width: 850px;">
+                Record qualitative candidate insights, map multi-selected business model hypotheses, capture day-in-the-life study routines, and download structured interview records while syncing to shared cookie notes. Need question prompts? See
+                <a href="cd-hypothesis-interview-questions.html" style="color: var(--color-primary); font-weight: 600;">Hypothesis Interview Questions</a>
+                before logging discovery answers.
             </p>
         </section>
 
-        <!-- Main Workspace Grid -->
-        <div class="grid animate-fade-in">
-            <!-- Recorder Panel -->
-            <div class="col-6">
-                <div class="card" style="height: 100%;">
-                    <h3 style="font-family: var(--font-heading); margin-bottom: 0.25rem; font-weight: 700;">🎤 Log Interview Insights</h3>
-                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-                        <strong>⚠️ Mandate Reminder:</strong> Keep your solution hidden. Focus 100% on listening and documenting stories.
-                    </p>
-
-                    <div id="save-success-alert" class="save-alert">
-                        <strong>✅ Interview Saved!</strong> The record has been pushed to the shared notes cookie and will display in the floating notes widget.
-                    </div>
-
-                    <form id="interview-form" onsubmit="saveInterview(event)">
-                        <div class="grid" style="gap: 0;">
-                            <div class="col-6" style="padding-right: 0.5rem;">
-                                <div class="form-group">
-                                    <label for="int-name">Candidate Name</label>
-                                    <input type="text" id="int-name" class="form-control" placeholder="e.g. John Doe" required>
-                                </div>
-                            </div>
-                            <div class="col-6" style="padding-left: 0.5rem;">
-                                <div class="form-group">
-                                    <label for="int-channel">Channel / Location</label>
-                                    <select id="int-channel" class="form-control" required>
-                                        <option value="Teams">Teams DM</option>
-                                        <option value="Face-to-Face">F2F (Triton Square)</option>
-                                        <option value="Meetup">F2F (Venture Coffee)</option>
-                                        <option value="X">X / Twitter DM</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="int-referral">Referral / Connection Source</label>
-                            <input type="text" id="int-referral" class="form-control" placeholder="e.g. Referred by Alex or self-intercept">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="int-routine">Day-In / Day-Out (Study Routine & Habits)</label>
-                            <textarea id="int-routine" class="form-control" rows="2" placeholder="How do they study? When? How long?" required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="int-workaround">Current Workarounds (How are they solving it today?)</label>
-                            <textarea id="int-workaround" class="form-control" rows="2" placeholder="e.g. Buying Udemy tests, parsing official PDFs with ChatGPT, asking senior TAs..." required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="int-stories">Past Actions & Stories</label>
-                            <textarea id="int-stories" class="form-control" rows="2" placeholder="What did they do in the past? What failed or went well?" required></textarea>
-                        </div>
-
-                        <div class="grid" style="gap: 0;">
-                            <div class="col-6" style="padding-right: 0.5rem;">
-                                <div class="form-group">
-                                    <label for="int-pains">Key Pains Identified</label>
-                                    <textarea id="int-pains" class="form-control" rows="2" placeholder="e.g. Time pressure, dry diagrams" required></textarea>
-                                </div>
-                            </div>
-                            <div class="col-6" style="padding-left: 0.5rem;">
-                                <div class="form-group">
-                                    <label for="int-gains">Key Gains Identified</label>
-                                    <textarea id="int-gains" class="form-control" rows="2" placeholder="e.g. Interactive tests, clear flowcharts" required></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">💾 Save Interview to Shared Cookie Notes</button>
-                    </form>
+        <!-- Main Recorder Form (Centered full-width card) -->
+        <div class="animate-fade-in" style="max-width: 920px; margin: 0 auto 3rem;">
+            <div class="card" style="border-left: 4px solid var(--color-primary);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <h3 style="font-family: var(--font-heading); font-weight: 700; margin: 0;">🎤 Log Customer Discovery Interview</h3>
+                    <span class="badge" style="font-size: 0.75rem; background: rgba(99, 102, 241, 0.15); color: #a5b4fc;">Steve Blank CD Method</span>
                 </div>
-            </div>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                    <strong>⚠️ Mandate Reminder:</strong> Keep your solution hidden. Focus 100% on listening, verbatim quotes, workarounds, and documenting real past stories.
+                </p>
 
-            <!-- Outreach Tracker Panel -->
-            <div class="col-6">
-                <div class="card" style="height: 100%; display: flex; flex-direction: column;">
-                    <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem; font-weight: 700;">📡 Outreach Contact Tracker</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                        Track your connections across Teams, Face-to-Face hubs, or X. Use templates below to send thank-you follow-ups.
-                    </p>
-
-                    <!-- Add Contact Form -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
-                        <h5 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.85rem;">Add New Contact</h5>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <input type="text" id="add-contact-name" class="form-control" style="padding: 0.4rem 0.6rem; font-size: 0.8rem;" placeholder="Name" required>
-                            <input type="text" id="add-contact-ref" class="form-control" style="padding: 0.4rem 0.6rem; font-size: 0.8rem;" placeholder="Referral" required>
-                            <select id="add-contact-channel" class="form-control" style="padding: 0.4rem 0.6rem; font-size: 0.8rem; width: 140px;">
-                                <option value="Teams">Teams</option>
-                                <option value="F2F">F2F</option>
-                                <option value="X">X (Twitter)</option>
-                            </select>
-                            <button onclick="addNewContact()" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Add</button>
-                        </div>
-                    </div>
-
-                    <!-- Dynamic Table -->
-                    <div style="flex: 1; overflow-x: auto;">
-                        <table class="tracker-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Channel</th>
-                                    <th>Referral Source</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tracker-body">
-                                <!-- Injected programmatically -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Follow up templates summary -->
-                    <div style="margin-top: 1.5rem; background: rgba(99, 102, 241, 0.05); border: 1px solid var(--border-accent); border-radius: 8px; padding: 1rem;">
-                        <h5 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 0.85rem;">📋 Thank You Message Templates</h5>
-                        <p style="color: var(--text-secondary); font-size: 0.75rem; margin-bottom: 0.5rem;">
-                            Clicking <strong>"Thank"</strong> in actions will copy a personalized message directly to your clipboard.
-                        </p>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">
-                            <strong>F2F / Teams:</strong> "Hi [Name], thank you for sharing your study story today! Your workaround notes are invaluable..."<br>
-                            <strong>X / DM:</strong> "Hey [Name], thanks for chatting today! Helpful to hear how you parse dry docs..."
-                        </div>
-                    </div>
+                <div id="save-success-alert" class="save-alert">
+                    <strong>✅ Interview Saved &amp; Downloaded!</strong> The record has been pushed to the shared notes cookie and downloaded to your machine as a markdown file.
                 </div>
+
+                <form id="interview-form" onsubmit="saveInterview(event)">
+                    <!-- Candidate & Channel Metadata -->
+                    <div class="grid" style="gap: 1rem; margin-bottom: 0;">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="int-name">Candidate Name *</label>
+                                <input type="text" id="int-name" class="form-control" placeholder="e.g. Bora, Sude, John Doe" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="int-channel">Channel / Watering Hole *</label>
+                                <select id="int-channel" class="form-control" required>
+                                    <option value="Teams">Teams DM / Internal</option>
+                                    <option value="Live Cohort">Live Cohort (Sunday 9pm Session)</option>
+                                    <option value="Skool Community">Skool Community (Delivery Pilot)</option>
+                                    <option value="LinkedIn">LinkedIn DM / Connection</option>
+                                    <option value="Face-to-Face">F2F (Triton Square / Campus)</option>
+                                    <option value="Meetup">F2F (Venture Coffee / Tech Meetup)</option>
+                                    <option value="X">X / Twitter DM</option>
+                                    <option value="App Testing">App Testing (Context Engineering)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="int-referral">Referral / Connection Source</label>
+                        <input type="text" id="int-referral" class="form-control" placeholder="e.g. Referred by Bihar, self-intercept at Venture Coffee, LinkedIn post engagement">
+                    </div>
+
+                    <!-- Related Hypotheses Multi-Select -->
+                    <div class="form-group">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <label style="margin-bottom: 0;">🎯 Related Hypotheses (Multi-Select)</label>
+                            <div style="display: flex; gap: 0.4rem;">
+                                <button type="button" onclick="selectAllHypotheses(true)" class="btn btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.75rem;">Select All</button>
+                                <button type="button" onclick="selectAllHypotheses(false)" class="btn btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.75rem;">Clear All</button>
+                            </div>
+                        </div>
+                        
+                        <div class="hyp-selector-container">
+                            <input type="text" id="hyp-search" class="form-control" placeholder="🔍 Filter hypotheses by keyword or ID (e.g., H8, PMF, cohort, practice exam, FDE)..." oninput="filterHypotheses(this.value)" style="font-size: 0.85rem; padding: 0.45rem 0.75rem; margin-bottom: 0.5rem;">
+                            
+                            <div class="hyp-grid" id="hyp-grid">
+                                <!-- Stage 1 Hypotheses -->
+                                <label class="hyp-item" for="hyp-h1">
+                                    <input type="checkbox" name="hypothesis" value="H1" id="hyp-h1" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H1</span> Rising AI skills expectations</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h2">
+                                    <input type="checkbox" name="hypothesis" value="H2" id="hyp-h2" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H2</span> Animated summaries &amp; visual analogies</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h3">
+                                    <input type="checkbox" name="hypothesis" value="H3" id="hyp-h3" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H3</span> Willingness to pay for certification prep</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h24">
+                                    <input type="checkbox" name="hypothesis" value="H24" id="hyp-h24" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H24</span> Emotional drivers (fear, greed, insecurity)</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h29">
+                                    <input type="checkbox" name="hypothesis" value="H29" id="hyp-h29" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H29</span> Listen more than you speak / Cocreation</span>
+                                </label>
+
+                                <!-- Stage 2 Hypotheses -->
+                                <label class="hyp-item" for="hyp-h4">
+                                    <input type="checkbox" name="hypothesis" value="H4" id="hyp-h4" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H4</span> YouTube funnel 1% conversion</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h5">
+                                    <input type="checkbox" name="hypothesis" value="H5" id="hyp-h5" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H5</span> Organic cohort sell-out (no ads)</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h6">
+                                    <input type="checkbox" name="hypothesis" value="H6" id="hyp-h6" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H6</span> TAM/SAM/SOM market size sustainability</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h7">
+                                    <input type="checkbox" name="hypothesis" value="H7" id="hyp-h7" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H7</span> YouTube acquisition funnel CTR &amp; rates</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h8">
+                                    <input type="checkbox" name="hypothesis" value="H8" id="hyp-h8" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H8</span> Product-Market Fit (PMF &amp; Passing)</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h9">
+                                    <input type="checkbox" name="hypothesis" value="H9" id="hyp-h9" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H9</span> $10,000 Stage 2 revenue exit gate</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h10">
+                                    <input type="checkbox" name="hypothesis" value="H10" id="hyp-h10" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H10</span> &gt;40% average watch retention</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h20">
+                                    <input type="checkbox" name="hypothesis" value="H20" id="hyp-h20" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H20</span> MAOT predicts organic referral</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h21">
+                                    <input type="checkbox" name="hypothesis" value="H21" id="hyp-h21" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H21</span> $29 Exam Prep Bundle entry SKU</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h25">
+                                    <input type="checkbox" name="hypothesis" value="H25" id="hyp-h25" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H25</span> Cert bifurcation (judgement vs trivia)</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h26">
+                                    <input type="checkbox" name="hypothesis" value="H26" id="hyp-h26" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H26</span> Multi-topic live cohort retention format</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h27">
+                                    <input type="checkbox" name="hypothesis" value="H27" id="hyp-h27" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H27</span> Practice exams &amp; question bank gap</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h28">
+                                    <input type="checkbox" name="hypothesis" value="H28" id="hyp-h28" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H28</span> YouTube engagement rate benchmark</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h30">
+                                    <input type="checkbox" name="hypothesis" value="H30" id="hyp-h30" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H30</span> Delivery Pilot FDE / IT Contractor Roadmap</span>
+                                </label>
+
+                                <!-- Stage 3 & 4 Hypotheses -->
+                                <label class="hyp-item" for="hyp-h11">
+                                    <input type="checkbox" name="hypothesis" value="H11" id="hyp-h11" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H11</span> $100k ARR TA hiring trigger</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h12">
+                                    <input type="checkbox" name="hypothesis" value="H12" id="hyp-h12" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H12</span> IT consulting / B2B firm demand</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h13">
+                                    <input type="checkbox" name="hypothesis" value="H13" id="hyp-h13" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H13</span> 1,000x subscriber growth metric</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h14">
+                                    <input type="checkbox" name="hypothesis" value="H14" id="hyp-h14" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H14</span> Multi-certification expansion</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h15">
+                                    <input type="checkbox" name="hypothesis" value="H15" id="hyp-h15" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H15</span> Founder full-time transition at Stage 4</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h16">
+                                    <input type="checkbox" name="hypothesis" value="H16" id="hyp-h16" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H16</span> Paid ads gated by sustainability check</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h17">
+                                    <input type="checkbox" name="hypothesis" value="H17" id="hyp-h17" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H17</span> Onsite lessons &amp; corporate pilot</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h18">
+                                    <input type="checkbox" name="hypothesis" value="H18" id="hyp-h18" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H18</span> International onsite delivery (UK/EU/US)</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h19">
+                                    <input type="checkbox" name="hypothesis" value="H19" id="hyp-h19" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H19</span> Stage timeline estimates</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h22">
+                                    <input type="checkbox" name="hypothesis" value="H22" id="hyp-h22" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H22</span> Forward Deployed Engineer placement</span>
+                                </label>
+                                <label class="hyp-item" for="hyp-h23">
+                                    <input type="checkbox" name="hypothesis" value="H23" id="hyp-h23" onchange="updateHypSelection(this)">
+                                    <span class="hyp-item-label"><span class="hyp-tag">H23</span> 4DX Weekly Accountable Rhythm</span>
+                                </label>
+                            </div>
+
+                            <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center;">
+                                <span>Selected: <strong id="selected-hyp-count" style="color: var(--color-primary);">None</strong></span>
+                                <span id="hyp-match-count" style="font-size: 0.75rem; color: var(--text-secondary);">Showing 29 hypotheses</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Qualitative Questions Section -->
+                    <div class="form-group">
+                        <label for="int-routine">Day-In / Day-Out (Study Routine &amp; Habits) *</label>
+                        <textarea id="int-routine" class="form-control" rows="2" placeholder="How do they study? When (morning / late night)? How many hours per week?" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="int-workaround">Current Workarounds (How are they solving it today?) *</label>
+                        <textarea id="int-workaround" class="form-control" rows="2" placeholder="e.g. Buying outdated Udemy tests, parsing official PDFs with ChatGPT, asking senior TAs, building local second brain..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="int-stories">Past Actions &amp; Stories *</label>
+                        <textarea id="int-stories" class="form-control" rows="2" placeholder="What specific actions did they take in past exams? What failed or went well? What caused rollbacks or delays?" required></textarea>
+                    </div>
+
+                    <div class="grid" style="gap: 1rem;">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="int-pains">Key Pains Identified *</label>
+                                <textarea id="int-pains" class="form-control" rows="2" placeholder="e.g. Time pressure, dry diagrams, release fatigue, lack of question banks" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="int-gains">Key Gains Identified *</label>
+                                <textarea id="int-gains" class="form-control" rows="2" placeholder="e.g. Interactive tests, clear flowcharts, FDE contractor rate clarity (£600+/day)" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;">💾 Download  Interview to Shared Cookie Notes</button>
+                </form>
             </div>
         </div>
 
+        <!-- Go-To-Market (GTM / GTML) Strategy Relationship Section -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <div class="card" style="border-left: 5px solid var(--color-success); background: rgba(16, 185, 129, 0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.5rem;">🎯</span>
+                        <h3 style="font-family: var(--font-heading); margin: 0; font-weight: 700; color: var(--text-primary);">Go-To-Market (GTM / GTML) Strategy Alignment</h3>
+                    </div>
+                    <span class="status-pill" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success); border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px;">Steve Blank Customer Development Engine</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    In Steve Blank's Customer Development methodology, this Interview Recording Hub is not merely an administrative notebook—it is the <strong>primary intelligence engine driving our entire Go-To-Market (GTM) strategy</strong> for AI Certification Helper and Delivery Pilot. Every recorded interview dynamically recalibrates our marketing hooks, organic acquisition channels, curriculum priorities, and sales conversion funnels:
+                </p>
+
+                <div class="grid" style="gap: 1.25rem;">
+                    <div class="col-6">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1rem;">1. 📣 Real-World Content &amp; Hook Generation</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                Eliminates marketing guesswork by converting verbatim interview pains into high-retention top-of-funnel content:
+                            </p>
+                            <ul class="emoji-list" style="font-size: 0.85rem; color: var(--text-secondary); padding-left: 1.25rem;">
+                                <li><span class="emoji">🎬</span><strong>Reverse Response Marketing (<a href="../growth/marketing-tactics.html" style="color: var(--color-primary);">aug-video-animation-2</a>):</strong> Interview quotes (e.g. Baran G's manual Excel overload, Charles's exam postponement) become the exact counter-intuitive hooks for animated YouTube shorts and LinkedIn authority posts.</li>
+                                <li><span class="emoji">💡</span><strong>Audience Co-Creation (<a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>):</strong> Marketing headlines address real, unprompted practitioner frustrations (time scarcity, release fatigue) rather than abstract academic theory.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #34d399; margin-bottom: 0.5rem; font-size: 1rem;">2. 🔄 $0-CAC Organic Channel Conversion</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                Transforms qualitative interview sessions directly into active community advocates and cohort participants:
+                            </p>
+                            <ul class="emoji-list" style="font-size: 0.85rem; color: var(--text-secondary); padding-left: 1.25rem;">
+                                <li><span class="emoji">🤝</span><strong>Ethical Reciprocity Onboarding:</strong> Candidates completing discovery calls receive 1-month complimentary passes to Delivery Pilot Skool, seeding our first 10 true regulars (<a href="../product/skool-10-true-regulars.html" style="color: var(--color-primary);">H8</a>).</li>
+                                <li><span class="emoji">🚪</span><strong>Freemium Preview Ramp:</strong> Converts interviewees smoothly into Sunday 9pm Live Screen-Shares via the Peek ($0) / Sit In ($1) / Share Screen ($250/yr) ladder (<a href="../product/skool-delivery-pilot-offer.html" style="color: var(--color-primary);">H5</a>).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #fbbf24; margin-bottom: 0.5rem; font-size: 1rem;">3. 📦 Product &amp; Offer Market-Fit Calibration</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                Directly shapes curriculum and toolchains to reflect what enterprise practitioners actually pay for:
+                            </p>
+                            <ul class="emoji-list" style="font-size: 0.85rem; color: var(--text-secondary); padding-left: 1.25rem;">
+                                <li><span class="emoji">🛠️</span><strong>Immediate Tactical Builds:</strong> Features demanded tools (Obsidian Second Brain, agentic Excel-to-Chart pipelines, Cloudflare Zero Trust staging) directly into Sunday's live screen-share agenda.</li>
+                                <li><span class="emoji">💼</span><strong>Forward Deployed Engineer (FDE) Roadmap (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>):</strong> Bridges vendor certification into £600–£1,000+/day contractor placement and enterprise tender bidding alliances.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #f87171; margin-bottom: 0.5rem; font-size: 1rem;">4. 🛡️ Paid Ad Capital Protection (<a href="../hypotheses/hyp-h16.html" style="color: var(--color-primary);">H16</a>)</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                Acts as the empirical quality gate preventing premature marketing burn:
+                            </p>
+                            <ul class="emoji-list" style="font-size: 0.85rem; color: var(--text-secondary); padding-left: 1.25rem;">
+                                <li><span class="emoji">🚫</span><strong>Zero Premature Ad Spend:</strong> Prohibits paid ads until 2 consecutive cohorts sell out organically ($10,000 cumulative revenue gate on <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>).</li>
+                                <li><span class="emoji">📊</span><strong>Confidence Score Validation:</strong> Every interview incrementally verifies core hypotheses, advancing our <a href="../dashboard/confidence-report.html" style="color: var(--color-primary);">Business Model Confidence Score</a> toward 100/100.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Saved Interview Summaries / Archive -->
-        <section class="content-section animate-fade-in" style="margin-top: 2rem;">
+        <section class="content-section animate-fade-in">
             <h3 style="font-family: var(--font-heading); margin-bottom: 1rem; font-weight: 700;">📂 Archived Transcripts &amp; Cohort Deep-Dives</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-primary);">
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">👤 Baran G Discovery Interview</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                            Practitioner discovery: Tabular data automation via AI agents, severe time pressure across life priorities, and regaining time with presentable outputs (H24, H17, H30).
+                        </p>
+                    </div>
+                    <a href="../../markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; align-self: flex-start; margin-top: 0.5rem;">View Analysis Report &rarr;</a>
+                </div>
                 <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-primary);">
                     <div>
                         <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">🎙️ AI Cohort Session 8 Simulation Deep-Dive</h4>
@@ -255,10 +451,10 @@
                     <div>
                         <h4 style="margin: 0 0 0.5rem; color: var(--color-info);">📂 Discovery Interview Transcripts Archive</h4>
                         <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
-                            Qualitative interview transcripts and notes from candidate sessions: Sude, Bora, Mehmet, Charles, and live cohort attendee feedback.
+                            Qualitative interview transcripts and notes from candidate sessions: Baran G, Sude, Bora, Mehmet, Charles, and live cohort attendee feedback.
                         </p>
                     </div>
-                    <a href="archived-interview-transcripts.html" class="btn btn-secondary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; align-self: flex-start; margin-top: 0.5rem;">View Transcripts &rarr;</a>
+                    <a href="archived-interview-transcripts.html" class="btn btn-secondary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; align-self: flex-start; margin-top: 0.5rem;">View All Transcripts &rarr;</a>
                 </div>
             </div>
         </section>
@@ -271,7 +467,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Added AI Cohort Session 8 deep-dive analysis linkage and updated customer discovery attendee records (2026-08-17) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Added comprehensive Go-To-Market (GTM / GTML) Strategy Alignment section connecting qualitative discovery to YouTube/LinkedIn content, $0-CAC Skool freemium conversion, and FDE roadmap (2026-08-18) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </div>
     </footer>
@@ -280,143 +476,64 @@
     <script src="../../main.js"></script>
     
     <script>
-        // Default seed data for Outreach Tracker
-        var defaultContacts = [
-            { id: 1, name: "Sarah Chen", channel: "Teams", ref: "Referred by Alex (Lead Dev)", status: "Completed" },
-            { id: 2, name: "Marcus Brody", channel: "F2F", ref: "Triton Square intercept", status: "Contacted" },
-            { id: 3, name: "Emma Watson", channel: "X", ref: "Tech Twitter Spaces", status: "Thanked" },
-            { id: 4, name: "Brian", channel: "Face-to-Face", ref: "Sunday Cohort (3rd time attendee)", status: "Completed" },
-            { id: 5, name: "Charles", channel: "Interview", ref: "Discovery Follow-up (2026-08-16): Postponing Claude Developer exam due to terrible/non-existent official prep, release rollbacks, and lack of hours in day; earlier passed Associate 917/1000 after 2 wks (2026-08-10)", status: "Completed" },
-            { id: 6, name: "Speaker 2", channel: "Interview", ref: "Discovery Interview (2026-08-10)", status: "Completed" },
-            { id: 7, name: "Sude", channel: "Live Cohort", ref: "Discovery Interview & Cohort Session 8 — Cloudflare Workers staging app with Zero Trust, Obsidian concept auto-sorting & daily reminders", status: "Completed" },
-            { id: 8, name: "Bora", channel: "Live Cohort", ref: "Discovery Feedback & Cohort Session 8 — Polymarket/Kalshi latency arbitrage bot (100ms delta), 24/7 Hermes agent on Ireland VPS via Telegram", status: "Completed" },
-            { id: 9, name: "Marianna", channel: "Live Cohort", ref: "Discovery & Cohort Session 8 — Longevity science paper ingestion pipeline, automated email CRM contact extraction", status: "Completed" },
-            { id: 10, name: "Cohort Attendee", channel: "Live Cohort", ref: "Discovery Feedback 2026-08-17 — multi-topic session broadened perspective, accelerated learning pace vs previous sessions", status: "Completed" }
-        ];
-
-        function getContacts() {
-            var raw = localStorage.getItem('outreach_contacts');
-            if (!raw) {
-                localStorage.setItem('outreach_contacts', JSON.stringify(defaultContacts));
-                return defaultContacts;
+        // Multi-select hypothesis helpers
+        function updateHypSelection(checkbox) {
+            var parent = checkbox.closest('.hyp-item');
+            if (checkbox.checked) {
+                parent.classList.add('selected');
+            } else {
+                parent.classList.remove('selected');
             }
-            try {
-                return JSON.parse(raw);
-            } catch (e) {
-                return defaultContacts;
+            updateHypothesisSelectionCount();
+        }
+
+        function updateHypothesisSelectionCount() {
+            var checked = document.querySelectorAll('input[name="hypothesis"]:checked');
+            var countEl = document.getElementById('selected-hyp-count');
+            if (checked.length === 0) {
+                countEl.textContent = 'None';
+                countEl.style.color = 'var(--text-muted)';
+            } else {
+                var ids = Array.from(checked).map(function(c) { return c.value; });
+                countEl.textContent = ids.join(', ') + ' (' + checked.length + ')';
+                countEl.style.color = 'var(--color-primary)';
             }
         }
 
-        function saveContacts(contacts) {
-            localStorage.setItem('outreach_contacts', JSON.stringify(contacts));
-        }
-
-        function renderTracker() {
-            var contacts = getContacts();
-            var tbody = document.getElementById('tracker-body');
-            if (!tbody) return;
-            
-            var html = '';
-            contacts.forEach(function(contact) {
-                var badgeClass = 'status-todo';
-                if (contact.status === 'Contacted') badgeClass = 'status-contacted';
-                else if (contact.status === 'Scheduled') badgeClass = 'status-scheduled';
-                else if (contact.status === 'Completed') badgeClass = 'status-completed';
-                else if (contact.status === 'Thanked') badgeClass = 'status-thanked';
-
-                html += '<tr>' +
-                    '  <td style="font-weight: 500; color: var(--text-primary);">' + contact.name + '</td>' +
-                    '  <td>' + contact.channel + '</td>' +
-                    '  <td style="color: var(--text-secondary);">' + contact.ref + '</td>' +
-                    '  <td>' +
-                    '    <select class="status-select" onchange="updateContactStatus(' + contact.id + ', this.value)">' +
-                    '      <option value="TODO" ' + (contact.status === 'TODO' ? 'selected' : '') + '>TODO</option>' +
-                    '      <option value="Contacted" ' + (contact.status === 'Contacted' ? 'selected' : '') + '>Contacted</option>' +
-                    '      <option value="Scheduled" ' + (contact.status === 'Scheduled' ? 'selected' : '') + '>Scheduled</option>' +
-                    '      <option value="Completed" ' + (contact.status === 'Completed' ? 'selected' : '') + '>Completed</option>' +
-                    '      <option value="Thanked" ' + (contact.status === 'Thanked' ? 'selected' : '') + '>Thanked</option>' +
-                    '    </select>' +
-                    '  </td>' +
-                    '  <td>' +
-                    '    <div style="display: flex; gap: 0.25rem;">' +
-                    '      <button class="status-badge ' + badgeClass + '" style="border:none; cursor:default; font-size:0.7rem;">' + contact.status + '</button>' +
-                    '      <button onclick="thankContact(' + contact.id + ')" class="btn btn-secondary" style="padding:0.15rem 0.4rem; font-size:0.75rem;" title="Copy Thank You template">💬 Thank</button>' +
-                    '      <button onclick="deleteContact(' + contact.id + ')" class="btn btn-danger" style="padding:0.15rem 0.4rem; font-size:0.75rem;" title="Delete contact">🗑️</button>' +
-                    '    </div>' +
-                    '  </td>' +
-                    '</tr>';
-            });
-            
-            tbody.innerHTML = html || '<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No contacts tracked. Add one above!</td></tr>';
-        }
-
-        function updateContactStatus(id, newStatus) {
-            var contacts = getContacts();
-            contacts.forEach(function(c) {
-                if (c.id === id) {
-                    c.status = newStatus;
+        function selectAllHypotheses(select) {
+            var checkboxes = document.querySelectorAll('input[name="hypothesis"]');
+            checkboxes.forEach(function(cb) {
+                // Only toggle if parent container is currently visible in filter
+                var parent = cb.closest('.hyp-item');
+                if (parent.style.display !== 'none') {
+                    cb.checked = select;
+                    if (select) {
+                        parent.classList.add('selected');
+                    } else {
+                        parent.classList.remove('selected');
+                    }
                 }
             });
-            saveContacts(contacts);
-            renderTracker();
+            updateHypothesisSelectionCount();
         }
 
-        function addNewContact() {
-            var nameInput = document.getElementById('add-contact-name');
-            var refInput = document.getElementById('add-contact-ref');
-            var channelInput = document.getElementById('add-contact-channel');
-            
-            if (!nameInput.value.trim() || !refInput.value.trim()) {
-                alert('Please provide name and referral source.');
-                return;
-            }
-            
-            var contacts = getContacts();
-            var newContact = {
-                id: Date.now(),
-                name: nameInput.value.trim(),
-                channel: channelInput.value,
-                ref: refInput.value.trim(),
-                status: 'TODO'
-            };
-            
-            contacts.push(newContact);
-            saveContacts(contacts);
-            renderTracker();
-            
-            nameInput.value = '';
-            refInput.value = '';
-        }
-
-        function deleteContact(id) {
-            if (confirm('Delete this contact?')) {
-                var contacts = getContacts();
-                var filtered = contacts.filter(function(c) {
-                    return c.id !== id;
-                });
-                saveContacts(filtered);
-                renderTracker();
-            }
-        }
-
-        function thankContact(id) {
-            var contacts = getContacts();
-            var contact = contacts.find(function(c) { return c.id === id; });
-            if (!contact) return;
-            
-            var msg = "";
-            if (contact.channel === 'X') {
-                msg = "Hey " + contact.name + ", thanks for chatting about certification study pains today! Super helpful to hear how you parse dry cloud diagrams. Let me know if I can help you with anything in return! Cheers.";
-            } else {
-                msg = "Hi " + contact.name + ", thank you so much for taking the time to share your study story with me today! Your workaround feedback is incredibly helpful for my research. If you think of anyone else facing certification prep stress, I would appreciate a referral! Let's stay in touch. Thanks.";
-            }
-            
-            navigator.clipboard.writeText(msg).then(function() {
-                alert('Copied Thank You message for ' + contact.name + ' to clipboard!');
-                updateContactStatus(id, 'Thanked');
-            }).catch(function(err) {
-                alert('Error copying message: ' + err);
+        function filterHypotheses(query) {
+            var q = (query || '').toLowerCase().trim();
+            var items = document.querySelectorAll('.hyp-item');
+            var matched = 0;
+            items.forEach(function(item) {
+                var text = item.textContent.toLowerCase();
+                if (!q || text.indexOf(q) !== -1) {
+                    item.style.display = 'flex';
+                    matched++;
+                } else {
+                    item.style.display = 'none';
+                }
             });
+            var matchEl = document.getElementById('hyp-match-count');
+            if (matchEl) {
+                matchEl.textContent = 'Showing ' + matched + ' of ' + items.length + ' hypotheses';
+            }
         }
 
         // Shared Cookie notes integration
@@ -444,26 +561,45 @@
         function saveInterview(event) {
             event.preventDefault();
             
-            var name = document.getElementById('int-name').value;
+            var name = document.getElementById('int-name').value.trim();
             var channel = document.getElementById('int-channel').value;
-            var referral = document.getElementById('int-referral').value;
-            var routine = document.getElementById('int-routine').value;
-            var workaround = document.getElementById('int-workaround').value;
-            var stories = document.getElementById('int-stories').value;
-            var pains = document.getElementById('int-pains').value;
-            var gains = document.getElementById('int-gains').value;
+            var referral = document.getElementById('int-referral').value.trim();
+            var routine = document.getElementById('int-routine').value.trim();
+            var workaround = document.getElementById('int-workaround').value.trim();
+            var stories = document.getElementById('int-stories').value.trim();
+            var pains = document.getElementById('int-pains').value.trim();
+            var gains = document.getElementById('int-gains').value.trim();
 
-            // Formulate note representation
+            // Collect selected hypotheses
+            var selectedHypElements = document.querySelectorAll('input[name="hypothesis"]:checked');
+            var selectedHypList = Array.from(selectedHypElements).map(function(cb) {
+                return cb.value;
+            });
+            var hypText = selectedHypList.length > 0 ? selectedHypList.join(', ') : 'None mapped';
+
+            var now = new Date();
+            var dateString = now.toLocaleString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            var dateIso = now.toISOString().split('T')[0];
+
+            // 1. Formulate note text representation for cookie / widget
             var noteText = 
-                "Customer Interview Record:\n" +
-                "- Channel: " + channel + " (Referral: " + referral + ")\n" +
+                "Customer Interview Record: " + name + "\n" +
+                "- Date: " + dateString + "\n" +
+                "- Channel: " + channel + " (Referral: " + (referral || 'Direct/Self') + ")\n" +
+                "- Related Hypotheses: " + hypText + "\n" +
                 "- Routine: " + routine + "\n" +
                 "- Workaround: " + workaround + "\n" +
                 "- Stories: " + stories + "\n" +
                 "- Pains: " + pains + "\n" +
                 "- Gains: " + gains;
             
-            // Read site_notes cookie
+            // 2. Read & update site_notes cookie
             var siteNotesRaw = getCookie('site_notes');
             var notes = [];
             if (siteNotesRaw) {
@@ -472,19 +608,10 @@
                 } catch(e) {}
             }
             
-            var now = new Date();
-            var dateString = now.toLocaleString('en-US', { 
-                month: 'short', 
-                day: 'numeric', 
-                year: 'numeric',
-                hour: '2-digit', 
-                minute: '2-digit' 
-            });
-
             var newNote = {
                 id: Date.now(),
                 pageUrl: 'cd-interview-recording.html',
-                pageTitle: 'Interview: ' + name,
+                pageTitle: 'Interview: ' + name + (selectedHypList.length > 0 ? ' (' + selectedHypList.slice(0, 3).join(', ') + ')' : ''),
                 text: noteText,
                 date: dateString
             };
@@ -492,20 +619,47 @@
             notes.push(newNote);
             setCookie('site_notes', JSON.stringify(notes), 365);
 
-            // Trigger visual alert
+            // 3. Trigger Markdown file download
+            var markdownContent = "# Customer Discovery Interview: " + name + "\n\n" +
+                "- **Date Logged:** " + dateString + "\n" +
+                "- **Candidate Name:** " + name + "\n" +
+                "- **Channel / Location:** " + channel + "\n" +
+                "- **Referral / Source:** " + (referral || 'Direct/Self') + "\n" +
+                "- **Related Hypotheses:** " + hypText + "\n\n" +
+                "## 1. Day-In / Day-Out (Study Routine & Habits)\n" + routine + "\n\n" +
+                "## 2. Current Workarounds (Solving Today)\n" + workaround + "\n\n" +
+                "## 3. Past Actions & Stories\n" + stories + "\n\n" +
+                "## 4. Key Pains Identified\n" + pains + "\n\n" +
+                "## 5. Key Gains Identified\n" + gains + "\n\n" +
+                "---\n" +
+                "*Generated by AI Certification Helper — Customer Discovery Workspace*\n";
+
+            var blob = new Blob([markdownContent], { type: 'text/markdown;charset=utf-8;' });
+            var url = URL.createObjectURL(blob);
+            var downloadAnchor = document.createElement('a');
+            var sanitizedName = name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            var filename = "interview_" + (sanitizedName || "candidate") + "_" + dateIso + ".md";
+            downloadAnchor.href = url;
+            downloadAnchor.download = filename;
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            document.body.removeChild(downloadAnchor);
+            URL.revokeObjectURL(url);
+
+            // 4. Trigger visual alert
             var alertBox = document.getElementById('save-success-alert');
             if (alertBox) {
+                alertBox.innerHTML = '<strong>✅ Interview Saved &amp; Downloaded!</strong> Record added to cookie notes and downloaded as <code>' + filename + '</code>.';
                 alertBox.style.display = 'block';
                 setTimeout(function() {
                     alertBox.style.display = 'none';
-                }, 5000);
+                }, 6000);
             }
 
-            // Trigger parent badge updates in navigation if globally accessible
+            // 5. Trigger parent badge updates in navigation if globally accessible
             if (window.renderNotes) {
                 window.renderNotes();
             } else {
-                // If direct global reload is not mapped, check if nav-notes-badge element is accessible
                 var badgeEl = document.getElementById('nav-notes-badge');
                 if (badgeEl) {
                     var rawNotes = getCookie('site_notes');
@@ -524,30 +678,10 @@
                 }
             }
 
-            // Add candidate to tracker if not already there
-            var contacts = getContacts();
-            var exists = contacts.some(function(c) { 
-                return c.name.toLowerCase() === name.toLowerCase(); 
-            });
-            
-            if (!exists) {
-                var newContact = {
-                    id: Date.now() + 1,
-                    name: name,
-                    channel: channel === 'Face-to-Face' ? 'F2F' : (channel === 'Meetup' ? 'F2F' : channel),
-                    ref: referral,
-                    status: 'Completed'
-                };
-                contacts.push(newContact);
-                saveContacts(contacts);
-                renderTracker();
-            }
-
+            // Reset form and hypothesis selections
             document.getElementById('interview-form').reset();
+            selectAllHypotheses(false);
         }
-
-        // Init page
-        renderTracker();
     </script>
 </body>
 </html>

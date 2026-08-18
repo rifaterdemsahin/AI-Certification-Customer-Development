@@ -1,10 +1,8 @@
 # Certification Market Size & Student Exam-Prep Behavior
 
-> **Superseded by [v1.7.0](exam-prep-market-and-student-behavior-v1.7.0.md) (2026-08-17)**: Incorporates Bora's Session 8 follow-up discovery feedback on session stacking cognitive fatigue, holiday/noise constraints, boat cruise travel, and mid-week async course binge study.
-
-**Version:** 1.6.0
-**Date:** 2026-08-14
-**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version adds Mehmet's discovery feedback: immigrant talent is poorly vetted, the old hiring check is no longer valid, and proctored certifications rise in value for institutional and government MSP hires.
+**Version:** 1.7.0
+**Date:** 2026-08-17
+**Purpose:** Document the size of the certification/exam-prep market, how students actually prepare for proctored certification exams, and the role employer payment plays in student behavior. This version adds Bora's post-Session 8 discovery feedback: cognitive load and fatigue from stacking pre-requisite video watching immediately prior to live cohorts, vacation/travel constraints (resort noise and boat cruise), high retention/intent to return, and mid-week self-directed async binge study.
 
 ---
 
@@ -49,6 +47,7 @@ Key behavioral facts about how candidates prepare, and why:
 5. **Background Automation & Graph taxonomy is a highly-valued product direction.** Bora's feedback demonstrates that manual note curation and folder organization in Obsidian are high-friction tasks that cause users to abandon Second Brain upkeep. A successful solution must focus on continuous background ingestion (e.g., via MCP server sync) similar to vibe-coding/GitHub flows.
 6. **Minimize Context Window bloat via Multi-Source Hybrid Retrieval.** To address Bora's concern that an MCP server pulling logs into Obsidian will consume excessive context window capacity during chats, the system architecture must route queries through a multi-tier database stack (FTS, Graph relationships, files/structure, vector search, caching) rather than naive, full-vault uploads.
 7. **Institutional hiring is where proctored certs gain value.** Mehmet's 2026-08-14 feedback: people — especially immigrant workers — are not vetted well. The old talent check (CV, years of experience, “wants to immigrate”) is no longer valid. Governments employing MSPs should staff certified people rather than a workforce selected only by immigration intent, if they want the best talent. That is H12 / H25 qualitative demand, not a paid enrollment.
+8. **Pre-release technical prep materials 48–72 hours prior to live cohorts.** Bora's 2026-08-17 feedback shows that watching architectural video recordings immediately before attending a 2+ hour live interactive session causes cognitive fatigue. Stacking video prep on the day of the live session increases burnout risk; distributing materials mid-week accommodates busy practitioner schedules and vacation constraints while supporting self-directed binge learning (H8, H5).
 
 ---
 
@@ -109,6 +108,13 @@ This section summarizes qualitative findings from on-the-record discovery interv
 * **Governments employing MSPs should require certified people:** When a government hires a managed service provider, it should staff certified practitioners rather than a workforce selected only because they want to immigrate. The stated goal is to attract the best talent, not the most mobile workforce.
 * **Takeaway:** This is qualitative buyer-side demand for **H12** (government / MSP / institutional channel) and **H25** (proctored judgement-verifying certs rise as a screen). It also supports **H1** Premise 2 (certs as filters, not proof of genius). One named voice. Not a paid enrollment. Not a government policy citation. Full card: `5_Symbols/cd/archived-interview-transcripts.html`.
 
+### F. Stacked Session Cognitive Load, Vacation Constraints, and Mid-Week Async Binge Commitment (Bora)
+* **Session Stacking Induced Fatigue (2026-08-17):** Bora reported that watching dense architectural recordings (Second Brain setup) immediately prior to attending a 2+ hour interactive live cohort workout (Session 8) resulted in significant cognitive fatigue.
+* **Environmental & Vacation Constraints:** Real-life environment friction (loud music from resort hotels until midnight; upcoming blue cruise boat tour) disrupts immediate follow-up computer work, yet does not diminish learning motivation.
+* **High Intent to Return Despite Friction:** Bora explicitly stated intent to join the upcoming Sunday cohort session if boat internet connectivity is available, confirming strong community stickiness and high retention drive (H5, H8, H20).
+* **Asynchronous Mid-Week Binge Study:** Bora committed to an aggressive asynchronous study schedule between live sessions: watching all past Cohort session replays in the Skool archive and advancing as far as possible through the Claude official courses.
+* **Takeaway:** Pre-requisite prep recordings should be distributed 48–72 hours in advance rather than encouraging same-day binge viewing prior to live interactive workouts. The combination of live problem-solving workouts + full async recording archives creates strong self-reinforcing study loops for committed builders (supports H5, H8, H20, H26, H29). Full card: `5_Symbols/cd/archived-interview-transcripts.html`.
+
 ---
 
 ## Sources
@@ -134,11 +140,13 @@ This section summarizes qualitative findings from on-the-record discovery interv
 - **Primary Source 3 (2026-08-11):** Customer Discovery Interview with Tuncer, Senior IT Professional.
 - **Primary Source 4 (2026-08-14):** Customer Discovery Feedback with Bora on Obsidian background automation, taxonomy, and context window limitations.
 - **Primary Source 5 (2026-08-14):** Customer Discovery Feedback with Mehmet on immigrant vetting, the failure of old talent checks, proctored-exam value in institutional hires, and government MSP staffing.
+- **Primary Source 6 (2026-08-17):** Customer Discovery Feedback with Bora post-Session 8 on stacked session cognitive fatigue, vacation/noise constraints, blue cruise travel, intent to join next Sunday, and mid-week async course binge plan.
 
 ---
 
 ## Change Log
 
+- **v1.7.0** (2026-08-17): Incorporated Bora's Session 8 follow-up discovery feedback: cognitive load and fatigue from stacking pre-requisite video watching immediately prior to live cohorts, vacation/travel constraints (resort noise and boat cruise), high retention/intent to return, and mid-week self-directed async binge study. Supports H5, H8, H20, H26, H29. Full card: `5_Symbols/cd/archived-interview-transcripts.html`.
 - **v1.6.0** (2026-08-14): Incorporated Mehmet's discovery feedback: immigrant talent is poorly vetted; the old hiring check is no longer valid; proctored certifications rise in value for institutional hires; governments employing MSPs should use certified people to attract the best talent. Supports H1, H12, H25. Full card: `5_Symbols/cd/archived-interview-transcripts.html`.
 - **v1.5.0** (2026-08-14): Incorporated qualitative customer discovery feedback from Bora and architectural stack requirements on Obsidian background automation, taxonomy structure, and context window mitigation.
 - **v1.4.0** (2026-08-12): Added Sude's 2026-08-12 WhatsApp follow-up: working staging + Concepts vault trained from one chat history; planned pinned-chat automation; daily reminder of confused sections / architectures to focus on. PARA/Cloudflare friction did not block first activation. Full thread archived at `5_Symbols/cd/archived-interview-transcripts.html`.

@@ -194,13 +194,13 @@
                     <div class="step-card">
                         <div style="display: flex; align-items: center; gap: 0.75rem;">
                             <span class="step-number">4</span>
-                            <h3 style="font-size: 1.15rem; margin: 0; color: #e2e8f0;">Admin Switches Member Tier</h3>
+                            <h3 style="font-size: 1.15rem; margin: 0; color: #e2e8f0;">Admin Switches Member Tier &amp; Collects Tool Feedback</h3>
                         </div>
                         <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-                            Go to <strong>Settings &rarr; Members</strong>, locate the user, click their options menu (or open their profile card), and select their assigned tier: <strong>Premium (Sit In)</strong> or <strong>VIP (Share Screen)</strong>.
+                            Go to <a href="https://www.skool.com/delivery-pilot-8938/-/members" target="_blank" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Skool Member Management (delivery-pilot-8938/-/members)</a>, locate the user, click their profile card/tier switcher, and select their tier: <strong>Premium (Sit In)</strong> or <strong>VIP (Share Screen)</strong>.
                         </p>
                         <div style="background: rgba(0,0,0,0.25); padding: 0.75rem; border-radius: 8px; font-size: 0.82rem; color: #10b981; border: 1px dashed rgba(16,185,129,0.3);">
-                            ✅ <strong>Zero Billing:</strong> Member receives full tier entitlements without any billing charges.
+                            📍 <strong>Direct URL:</strong> <code>https://www.skool.com/delivery-pilot-8938/-/members</code> &middot; Zero billing charges triggered.
                         </div>
                     </div>
                 </div>
@@ -257,6 +257,192 @@
                             Corporate engineering teams that pay via bank wire or corporate procurement purchase orders can be immediately granted full VIP cohort seating manually, avoiding individual credit card expense approvals.
                         </p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Profile Diagnostic & Course Progress Inspection -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Member Profile Diagnostic &amp; Course Progress Architecture</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.25rem;">
+                    When clicking any member on <a href="https://www.skool.com/delivery-pilot-8938/-/members" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">delivery-pilot-8938/-/members</a>, the admin profile modal exposes 5 operational tabs: <strong>Membership settings</strong>, <strong>Membership</strong>, <strong>Courses</strong>, <strong>Payments</strong>, and <strong>Questions</strong>. The <em>Courses</em> tab provides real-time progress percentages and unlock criteria across the entire curriculum.
+                </p>
+
+                <!-- Profile Inspection Mockup & Empirical Data -->
+                <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem; margin-bottom: 1rem;">
+                        <div>
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #f8fafc;">👤 Sude Ünal</span>
+                            <span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399; margin-left: 0.5rem;">Active Founding Regular</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; font-size: 0.82rem;">
+                            <span style="background: rgba(255,255,255,0.05); padding: 0.25rem 0.6rem; border-radius: 6px; color: var(--text-muted);">Membership</span>
+                            <span style="background: var(--color-primary); color: #fff; padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 600;">Courses</span>
+                            <span style="background: rgba(255,255,255,0.05); padding: 0.25rem 0.6rem; border-radius: 6px; color: var(--text-muted);">Payments</span>
+                            <span style="background: rgba(255,255,255,0.05); padding: 0.25rem 0.6rem; border-radius: 6px; color: var(--text-muted);">Questions</span>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                        Has access to:
+                    </div>
+
+                    <div class="grid" style="row-gap: 0.75rem;">
+                        <!-- Course 1 -->
+                        <div class="col-12">
+                            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 700; color: #34d399; font-size: 0.95rem;">🎥 Cohorts</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Open: All members have access</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-weight: 700; color: #34d399; font-size: 1.1rem;">77%</span>
+                                    <span style="font-size: 0.78rem; color: #94a3b8; display: block;">progress</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="col-6">
+                            <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 600; color: #e2e8f0; font-size: 0.9rem;">📜 Claude Certified Architect Professional</div>
+                                    <div style="font-size: 0.78rem; color: #f59e0b;">Level unlock: Level 1 members or Premium tier</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-weight: 600; color: var(--text-muted); font-size: 0.95rem;">0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="col-6">
+                            <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 600; color: #e2e8f0; font-size: 0.9rem;">📝 Exam Prep</div>
+                                    <div style="font-size: 0.78rem; color: #f59e0b;">Level unlock: Level 2 members or Premium tier</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-weight: 600; color: var(--text-muted); font-size: 0.95rem;">0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 4 -->
+                        <div class="col-6">
+                            <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 600; color: #e2e8f0; font-size: 0.9rem;">📰 Delivery Pilot News</div>
+                                    <div style="font-size: 0.78rem; color: var(--text-muted);">Open: All members have access</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-weight: 600; color: var(--text-muted); font-size: 0.95rem;">0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 5 -->
+                        <div class="col-6">
+                            <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 600; color: #e2e8f0; font-size: 0.9rem;">💼 Become a Delivery Pilot</div>
+                                    <div style="font-size: 0.78rem; color: #a855f7;">Time unlock: Day 90 or VIP tier</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-weight: 600; color: var(--text-muted); font-size: 0.95rem;">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Action Bar -->
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.85rem; color: #94a3b8; font-weight: 600;">⚡ Admin Action:</span>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">Give access to:</span>
+                            <span style="background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600;">+ Select Course / Tier Access</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proactive Assistance Protocol -->
+                <div style="background: rgba(99, 102, 241, 0.08); border-left: 4px solid #6366f1; border-radius: 8px; padding: 1.25rem;">
+                    <h3 style="color: #c7d2fe; font-size: 1.05rem; margin-top: 0; margin-bottom: 0.5rem;">🎯 The "Check &amp; Help" Proactive Assistance Loop</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                        Reviewing student progress is a high-priority <strong>recurring operational task</strong>. When a student demonstrates high engagement (e.g. Sude's <strong>77% Cohorts progress</strong>), the founder takes two immediate actions:
+                    </p>
+                    <ol style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin: 0; padding-left: 1.25rem;">
+                        <li><strong>Proactive 1-on-1 Help Check-in:</strong> Send a direct message asking about their setup experience, where they experienced cognitive load, and if they need assistance connecting their Obsidian vault or Claude CLI.</li>
+                        <li><strong>Proactive Course Access Grant:</strong> Use the <code>Give access to:</code> button to manually grant access to next-stage modules (such as <em>Claude Certified Architect Professional</em> or <em>Exam Prep</em>) without forcing arbitrary gamification blockers for highly motivated learners.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Tier Management as a Tool Feedback & Continuous Customer Discovery Loop -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔬 Tier Management as a Tool Feedback &amp; Continuous Customer Discovery Loop</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.25rem;">
+                    In Steve Blank Customer Development, every admin touchpoint is an opportunity to listen rather than broadcast (<a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>). When the founder accesses <a href="https://www.skool.com/delivery-pilot-8938/-/members" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Skool Member Management (delivery-pilot-8938/-/members)</a> to adjust student tiers (Standard $0 &rarr; Premium $1/mo &rarr; VIP $250/yr), this action is leveraged as an <strong>active customer discovery mechanism</strong> to collect qualitative feedback on the technical tools and resources provided.
+                </p>
+
+                <div class="grid" style="margin-top: 1.5rem;">
+                    <div class="col-6">
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #60a5fa; margin: 0 0 0.5rem; font-size: 1.05rem;">🧠 1. Second Brain / Obsidian AI Vaults</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                <strong>Tools Provided:</strong> Staging + Concepts PARA folder hierarchy, chat history markdown clippers, and 3-day review confusion reminders.
+                            </p>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.82rem; color: #cbd5e1; border-left: 3px solid #60a5fa;">
+                                💬 <em>"Did the staging-to-concepts folder setup click for your daily workflow, or did syncing chat history feel manual?"</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #a78bfa; margin: 0 0 0.5rem; font-size: 1.05rem;">⚡ 2. Claude Code CLI &amp; Automation</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                <strong>Tools Provided:</strong> Terminal orchestration scripts, prompt caching optimization, subagent hooks, and MCP servers.
+                            </p>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.82rem; color: #cbd5e1; border-left: 3px solid #a78bfa;">
+                                💬 <em>"How did the CLI token caching perform in your environment? Did you run into permissions or terminal friction?"</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6" style="margin-top: 1rem;">
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #34d399; margin: 0 0 0.5rem; font-size: 1.05rem;">📊 3. Vector &amp; Graph DB Blueprints</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                <strong>Tools Provided:</strong> Local Qdrant vector retrieval, Neo4j knowledge graph queries, and Cloudflare Zero Trust workers.
+                            </p>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.82rem; color: #cbd5e1; border-left: 3px solid #34d399;">
+                                💬 <em>"Were you able to connect your local vector store, or did Docker networking / chunking parameters need more guidance?"</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6" style="margin-top: 1rem;">
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1.25rem; height: 100%;">
+                            <h4 style="color: #f59e0b; margin: 0 0 0.5rem; font-size: 1.05rem;">🎯 4. Practice Exam Banks &amp; Contractor Roadmaps</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem;">
+                                <strong>Tools Provided:</strong> Scenario-based Pearson VUE question banks (<a href="../strategy/practice-exams-gap.html" style="color: var(--color-primary);">H27</a>) and £500–£1,000/day contractor RFP tender blueprints (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).
+                            </p>
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.82rem; color: #cbd5e1; border-left: 3px solid #f59e0b;">
+                                💬 <em>"Did the scenario practice questions match the complexity of real proctored exam domains?"</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 8px; padding: 1rem 1.25rem;">
+                    <strong style="color: #c7d2fe; font-size: 0.95rem;">🔄 The Continuous Feedback Loop:</strong>
+                    <span style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; display: block; margin-top: 0.25rem;">
+                        1. Founder updates student tier on <a href="https://www.skool.com/delivery-pilot-8938/-/members" target="_blank" style="color: var(--color-primary); text-decoration: underline;">https://www.skool.com/delivery-pilot-8938/-/members</a> &rarr; 2. Founder sends high-touch 1-on-1 check-in DM with tool-specific discovery questions &rarr; 3. Qualitative responses are logged in <a href="../cd/cd-interview-recording.html" style="color: var(--color-primary);">CD Interview Recording</a> &rarr; 4. Tool friction points directly shape Sunday's live cohort agenda and Classroom updates.
+                    </span>
                 </div>
             </div>
         </section>
@@ -346,7 +532,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Created Skool Manual Member Invites &amp; Tier Assignment guide documenting email invitations, complimentary tier switching, and Stage 2 onboarding guardrails (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-manual-member-invites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-manual-member-invites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Added Member Profile Diagnostic (Membership, Courses, Payments, Questions), Sude's 77% Cohort Progress Empirical Case, and Proactive Student Assistance Protocol (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-manual-member-invites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-manual-member-invites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </div>
     </footer>
