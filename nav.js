@@ -27,6 +27,7 @@
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
+                ['5_Symbols/cd/cd-interview-recording.html', '📝 Discovery Interview Recorder'],
                 ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing'],
                 ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
                 ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style'],
