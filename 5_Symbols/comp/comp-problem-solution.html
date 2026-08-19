@@ -15,7 +15,7 @@
             &larr; Back to Stage 1 (Customer Discovery)
         </a>
 
-        <!-- Component Spec -->
+        <!-- Component Spec Hero -->
         <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
             <span class="badge">Component Specification</span>
             <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">Problem-Solution Fit Spec</h1>
@@ -32,54 +32,211 @@
                         </li>
                         <li class="info-item">
                             <span class="info-label">Core Hypothesis:</span>
-                            <span class="info-value">Changing economies increase certification expectations</span>
+                            <span class="info-value"><a href="../strategy/raise.html" style="color: inherit; text-decoration: underline;">R.A.I.S.E.</a> &mdash; Rapid AI Increases Skills Expectations</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul class="info-list">
                         <li class="info-item">
-                            <span class="info-label">Owner:</span>
-                            <span class="info-value">Rifat Erdem Sahin</span>
+                            <span class="info-label">Owner & Track Record:</span>
+                            <span class="info-value">Rifat Erdem Sahin ($1.3M+ Enterprise Contractor, Pexabo Ltd)</span>
                         </li>
                         <li class="info-item">
-                            <span class="info-label">Metric for Fit:</span>
-                            <span class="info-value">Watch duration, comment quality & sign-ups</span>
+                            <span class="info-label">Fit Metric:</span>
+                            <span class="info-value">&gt;40% Watch Retention &amp; Problem Expressed Leads</span>
                         </li>
                         <li class="info-item">
                             <span class="info-label">Current Status:</span>
-                            <span class="info-value" style="color: var(--color-warning);">Hypothesized</span>
+                            <span class="info-value" style="color: var(--color-warning);">🟡 In Testing / Iterating MVP</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Hypotheses Grid -->
+        <!-- Visual High-Level Metrics Strip -->
+        <div class="metrics-grid animate-fade-in" style="margin-bottom: 3rem;">
+            <div class="metric-card">
+                <div class="metric-val" style="background: linear-gradient(135deg, #ef4444, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">500+ Pages</div>
+                <div class="metric-lbl">Legacy Study Friction (PDF manuals)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val" style="background: linear-gradient(135deg, #6366f1, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">&gt;40% Target</div>
+                <div class="metric-lbl">Animated Video Retention Floor</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val" style="background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">4 Courses</div>
+                <div class="metric-lbl">Published Pedigree (Coursera + Udemy)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val" style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">£500–£1k/d</div>
+                <div class="metric-lbl">Target Outcome (FDE / Enterprise Contractor)</div>
+            </div>
+        </div>
+
+        <!-- Visual Problem-Solution Architecture Diagram -->
         <section class="content-section animate-fade-in">
-            <h2 class="section-title">⚖️ The Hypotheses Under Review</h2>
+            <h2 class="section-title">📐 Problem-Solution Transformation Blueprint</h2>
+            <div class="card" style="padding: 2.5rem; text-align: center;">
+                <p style="color: var(--text-secondary); max-width: 850px; margin: 0 auto 2rem; font-size: 0.95rem;">
+                    How <strong>AI Certification Helper</strong> transforms high-friction developer learning into high-retention visual blueprints, validated proctored certifications (Anthropic Claude Architect), and enterprise contractor career readiness.
+                </p>
+
+                <!-- Full Interactive SVG Architecture Diagram -->
+                <div style="width: 100%; overflow-x: auto;">
+                    <svg viewBox="0 0 960 400" style="width: 100%; min-width: 760px; max-width: 960px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Problem-Solution Fit transformation blueprint">
+                        <defs>
+                            <linearGradient id="grad-problem" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#ef4444" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.05"/>
+                            </linearGradient>
+                            <linearGradient id="grad-engine" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2"/>
+                                <stop offset="100%" stop-color="#a855f7" stop-opacity="0.1"/>
+                            </linearGradient>
+                            <linearGradient id="grad-solution" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/>
+                                <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.05"/>
+                            </linearGradient>
+                            <linearGradient id="line-arrow-1" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#f59e0b"/>
+                                <stop offset="100%" stop-color="#6366f1"/>
+                            </linearGradient>
+                            <linearGradient id="line-arrow-2" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#10b981"/>
+                            </linearGradient>
+                            <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="6" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+
+                        <!-- Background Framing Boxes -->
+                        <!-- 1. PROBLEM SPACE -->
+                        <rect x="20" y="30" width="270" height="340" rx="16" fill="url(#grad-problem)" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1.5"/>
+                        <rect x="35" y="45" width="130" height="26" rx="6" fill="rgba(239, 68, 68, 0.25)" stroke="rgba(239, 68, 68, 0.5)" stroke-width="1"/>
+                        <text x="100" y="62" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="700" font-family="Inter, sans-serif">😖 PROBLEM SPACE</text>
+
+                        <!-- Problem Items inside Box -->
+                        <!-- Card 1 -->
+                        <rect x="35" y="85" width="240" height="75" rx="10" fill="#111827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="50" y="107" fill="#ef4444" font-size="16">⚠️</text>
+                        <text x="75" y="106" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Skills Inflation &amp; Anxiety</text>
+                        <text x="75" y="124" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">AI tools shift jobs; enterprise</text>
+                        <text x="75" y="140" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">roles demand agentic architectures.</text>
+
+                        <!-- Card 2 -->
+                        <rect x="35" y="175" width="240" height="75" rx="10" fill="#111827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="50" y="197" fill="#f59e0b" font-size="16">📚</text>
+                        <text x="75" y="196" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Dry 500-Page Study Docs</text>
+                        <text x="75" y="214" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">Monotone 40-hr lectures cause</text>
+                        <text x="75" y="230" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">fatigue &amp; massive drop-off (&lt;10%).</text>
+
+                        <!-- Card 3 -->
+                        <rect x="35" y="265" width="240" height="75" rx="10" fill="#111827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="50" y="287" fill="#ec4899" font-size="16">🔒</text>
+                        <text x="75" y="286" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Lack of Enterprise Signal</text>
+                        <text x="75" y="304" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">Junior portfolios get screened out;</text>
+                        <text x="75" y="320" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">credentials act as trusted hiring gates.</text>
+
+                        <!-- Connector 1 -->
+                        <path d="M 290 200 L 335 200" stroke="url(#line-arrow-1)" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+                        <polygon points="340,200 330,194 330,206" fill="#6366f1"/>
+
+                        <!-- 2. TRANSFORMATION ENGINE (CENTER) -->
+                        <rect x="345" y="20" width="270" height="360" rx="16" fill="url(#grad-engine)" stroke="rgba(99, 102, 241, 0.5)" stroke-width="2"/>
+                        <rect x="360" y="35" width="160" height="26" rx="6" fill="rgba(99, 102, 241, 0.3)" stroke="rgba(99, 102, 241, 0.6)" stroke-width="1"/>
+                        <text x="440" y="52" text-anchor="middle" fill="#c7d2fe" font-size="11" font-weight="700" font-family="Inter, sans-serif">⚡ THE HELPER ENGINE</text>
+
+                        <!-- Engine Features -->
+                        <rect x="360" y="75" width="240" height="85" rx="10" fill="#0f172a" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+                        <text x="375" y="99" fill="#818cf8" font-size="16">🎬</text>
+                        <text x="400" y="98" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Reverse-Marketing Animation</text>
+                        <text x="400" y="116" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif">aug-video-animation-2 &amp; Visual</text>
+                        <text x="400" y="132" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif">Storyboards simplify complex RAG/APIs.</text>
+                        <text x="400" y="148" fill="#38bdf8" font-size="9.5" font-weight="600" font-family="Inter, sans-serif">&gt;40% Target Retention</text>
+
+                        <rect x="360" y="172" width="240" height="85" rx="10" fill="#0f172a" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+                        <text x="375" y="196" fill="#a855f7" font-size="16">🗺️</text>
+                        <text x="400" y="195" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Interactive Exam Blueprints</text>
+                        <text x="400" y="213" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif">Distilling Pearson VUE syllabus</text>
+                        <text x="400" y="229" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif">into actionable mental architecture maps.</text>
+                        <text x="400" y="245" fill="#a7f3d0" font-size="9.5" font-weight="600" font-family="Inter, sans-serif">Direct Exam Syllabus Mapping</text>
+
+                        <rect x="360" y="269" width="240" height="85" rx="10" fill="#0f172a" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+                        <text x="375" y="293" fill="#06b6d4" font-size="16">🤝</text>
+                        <text x="400" y="292" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Sunday Live + Monday Cowork</text>
+                        <text x="400" y="310" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif">Weekly Screen-Share troubleshooting &amp;</text>
+                        <text x="400" y="326" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif">VIP Claude portfolio recruiter promotion.</text>
+                        <text x="400" y="342" fill="#fde68a" font-size="9.5" font-weight="600" font-family="Inter, sans-serif">Pexabo $1.3M Contractor Mentorship</text>
+
+                        <!-- Connector 2 -->
+                        <path d="M 615 200 L 660 200" stroke="url(#line-arrow-2)" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+                        <polygon points="665,200 655,194 655,206" fill="#10b981"/>
+
+                        <!-- 3. SOLUTION / OUTCOME (RIGHT) -->
+                        <rect x="670" y="30" width="270" height="340" rx="16" fill="url(#grad-solution)" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1.5"/>
+                        <rect x="685" y="45" width="130" height="26" rx="6" fill="rgba(16, 185, 129, 0.25)" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1"/>
+                        <text x="750" y="62" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="700" font-family="Inter, sans-serif">💡 SOLUTION STATE</text>
+
+                        <!-- Solution Items -->
+                        <rect x="685" y="85" width="240" height="75" rx="10" fill="#111827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="700" y="107" fill="#10b981" font-size="16">🧠</text>
+                        <text x="725" y="106" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Rapid Cognitive Mastery</text>
+                        <text x="725" y="124" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">Visual recall replaces memorization;</text>
+                        <text x="725" y="140" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">drastically cuts study hours by 70%.</text>
+
+                        <rect x="685" y="175" width="240" height="75" rx="10" fill="#111827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="700" y="197" fill="#06b6d4" font-size="16">🏅</text>
+                        <text x="725" y="196" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Claude Architect Certification</text>
+                        <text x="725" y="214" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">Anthropic Pearson VUE credential</text>
+                        <text x="725" y="230" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">providing verified proof to clients/firms.</text>
+
+                        <rect x="685" y="265" width="240" height="75" rx="10" fill="#111827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="700" y="287" fill="#f59e0b" font-size="16">🚀</text>
+                        <text x="725" y="286" fill="#f3f4f6" font-size="12" font-weight="600" font-family="Inter, sans-serif">Enterprise FDE Contractor</text>
+                        <text x="725" y="304" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">£500–£1,000/day billing leverage;</text>
+                        <text x="725" y="320" fill="#9ca3af" font-size="10" font-family="Inter, sans-serif">co-bidding enterprise tenders (H30).</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hypotheses Side-by-Side Deep Dive -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚖️ The Core Hypotheses Under Review</h2>
             <div class="grid">
                 <div class="col-6">
-                    <div class="card">
-                        <h3 class="card-title" style="margin-bottom: 1rem; color: var(--color-primary);">😖 The Customer Problem</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-                            Rapid advancements in artificial intelligence are shifting company business structures. Job roles are transforming, and engineers face severe skills inflation.
+                    <div class="card" style="border-top: 4px solid var(--color-warning); height: 100%;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 class="card-title" style="color: var(--color-warning);">😖 The Customer Problem</h3>
+                            <span class="badge" style="background: rgba(245,158,11,0.15); color: #fbbf24; border-color: rgba(245,158,11,0.3); margin-bottom: 0;">Friction Profile</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">
+                            Rapid advancements in artificial intelligence are shifting company business structures. Job roles are transforming, and engineers face severe skills inflation (<strong><a href="../strategy/raise.html" style="color: var(--color-warning); text-decoration: underline;">R.A.I.S.E.</a></strong>).
                         </p>
                         <ul class="emoji-list">
                             <li><span class="emoji" aria-hidden="true">⚠️</span><span><strong>Expectation Pressure:</strong> <span style="color: var(--text-secondary);">Employers expect staff to build Agentic chains, configure guardrails, and audit LLM architectures correctly.</span></span></li>
-                            <li><span class="emoji" aria-hidden="true">📖</span><span><strong>Dry Study Materials:</strong> <span style="color: var(--text-secondary);">Preparing for certifications via dry 500-page manuals or boring 40-hour video courses causes cognitive fatigue and low completion rates.</span></span></li>
+                            <li><span class="emoji" aria-hidden="true">📖</span><span><strong>Dry Study Materials:</strong> <span style="color: var(--text-secondary);">Preparing for certifications via dry 500-page manuals or boring 40-hour video courses causes cognitive fatigue and low completion rates (&lt;10%).</span></span></li>
+                            <li><span class="emoji" aria-hidden="true">⏳</span><span><strong>Time Scarcity &amp; Setup Friction:</strong> <span style="color: var(--text-secondary);">Working professionals lack the hours to navigate broken setups, outdated tutorials, and uncurated documentation.</span></span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
-                        <h3 class="card-title" style="margin-bottom: 1rem; color: var(--color-success);">💡 Our Proposed Solution</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-                            "AI Certification Helper Content" - A highly optimized, visually animated syllabus helper that makes preparing for difficult cloud/AI certification exams clear, fast, and high-retention.
+                    <div class="card" style="border-top: 4px solid var(--color-success); height: 100%;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 class="card-title" style="color: var(--color-success);">💡 Our Proposed Solution</h3>
+                            <span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3); margin-bottom: 0;">The Value Wedge</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">
+                            <strong>"AI Certification Helper Content"</strong> &mdash; A highly optimized, visually animated syllabus helper that makes preparing for difficult cloud/AI certification exams clear, fast, and high-retention.
                         </p>
                         <ul class="emoji-list">
-                            <li><span class="emoji" aria-hidden="true">🎬</span><span><strong>Animated Lessons:</strong> <span style="color: var(--text-secondary);">Complex RAG pipelines and API states represented as animated, clean technical drawings.</span></span></li>
-                            <li><span class="emoji" aria-hidden="true">✅</span><span><strong>Practical Guides:</strong> <span style="color: var(--text-secondary);">Summarizing official exam syllabus blueprints directly into step-by-step interactive cheatsheets.</span></span></li>
+                            <li><span class="emoji" aria-hidden="true">🎬</span><span><strong>Animated Lessons:</strong> <span style="color: var(--text-secondary);">Complex RAG pipelines, Context Engineering, and API states represented as animated, clean technical drawings (<a href="https://github.com/rifaterdemsahin/aug-video-animation-2" target="_blank" style="color: var(--color-success);">aug-video-animation-2</a>).</span></span></li>
+                            <li><span class="emoji" aria-hidden="true">✅</span><span><strong>Practical Guides &amp; Blueprints:</strong> <span style="color: var(--text-secondary);">Summarizing official exam syllabus blueprints directly into step-by-step interactive cheatsheets and mental models.</span></span></li>
+                            <li><span class="emoji" aria-hidden="true">🚀</span><span><strong>Delivery Pilot &amp; Contractor Upskilling:</strong> <span style="color: var(--text-secondary);">Bridging exam credentials directly into real-world Forward Deployed Engineer (FDE) contract opportunities (£500&ndash;£1,000+/day).</span></span></li>
                         </ul>
                     </div>
                 </div>
@@ -87,7 +244,93 @@
             <p style="color: var(--text-secondary); margin-top: 1.5rem;">See <a href="../strategy/focus.html" style="color: var(--color-primary);">Focus</a> for the single core problem statement this component tests, and what's deliberately out of scope while it's being validated.</p>
         </section>
 
-        <!-- Validation Plan -->
+        <!-- Visual Contrast: Traditional vs AI Certification Helper -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Visual Comparison Matrix: Traditional Prep vs. Helper Model</h2>
+            <div class="card" style="overflow-x: auto; padding: 0;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 640px;">
+                    <thead>
+                        <tr style="background: rgba(255,255,255,0.03); border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 1.25rem 1.5rem; width: 22%;">Dimension</th>
+                            <th style="padding: 1.25rem 1.5rem; width: 39%; color: #f87171;">❌ Status Quo (Traditional Prep)</th>
+                            <th style="padding: 1.25rem 1.5rem; width: 39%; color: #34d399;">✅ AI Certification Helper</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.92rem;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1.25rem 1.5rem; font-weight: 600; color: var(--text-primary);">Content Delivery</td>
+                            <td style="padding: 1.25rem 1.5rem;">40-hour talking head videos &amp; dense static text manuals.</td>
+                            <td style="padding: 1.25rem 1.5rem; color: #a7f3d0; font-weight: 500;">Bite-sized animated conceptual models (5–10 min) with interactive analogies.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1.25rem 1.5rem; font-weight: 600; color: var(--text-primary);">Retention &amp; Engagement</td>
+                            <td style="padding: 1.25rem 1.5rem;">Low completion rates (&lt;10%) and severe cognitive burnout.</td>
+                            <td style="padding: 1.25rem 1.5rem; color: #a7f3d0; font-weight: 500;">Target &gt;40% watch retention; visual anchoring for immediate recall in proctored exams.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1.25rem 1.5rem; font-weight: 600; color: var(--text-primary);">Application Context</td>
+                            <td style="padding: 1.25rem 1.5rem;">Academic theory, artificial mock questions, and syntax trivia.</td>
+                            <td style="padding: 1.25rem 1.5rem; color: #a7f3d0; font-weight: 500;">Enterprise practitioner perspective (Pexabo $1.3M contracting lessons) &amp; FDE realities.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1.25rem 1.5rem; font-weight: 600; color: var(--text-primary);">Peer &amp; Founder Support</td>
+                            <td style="padding: 1.25rem 1.5rem;">Isolated message boards with slow or automated responses.</td>
+                            <td style="padding: 1.25rem 1.5rem; color: #a7f3d0; font-weight: 500;">Live Sunday screen-share sessions, Skool community hub, and Monday VIP Claude Cowork.</td>
+                        </tr>
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 1.25rem 1.5rem; font-weight: 600; color: var(--text-primary);">Career Outcome</td>
+                            <td style="padding: 1.25rem 1.5rem;">A digital certificate badge with no recruiter pipeline.</td>
+                            <td style="padding: 1.25rem 1.5rem; color: #a7f3d0; font-weight: 500;">Transformation roadmap to high-paying enterprise contracts and tender alliance bidding (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-success);">H30</a>).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Visual Customer Discovery & Validation Process Loop -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔄 The 4-Step Problem-Solution Discovery Cycle</h2>
+            <div class="grid">
+                <div class="col-3">
+                    <div class="card" style="text-align: center; border-top: 3px solid var(--color-primary); height: 100%;">
+                        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">1️⃣</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Observe Friction</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                            Scrape search trends &amp; log developer struggles with rapid AI evolution (<a href="../strategy/raise.html" style="color: var(--color-primary);">R.A.I.S.E.</a>).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="text-align: center; border-top: 3px solid var(--color-info); height: 100%;">
+                        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">2️⃣</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Build Visual MVP</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                            Produce reverse-response animated video assets &amp; interactive storyboards (<a href="https://rifaterdemsahin.github.io/context-engineering/" target="_blank" style="color: var(--color-info);">Context Eng. MVP</a>).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="text-align: center; border-top: 3px solid var(--color-warning); height: 100%;">
+                        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">3️⃣</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Measure Fit Signals</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                            Track &gt;40% watch retention floor, comment engagement, and WhatsApp discovery interviews.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="text-align: center; border-top: 3px solid var(--color-success); height: 100%;">
+                        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">4️⃣</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Cohort Conversion</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                            Funnel high-intent students into Skool Delivery Pilot to validate the $10k validation exit gate (<a href="../hypotheses/hyp-h9.html" style="color: var(--color-success);">H9</a>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Validation Test Grid -->
         <section class="content-section animate-fade-in">
             <h2 class="section-title">🧪 Discovery Validation Test Grid</h2>
             <div class="card">
@@ -102,27 +345,68 @@
                     </thead>
                     <tbody>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
-                            <td style="padding: 1rem 0.5rem;"><strong>AI Skills expectations are rising</strong></td>
-                            <td style="padding: 1rem 0.5rem;">Search volume & job description scrapes for certification terms</td>
+                            <td style="padding: 1rem 0.5rem;"><strong>AI Skills expectations are rising (<a href="../hypotheses/hyp-h1.html" style="color: var(--color-primary);">H1</a>)</strong></td>
+                            <td style="padding: 1rem 0.5rem;">Search volume &amp; job description scrapes for certification terms</td>
                             <td style="padding: 1rem 0.5rem;">Steady monthly search growth</td>
-                            <td style="padding: 1rem 0.5rem;"><span class="status-pill" style="color: var(--color-success);">✅ Validated</span></td>
+                            <td style="padding: 1rem 0.5rem;"><span class="status-pill" style="color: var(--color-success);">✅ Partially Validated</span></td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
-                            <td style="padding: 1rem 0.5rem;"><strong>Audience prefers animated summaries</strong></td>
-                            <td style="padding: 1rem 0.5rem;">A/B test animated explanation vs standard slide deck</td>
-                            <td style="padding: 1rem 0.5rem;">&gt;40% watch retention on animation</td>
+                            <td style="padding: 1rem 0.5rem;"><strong>Audience prefers animated summaries (<a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a>)</strong></td>
+                            <td style="padding: 1rem 0.5rem;">A/B test animated explanation vs standard slide deck (<a href="https://github.com/rifaterdemsahin/aug-video-animation-2" target="_blank" style="color: var(--color-primary);">aug-video-animation-2</a>)</td>
+                            <td style="padding: 1rem 0.5rem;">&gt;40% watch retention on animation (measured 62.6%–68.5% on shorts)</td>
                             <td style="padding: 1rem 0.5rem;"><span class="status-pill" style="color: var(--color-warning);">🧪 In Testing</span></td>
                         </tr>
-                        <tr style="color: var(--text-secondary);">
-                            <td style="padding: 1rem 0.5rem;"><strong>Audience will pay for certification prep</strong></td>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>Audience will pay for certification prep (<a href="../hypotheses/hyp-h3.html" style="color: var(--color-primary);">H3</a>)</strong></td>
                             <td style="padding: 1rem 0.5rem;">Newsletter signup with pricing details page on main site</td>
                             <td style="padding: 1rem 0.5rem;">&gt;5% email signup conversion</td>
-                            <td style="padding: 1rem 0.5rem;"><span class="status-pill" style="color: var(--color-warning);">📅 Planned</span></td>
+                            <td style="padding: 1rem 0.5rem;"><span class="status-pill" style="color: var(--color-warning);">📅 In Progress</span></td>
+                        </tr>
+                        <tr style="color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong>Founder can build &amp; sell institutional-grade courses</strong></td>
+                            <td style="padding: 1rem 0.5rem;">Coursera (SonarQube &amp; Secure AI Models with Starweaver) &amp; Udemy (Ultimate Contractor &amp; IaC)</td>
+                            <td style="padding: 1rem 0.5rem;">4 published courses, active sales, corporate vetting</td>
+                            <td style="padding: 1rem 0.5rem;"><span class="status-pill" style="color: var(--color-success);">✅ Validated</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+
+        <!-- Visual Course Pedigree / Institutional Validation Block -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏆 Verified Course Creation Pedigree</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    The founder has already validated institutional instructional quality, payment collection, and course productization across leading enterprise learning marketplaces:
+                </p>
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="spec-box" style="border-left-color: #0056d2; margin: 0; background: rgba(0, 86, 210, 0.04);">
+                            <div class="spec-title" style="color: #60a5fa;">📘 Coursera (Starweaver Partnership)</div>
+                            <div class="spec-desc" style="margin-top: 0.5rem;">
+                                <ul class="emoji-list">
+                                    <li><span class="emoji">🎓</span><span><strong>SonarQube Course:</strong> Enterprise code quality and security auditing.</span></li>
+                                    <li><span class="emoji">🛡️</span><span><strong>Secure AI Models:</strong> Threat modeling and security guardrails for production LLMs.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="spec-box" style="border-left-color: #a435f0; margin: 0; background: rgba(164, 53, 240, 0.04);">
+                            <div class="spec-title" style="color: #c084fc;">📙 Udemy Marketplace</div>
+                            <div class="spec-desc" style="margin-top: 0.5rem;">
+                                <ul class="emoji-list">
+                                    <li><span class="emoji">💼</span><span><strong>The Ultimate IT Contractor:</strong> Blueprint for £500–£1,000/day enterprise contracting.</span></li>
+                                    <li><span class="emoji">⚙️</span><span><strong>Infrastructure as Code:</strong> Automated cloud architecture and DevOps practices.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sanity Check (Missing Questions & Risks) -->
         <section class="content-section animate-fade-in" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
             <h2 class="section-title" style="color: var(--color-warning);">⚠️ Sanity Check: Missing Questions & Risks</h2>
@@ -145,6 +429,7 @@
                 </div>
             </div>
         </section>
+
         <section class="content-section animate-fade-in">
             <h2 class="section-title">🔗 Related Hypotheses</h2>
             <div class="card">
@@ -155,9 +440,14 @@
     </main>
 
     <footer>
-        <div class="footer-container">
-            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
-            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added visual problem-solution transformation blueprint SVG, status quo comparison matrix, discovery cycle, and course pedigree (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/comp/comp-problem-solution.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
         </div>
     </footer>
 

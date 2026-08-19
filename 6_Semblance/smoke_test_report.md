@@ -4,11 +4,11 @@
 > Latest run overwrites this file; one report per test run.
 
 ## Run Info
-- **Date:** 2026-08-17 11:06
+- **Date:** 2026-08-19 09:08
 - **Trigger:** Manual run
 - **Mode:** Local filesystem
 - **Tester:** smoke_test.py (automated)
-- **Verdict:** ✅ ALL PASS
+- **Verdict:** ❌ 1 FAILURE(S)
 
 ## Results Summary
 | Test | Result | Detail |
@@ -19,14 +19,17 @@
 | Project Menu | ✅ Pass | — |
 | Debug Menu | ✅ Pass | — |
 | Nav 3-Way Sync | ✅ Pass | — |
-| Stage Docs In Menu | ✅ Pass | — |
+| Stage Docs In Menu | ❌ Fail | orphaned: ['3_Simulation/Cohorts/readme.md', '3_Simulation/Interviews/interview_apo_2026-08-18.md', '3_Simulation/Interviews/interview_baran_g_2026-08-18.md', '3_Simulation/cv_rifaterdemsahin.md'] |
 | Social Links | ✅ Pass | — |
 | README Pages URL | ✅ Pass | — |
 | Secrets Scan | ✅ Pass | — |
 
 ## Failures
 
-None — all smoke tests passed. ✨
+### #1 — Stage Docs In Menu
+- **Error:** orphaned: ['3_Simulation/Cohorts/readme.md', '3_Simulation/Interviews/interview_apo_2026-08-18.md', '3_Simulation/Interviews/interview_baran_g_2026-08-18.md', '3_Simulation/cv_rifaterdemsahin.md']
+- **GitHub Issue:** _create per the Smoke Tests & GitHub Issues rule_
+- **Status:** Open
 
 ## Rules Applied
 - Every failure gets a GitHub Issue (`[SMOKE-FAIL] <test> — <description>`)

@@ -41,7 +41,8 @@ Whenever a page is updated or a new page is added, AI agents **MUST** cross-link
 ## 💼 Core Business Principles & Context
 
 AI agents must align all content, strategy proposals, and specs with the following constraints:
-* **Founder & Contract Status:** Rifat Erdem Sahin is running this as a second job. He works a contract role, meaning YouTube and LinkedIn comments are batch-answered in **weekly cycles** during the content generation phase.
+* **Founder & Contract Status:** Rifat Erdem Sahin is a veteran 6-figure IT contractor with over **$1.3 million USD** earned in enterprise contracting across the UK and USA. His UK-registered operating entity is **Pexabo Ltd**. He is currently running this business as a second job alongside his contract role, meaning YouTube and LinkedIn comments are batch-answered in **weekly cycles** during the content generation phase.
+* **Proven Course Creation & Monetization Track Record:** Founder has already published and sold 4 commercial technical courses across **Coursera** (*SonarQube*, *Secure AI Models* in partnership with Starweaver) and **Udemy** (*The Ultimate IT Contractor*, *Infrastructure as Code*), proving institutional instructional quality, payment collection, and course productization capability.
 * **Organic Distribution Channels:** Primary channels are YouTube Courses and organic LinkedIn sharing (specifically leveraging Rifat Erdem Sahin's professional audience).
 * **Live Skool checkout (experiment):** Freemium — Standard $0 / Premium $1/mo / VIP $250/year (founder-confirmed 2026-08-14). Recommended names: Peek / Sit In / Share Screen on `5_Symbols/product/skool-delivery-pilot-offer.html`. Feedback: `reports/skool-pricing-feedback-v1.0.0.md`. About-tab copy (replaces the live “get certified” line): `5_Symbols/product/skool-about.html`. Preview ramp only — does not replace the $10/mo + $250–$500 revenue model. $0 and $1 joins are not paid enrollments. Cap VIP as Sunday screen-share, not on-demand 1:1.
 * **Founder Anti-Spam Guardrail (Skool):** To prevent notification clutter and spamming the community, founder posts are converted into evergreen living hubs (e.g. centralized "Courses" hub with Claude Architect nested inside) that are updated and nurtured in place rather than creating fragmented one-off announcement threads.
@@ -58,8 +59,9 @@ AI agents must align all content, strategy proposals, and specs with the followi
 All web app page extensions or styles must uphold premium visual standards:
 1. **Modern Layouts:** Use CSS custom properties from `:root` in [style.css](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/style.css) (`var(--color-primary)`, `var(--bg-card)`, etc.) to maintain visual harmony.
 2. **Glassmorphism & Spotlight effects:** Keep `.card` components styled beautifully. Mouse-follow spotlight glow is automatically handled by [main.js](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/main.js).
-3. **No Default Browser Styling:** Avoid standard colors or browser font defaults. Use Outfit/Inter typography, gradients, and soft borders.
-4. **No Placeholders:** Generate functional assets using image tools instead of plain grey blocks.
+3. **Visual Proof & Media (Slides & Screenshots):** When creating and updating pages, ALWAYS embed relevant slides, visual storyboard cards, and concrete screenshots (e.g. Canva slides, Skool community UI snapshots, architecture blueprints, terminal outputs, workflow diagrams) to provide undeniable visual context.
+4. **No Default Browser Styling:** Avoid standard colors or browser font defaults. Use Outfit/Inter typography, gradients, and soft borders.
+5. **No Placeholders:** Generate functional assets using image tools instead of plain grey blocks.
 
 ---
 

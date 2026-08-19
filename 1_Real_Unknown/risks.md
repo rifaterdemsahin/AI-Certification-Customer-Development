@@ -70,6 +70,42 @@
 - **Mitigation:** Follow the documented 5-step persona file generation process in `agents.md`. Always include the full 7-stage execution flow in every persona file. Verify the new persona file against the coordinator.
 - **Last Updated:** 2026-07-11
 
+### R-010: IR35 & Global Independent Contractor Usage
+- **Status:** 🟠 Active
+- **Severity:** High
+- **Likelihood:** Medium (rule changes and market shifts recur; global contractor acceptance varies by region)
+- **Impact:** Contracting income — the business's current runway — shrinks if IR35 determinations tighten or markets reduce independent contractor usage.
+- **Trigger:** IR35 status changes, umbrella-market corrections, or global contractor policy shifts
+- **Mitigation:** Dual Turkish &amp; British passports keep international contract markets open; contractor-format CV (converted from permanent employment) maintained for outside-IR35 and global roles; business revenue diversifies income away from contract-rate dependence. Tracked on the strategy page `5_Symbols/strategy/risk-analysis.html`.
+- **Last Updated:** 2026-08-19
+
+### R-011: Business Confidence Falling with Global Wars
+- **Status:** 🟠 Active
+- **Severity:** High
+- **Likelihood:** Medium (active conflicts persist through 2026)
+- **Impact:** Enterprise training budgets and buying decisions freeze, directly hitting the B2B channel (H12) and cohort demand.
+- **Trigger:** Escalation of global conflicts, budget freezes, hiring slowdowns
+- **Mitigation:** Lean fixed-cost base (owned workstation, single Big Yellow storage unit at £500); $0 CAC organic funnel carries no paid-spend exposure; certification upskilling is a de-risking purchase that survives budget freezes better than discretionary training.
+- **Last Updated:** 2026-08-19
+
+### R-012: Dependency on the Inside-IR35 Day Job
+- **Status:** 🟠 Active
+- **Severity:** High
+- **Likelihood:** Medium (contract roles end; renewals not guaranteed)
+- **Impact:** Every pound of business runway currently traces back to a single inside-IR35 day job; its loss removes the income floor overnight.
+- **Trigger:** Day-job contract end, non-renewal, or IR35 re-determination to outside with no replacement
+- **Mitigation:** Milestone gates convert the day job into optional income: two $10k cohort launches clear the repeat gate (H9), $100k ARR triggers going full-time (H15); cost discipline keeps burn below the day-job cushion; pre-launch waitlist signal tracked before committing cohort dates.
+- **Last Updated:** 2026-08-19
+
+### R-013: Global Economy Slowing Down
+- **Status:** 🟡 Active
+- **Severity:** Medium
+- **Likelihood:** Medium (2026 growth continues to decelerate)
+- **Impact:** Recessionary pressure reduces contract demand and candidate willingness to pay for cohorts.
+- **Trigger:** Sustained slowdown, layoff waves, reduced corporate L&amp;D spend
+- **Mitigation:** Freemium $0/$1 entry keeps the funnel alive through downturns; credential-led employability demand is counter-cyclical — downturns push people to re-skill; monitored via funnel conversion metrics.
+- **Last Updated:** 2026-08-19
+
 ---
 
 ## ✅ Solved Risks
@@ -156,6 +192,7 @@
 | 2026-07-12 | Debug menu backfill + SPEC-008 runner | R-S07 | Solved: all stage docs in menu; desync now auto-detected by smoke tests |
 | 2026-07-12 | Smoke test runner implemented | R-007 | Downgraded High → Medium and reframed: runner exists (caught issue #1); remaining step is wiring it into `static.yml` as a deploy gate |
 | 2026-07-12 | Smoke gate wired into `static.yml` | R-S09 | Solved: `deploy` job requires the `smoke` job (SPEC-008 runner); Formula Agent owns the CI/CD pipeline |
+| 2026-08-19 | Macro & founder-income risk review | R-010 → R-013 | Added 4 active risks: IR35 & global contractor usage (High), business confidence falling with global wars (High), inside-IR35 day-job dependency (High), global economy slowing (Medium) — mirrored on `5_Symbols/strategy/risk-analysis.html` |
 
 ---
 

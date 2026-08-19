@@ -85,6 +85,7 @@
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
                 ['5_Symbols/strategy/raise.html', '🚀 R.A.I.S.E.'],
                 ['motivation.html', '🔥 Motivation'],
+                ['5_Symbols/strategy/passion.html', '❤️ Passion &amp; Self-Learning'],
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis'],
                 ['5_Symbols/strategy/focus.html', '🎯 Focus'],
                 ['5_Symbols/strategy/target-audience.html', '👥 Target Audience'],
@@ -185,6 +186,7 @@
                 ['5_Symbols/growth/test-metrics.html', '📈 Test &amp; Metrics'],
                 ['5_Symbols/growth/test-plan.html', '🧪 Test Plan'],
                 ['5_Symbols/dashboard/todo.html', '✅ Task List'],
+                ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos'],
                 ['5_Symbols/growth/content-analysis.html', '🎬 Content Analysis'],
                 ['5_Symbols/growth/content-format.html', '🎬 Short vs Long Form'],
                 ['5_Symbols/growth/youtube-channel-metrics.html', '📺 YouTube Channel Metrics'],
@@ -213,6 +215,7 @@
                 ['5_Symbols/growth/platform-relationships-and-payments.html', '🌐 Platform Ecosystem &amp; Payments'],
                 ['5_Symbols/growth/future-sponsors.html', '🤝 Future Sponsors Roadmap'],
                 ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
+                ['5_Symbols/growth/instagram-marketing-pipeline.html', '📱 Instagram Marketing Pipeline'],
                 ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style'],
                 ['5_Symbols/growth/community-building-score.html', '🌱 Community &amp; Model Score'],
                 ['5_Symbols/growth/ai-demo.html', '🤖 AI Prep Demo']
@@ -281,6 +284,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/passion.html', title: 'Passion: Self-Learning & Community', desc: 'The founder engine — self-learning through shifting professions, the 2023 Universal Credit turning point on poverty, and volunteering by listening without giving advice.', cat: 'Strategy', tags: 'passion self learning skill gaps professions shifting poverty universal credit 2023 family health volunteering listening no advice ai certification content community founder' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md', title: 'Customer Discovery Report: Baran G Interview', desc: 'Qualitative analysis of Baran G customer interview on tabular AI agent automation, Excel data processing, time scarcity, and presentation outputs.', cat: 'Docs', tags: 'baran g customer discovery interview tabular excel agents time pressure emotional drivers h24 h17 h30 report' },
         { url: '5_Symbols/product/skool-new-joiner-welcome-and-faq.html', title: 'New Joiner Welcome Message & FAQ Guide', desc: 'Copy-paste founder welcome message template, 4-step new joiner roadmap, and comprehensive FAQ explaining $0 cost start, no coding background required, and self-learning to AI certification.', cat: 'Product', tags: 'skool new joiner welcome message template faq non technical zero cost start no coding required self learning ai tools get certified claude architect forward deployed engineer h5 h8 h29 h30' },
         { url: '5_Symbols/growth/community-building-score.html', title: 'Community Building & Business Model Confidence Score', desc: 'Detailed architectural connection between Skool community building, lecture-to-party pivot, 10 true regulars, and the numeric confidence score.', cat: 'Growth', tags: 'community building business model confidence score skool freemium peek sit in share screen lecture party listen speak 10 true regulars anti spam level 2 posting onboarding venture cafe cambridge triton square contractor fde h5 h8 h9 h20 h29 h30' },
@@ -329,6 +333,7 @@
         { url: '5_Symbols/growth/skool-churn-retention.html', title: 'Reducing Churn & Maximizing Retention', desc: 'Tactical churn reduction framework covering leaky bucket dynamics, <5% retention benchmarks, 30-day cohort curves, and 5 tactical retention levers.', cat: 'Growth', tags: 'skool churn retention leaky bucket cohort curves onboarding ritual peer ties gamification h2 h8 h29' },
         { url: '5_Symbols/growth/skool-common-patterns.html', title: 'Common Retention Patterns (Nick Saraev, Evelyn, Al Jack)', desc: 'The 6 battle-tested creator retention archetypes: daily care, lower-tier downsells, content deletion, weekly calls, annual discounts, and 1-on-1 culture.', cat: 'Growth', tags: 'skool common patterns retention nick saraev evelyn skate iq al jack annual discount downsell 1on1 culture h2 h5 h8' },
         { url: '5_Symbols/growth/reverse-response-marketing.html', title: 'Reverse Response Marketing', desc: 'A three-step framework for viral marketing through reverse engineering and controversial second brain insights.', cat: 'Growth', tags: 'reverse response marketing strategy viral controversial second brain high-performing posts production skills' },
+        { url: '5_Symbols/growth/instagram-marketing-pipeline.html', title: 'Similar Marketing Pipelines: Instagram AI Education Reel', desc: 'Deconstruction of Instagram technical micro-learning pipelines (ColPali Multimodal RAG reel shared by Mehmet) and full-funnel conversion mechanics.', cat: 'Growth', tags: 'instagram marketing pipeline similar educational reel colpali multimodal rag mehmet second brain aug-video-animation-2 short form h2 h3 h10 h28' },
         { url: '5_Symbols/growth/roger-rabbit-animation.html', title: 'Roger Rabbit Animation Style', desc: 'Using mixed-reality Roger Rabbit style animations as our signature format to test the market.', cat: 'Growth', tags: 'roger rabbit animation mixed reality style signature format reverse response marketing test market' },
         { url: 'markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', title: 'Skool Availability v1.0.0', desc: 'First logged-out run: PASS 11/11 gates, Public, 11 members, 14 posts, Sude non-founder thread visible.', cat: 'Docs', tags: 'skool availability report public members posts h5' },
         { url: 'markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.7.0.md', title: 'Exam Prep & Student Behavior v1.7.0', desc: 'Adds Bora Session 8 follow-up discovery: session stacking cognitive fatigue, vacation/noise constraints, boat cruise, and mid-week async course binge study.', cat: 'Docs', tags: 'bora customer discovery session 8 fatigue stacked sessions vacation boat cruise async binge study exam prep h5 h8 h20 h26 h29' },
@@ -477,6 +482,7 @@
         { url: '5_Symbols/growth/youtube-titles-skool-mapping.html', title: 'YouTube Titles → Skool Content Mapping', desc: 'Eight YouTube title ideas mapped to their intended Skool landing destination (free feed, $10/mo membership, $29 bundle, or live cohort), each with a stated rationale.', cat: 'Growth', tags: 'youtube titles skool mapping funnel destination classroom membership bundle cohort headlines' },
         { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video End-Screen & Conversion Tactics', desc: 'Actionable video-level conversion mechanics: Skool walkthrough end cards, blurred cheat sheet reveals, comment scenario hooks, and channel trailer routing.', cat: 'Growth', tags: 'video conversion tactics end screen video cards skool walkthrough blurred cheat sheet comments hooks' },
         { url: '5_Symbols/dashboard/todo.html', title: 'Task List', desc: 'Recurring weekly loop (3 videos, Sunday cohort, Skool answers, YouTube comment batch) plus one-off production/build tasks: newsletter signup, video performance testing.', cat: 'Growth', tags: 'todo task list recurring weekly videos cohort skool youtube comments daily hello connect notifications newsletter animations baseline production' },
+        { url: '5_Symbols/dashboard/weekly-todos.html', title: 'Weekly Todos & Execution Cadence', desc: 'Structured 7-day recurring loop, operating lanes, day-by-day execution checklist, and visual slide architecture linked to todo.html.', cat: 'Growth', tags: 'weekly todos cadence sprint schedule monday sunday live cohort skool pass reverse response marketing' },
         { url: '5_Symbols/growth/content-analysis.html', title: 'Content Analysis', desc: 'Per-video retention log tracking animated content performance against the 40% MVP target, seeded with a 68% first data point.', cat: 'Growth', tags: 'content analysis retention video performance analytics' },
         { url: '5_Symbols/growth/youtube-channel-metrics.html', title: 'YouTube Channel Metrics', desc: 'Unified watch-time, views, and engagement view with expected-rate targets, including new H28 engagement-rate benchmarks.', cat: 'Growth', tags: 'youtube channel metrics watch time views engagement rate ctr likes comments subscribers' },
         { url: '5_Symbols/growth/youtube-banner.html', title: 'YouTube Channel Top Banner', desc: 'Transformational 3-part banner mockup (No Experience → Split Brain → Get Certified in 90 Days) with enhanced Midjourney prompts.', cat: 'Growth', tags: 'youtube banner top header mockup graphic design prompt midjourney conversion' },
