@@ -34,6 +34,7 @@
                 ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas'],
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis Tracker'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report'],
+                ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages'],
                 ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
                 ['5_Symbols/dashboard/todo.html', '✅ Task List']
@@ -201,6 +202,7 @@
                 ['5_Symbols/growth/cost-side-model.html', '📉 Cost-Side Model'],
                 ['5_Symbols/growth/validation-repeat-gate.html', '🚪 Validation Repeat Gate'],
                 ['5_Symbols/growth/marketing-tactics.html', '📰 Marketing Tactics'],
+                ['5_Symbols/growth/funfair-tokens.html', '🎡 Funfair Token System'],
                 ['5_Symbols/growth/youtube-titles-skool-mapping.html', '🎯 YouTube Titles → Skool Mapping'],
                 ['5_Symbols/growth/video-conversion-tactics.html', '🎬 Video End-Screen &amp; Conversion Tactics'],
                 ['5_Symbols/growth/conversation-starters.html', '🗣️ Conversation Starters'],
@@ -251,6 +253,7 @@
                 ['markdown_renderer.html?src=agents.md', '🤖 AI Agent Guidelines'],
                 ['markdown_renderer.html?src=HYPOTHESIS.md', '📊 Hypothesis Tracker Full Doc'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Business Model Confidence Report'],
+                ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '📅 Latest Created/Updated Pages'],
                 ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['5_Symbols/product/resources.html', '🌐 External Resources Directory'],
@@ -405,6 +408,8 @@
         { url: '5_Symbols/hypotheses/hyp-h17.html', title: 'H17 · Onsite Cambridge + corporate pilot', desc: 'Detail page with premise-conclusion-status SVG diagram for H17.', cat: 'Hypothesis Detail', tags: 'h17 hypothesis detail onsite cambridge marianna svg diagram' },
         { url: '5_Symbols/hypotheses/hyp-h18.html', title: 'H18 · International onsite channels', desc: 'Detail page with premise-conclusion-status SVG diagram for H18.', cat: 'Hypothesis Detail', tags: 'h18 hypothesis detail international onsite uk europe usa svg diagram' },
         { url: '5_Symbols/dashboard/confidence-report.html', title: 'Business Model Confidence Report', desc: 'Versioned, whole-site sanity check scoring hypothesis validation and site integrity into one confidence number.', cat: 'Docs', tags: 'confidence score sanity check audit integrity version' },
+        { url: '5_Symbols/dashboard/how-to-move-the-score.html', title: 'How to Move the Confidence Score', desc: 'Master playbook: formula, every historical score-up event, what does not move the number, housekeeping rules, and ranked evidence levers (H9, H21, F12).', cat: 'Docs', tags: 'how to move confidence score playbook integrity validation git broken links acidity h5 h8 h9 h21 h27 f12' },
+        { url: '5_Symbols/hypotheses/hyp-h27.html', title: 'H27 · Practice Exam & Question Bank Gap', desc: 'Detail page with premise-conclusion-status SVG diagram for H27: blueprint-mapped practice exams are the value blocker for H8 and H21.', cat: 'Hypothesis Detail', tags: 'h27 hypothesis detail practice exam question bank mock test blueprint gap charles postponement svg diagram' },
         { url: '5_Symbols/strategy/focus.html', title: 'Strategic Focus', desc: 'Where we focus our immediate energy: animations, YouTube playlists, mock exams.', cat: 'Strategy', tags: 'focus energy priority list roadmap' },
         { url: '5_Symbols/strategy/target-audience.html', title: 'Target Audience Analysis', desc: 'Persona details of early-adopter developers, study timelines, and motivations.', cat: 'Strategy', tags: 'personas developers study timeline profiles' },
         { url: '5_Symbols/strategy/risk-analysis.html', title: 'Key Risks & Mitigations', desc: 'Analysis of production fatigue, pricing models, content copycats, and platforms.', cat: 'Strategy', tags: 'risks mitigation fatigue pricing copycats cambridge onsite marianna corporate' },
@@ -479,6 +484,7 @@
         { url: '5_Symbols/growth/cost-side-model.html', title: 'Cost-Side Model', desc: 'Business-level cost stack, founder time-opportunity cost, and break-even math against the $100/mo infra cost.', cat: 'Growth', tags: 'cost side model break even infra opportunity cost' },
         { url: '5_Symbols/growth/validation-repeat-gate.html', title: 'Validation Repeat Gate', desc: 'Revises the $10k Stage 2 exit gate to require 2 consecutive cohort launches instead of one.', cat: 'Growth', tags: 'validation repeat gate two launches revenue false positive' },
         { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines built on the Samuel Leeds urgency formula, each priced with a gain/loss ledger and a no-guarantee compliance rule.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds' },
+        { url: '5_Symbols/growth/funfair-tokens.html', title: '🎡 Funfair Token System: Time-Based Tokens', desc: 'Audience earns time-based tokens that expire weekly and spends them at stalls inside the fair on Memory Cards, Mock Exams, and the Ultimate IT Contractor Course.', cat: 'Growth', tags: 'funfair tokens time based expiry gamification engagement memory cards mock exams contractor course stalls urgency h21 h30' },
         { url: '5_Symbols/growth/youtube-titles-skool-mapping.html', title: 'YouTube Titles → Skool Content Mapping', desc: 'Eight YouTube title ideas mapped to their intended Skool landing destination (free feed, $10/mo membership, $29 bundle, or live cohort), each with a stated rationale.', cat: 'Growth', tags: 'youtube titles skool mapping funnel destination classroom membership bundle cohort headlines' },
         { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video End-Screen & Conversion Tactics', desc: 'Actionable video-level conversion mechanics: Skool walkthrough end cards, blurred cheat sheet reveals, comment scenario hooks, and channel trailer routing.', cat: 'Growth', tags: 'video conversion tactics end screen video cards skool walkthrough blurred cheat sheet comments hooks' },
         { url: '5_Symbols/dashboard/todo.html', title: 'Task List', desc: 'Recurring weekly loop (3 videos, Sunday cohort, Skool answers, YouTube comment batch) plus one-off production/build tasks: newsletter signup, video performance testing.', cat: 'Growth', tags: 'todo task list recurring weekly videos cohort skool youtube comments daily hello connect notifications newsletter animations baseline production' },
@@ -1505,15 +1511,34 @@
             { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', emoji: '🧪' },
             { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
         ],
+        '5_Symbols/growth/funfair-tokens.html': [
+            { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
+            { url: '5_Symbols/product/exam-prep-product.html', title: 'Exam Prep Bundle', emoji: '📦' },
+            { url: '5_Symbols/strategy/delivery-pilot-roadmap.html', title: 'Delivery Pilot Roadmap', emoji: '🧑‍✈️' },
+            { url: '5_Symbols/product/skool-offer-ideas.html', title: 'Skool Offer Ideas', emoji: '💡' }
+        ],
         '5_Symbols/dashboard/sitemap.html': [
             { url: '5_Symbols/dashboard/latest-pages.html', title: 'Latest Pages', emoji: '📅' },
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
             { url: 'index.html', title: 'Hub', emoji: '🏠' }
         ],
         '5_Symbols/dashboard/confidence-report.html': [
+            { url: '5_Symbols/dashboard/how-to-move-the-score.html', title: 'How to Move the Score', emoji: '📈' },
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
             { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates', emoji: '🚪' },
             { url: '5_Symbols/strategy/evidence-map.html', title: 'Evidence Map', emoji: '🔍' }
+        ],
+        '5_Symbols/dashboard/how-to-move-the-score.html': [
+            { url: '5_Symbols/dashboard/confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
+            { url: '5_Symbols/growth/community-building-score.html', title: 'Community & Model Score', emoji: '🌱' },
+            { url: '5_Symbols/hypotheses/hyp-h9.html', title: 'H9 $10k Gate', emoji: '🚪' },
+            { url: '5_Symbols/hypotheses/hyp-h21.html', title: 'H21 $29 Bundle', emoji: '📦' }
+        ],
+        '5_Symbols/hypotheses/hyp-h27.html': [
+            { url: '5_Symbols/strategy/practice-exams-gap.html', title: 'Practice Exam Gap', emoji: '⚠️' },
+            { url: '5_Symbols/hypotheses/hyp-h21.html', title: 'H21 $29 Bundle', emoji: '📦' },
+            { url: '5_Symbols/hypotheses/hyp-h8.html', title: 'H8 Cohort PMF', emoji: '💎' },
+            { url: '5_Symbols/product/exam-performance-evidence.html', title: 'Exam Performance Evidence', emoji: '📊' }
         ]
     };
 

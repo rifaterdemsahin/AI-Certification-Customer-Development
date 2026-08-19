@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.9.43
 
+> ⚠️ **Superseded by v1.9.44** (2026-08-19) — see [`business-model-confidence-v1.9.44.md`](business-model-confidence-v1.9.44.md). v1.9.44 adds the Funfair Token System page/tactic and surfaces a stricter broken-link scan finding 9 pre-existing dangling `hyp-h26.html` / `hyp-h27.html` links prior runs missed; overall score re-derived at 33/100 (measurement correction, not business deterioration).
+
 **Date:** 2026-08-18  
 **Produced by:** the `business-model-sanity-check` skill  
 **What changed vs. v1.9.42:** Ingested empirical 28-day video performance telemetry from YouTube Studio Analytics across `5_Symbols/growth/content-analysis.html`, `5_Symbols/growth/youtube-channel-metrics.html`, `5_Symbols/hypotheses/hyp-h2.html`, and `5_Symbols/hypotheses/hyp-h10.html`. Recorded 10 published videos with **2 animations clearing >60% retention** — *Claude AI Certification for Architects | Masterclass Intro* (0:07, **66.3% retention**, 11 views) and *Building an AI Knowledge Engine: Turn 46k Obsidian Notes into Clarity* (0:43, **62.6% retention**, 34 views), validating animated visual delivery over standard multi-minute tutorials (10.7%–17.9%) and weak static clips (1.0%–1.6%) (H2, H10, H13, H28). Bumped `HYPOTHESIS.md` to **v1.153.0**. Overall score holds at **46 / 100** (Validation: 36.9, Integrity: 67.5).

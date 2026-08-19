@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Move the Confidence Score | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="confidence-report.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Confidence Report
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Docs &middot; Master Playbook</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📈 How to Move the Confidence Score</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Single master document for raising the Business Model Confidence Score. Every historical jump on this site is explained below. Most of them were housekeeping. The ones that were not are the only pattern that will take the number past the integrity ceiling. See <a href="confidence-report.html" style="color: var(--color-primary);">confidence-report.html</a> and H9 in <a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-primary);">HYPOTHESIS.md</a>.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Formula:</span><span class="info-value">round(0.7 &times; Validation + 0.3 &times; Integrity)</span></li>
+                        <li class="info-item"><span class="info-label">Integrity ceiling after git + links:</span><span class="info-value">77.5 (acidity findings still open)</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">What adding pages does:</span><span class="info-value">Nothing, unless a hypothesis changes status</span></li>
+                        <li class="info-item"><span class="info-label">Highest-leverage business gate:</span><span class="info-value"><a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a> &mdash; $10k across 2 paid launches</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🖼 The Two Engines</h2>
+            <div class="card">
+                <img src="how-to-move-the-score-formula.jpg" alt="Infographic of the confidence score formula: 70 percent hypothesis validation with status chips Validated 100, In Testing 55, Planned 20, Unverified 10; 30 percent site integrity with deductions for broken links, uncommitted git, and acidity findings." style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">A 10-point integrity move is only +3 overall. A single hypothesis going ⚪ Planned (20) &rarr; 🟡 In Testing (55) is +1.2 validation, +0.8 overall. A hypothesis going 🟡 &rarr; ✅ is +1.6 validation, +1.1 overall. The formula punishes broken links hard (&minus;5 integrity each, so 9 links = &minus;13.5 overall) and barely rewards more documentation.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📜 When the Score Actually Went Up</h2>
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <img src="how-to-move-the-score-timeline.jpg" alt="Timeline of historical confidence-score increases: git commits produce +3 housekeeping jumps; H5 In Testing and H29 added are the real business jumps; 46 to 33 is the broken-link measurement correction." style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color);">
+            </div>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Read every rise in the version history as one of two kinds. Housekeeping restores points the scan deducted. Business moves change a hypothesis status emoji. Only the second kind compounds.</p>
+                <table class="sortable-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Run</th>
+                            <th style="padding: 0.75rem 0.5rem;">Move</th>
+                            <th style="padding: 0.75rem 0.5rem;">What happened</th>
+                            <th style="padding: 0.75rem 0.5rem;">Kind</th>
+                            <th style="padding: 0.75rem 0.5rem;">Lesson</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.0.0 &rarr; v1.0.1</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">38 &rarr; 44</td><td style="padding: 0.6rem 0.5rem;">Committed the 58-file uncommitted batch</td><td style="padding: 0.6rem 0.5rem;">Git</td><td style="padding: 0.6rem 0.5rem;">&minus;10 integrity is +3 overall. Commit before the scan.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.5.3 &rarr; v1.5.4</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">40 &rarr; 43</td><td style="padding: 0.6rem 0.5rem;">Cleared the temporary uncommitted deduction</td><td style="padding: 0.6rem 0.5rem;">Git</td><td style="padding: 0.6rem 0.5rem;">Same +3. Recurs every time a batch sits dirty.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.6.6</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">41 &rarr; 42</td><td style="padding: 0.6rem 0.5rem;">Skool went live; H5 upgraded ⚪ &rarr; 🟡 (8 signups)</td><td style="padding: 0.6rem 0.5rem;">Status</td><td style="padding: 0.6rem 0.5rem;">First real measured signups. Beat a simultaneous &minus;10.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.6.6 &rarr; v1.6.7</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">42 &rarr; 45</td><td style="padding: 0.6rem 0.5rem;">Committed the Skool-launch batch; Integrity 77.5</td><td style="padding: 0.6rem 0.5rem;">Git</td><td style="padding: 0.6rem 0.5rem;">The H5 upgrade plus a clean tree is the 45 peak of that week.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.8.1</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">41 &rarr; 44</td><td style="padding: 0.6rem 0.5rem;">Uncommitted-work deduction cleared after merge</td><td style="padding: 0.6rem 0.5rem;">Git</td><td style="padding: 0.6rem 0.5rem;">Merges that leave files dirty cost the next scan 3 points.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.9.2</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">37 &rarr; 42</td><td style="padding: 0.6rem 0.5rem;">Fixed 2 broken-link targets the prior run found</td><td style="padding: 0.6rem 0.5rem;">Links</td><td style="padding: 0.6rem 0.5rem;">Never link <code>hyp-hN.html</code> until the file exists.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.9.11</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">41 &rarr; 45</td><td style="padding: 0.6rem 0.5rem;">PR #9 merged: H5 In Testing + Integrity 77.5</td><td style="padding: 0.6rem 0.5rem;">Status + Git</td><td style="padding: 0.6rem 0.5rem;">Largest combined jump. Measured signups plus a clean tree.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.9.18</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">42 &rarr; 43</td><td style="padding: 0.6rem 0.5rem;">H29 added as 🟡 In Testing (Validation 31.3 &rarr; 32.1)</td><td style="padding: 0.6rem 0.5rem;">Status</td><td style="padding: 0.6rem 0.5rem;">New hypotheses only help if they enter as 🟡, not ⚪.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.9.29</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">43 &rarr; 46</td><td style="padding: 0.6rem 0.5rem;">Committed pricing-feedback + keywords batch</td><td style="padding: 0.6rem 0.5rem;">Git</td><td style="padding: 0.6rem 0.5rem;">This 46 is the integrity-ceiling score (Validation ~32, Integrity 77.5).</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.9.35</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">43 &rarr; 45</td><td style="padding: 0.6rem 0.5rem;">Validation 32.8 &rarr; 35.7 as H16 mechanics crystallized</td><td style="padding: 0.6rem 0.5rem;">Scoring</td><td style="padding: 0.6rem 0.5rem;">Operational specs are not paid evidence. Treat as a scoring tick, not H16 validated.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">v1.9.36</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success); font-weight: 600;">45 &rarr; 46</td><td style="padding: 0.6rem 0.5rem;">Session 8 field evidence; Validation 35.7 &rarr; 36.9</td><td style="padding: 0.6rem 0.5rem;">Evidence</td><td style="padding: 0.6rem 0.5rem;">Live cohort artifacts can tick Validation without a status change. Small.</td></tr>
+                        <tr><td style="padding: 0.6rem 0.5rem;">v1.9.44</td><td style="padding: 0.6rem 0.5rem; color: var(--color-warning); font-weight: 600;">46 &rarr; 33</td><td style="padding: 0.6rem 0.5rem;">9 dangling <code>hyp-h26</code> / <code>hyp-h27</code> links (&minus;45) + uncommitted (&minus;10)</td><td style="padding: 0.6rem 0.5rem;">Links</td><td style="padding: 0.6rem 0.5rem;">Measurement correction. This playbook's housekeeping pass reverses it.</td></tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">The 43 &harr; 46 flicker between v1.9.28 and v1.9.31 is documented in <a href="../../markdown_renderer.html?src=reports/score-fluctuation-analysis-v1.0.0.md" style="color: var(--color-primary);">Score Fluctuation Analysis v1.0.0</a> &mdash; it was entirely the uncommitted-work switch. Community loops that protect this number (without being the number) live on <a href="../growth/community-building-score.html" style="color: var(--color-primary);">Community Building &amp; Model Score</a>.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🚫 What Does Not Move the Score</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li><span class="emoji">📄</span><span style="color: var(--text-secondary);"><strong>Adding pages.</strong> v1.9.36 through v1.9.43 held flat at 46 across welcome messages, member-tier tools, course-progress loops, and YouTube telemetry. Evidence text can be added forever. The emoji on the Status line is what the rubric reads.</span></li>
+                    <li><span class="emoji">⚙️</span><span style="color: var(--text-secondary);"><strong>Confirming setup.</strong> Freemium entitlements, discoverability keywords, and setting Skool to Public did not upgrade H5. $0 and $1 joins are not paid enrollments.</span></li>
+                    <li><span class="emoji">🔬</span><span style="color: var(--text-secondary);"><strong>More research on H6.</strong> v1.0.3 added independent TAM/SAM/SOM verification and the score did not move. H6 stays ⚠️ until the ~50k SOM figure is audited or observed.</span></li>
+                    <li><span class="emoji">⚪</span><span style="color: var(--text-secondary);"><strong>Adding a new ⚪ Planned hypothesis.</strong> It dilutes the average. H22, H25, H28 entered at 20 and pulled Validation down. Only add a hypothesis if it is already 🟡 or you are willing to take the dilution.</span></li>
+                    <li><span class="emoji">🧪</span><span style="color: var(--text-secondary);"><strong>Re-running the sanity check with no status or integrity change.</strong> That publishes a new version at the same number. Fine for an audit trail; not a lever.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧹 Housekeeping Playbook (do this every run)</h2>
+            <div class="card">
+                <ol style="padding-left: 1.25rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li><strong>Never link a <code>hyp-hN.html</code> that does not exist.</strong> H26 was skipped in the v1.60.0 merge (ID collision). Dual-persona / FDE citations go to <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">hyp-h30.html</a>. H27 now has <a href="../hypotheses/hyp-h27.html" style="color: var(--color-primary);">hyp-h27.html</a>. Each dangling <code>href</code> is &minus;5 integrity.</li>
+                    <li><strong>Commit the batch before asking for a new score.</strong> Uncommitted work is &minus;10 integrity, &minus;3 overall, every distinct dirty tree. v1.9.29 and v1.6.7 are the proof.</li>
+                    <li><strong>Register every new HTML page in <code>nav.js</code></strong> (<code>groups</code> and <code>searchIndex</code>) or it becomes an orphan (&minus;15 integrity as a category, not per file).</li>
+                    <li><strong>Match the HYPOTHESIS.md Summary Table row to the entry's own Status-line leading emoji.</strong> A mismatch is &minus;5. The scanner reads the Status line, not the table.</li>
+                    <li><strong>Do not invent a conflicting headline number.</strong> $10,000 gate, 1,000x subscribers, $100,000 ARR, &gt;40% retention floor &mdash; one figure per claim, USD, site-wide.</li>
+                </ol>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">After git is clean and links resolve, Integrity caps at <strong>77.5</strong> until acidity findings move. That is round(0.7 &times; 37.1 + 0.3 &times; 77.5) = <strong>49</strong> with today's Validation. Housekeeping cannot produce 50+.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎯 Ranked Levers After Housekeeping</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Points below are overall-score points, using current Validation 37.1 / 29 hypotheses and Integrity 77.5. <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a> and <a href="../hypotheses/hyp-h15.html" style="color: var(--color-primary);">H15</a> are already scored 100 as founder-Decided, so hitting $10k does not raise the <em>number</em> &mdash; it is still the Stage 2 &rarr; 3 business gate.</p>
+                <table class="sortable-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">#</th>
+                            <th style="padding: 0.75rem 0.5rem;">Lever</th>
+                            <th style="padding: 0.75rem 0.5rem;">Evidence needed</th>
+                            <th style="padding: 0.75rem 0.5rem;">Est. overall pts</th>
+                            <th style="padding: 0.75rem 0.5rem;">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">1</td><td style="padding: 0.6rem 0.5rem;"><strong>F12</strong> exam access</td><td style="padding: 0.6rem 0.5rem;">Anthropic / Pearson VUE confirm an individual, non-Partner candidate can register today</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+1.5 (integrity &minus;5 clears)</td><td style="padding: 0.6rem 0.5rem;">One email / help-desk ticket</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">2</td><td style="padding: 0.6rem 0.5rem;"><strong>F2</strong> H1 dataset</td><td style="padding: 0.6rem 0.5rem;">Search-volume or job-scrape dataset behind the original skills-gap claim, or demote the wording on <a href="../comp/comp-problem-solution.html" style="color: var(--color-primary);">comp-problem-solution.html</a></td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+1.5</td><td style="padding: 0.6rem 0.5rem;">One sourced table, or a wording fix</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">3</td><td style="padding: 0.6rem 0.5rem;"><strong>F11</strong> churn / LTV</td><td style="padding: 0.6rem 0.5rem;">One cohort of month-over-month $10/mo retention so the $100 LTV on <a href="../growth/unit-economics.html" style="color: var(--color-primary);">Unit Economics</a> is measured</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+1.5</td><td style="padding: 0.6rem 0.5rem;">Needs paying members</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">4</td><td style="padding: 0.6rem 0.5rem;"><a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a> ⚪ &rarr; 🟡</td><td style="padding: 0.6rem 0.5rem;">First Funfair token redemption at a stall (Memory Cards 15 / Mock Exam 40 / Contractor module 100) <em>or</em> first $29 cash sale. Products already exist.</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+0.8</td><td style="padding: 0.6rem 0.5rem;">Log a redemption. Cheapest Validation tick.</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">5</td><td style="padding: 0.6rem 0.5rem;"><a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a> ⚪ &rarr; 🟡</td><td style="padding: 0.6rem 0.5rem;">Count 10 un-poked True Regulars and &ge;80% 4-week Sunday attendance</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+0.8</td><td style="padding: 0.6rem 0.5rem;">Count, don't build</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">6</td><td style="padding: 0.6rem 0.5rem;"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> 🟡 &rarr; ✅</td><td style="padding: 0.6rem 0.5rem;">Real paid enrollments: $10/mo or $250 Share Screen / cohort seats. 8 Skool signups are not this.</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+1.1</td><td style="padding: 0.6rem 0.5rem;">First paid launch</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">7</td><td style="padding: 0.6rem 0.5rem;"><a href="../hypotheses/hyp-h27.html" style="color: var(--color-primary);">H27</a> 🟡 &rarr; ✅</td><td style="padding: 0.6rem 0.5rem;">Ship the remaining 58 of 60 questions + one Sunday scored mock-exam batch</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+1.1</td><td style="padding: 0.6rem 0.5rem;">Authoring already started</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.6rem 0.5rem;">8</td><td style="padding: 0.6rem 0.5rem;">F3 / F7 / F9 partials</td><td style="padding: 0.6rem 0.5rem;">Cambridge/Marianna pilot runs (F3); payment fees + $100k-ARR hire math (F7); $29 sales (F9, same evidence as H21)</td><td style="padding: 0.6rem 0.5rem; color: var(--color-success);">+0.8 each (&minus;2.5 integrity)</td><td style="padding: 0.6rem 0.5rem;">Mixed</td></tr>
+                        <tr><td style="padding: 0.6rem 0.5rem;">9</td><td style="padding: 0.6rem 0.5rem;"><a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a> $10k &times; 2</td><td style="padding: 0.6rem 0.5rem;">Two consecutive paid launches combining to $10,000. Stage 2 &rarr; 3 exit. Beard-cut challenge.</td><td style="padding: 0.6rem 0.5rem;">0 on the number (already scored 100 as Decided)</td><td style="padding: 0.6rem 0.5rem;">The actual business. Do it anyway.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗺️ Score Bands from Here</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="metric-card">
+                        <div class="metric-val">49</div>
+                        <div class="metric-lbl">Housekeeping ceiling today (Validation 37.1, Integrity 77.5)</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="metric-card">
+                        <div class="metric-val">55</div>
+                        <div class="metric-lbl">Moderate band. Needs Validation ~45: several ⚪&rarr;🟡 plus 1–2 🟡&rarr;✅, or acidity cleared + H5/H8/H21 ticks</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="metric-card">
+                        <div class="metric-val">80</div>
+                        <div class="metric-lbl">High confidence. Majority ✅. That is paid repeat revenue, not another page.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem;">
+                <p style="color: var(--text-secondary);">A low-moderate score in Customer Discovery / Validation is expected. The number is not &ldquo;the business is failing.&rdquo; It is &ldquo;most bets are still open.&rdquo; Do not chase 80 by writing. Chase 55 by logging redemptions, counting regulars, confirming exam access, and selling two launches.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">✅ This Week's Operating Sequence</h2>
+            <div class="card">
+                <ol style="padding-left: 1.25rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li><strong>Keep the tree clean.</strong> After this batch is committed, do not start the next sanity check with dirty files.</li>
+                    <li><strong>Log the first Funfair token redemption</strong> (see <a href="../growth/funfair-tokens.html" style="color: var(--color-primary);">Funfair Token System</a>). Memory cards, mock exams, and contractor-course modules already exist. That is the cheapest <a href="../hypotheses/hyp-h21.html" style="color: var(--color-primary);">H21</a> upgrade.</li>
+                    <li><strong>Ask Anthropic / Pearson VUE whether a non-Partner individual can sit the exam</strong> (F12). One answer clears &minus;5 integrity.</li>
+                    <li><strong>Count True Regulars this Sunday</strong> toward <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a> / <a href="../product/skool-10-true-regulars.html" style="color: var(--color-primary);">10 True Regulars</a>.</li>
+                    <li><strong>Author the next practice questions</strong> toward 60/60 on <a href="../hypotheses/hyp-h27.html" style="color: var(--color-primary);">H27</a>.</li>
+                    <li><strong>Sell.</strong> H9 is not a score lever under the current Decided=100 convention, but it is the only exit from Stage 2. Two paid launches to $10,000.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Master playbook created from every historical score-up event (v1.0.0 through v1.9.44) (2026-08-19) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/how-to-move-the-score.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
