@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skool Payout Dashboard & Settlement | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .payout-dashboard {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .payout-dashboard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #3b82f6, #6366f1);
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.75rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .org-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #f8fafc;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+        }
+        .balance-hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .balance-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            color: #ffffff;
+            line-height: 1;
+            margin-top: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .btn-add-payout {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.85rem 1.6rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-add-payout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+        }
+        .status-strip {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.15rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        .settlement-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b;
+            display: inline-block;
+        }
+        .notice-card {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .math-box {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem;
+            font-family: monospace;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="skool-monetization.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to How to Monetize Your Skool
+        </a>
+
+        <!-- Hero Header -->
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-success);">
+            <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.3);">Financial Operations &middot; Skool &amp; Stripe</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">💳 Skool Payout Dashboard &amp; Settlement Architecture</h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem; max-width: 82ch; line-height: 1.6;">
+                Real-time tracking and operational model for creator revenue collected through the <strong>Delivery Pilot</strong> community on Skool. Highlights the <strong>first live paid checkout ($0.60 net settled)</strong>, Stripe KYC verification status, the 7–14 day clearance cycle, and automated Wednesday payout mechanics.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Page ID:</span><span class="info-value">skool-payout-dashboard.html</span></li>
+                        <li class="info-item"><span class="info-label">Organization:</span><span class="info-value highlight-success">Delivery Pilot</span></li>
+                        <li class="info-item"><span class="info-label">Current Account Balance:</span><span class="info-value" style="color: #34d399; font-weight: 800;">$0.60 (Pending Settlement)</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Payout Schedule:</span><span class="info-value">Every Wednesday (Available Balance)</span></li>
+                        <li class="info-item"><span class="info-label">Stripe KYC Identity:</span><span class="info-value">info@deliverypilot.net &middot; Passport Verified</span></li>
+                        <li class="info-item"><span class="info-label">Linked Hypotheses:</span><span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5 (Paid Checkout)</a>, <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9 ($10k Exit Gate)</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Live Background Dashboard Mockup -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Live Payout Dashboard (Skool / Stripe Connect)</h2>
+            <div class="payout-dashboard">
+                <div class="dashboard-header">
+                    <div>
+                        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 0.25rem;">Merchant Account</div>
+                        <div class="org-badge">
+                            <span>🚀</span> Delivery Pilot
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.12); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                            ● Payout Cycle: Weekly (Wednesdays)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="balance-hero">
+                    <div>
+                        <div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Account Balance</div>
+                        <div class="balance-amount">$0.60</div>
+                        <div style="font-size: 0.85rem; color: #64748b; margin-top: 0.25rem;">First community paid member subscription ($1.00 gross &minus; Stripe processing fee)</div>
+                    </div>
+                    <div>
+                        <a href="https://www.skool.com/delivery-pilot-8938" target="_blank" class="btn-add-payout">
+                            <span>➕</span> ADD PAYOUT METHOD
+                        </a>
+                    </div>
+                </div>
+
+                <div class="status-strip">
+                    <div class="status-tag">
+                        <span class="settlement-indicator"></span>
+                        <span><strong>Status:</strong> Next payout will be <strong>$0 in 7 days</strong> &nbsp;|&nbsp; <span style="color: #fbbf24; font-weight: 700;">$0.60 is pending</span></span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #94a3b8;">
+                        Settlement Window: <strong>7–14 days</strong>
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div style="font-size: 1.5rem;">ℹ️</div>
+                    <div style="font-size: 0.9rem; line-height: 1.6; color: #fde68a;">
+                        <strong>Notice &amp; Verification Status:</strong> <em>No payouts yet.</em> Currently using Stripe account registered under <strong>info@deliverypilot.net</strong> with founder passport identity uploaded to Stripe for KYC compliance. Balance will become available for Wednesday bank transfer as transactions mature past the 7–14 day holding period.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Mechanics of Skool & Stripe Payouts -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚙️ How Skool Payouts Work</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border-top: 4px solid var(--color-info);">
+                        <h3 class="card-title" style="font-size: 1.15rem; color: #38bdf8; margin-bottom: 0.75rem;">1. Wednesday Payout Cadence</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Skool automatically sweeps and pays out your <strong>available balance every Wednesday</strong>. If your available balance on Wednesday is above $0, it triggers an automated ACH/BACS transfer to the connected bank account.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border-top: 4px solid var(--color-warning);">
+                        <h3 class="card-title" style="font-size: 1.15rem; color: #fbbf24; margin-bottom: 0.75rem;">2. 7–14 Day Settlement Window</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>Pending</strong> is balance from transactions that have not yet settled through the banking clearing system. Every transaction takes <strong>7 to 14 days</strong> to transition from <em>Pending</em> to <em>Available</em>.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border-top: 4px solid var(--color-success);">
+                        <h3 class="card-title" style="font-size: 1.15rem; color: #34d399; margin-bottom: 0.75rem;">3. First Payment Math Example</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            On the <strong>$1/mo "Sit In" tier</strong>, the gross transaction of $1.00 incurs standard merchant interchange (~2.9% + 30¢), leaving exactly <strong>$0.60 net pending balance</strong> in Delivery Pilot.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Financial Breakdown & Transaction Walkthrough -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧮 Unit Economics of the First Paid Checkout</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+                    The first customer transaction provides concrete validation for hypothesis <strong>H5 (Freemium Checkout &amp; Paid Conversion)</strong>. Here is the exact fee and cash flow breakdown:
+                </p>
+                <div class="math-box">
+                    <div style="color: #60a5fa; font-weight: bold; margin-bottom: 0.5rem;">[TRANSACTION BREAKDOWN: $1.00 "SIT IN" TIER]</div>
+                    &bull; Gross Customer Payment (Stripe Checkout): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $1.00<br>
+                    &bull; Less: Stripe Card Processing Fee (2.9% + $0.30): &nbsp;&nbsp;&minus;$0.40<br>
+                    &bull; Less: Platform Revenue Share / Skool Cut: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0.00 (Skool charges flat $99/mo, 0% rev share)<br>
+                    ----------------------------------------------------------------<br>
+                    <span style="color: #34d399; font-weight: bold;">&bull; NET PENDING BALANCE SETTLING TO DELIVERY PILOT: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0.60</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Next Step Checklist -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Payment Gateway Checklist for Delivery Pilot</h2>
+            <div class="card">
+                <ul class="emoji-list">
+                    <li>
+                        <span class="emoji">✅</span>
+                        <div>
+                            <strong>Stripe Connect Account Created:</strong> Registered and mapped under <code>info@deliverypilot.net</code> for seamless legal and invoice segregation.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="emoji">✅</span>
+                        <div>
+                            <strong>Identity &amp; KYC Verification Uploaded:</strong> Founder passport documentation successfully uploaded to Stripe to meet global AML/KYC requirements.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="emoji">🟡</span>
+                        <div>
+                            <strong>Bank Account / Payout Method Connection:</strong> Click <em>"ADD PAYOUT METHOD"</em> on Skool / Stripe dashboard to link Pexabo Ltd / Delivery Pilot UK business bank account for Wednesday direct deposits.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="emoji">⏳</span>
+                        <div>
+                            <strong>First Payout Maturation:</strong> Wait for the initial 7–14 day clearance window. Once settled, the $0.60 shifts from <em>Pending</em> to <em>Available</em> and automatically distributes on the following Wednesday cycle.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer Revision Tracking -->
+        <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary);">
+            <p>AI Certification Helper &bull; Delivery Pilot Operations</p>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; display: block;">
+                Latest Change: Added Skool payout dashboard and settlement specification with live $0.60 pending balance and Stripe KYC details (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-payout-dashboard.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
