@@ -1,3 +1,5 @@
+> ⚠️ **Superseded by v1.9.46** (2026-08-19) — see [`business-model-confidence-v1.9.46.md`](business-model-confidence-v1.9.46.md). Cheuk (National Grid) enrollment block moves F12 to PARTIALLY ADDRESSED; overall 49 → 50.
+
 # Business Model Confidence Report — v1.9.45
 
 **Date:** 2026-08-19  

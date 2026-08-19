@@ -1,3 +1,5 @@
+> ⚠️ **Superseded by [v1.8.0](exam-prep-market-and-student-behavior-v1.8.0.md)** (2026-08-19) — adds Cheuk (National Grid) enrollment-block discovery and the two-partner seating mitigation.
+
 # Certification Market Size & Student Exam-Prep Behavior
 
 **Version:** 1.7.0

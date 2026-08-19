@@ -1,3 +1,5 @@
+> ⚠️ **Superseded by [v1.4.0](acidity-check-report-v1.4.0.md)** (2026-08-19) — F12 moves 🔴 STILL OPEN → 🟡 PARTIALLY ADDRESSED after Cheuk (National Grid) could not self-enroll; founder-confirmed mitigation is two partner companies that enroll people.
+
 # Acidity Check Report v1.3 — AI Certification Helper Customer Development Model
 
 **Version:** 1.3.0
