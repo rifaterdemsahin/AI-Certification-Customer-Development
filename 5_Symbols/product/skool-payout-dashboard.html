@@ -131,6 +131,52 @@
             font-family: monospace;
             line-height: 1.7;
         }
+        .settings-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .settings-section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .settings-edit-tag {
+            font-size: 0.8rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            text-decoration: none;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        .settings-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            font-size: 0.92rem;
+        }
+        .settings-row:last-child {
+            border-bottom: none;
+        }
+        .settings-key {
+            color: var(--text-secondary);
+        }
+        .settings-val {
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -147,7 +193,7 @@
             <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.3);">Financial Operations &middot; Skool &amp; Stripe</span>
             <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">💳 Skool Payout Dashboard &amp; Settlement Architecture</h1>
             <p style="color: var(--text-secondary); margin-top: 0.5rem; max-width: 82ch; line-height: 1.6;">
-                Real-time tracking and operational model for creator revenue collected through the <strong>Delivery Pilot</strong> community on Skool. Highlights the <strong>first live paid checkout ($0.60 net settled)</strong>, Stripe KYC verification status, the 7–14 day clearance cycle, and automated Wednesday payout mechanics.
+                Real-time tracking and operational configuration for creator revenue collected through the <strong>Delivery Pilot</strong> community on Skool. Highlights the <strong>first live paid checkout ($0.60 net settled)</strong>, Stripe KYC sole trader identity verification, Starling Bank payout configuration, the 7–14 day clearance cycle, and automated Wednesday payout mechanics.
             </p>
             <div class="grid" style="margin-top: 1.5rem;">
                 <div class="col-6">
@@ -160,8 +206,8 @@
                 <div class="col-6">
                     <ul class="info-list">
                         <li class="info-item"><span class="info-label">Payout Schedule:</span><span class="info-value">Every Wednesday (Available Balance)</span></li>
-                        <li class="info-item"><span class="info-label">Stripe KYC Identity:</span><span class="info-value">info@deliverypilot.net &middot; Passport Verified</span></li>
-                        <li class="info-item"><span class="info-label">Linked Hypotheses:</span><span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5 (Paid Checkout)</a>, <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9 ($10k Exit Gate)</a></span></li>
+                        <li class="info-item"><span class="info-label">Stripe KYC Identity:</span><span class="info-value">Rifat Erdem Sahin &middot; Sole Trader (UK)</span></li>
+                        <li class="info-item"><span class="info-label">Payout Bank:</span><span class="info-value">Starling Bank Ltd GBP (Sort: 60-83-71)</span></li>
                     </ul>
                 </div>
             </div>
@@ -193,7 +239,7 @@
                     </div>
                     <div>
                         <a href="https://www.skool.com/delivery-pilot-8938" target="_blank" class="btn-add-payout">
-                            <span>➕</span> ADD PAYOUT METHOD
+                            <span>✅</span> PAYOUT METHOD CONNECTED
                         </a>
                     </div>
                 </div>
@@ -211,13 +257,80 @@
                 <div class="notice-card">
                     <div style="font-size: 1.5rem;">ℹ️</div>
                     <div style="font-size: 0.9rem; line-height: 1.6; color: #fde68a;">
-                        <strong>Notice &amp; Verification Status:</strong> <em>No payouts yet.</em> Currently using Stripe account registered under <strong>info@deliverypilot.net</strong> with founder passport identity uploaded to Stripe for KYC compliance. Balance will become available for Wednesday bank transfer as transactions mature past the 7–14 day holding period.
+                        <strong>Notice &amp; Verification Status:</strong> <em>No payouts yet.</em> Currently using verified Stripe account registered under <strong>info@deliverypilot.net</strong> with founder passport identity uploaded to Stripe for KYC compliance. Balance will become available for automated Wednesday bank transfer to <strong>Starling Bank Ltd</strong> as transactions mature past the 7–14 day holding period.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. The Mechanics of Skool & Stripe Payouts -->
+        <!-- 2. Account & Payout Configuration -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🏛️ Stripe &amp; Merchant Account Configuration</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="settings-card">
+                        <div class="settings-section-title">
+                            <span>💼 Business Type</span>
+                            <span class="settings-edit-tag">Sole Trader</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Entity Structure:</span>
+                            <span class="settings-val">Individual / Sole Trader</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Location:</span>
+                            <span class="settings-val">🇬🇧 United Kingdom</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Merchant Email:</span>
+                            <span class="settings-val">info@deliverypilot.net</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="settings-card">
+                        <div class="settings-section-title">
+                            <span>👤 Personal Details</span>
+                            <span class="settings-edit-tag">KYC Verified</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Legal Name:</span>
+                            <span class="settings-val">Rifat Erdem Sahin</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Date of Birth:</span>
+                            <span class="settings-val">Born on 17 April 1980</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Identity Document:</span>
+                            <span class="settings-val" style="color: #34d399;">✅ Passport ID Provided</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="settings-card">
+                        <div class="settings-section-title">
+                            <span>🏦 Payout Details</span>
+                            <span class="settings-edit-tag">Direct Deposit</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Bank Name:</span>
+                            <span class="settings-val">STARLING BANK LTD GBP</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Sort Code / Account:</span>
+                            <span class="settings-val" style="font-family: monospace;">60-83-71 | ••••4776</span>
+                        </div>
+                        <div class="settings-row">
+                            <span class="settings-key">Account Holder:</span>
+                            <span class="settings-val">Rifat Erdem Sahin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Mechanics of Skool & Stripe Payouts -->
         <section class="content-section animate-fade-in">
             <h2 class="section-title">⚙️ How Skool Payouts Work</h2>
             <div class="grid">
@@ -225,7 +338,7 @@
                     <div class="card" style="height: 100%; border-top: 4px solid var(--color-info);">
                         <h3 class="card-title" style="font-size: 1.15rem; color: #38bdf8; margin-bottom: 0.75rem;">1. Wednesday Payout Cadence</h3>
                         <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            Skool automatically sweeps and pays out your <strong>available balance every Wednesday</strong>. If your available balance on Wednesday is above $0, it triggers an automated ACH/BACS transfer to the connected bank account.
+                            Skool automatically sweeps and pays out your <strong>available balance every Wednesday</strong>. When available funds clear, an automated BACS transfer executes directly into <strong>Starling Bank</strong>.
                         </p>
                     </div>
                 </div>
@@ -233,7 +346,7 @@
                     <div class="card" style="height: 100%; border-top: 4px solid var(--color-warning);">
                         <h3 class="card-title" style="font-size: 1.15rem; color: #fbbf24; margin-bottom: 0.75rem;">2. 7–14 Day Settlement Window</h3>
                         <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            <strong>Pending</strong> is balance from transactions that have not yet settled through the banking clearing system. Every transaction takes <strong>7 to 14 days</strong> to transition from <em>Pending</em> to <em>Available</em>.
+                            <strong>Pending</strong> is balance from transactions that have not yet settled through card network rails. Transactions take <strong>7 to 14 days</strong> to transition from <em>Pending</em> to <em>Available</em>.
                         </p>
                     </div>
                 </div>
@@ -248,7 +361,7 @@
             </div>
         </section>
 
-        <!-- 3. Financial Breakdown & Transaction Walkthrough -->
+        <!-- 4. Financial Breakdown & Transaction Walkthrough -->
         <section class="content-section animate-fade-in">
             <h2 class="section-title">🧮 Unit Economics of the First Paid Checkout</h2>
             <div class="card">
@@ -261,12 +374,13 @@
                     &bull; Less: Stripe Card Processing Fee (2.9% + $0.30): &nbsp;&nbsp;&minus;$0.40<br>
                     &bull; Less: Platform Revenue Share / Skool Cut: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0.00 (Skool charges flat $99/mo, 0% rev share)<br>
                     ----------------------------------------------------------------<br>
-                    <span style="color: #34d399; font-weight: bold;">&bull; NET PENDING BALANCE SETTLING TO DELIVERY PILOT: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0.60</span>
+                    <span style="color: #34d399; font-weight: bold;">&bull; NET PENDING BALANCE SETTLING TO DELIVERY PILOT: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0.60</span><br>
+                    <span style="color: #60a5fa; font-weight: bold;">&bull; DESTINATION ACCOUNT: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STARLING BANK (60-83-71 | ••••4776)</span>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Next Step Checklist -->
+        <!-- 5. Payment Gateway Checklist for Delivery Pilot -->
         <section class="content-section animate-fade-in">
             <h2 class="section-title">📋 Payment Gateway Checklist for Delivery Pilot</h2>
             <div class="card">
@@ -280,19 +394,25 @@
                     <li>
                         <span class="emoji">✅</span>
                         <div>
-                            <strong>Identity &amp; KYC Verification Uploaded:</strong> Founder passport documentation successfully uploaded to Stripe to meet global AML/KYC requirements.
+                            <strong>Business Structure &amp; Location Configured:</strong> Set as <strong>Individual / Sole Trader</strong> located in the <strong>United Kingdom</strong>.
                         </div>
                     </li>
                     <li>
-                        <span class="emoji">🟡</span>
+                        <span class="emoji">✅</span>
                         <div>
-                            <strong>Bank Account / Payout Method Connection:</strong> Click <em>"ADD PAYOUT METHOD"</em> on Skool / Stripe dashboard to link Pexabo Ltd / Delivery Pilot UK business bank account for Wednesday direct deposits.
+                            <strong>Identity &amp; KYC Verification Uploaded:</strong> Founder passport documentation (Rifat Erdem Sahin, DOB: 17 April 1980) successfully verified by Stripe.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="emoji">✅</span>
+                        <div>
+                            <strong>Bank Account / Payout Method Connected:</strong> <strong>Starling Bank Ltd GBP</strong> (Sort Code: <code>60-83-71</code>, Account: <code>••••4776</code>, Holder: Rifat Erdem Sahin) actively linked for direct deposits.
                         </div>
                     </li>
                     <li>
                         <span class="emoji">⏳</span>
                         <div>
-                            <strong>First Payout Maturation:</strong> Wait for the initial 7–14 day clearance window. Once settled, the $0.60 shifts from <em>Pending</em> to <em>Available</em> and automatically distributes on the following Wednesday cycle.
+                            <strong>First Payout Maturation:</strong> Waiting for the 7–14 day transaction clearance window. Once matured, the $0.60 shifts from <em>Pending</em> to <em>Available</em> and automatically sweeps to Starling Bank on Wednesday.
                         </div>
                     </li>
                 </ul>
@@ -303,7 +423,7 @@
         <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary);">
             <p>AI Certification Helper &bull; Delivery Pilot Operations</p>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; display: block;">
-                Latest Change: Added Skool payout dashboard and settlement specification with live $0.60 pending balance and Stripe KYC details (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-payout-dashboard.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Added verified sole trader details, Starling Bank GBP payout account configuration, and connected status (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-payout-dashboard.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </footer>
 
