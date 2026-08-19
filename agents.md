@@ -36,6 +36,13 @@ Whenever a page is updated or a new page is added, AI agents **MUST** cross-link
 * Cite the hypothesis ID (e.g. "see H10") from the page's own content wherever it states a falsifiable claim.
 * Bump `HYPOTHESIS.md`'s version field and Change Log whenever this linkage is added or changed.
 
+### 5. Single Branch Policy (founder-confirmed 2026-08-19)
+This repository has **one branch: `main`**. Do not leave hanging feature branches.
+* Always work on `main` (`git checkout main && git pull`). Never resume a leftover Claude/Codex/Grok session branch.
+* After a PR merges or a batch is pushed to `main`, **delete the feature branch locally and on `origin` immediately**.
+* Before deleting, run `git log main..<branch>` and port any unique evidence onto `main` first — then delete.
+* Remote leftovers from merged PRs (`origin/claude/*`, `origin/feat/*`) are hanging branches: delete them rather than leaving them for “later.”
+
 ---
 
 ## 💼 Core Business Principles & Context

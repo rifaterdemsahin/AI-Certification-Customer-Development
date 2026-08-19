@@ -12,6 +12,7 @@ Upon completing any task (especially page updates), always:
 5. Display clickable links to that updated page at the very end of your final response.
 6. Whenever a page is updated or a new page is added, link it to `HYPOTHESIS.md`: add or update the relevant hypothesis entry (premise &rarr; conclusion &rarr; status) to reference the page by relative path under `5_Symbols/`, and cite the hypothesis ID (e.g. "see H10") from the page's content where it states a falsifiable claim. Bump `HYPOTHESIS.md`'s version and Change Log when you do this.
 7. Always re-run the `business-model-sanity-check` skill after a batch of page updates/additions and publish its new versioned report (`reports/business-model-confidence-vX.Y.Z.md` / `5_Symbols/dashboard/confidence-report.html`) — never skip this step, even if the score is expected to hold flat. If the score is below 100, `5_Symbols/dashboard/confidence-report.html` must explicitly outline, for each score component that isn't yet at its ceiling, what concrete evidence (data, measurement, or founder decision) would be needed to move it up — not just the number itself.
+8. **Single branch: `main` only** (founder-confirmed 2026-08-19). Do not leave hanging local or `origin/*` feature branches. Work on `main`, and after a merge or push delete the feature branch locally and on origin. Before deleting, `git log main..<branch>` and port unique evidence onto `main` first. Never resume leftover Claude/Codex/Grok session branches.
 
 ## What this project is
 
