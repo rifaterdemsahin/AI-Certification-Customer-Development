@@ -116,10 +116,15 @@
 
         <!-- Hero Section -->
         <section class="hero animate-fade-in" style="padding: 2rem 0 2.5rem; text-align: left;">
-            <span class="badge">Interview Workspace</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem;">
+                <span class="badge">Interview Workspace</span>
+                <a href="cd-interview-pdf.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.35rem 0.85rem; text-decoration: none; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success); background: rgba(16, 185, 129, 0.08);">
+                    🖨️ 1-Page A4 PDF Generator &rarr;
+                </a>
+            </div>
             <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">📝 Discovery Interview <span>Recorder</span></h1>
             <p class="hero-subtitle" style="margin: 0; max-width: 850px;">
-                Record qualitative candidate insights, map multi-selected business model hypotheses, capture day-in-the-life study routines, and download structured interview records while syncing to shared cookie notes. Need question prompts? See
+                Record qualitative candidate insights, map multi-selected business model hypotheses, capture day-in-the-life study routines, export <strong>1-page A4 PDF interview sheets</strong>, and download structured markdown records while syncing to shared cookie notes. Need question prompts? See
                 <a href="cd-hypothesis-interview-questions.html" style="color: var(--color-primary); font-weight: 600;">Hypothesis Interview Questions</a>
                 before logging discovery answers.
             </p>
@@ -351,7 +356,14 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;">💾 Download  Interview to Shared Cookie Notes</button>
+                    <div style="display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; min-width: 240px; padding: 0.85rem 1.25rem; font-size: 0.95rem; font-weight: 600; cursor: pointer;">
+                            💾 Save &amp; Download Markdown
+                        </button>
+                        <button type="button" onclick="create1PageA4PdfFromForm()" class="btn btn-secondary" style="flex: 1; min-width: 240px; padding: 0.85rem 1.25rem; font-size: 0.95rem; font-weight: 700; cursor: pointer; border-color: rgba(16, 185, 129, 0.5); color: #34d399; background: rgba(16, 185, 129, 0.08);">
+                            🖨️ Create 1-Page A4 PDF
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -428,8 +440,73 @@
 
         <!-- Saved Interview Summaries / Archive -->
         <section class="content-section animate-fade-in">
-            <h3 style="font-family: var(--font-heading); margin-bottom: 1rem; font-weight: 700;">📂 Archived Transcripts &amp; Cohort Deep-Dives</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="font-family: var(--font-heading); margin: 0; font-weight: 700;">📂 Archived Transcripts &amp; Cohort Deep-Dives</h3>
+                <a href="cd-interview-pdf.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem; text-decoration: none; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">
+                    🖨️ Open 1-Page A4 PDF Viewer &rarr;
+                </a>
+            </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #8b5cf6;">
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: #8b5cf6;">👤 Anna (UWISE Founder) Discovery Review</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                            Pedagogy &amp; Pacing discovery: 2h sessions cause cognitive overload; introduced 5-10-5 methodology (5m demo &rarr; 10m execute &rarr; 5m Q&amp;A) capped at 3 tasks / 40–60 min (H29, H8, H2, H10, H5, H17, H24).
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="../../markdown_renderer.html?src=reports/customer-discovery-anna-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View Report &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=anna" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #ec4899;">
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: #ec4899;">👤 Marianna Discovery Review</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                            Enterprise discovery: Sunday AI Brain collaboration, co-creating an enterprise Practical Workshops Programme, and flipped classroom pre-session short AI video primers (H17, H2, H10, H30, H8, H29).
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="../../markdown_renderer.html?src=reports/customer-discovery-marianna-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View Report &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=marianna" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-primary);">
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">👤 Brian Discovery Review</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                            Practitioner discovery: &ldquo;Skills pay the bills&rdquo; &mdash; complex Kubernetes &amp; CI/CD infrastructure mastery eliminates talent disposability; clients hire trusted guides rather than learning rules themselves (H30, H1, H25, H24, H12).
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="../../markdown_renderer.html?src=reports/customer-discovery-brian-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View Report &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=brian" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-success);">
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-success);">👤 Tomiwa Discovery Feedback</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                            Certified Associate discovery: Associate tier acts as rapid foundational stepping stone; Architect tier strictly demands deep, hands-on lab experience (H25, H8, H21).
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="../../markdown_renderer.html?src=reports/customer-discovery-tomiwa-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View Report &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=tomiwa" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-primary);">
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">👤 Rakesh Discovery Review</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                            Enterprise discovery: Rising National Insurance &amp; statutory payroll overheads driving enterprise shifts away from permanent staff to agile IT contractors &amp; FDEs (H30, H12, H24).
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="../../markdown_renderer.html?src=reports/customer-discovery-rakesh-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View Report &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=rakesh" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
+                </div>
                 <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-primary);">
                     <div>
                         <h4 style="margin: 0 0 0.5rem; color: var(--color-primary);">👤 Baran G Discovery Interview</h4>
@@ -437,7 +514,10 @@
                             Practitioner discovery: Tabular data automation via AI agents, severe time pressure across life priorities, and regaining time with presentable outputs (H24, H17, H30).
                         </p>
                     </div>
-                    <a href="../../markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; align-self: flex-start; margin-top: 0.5rem;">View Analysis Report &rarr;</a>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="../../markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View Report &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=baran_g" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
                 </div>
                 <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-primary);">
                     <div>
@@ -446,16 +526,22 @@
                             Deep-dive breakdown of Session 8 (Bora, Sude, Marianna, Rifat): Lecture &rarr; Party pivot, 100k-file Second Brain hybrid retrieval, Polymarket HFT bot, Cloudflare Zero Trust staging, and contractor financials.
                         </p>
                     </div>
-                    <a href="cohort-session-8-analysis.html" class="btn btn-primary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; align-self: flex-start; margin-top: 0.5rem;">View Session 8 Analysis &rarr;</a>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="cohort-session-8-analysis.html" class="btn btn-primary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">Full Analysis &rarr;</a>
+                        <a href="cd-interview-pdf.html?interview=session_8" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ A4 PDF</a>
+                    </div>
                 </div>
                 <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--color-info);">
                     <div>
                         <h4 style="margin: 0 0 0.5rem; color: var(--color-info);">📂 Discovery Interview Transcripts Archive</h4>
                         <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.85rem;">
-                            Qualitative interview transcripts and notes from candidate sessions: Cheuk (National Grid enrollment block), Baran G, Sude, Bora, Mehmet, Charles, and live cohort attendee feedback.
+                            Qualitative interview transcripts and notes from candidate sessions: two YouTube viewers on founder voice vs automated Skool CTA, Cheuk (National Grid enrollment block), Baran G, Sude, Bora, Mehmet, Charles, and live cohort attendee feedback.
                         </p>
                     </div>
-                    <a href="archived-interview-transcripts.html" class="btn btn-secondary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; align-self: flex-start; margin-top: 0.5rem;">View All Transcripts &rarr;</a>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <a href="archived-interview-transcripts.html" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem;">View All &rarr;</a>
+                        <a href="cd-interview-pdf.html" class="btn btn-secondary" style="text-decoration: none; padding: 0.45rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--color-success);">🖨️ All PDFs</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -468,7 +554,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Logged Cheuk (National Grid) enrollment-block discovery on the transcript archive (2026-08-19) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Added Anna (UWISE Cambridge Founder) discovery review on 5-10-5 pacing methodology, session duration caps, and cognitive load guardrails (2026-08-21) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/cd-interview-recording.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </div>
     </footer>
@@ -682,6 +768,46 @@
             // Reset form and hypothesis selections
             document.getElementById('interview-form').reset();
             selectAllHypotheses(false);
+        }
+
+        function create1PageA4PdfFromForm() {
+            var name = document.getElementById('int-name').value.trim();
+            if (name) {
+                // Save current values to cookie note so PDF viewer can load it seamlessly
+                var channel = document.getElementById('int-channel').value;
+                var referral = document.getElementById('int-referral').value.trim();
+                var routine = document.getElementById('int-routine').value.trim();
+                var workaround = document.getElementById('int-workaround').value.trim();
+                var stories = document.getElementById('int-stories').value.trim();
+                var pains = document.getElementById('int-pains').value.trim();
+                var gains = document.getElementById('int-gains').value.trim();
+
+                var selectedHypElements = document.querySelectorAll('input[name="hypothesis"]:checked');
+                var selectedHypList = Array.from(selectedHypElements).map(function(cb) { return cb.value; });
+
+                var now = new Date();
+                var dateString = now.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+                var noteText = routine || "Recorded qualitative discovery interview.";
+                var siteNotesRaw = getCookie('site_notes');
+                var notes = [];
+                if (siteNotesRaw) {
+                    try { notes = JSON.parse(siteNotesRaw); } catch(e) {}
+                }
+                var newNote = {
+                    id: Date.now(),
+                    pageUrl: 'cd-interview-recording.html',
+                    pageTitle: name,
+                    text: noteText,
+                    date: dateString
+                };
+                notes.push(newNote);
+                setCookie('site_notes', JSON.stringify(notes), 365);
+                window.location.href = 'cd-interview-pdf.html?interview=custom&print=true';
+            } else {
+                // Open default PDF viewer
+                window.location.href = 'cd-interview-pdf.html';
+            }
         }
     </script>
 </body>

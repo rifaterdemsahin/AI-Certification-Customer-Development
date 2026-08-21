@@ -54,6 +54,7 @@
                 ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
                 ['5_Symbols/cd/cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
+                ['5_Symbols/cd/cd-interview-pdf.html', '🖨️ 1-Page A4 Interview PDF'],
                 ['5_Symbols/cd/cohort-session-8-analysis.html', '🎙️ Cohort Session 8 Analysis'],
                 ['5_Symbols/product/skool-membership-questions.html', '📝 Skool Membership Questions'],
                 ['5_Symbols/cd/archived-interview-transcripts.html', '📂 Archived Transcripts'],
@@ -90,6 +91,7 @@
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis'],
                 ['5_Symbols/strategy/focus.html', '🎯 Focus'],
                 ['5_Symbols/strategy/target-audience.html', '👥 Target Audience'],
+                ['5_Symbols/strategy/audience-transformation.html', '🔄 Audience Transformation (Input/Output)'],
                 ['5_Symbols/strategy/delivery-pilot-roadmap.html', '🧑‍✈️ Delivery Pilot Roadmap'],
                 ['5_Symbols/strategy/pain-points.html', '🎭 Customer Pain Points'],
                 ['5_Symbols/strategy/risk-analysis.html', '⚠️ Risk Analysis'],
@@ -147,10 +149,7 @@
                 ['5_Symbols/product/partners.html', '🤝 Partner With Us'],
                 ['5_Symbols/product/exam-prep-product.html', '📦 Exam Prep Bundle ($29)'],
                 ['5_Symbols/product/skool-lms-integration.html', '🏫 Skool LMS Integration'],
-                ['5_Symbols/product/skool-vs-youtube.html', '⚖️ Skool vs. YouTube Comparison'],
-                ['5_Symbols/product/youtube-skool-handoff.html', '🔄 YouTube → Skool Handoff'],
-                ['5_Symbols/product/skool-posting-sanity-check.html', '✅ Skool Posting Sanity Check'],
-                ['5_Symbols/product/skool-workshop-upload.html', '🎥 2-Hour Workshop Upload'],
+                ['5_Symbols/product/skool-roadmap.html', '🗺️ Skool Community &amp; Learning Roadmap'],
                 ['5_Symbols/product/skool-founding-members.html', '🏫 Skool Steps & Founding Members'],
                 ['5_Symbols/product/skool-community-golden-rules.html', '🌟 Golden Rules of Community Building'],
                 ['5_Symbols/product/skool-10-true-regulars.html', '🔟 10 True Regulars in Skool'],
@@ -162,7 +161,9 @@
                 ['5_Symbols/product/skool-similar-communities.html', '🏛️ Similar Skool Communities'],
                 ['5_Symbols/product/grow-skool-traffic.html', '🚀 Grow Your Skool Traffic'],
                 ['5_Symbols/product/skool-monetization.html', '💰 How to Monetize Your Skool'],
-                ['5_Symbols/product/skool-offer-ideas.html', '💡 What You Can Offer on Skool'],
+                ['5_Symbols/product/skool-posting-sanity-check.html', '🛡️ Founder Posting Sanity Check'],
+                ['5_Symbols/product/skool-static-posts.html', '📌 Static Posts & Anti-Spam (Living Hubs)'],
+                ['5_Symbols/product/skool-workshop-upload.html', '🎬 2-Hour Workshop Upload Check'],
                 ['5_Symbols/product/member-bandwidth-guardrails.html', '🛡️ Member Bandwidth Guardrails'],
                 ['5_Symbols/product/skool-community-management.html', '🌱 Community Management (Garden)'],
                 ['5_Symbols/product/community-rules-enforcement.html', '⚖️ Rules: Deletions, Bans &amp; Suspensions'],
@@ -170,11 +171,13 @@
                 ['5_Symbols/product/skool-onboarding-checklist.html', '🚀 Onboarding Checklist Plugin'],
                 ['5_Symbols/product/skool-manual-member-invites.html', '✉️ Manual Invites & Tier Switch'],
                 ['5_Symbols/product/skool-payout-dashboard.html', '💳 Skool Payout Dashboard & Settlement'],
-                ['5_Symbols/product/skool-new-joiner-welcome-and-faq.html', '👋 New Joiner Welcome &amp; FAQ']
+                ['5_Symbols/product/skool-new-joiner-welcome-and-faq.html', '👋 New Joiner Welcome &amp; FAQ'],
+                ['5_Symbols/product/deliverypilot-net.html', '🌐 deliverypilot.net Portal']
             ]
         },
         {
             type: 'dropdown', label: 'Growth', emoji: '📈', className: 'nav-growth', items: [
+                ['5_Symbols/growth/audience-roadmap.html', '🧭 Audience Transformation Roadmap'],
                 ['5_Symbols/growth/sales-marketing-roadmap.html', '🗺️ Sales &amp; Marketing Roadmap'],
                 ['5_Symbols/growth/sales-pipeline.html', '📊 Sales Pipeline'],
                 ['5_Symbols/growth/conversion-strategy.html', '🎯 Conversion Strategy &amp; Tactics'],
@@ -207,6 +210,7 @@
                 ['5_Symbols/growth/funfair-tokens.html', '🎡 Funfair Token System'],
                 ['5_Symbols/growth/youtube-titles-skool-mapping.html', '🎯 YouTube Titles → Skool Mapping'],
                 ['5_Symbols/growth/video-conversion-tactics.html', '🎬 Video End-Screen &amp; Conversion Tactics'],
+                ['5_Symbols/growth/founder-voice-skool-cta.html', '🎙️ Founder Voice vs AI Voice'],
                 ['5_Symbols/growth/conversation-starters.html', '🗣️ Conversation Starters'],
                 ['5_Symbols/growth/metrics-dashboard.html', '📊 Metrics Dashboard'],
                 ['5_Symbols/growth/market-fit-channels.html', '🔄 Market Fit & Channels'],
@@ -275,6 +279,12 @@
                 ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification'],
                 ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation'],
+                ['markdown_renderer.html?src=reports/founder-voice-skool-cta-v1.0.0.md', '🎙️ Founder Voice vs AI Voice v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-anna-interview-v1.0.0.md', '👤 Anna CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-marianna-interview-v1.0.0.md', '👤 Marianna CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-brian-interview-v1.0.0.md', '👤 Brian CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-tomiwa-interview-v1.0.0.md', '👤 Tomiwa CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-rakesh-interview-v1.0.0.md', '👤 Rakesh CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md', '👤 Baran G CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/cohort-session-8-analysis-v1.0.0.md', '🎙️ Cohort Session 8 Deep Dive v1.0'],
                 ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0'],
@@ -292,6 +302,12 @@
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
         { url: '5_Symbols/strategy/passion.html', title: 'Passion: Self-Learning & Community', desc: 'The founder engine — self-learning through shifting professions, the 2023 Universal Credit turning point on poverty, and volunteering by listening without giving advice.', cat: 'Strategy', tags: 'passion self learning skill gaps professions shifting poverty universal credit 2023 family health volunteering listening no advice ai certification content community founder' },
+        { url: 'markdown_renderer.html?src=reports/founder-voice-skool-cta-v1.0.0.md', title: 'Founder Voice vs AI Voice v1.0.0', desc: 'Two independent viewers of AI Isn\'t a Bubble accepted the content and rejected an automated voice when selling Skool.', cat: 'Docs', tags: 'founder voice automated voice skool youtube 27jXA2V2Zio h2 h5 h29' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-anna-interview-v1.0.0.md', title: 'Customer Discovery Report: Anna Interview', desc: 'Qualitative analysis of Anna interview on 5-10-5 pacing methodology (5m demo, 10m execute, 5m Q&A), 3-task session duration caps (40–60 min), and cognitive overload guardrails.', cat: 'Docs', tags: 'anna customer discovery interview uwise cambridge professor ukrainian founder 5-10-5 methodology pacing duration cognitive overload fatigue sunday live cohort h29 h8 h2 h10 h5 h17 h24 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-marianna-interview-v1.0.0.md', title: 'Customer Discovery Report: Marianna Interview', desc: 'Qualitative analysis of Marianna customer interview on Sunday AI Brain collaborative labs, practical workshops programme co-creation, and flipped classroom pre-session short AI video primers.', cat: 'Docs', tags: 'marianna customer discovery interview maria testing lead compliance ai brain sunday practical workshops programme flipped classroom short ai videos tool primers installation dependencies h17 h2 h10 h30 h8 h29 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-brian-interview-v1.0.0.md', title: 'Customer Discovery Report: Brian Interview', desc: 'Qualitative analysis of Brian customer interview on skills paying bills, complex Kubernetes / CI-CD depth, reducing disposability, and client guide demand.', cat: 'Docs', tags: 'brian customer discovery interview skills pay bills kubernetes cicd disposability client guide rules fde contractor h30 h1 h25 h24 h12 h29 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-tomiwa-interview-v1.0.0.md', title: 'Customer Discovery Report: Tomiwa Interview', desc: 'Qualitative analysis of Tomiwa interview on clearing Claude Associate in days, stepping-stone progression, and deep hands-on requirements for Claude Architect.', cat: 'Docs', tags: 'tomiwa customer discovery interview claude associate claude architect certification ladder bifurcation hands on h25 h1 h8 h21 h30 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-rakesh-interview-v1.0.0.md', title: 'Customer Discovery Report: Rakesh Interview', desc: 'Qualitative analysis of Rakesh interview on rising UK Employer National Insurance, permanent employment overhead inflation, and accelerating contractor / FDE demand.', cat: 'Docs', tags: 'rakesh customer discovery interview national insurance employment overhead taxes contractors fde ir35 h30 h12 h24 h1 report' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md', title: 'Customer Discovery Report: Baran G Interview', desc: 'Qualitative analysis of Baran G customer interview on tabular AI agent automation, Excel data processing, time scarcity, and presentation outputs.', cat: 'Docs', tags: 'baran g customer discovery interview tabular excel agents time pressure emotional drivers h24 h17 h30 report' },
         { url: '5_Symbols/product/skool-new-joiner-welcome-and-faq.html', title: 'New Joiner Welcome Message & FAQ Guide', desc: 'Copy-paste founder welcome message template, 4-step new joiner roadmap, and comprehensive FAQ explaining $0 cost start, no coding background required, and self-learning to AI certification.', cat: 'Product', tags: 'skool new joiner welcome message template faq non technical zero cost start no coding required self learning ai tools get certified claude architect forward deployed engineer h5 h8 h29 h30' },
         { url: '5_Symbols/growth/community-building-score.html', title: 'Community Building & Business Model Confidence Score', desc: 'Detailed architectural connection between Skool community building, lecture-to-party pivot, 10 true regulars, and the numeric confidence score.', cat: 'Growth', tags: 'community building business model confidence score skool freemium peek sit in share screen lecture party listen speak 10 true regulars anti spam level 2 posting onboarding venture cafe cambridge triton square contractor fde h5 h8 h9 h20 h29 h30' },
@@ -312,6 +328,7 @@
         { url: '5_Symbols/product/skool-vs-youtube.html', title: 'Skool vs. YouTube Course Delivery', desc: 'Comparison of Skool vs. YouTube for course delivery, highlighting structured community learning vs. open media platforms.', cat: 'Business Model', tags: 'skool youtube platform comparison classroom community monetization channels' },
         { url: '5_Symbols/product/youtube-skool-handoff.html', title: 'YouTube / LinkedIn → Skool Audience Handoff', desc: 'Fixed order: YouTube and LinkedIn acquire; CTAs hand off; Skool delivers Classroom, forum, calendar, and billing as Stage 2 only.', cat: 'Business Model', tags: 'youtube skool handoff acquisition delivery linkedin order funnel stage 2 lms' },
         { url: '5_Symbols/product/skool-posting-sanity-check.html', title: 'Skool Founder Posting Sanity Check', desc: 'Verdict on founder-only board posting and Classroom build: right for Stage 2 if paired with warm invites; board is not acquisition.', cat: 'Business Model', tags: 'skool posting sanity check founder community board invite warm cohort stage 2' },
+        { url: '5_Symbols/product/skool-static-posts.html', title: 'Skool Static Posts & Anti-Spam (Living Hubs)', desc: 'Operational guidelines and copy-paste rewrites for Skool static anchor posts, append-only comment streams, and community resource curation.', cat: 'Business Model', tags: 'skool static posts living hubs anti-spam comments stream curation great resources self learning rakesh h5 h8 h29 h30' },
         { url: '5_Symbols/product/skool-workshop-upload.html', title: '2-Hour Workshop Upload Sanity Check', desc: 'Upload the Sunday 2-hour workshop to Skool Classroom as the replay archive, not the course, and never as a public YouTube video.', cat: 'Business Model', tags: 'skool workshop upload replay classroom 2 hour sunday recording timestamps h5 h10' },
         { url: '5_Symbols/product/skool-founding-members.html', title: 'Skool Steps & Founding Members', desc: 'Skool community-course checklist (9 steps) with Marianna, Sude, and Bayo named as the first 3 founding members.', cat: 'Business Model', tags: 'skool founding members marianna sude bayo first 3 community course steps 10 true regulars' },
         { url: '5_Symbols/product/skool-community-golden-rules.html', title: 'Golden Rules of Community Building', desc: 'Skool\'s 3 golden rules — don\'t lecture, build friendships, curate culture — mapped onto Delivery Pilot as the playbook from founding members to 10 true regulars.', cat: 'Business Model', tags: 'skool golden rules community building party lecture friendships culture vase founding members h8' },
@@ -335,6 +352,7 @@
         { url: '5_Symbols/product/skool-membership-questions.html', title: 'Skool Membership Questions & Customer Discovery Intake', desc: '4 AI knowledge pillars diagnostic plus open-ended customer discovery text box ("What do you hope to get out of the group?") on join intake.', cat: 'Discovery Process', tags: 'skool membership questions join intake customer discovery 4 ai pillars voc voice of customer hope to get out of group h3 h8 h24 h30' },
         { url: '5_Symbols/growth/linkedin-premium-decision.html', title: 'LinkedIn Premium Decision & Top Profile CTA', desc: 'Customer Creation task comparing Career (£14.99/mo), Business (£29.99/mo), and Sales Navigator Core (£79.99/mo) to market Skool link directly on LinkedIn profile header.', cat: 'Growth', tags: 'linkedin premium career business sales navigator cta profile marketing traffic stage 3 customer creation h5 h12 h13' },
         { url: '5_Symbols/growth/linkedin-vip-cowork.html', title: 'LinkedIn 30k Network Cap & Monday VIP Claude Cowork', desc: 'Strategy for managing LinkedIn 30,000 connection limit by only adding verified Skool members, plus Monday VIP Claude Cowork recruiter promotion over Delivery Pilot.', cat: 'Growth', tags: 'linkedin network 30000 30k connections cap mynetwork grow skool members buffer monday vip claude cowork recruiters delivery pilot h5 h12' },
+        { url: '5_Symbols/product/deliverypilot-net.html', title: 'deliverypilot.net — Forward Deployed Engineer Accelerator', desc: 'Official web portal blueprint, 4-stage FDE roadmap, 3-tier offer ladder (Peek $0 / Sit In $1 / VIP $250), and 15-min VIP phone call sales playbook.', cat: 'Business Model', tags: 'deliverypilot deliverypilot.net portal forward deployed engineer fde contractor roadmap 4 stages vip phone call sales playbook skool peek sit in share screen h5 h8 h30' },
         { url: '5_Symbols/growth/linkedin-newsletter.html', title: 'LinkedIn Newsletter: Skool & Community Blueprint', desc: 'Comprehensive LinkedIn newsletter editorial blueprint and article template introducing Skool and the Delivery Pilot community.', cat: 'Growth', tags: 'linkedin newsletter editorial skool community delivery pilot article fde contractors cloud claude certification h5 h30' },
         { url: '5_Symbols/growth/skool-affiliate-roadmap.html', title: 'Skool Affiliate Timeline & Milestone Roadmap', desc: '4-stage activation roadmap and unit economics for launching the Skool affiliate program, gated behind the G3 $10,000 revenue milestone.', cat: 'Growth', tags: 'skool affiliate referral timeline milestone roadmap commission unit economics stage gates h5 h8 h9' },
         { url: '5_Symbols/growth/skool-churn-retention.html', title: 'Reducing Churn & Maximizing Retention', desc: 'Tactical churn reduction framework covering leaky bucket dynamics, <5% retention benchmarks, 30-day cohort curves, and 5 tactical retention levers.', cat: 'Growth', tags: 'skool churn retention leaky bucket cohort curves onboarding ritual peer ties gamification h2 h8 h29' },
@@ -364,6 +382,7 @@
         { url: '5_Symbols/cd/cd-interview-guide.html', title: 'Customer Discovery Interview Guide', desc: 'Playbook of open-ended pains/gains questions, past behavior stories, and listening guidelines.', cat: 'Process', tags: 'interview questions open ended pains gains guide' },
         { url: '5_Symbols/cd/cd-watering-holes.html', title: 'Customer Watering Holes & Outreach', desc: 'Outreach blueprint mapping Triton Square, Venture Coffee meetups, and cohorts with ready-to-use scripts.', cat: 'Process', tags: 'watering holes triton square venture coffee cohorts scripts outreach slack dms' },
         { url: '5_Symbols/cd/cd-interview-recording.html', title: 'Interview Recording Workspace', desc: 'Qualitative interview recording tool with multi-select hypothesis mapping (H1–H30), markdown file download, and shared cookie notes sync.', cat: 'Process', tags: 'interview log recording tracker multi select hypotheses download notes cookie' },
+        { url: '5_Symbols/cd/cd-interview-pdf.html', title: '1-Page A4 Interview PDF Generator', desc: 'Single-page A4 PDF print layout, candidate interview selector, and export tool for qualitative Customer Discovery records.', cat: 'Process', tags: 'interview pdf a4 single page print export baran apo cheuk youtube' },
         { url: '5_Symbols/cd/archived-interview-transcripts.html', title: 'Archived Interview Transcripts', desc: 'Detailed qualitative interview notes and transcript archives from customer discovery sessions.', cat: 'Process', tags: 'interview transcript archived notes sude charles marianna' },
         { url: '5_Symbols/stages/stage-customer-discovery.html', title: '1. Customer Discovery Stage', desc: 'First phase of customer development focused on problem-solution fit and testing core customer pain points.', cat: 'Stage', tags: 'problem solution mvp validation first' },
         { url: '5_Symbols/stages/stage-customer-validation.html', title: '2. Customer Validation Stage', desc: 'Second phase to build a repeatable, scalable sales blueprint and verify product-market fit.', cat: 'Stage', tags: 'sales roadmap pricing validation product market' },
@@ -444,7 +463,7 @@
         { url: '5_Symbols/strategy/market-reality-check.html', title: 'Your Market Reality Check', desc: 'Evaluation of the customer job-to-be-done, value chain dynamics, category table stakes, and Vonos.ai visual integration.', cat: 'Strategy', tags: 'market reality check stress test job to be done value chain vonos table stakes' },
         { url: '5_Symbols/strategy/why-certification.html', title: 'Why Certification Matters', desc: 'Prospect-facing case for AI certification: pay premiums, employer partner-tier gating, and FDE hiring growth.', cat: 'Strategy', tags: 'why certification matters career prospects employer value' },
         { url: '5_Symbols/strategy/cert-value-ai-era.html', title: 'Cert Value in the AI Era', desc: 'Why certification value is bifurcating: memorization/trivia certs decline while judgement-verifying, scenario-based certs rise, tracked as H25.', cat: 'Strategy', tags: 'cert value ai era judgement recall bifurcation regulated procurement dod 8140 h25' },
-        { url: '5_Symbols/strategy/perception-of-ai.html', title: 'Perception of AI: Skeptical View', desc: 'Why elite engineers and Linus Torvalds maintain a skeptical stance on AI: role shift to reviewer, bug verification tax, and human-vetted patches.', cat: 'Strategy', tags: 'perception of ai skeptical linus torvalds open source summit charles andrews junk verification lead role shift h25' },
+        { url: '5_Symbols/strategy/perception-of-ai.html', title: 'Perception of AI: Skeptical View', desc: 'Why elite engineers and Linus Torvalds maintain a skeptical stance on AI: role shift to reviewer, bug verification tax, and human-vetted patches. Discovery source cited as Charles (first name only).', cat: 'Strategy', tags: 'perception of ai skeptical linus torvalds open source summit charles junk verification lead role shift h25' },
         { url: '5_Symbols/strategy/skills-gap.html', title: 'Enterprise AI Skills Gap', desc: 'Why AI and agentic systems open a skills gap, how Digital Immigrants act as Delivery Pilots, and the stage focuses.', cat: 'Strategy', tags: 'skills gap enterprise delivery pilots digital immigrants skool badges live samples assessment' },
         { url: '5_Symbols/product/self-assessment.html', title: 'Self-Assessment', desc: 'Interactive 3-question quiz routing prospects to the free cohort, the $29 bundle, membership, or live cohort.', cat: 'Strategy', tags: 'self assessment quiz recommendation which offer fits me' },
         { url: '5_Symbols/product/discovery-journey.html', title: 'The Discovery Journey', desc: 'Prospect-facing plain-language guide to what happens in a customer discovery call and how to join.', cat: 'Strategy', tags: 'discovery journey prospect interview join customer development' },
@@ -493,7 +512,8 @@
         { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines built on the Samuel Leeds urgency formula, each priced with a gain/loss ledger and a no-guarantee compliance rule.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds' },
         { url: '5_Symbols/growth/funfair-tokens.html', title: '🎡 Funfair Token System: Time-Based Tokens', desc: 'Audience earns time-based tokens that expire weekly and spends them at stalls inside the fair on Memory Cards, Mock Exams, and the Ultimate IT Contractor Course.', cat: 'Growth', tags: 'funfair tokens time based expiry gamification engagement memory cards mock exams contractor course stalls urgency h21 h30' },
         { url: '5_Symbols/growth/youtube-titles-skool-mapping.html', title: 'YouTube Titles → Skool Content Mapping', desc: 'Eight YouTube title ideas mapped to their intended Skool landing destination (free feed, $10/mo membership, $29 bundle, or live cohort), each with a stated rationale.', cat: 'Growth', tags: 'youtube titles skool mapping funnel destination classroom membership bundle cohort headlines' },
-        { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video End-Screen & Conversion Tactics', desc: 'Actionable video-level conversion mechanics: Skool walkthrough end cards, blurred cheat sheet reveals, comment scenario hooks, and channel trailer routing.', cat: 'Growth', tags: 'video conversion tactics end screen video cards skool walkthrough blurred cheat sheet comments hooks' },
+        { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video End-Screen & Conversion Tactics', desc: 'Actionable video-level conversion mechanics: Skool walkthrough end cards, blurred cheat sheet reveals, comment scenario hooks, and channel trailer routing. Founder voice required on the Skool ask.', cat: 'Growth', tags: 'video conversion tactics end screen video cards skool walkthrough blurred cheat sheet comments hooks founder voice' },
+        { url: '5_Symbols/growth/founder-voice-skool-cta.html', title: 'Founder Voice vs AI Voice', desc: 'Two independent viewers of AI Isn\'t a Bubble accepted the content and rejected an automated voice when selling Skool. Teach with animation; sell in founder voice.', cat: 'Growth', tags: 'founder voice automated voice ai tts skool cta youtube 27jXA2V2Zio h2 h5 h29' },
         { url: '5_Symbols/dashboard/todo.html', title: 'Task List', desc: 'Recurring weekly loop (3 videos, Sunday cohort, Skool answers, YouTube comment batch) plus one-off production/build tasks: newsletter signup, video performance testing.', cat: 'Growth', tags: 'todo task list recurring weekly videos cohort skool youtube comments daily hello connect notifications newsletter animations baseline production' },
         { url: '5_Symbols/dashboard/weekly-todos.html', title: 'Weekly Todos & Execution Cadence', desc: 'Structured 7-day recurring loop, operating lanes, day-by-day execution checklist, and visual slide architecture linked to todo.html.', cat: 'Growth', tags: 'weekly todos cadence sprint schedule monday sunday live cohort skool pass reverse response marketing' },
         { url: '5_Symbols/growth/content-analysis.html', title: 'Content Analysis', desc: 'Per-video retention log tracking animated content performance against the 40% MVP target, seeded with a 68% first data point.', cat: 'Growth', tags: 'content analysis retention video performance analytics' },
@@ -517,6 +537,9 @@
         { url: '5_Symbols/discovery/verify-pivot.html', title: 'Discovery: Verify or Pivot Detail', desc: 'The final discovery verify-pivot checklist and scaling gate.', cat: 'Discovery Detail', tags: 'verify pivot checklist scaling gate threshold' },
         { url: 'business-overview.html', title: 'Business Overview (One-Pager)', desc: 'Plain-language one-page reference for what the business does, who it is for, how it makes money, and current stage.', cat: 'References', tags: 'business overview one pager elevator pitch summary reference what does this do' },
         { url: '5_Symbols/cd/cd-hypothesis-interview-questions.html', title: 'Hypothesis Interview Questions', desc: 'Specific customer-interview questions mapped to every hypothesis (H1-H19), each with a listen-for cue for what would validate or kill it.', cat: 'Process', tags: 'interview questions hypothesis test validate kill customer discovery ask what to ask' },
+        { url: '5_Symbols/product/skool-roadmap.html', title: 'Skool Community & Learning Roadmap', desc: '4-phase Skool operational milestones: Foundation → MVP Classroom & Daily Visuals → 10 True Regulars → VIP Placement Alliance.', cat: 'Product', tags: 'skool roadmap community classroom mvp daily visuals 10 regulars vip alliance delivery pilot' },
+        { url: '5_Symbols/strategy/audience-transformation.html', title: 'Audience Transformation (Input/Output)', desc: 'Matrix defining candidate starting input (prompt tinkerer / unverified CV) to Delivery Pilot certified output (£500-£1,000/day Forward Deployed AI Engineer).', cat: 'Strategy', tags: 'audience transformation input output delivery pilot forward deployed engineer fde contractor matrix h30' },
+        { url: '5_Symbols/growth/audience-roadmap.html', title: 'Audience Transformation Roadmap', desc: '5-step practitioner journey: YouTube/LinkedIn content → Skool community cohorts → Claude Architect course MVP & daily visuals → VIP screen sharing → Delivery Pilot partnership.', cat: 'Growth', tags: 'audience roadmap customer journey youtube linkedin skool mvp course claude certified architect vip deliverypilot partnership' },
         { url: '5_Symbols/product/skool-payout-dashboard.html', title: 'Skool Payout Dashboard & Settlement', desc: 'Real-time tracking of Skool and Stripe Connect balance, first paid $0.60 settlement, 7-14 day clearing cycle, and Wednesday payouts.', cat: 'Product', tags: 'skool payout dashboard settlement stripe delivery pilot balance pending wednesday clearance' }
     ];
 
@@ -1383,6 +1406,12 @@
     ];
 
     var relatedConceptsOverride = {
+        '5_Symbols/growth/founder-voice-skool-cta.html': [
+            { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video Conversion Tactics', emoji: '🎬' },
+            { url: '5_Symbols/growth/free-educational-content-strategy.html', title: 'Free Content Strategy', emoji: '📺' },
+            { url: '5_Symbols/hypotheses/hyp-h5.html', title: 'H5 Organic Skool Sales', emoji: '🟡' },
+            { url: '5_Symbols/cd/archived-interview-transcripts.html', title: 'Interview Transcripts', emoji: '📂' }
+        ],
         '5_Symbols/execution/4dx-execution-crisis.html': [
             { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus', emoji: '🎯' },
             { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Lead Measures', emoji: '⚖️' },

@@ -26,9 +26,14 @@
     </main>
 
     <footer>
-        <div class="footer-container">
-            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
-            <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" id="footer-revision" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added dynamic footer links for GitHub history, source, and live deployed pages (<a id="footer-history-link" href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/markdown_renderer.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a id="footer-live-link" href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/markdown_renderer.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
         </div>
     </footer>
 
@@ -360,12 +365,25 @@
         var titleEl = document.getElementById('doc-title');
         var pathEl = document.getElementById('doc-path');
         var bodyEl = document.getElementById('doc-body');
+        var footerHistoryLink = document.getElementById('footer-history-link');
+        var footerLiveLink = document.getElementById('footer-live-link');
+        var footerRevision = document.getElementById('footer-revision');
 
         if (!src) {
             titleEl.textContent = 'No document specified';
             bodyEl.innerHTML = '<p>Append <code>?src=FILENAME.md</code> to the URL, e.g. <code>markdown_renderer.html?src=HYPOTHESIS.md</code>.</p>';
+            if (footerHistoryLink) footerHistoryLink.href = 'https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/markdown_renderer.html';
+            if (footerLiveLink) footerLiveLink.href = 'https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/markdown_renderer.html';
         } else {
             pathEl.textContent = src;
+            var cleanSrc = src.replace(/^\.?\//, '');
+            if (footerRevision) {
+                var docName = src.split('/').pop();
+                footerRevision.innerHTML = 'Document: <strong>' + escapeHtml(docName) + '</strong> (' +
+                    '<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/' + encodeURI(cleanSrc) + '" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | ' +
+                    '<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/blob/main/' + encodeURI(cleanSrc) + '" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Source</a> | ' +
+                    '<a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/markdown_renderer.html?src=' + encodeURIComponent(cleanSrc) + '" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)';
+            }
             fetch(src)
                 .then(function (res) {
                     if (!res.ok) throw new Error('HTTP ' + res.status);

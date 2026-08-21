@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audience Transformation Roadmap | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .roadmap-stage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 1.5rem;
+        }
+        .roadmap-stage-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+        .roadmap-stage-card.featured {
+            border-color: rgba(245, 158, 11, 0.45);
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.08), rgba(255, 255, 255, 0.02));
+            box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.15), 0 15px 35px rgba(0,0,0,0.3);
+        }
+        .stage-num-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--color-primary);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            margin-bottom: 1rem;
+        }
+        .stage-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            margin-left: 0.75rem;
+        }
+        .stage-tag.free { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .stage-tag.mvp { background: rgba(6, 182, 212, 0.15); color: #67e8f9; border: 1px solid rgba(6, 182, 212, 0.3); }
+        .stage-tag.vip { background: rgba(245, 158, 11, 0.15); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .stage-tag.partner { background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.3); }
+        
+        .resource-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .resource-pill:hover {
+            color: var(--text-primary);
+            border-color: var(--color-primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="sales-marketing-roadmap.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Sales &amp; Marketing Roadmap
+        </a>
+
+        <!-- Hero Header -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary);">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <span class="badge">Growth &middot; Customer Journey</span>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.1); color: var(--color-success); border-color: rgba(16, 185, 129, 0.2);">Audience Roadmap</span>
+                <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--color-warning); border-color: rgba(245, 158, 11, 0.2);">Delivery Pilot Funnel</span>
+            </div>
+            <h1 style="font-family: var(--font-heading); font-size: 2.3rem; margin-bottom: 1rem;">🧭 Audience Transformation Roadmap</h1>
+            <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; max-width: 950px; margin-bottom: 1.5rem;">
+                The complete end-to-end journey for technical practitioners: from discovering animated technical breakdowns on <strong>YouTube / LinkedIn</strong>, entering the <strong>Skool Community</strong>, learning through the <strong>Claude Certified Architect MVP course</strong> with daily visual updates, advancing to <strong>VIP screen-sharing cohorts</strong>, and graduating to the <strong>Delivery Pilot Partnership Program</strong> with enterprise certification and recruiter advocacy.
+            </p>
+
+            <div class="grid">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">MVP Course Hub:</span>
+                            <span class="info-value"><a href="https://www.skool.com/delivery-pilot-8938/classroom/4d0285cc?md=08851442218443d4aeea5ceaa5ec2e2e" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Claude Certified Architect Classroom ↗</a></span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Daily Updates:</span>
+                            <span class="info-value highlight-success">Daily Visual Assets &amp; Storyboards</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Target Persona:</span>
+                            <span class="info-value">Forward Deployed AI Engineers &amp; £500–£1,000+/day Contractors</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Partnership Backup:</span>
+                            <span class="info-value" style="color: var(--color-warning); font-weight: 600;">partnership@deliverypilot.net / deliverypilot.net</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Associated Hypotheses:</span>
+                            <span class="info-value"><a href="../hypotheses/hyp-h4.html" style="color: var(--color-primary);">H4</a>, <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>, <a href="../hypotheses/hyp-h12.html" style="color: var(--color-primary);">H12</a>, <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a></span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Handoff Architecture:</span>
+                            <span class="info-value"><a href="../product/youtube-skool-handoff.html" style="color: var(--color-primary);">YouTube → Skool Handoff</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Flow Diagram -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🗺️ The 5-Step Audience Journey Architecture</h2>
+            <div class="card" style="overflow-x: auto; padding: 2rem 1.5rem; margin-bottom: 2rem;">
+                <svg class="svg-diagram" viewBox="0 0 1000 240" style="max-width: 100%; width: 100%; height: auto;" role="img" aria-label="Diagram showing the 5-step audience roadmap">
+                    <!-- Step 1: Content -->
+                    <rect x="10" y="30" width="175" height="170" rx="12" fill="rgba(239, 68, 68, 0.08)" stroke="#ef4444" stroke-width="1.5"/>
+                    <text x="97" y="55" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="700" font-family="Inter, sans-serif" letter-spacing="1">1. CONTENT &amp; REACH</text>
+                    <text x="97" y="78" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700" font-family="Inter, sans-serif">YouTube &amp; LinkedIn</text>
+                    <text x="97" y="105" text-anchor="middle" fill="var(--text-secondary)" font-size="9.5" font-family="Inter, sans-serif">
+                        <tspan x="97" dy="0">• Animated Reverse Shorts</tspan>
+                        <tspan x="97" dy="14">• Technical Breakdowns</tspan>
+                        <tspan x="97" dy="14">• Founder-Voice Skool CTA</tspan>
+                        <tspan x="97" dy="14">• 30k Cap LinkedIn Funnel</tspan>
+                    </text>
+
+                    <!-- Arrow 1 -> 2 -->
+                    <polygon points="190,115 205,115 205,110 215,117 205,124 205,119 190,119" fill="var(--text-muted)"/>
+
+                    <!-- Step 2: Skool Cohort -->
+                    <rect x="220" y="30" width="175" height="170" rx="12" fill="rgba(6, 182, 212, 0.08)" stroke="var(--color-info)" stroke-width="1.5"/>
+                    <text x="307" y="55" text-anchor="middle" fill="var(--color-info)" font-size="11" font-weight="700" font-family="Inter, sans-serif" letter-spacing="1">2. SKOOL COMMUNITY</text>
+                    <text x="307" y="78" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700" font-family="Inter, sans-serif">Join Member Cohorts</text>
+                    <text x="307" y="105" text-anchor="middle" fill="var(--text-secondary)" font-size="9.5" font-family="Inter, sans-serif">
+                        <tspan x="307" dy="0">• Standard ($0 Peek Tier)</tspan>
+                        <tspan x="307" dy="14">• Premium ($1/mo Sit In)</tspan>
+                        <tspan x="307" dy="14">• Free Sunday Practice</tspan>
+                        <tspan x="307" dy="14">• Discovery Intake Loop</tspan>
+                    </text>
+
+                    <!-- Arrow 2 -> 3 -->
+                    <polygon points="400,115 415,115 415,110 425,117 415,124 415,119 400,119" fill="var(--text-muted)"/>
+
+                    <!-- Step 3: MVP Course -->
+                    <rect x="430" y="30" width="175" height="170" rx="12" fill="rgba(16, 185, 129, 0.08)" stroke="var(--color-success)" stroke-width="1.5"/>
+                    <text x="517" y="55" text-anchor="middle" fill="var(--color-success)" font-size="11" font-weight="700" font-family="Inter, sans-serif" letter-spacing="1">3. MVP COURSE</text>
+                    <text x="517" y="78" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700" font-family="Inter, sans-serif">Claude Architect Hub</text>
+                    <text x="517" y="105" text-anchor="middle" fill="var(--text-secondary)" font-size="9.5" font-family="Inter, sans-serif">
+                        <tspan x="517" dy="0">• Daily Visual Storyboards</tspan>
+                        <tspan x="517" dy="14">• 7 Live Cohort Modules</tspan>
+                        <tspan x="517" dy="14">• Exam-Mapped Questions</tspan>
+                        <tspan x="517" dy="14">• Hands-on Architecture</tspan>
+                    </text>
+
+                    <!-- Arrow 3 -> 4 -->
+                    <polygon points="610,115 625,115 625,110 635,117 625,124 625,119 610,119" fill="var(--text-muted)"/>
+
+                    <!-- Step 4: VIP Tier -->
+                    <rect x="640" y="30" width="175" height="170" rx="12" fill="rgba(245, 158, 11, 0.08)" stroke="var(--color-warning)" stroke-width="1.5"/>
+                    <text x="727" y="55" text-anchor="middle" fill="var(--color-warning)" font-size="11" font-weight="700" font-family="Inter, sans-serif" letter-spacing="1">4. VIP MEMBERSHIP</text>
+                    <text x="727" y="78" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700" font-family="Inter, sans-serif">$250/yr Share Screen</text>
+                    <text x="727" y="105" text-anchor="middle" fill="var(--text-secondary)" font-size="9.5" font-family="Inter, sans-serif">
+                        <tspan x="727" dy="0">• Sunday Live Screen Share</tspan>
+                        <tspan x="727" dy="14">• Monday Claude Cowork</tspan>
+                        <tspan x="727" dy="14">• 1-on-1 Founder Reviews</tspan>
+                        <tspan x="727" dy="14">• CV &amp; Portfolio Polishing</tspan>
+                    </text>
+
+                    <!-- Arrow 4 -> 5 -->
+                    <polygon points="820,115 835,115 835,110 845,117 835,124 835,119 820,119" fill="var(--text-muted)"/>
+
+                    <!-- Step 5: Partnership -->
+                    <rect x="850" y="30" width="140" height="170" rx="12" fill="rgba(168, 85, 247, 0.08)" stroke="var(--color-primary)" stroke-width="1.5"/>
+                    <text x="920" y="55" text-anchor="middle" fill="var(--color-primary)" font-size="10" font-weight="700" font-family="Inter, sans-serif" letter-spacing="0.5">5. PARTNERSHIP</text>
+                    <text x="920" y="78" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700" font-family="Inter, sans-serif">Certified Partner</text>
+                    <text x="920" y="105" text-anchor="middle" fill="var(--text-secondary)" font-size="9" font-family="Inter, sans-serif">
+                        <tspan x="920" dy="0">• Delivery Pilot Org</tspan>
+                        <tspan x="920" dy="13">• Proctored Badges</tspan>
+                        <tspan x="920" dy="13">• Recruiter Advocacy</tspan>
+                        <tspan x="920" dy="13">• Joint RFP Bidding</tspan>
+                    </text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Detailed Breakdown of the 5 Steps -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Step-by-Step Audience Journey Deep Dive</h2>
+
+            <!-- Step 1 -->
+            <div class="roadmap-stage-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="stage-num-badge">1</div>
+                        <div>
+                            <h3 style="font-size: 1.35rem; margin: 0; font-family: var(--font-heading);">
+                                Top-of-Funnel Discovery: YouTube &amp; LinkedIn Content
+                                <span class="stage-tag free">Organic Inbound</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin: 0.25rem 0 0; font-size: 0.95rem;">
+                                Capturing practitioner curiosity via high-retention animated breakdowns and controversial practitioner insight.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid" style="margin-top: 1.25rem;">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Core Operational Mechanisms:</h4>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">Reverse Response Marketing:</span><span class="info-value">Take trending AI/dev premises, reverse the mainstream claim, and inject enterprise contractor reality.</span></li>
+                            <li class="info-item"><span class="info-label">Animation Style:</span><span class="info-value">High-retention Roger Rabbit 2D/3D animated shorts built in MVP production repo (<code>aug-video-animation-2</code>).</span></li>
+                            <li class="info-item"><span class="info-label">Founder-Recorded CTA:</span><span class="info-value">AI voice delivers technical lessons; Rifat's genuine founder voice invites viewers to Sunday practice on Skool.</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Related Documents &amp; Blueprints:</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="../growth/reverse-response-marketing.html" class="resource-pill">🔄 Reverse Response Marketing Guide</a>
+                            <a href="../growth/founder-voice-skool-cta.html" class="resource-pill">🎙️ Founder Voice vs. AI Voice SOP (n=2)</a>
+                            <a href="../growth/roger-rabbit-animation.html" class="resource-pill">🐇 Roger Rabbit Animation Framework</a>
+                            <a href="../growth/linkedin-vip-cowork.html" class="resource-pill">💼 LinkedIn 30k Cap &amp; Skool Member Filtering</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="roadmap-stage-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="stage-num-badge" style="color: var(--color-info); background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3);">2</div>
+                        <div>
+                            <h3 style="font-size: 1.35rem; margin: 0; font-family: var(--font-heading);">
+                                Community Entry: Skool Member Cohorts &amp; Sunday Practice
+                                <span class="stage-tag free">Freemium Ramp</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin: 0.25rem 0 0; font-size: 0.95rem;">
+                                Welcoming new joiners, running the zero-friction Sunday cohort, and conducting Steve Blank customer discovery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid" style="margin-top: 1.25rem;">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Community Tiers &amp; Mechanics:</h4>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">Peek Tier ($0):</span><span class="info-value">Access to community feed, welcome modules, discussions, and discoverability.</span></li>
+                            <li class="info-item"><span class="info-label">Sit In Tier ($1/mo):</span><span class="info-value">Recorded workshop archives + listen-only participation in weekly Sunday live cohorts.</span></li>
+                            <li class="info-item"><span class="info-label">Onboarding &amp; Intake:</span><span class="info-value">Customer discovery intake questions capture roles, goals, and technical bottlenecks.</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Related Documents &amp; Blueprints:</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="../product/skool-delivery-pilot-offer.html" class="resource-pill">🚪 Delivery Pilot Offer: Peek / Sit In / Share Screen</a>
+                            <a href="../product/skool-membership-questions.html" class="resource-pill">📝 Skool Membership Discovery Intake Questions</a>
+                            <a href="../product/skool-community-golden-rules.html" class="resource-pill">🌟 Golden Rules of Community Building</a>
+                            <a href="../growth/funfair-tokens.html" class="resource-pill">🎡 Funfair Token System (Weekly Engagement Tokens)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="roadmap-stage-card featured">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="stage-num-badge" style="color: var(--color-success); background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3);">3</div>
+                        <div>
+                            <h3 style="font-size: 1.35rem; margin: 0; font-family: var(--font-heading);">
+                                Core Product MVP: Claude Certified Architect Course &amp; Daily Visuals
+                                <span class="stage-tag mvp">Primary MVP</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin: 0.25rem 0 0; font-size: 0.95rem;">
+                                The established Product MVP hosted in Skool Classroom with daily visual storyboards, exam practice, and system blueprints.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://www.skool.com/delivery-pilot-8938/classroom/4d0285cc?md=08851442218443d4aeea5ceaa5ec2e2e" target="_blank" class="btn" style="background: var(--color-success); color: #fff; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                        Open Skool Classroom ↗
+                    </a>
+                </div>
+
+                <div class="grid" style="margin-top: 1.25rem;">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">MVP Course Features &amp; Cadence:</h4>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">Direct Classroom URL:</span><span class="info-value" style="word-break: break-all;"><a href="https://www.skool.com/delivery-pilot-8938/classroom/4d0285cc?md=08851442218443d4aeea5ceaa5ec2e2e" target="_blank" style="color: var(--color-primary);">Skool Classroom Course Hub</a></span></li>
+                            <li class="info-item"><span class="info-label">Daily Visual Additions:</span><span class="info-value">Daily visual storyboards, architecture diagrams, and MCP schema infographics uploaded to the course.</span></li>
+                            <li class="info-item"><span class="info-label">Decoupled Architecture:</span><span class="info-value">YouTube is top-of-funnel acquisition; the Skool Course is the actual paid product being validated.</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Related Documents &amp; Blueprints:</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="../comp/comp-mvp.html" class="resource-pill">📦 Decoupled MVP Specification &amp; Revenue Gate</a>
+                            <a href="../comp/comp-mvp-separation.html" class="resource-pill">⚖️ MVP Product vs Marketing Separation</a>
+                            <a href="sales-marketing-roadmap.html" class="resource-pill">📚 7-Cohort Skool Curriculum Roadmap</a>
+                            <a href="../strategy/practice-exams-gap.html" class="resource-pill">⚠️ Practice Exam &amp; Blueprint Question Bank Gap (H27)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="roadmap-stage-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="stage-num-badge" style="color: var(--color-warning); background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3);">4</div>
+                        <div>
+                            <h3 style="font-size: 1.35rem; margin: 0; font-family: var(--font-heading);">
+                                High-Ticket VIP Tier: Screen-Sharing &amp; Monday Claude Cowork
+                                <span class="stage-tag vip">$250/year Tier</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin: 0.25rem 0 0; font-size: 0.95rem;">
+                                Intensive peer reviews, live debugging on Sunday calls, and Monday VIP Claude Cowork for career &amp; CV positioning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid" style="margin-top: 1.25rem;">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">VIP Privileges &amp; Transformation:</h4>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">Share Screen Privilege:</span><span class="info-value">Direct screen sharing during Sunday cohorts for live architectural feedback and code debugging.</span></li>
+                            <li class="info-item"><span class="info-label">Monday VIP Cowork:</span><span class="info-value">Dedicated sessions where Rifat uses Claude to re-architect member CVs and optimize LinkedIn profiles.</span></li>
+                            <li class="info-item"><span class="info-label">Founder Setup Reviews:</span><span class="info-value">Direct 1-on-1 audits of Obsidian Second Brains, CLI toolchains, and enterprise AI setups.</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Related Documents &amp; Blueprints:</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="../growth/linkedin-vip-cowork.html" class="resource-pill">💼 Monday VIP Claude Cowork &amp; Recruiter Network</a>
+                            <a href="../growth/hormozi-vip-leadgen.html" class="resource-pill">🏋️ Hormozi VIP Lead Generation &amp; Offer Design</a>
+                            <a href="../strategy/delivery-pilot-roadmap.html" class="resource-pill">🧑‍✈️ Delivery Pilot Career Transformation Pipeline</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="roadmap-stage-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="stage-num-badge" style="color: var(--color-primary); background: rgba(147, 51, 234, 0.15); border-color: rgba(147, 51, 234, 0.3);">5</div>
+                        <div>
+                            <h3 style="font-size: 1.35rem; margin: 0; font-family: var(--font-heading);">
+                                Delivery Pilot Partnership Program &amp; Enterprise Recruiter Network
+                                <span class="stage-tag partner">Proctored &amp; Placement</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin: 0.25rem 0 0; font-size: 0.95rem;">
+                                Seating the proctored exam with partner backing, joining the Delivery Pilot collective, and winning £500–£1,000+/day contracts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid" style="margin-top: 1.25rem;">
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Partnership Back-Up &amp; Alliance:</h4>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">Partnership Program Contact:</span><span class="info-value" style="color: var(--color-warning); font-weight: 600;">partnership@deliverypilot.net / deliverypilot.net</span></li>
+                            <li class="info-item"><span class="info-label">Exam Access Backing (F12):</span><span class="info-value">Two partner companies in the ecosystem help enroll and seat candidates for partner-gated exams.</span></li>
+                            <li class="info-item"><span class="info-label">Recruiter Advocacy:</span><span class="info-value">Promoting verified members via the Delivery Pilot LinkedIn Org page directly to enterprise recruiters.</span></li>
+                            <li class="info-item"><span class="info-label">Collective Tender Co-Bidding:</span><span class="info-value">Certified pilots team up to bid on large enterprise AI delivery tenders and corporate RFPs (H30).</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem;">Related Documents &amp; Blueprints:</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="../product/deliverypilot-net.html" class="resource-pill">🌐 deliverypilot.net — FDE &amp; Contractor Accelerator</a>
+                            <a href="../product/partners.html" class="resource-pill">🤝 Partner With Us (Enterprise &amp; Tooling)</a>
+                            <a href="../strategy/enterprise-partnerships.html" class="resource-pill">🏢 Enterprise B2B Partnerships &amp; Pilot Model</a>
+                            <a href="../hypotheses/hyp-h30.html" class="resource-pill">🎯 H30: Delivery Pilot Career Pipeline &amp; Alliance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary & Next Steps -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚡ Summary of Supporting Architecture &amp; Links</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <h3 style="color: var(--color-info); font-size: 1.15rem; margin-bottom: 0.75rem;">1. Content to Skool</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            YouTube shorts and LinkedIn posts never hard-sell; they deliver high-value reverse insights and direct audience to the free/low-cost Skool practice sessions.
+                        </p>
+                        <a href="../product/youtube-skool-handoff.html" style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600;">View Handoff Blueprint &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <h3 style="color: var(--color-success); font-size: 1.15rem; margin-bottom: 0.75rem;">2. Skool Course MVP</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            The Claude Certified Architect course is actively populated with daily visual breakdowns, serving as the central learning and validation hub.
+                        </p>
+                        <a href="https://www.skool.com/delivery-pilot-8938/classroom/4d0285cc?md=08851442218443d4aeea5ceaa5ec2e2e" target="_blank" style="color: var(--color-success); font-size: 0.85rem; font-weight: 600;">Visit Classroom Live ↗</a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">3. VIP to Partnership</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            VIP members get CV makeover and recruiter advocacy, supported by the Delivery Pilot partner network (<code>partnership@deliverypilot.net</code>).
+                        </p>
+                        <a href="../product/deliverypilot-net.html" style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600;">View Partnership Network &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Created Audience Transformation Roadmap page connecting YouTube/LinkedIn → Skool → MVP Course → VIP → Delivery Pilot Partnership (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/audience-roadmap.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

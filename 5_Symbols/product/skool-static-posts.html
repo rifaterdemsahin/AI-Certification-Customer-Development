@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skool Static Posts &amp; Anti-Spam Guidelines | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .copy-box {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 1.25rem;
+            position: relative;
+            margin: 1rem 0;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--color-primary);
+            color: #ffffff;
+            border: none;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .skool-ui-mock {
+            background: #111827;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        .skool-header-row {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        .skool-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+        }
+        .skool-comment {
+            background: rgba(31, 41, 55, 0.6);
+            border-left: 3px solid var(--color-primary);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            margin-top: 0.85rem;
+            margin-left: 1.5rem;
+        }
+        .tag-pill {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 9999px;
+            padding: 0.15rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .skool-comment {
+                margin-left: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="skool-posting-sanity-check.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Skool Founder Posting Sanity Check
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge" style="background-color: rgba(59, 130, 246, 0.15); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);">Community Architecture &middot; Stage 2 Anti-Spam Protocol</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📌 Static Posts (Living Hubs) in Skool &amp; Posting Guidelines</h1>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                How to deliver massive ongoing educational value on Skool <strong>without spamming members' notifications</strong>. By establishing <strong>Static Posts (Evergreen Living Hubs)</strong>, the main post serves as an indexed master anchor while new incoming knowledge, video drops, and crowd-sourced discoveries flow cleanly into the <strong>comments stream</strong>.
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Page ID:</span>
+                            <span class="info-value">skool-static-posts.html</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Architecture:</span>
+                            <span class="info-value highlight-success">Static Anchor Post + Append-Only Comment Stream</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Core Principle:</span>
+                            <span class="info-value">High Signal &middot; Zero Notification Spam &middot; Crowd-Sourced Curation</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Stage Fit:</span>
+                            <span class="info-value">Stage 2 &mdash; Customer Validation (LMS Operations)</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Member Engagement:</span>
+                            <span class="info-value">Prompt &rarr; Comment Drop &rarr; Founder Praise &rarr; Roll-up</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Linked Hypotheses:</span>
+                            <span class="info-value">
+                                <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5 (Skool Value)</a>,
+                                <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8 (Peer Learning)</a>,
+                                <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29 (Listen &gt; Speak)</a>,
+                                <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30 (Alliance)</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before vs After Comparison -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⚖️ The Problem vs. The Static Post Solution</h2>
+            
+            <div class="comparison-grid">
+                <div class="card" style="border-top: 4px solid var(--color-danger); height: 100%;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <h3 style="margin: 0; color: var(--color-danger); font-size: 1.15rem;">❌ The Anti-Pattern: One-Off Post Spam</h3>
+                        <span class="tag-pill" style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border-color: rgba(239, 68, 68, 0.3);">Notification Fatigue</span>
+                    </div>
+                    <ul class="emoji-list" style="line-height: 1.6; color: var(--text-secondary); font-size: 0.92rem;">
+                        <li><strong>Notification Overload:</strong> Every new YouTube video, article link, or micro-insight triggers a separate email/push alert, causing members to mute the group.</li>
+                        <li><strong>Fragmented Knowledge:</strong> Links get buried in the feed within 48 hours and become unsearchable.</li>
+                        <li><strong>Founder-Centric Monologue:</strong> The feed looks like an RSS broadcaster rather than a collaborative community discussion.</li>
+                        <li><strong>Low Comment Depth:</strong> 10 separate posts get 0–1 comments each instead of 1 high-gravity thread with 40 comments.</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--color-success); height: 100%;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <h3 style="margin: 0; color: var(--color-success); font-size: 1.15rem;">✅ The Solution: Static Posts (Living Hubs)</h3>
+                        <span class="tag-pill" style="background: rgba(16, 185, 129, 0.15); color: #86efac; border-color: rgba(16, 185, 129, 0.3);">High Signal-to-Noise</span>
+                    </div>
+                    <ul class="emoji-list" style="line-height: 1.6; color: var(--text-secondary); font-size: 0.92rem;">
+                        <li><strong>Single Notification Anchor:</strong> Members only get alerted once when the hub is created or when they are explicitly tagged.</li>
+                        <li><strong>Append-Only Stream:</strong> New videos, community shares, and timestamps are posted as replies in the comments.</li>
+                        <li><strong>Crowd-Sourced Recognition:</strong> Founder tags and thanks contributors (e.g. <code>@Rakesh</code>), creating peer validation and leveling up member status.</li>
+                        <li><strong>Living Index:</strong> High-value links from comments get periodically rolled up into the main post body, creating an evergreen master guide.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewritten Post Copies for Skool -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">✍️ Copy-Paste Rewrites for the "Great Resources" Post</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Below are 3 optimized versions tailored for different tones. <strong>Option 1</strong> is strongly recommended for Skool because it clearly defines the rules of engagement, invites member contributions, and gives a structured template for comment submissions.
+            </p>
+
+            <!-- Option 1: Recommended -->
+            <div class="card" style="margin-bottom: 1.75rem; border: 1px solid rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.03);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #86efac; border-color: rgba(16, 185, 129, 0.3);">🌟 Option 1: High-Signal Practitioner Vault (Recommended)</span>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Best for structured peer contributions</span>
+                </div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--text-primary);">Post Title: <code>📚 [Living Hub] Great Resources &amp; Self-Learning Vault — Drop Your Best Finds Below!</code></h3>
+                
+                <div class="copy-box" id="copy-opt-1">📚 [Living Hub] Great Resources & Self-Learning Vault — Drop Your Best Finds Below!
+
+To keep our community feed clean, high-signal, and zero-spam, this is our permanent **Living Vault** for top-tier self-learning resources. ☘️
+
+Instead of creating one-off posts for every video or article, drop your favorite learning discoveries right here in the comments!
+
+### 💡 What to Share in the Comments:
+• 🔥 **YouTube Gems & Walkthroughs** (AI Agents, Claude Architect, Model Context Protocol, System Architecture)
+• 🛠️ **GitHub Repos & Real-World Blueprints**
+• 📄 **Essential Articles, Documentation & Cheat Sheets**
+• ⏱️ **Your Key Takeaway / Timestamp** (e.g. "Watch from 12:40 for the vector memory setup")
+
+### 🎯 Why Share Here?
+1. **Never Lost:** High-signal links won't get buried down the feed.
+2. **Community Credit:** Best contributions will be rolled up into this main post and credited to you.
+3. **Peer Support:** Help fellow Delivery Pilots cut through the noise and master AI faster.
+
+👇 **Drop a link you loved recently in the comments + 1 sentence on why it helped you!** Let's build the ultimate practitioner vault together. 🚀</div>
+                <button class="copy-btn" onclick="copyText('copy-opt-1')">📋 Copy Post</button>
+            </div>
+
+            <!-- Option 2: Community Gem Vault -->
+            <div class="card" style="margin-bottom: 1.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="badge" style="background-color: rgba(59, 130, 246, 0.15); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);">🤝 Option 2: Collaborative Community Gem Vault</span>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Warm, conversational, and peer-focused</span>
+                </div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--text-primary);">Post Title: <code>☘️ Community Resource Hub: Share Your Favorite AI &amp; Architecture Gems</code></h3>
+                
+                <div class="copy-box" id="copy-opt-2">☘️ Community Resource Hub: Share Your Favorite AI & Architecture Gems
+
+Self-learning is 10x faster when we share what's working. To protect everyone from notification spam, this post is our **dedicated hub** for sharing high-value videos, tutorials, and docs.
+
+Whenever you find a tutorial or repo that gave you an "aha!" moment, drop it in the comments below! 👇
+
+📌 **Quick Format to Drop:**
+- **Link:** (YouTube / Repo / Article)
+- **Why it matters:** (1 sentence summary)
+- **Key Timestamp / Section:** (Optional, but super helpful!)
+
+I'll be actively checking the comments, testing your recommendations, and pinning the standout gems. 
+
+What's the best thing you watched or read this week? Share below! 🔥</div>
+                <button class="copy-btn" onclick="copyText('copy-opt-2')">📋 Copy Post</button>
+            </div>
+
+            <!-- Option 3: Minimalist & Direct -->
+            <div class="card" style="margin-bottom: 1.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fcd34d; border-color: rgba(245, 158, 11, 0.3);">⚡ Option 3: Fast Action Minimalist</span>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Short, punchy, zero fluff</span>
+                </div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--text-primary);">Post Title: <code>🔗 [Master Thread] Best Self-Learning Resources &amp; Video Drops</code></h3>
+                
+                <div class="copy-box" id="copy-opt-3">🔗 [Master Thread] Best Self-Learning Resources & Video Drops
+
+Instead of spamming the board with single links, let's keep all our best self-learning resources in one clean thread. ☘️
+
+Found a great AI video, framework, or tutorial? Drop the link in the comments below with a quick note on why it helped you!
+
+Let's crowdsource the best knowledge for the entire Delivery Pilot crew. 👇</div>
+                <button class="copy-btn" onclick="copyText('copy-opt-3')">📋 Copy Post</button>
+            </div>
+        </section>
+
+        <!-- Live Comment Stream & Interaction Mockup -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💬 Live UI Example: Handling Incoming Knowledge in Comments</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Here is how the real-world interaction looks in Skool when a member shares a resource and the founder acknowledges it with high signal:
+            </p>
+
+            <div class="skool-ui-mock">
+                <!-- Post Hero -->
+                <div class="skool-header-row">
+                    <div class="skool-avatar">RE</div>
+                    <div>
+                        <div style="font-weight: 700; color: white;">Rifat Erdem Sahin <span class="tag-pill" style="background: rgba(16, 185, 129, 0.2); color: #86efac; border: 1px solid rgba(16, 185, 129, 0.4); margin-left: 0.4rem;">ADMIN</span></div>
+                        <div style="font-size: 0.8rem; color: #9ca3af;">Delivery Pilot Community &middot; Pinned Post 📌</div>
+                    </div>
+                </div>
+                <h4 style="color: #f3f4f6; margin: 0.5rem 0; font-size: 1.1rem;">📚 [Living Hub] Great Resources &amp; Self-Learning Vault</h4>
+                <p style="color: #d1d5db; font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem;">
+                    To keep our community high-signal and zero-spam, drop your favorite learning discoveries, videos, and blueprints in the comments below! Standout gems will be rolled up into this main post. ☘️
+                </p>
+                <div style="border-top: 1px solid #374151; padding-top: 0.75rem; color: #9ca3af; font-size: 0.82rem; display: flex; gap: 1rem;">
+                    <span>❤️ 12 Likes</span>
+                    <span>💬 8 Comments</span>
+                </div>
+
+                <!-- Member Comment -->
+                <div class="skool-comment">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                        <strong style="color: #60a5fa;">@Rakesh</strong>
+                        <span style="font-size: 0.75rem; color: #9ca3af;">&middot; 2 hours ago</span>
+                    </div>
+                    <p style="color: #e5e7eb; font-size: 0.9rem; margin: 0 0 0.4rem 0;">
+                        Hey Rifat, came across this awesome breakdown on prompt engineering architectures: <a href="https://youtu.be/IMLwvK08JVc" target="_blank" style="color: #38bdf8; text-decoration: underline;">https://youtu.be/IMLwvK08JVc</a> — especially the part at <strong>21:31</strong> on multi-step reasoning!
+                    </p>
+                </div>
+
+                <!-- Founder Acknowledgment Reply -->
+                <div class="skool-comment" style="border-left-color: var(--color-success); margin-left: 3rem; background: rgba(16, 185, 129, 0.08);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                        <strong style="color: #34d399;">Rifat Erdem Sahin</strong>
+                        <span class="tag-pill" style="font-size: 0.65rem; padding: 0.05rem 0.4rem;">ADMIN</span>
+                        <span style="font-size: 0.75rem; color: #9ca3af;">&middot; just now</span>
+                    </div>
+                    <p style="color: #e5e7eb; font-size: 0.9rem; margin: 0;">
+                        Thanks <strong style="color: #60a5fa;">@Rakesh</strong>! 🔥 Gold find. The timestamp at <strong>21:31</strong> on chaining structured outputs is pure gold for anyone prepping for the Claude Architect exam. Adding this to the curated vault index! 🚀
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operational Guidelines -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Operational Guidelines for Static Posts in Skool</h2>
+            
+            <div class="grid">
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-primary); height: 100%;">
+                        <div class="spec-title">1. Anchor Naming &amp; Pinning Protocol</div>
+                        <div class="spec-desc">
+                            <ul style="margin-left: 1rem; padding-left: 0; line-height: 1.6;">
+                                <li>Use consistent prefixes: <code>[Living Hub]</code>, <code>[Master Thread]</code>, or <code>[Vault]</code>.</li>
+                                <li>Keep only <strong>2–3 core hubs</strong> pinned at any given time (e.g. <em>Resources Vault</em>, <em>Introduce Yourself</em>, and <em>Weekly Cohort Agenda</em>).</li>
+                                <li>Link to these hubs inside the Skool Classroom modules so new students naturally discover them.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
+                        <div class="spec-title">2. Comment Reply &amp; Gamification Protocol</div>
+                        <div class="spec-desc">
+                            <ul style="margin-left: 1rem; padding-left: 0; line-height: 1.6;">
+                                <li><strong>Tag Immediately:</strong> Always use <code>@username</code> to notify the contributor and validate their effort.</li>
+                                <li><strong>Extract Context:</strong> Don't just say "thanks" — highlight the specific timestamp, concept, or architectural takeaway (e.g., <em>"at 21:31 on multi-agent chaining"</em>).</li>
+                                <li><strong>Like the Comment:</strong> Gives the member Skool gamification points (+1 pt) toward unlocking higher levels (<a href="skool-level-2-posting-restriction.html" style="color: var(--color-primary);">Level 2 Posting Gate</a>).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6" style="margin-top: 1.25rem;">
+                    <div class="spec-box" style="border-left-color: var(--color-warning); height: 100%;">
+                        <div class="spec-title">3. Weekly Roll-Up &amp; Living Index</div>
+                        <div class="spec-desc">
+                            <ul style="margin-left: 1rem; padding-left: 0; line-height: 1.6;">
+                                <li>Every Sunday or batch maintenance cycle, review top-rated comments.</li>
+                                <li>Edit the main post body to add a bulleted section: <code>### 🌟 Community Highlights</code>.</li>
+                                <li>Format: <code>- [Resource Title](URL) (21:31 timestamp) — shared by @Rakesh</code>.</li>
+                                <li>This transforms the static post into an ever-expanding, authoritative industry encyclopedia.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6" style="margin-top: 1.25rem;">
+                    <div class="spec-box" style="border-left-color: #8b5cf6; height: 100%;">
+                        <div class="spec-title">4. Categorized Hub Types to Maintain</div>
+                        <div class="spec-desc">
+                            <ul style="margin-left: 1rem; padding-left: 0; line-height: 1.6;">
+                                <li><strong>📚 Resources &amp; Learning Hub:</strong> External videos, books, documentation, and papers.</li>
+                                <li><strong>🛠️ Environment Setup &amp; Tools Hub:</strong> VS Code plugins, Ollama configs, Docker scripts, API keys setup.</li>
+                                <li><strong>🏆 Member Wins &amp; Case Studies Hub:</strong> Certifications passed, job offers, contract co-bidding milestones (<a href="../strategy/delivery-pilot-roadmap.html" style="color: var(--color-primary);">H30</a>).</li>
+                                <li><strong>❓ Daily Q&amp;A / Stuck Hub:</strong> Rapid debugging questions before the Sunday live cohort.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Template Bank for Comment Replies -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💬 Founder Quick-Reply Templates for Skool Comments</h2>
+            
+            <div class="card">
+                <h4 style="margin-top: 0; color: var(--text-primary);">Template A: Acknowledging a Member's YouTube Link Share (e.g. Rakesh)</h4>
+                <div class="copy-box" id="copy-reply-a">Thanks @[Name]! 🔥 Great share. 
+
+The section around [Timestamp, e.g. 21:31] on [Topic, e.g. multi-step reasoning] is especially relevant for anyone building autonomous agents. 
+
+Adding this to the main post curated index! Keep them coming. ☘️</div>
+                <button class="copy-btn" onclick="copyText('copy-reply-a')">📋 Copy Reply</button>
+            </div>
+
+            <div class="card" style="margin-top: 1.25rem;">
+                <h4 style="margin-top: 0; color: var(--text-primary);">Template B: Founder Dropping a New Video Drop into the Comment Stream</h4>
+                <div class="copy-box" id="copy-reply-b">🚀 **Fresh Drop: [Video / Article Title]**
+🔗 [URL]
+
+**Key Takeaways for Delivery Pilots:**
+1. [Core takeaway / why this matters for enterprise contracting]
+2. Jump to **[Timestamp]** for the hands-on architecture walkthrough.
+
+Let me know what you think in the thread below! 👇</div>
+                <button class="copy-btn" onclick="copyText('copy-reply-b')">📋 Copy Reply</button>
+            </div>
+        </section>
+
+        <!-- Related Pages Grid -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Related Skool &amp; Community Operations Specs</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <h4><a href="skool-posting-sanity-check.html" style="color: var(--color-primary);">Posting Sanity Check</a></h4>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0;">Verdict on founder posting: living hubs &amp; member-led sharing over feed spam.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <h4><a href="skool-community-golden-rules.html" style="color: var(--color-primary);">Golden Rules of Community</a></h4>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0;">Don't lecture, build friendships, curate culture: the Skool retention playbook.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <h4><a href="skool-level-2-posting-restriction.html" style="color: var(--color-primary);">Level 2 Posting Gate</a></h4>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0;">Gamification anti-spam filter requiring 5 likes before members can post standalone threads.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Revision Tracking -->
+        <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div>
+                &copy; 2026 AI Certification Helper &middot; Delivery Pilot Ecosystem
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added Skool Static Posts (Living Hubs) architecture, anti-spam guidelines, copy-paste post rewrites for Great Resources, and comment acknowledgment workflows (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-static-posts.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        function copyText(elementId) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            navigator.clipboard.writeText(el.innerText).then(() => {
+                alert('Copied to clipboard!');
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

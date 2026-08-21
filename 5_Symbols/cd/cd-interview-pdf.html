@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Page A4 Customer Discovery Interview PDF | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        /* Screen Toolbar Styling */
+        .pdf-toolbar {
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid var(--border-accent);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem auto 2rem;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pdf-toolbar select, .pdf-toolbar button {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            transition: var(--transition-fast);
+        }
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+        }
+
+        /* Realistic A4 Page Canvas (Screen Preview) */
+        .a4-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            padding: 12mm 14mm 10mm;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+            font-family: var(--font-sans);
+        }
+
+        /* Inner A4 Elements */
+        .pdf-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .pdf-title-area h1 {
+            font-family: var(--font-heading);
+            font-size: 16pt;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin: 0 0 2px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .pdf-subtitle {
+            font-size: 8.5pt;
+            color: #64748b;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .pdf-brand-badge {
+            background: #eef2ff;
+            border: 1px solid #c7d2fe;
+            color: #4338ca;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 8pt;
+            font-weight: 700;
+            text-align: right;
+            line-height: 1.3;
+        }
+
+        /* Metadata Banner */
+        .meta-strip {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 6px 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 8pt;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .meta-label {
+            font-size: 6.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 700;
+            margin-bottom: 1px;
+        }
+        .meta-value {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #0f172a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Hypotheses Badges Strip */
+        .hyp-strip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+            padding: 4px 8px;
+            background: #fdf4ff;
+            border: 1px solid #f0abfc;
+            border-radius: 6px;
+            font-size: 7.5pt;
+        }
+        .hyp-label {
+            font-weight: 700;
+            color: #86198f;
+            white-space: nowrap;
+        }
+        .hyp-pills {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .hyp-pill {
+            background: #fae8ff;
+            border: 1px solid #d946ef;
+            color: #701a75;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 7.5pt;
+        }
+
+        /* 5 Key Qualitative Discovery Sections */
+        .pdf-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        .pdf-box {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #4f46e5;
+            border-radius: 5px;
+            padding: 6px 10px;
+            font-size: 8.5pt;
+            line-height: 1.35;
+        }
+        .pdf-box.box-green {
+            border-left-color: #059669;
+            background: #f0fdf4;
+        }
+        .pdf-box.box-amber {
+            border-left-color: #d97706;
+            background: #fffbeb;
+        }
+        .pdf-box.box-red {
+            border-left-color: #dc2626;
+            background: #fef2f2;
+        }
+        .pdf-box.box-indigo {
+            border-left-color: #4f46e5;
+            background: #eef2ff;
+        }
+
+        .pdf-box-title {
+            font-family: var(--font-heading);
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .pdf-box-content {
+            color: #334155;
+            margin: 0;
+            font-size: 8.5pt;
+            white-space: pre-line;
+        }
+
+        /* 2-Column Grid for Pains & Gains */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        /* Methodological Takeaways / GTM Impact Box */
+        .gtm-impact-box {
+            background: #f8fafc;
+            border: 1px dashed #94a3b8;
+            border-radius: 5px;
+            padding: 6px 10px;
+            font-size: 7.5pt;
+            color: #334155;
+            line-height: 1.3;
+        }
+        .gtm-impact-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Ruled Lines for Pen/Pencil Notes & Mobile Camera OCR Transcription */
+        .ocr-tag {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: #334155;
+            background: #e2e8f0;
+            padding: 1px 4px;
+            border-radius: 3px;
+            border: 1px solid #cbd5e1;
+            letter-spacing: 0.03em;
+        }
+
+        .lined-paper-block {
+            width: 100%;
+            height: 54px;
+            margin-top: 4px;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 17px,
+                #94a3b8 17px,
+                #94a3b8 18px
+            );
+        }
+
+        .lined-paper-block.tall {
+            height: 72px;
+        }
+
+        .lined-paper-block.short {
+            height: 36px;
+        }
+
+        .blank-checkbox-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            font-size: 7pt;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .blank-checkbox-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 3px;
+            padding: 1px 5px;
+        }
+
+        .blank-box {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border: 1.2px solid #475569;
+            border-radius: 1.5px;
+            margin-right: 3px;
+            background: #fff;
+        }
+
+        /* Footer inside A4 Sheet */
+        .pdf-footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 6px;
+            margin-top: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 6.8pt;
+            color: #64748b;
+        }
+
+        /* Strict Single Page A4 Print Rules */
+        @page {
+            size: A4 portrait;
+            margin: 8mm 10mm 8mm 10mm;
+        }
+
+        @media print {
+            html, body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                height: 100% !important;
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            #site-header, 
+            footer, 
+            .pdf-toolbar, 
+            .no-print,
+            .notes-sidebar,
+            #notes-toggle-btn {
+                display: none !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .a4-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+                display: block !important;
+            }
+
+            .a4-page {
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 0 !important;
+                max-height: none !important;
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Screen Actions / Toolbar -->
+        <div class="pdf-toolbar no-print">
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <label for="interview-select" style="font-weight: 600; color: var(--text-primary); font-size: 0.9rem;">
+                    👤 Select Interview:
+                </label>
+                <select id="interview-select" class="form-control" style="width: auto; min-width: 250px; background: #1f2937; color: #fff; border: 1px solid var(--border-accent); border-radius: 6px; padding: 0.4rem 0.75rem;" onchange="loadInterview(this.value)">
+                    <option value="blank">📝 📄 Blank Printable Sheet (Ruled Lines for OCR Notes)</option>
+                    <option value="anna">👤 Anna (5-10-5 Pacing Methodology &amp; Cognitive Guardrails)</option>
+                    <option value="marianna">👤 Marianna (Sunday AI Brain Labs &amp; Flipped Classroom Micro-Videos)</option>
+                    <option value="brian">👤 Brian (Skills Pay the Bills &amp; Guide Model)</option>
+                    <option value="tomiwa">👤 Tomiwa (Associate vs Architect Progression &amp; Deep Hands-on)</option>
+                    <option value="rakesh">👤 Rakesh (Rising National Insurance &amp; Employment Overhead)</option>
+                    <option value="baran_g">👤 Baran G (Tabular Automation &amp; Time Pressure)</option>
+                    <option value="apo">👤 Apo (100 Tabs Workaround &amp; Amazon FBA)</option>
+                    <option value="cheuk">🎫 Cheuk (National Grid Exam Enrollment Block)</option>
+                    <option value="youtube_n2">🎙️ Two Viewers (Founder Voice Skool CTA)</option>
+                    <option value="session_8">🎙️ Cohort Session 8 (Lecture to Party Pivot)</option>
+                    <option value="custom">✏️ Custom / Shared Cookie Record</option>
+                </select>
+            </div>
+
+            <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('interview-select').value='blank'; loadInterview('blank');" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.4); font-size: 0.85rem; padding: 0.5rem 0.9rem;">
+                    📝 Blank Sheet (OCR Ready)
+                </button>
+                <a href="cd-interview-recording.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 0.9rem; text-decoration: none;">
+                    📝 Log Form
+                </a>
+                <button type="button" class="btn-print" onclick="window.print()">
+                    🖨️ Print / Save 1-Page A4 PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- A4 Page Container (Screen & Print Target) -->
+        <div class="a4-wrapper">
+            <div class="a4-page" id="printable-interview-sheet">
+                
+                <!-- 1. Header -->
+                <div class="pdf-header">
+                    <div class="pdf-title-area">
+                        <h1 id="pdf-doc-title">Customer Discovery Interview Record</h1>
+                        <p class="pdf-subtitle">Steve Blank Customer Development Methodology &bull; Qualitative Discovery Proof</p>
+                    </div>
+                    <div class="pdf-brand-badge">
+                        <div>AI Certification Helper</div>
+                        <div style="font-size: 6.5pt; color: #6366f1; font-weight: 500;">Customer Development Stage 1</div>
+                    </div>
+                </div>
+
+                <!-- 2. Metadata Strip -->
+                <div class="meta-strip">
+                    <div class="meta-item">
+                        <span class="meta-label">Candidate Name</span>
+                        <span class="meta-value" id="meta-name">Baran G</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Channel / Location</span>
+                        <span class="meta-value" id="meta-channel">LinkedIn (Personal DM)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Referral / Source</span>
+                        <span class="meta-value" id="meta-referral">Personal Network</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Date &amp; Time Logged</span>
+                        <span class="meta-value" id="meta-date">Aug 18, 2026 &bull; 11:42 AM</span>
+                    </div>
+                </div>
+
+                <!-- 3. Hypotheses Strip -->
+                <div class="hyp-strip">
+                    <span class="hyp-label">🎯 Mapped Hypotheses:</span>
+                    <div class="hyp-pills" id="meta-hypotheses">
+                        <span class="hyp-pill">H24 (Emotional Drivers &amp; Time)</span>
+                        <span class="hyp-pill">H17 (Workflow Automation)</span>
+                        <span class="hyp-pill">H30 (FDE / Contractor Toolchain)</span>
+                    </div>
+                </div>
+
+                <!-- 4. Qualitative Discovery Content (5 Key Sections) -->
+                <div class="pdf-sections">
+                    
+                    <!-- Section 1: Routine -->
+                    <div class="pdf-box box-indigo">
+                        <div class="pdf-box-title">
+                            <span>1. 🔄 Day-In / Day-Out (Study Routine &amp; Habitual Constraints)</span>
+                            <span style="font-size: 6.5pt; color: #6366f1; text-transform: uppercase;">Current Reality</span>
+                        </div>
+                        <p class="pdf-box-content" id="content-routine">He was doing complex Excel operations manually, and it was consuming a disproportionate amount of his daily bandwidth and focus across competing priorities.</p>
+                    </div>
+
+                    <!-- Section 2: Workarounds -->
+                    <div class="pdf-box box-amber">
+                        <div class="pdf-box-title">
+                            <span>2. 🛠️ Current Workarounds (How are they solving it today?)</span>
+                            <span style="font-size: 6.5pt; color: #d97706; text-transform: uppercase;">Active Mitigation</span>
+                        </div>
+                        <p class="pdf-box-content" id="content-workaround">Now deploying AI agents to ingest raw tabular data and automatically format visual, stakeholder-ready charts and summaries.</p>
+                    </div>
+
+                    <!-- Section 3: Past Actions & Stories -->
+                    <div class="pdf-box">
+                        <div class="pdf-box-title">
+                            <span>3. 📖 Past Actions &amp; Concrete Stories</span>
+                            <span style="font-size: 6.5pt; color: #64748b; text-transform: uppercase;">Verbatim Factual Evidence</span>
+                        </div>
+                        <p class="pdf-box-content" id="content-stories">Previously dedicated excessive hours organizing data structure into presentable tables; found traditional tools cumbersome and slow.</p>
+                    </div>
+
+                    <!-- 2-Column: Pains & Gains -->
+                    <div class="two-col-grid">
+                        <!-- Section 4: Key Pains -->
+                        <div class="pdf-box box-red">
+                            <div class="pdf-box-title">
+                                <span>4. 🛑 Key Pains Identified</span>
+                            </div>
+                            <p class="pdf-box-content" id="content-pains">Severe time pressure with numerous competing life priorities; anxiety regarding slow manual workflow productivity.</p>
+                        </div>
+
+                        <!-- Section 5: Key Gains -->
+                        <div class="pdf-box box-green">
+                            <div class="pdf-box-title">
+                                <span>5. 💎 Key Gains Identified</span>
+                            </div>
+                            <p class="pdf-box-content" id="content-gains">Regained personal time while delivering significantly more professional, polished stakeholder-ready outputs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Methodological Takeaway & GTM Impact -->
+                    <div class="gtm-impact-box">
+                        <div class="gtm-impact-title">🚀 Go-To-Market (GTM) Strategy &amp; Product Impact:</div>
+                        <div id="content-gtm">
+                            &bull; <strong>Marketing Hook:</strong> Reinforces reverse-response messaging: practitioners want immediate time-saving tabular agent workflows, not academic trivia.<br>
+                            &bull; <strong>Live Cohort Lab:</strong> Include agentic Excel-to-Chart automation pipeline in Sunday 9pm screen-share demo.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 5. Footer -->
+                <div class="pdf-footer">
+                    <span>AI Certification Helper &bull; Founder: Rifat Erdem Sahin (Pexabo Ltd)</span>
+                    <span>1-Page A4 Customer Discovery Record &bull; Single-Page Verified</span>
+                    <span id="pdf-footer-timestamp">Generated: 2026-08-20 &bull; Confidential CD Artifact</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">&copy; 2026 AI Certification Helper. 1-Page A4 Interview PDF Template.</span>
+                <span class="footer-text">Founder: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added pre-loaded 1-Page A4 PDF templates for Anna (5-10-5 pacing &amp; cognitive guardrails), Marianna (Sunday AI Brain labs &amp; flipped classroom micro-videos), and Brian (skills pay bills &amp; guide model) (2026-08-21) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cd-interview-pdf.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/cd-interview-pdf.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+
+    <script>
+        // Pre-loaded Customer Discovery Interview Database
+        var interviewDatabase = {
+            anna: {
+                name: "Anna (Ukrainian Professor & UWISE Founder)",
+                channel: "Cambridge Community Network & Live Cohort",
+                referral: "UWISE Community Cambridge / Academic Network",
+                date: "Aug 20, 2026 • Live Cohort Feedback",
+                hypotheses: ["H29 (Listen > Speak Pacing)", "H8 (Live Cohort PMF)", "H2 (Modular Micro-Format)", "H10 (Retention Floor)", "H5 (Cohort Duration)", "H17 (Cambridge Onsite)", "H24 (Cognitive Overload)"],
+                routine: "University professor and community founder balancing academic responsibilities, research, community events, and technical upskilling.",
+                workaround: "Joined live cohort once; suffered cognitive exhaustion from open-ended 2-hour technical firehoses on Sunday evenings.",
+                stories: "Verbatim: 'She said that it was too complicated for her, too quickly, too much information at once. And Sunday evening is not that good time, plus 2 hours for her it\'s too much. She cannot stay focused for so long. She suggested to try the methodology 5-10-5: 5 minutes you are explaining and showing how to execute the task. 10 minutes we are trying to execute it. You are helping. 5 minutes Q&A. Then the next task. 3 tasks for one session is enough. It means 40 minutes - 1 hour.'",
+                pains: "Mental fatigue from 2-hour sessions, high cognitive load, and feeling lost when advanced tooling is demonstrated too quickly without practice breaks.",
+                gains: "5-10-5 micro-sprint methodology: 20-minute cadence (5m demo -> 10m live execution -> 5m Q&A) capped at 3 tasks (40–60 min max session duration).",
+                gtm: "• 5-10-5 Workshop Standard (H8/H29): Restructure Sunday live cohorts into 3 discrete 20-minute rounds (Demo -> Lab -> Q&A), ending within 60 minutes.\n• Academic & Community Onsite (H17): Deploy the 5-10-5 format for UWISE Cambridge in-person university & professional workshops."
+            },
+            marianna: {
+                name: "Marianna (Maria Testing Lead Compliance)",
+                channel: "Skool Founding Network & Direct WhatsApp",
+                referral: "Corporate Testing & Compliance Lead / Skool Founding Member",
+                date: "Aug 20, 2026 • 09:50 AM",
+                hypotheses: ["H17 (Corporate Workshops)", "H2 (Short Animated Videos)", "H10 (Video Primers & Retention)", "H30 (FDE Toolchains)", "H8 (Live Cohort PMF)", "H29 (Listening Loop)"],
+                routine: "Collaborates on weekly Sunday AI Brain sessions; directly observes attendee needs, technical friction, and tooling prerequisites in real-time execution.",
+                workaround: "Previously risked losing live class time to basic tool installations, dependencies, and environment setup rather than pure architectural building.",
+                stories: "Verbatims: 1. 'Let's go through the AI Brain on Sundays. I will create a practical workshops programme based on our sessions. I can see what is needed when we are working together. Currently you are doing great. Skool and shirt AI videos look good.' 2. 'I thought you can create short AI videos introductions (next session preparation) about tools that we are going to try. What it does, why it's useful, how to install it, etc. Short introduction lectures (few minutes). Preparation for the next class. Some obvious basics that are important to know and to be aware of some important details, dependencies, tech nuances, etc.'",
+                pains: "Live class setup fatigue, environment dependency traps, and cognitive overload when new tools are introduced during screen-sharing without pre-orientation.",
+                gains: "Flipped classroom efficiency: 2–4 min pre-session video primers handle tool onboarding, allowing live Sunday sessions to run 100% as practical architectural workshops.",
+                gtm: "• Flipped Classroom Micro-Videos (H2/H10): Create 2-4 min modular tool primers (What / Why / Install / Nuances) before each Sunday live cohort.\n• Enterprise Workshop Co-Creation (H17): Partner with Marianna to formalize Sunday AI Brain sessions into an enterprise-ready compliance & testing workshop syllabus."
+            },
+            brian: {
+                name: "Brian",
+                channel: "Skool Community & Professional Network",
+                referral: "Delivery Pilot & Sunday Cohort Practitioner",
+                date: "Aug 20, 2026 • 04:20 PM",
+                hypotheses: ["H30 (FDE Contractor Roadmap)", "H1 (Skills Demand)", "H25 (Judgment vs Trivia)", "H24 (Fear of Disposability)", "H12 (Client Guide Demand)", "H29 (Listen > Speak)"],
+                routine: "Navigating rapid AI and cloud shifts; observing market compensation dynamics for complex infrastructure (Kubernetes, CI/CD, Agentic AI) vs commoditized basic skills.",
+                workaround: "Clients and non-specialist teams avoid learning endless rulebooks themselves; they hire trusted practitioners who know the rules to guide them through execution.",
+                stories: "Verbatim: 'skills pay the bills, the complex knowledge needed to pay the bills like kubernetes and ci cd, the more u know the less disposable you are, and people are ignorant they dont want to learn all the rules but they wanna deal with some one who knows the rules and could help them in the process rather themselves figuring it out.'",
+                pains: "Disposable talent anxiety, fear of obsolescence, and acute client fatigue over dense rulebooks and complex toolchain setup.",
+                gains: "Irreplaceable practitioner leverage (£500–£1,000+/day) and positioning as the indispensable Forward Deployed Engineer / Trusted Guide.",
+                gtm: "• Anti-Disposability Positioning (H30/H24): Center marketing on career defensibility ('Skills Pay the Bills') and mastering complex infrastructure.\n• Trusted Guide Model (H30): Frame Delivery Pilot graduates as enterprise guides who absorb complexity for clients."
+            },
+            tomiwa: {
+                name: "Tomiwa",
+                channel: "LinkedIn / Community Network",
+                referral: "Delivery Pilot & AI Community",
+                date: "Aug 20, 2026 • 10:40 AM",
+                hypotheses: ["H25 (Cert Value Bifurcation)", "H1 (Skills Over Badges)", "H8 (PMF / Hands-on Prep)", "H21 ($29 Entry SKU)", "H30 (FDE / Live Labs)"],
+                routine: "Prepared for and successfully cleared the Claude Certified Associate exam in a few days of focused study to validate core foundational knowledge.",
+                workaround: "Treats the Associate exam as a rapid entry-level stepping stone before embarking on deep, intensive practical hands-on building for the professional Architect exam.",
+                stories: "Verbatim: 'I recently completed and passed the Claude Associate certification exam. The Associate level serves as an accessible entry point that required only a few days of preparation to validate core knowledge. I found it to be a great stepping stone toward the more demanding Architect certification, which clearly requires deeper, hands-on practical experience.'",
+                pains: "The steep complexity gap between Associate knowledge concepts and professional Architect requirements, which cannot be mastered through passive reading or trivia.",
+                gains: "Fast certification win to build momentum, paired with clear motivation to join collaborative live screen-sharing cohorts to master hands-on architecture.",
+                gtm: "• Two-Tier Ladder (H25): Market the $29 Associate Prep Bundle as the rapid 3-day quick win, funnelling members into the $250 VIP Sunday live cohort for deep Architect mastery.\n• Live Screen-Sharing Validation (H8/H30): Validates why live cohort screen-sharing is necessary: Architect requires deep hands-on building, not trivia cramming."
+            },
+            rakesh: {
+                name: "Rakesh",
+                channel: "Professional Network & Skool Discovery",
+                referral: "Professional IT Network",
+                date: "Aug 20, 2026 • 10:15 AM",
+                hypotheses: ["H30 (FDE Contractor Roadmap)", "H12 (B2B Demand)", "H24 (Cost Anxiety)", "H5 (Cohort PMF)", "H8 (Continuity)", "H29 (Listen > Speak)"],
+                routine: "1. Corporate: Escalating UK Employer National Insurance (NI) rates & statutory overheads inflating permanent payroll. 2. Community: In Skool, past cohorts, historical session topics, and progression roadmap are not clear to the audience.",
+                workaround: "1. Enterprise shifting headcount to agile outside-IR35 contractors. 2. Learners asking ad-hoc DMs about past cohort topics rather than finding a clear broadcasted schedule.",
+                stories: "Verbatims: 1. 'The national insurance getting higher and the payment are increasing said by Rakesh the overhead for employment.' 2. 'In Skool the cohorts are not clear.'",
+                pains: "Permanent employment cost inflation + cognitive friction in Skool when trying to understand previous cohort session recordings and upcoming live session roadmaps.",
+                gains: "Contractor zero-overhead agility + Proactive Weekly Email Digest summarizing previous cohorts (code, takeaways, Skool recording link) and announcing the next Sunday 9pm agenda.",
+                gtm: "• Macroeconomic Pitch (H30): Highlight how rising National Insurance makes contractor alliances economically compelling for CFOs.\n• Operational Action (H5/H29): Established weekly recurring task to send previous cohorts email digest every Monday/Tuesday to eliminate community confusion."
+            },
+            baran_g: {
+                name: "Baran G",
+                channel: "LinkedIn (Personal DM)",
+                referral: "Personal Network",
+                date: "Aug 18, 2026 • 11:42 AM",
+                hypotheses: ["H24 (Emotional Drivers & Time)", "H17 (Workflow Automation)", "H30 (FDE / Contractor Toolchain)"],
+                routine: "He was doing complex Excel operations manually, and it was taking a disproportionate amount of his daily bandwidth and focus across competing priorities.",
+                workaround: "Now deploying AI agents to ingest raw tabular data and automatically format visual, stakeholder-ready charts and summaries.",
+                stories: "He was using a big amount of his time to organize the tabular structure. Traditional Excel workflows were tedious and high friction.",
+                pains: "Acute time pressure with many competing life priorities; anxiety regarding manual productivity bottleneck.",
+                gains: "Regained his personal time while delivering a significantly more polished, presentable stakeholder output.",
+                gtm: "• Marketing Hook: Reinforces reverse-response messaging: practitioners want immediate time-saving tabular agent workflows, not academic trivia.\n• Live Cohort Lab: Include agentic Excel-to-Chart automation pipeline in Sunday 9pm screen-share demo."
+            },
+            apo: {
+                name: "Apo",
+                channel: "Face-to-Face (Cambridge / London)",
+                referral: "Personal Network",
+                date: "Aug 18, 2026 • 11:53 AM",
+                hypotheses: ["H1 (Market Demand)", "H29 (Audience Co-Creation)", "H30 (Contractor & Business Value)"],
+                routine: "Apo is not interested in academic certification badges for their own sake, but strictly in the direct commercial value and cash uplift it brings to his enterprise.",
+                workaround: "Previously operated with 100+ open browser tabs simultaneously with zero workflow automation, manually copying and pasting across portals.",
+                stories: "Started using Claude and built 5 standalone agentic scripts to directly optimize and uplift his Amazon FBA eCommerce business operations.",
+                pains: "Getting lost in tab noise and clutter; urgent need for clear business signals rather than theoretical AI hype.",
+                gains: "Apps built for his business measurably increased cash generation capacity; actively adopting practical AI tools 2 years after market hype.",
+                gtm: "• Product Value Prop: Frame curriculum around tangible cash/revenue operations rather than theoretical exam passing.\n• Stage 1 Proof: Real practitioners seek operational leverage, validating our FDE and toolchain thesis (H30)."
+            },
+            cheuk: {
+                name: "Cheuk (National Grid)",
+                channel: "WhatsApp DM",
+                referral: "Enterprise Peer",
+                date: "Aug 19, 2026 • 10:29 AM UK",
+                hypotheses: ["H1 (Market Reality)", "H12 (Partner Seating)", "F12 (Walk-up D2C Gating)"],
+                routine: "Practitioner attempted walk-up individual Pearson VUE registration for the Claude Certified Architect exam and was blocked due to enterprise partner tier gating.",
+                workaround: "Reaching out directly to accredited partner companies and network vehicles to request candidate seating and voucher assignment.",
+                stories: "Verbatim: 'You know only enterprise partners with Claude has access to these certifications... I tried looking up how I can enroll and I can't sign up yet.'",
+                pains: "Walk-up individual registration is restricted; individual TAM is smaller than an open direct-to-consumer listing implies.",
+                gains: "Securing an exam seat through accredited partner channels (e.g. Pexabo Ltd / CPN Select partner vehicle).",
+                gtm: "• Distribution Strategy: D2C channels acquire candidates; accredited partner entities seat candidates for Pearson VUE proctored exams.\n• Risk Mitigation (F12): Confirms partner seating path is mandatory for exam completion."
+            },
+            youtube_n2: {
+                name: "Two YouTube Viewers (n=2)",
+                channel: "YouTube Video Comments (youtu.be/27jXA2V2Zio)",
+                referral: "Organic YouTube Algorithm",
+                date: "Aug 19, 2026 • Video Feedback",
+                hypotheses: ["H2 (Visual Animation)", "H4 (Acquisition Funnel)", "H5 (Live Cohort)", "H29 (Audience Co-Creation)"],
+                routine: "Technical practitioners watching high-retention animated YouTube shorts on AI architecture and engineering topics.",
+                workaround: "Consuming organic video content while evaluating community and cohort enrollment opportunities.",
+                stories: "Verbatim: 'I don't disagree with the content but I think if you're selling your school, it should be you speaking and not an automated voice.'",
+                pains: "Automated AI voiceover creates skepticism when making a commercial or community offer (Skool / Sunday Session).",
+                gains: "High trust and personal authenticity when founder Rifat Erdem Sahin personally speaks the community invitation.",
+                gtm: "• Founder Voice SOP: Teaching sections may use animated AI voice; all commercial Skool / Sunday CTAs must be founder-recorded.\n• Rapid Co-Creation (H29): Immediate rule adjustment following n=2 feedback without discarding animation engine."
+            },
+            session_8: {
+                name: "AI Cohort Session 8 (Bora, Sude, Marianna, Rifat)",
+                channel: "Live Cohort (Sunday 9pm)",
+                referral: "Delivery Pilot Community",
+                date: "Aug 17, 2026 • 2h 15m Live Demo",
+                hypotheses: ["H5 (Community PMF)", "H29 (Lecture to Party)", "H30 (FDE Contractor Roadmap)"],
+                routine: "Weekly collaborative screen-sharing sessions building production systems, Second Brains, and low-latency bots.",
+                workaround: "Replacing static lectures with interactive screen-share teardowns, live debugging, and peer architecture reviews.",
+                stories: "Demonstrated Polymarket bot (Bora), Cloudflare Zero Trust staging (Sude), Longevity paper CRM (Marianna), and 100k-file Second Brain (Rifat).",
+                pains: "Context window token costs, manual contractor accounting overhead, and academic certification disconnect.",
+                gains: "Tiered hybrid search (Neo4j Graph + Qdrant Vector), automated invoice extraction, and £600–£1,000+/day contractor readiness.",
+                gtm: "• Community Format: Formalized Lecture → Party pivot (H29) as primary cohort retention and referral mechanism.\n• Offer Ladder: Confirmed $0 Peek / $1 Sit In / $250 VIP Screen-Share pricing ladder."
+            }
+        };
+
+        function renderHypothesesPills(hypList) {
+            var container = document.getElementById('meta-hypotheses');
+            container.innerHTML = '';
+            hypList.forEach(function(h) {
+                var span = document.createElement('span');
+                span.className = 'hyp-pill';
+                span.textContent = h;
+                container.appendChild(span);
+            });
+        }
+
+        function loadInterview(key) {
+            var docTitle = document.getElementById('pdf-doc-title');
+            
+            if (key === 'blank') {
+                docTitle.textContent = "Customer Discovery Field Worksheet (Lined Note-Taking Sheet)";
+                document.getElementById('meta-name').innerHTML = '<span style="color:#64748b; font-family:monospace;">[ ___________________________ ]</span>';
+                document.getElementById('meta-channel').innerHTML = '<span style="color:#64748b; font-family:monospace;">[ ___________________________ ]</span>';
+                document.getElementById('meta-referral').innerHTML = '<span style="color:#64748b; font-family:monospace;">[ ___________________________ ]</span>';
+                document.getElementById('meta-date').innerHTML = '<span style="color:#64748b; font-family:monospace;">[ 2026-___-___ &nbsp; ___:___ AM/PM ]</span>';
+                
+                // Render Checkboxes for Hypotheses
+                var hypContainer = document.getElementById('meta-hypotheses');
+                hypContainer.innerHTML = `
+                    <div class="blank-checkbox-grid">
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H1 Demand</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H2 Visuals</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H5 Cohort</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H8 PMF</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H12 B2B</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H17 Labs</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H21 $29 SKU</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H24 Emotion</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H25 Bifurcation</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H29 Listen</span>
+                        <span class="blank-checkbox-item"><span class="blank-box"></span>H30 FDE</span>
+                    </div>
+                `;
+
+                // Ruled lined blocks with high-contrast OCR tags
+                document.getElementById('content-routine').innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                        <span style="font-size:7pt; color:#64748b; font-style:italic;">Candidate study habits, daily schedule &amp; operational constraints:</span>
+                        <span class="ocr-tag">[OCR_TAG: 1_ROUTINE]</span>
+                    </div>
+                    <div class="lined-paper-block"></div>
+                `;
+
+                document.getElementById('content-workaround').innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                        <span style="font-size:7pt; color:#64748b; font-style:italic;">How are they solving/bypassing this friction today? (e.g. 100 tabs, manual Excel, scripts):</span>
+                        <span class="ocr-tag">[OCR_TAG: 2_WORKAROUNDS]</span>
+                    </div>
+                    <div class="lined-paper-block"></div>
+                `;
+
+                document.getElementById('content-stories').innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                        <span style="font-size:7pt; color:#64748b; font-style:italic;">Verbatim quotes &amp; concrete past experiences (No hypothetical promises):</span>
+                        <span class="ocr-tag">[OCR_TAG: 3_STORIES]</span>
+                    </div>
+                    <div class="lined-paper-block"></div>
+                `;
+
+                document.getElementById('content-pains').innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                        <span style="font-size:7pt; color:#dc2626; font-style:italic;">Time scarcity, tax/overhead, exam blocks:</span>
+                        <span class="ocr-tag">[OCR_TAG: 4_PAINS]</span>
+                    </div>
+                    <div class="lined-paper-block"></div>
+                `;
+
+                document.getElementById('content-gains').innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                        <span style="font-size:7pt; color:#059669; font-style:italic;">Time recovery, £500-£1k/day rates, fast wins:</span>
+                        <span class="ocr-tag">[OCR_TAG: 5_GAINS]</span>
+                    </div>
+                    <div class="lined-paper-block"></div>
+                `;
+
+                document.getElementById('content-gtm').innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                        <span style="font-size:7pt; color:#64748b; font-style:italic;">Action items for Sunday Live Cohort / Curriculum / Marketing Hooks:</span>
+                        <span class="ocr-tag">[OCR_TAG: 6_GTM]</span>
+                    </div>
+                    <div class="lined-paper-block short"></div>
+                `;
+                return;
+            }
+
+            docTitle.textContent = "Customer Discovery Interview Record";
+
+            if (key === 'custom') {
+                // Check if cookie / localStorage has a custom note
+                var siteNotesRaw = "";
+                var match = document.cookie.match(/(?:^|; )site_notes=([^;]*)/);
+                if (match) {
+                    try {
+                        var notes = JSON.parse(decodeURIComponent(match[1]));
+                        if (notes && notes.length > 0) {
+                            var latestNote = notes[notes.length - 1];
+                            document.getElementById('meta-name').textContent = latestNote.pageTitle || "Custom Candidate";
+                            document.getElementById('meta-channel').textContent = "Shared Cookie Notes";
+                            document.getElementById('meta-referral').textContent = "Recorded in Session";
+                            document.getElementById('meta-date').textContent = latestNote.date || new Date().toLocaleDateString();
+                            document.getElementById('content-routine').textContent = latestNote.text || "Custom qualitative discovery text.";
+                            document.getElementById('content-workaround').textContent = "Refer to logged interview transcript.";
+                            document.getElementById('content-stories').textContent = "Candidate recorded via live discovery interview form.";
+                            document.getElementById('content-pains').textContent = "Identified during qualitative customer discovery.";
+                            document.getElementById('content-gains').textContent = "Identified during qualitative customer discovery.";
+                            document.getElementById('content-gtm').textContent = "Refer to live interview transcript notes.";
+                            renderHypothesesPills(["H1", "H24", "H29"]);
+                            return;
+                        }
+                    } catch(e) {}
+                }
+                alert('No custom cookie notes found. Loading Baran G default record.');
+                key = 'baran_g';
+                document.getElementById('interview-select').value = 'baran_g';
+            }
+
+            var data = interviewDatabase[key] || interviewDatabase['baran_g'];
+            document.getElementById('meta-name').textContent = data.name;
+            document.getElementById('meta-channel').textContent = data.channel;
+            document.getElementById('meta-referral').textContent = data.referral;
+            document.getElementById('meta-date').textContent = data.date;
+            document.getElementById('content-routine').textContent = data.routine;
+            document.getElementById('content-workaround').textContent = data.workaround;
+            document.getElementById('content-stories').textContent = data.stories;
+            document.getElementById('content-pains').textContent = data.pains;
+            document.getElementById('content-gains').textContent = data.gains;
+            document.getElementById('content-gtm').innerHTML = data.gtm.replace(/\n/g, '<br>');
+            renderHypothesesPills(data.hypotheses);
+        }
+
+        // Initialize from URL parameters if provided
+        window.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var selectedParam = urlParams.get('interview');
+            if (selectedParam === 'blank' || urlParams.get('blank') === '1') {
+                document.getElementById('interview-select').value = 'blank';
+                loadInterview('blank');
+            } else if (selectedParam && interviewDatabase[selectedParam]) {
+                document.getElementById('interview-select').value = selectedParam;
+                loadInterview(selectedParam);
+            } else {
+                loadInterview('blank'); // Default to blank lined sheet or tomiwa
+            }
+
+            // Check if auto-print requested
+            if (urlParams.get('print') === 'true' || urlParams.get('autoprint') === '1') {
+                setTimeout(function() {
+                    window.print();
+                }, 600);
+            }
+        });
+    </script>
+</body>
+</html>
