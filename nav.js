@@ -228,6 +228,7 @@
                 ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
                 ['5_Symbols/growth/instagram-marketing-pipeline.html', '📱 Instagram Marketing Pipeline'],
                 ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style'],
+                ['5_Symbols/growth/inspirational-youtubers.html', '🌟 Inspirational YouTubers &amp; Benchmarks'],
                 ['5_Symbols/growth/community-building-score.html', '🌱 Community &amp; Model Score'],
                 ['5_Symbols/growth/ai-demo.html', '🤖 AI Prep Demo']
             ]
@@ -548,6 +549,7 @@
         { url: '5_Symbols/product/skool-roadmap.html', title: 'Skool Community & Learning Roadmap', desc: '4-phase Skool operational milestones: Foundation → MVP Classroom & Daily Visuals → 10 True Regulars → VIP Placement Alliance.', cat: 'Product', tags: 'skool roadmap community classroom mvp daily visuals 10 regulars vip alliance delivery pilot' },
         { url: '5_Symbols/strategy/audience-transformation.html', title: 'Audience Transformation (Input/Output)', desc: 'Matrix defining candidate starting input (prompt tinkerer / unverified CV) to Delivery Pilot certified output (£500-£1,000/day Forward Deployed AI Engineer).', cat: 'Strategy', tags: 'audience transformation input output delivery pilot forward deployed engineer fde contractor matrix h30' },
         { url: '5_Symbols/growth/audience-roadmap.html', title: 'Audience Transformation Roadmap', desc: '5-step practitioner journey: YouTube/LinkedIn content → Skool community cohorts → Claude Architect course MVP & daily visuals → VIP screen sharing → Delivery Pilot partnership.', cat: 'Growth', tags: 'audience roadmap customer journey youtube linkedin skool mvp course claude certified architect vip deliverypilot partnership' },
+        { url: '5_Symbols/growth/inspirational-youtubers.html', title: 'Inspirational YouTubers & Creator Benchmarks', desc: 'Detailed strategic deconstruction of Ali Abdaal, NetworkChuck (including YouTube Short analysis), and TechWorld with Nana for AI Certification Helper.', cat: 'Growth', tags: 'inspirational youtubers creator benchmarks ali abdaal networkchuck tech with nana shorts animation video workflow devops h2 h10 h13 h28' },
         { url: '5_Symbols/product/skool-payout-dashboard.html', title: 'Skool Payout Dashboard & Settlement', desc: 'Real-time tracking of Skool and Stripe Connect balance, first paid $0.60 settlement, 7-14 day clearing cycle, and Wednesday payouts.', cat: 'Product', tags: 'skool payout dashboard settlement stripe delivery pilot balance pending wednesday clearance' }
     ];
 
