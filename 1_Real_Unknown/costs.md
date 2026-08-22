@@ -8,12 +8,16 @@ The Environment Agent checks costs for all environments (including LLM costs), u
 
 ---
 
-## 🏗 Infrastructure Costs
+## 🏗 Infrastructure & Physical Facilities Costs
 
-| Service | Provider | Tier | Est. Monthly | Actual Monthly | Status |
-|---------|----------|------|-------------|----------------|--------|
+| Service / Resource | Provider / Location | Tier / Spec | Est. Monthly | Actual Monthly | Status |
+|-------------------|-------------------|-------------|-------------|----------------|--------|
+| **Physical Storage Unit** | Big Yellow Self Storage (CB4 Cambridge) | Storage room (studio gear overflow) | £500.00 | £500.00 | ✅ Active |
+| **AI Multi-Agent Inference** | Anthropic & Google (Claude + Gemini) | Claude 3.5 Sonnet / Gemini 1.5 Pro API | ~$100.00 | ~$100.00 | ✅ Active |
+| **Visual Animation & Deck Suite** | Canva | Canva Pro (Storyboards, slides, thumbnails) | ~$15.00 (£13) | ~$15.00 | ✅ Active |
 | Azure Key Vault | Microsoft | Standard | $0.03/10k ops | $0.00 | ✅ Active |
 | GitHub Pages | GitHub | Free | $0.00 | $0.00 | ✅ Active |
+| Skool Community Platform | Skool | Free Preview (scaling to $99/mo) | $0.00 | $0.00 | ✅ Active |
 | Fly.io | Fly.io | Free (3 shared VMs) | $0.00 | $0.00 | 📋 Planned |
 | Supabase | Supabase | Free (2 projects) | $0.00 | $0.00 | ✅ Active |
 | Axiom | Axiom | Free (500k events) | $0.00 | $0.00 | 📋 Planned |
@@ -21,7 +25,7 @@ The Environment Agent checks costs for all environments (including LLM costs), u
 | Qdrant | Self-hosted | Docker local | $0.00 | $0.00 | ⚠️ Big repos only |
 | Cloudflare Workers | Cloudflare | Free (100k/day) | $0.00 | $0.00 | 📋 Optional |
 
-**Total estimated monthly:** $0.00 (all free tiers sufficient for current project scale)
+**Total estimated monthly hard cash:** ~£590/mo (~$750/mo) (Storage £500/mo + AI inference ~$100/mo + Canva Pro ~$15/mo)
 
 ---
 
@@ -127,8 +131,10 @@ The Environment Agent monitors LLM token consumption and warns on cost spikes.
 
 | Metric | Value |
 |--------|-------|
-| Current monthly cost | **$0.00** |
-| Projected cost at 10x scale | ~$25-50/mo |
-| Largest saving this session | Qdrant → Kilo Code local indexing ($25/mo freed) |
-| Most expensive active component | None (all free tier) |
-| Next likely paid switch | Supabase Pro ($25/mo) when DB exceeds 500MB |
+| Current monthly hard cash cost | **~£590/mo (~$750/mo)** |
+| Physical Facilities | Big Yellow Storage Unit in CB4 (£500/mo) |
+| Multi-Agent & Tooling Stack | Claude & Gemini (~$100/mo) + Canva Pro (~$15/mo / £13/mo) |
+| Projected cost at 10x scale | ~$850-950/mo (adding Skool $99/mo standard plan) |
+| Largest saving this session | Zero-cost hosting on YouTube + GitHub Pages |
+| Most expensive active component | CB4 Storage Unit (£500/mo) |
+| Next likely paid switch | Skool Pro/Standard ($99/mo) when paid cohorts scale |

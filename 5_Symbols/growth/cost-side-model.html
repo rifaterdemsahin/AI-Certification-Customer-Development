@@ -32,27 +32,39 @@
                             <th style="padding: 1rem 0.5rem;">Line item</th>
                             <th style="padding: 1rem 0.5rem;">Monthly</th>
                             <th style="padding: 1rem 0.5rem;">Annualized</th>
-                            <th style="padding: 1rem 0.5rem;">Status</th>
+                            <th style="padding: 1rem 0.5rem;">Status &amp; Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
-                            <td style="padding: 1rem 0.5rem;">AI infrastructure &amp; inference</td>
-                            <td style="padding: 1rem 0.5rem;">$100</td>
-                            <td style="padding: 1rem 0.5rem;">$1,200</td>
-                            <td style="padding: 1rem 0.5rem;">Active, only recurring hard cash cost identified</td>
+                            <td style="padding: 1rem 0.5rem;"><strong style="color: var(--text-primary);">📦 Storage unit in CB4 (Cambridge)</strong></td>
+                            <td style="padding: 1rem 0.5rem; color: #fbbf24; font-weight: 600;">&pound;500</td>
+                            <td style="padding: 1rem 0.5rem;">&pound;6,000</td>
+                            <td style="padding: 1rem 0.5rem;">Big Yellow Self Storage unit in CB4 holding studio overflow, camera equipment, hardware, and physical workshop materials (see <a href="../bmc/bmc-key-resources.html" style="color: var(--color-primary);">Key Resources</a>)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong style="color: var(--text-primary);">🤖 AI Multi-Agent &amp; Inference (Claude &amp; Gemini)</strong></td>
+                            <td style="padding: 1rem 0.5rem; color: #a5b4fc; font-weight: 600;">~$100</td>
+                            <td style="padding: 1rem 0.5rem;">~$1,200</td>
+                            <td style="padding: 1rem 0.5rem;">Active recurring token infrastructure: Claude 3.5 Sonnet (architecture reasoning &amp; code generation) + Gemini 1.5 Pro/Flash (2M context audit &amp; video transcripts)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 1rem 0.5rem;"><strong style="color: var(--text-primary);">🎨 Canva Pro Subscription</strong></td>
+                            <td style="padding: 1rem 0.5rem; color: #67e8f9; font-weight: 600;">~$15 <span style="font-size:0.8rem;">(&pound;13)</span></td>
+                            <td style="padding: 1rem 0.5rem;">~$180</td>
+                            <td style="padding: 1rem 0.5rem;">Video storyboard animations, presentation slide decks, visual diagrams, and YouTube thumbnail graphics (<a href="https://www.canva.com/design/DAHRZe5KBoA/OJU0sL318CozUaTBpkdT2g/edit" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Canva Plan</a>)</td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
                             <td style="padding: 1rem 0.5rem;">Video hosting / LMS</td>
                             <td style="padding: 1rem 0.5rem;">$0</td>
                             <td style="padding: 1rem 0.5rem;">$0</td>
-                            <td style="padding: 1rem 0.5rem;">YouTube used as the platform, avoids this cost entirely</td>
+                            <td style="padding: 1rem 0.5rem;">YouTube handles streaming ($0); Skool on free preview (scales to $99/mo with paid cohorts)</td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
                             <td style="padding: 1rem 0.5rem;">Payment processing fees</td>
-                            <td style="padding: 1rem 0.5rem;">Unmodeled</td>
-                            <td style="padding: 1rem 0.5rem;">Unmodeled</td>
-                            <td style="padding: 1rem 0.5rem;">Gap &mdash; a real % of every transaction, not yet tracked</td>
+                            <td style="padding: 1rem 0.5rem;">~2.9% + 30&cent;</td>
+                            <td style="padding: 1rem 0.5rem;">Variable</td>
+                            <td style="padding: 1rem 0.5rem;">Stripe / Skool platform checkout transaction fee per enrollment</td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
                             <td style="padding: 1rem 0.5rem;">Refund reserve</td>
@@ -69,7 +81,7 @@
                     </tbody>
                 </table>
                 <p style="color: var(--text-secondary); margin-top: 1.5rem;">
-                    <strong>Total known hard cash cost today: $100/month ($1,200/year)</strong> &mdash; against the $100,000 ARR Stage 4 hiring trigger, that's under 1.2% of the threshold. Almost all of the "margin" the business is currently running on is founder time, not cash, which is exactly what the time-cost model below prices out.
+                    <strong>Total known hard cash operating cost today: ~&pound;590/month (~$750/month)</strong> (Storage &pound;500/mo + AI inference ~$100/mo + Canva Pro ~$15/mo) &mdash; against the $100,000 ARR Stage 4 hiring trigger, hard cash costs remain lean and predictable.
                 </p>
             </div>
         </section>
@@ -92,14 +104,14 @@
             <div class="grid">
                 <div class="col-6">
                     <div class="card" style="height: 100%;">
-                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Membership vs. fixed infra cost</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">$100/month infra &divide; $10/mo per member = <strong>10 active members</strong> needed just to cover the fixed cash cost, before any founder time is counted.</p>
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Membership vs. Software/AI Fixed Cost</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">$115/month software stack (AI + Canva) &divide; $10/mo per member = <strong>12 active members</strong> needed to cover software toolchains outright.</p>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="card" style="height: 100%;">
-                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Cohort vs. fixed infra cost</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">A single $250 cohort seat covers <strong>2.5 months</strong> of the $100/month infra bill outright &mdash; the fixed cash floor is trivially easy to clear; the founder-time cost is the real constraint (see <a href="unit-economics.html" style="color: var(--color-warning);">Unit Economics</a>).</p>
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">VIP Cohort vs. Operating Fixed Cost Stack</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">3 &times; $250 VIP cohort seats ($750) covers the <strong>entire monthly cash stack</strong> (&pound;500 CB4 storage + AI multi-agent inference + Canva Pro) for that month.</p>
                     </div>
                 </div>
             </div>
@@ -109,7 +121,7 @@
             <h2 class="section-title" style="color: var(--color-warning);">⚠️ What's Still Missing</h2>
             <div class="card" style="background: rgba(245, 158, 11, 0.02); border-color: rgba(245, 158, 11, 0.2);">
                 <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Payment processing fees are still not itemized against any revenue line.</li>
+                    <li>Payment processing fees are estimated at 2.9% + 30&cent; but need live settlement reconciliation in Stage 2.</li>
                     <li>No cost model exists yet for the three Stage 4 hires against whether $100k ARR actually leaves enough margin to pay them (acidity Finding F7, still open).</li>
                     <li>No cost-of-living/runway model has been checked against the founder's planned full-time transition at the $100k ARR threshold (<a href="../hypotheses/hyp-h15.html" style="color: var(--color-primary);">H15</a>).</li>
                 </ul>
@@ -124,7 +136,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: New page &mdash; business-level cost stack and break-even math, addressing acidity check Finding F7 (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/cost-side-model.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/cost-side-model.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Added Canva subscription, Claude/Gemini AI multi-agent costs, and £500 CB4 storage unit to cost-side model (2026-08-22) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/cost-side-model.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/growth/cost-side-model.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </div>
     </footer>
