@@ -1,5 +1,8 @@
 # Skool Pricing Feedback — v1.0.0
 
+> [!NOTE]
+> **Superseded by [v1.1.0](skool-pricing-feedback-v1.1.0.md)** (2026-08-22): Updated with finalized tier copy, price anchors, Saturday 1-1 calendar blocks, and `/learn` slash commands.
+
 **Date:** 2026-08-14  
 **Source:** Founder confirmation of the live Delivery Pilot checkout at [skool.com/delivery-pilot-8938](https://www.skool.com/delivery-pilot-8938)  
 **Hypothesis:** H5 Premise 9 (preview ramp, not a replacement of Premise 3)  
