@@ -3,14 +3,14 @@
 **Report Version:** v1.0.0  
 **Date:** 2026-08-22  
 **Interview Source:** `interview_charles_2026-08-22.md`  
-**Candidate:** Charles (Charles Andrews, Senior Consultant @ Capgemini Invent, Claude Certified Associate 917/1000)  
+**Candidate:** Charles (Charles, Senior Consultant @ Capgemini Invent, Claude Certified Associate 917/1000)  
 **Tracked Hypotheses Mapped:** [H24 (Emotional Drivers & Time Pressure)](../5_Symbols/hypotheses/hyp-h24.html), [H29 (Listen > Speak Feedback Loop)](../5_Symbols/hypotheses/hyp-h29.html), [H1 (AI Skills Expectations & Market Demand)](../5_Symbols/hypotheses/hyp-h1.html), [H3 (Willingness to Pay)](../5_Symbols/hypotheses/hyp-h3.html), [H8 (Live Cohort PMF & Pacing)](../5_Symbols/hypotheses/hyp-h8.html), [H25 (Cert Bifurcation: Judgment vs Trivia)](../5_Symbols/hypotheses/hyp-h25.html), [H30 (Delivery Pilot / Contractor Roadmap)](../5_Symbols/hypotheses/hyp-h30.html)
 
 ---
 
 ## 1. Executive Summary & Strategic Context
 
-In qualitative customer discovery feedback, certified practitioner and enterprise consultant **Charles Andrews** articulated a fundamental distinction between high-stakes commercial delivery and personal exploratory learning:
+In qualitative customer discovery feedback, certified practitioner and enterprise consultant **Charles** articulated a fundamental distinction between high-stakes commercial delivery and personal exploratory learning:
 
 1. **The "Low and Slow" Learning Philosophy:** For personal projects and hobbyist exploration, learning functions like cooking a fine steak: *"low and slow. All part of the fun 🥳"*. The artisanal journey, trial-and-error, and intrinsic intellectual curiosity are the primary rewards.
 2. **Context-Dependent Urgency:** When external time pressure and immediate commercial deadlines are absent, there is no acute "hair-on-fire" urgency for rapid AI tool automation.
@@ -26,7 +26,7 @@ In qualitative customer discovery feedback, certified practitioner and enterpris
 ## 2. Customer Discovery Qualitative Synthesis
 
 ### Profile & Intake Data
-* **Candidate:** Charles Andrews
+* **Candidate:** Charles
 * **Role / Firm:** Senior Consultant @ Capgemini Invent (Certified Claude Associate: 917/1000)
 * **Channel:** Professional Network & Direct Outreach
 * **Date Logged:** 2026-08-22

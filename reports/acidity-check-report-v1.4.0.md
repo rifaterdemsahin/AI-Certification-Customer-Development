@@ -74,6 +74,6 @@ Same as v1.3.0: Steve Blank four-stage structure, zero-CAC organic funnel design
 ## Change Log
 
 - **v1.4.0** (2026-08-19): F12 🔴 STILL OPEN → 🟡 PARTIALLY ADDRESSED. Cheuk (National Grid) confirmed walk-up individual enrollment is blocked; founder-confirmed mitigation is two partner companies that enroll people. All other findings carried forward from v1.3.0.
-- **v1.3.0** (2026-08-10): Added F12 as 🔴 STILL OPEN off Charles Andrews employer-sponsored Partner Network prep. See `acidity-check-report-v1.3.0.md`.
+- **v1.3.0** (2026-08-10): Added F12 as 🔴 STILL OPEN off Charles employer-sponsored Partner Network prep. See `acidity-check-report-v1.3.0.md`.
 - **v1.2.0** (2026-08-07): Upgraded F9 to PARTIALLY ADDRESSED. See `acidity-check-report-v1.2.0.md`.
 - **v1.1.0** (2026-08-04): Re-assessed all 11 findings. See `acidity-check-report-v1.1.0.md`.

@@ -1,7 +1,7 @@
 # Customer Discovery Interview: Charles
 
 - **Date Logged:** Aug 22, 2026, 2:57 PM
-- **Candidate Name:** Charles (Charles Andrews, Senior Consultant @ Capgemini Invent)
+- **Candidate Name:** Charles (Senior Consultant @ Capgemini Invent)
 - **Channel / Location:** Professional Network & Discovery Feedback / Community Interaction
 - **Referral / Source:** Personal Outreach & Follow-up
 - **Related Hypotheses:** H24, H29, H1, H3, H8, H25, H30

@@ -14,7 +14,7 @@ WhatsApp, 10:29 UK, first name only. Cheuk (National Grid):
 > “You know only enterprise partners with Claude has access to these certifications.”
 > “I triend looking up how I can enroll and I can't sign up yet.”
 
-This is a **failed self-enrollment**, not a rumour. It sits next to Charles Andrews (Capgemini Invent) sitting the exam via employer-sponsored Partner Network material: two independent paths, both partner-mediated, zero walk-up individual seats observed.
+This is a **failed self-enrollment**, not a rumour. It sits next to Charles (Capgemini Invent) sitting the exam via employer-sponsored Partner Network material: two independent paths, both partner-mediated, zero walk-up individual seats observed.
 
 **Founder mitigation (same day):** two partner companies already in the system help and enroll people. Pexabo Ltd is the founder's Claude Partner Network Select-tier vehicle. The second partner is not named here. The D2C funnel still acquires; partners seat the exam. See F12 in `reports/acidity-check-report-v1.4.0.md` (now 🟡 PARTIALLY ADDRESSED).
 

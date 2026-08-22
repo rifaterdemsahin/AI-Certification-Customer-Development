@@ -4,7 +4,7 @@
 
 **Date:** 2026-08-13
 **Produced by:** the `business-model-sanity-check` skill (`.claude/skills/business-model-sanity-check/SKILL.md`)
-**What changed vs. v1.9.10:** patch bump — merged PR #9 (`claude/skool-setup-signups-6w38wa`) into current `main`. H5 upgrades from ⚪ Hypothesized to 🟡 In Testing on real Skool-launch evidence (community live on skool.com, 8 free-cohort recordings uploaded, membership levels + founder bio configured, invite link shared, **8 signups**). Later `main` evidence on H5 is kept (Charles Andrews Premise 7 correction, Sude 2026-08-12 vault, 7 classrooms, founder board seeding, 2-hour workshop-upload rule). The 20–40 paid-enrollment conclusion and the $10k H9 gate remain unmeasured. Historical report filenames stay on `main`'s version chain.
+**What changed vs. v1.9.10:** patch bump — merged PR #9 (`claude/skool-setup-signups-6w38wa`) into current `main`. H5 upgrades from ⚪ Hypothesized to 🟡 In Testing on real Skool-launch evidence (community live on skool.com, 8 free-cohort recordings uploaded, membership levels + founder bio configured, invite link shared, **8 signups**). Later `main` evidence on H5 is kept (Charles Premise 7 correction, Sude 2026-08-12 vault, 7 classrooms, founder board seeding, 2-hour workshop-upload rule). The 20–40 paid-enrollment conclusion and the $10k H9 gate remain unmeasured. Historical report filenames stay on `main`'s version chain.
 
 ---
 
