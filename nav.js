@@ -27,6 +27,7 @@
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
+                ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Triggers & Thresholds)'],
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Discovery Interview Recorder'],
                 ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing'],
                 ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
@@ -85,6 +86,7 @@
         },
         {
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
+                ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Thresholds)'],
                 ['5_Symbols/strategy/raise.html', '🚀 R.A.I.S.E.'],
                 ['motivation.html', '🔥 Motivation'],
                 ['5_Symbols/strategy/passion.html', '❤️ Passion &amp; Self-Learning'],
@@ -307,6 +309,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/when-to-pivot.html', title: 'When to Pivot: Hypothesis Failure Thresholds & Timing', desc: 'Detailed decision triggers, falsification thresholds, timeout windows, and pivot vectors for Stage 1 & 2 hypotheses (H1, H2, H24, H3, H5, H4, H27, H21, H7, H8, H6).', cat: 'Strategy', tags: 'when to pivot pivot triggers hypothesis failure thresholds timeout deadlines red-line metrics h1 h2 h24 h3 h5 h4 h27 h21 h7 h8 h6 customer discovery validation lean steve blank strategy decision' },
         { url: '5_Symbols/strategy/the-castle-complexity-kills.html', title: 'The Castle (Kafka): Complexity Kills', desc: 'Bureaucracy and systemic inertia in business: keep architectures, onboarding, and pipelines simple and autonomous rather than building Kafka\'s Castle.', cat: 'Strategy', tags: 'kafka the castle complexity kills bureaucracy systemic inertia simplicity autonomy skool lean solo founder fde contractor h23 h29 h30 literature' },
         { url: '5_Symbols/strategy/the-bed-of-procrustes.html', title: 'The Bed of Procrustes: Branding is Perception', desc: 'Subjective reality and perception (Petrescu & Taleb): brand exists in the customer\'s mind; do not stretch customers to fit arbitrary product visions.', cat: 'Strategy', tags: 'bed of procrustes camil petrescu taleb subjective reality branding perception mental models customer discovery listen speak reverse response h24 h29 h25 literature' },
         { url: '5_Symbols/strategy/the-brothers-karamazov.html', title: 'The Brothers Karamazov: Emotions Move Money', desc: 'Human nature and irrationality (Dostoevsky): emotions move money while logic justifies; fear of obsolescence, status, and brotherhood drive tech purchases.', cat: 'Strategy', tags: 'brothers karamazov dostoevsky emotions move money irrationality psychology fear status brotherhood grand inquisitor funfair tokens h24 h3 h30 literature' },
