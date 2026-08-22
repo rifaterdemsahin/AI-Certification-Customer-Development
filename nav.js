@@ -108,6 +108,9 @@
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/strategy/listen-more-than-you-speak.html', '👂 Listen More Than You Speak'],
                 ['5_Symbols/strategy/reading-and-learning-guardrails.html', '📖 Reading & Learning Guardrails'],
+                ['5_Symbols/strategy/the-castle-complexity-kills.html', '🏰 The Castle (Kafka: Complexity Kills)'],
+                ['5_Symbols/strategy/the-bed-of-procrustes.html', '🛏️ The Bed of Procrustes (Petrescu: Perception)'],
+                ['5_Symbols/strategy/the-brothers-karamazov.html', '⚖️ The Brothers Karamazov (Dostoevsky: Emotions)'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
                 ['5_Symbols/product/vc-feedback.html', '🏦 VC Constructive Feedback'],
                 ['5_Symbols/strategy/alex-hormozi-agent.html', '🏋️ Alex Hormozi Agent'],
@@ -302,6 +305,9 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/the-castle-complexity-kills.html', title: 'The Castle (Kafka): Complexity Kills', desc: 'Bureaucracy and systemic inertia in business: keep architectures, onboarding, and pipelines simple and autonomous rather than building Kafka\'s Castle.', cat: 'Strategy', tags: 'kafka the castle complexity kills bureaucracy systemic inertia simplicity autonomy skool lean solo founder fde contractor h23 h29 h30 literature' },
+        { url: '5_Symbols/strategy/the-bed-of-procrustes.html', title: 'The Bed of Procrustes: Branding is Perception', desc: 'Subjective reality and perception (Petrescu & Taleb): brand exists in the customer\'s mind; do not stretch customers to fit arbitrary product visions.', cat: 'Strategy', tags: 'bed of procrustes camil petrescu taleb subjective reality branding perception mental models customer discovery listen speak reverse response h24 h29 h25 literature' },
+        { url: '5_Symbols/strategy/the-brothers-karamazov.html', title: 'The Brothers Karamazov: Emotions Move Money', desc: 'Human nature and irrationality (Dostoevsky): emotions move money while logic justifies; fear of obsolescence, status, and brotherhood drive tech purchases.', cat: 'Strategy', tags: 'brothers karamazov dostoevsky emotions move money irrationality psychology fear status brotherhood grand inquisitor funfair tokens h24 h3 h30 literature' },
         { url: '5_Symbols/strategy/passion.html', title: 'Passion: Self-Learning & Community', desc: 'The founder engine — self-learning through shifting professions, the 2023 Universal Credit turning point on poverty, and volunteering by listening without giving advice.', cat: 'Strategy', tags: 'passion self learning skill gaps professions shifting poverty universal credit 2023 family health volunteering listening no advice ai certification content community founder' },
         { url: 'markdown_renderer.html?src=reports/founder-voice-skool-cta-v1.0.0.md', title: 'Founder Voice vs AI Voice v1.0.0', desc: 'Two independent viewers of AI Isn\'t a Bubble accepted the content and rejected an automated voice when selling Skool.', cat: 'Docs', tags: 'founder voice automated voice skool youtube 27jXA2V2Zio h2 h5 h29' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-anna-interview-v1.0.0.md', title: 'Customer Discovery Report: Anna Interview', desc: 'Qualitative analysis of Anna interview on 5-10-5 pacing methodology (5m demo, 10m execute, 5m Q&A), 3-task session duration caps (40–60 min), and cognitive overload guardrails.', cat: 'Docs', tags: 'anna customer discovery interview uwise cambridge professor ukrainian founder 5-10-5 methodology pacing duration cognitive overload fatigue sunday live cohort h29 h8 h2 h10 h5 h17 h24 report' },
