@@ -37,6 +37,7 @@
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report'],
                 ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages'],
+                ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
                 ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
                 ['5_Symbols/dashboard/todo.html', '✅ Task List']
             ]
@@ -122,6 +123,7 @@
                 ['5_Symbols/product/one-pager.html', '📋 Copy-Paste One-Pager'],
                 ['5_Symbols/product/idea.html', '💡 Tell Us About Your Idea'],
                 ['5_Symbols/strategy/market-reality-check.html', '⚖️ Market Reality Check'],
+                ['5_Symbols/strategy/second-brain.html', '🧠 AI at the Core: Second Brain'],
                 ['5_Symbols/strategy/why-certification.html', '🏅 Why Certification Matters'],
                 ['5_Symbols/strategy/cert-value-ai-era.html', '🎓 Cert Value in the AI Era'],
                 ['5_Symbols/strategy/perception-of-ai.html', '🔍 Perception of AI: Skeptical View'],
@@ -158,6 +160,7 @@
                 ['5_Symbols/product/skool-roadmap.html', '🗺️ Skool Community &amp; Learning Roadmap'],
                 ['5_Symbols/product/skool-founding-members.html', '🏫 Skool Steps & Founding Members'],
                 ['5_Symbols/product/skool-community-golden-rules.html', '🌟 Golden Rules of Community Building'],
+                ['5_Symbols/product/skool-4c.html', '🧭 4C — Cause, Culture, Container, Calls'],
                 ['5_Symbols/product/skool-10-true-regulars.html', '🔟 10 True Regulars in Skool'],
                 ['5_Symbols/product/skool-delivery-pilot-offer.html', '🚪 Delivery Pilot Offer'],
                 ['5_Symbols/product/skool-about.html', '📝 Delivery Pilot About'],
@@ -270,6 +273,7 @@
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Business Model Confidence Report'],
                 ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '📅 Latest Created/Updated Pages'],
+                ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
                 ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['5_Symbols/product/resources.html', '🌐 External Resources Directory'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.4.0.md', '🧪 Acidity Check Report v1.4'],
@@ -312,6 +316,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/second-brain.html', title: 'AI at the Core: Second Brain Implementation & Niche Research', desc: 'Architecture, niche research, and customer discovery insights for placing AI at the core of personal knowledge management via 4-tier hybrid retrieval and PARA Obsidian vaults.', cat: 'Strategy', tags: 'second brain ai at the core niche research pkm obsidian para hybrid retrieval grep qdrant neo4j vector graph sude bora marianna customer discovery context window h5 h8 h20 h30' },
         { url: '5_Symbols/strategy/when-to-pivot.html', title: 'When to Pivot: Hypothesis Failure Thresholds & Timing', desc: 'Detailed decision triggers, falsification thresholds, timeout windows, and pivot vectors for Stage 1 & 2 hypotheses (H1, H2, H24, H3, H5, H4, H27, H21, H7, H8, H6).', cat: 'Strategy', tags: 'when to pivot pivot triggers hypothesis failure thresholds timeout deadlines red-line metrics h1 h2 h24 h3 h5 h4 h27 h21 h7 h8 h6 customer discovery validation lean steve blank strategy decision' },
         { url: '5_Symbols/strategy/the-castle-complexity-kills.html', title: 'The Castle (Kafka): Complexity Kills', desc: 'Bureaucracy and systemic inertia in business: keep architectures, onboarding, and pipelines simple and autonomous rather than building Kafka\'s Castle.', cat: 'Strategy', tags: 'kafka the castle complexity kills bureaucracy systemic inertia simplicity autonomy skool lean solo founder fde contractor h23 h29 h30 literature' },
         { url: '5_Symbols/strategy/the-bed-of-procrustes.html', title: 'The Bed of Procrustes: Branding is Perception', desc: 'Subjective reality and perception (Petrescu & Taleb): brand exists in the customer\'s mind; do not stretch customers to fit arbitrary product visions.', cat: 'Strategy', tags: 'bed of procrustes camil petrescu taleb subjective reality branding perception mental models customer discovery listen speak reverse response h24 h29 h25 literature' },
@@ -348,6 +353,7 @@
         { url: '5_Symbols/product/skool-static-posts.html', title: 'Skool Static Posts & Anti-Spam (Living Hubs)', desc: 'Operational guidelines and copy-paste rewrites for Skool static anchor posts, append-only comment streams, and community resource curation.', cat: 'Business Model', tags: 'skool static posts living hubs anti-spam comments stream curation great resources self learning rakesh h5 h8 h29 h30' },
         { url: '5_Symbols/product/skool-workshop-upload.html', title: '2-Hour Workshop Upload Sanity Check', desc: 'Upload the Sunday 2-hour workshop to Skool Classroom as the replay archive, not the course, and never as a public YouTube video.', cat: 'Business Model', tags: 'skool workshop upload replay classroom 2 hour sunday recording timestamps h5 h10' },
         { url: '5_Symbols/product/skool-founding-members.html', title: 'Skool Steps & Founding Members', desc: 'Skool community-course checklist (9 steps) with Marianna, Sude, and Bayo named as the first 3 founding members.', cat: 'Business Model', tags: 'skool founding members marianna sude bayo first 3 community course steps 10 true regulars' },
+        { url: '5_Symbols/product/skool-4c.html', title: '4C — Cause, Culture, Container, Calls', desc: 'Community architecture map: Cause (Delivery Pilot contractor path), Culture (golden rules / listen), Container (Skool LMS), Calls (Sunday + Monday VIP). Relates existing pages; not a new product.', cat: 'Business Model', tags: '4c cause culture container calls skool community sunday live golden rules lms delivery pilot h5 h8 h29 h30' },
         { url: '5_Symbols/product/skool-community-golden-rules.html', title: 'Golden Rules of Community Building', desc: 'Skool\'s 3 golden rules — don\'t lecture, build friendships, curate culture — mapped onto Delivery Pilot as the playbook from founding members to 10 true regulars.', cat: 'Business Model', tags: 'skool golden rules community building party lecture friendships culture vase founding members h8' },
         { url: '5_Symbols/product/skool-10-true-regulars.html', title: '10 True Regulars in Skool', desc: 'Stage 2 community milestone: ten people who post or attend Sunday without a founder poke. Rationale, counting rules, and why signups are not regulars.', cat: 'Business Model', tags: 'skool 10 true regulars milestone community engagement h8 founding members step 5' },
         { url: '5_Symbols/product/skool-delivery-pilot-offer.html', title: 'Delivery Pilot Offer — Peek · Sit In · Share Screen', desc: 'Live Freemium checkout (Standard $0 / Premium $1 / VIP $250/year) rewritten as Peek / Sit In / Share Screen. Preview the Sunday room before buying the live-share seat.', cat: 'Business Model', tags: 'skool delivery pilot offer peek sit in share screen hormozi tripwire cohort pricing freemium standard premium vip h5' },
@@ -453,6 +459,7 @@
         { url: '5_Symbols/hypotheses/hyp-h18.html', title: 'H18 · International onsite channels', desc: 'Detail page with premise-conclusion-status SVG diagram for H18.', cat: 'Hypothesis Detail', tags: 'h18 hypothesis detail international onsite uk europe usa svg diagram' },
         { url: '5_Symbols/dashboard/confidence-report.html', title: 'Business Model Confidence Report', desc: 'Versioned, whole-site sanity check scoring hypothesis validation and site integrity into one confidence number.', cat: 'Docs', tags: 'confidence score sanity check audit integrity version' },
         { url: '5_Symbols/dashboard/how-to-move-the-score.html', title: 'How to Move the Confidence Score', desc: 'Master playbook: formula, every historical score-up event, what does not move the number, housekeeping rules, and ranked evidence levers (H9, H21, F12).', cat: 'Docs', tags: 'how to move confidence score playbook integrity validation git broken links acidity h5 h8 h9 h21 h27 f12' },
+        { url: '5_Symbols/dashboard/project-stats.html', title: 'Project Stats', desc: 'Counted snapshot of HTML pages, hypotheses, git history, reports, and discovery evidence for this Customer Development repo.', cat: 'Docs', tags: 'project stats dashboard pages commits loc hypotheses confidence h9 snapshot' },
         { url: '5_Symbols/hypotheses/hyp-h27.html', title: 'H27 · Practice Exam & Question Bank Gap', desc: 'Detail page with premise-conclusion-status SVG diagram for H27: blueprint-mapped practice exams are the value blocker for H8 and H21.', cat: 'Hypothesis Detail', tags: 'h27 hypothesis detail practice exam question bank mock test blueprint gap charles postponement svg diagram' },
         { url: '5_Symbols/strategy/focus.html', title: 'Strategic Focus', desc: 'Where we focus our immediate energy: animations, YouTube playlists, mock exams.', cat: 'Strategy', tags: 'focus energy priority list roadmap' },
         { url: '5_Symbols/strategy/target-audience.html', title: 'Target Audience Analysis', desc: 'Persona details of early-adopter developers, study timelines, and motivations.', cat: 'Strategy', tags: 'personas developers study timeline profiles' },
@@ -1569,6 +1576,12 @@
             { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', emoji: '🧪' },
             { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' },
             { url: '5_Symbols/growth/mvp-roadmap.html', title: 'MVP Roadmap', emoji: '🗺️' }
+        ],
+        '5_Symbols/product/skool-4c.html': [
+            { url: '5_Symbols/product/skool-community-golden-rules.html', title: 'Golden Rules', emoji: '🌟' },
+            { url: '5_Symbols/product/skool-live-join.html', title: 'Sunday Join', emoji: '🚪' },
+            { url: '5_Symbols/product/skool-lms-integration.html', title: 'Skool LMS', emoji: '🏫' },
+            { url: '5_Symbols/strategy/delivery-pilot-roadmap.html', title: 'Cause: Roadmap', emoji: '🧑‍✈️' }
         ],
         '5_Symbols/product/cohort-session-permissions.html': [
             { url: '5_Symbols/product/skool-membership-questions.html', title: 'Membership Questions', emoji: '📝' },

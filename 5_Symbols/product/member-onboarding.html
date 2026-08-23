@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Onboarding &amp; "What to Expect" Journey | Delivery Pilot</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .onboarding-step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .onboarding-step-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .step-badge-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.2);
+            color: #c7d2fe;
+            font-weight: 800;
+            font-size: 1.1rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            flex-shrink: 0;
+        }
+        .step-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        .video-script-box {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-left: 5px solid #38bdf8;
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .script-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .script-text {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+            margin: 0;
+        }
+        .interactive-checklist {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .check-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            user-select: none;
+        }
+        .check-row:last-child {
+            border-bottom: none;
+        }
+        .check-input {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-top: 0.15rem;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .check-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .check-row.completed .check-label {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .progress-container {
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            height: 8px;
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), #38bdf8);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .faq-q {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-a {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="skool-onboarding-checklist.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Skool Onboarding Checklist Plugin
+        </a>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary); position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.35);">Product &middot; Member Onboarding &amp; Activation</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin: 0.75rem 0 0.5rem 0;">🚀 New Member Onboarding: The 5-Step Journey &amp; "What to Expect" Guide</h1>
+                    <p style="color: var(--text-secondary); max-width: 86ch; font-size: 1.05rem; line-height: 1.65;">
+                        Welcome to the <strong>Delivery Pilot AI Certification &amp; Engineering Community</strong>. This master onboarding guide establishes clear expectations from Day 1: how our weekly operating cadence works, what resources are 100% free ($0 cost to start, no coding prerequisites), how Sunday live screen-sharing sessions operate, and the exact step-by-step roadmap to become a proctored Certified AI Architect and independent £500–£1,000/day contractor.
+                    </p>
+                </div>
+            </div>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Audience:</span><span class="info-value">All New Members (Zero-Code Beginners to Senior Engineers)</span></li>
+                        <li class="info-item"><span class="info-label">Starting Cost:</span><span class="info-value highlight-success">Free Tier ($0 Standard &middot; No Hidden Fees)</span></li>
+                        <li class="info-item"><span class="info-label">Live Cohort Ritual:</span><span class="info-value">Every Sunday 21:00&ndash;23:00 UK London Time</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Weekly Time Commitment:</span><span class="info-value">2&ndash;3 Hours / Week (1 Live Session + 15m Daily Habit)</span></li>
+                        <li class="info-item"><span class="info-label">Target Milestone:</span><span class="info-value">Claude Certified Architect &amp; FDE Contractor Portfolio</span></li>
+                        <li class="info-item"><span class="info-label">Related Hypotheses:</span><span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>, <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>, <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Hero Infographic -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🖼️ The 5-Step Member Onboarding Roadmap (Visual Architecture)</h2>
+            <div class="card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.6); border-color: rgba(99, 102, 241, 0.25);">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.25rem;">
+                    <img src="member-onboarding-hero.jpg" alt="5-Step New Member Onboarding Journey Infographic" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-primary);">Roadmap Flow:</strong> (1) Orientation &amp; Expectations &rarr; (2) Community Profile &rarr; (3) Second Brain &amp; Tools &rarr; (4) Sunday Live Cohort &rarr; (5) AI Certification &amp; Contractor Roadmap.
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <a href="skool-new-joiner-welcome-and-faq.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            👋 Welcome &amp; FAQ Swipe Copy
+                        </a>
+                        <a href="skool-onboarding-checklist.html" class="btn" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.4); color: #c7d2fe; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            🚀 Pinned Widget Spec
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 Step-by-Step Walkthrough -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🪜 Detailed Step-by-Step Onboarding Walkthrough</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 84ch;">
+                Follow these 5 core milestones to transition smoothly from a brand-new joiner into an active practitioner building real-world AI pipelines and preparing for industry certification.
+            </p>
+
+            <!-- Step 1 -->
+            <div class="onboarding-step-card" style="border-left: 4px solid #38bdf8;">
+                <div class="step-header">
+                    <div class="step-badge-num" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">1</div>
+                    <div>
+                        <h3 class="step-title">Orientation &amp; Expectation Setting ("What to Expect")</h3>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);">Estimated Time: 3 Minutes &middot; Mindset &amp; Cadence Alignment</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                    The first step is understanding what the community is &mdash; and what it is not. Delivery Pilot is an <strong>active practitioner dojo</strong>, not an endless video library that collects dust.
+                </p>
+                <div class="grid" style="margin-top: 1rem;">
+                    <div class="col-6">
+                        <div class="spec-box" style="border-left-color: #10b981; background: rgba(16, 185, 129, 0.05); padding: 1rem;">
+                            <strong style="color: #34d399; font-size: 0.95rem;">✅ What You Should Expect:</strong>
+                            <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                                <li><strong>$0 Free Tier by Default:</strong> Access to free cohort replays, starter toolkits, and open community discussions.</li>
+                                <li><strong>Weekly Live Screen-Shares:</strong> Real live coding, terminal walkthroughs, and architecture teardowns every Sunday 21:00&ndash;23:00 UK.</li>
+                                <li><strong>Hands-On Practitioner Reality:</strong> Focus on real-world enterprise delivery, avoiding academic fluff.</li>
+                                <li><strong>Zero Gatekeeping:</strong> Direct answers from founder Rifat Erdem Sahin and veteran peer engineers.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="spec-box" style="border-left-color: #ef4444; background: rgba(239, 68, 68, 0.05); padding: 1rem;">
+                            <strong style="color: #f87171; font-size: 0.95rem;">🚫 What We Never Do:</strong>
+                            <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                                <li><strong>No High-Pressure Upsells:</strong> No forced upgrades or spammy webinars pretending to teach.</li>
+                                <li><strong>No Guaranteed Pass Claims:</strong> We provide real skills and practice; passing requires your hands-on work.</li>
+                                <li><strong>No 100-Tab Cognitive Overload:</strong> We enforce the 5-10-5 rule and clean, curated vaults.</li>
+                                <li><strong>No Silent Observers:</strong> Everyone is encouraged to ask questions, break code, and learn together.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="onboarding-step-card" style="border-left: 4px solid #a855f7;">
+                <div class="step-header">
+                    <div class="step-badge-num" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border-color: rgba(168, 85, 247, 0.4);">2</div>
+                    <div>
+                        <h3 class="step-title">Community Profile Setup &amp; The 60-Second Icebreaker</h3>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);">Estimated Time: 2 Minutes &middot; Connect with Peers</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                    Communities thrive on connection, not anonymous lurking. Setting up your profile unlocks peer matching and enables founder Rifat to point you directly at the exact Classroom modules tailored to your background.
+                </p>
+                <div class="card" style="background: rgba(15, 23, 42, 0.6); padding: 1.25rem; margin-top: 1rem;">
+                    <strong style="color: var(--text-primary); font-size: 0.95rem;">📋 The 3-Item Profile Checklist:</strong>
+                    <ol style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;">
+                        <li><strong>Add a Real Photo &amp; Location:</strong> Helps peers recognize you during Sunday live sessions.</li>
+                        <li><strong>State Your Target Role / Exam:</strong> (e.g. <em>"Prepping for Claude Certified Architect"</em> or <em>"DevOps Engineer moving into AI Contracting"</em>).</li>
+                        <li><strong>Post Your Icebreaker in #introduce-yourself:</strong> Use our 3-bullet template:
+                            <div style="background: rgba(0,0,0,0.3); padding: 0.75rem 1rem; border-radius: 6px; margin-top: 0.5rem; font-family: var(--font-mono, monospace); font-size: 0.85rem; color: #cbd5e1;">
+                                • <strong>Background:</strong> [e.g. Non-tech, SysAdmin, Python dev, PM]<br>
+                                • <strong>Current Goal:</strong> [e.g. Pass Claude Cert / Automate workflows / £500/day contract]<br>
+                                • <strong>Biggest Challenge:</strong> [e.g. Where to start / Context Engineering / Setting up local models]
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="onboarding-step-card" style="border-left: 4px solid #10b981;">
+                <div class="step-header">
+                    <div class="step-badge-num" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">3</div>
+                    <div>
+                        <h3 class="step-title">Unlock Your Digital Second Brain &amp; AI Toolkits</h3>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);">Estimated Time: 5 Minutes &middot; Zero-Cost Starter Stack</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                    You do not need an expensive setup to master AI architecture. Immediately upon joining, open the <strong>Classroom Tab</strong> in Skool to access our open-source second brain vaults and setup guides:
+                </p>
+                <div class="grid" style="margin-top: 1rem;">
+                    <div class="col-4">
+                        <div class="metric-card" style="padding: 1.25rem;">
+                            <div style="font-size: 1.75rem; margin-bottom: 0.35rem;">🧠</div>
+                            <strong style="color: var(--text-primary); font-size: 0.95rem;">Second Brain Vault</strong>
+                            <div class="metric-lbl" style="margin-top: 0.35rem;">Curated Markdown/Obsidian study notes for Claude Architect &amp; AI prompt engineering.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card" style="padding: 1.25rem;">
+                            <div style="font-size: 1.75rem; margin-bottom: 0.35rem;">⚡</div>
+                            <strong style="color: var(--text-primary); font-size: 0.95rem;">Claude Code &amp; CLI Scripts</strong>
+                            <div class="metric-lbl" style="margin-top: 0.35rem;">Ready-to-run automation scripts for agentic coding and local LLM orchestration.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="metric-card" style="padding: 1.25rem;">
+                            <div style="font-size: 1.75rem; margin-bottom: 0.35rem;">📝</div>
+                            <strong style="color: var(--text-primary); font-size: 0.95rem;">Practice Exam Bank</strong>
+                            <div class="metric-lbl" style="margin-top: 0.35rem;">Scenario-based diagnostic questions reflecting actual Pearson VUE proctored exam formats.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="onboarding-step-card" style="border-left: 4px solid #06b6d4;">
+                <div class="step-header">
+                    <div class="step-badge-num" style="background: rgba(6, 182, 212, 0.2); color: #67e8f9; border-color: rgba(6, 182, 212, 0.4);">4</div>
+                    <div>
+                        <h3 class="step-title">Join the Sunday Live Cohort (21:00&ndash;23:00 UK London Time)</h3>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);">Weekly Live Ritual &middot; Hands-on Screen Share</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                    The heart of our community is the weekly Sunday live workshop. Held every <strong>Sunday at 21:00 UK London time</strong> (with automated time zone conversion in Skool Calendar), this is where theory turns into running code.
+                </p>
+                <div class="card" style="background: rgba(6, 182, 212, 0.05); border-color: rgba(6, 182, 212, 0.3); padding: 1.25rem; margin-top: 1rem;">
+                    <div class="grid">
+                        <div class="col-6">
+                            <strong style="color: #38bdf8;">🕒 Typical 2-Hour Live Schedule:</strong>
+                            <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                                <li><strong>21:00&ndash;21:30:</strong> Deep-dive architectural breakdown &amp; exam scenario review.</li>
+                                <li><strong>21:30&ndash;22:15:</strong> Live screen-share build (Claude Code, Vector DB, multi-agent pipelines).</li>
+                                <li><strong>22:15&ndash;23:00:</strong> Open candidate hot-seat, portfolio reviews, and live Q&amp;A.</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <strong style="color: #38bdf8;">🚪 How to Join Friction-Free:</strong>
+                            <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                                <li>Click the <strong>Calendar Tab</strong> inside Skool to add the event to your Google/Apple calendar.</li>
+                                <li>Click the meeting link 5 minutes prior (no password required).</li>
+                                <li>Can't make it live? Full unedited replay is uploaded to the Classroom within 2 hours.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="onboarding-step-card" style="border-left: 4px solid #f59e0b;">
+                <div class="step-header">
+                    <div class="step-badge-num" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: rgba(245, 158, 11, 0.4);">5</div>
+                    <div>
+                        <h3 class="step-title">Choose Your Career &amp; Certification Growth Track</h3>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);">Progression &middot; Freelance &amp; Enterprise Contractor Positioning</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                    As you gain confidence and build real-world AI pipelines, choose how you want to progress. Our community supports three distinct tiers:
+                </p>
+                <div class="grid" style="margin-top: 1rem;">
+                    <div class="col-4">
+                        <div class="card" style="padding: 1.25rem; height: 100%; border-top: 3px solid #10b981;">
+                            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Peek Tier &middot; $0</span>
+                            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-primary);">Standard Member</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                Full access to community posts, public discussions, free study guides, and live Sunday listening seat. Perfect for exploring AI tools.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="padding: 1.25rem; height: 100%; border-top: 3px solid #6366f1;">
+                            <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #c7d2fe;">Sit In Tier &middot; $1/mo</span>
+                            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-primary);">Premium Practitioner</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                Full Classroom archive access, practice exam question vaults, downloadable Second Brain templates, and Saturday Q&amp;A slots.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="padding: 1.25rem; height: 100%; border-top: 3px solid #fbbf24;">
+                            <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Share Screen Tier &middot; $250/yr</span>
+                            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-primary);">VIP Contractor Alliance</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                Sunday live screen-sharing priority, Monday recruiter showcase on Delivery Pilot LinkedIn (30k network), CV optimization, and tender co-bidding (£500&ndash;£1,000/day).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Onboarding Video Production Blueprint & Script -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">🎬 The "What to Expect" Onboarding Video Blueprint &amp; Founder Script</h2>
+                <span class="status-pill status-in-testing">Founder Recording Spec &middot; 90s Duration</span>
+            </div>
+            <p style="color: var(--text-secondary); max-width: 84ch; line-height: 1.65; margin-bottom: 1.5rem;">
+                Per our <strong>Founder Voice SOP</strong> (<a href="../growth/founder-voice-skool-cta.html" style="color: var(--color-primary);">founder-voice-skool-cta.html</a>), orientation and community expectations must be delivered in the founder's authentic practitioner voice (Rifat Erdem Sahin), not synthesized AI audio. Below is the complete production blueprint and teleprompter script for the pinned Skool welcome video.
+            </p>
+
+            <!-- Video Spec Grid -->
+            <div class="metrics-grid" style="margin-bottom: 1.5rem;">
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: #38bdf8;">⏱️ Duration</div>
+                    <div class="metric-lbl">90 Seconds (Fast, energetic, zero fluff)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: #34d399;">🎙️ Tone</div>
+                    <div class="metric-lbl">Direct, pragmatic veteran contractor ($1.3M+ earned)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: #c084fc;">📐 Format</div>
+                    <div class="metric-lbl">1080p 16:9 &middot; Pinned in Skool Welcome Widget</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="font-size: 1.2rem; color: #fbbf24;">🎯 Single Goal</div>
+                    <div class="metric-lbl">Eliminate fear, set weekly ritual, prompt icebreaker</div>
+                </div>
+            </div>
+
+            <!-- Scene-by-Scene Storyboard Table -->
+            <div class="card" style="margin-bottom: 1.5rem; overflow-x: auto;">
+                <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">🎬 Scene-by-Scene Production Storyboard</h3>
+                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 780px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem; width: 90px;">Time</th>
+                            <th style="padding: 0.75rem 0.5rem; width: 180px;">Visual / On-Screen</th>
+                            <th style="padding: 0.75rem 0.5rem;">Spoken Script (Founder Voice)</th>
+                            <th style="padding: 0.75rem 0.5rem; width: 180px;">Graphic Overlay</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8; font-weight: 700;">0:00 &ndash; 0:15</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong style="color: var(--text-primary);">Talking Head (Rifat):</strong> Direct eye contact, warm smile, developer workspace background.</td>
+                            <td style="padding: 0.75rem 0.5rem;">"Hey everyone, I'm Rifat Erdem Sahin &mdash; welcome into Delivery Pilot! Whether you're a seasoned engineer or you've never written a single line of code, you are in the right place to master modern AI architecture and get vendor certified."</td>
+                            <td style="padding: 0.75rem 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: #6ee7b7;">[Delivery Pilot Logo + 'Welcome New Joiner']</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8; font-weight: 700;">0:15 &ndash; 0:40</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong style="color: var(--text-primary);">Screen Share / B-Roll:</strong> Quick panning over Skool Classroom, Second Brain Notion vault, and terminal running Claude Code CLI.</td>
+                            <td style="padding: 0.75rem 0.5rem;">"Here's what to expect: We don't do boring academic lectures or 100-slide theories. Everything we build here is hands-on and enterprise-ready. You get free access to our Second Brain vaults, automated prompt scripts, and full practice exam breakdowns right inside the Classroom tab."</td>
+                            <td style="padding: 0.75rem 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">[Bullet text: Free Classroom &middot; Second Brain &middot; Practice Exams]</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8; font-weight: 700;">0:40 &ndash; 1:10</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong style="color: var(--text-primary);">Screen Recording:</strong> Split screen of Sunday live call with active screen-sharing and code terminal.</td>
+                            <td style="padding: 0.75rem 0.5rem;">"Our core weekly ritual happens every Sunday at 9:00 PM UK London time. We hop on a live screen-share, build real-world AI pipelines together, solve exam scenarios, and debug live code. If you miss it, the full unedited replay goes up the same night."</td>
+                            <td style="padding: 0.75rem 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: #fbbf24;">[Sunday 21:00 UK &middot; Live Hands-On Workshop]</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8; font-weight: 700;">1:10 &ndash; 1:30</td>
+                            <td style="padding: 0.75rem 0.5rem;"><strong style="color: var(--text-primary);">Talking Head (Rifat):</strong> Direct CTA with pointing gesture toward the comment/community section.</td>
+                            <td style="padding: 0.75rem 0.5rem;">"Right now, do two simple things: First, drop an introduction below in the #introduce-yourself channel telling me what certification or AI project you're aiming for. Second, put Sunday 9pm in your calendar. Welcome aboard, and let's get you certified!"</td>
+                            <td style="padding: 0.75rem 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: #c084fc;">[CTA: Post Intro &middot; Add Sunday 9pm UK to Calendar]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Full Swipeable Teleprompter Script -->
+            <div class="video-script-box">
+                <span class="script-badge">🎙️ Copy-Paste Founder Teleprompter Script</span>
+                <p class="script-text">"Hey everyone, I'm Rifat Erdem Sahin — welcome into Delivery Pilot! 
+
+Whether you're a seasoned engineer or you've never written a single line of code, you are in the exact right place to master modern AI architecture and get vendor certified.
+
+Here is what you should expect from this community:
+First, we don't do boring academic lectures. Everything we build is hands-on and enterprise-ready. You have immediate free access to our Second Brain vaults, automated prompt scripts, and diagnostic exam breakdowns inside the Classroom tab.
+
+Second, our core weekly ritual happens every Sunday at 9:00 PM UK London time. We hop on a live screen-share, build real AI systems, tackle Pearson VUE exam scenarios, and review candidate portfolios. If you ever miss a session, the unedited replay is uploaded to the Classroom the same night.
+
+Third, you are never alone. Our members range from curious beginners to 6-figure IT contractors, all collaborating to co-create solutions.
+
+Right now, take two quick actions:
+1. Drop a quick intro in the #introduce-yourself channel so I can welcome you personally and point you to the right starting module.
+2. Open the Calendar tab and add Sunday 9:00 PM UK time to your calendar.
+
+Welcome to Delivery Pilot — let's build your AI portfolio and get you certified!"</p>
+            </div>
+        </section>
+
+        <!-- Interactive Member Progress Checklist -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">✅ Interactive Member Onboarding Checklist</h2>
+            <p style="color: var(--text-secondary); max-width: 84ch; line-height: 1.65;">
+                Tick each step as you complete it. Your progress is saved automatically in your browser so you can track your journey from orientation to certification.
+            </p>
+
+            <div class="interactive-checklist">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <strong style="color: var(--text-primary); font-size: 1rem;">Your Onboarding Progress:</strong>
+                    <span id="progress-percent" style="font-weight: 700; color: #38bdf8; font-family: var(--font-mono);">0%</span>
+                </div>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-fill"></div>
+                </div>
+
+                <div class="check-row" onclick="toggleTask('task-1')">
+                    <input type="checkbox" id="task-1" class="check-input" onchange="updateProgress()">
+                    <label class="check-label" for="task-1"><strong>Step 1:</strong> Watch the 90-second "What to Expect" orientation video and review community rules.</label>
+                </div>
+                <div class="check-row" onclick="toggleTask('task-2')">
+                    <input type="checkbox" id="task-2" class="check-input" onchange="updateProgress()">
+                    <label class="check-label" for="task-2"><strong>Step 2:</strong> Complete your Skool profile with a photo, your location, and your target career goal.</label>
+                </div>
+                <div class="check-row" onclick="toggleTask('task-3')">
+                    <input type="checkbox" id="task-3" class="check-input" onchange="updateProgress()">
+                    <label class="check-label" for="task-3"><strong>Step 3:</strong> Post your 3-bullet introduction in the <code>#introduce-yourself</code> channel.</label>
+                </div>
+                <div class="check-row" onclick="toggleTask('task-4')">
+                    <input type="checkbox" id="task-4" class="check-input" onchange="updateProgress()">
+                    <label class="check-label" for="task-4"><strong>Step 4:</strong> Open the Classroom tab and bookmark the Second Brain AI Study Vault.</label>
+                </div>
+                <div class="check-row" onclick="toggleTask('task-5')">
+                    <input type="checkbox" id="task-5" class="check-input" onchange="updateProgress()">
+                    <label class="check-label" for="task-5"><strong>Step 5:</strong> Add the weekly Sunday Live Cohort (21:00&ndash;23:00 UK) to your personal calendar.</label>
+                </div>
+                <div class="check-row" onclick="toggleTask('task-6')">
+                    <input type="checkbox" id="task-6" class="check-input" onchange="updateProgress()">
+                    <label class="check-label" for="task-6"><strong>Step 6:</strong> Download the Skool Mobile App (iOS / Android) to receive cohort reminders and peer replies.</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friction Busters & FAQ -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">❓ Frequently Asked Questions &amp; Friction Busters</h2>
+            <div class="faq-item">
+                <div class="faq-q">🤔 I have no coding or DevOps background. Can I really follow along?</div>
+                <p class="faq-a">
+                    Absolutely. Modern AI architecture with tools like Claude Code and prompt orchestrators allows non-programmers to build complex software. Our Sunday live cohorts start from first principles with zero jargon, and our community includes product managers, career switchers, and executives learning alongside engineers.
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">⏰ What if I cannot attend the Sunday 21:00 UK London live session?</div>
+                <p class="faq-a">
+                    No problem. Every Sunday cohort is recorded in full and published directly to the <strong>Classroom tab</strong> within 2 hours of call completion. You can submit questions asynchronously on the community board, and founder Rifat answers them during the daily community pass.
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">💳 Is the community really free, or will I hit a paywall?</div>
+                <p class="faq-a">
+                    The <strong>Standard Membership ($0)</strong> is completely free and provides access to free cohort replays, starter templates, and community discussions forever. We offer optional paid upgrades ($1/mo Premium for full archive vaults, or $250/yr VIP Share Screen for recruiter promotion and live screen-share seats), but upgrading is 100% voluntary.
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">🎯 Which certification should I target first?</div>
+                <p class="faq-a">
+                    We recommend starting with the <strong>Claude Certified Architect &ndash; Professional</strong> (issued by Anthropic via Pearson VUE). It is the premier enterprise credential testing practical agentic workflows, prompt caching, and context engineering. In Stage 3, we also provide roadmaps for AWS Certified AI Practitioner and Azure AI Engineer Associate.
+                </p>
+            </div>
+        </section>
+
+        <!-- Related Navigation Links -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Related Onboarding &amp; Community Architecture Pages</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <a href="skool-onboarding-checklist.html" class="card" style="text-decoration: none; display: block; padding: 1.25rem;">
+                        <strong style="color: var(--color-primary); font-size: 1rem;">🚀 Onboarding Checklist Plugin</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                            The 3-step pinned widget architecture driving Day-1 member activation in Skool.
+                        </p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="skool-new-joiner-welcome-and-faq.html" class="card" style="text-decoration: none; display: block; padding: 1.25rem;">
+                        <strong style="color: var(--color-primary); font-size: 1rem;">👋 New Joiner Welcome &amp; FAQ</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                            Swipeable welcome DM templates, auto-responder scripts, and member reassuring copy.
+                        </p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="../dashboard/todo.html" class="card" style="text-decoration: none; display: block; padding: 1.25rem;">
+                        <strong style="color: var(--color-primary); font-size: 1rem;">✅ Master Task List</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                            Weekly operating loops, founder video production tasks, and milestone backlog.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Created comprehensive 5-step member onboarding guide with "What to Expect" video blueprint and founder script (2026-08-23) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/member-onboarding.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/member-onboarding.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        // Interactive Checklist localStorage logic
+        const tasks = ['task-1', 'task-2', 'task-3', 'task-4', 'task-5', 'task-6'];
+
+        function loadChecklist() {
+            tasks.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const saved = localStorage.getItem('onboarding_' + id);
+                    if (saved === 'true') {
+                        el.checked = true;
+                        el.closest('.check-row').classList.add('completed');
+                    }
+                }
+            });
+            updateProgress();
+        }
+
+        function toggleTask(id) {
+            const el = document.getElementById(id);
+            if (el && event.target !== el) {
+                el.checked = !el.checked;
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            tasks.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const row = el.closest('.check-row');
+                    if (el.checked) {
+                        completed++;
+                        row.classList.add('completed');
+                        localStorage.setItem('onboarding_' + id, 'true');
+                    } else {
+                        row.classList.remove('completed');
+                        localStorage.removeItem('onboarding_' + id);
+                    }
+                }
+            });
+            const percent = Math.round((completed / tasks.length) * 100);
+            const bar = document.getElementById('progress-bar');
+            const txt = document.getElementById('progress-percent');
+            if (bar) bar.style.width = percent + '%';
+            if (txt) txt.textContent = percent + '%';
+        }
+
+        document.addEventListener('DOMContentLoaded', loadChecklist);
+    </script>
+</body>
+</html>

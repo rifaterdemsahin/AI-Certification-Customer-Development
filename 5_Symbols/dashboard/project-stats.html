@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Stats | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Hub
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge">Dashboard &middot; Repo Snapshot</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">📊 Project Stats</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                A counted snapshot of this Customer Development site as of <strong>2026-08-23</strong> &mdash; pages, hypotheses, git history, and discovery evidence. Business confidence lives on the <a href="confidence-report.html" style="color: var(--color-primary);">Confidence Report</a> (see H9 for the $10k revenue gate, which is still unhit). These numbers are repo facts, not paid-enrollment claims.
+            </p>
+            <div style="margin-top: 1.5rem; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="project-stats-hero.jpg" alt="Dark glassmorphism control room with floating metric tiles" style="width: 100%; display: block;">
+            </div>
+            <ul class="info-list" style="margin-top: 1.5rem;">
+                <li class="info-item"><span class="info-label">Snapshot date:</span><span class="info-value">2026-08-23</span></li>
+                <li class="info-item"><span class="info-label">Repo age:</span><span class="info-value">23 days (first commit 2026-07-31)</span></li>
+                <li class="info-item"><span class="info-label">Stage:</span><span class="info-value">Customer Discovery / Validation (Stage 1–2)</span></li>
+                <li class="info-item"><span class="info-label">Hypothesis tracker:</span><span class="info-value"><a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-primary);">HYPOTHESIS.md v1.199.0</a></span></li>
+            </ul>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔢 Headline counts</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-val">235</div><div class="metric-lbl">HTML pages</div></div>
+                <div class="metric-card"><div class="metric-val">250</div><div class="metric-lbl">Search-index entries</div></div>
+                <div class="metric-card"><div class="metric-val">29</div><div class="metric-lbl">Tracked hypotheses (H1–H30, no H26)</div></div>
+                <div class="metric-card"><div class="metric-val">50</div><div class="metric-lbl">Business Model Confidence / 100</div></div>
+                <div class="metric-card"><div class="metric-val">171</div><div class="metric-lbl">Git commits on main</div></div>
+                <div class="metric-card"><div class="metric-val">122</div><div class="metric-lbl">Versioned reports in /reports</div></div>
+                <div class="metric-card"><div class="metric-val">8</div><div class="metric-lbl">Named discovery-interview reports</div></div>
+                <div class="metric-card"><div class="metric-val">93M</div><div class="metric-lbl">Working-tree size</div></div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">💼 Business score (not page volume)</h2>
+            <div class="grid">
+                <div class="col-8">
+                    <div class="card">
+                        <p style="color: var(--text-secondary);">
+                            Confidence is <strong>50 / 100</strong> (moderate) from <code>business-model-confidence-v1.9.55.md</code>: 0.7 &times; 37.1 validation + 0.3 &times; 80.0 integrity. Adding pages does not raise the score until a hypothesis status tier moves (see H9, H5). $0 and $1 Skool joins are not paid enrollments.
+                        </p>
+                        <div class="metrics-grid" style="margin-top: 1.25rem;">
+                            <div class="metric-card"><div class="metric-val">37.1</div><div class="metric-lbl">Hypothesis validation</div></div>
+                            <div class="metric-card"><div class="metric-val">80.0</div><div class="metric-lbl">Site integrity</div></div>
+                            <div class="metric-card"><div class="metric-val">$0</div><div class="metric-lbl">Gross cohort revenue vs $10k H9 gate</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 0.75rem;">Hypothesis mix</h3>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">✅ Decided (H9, H15)</span><span class="info-value">2</span></li>
+                            <li class="info-item"><span class="info-label">🟡 Testing / in progress</span><span class="info-value">11</span></li>
+                            <li class="info-item"><span class="info-label">⚪ Planned / hypothesized</span><span class="info-value">15</span></li>
+                            <li class="info-item"><span class="info-label">⚠️ Claimed, unverified (H6)</span><span class="info-value">1</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📁 Pages by folder</h2>
+            <div class="card">
+                <table class="sortable-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Folder</th>
+                            <th style="padding: 0.75rem 0.5rem;">HTML files</th>
+                            <th style="padding: 0.75rem 0.5rem;">What lives here</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary); font-size: 0.9rem;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/growth/</td><td style="padding: 0.55rem 0.5rem;">49</td><td style="padding: 0.55rem 0.5rem;">Funnel, ads, tokens, video, unit economics</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/product/</td><td style="padding: 0.55rem 0.5rem;">43</td><td style="padding: 0.55rem 0.5rem;">Skool LMS, offer, community ops</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/strategy/</td><td style="padding: 0.55rem 0.5rem;">35</td><td style="padding: 0.55rem 0.5rem;">Audience, risk, literature, competitive</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/hypotheses/</td><td style="padding: 0.55rem 0.5rem;">31</td><td style="padding: 0.55rem 0.5rem;">Tracker + per-H detail pages</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/cd/</td><td style="padding: 0.55rem 0.5rem;">30</td><td style="padding: 0.55rem 0.5rem;">Discovery playbook + interview tools</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/bmc/</td><td style="padding: 0.55rem 0.5rem;">12</td><td style="padding: 0.55rem 0.5rem;">Business Model Canvas blocks</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/comp/</td><td style="padding: 0.55rem 0.5rem;">10</td><td style="padding: 0.55rem 0.5rem;">Stage component specs</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/dashboard/</td><td style="padding: 0.55rem 0.5rem;">8</td><td style="padding: 0.55rem 0.5rem;">Calendar, confidence, this page</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/stages/</td><td style="padding: 0.55rem 0.5rem;">4</td><td style="padding: 0.55rem 0.5rem;">Steve Blank four stages</td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.55rem 0.5rem;">5_Symbols/discovery/</td><td style="padding: 0.55rem 0.5rem;">4</td><td style="padding: 0.55rem 0.5rem;">Hypothesis / problem / solution / pivot</td></tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">Plus root pages (hub, overview, exam topics, markdown renderer). Total HTML: 235.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧾 Source &amp; git</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Lines of content</h3>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">HTML</span><span class="info-value">53,967 lines</span></li>
+                            <li class="info-item"><span class="info-label">Markdown</span><span class="info-value">20,514 lines (209 files)</span></li>
+                            <li class="info-item"><span class="info-label">JavaScript</span><span class="info-value">2,073 lines (nav.js + main.js)</span></li>
+                            <li class="info-item"><span class="info-label">Images</span><span class="info-value">65 (jpg/png/webp/gif)</span></li>
+                            <li class="info-item"><span class="info-label">Tracked git files</span><span class="info-value">535</span></li>
+                            <li class="info-item"><span class="info-label">Nav dropdown groups</span><span class="info-value">10</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Commit history</h3>
+                        <ul class="info-list">
+                            <li class="info-item"><span class="info-label">First commit</span><span class="info-value">2026-07-31</span></li>
+                            <li class="info-item"><span class="info-label">Latest on snapshot</span><span class="info-value">2026-08-23</span></li>
+                            <li class="info-item"><span class="info-label">Last 7 days</span><span class="info-value">45 commits</span></li>
+                            <li class="info-item"><span class="info-label">July 2026</span><span class="info-value">11 commits</span></li>
+                            <li class="info-item"><span class="info-label">August 2026</span><span class="info-value">160 commits</span></li>
+                            <li class="info-item"><span class="info-label">Authors (shortlog)</span><span class="info-value">rifaterdemsahin 115 · Erdem 29 · Claude 24</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎤 Discovery evidence already in the repo</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Eight named customer-discovery interview reports plus cohort session 8. This is qualitative n, not paid conversion (H3 / H5).
+                </p>
+                <ul class="emoji-list">
+                    <li><span class="emoji">👤</span> Charles, Anna, Marianna, Brian, Tomiwa, Rakesh, Apo, Baran G &mdash; <a href="../cd/archived-interview-transcripts.html" style="color: var(--color-primary);">archived transcripts</a></li>
+                    <li><span class="emoji">🎙️</span> Cohort Session 8 analysis &mdash; <a href="../cd/cohort-session-8-analysis.html" style="color: var(--color-primary);">session write-up</a></li>
+                    <li><span class="emoji">🧪</span> 122 markdown reports under <code>reports/</code> (confidence, acidity, interviews, pricing)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 See Also</h2>
+            <p style="color: var(--text-secondary);">
+                <a href="confidence-report.html" style="color: var(--color-primary);">Confidence Report</a> for the scored business model &middot;
+                <a href="sitemap.html" style="color: var(--color-primary);">Site Map</a> for every searchable page &middot;
+                <a href="latest-pages.html" style="color: var(--color-primary);">Latest Pages</a> for recency &middot;
+                <a href="../hypotheses/hypothesis.html" style="color: var(--color-primary);">Hypothesis Tracker</a> for H1–H30 status &middot;
+                <a href="../growth/metrics-dashboard.html" style="color: var(--color-primary);">Metrics Dashboard</a> for operating KPIs.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 2rem 0;">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; text-align: center;">
+                Latest Change: Initial project-stats snapshot counted from the working tree on 2026-08-23 (see H9) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/project-stats.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
