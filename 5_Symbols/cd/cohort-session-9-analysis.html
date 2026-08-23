@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cohort Session 9 Analysis | Schedule &amp; Pedagogical Overhaul</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .arch-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-normal);
+        }
+        .arch-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        .arch-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .tag-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+        
+        .stack-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .stack-table th, .stack-table td {
+            padding: 0.85rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .stack-table th {
+            background: rgba(255, 255, 255, 0.03);
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .quote-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--color-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin: 0.75rem 0;
+            color: var(--text-secondary);
+        }
+        .todo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Breadcrumb / Back Link -->
+        <a href="archived-interview-transcripts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Archived Transcripts &amp; Interviews
+        </a>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary); position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Customer Discovery &middot; Live Cohort Simulation</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🎙️ AI Cohort Session 9: Schedule &amp; Pedagogical Overhaul</h1>
+                    <p style="color: var(--text-secondary); max-width: 78ch; font-size: 1.05rem; line-height: 1.6;">
+                        Qualitative Customer Discovery analysis from Session 9 featuring candid critiques from <strong>Mariana</strong>, <strong>Brian</strong>, and <strong>Anna</strong> (UWISE Cambridge). Establishes a 60-minute session cap, the 10-10-15 sprint structure, 3-tier preset projects, and weekly VIP 1-on-1 hands-on calendar slots.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="archived-interview-transcripts.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 8px; text-align: center;">
+                        📂 View All Transcripts
+                    </a>
+                    <a href="../dashboard/todo.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-align: center;">
+                        ✅ View Action Items in todo.html
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Architecture Hero Slide -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🖼️ Session 9 Architectural Summary Slide</h2>
+            <div class="card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.6); border-color: rgba(99, 102, 241, 0.25);">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.25rem;">
+                    <img src="cohort-session-9-analysis-hero.jpg" alt="AI Cohort Session 9 Customer Discovery Analysis Summary Slide" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-primary);">Core Transformation:</strong> 1. Schedule &amp; Format Overhaul &rarr; 2. 3-Tier Preset Project Levels &rarr; 3. Preconditions/Goal/Postconditions Roadmap &rarr; 4. VIP 1-on-1 Scheduled Workshops.
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <a href="cohort-session-8-analysis.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            &larr; View Session 8 Analysis
+                        </a>
+                        <a href="../../markdown_renderer.html?src=reports/cohort-session-9-analysis-v1.0.0.md" class="btn" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.4); color: #c7d2fe; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            📄 Read Full Markdown Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Metrics & Session Snapshot -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">⚡ Session 9 Discovery Signals Snapshot</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #60a5fa;">60 Mins</div>
+                    <div class="metric-lbl">Live Group Cohort Duration Cap</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #34d399;">10-10-15</div>
+                    <div class="metric-lbl">Sprint Pacing Structure (Intro &middot; Demo &middot; Q&amp;A)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #fbbf24;">3 Tiers</div>
+                    <div class="metric-lbl">Preset Projects (Foundational &middot; Intermediate &middot; Architect)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #c084fc;">3 Slots</div>
+                    <div class="metric-lbl">VIP 1-on-1 Weekday Blocks (Mon &middot; Tue &middot; Fri 19:00 UK)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Participant Feedback & Discovery Deep-Dive -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">👥 Participant Discovery Signals &amp; Verbatim VoC</h2>
+            <div class="arch-grid">
+                <!-- Mariana -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-blue">Enterprise QA &amp; Research</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Mariana</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Expressed acute friction regarding cognitive fatigue, late Sunday timing, and unstructured open discussions that intimidate newer learners.
+                        </p>
+                        <div class="quote-box">
+                            "You are trying to run the cohort where people can discuss items freely... But they are not on a similar level as you, and they feel very unprofessional. You are feeding them with information that makes them feel that they know more... they got scared and didn't come back."
+                        </div>
+                        <div class="quote-box">
+                            "In terms of education, people need a program, a clear simple agenda. They want to know what they are going to listen to and do step-by-step. They want to feel smart... Also, Sunday evening is very tricky. Make it 30 minutes to one hour."
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #60a5fa;">Validation:</strong> Demand for structured, step-by-step roadmaps, Preconditions/Postconditions, and 1-on-1 personalized setup workshops.
+                    </div>
+                </div>
+
+                <!-- Brian -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-purple">Enterprise Systems Architect</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Brian</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Currently taking TOGAF architecture certification. Highlighted the crucial difference between governance and hands-on delivery, and proposed preset project levels.
+                        </p>
+                        <div class="quote-box">
+                            "If you want to cover a wide skill level, you should have preset projects: Foundational (clock app), Intermediate (guided execution), Architect (complex infrastructure). That way, people learn the handles and terms before getting hit with architect-level jargon."
+                        </div>
+                        <div class="quote-box">
+                            "There's a big difference between a service and a learning opportunity: Service is 'Pay me and I will build it for you.' Learning is 'We go through the gears together step-by-step so I learn how to build it myself.'"
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #c084fc;">Validation:</strong> Need for clear project laddering; validates practical co-building ("going through the gears") as the core value prop of Delivery Pilot.
+                    </div>
+                </div>
+
+                <!-- Anna -->
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-amber">Academic Educator &amp; UWISE Founder</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Anna (via Mariana Feedback)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Conveyed feedback from initial session: attendee was enthusiastic about Obsidian and managing scientific data, but suffered from extreme information overload.
+                        </p>
+                        <div class="quote-box">
+                            "Anna felt like you are very professional—which is great—but what can she get from it? It was difficult for her to understand everything and follow the conversation. It was too complicated, too quickly, too much information at once."
+                        </div>
+                        <div class="quote-box">
+                            "She suggested trying 5–10 minutes explaining, 10 minutes demo, 15 minutes Q&amp;A, and strictly 3 tasks per session."
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #fbbf24;">Validation:</strong> Validates <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a> (Cognitive Overload) and informs the new 10-10-15 sprint pacing standard.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 4 Core Action Pillars -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🛠️ The 4 Action Pillars Resulting from Session 9</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #38bdf8;">
+                        <h3 style="font-family: var(--font-heading); color: #38bdf8; font-size: 1.15rem; margin-bottom: 0.75rem;">1. 🗓️ Live Session &amp; Schedule Overhaul</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>Cap at 60 Minutes:</strong> Reduce standard live sessions from 2 hours to 60 minutes.</li>
+                            <li><strong>Weekday Evening Talks:</strong> Move general community talks to Tuesday or Thursday at 7:00 PM UK time.</li>
+                            <li><strong>10-10-15 Structure:</strong> 5–10 min topic intro &rarr; 10 min live demo/lab &rarr; 15 min structured Q&amp;A.</li>
+                            <li><strong>Cohort Size Cap:</strong> Limit interactive cohorts to 4–5 participants so everyone can speak.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #34d399;">
+                        <h3 style="font-family: var(--font-heading); color: #34d399; font-size: 1.15rem; margin-bottom: 0.75rem;">2. 🎯 Course &amp; Preset Project Setup</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>Separate Content Streams:</strong> Decouple theoretical video courses from interactive labs.</li>
+                            <li><strong>🟢 Foundational Level:</strong> Basic starter setups (simple clock &amp; utility apps).</li>
+                            <li><strong>🟡 Intermediate Level:</strong> Guided workflow builds (custom LinkedIn automation, Obsidian).</li>
+                            <li><strong>🔴 Architect Level:</strong> Enterprise security, multi-agent frameworks, complex custom infra.</li>
+                            <li><strong>Pre &amp; Postconditions:</strong> Explicitly publish what to install before and what will be built after.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-6" style="margin-top: 1rem;">
+                    <div class="card" style="height: 100%; border-top: 3px solid #c084fc;">
+                        <h3 style="font-family: var(--font-heading); color: #c084fc; font-size: 1.15rem; margin-bottom: 0.75rem;">3. ⚙️ VIP 1-on-1 Workshop Setup</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>Monday (19:00–21:00 UK):</strong> 🔒 AI Security &amp; Local Admin Protocols</li>
+                            <li><strong>Tuesday (19:00–21:00 UK):</strong> 🛠 Environment &amp; App Setup (Obsidian, Azure Foundry, RAG)</li>
+                            <li><strong>Friday (19:00–21:00 UK):</strong> 👤 Human-in-the-Loop (HITL) Workflows</li>
+                            <li><strong>10-Minute Waiting Policy:</strong> Wait 10 minutes max for booked appointments before going offline.</li>
+                            <li><strong>Grant VIP Tier:</strong> Upgrade initial 10 core regulars (Brian, Mariana, Sude) to complimentary VIP.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-6" style="margin-top: 1rem;">
+                    <div class="card" style="height: 100%; border-top: 3px solid #fbbf24;">
+                        <h3 style="font-family: var(--font-heading); color: #fbbf24; font-size: 1.15rem; margin-bottom: 0.75rem;">4. 📢 Platform Marketing &amp; Skool Bug Fixes</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>LinkedIn &amp; X.com Promotion:</strong> Daily updates to 30,000-person network (<a href="../growth/daily-community-promotion-templates.html" style="color: var(--color-primary);">Swipe File</a>).</li>
+                            <li><strong>Sunday Lunchtime WhatsApp Broadcast:</strong> Weekly personal reminder (12:00–14:00 UK) to study groups.</li>
+                            <li><strong>Fix Skool Booking Bug:</strong> Configure calendar display setting to enable 1-on-1 bookings without the $99/mo webinar upgrade fee.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Master Checklist & To-Dos -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">📋 Action Items &amp; To-Do Checklist for Founder</h2>
+            <div class="card">
+                <div class="todo-item">
+                    <span>🗓️</span>
+                    <div><strong>Cap Live Cohorts to 60 Minutes:</strong> Reduce standard live sessions from 2 hours to 60 minutes to maintain focus.</div>
+                </div>
+                <div class="todo-item">
+                    <span>🗓️</span>
+                    <div><strong>Shift Cohorts to Weekdays:</strong> Test Tuesday or Thursday at 7:00 PM UK time for general community talks.</div>
+                </div>
+                <div class="todo-item">
+                    <span>⏱️</span>
+                    <div><strong>Implement 10-10-15 Structure:</strong> 5–10 min introduction, 10 min live demo, 15 min Q&amp;A.</div>
+                </div>
+                <div class="todo-item">
+                    <span>👥</span>
+                    <div><strong>Limit Cohort Sizes:</strong> Keep interactive group cohorts to 4–5 participants max.</div>
+                </div>
+                <div class="todo-item">
+                    <span>🧱</span>
+                    <div><strong>Define 3-Tier Preset Projects:</strong> Publish Foundational, Intermediate, and Architect project paths on Skool.</div>
+                </div>
+                <div class="todo-item">
+                    <span>📋</span>
+                    <div><strong>Add Preconditions &amp; Postconditions:</strong> Publish clear install prerequisites and outcomes for all modules.</div>
+                </div>
+                <div class="todo-item">
+                    <span>📅</span>
+                    <div><strong>Set Up VIP 1-on-1 Weekday Calendar Slots:</strong> Monday (Security), Tuesday (Setup), Friday (HITL) from 19:00–21:00 UK.</div>
+                </div>
+                <div class="todo-item">
+                    <span>⏳</span>
+                    <div><strong>Enforce 10-Minute Waiting Policy:</strong> Strictly wait 10 minutes for booked 1-on-1 sessions before going offline.</div>
+                </div>
+                <div class="todo-item">
+                    <span>⭐</span>
+                    <div><strong>Upgrade 10 Core Regulars to VIP:</strong> Manually assign VIP tier to Brian, Mariana, Sude, and core members.</div>
+                </div>
+                <div class="todo-item">
+                    <span>🐛</span>
+                    <div><strong>Resolve Skool Calendar Booking Bug:</strong> Fix calendar display so members book 1-on-1s without $99/mo fee.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>AI Certification Helper &copy; 2026 &middot; Steve Blank Customer Development Engine</div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="archived-interview-transcripts.html" style="color: var(--color-primary); text-decoration: none;">Archived Transcripts</a>
+                    <a href="../dashboard/todo.html" style="color: var(--color-primary); text-decoration: none;">Task List</a>
+                    <a href="../dashboard/weekly-todos.html" style="color: var(--color-primary); text-decoration: none;">Weekly Todos</a>
+                </div>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added AI Cohort Session 9 Customer Discovery Analysis covering schedule overhaul, 60-min cap, 10-10-15 structure, 3-tier preset projects, and VIP 1-on-1 calendar slots (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cohort-session-9-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

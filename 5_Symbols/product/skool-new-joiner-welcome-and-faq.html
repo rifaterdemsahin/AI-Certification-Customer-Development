@@ -121,12 +121,14 @@
             <h2 class="section-title">📨 1. Founder Welcome Message Template (Copy-Paste for Skool Auto-DM / Post)</h2>
             <div class="card" style="margin-bottom: 2rem;">
                 <div class="spec-box" style="background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; padding: 0.85rem 1.25rem; border-radius: 8px; margin-bottom: 1.25rem;">
-                    <span style="color: #10b981; font-weight: 700;">🟢 Recurring Operational Task (Operating System):</span>
-                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Founder Rifat Erdem Sahin sends this text message along with the <strong>4-Step Onboarding Roadmap Infographic Image</strong> (attached below) to each newly admitted member upon entry.</span>
+                    <span style="color: #10b981; font-weight: 700;">🟢 Live Skool Integration Status:</span>
+                    <span style="color: var(--text-secondary); font-size: 0.9rem;">The Onboarding Video is live and pinned in the Skool community post: <a href="https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833</a>. Founder Rifat Erdem Sahin sends this welcoming message along with the video link and the <strong>4-Step Onboarding Roadmap Infographic</strong> to each newly admitted member.</span>
                 </div>
                 <p style="color: var(--text-secondary); line-height: 1.6; margin: 0 0 1rem;">
-                    Founder <strong>Rifat Erdem Sahin</strong> (or automated Skool greeting) sends this welcoming message to every newly admitted member. It sets clear, low-friction expectations, removes fear of coding, and provides an immediate actionable next step:
+                    Founder <strong>Rifat Erdem Sahin</strong> (or automated Skool greeting) sends this welcoming message to every newly admitted member. It sets clear, low-friction expectations, embeds the live onboarding video link, and provides an immediate actionable next step:
                 </p>
+
+                <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Option A: Full Comprehensive Welcome DM (With Video &amp; Roadmap)</h3>
                 <div class="copy-box" id="welcomeTemplate">Hey [First Name], welcome to Delivery Pilot! 🚀
 
 I'm Rifat Erdem Sahin, founder of the community. So glad to have you with us!
@@ -139,14 +141,18 @@ You do not need to be a software engineer, and we do not expect you to code from
 2. 💰 ZERO COST TO START:
 Everything you need to learn, participate, and explore is 100% free. You do not need to spend any money at the beginning.
 
-3. 🗺️ HOW WE WORK TOGETHER (YOUR 4-STEP ROADMAP):
-• Step 1: Read the posts on the board and leave comments/questions. Don't lurk—say hello!
+3. 🎬 WATCH THE 60-SEC ONBOARDING VIDEO:
+I recorded a quick orientation video to show you around the room and how we work:
+👉 https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833
+
+4. 🗺️ HOW WE WORK TOGETHER (YOUR 4-STEP ROADMAP):
+• Step 1: Watch the orientation video & read the posts on the board. Don't lurk—say hello!
 • Step 2: Jump into our weekly Sunday Live Cohort sessions (21:00 PM UK / London time). It's an interactive screen-sharing party where we learn together and troubleshoot live.
 • Step 3: Use AI to accelerate your self-learning and build real-world workflow projects.
 • Step 4: When you feel confident, prepare for proctored AI certifications (like Claude Certified Architect) or explore £500–£1,000/day contractor opportunities.
 
 👉 YOUR FIRST MISSION TODAY:
-Head over to the Introductions thread (or comment below) and tell us:
+Watch the video (https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833) and head over to the Introductions thread (or comment below):
 1. What project or workflow are you currently curious about?
 2. What is the #1 thing you hope AI can help you achieve?
 
@@ -157,13 +163,34 @@ Feel free to reply directly to this message if you have any questions. Let's bui
 Best,
 Rifat Erdem Sahin
 Delivery Pilot</div>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('welcomeTemplate').innerText); this.innerText='Copied Text to Clipboard! ✨'; setTimeout(()=>this.innerText='📋 Copy Welcome Message', 2500);">
-                        📋 Copy Welcome Message
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('welcomeTemplate').innerText); this.innerText='Copied Full DM to Clipboard! ✨'; setTimeout(()=>this.innerText='📋 Copy Full Welcome Message', 2500);">
+                        📋 Copy Full Welcome Message
                     </button>
+                    <a href="https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833" target="_blank" class="btn" style="background: rgba(99,102,241,0.15); color: #c7d2fe; border: 1px solid rgba(99,102,241,0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        🎬 Open Skool Video Post ↗
+                    </a>
                     <a href="skool-welcome-faq-hero.jpg" download="Delivery_Pilot_Onboarding_Roadmap.jpg" class="btn" style="background: rgba(255,255,255,0.08); color: var(--text-primary); border: 1px solid var(--border-color); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
                         🖼️ Download Infographic to Attach
                     </a>
+                </div>
+
+                <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Option B: Quick Video-First Welcome Message (Lightweight)</h3>
+                <div class="copy-box" id="quickVideoWelcome">Hey [First Name], welcome to Delivery Pilot! 🚀
+
+To help you get oriented right away, I've pinned a 60-second onboarding video in our Welcome hub:
+👉 https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833
+
+It explains how our Sunday 21:00 UK live screen-shares work, where to find the templates, and how you can build real AI projects with zero coding background.
+
+Take a quick look and leave a comment introducing yourself so we can connect!
+
+Best,
+Rifat Erdem Sahin</div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('quickVideoWelcome').innerText); this.innerText='Copied Quick DM! ✨'; setTimeout(()=>this.innerText='📋 Copy Quick Video Welcome', 2500);">
+                        📋 Copy Quick Video Welcome
+                    </button>
                 </div>
             </div>
         </section>
@@ -376,7 +403,7 @@ Your answers help me tailor the upcoming templates and practice modules for you!
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Added recurring Onboarding Gap Discovery check-in scripts (Day 3 &amp; Day 7) and linked to continuous Customer Discovery operating loop (2026-08-17) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Integrated live Skool Onboarding Video post link (https://www.skool.com/delivery-pilot-8938/welcome-everyone?p=7da32833) into welcome DM templates &amp; operational checklists (2026-08-23) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-new-joiner-welcome-and-faq.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </div>
     </footer>

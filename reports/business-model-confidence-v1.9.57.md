@@ -1,3 +1,5 @@
+> **Superseded by [v1.9.58](business-model-confidence-v1.9.58.md)** (2026-08-23): Hormozi 1-1 vs one live class page.
+
 # Business Model Confidence Report — v1.9.57
 
 **Date:** 2026-08-23  
