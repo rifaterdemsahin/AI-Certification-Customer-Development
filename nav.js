@@ -58,6 +58,7 @@
                 ['5_Symbols/cd/cd-interview-pdf.html', '🖨️ 1-Page A4 Interview PDF'],
                 ['5_Symbols/cd/cohort-session-8-analysis.html', '🎙️ Cohort Session 8 Analysis'],
                 ['5_Symbols/product/skool-membership-questions.html', '📝 Skool Membership Questions'],
+                ['5_Symbols/product/cohort-session-permissions.html', '🔒 Cohort Session Permissions'],
                 ['5_Symbols/cd/archived-interview-transcripts.html', '📂 Archived Transcripts'],
                 ['5_Symbols/cd/cd-hypothesis-interview-questions.html', '🧪 Hypothesis Interview Questions'],
                 ['5_Symbols/cd/cd-hypotheses.html', '💭 1. Hypothesis'],
@@ -183,6 +184,7 @@
         {
             type: 'dropdown', label: 'Growth', emoji: '📈', className: 'nav-growth', items: [
                 ['5_Symbols/growth/audience-roadmap.html', '🧭 Audience Transformation Roadmap'],
+                ['5_Symbols/growth/mvp-roadmap.html', '🗺️ MVP Roadmap (How Jobs Get Created)'],
                 ['5_Symbols/growth/sales-marketing-roadmap.html', '🗺️ Sales &amp; Marketing Roadmap'],
                 ['5_Symbols/growth/sales-pipeline.html', '📊 Sales Pipeline'],
                 ['5_Symbols/growth/conversion-strategy.html', '🎯 Conversion Strategy &amp; Tactics'],
@@ -364,6 +366,7 @@
         { url: '5_Symbols/product/skool-onboarding-checklist.html', title: 'Skool Onboarding Checklist & Welcome Milestone', desc: 'Admin setup and 3-step member activation widget (60s video, comment on post, download mobile app) driving Day-1 retention and Stage 3 customer creation.', cat: 'Business Model', tags: 'skool onboarding checklist welcome plugin 60s video comment mobile app download churn retention customer creation h5 h8 h13' },
         { url: '5_Symbols/product/skool-manual-member-invites.html', title: 'Skool Manual Member Invites & Tier Assignment', desc: 'Admin playbook for sending direct email invitations and switching members to Premium or VIP tiers at $0 cost without Stripe friction.', cat: 'Business Model', tags: 'skool manual invites email settings invite members tier switch comp complimentary free upgrade founding members h5 h8 h30' },
         { url: '5_Symbols/product/skool-membership-questions.html', title: 'Skool Membership Questions & Customer Discovery Intake', desc: '4 AI knowledge pillars diagnostic plus open-ended customer discovery text box ("What do you hope to get out of the group?") on join intake.', cat: 'Discovery Process', tags: 'skool membership questions join intake customer discovery 4 ai pillars voc voice of customer hope to get out of group h3 h8 h24 h30' },
+        { url: '5_Symbols/product/cohort-session-permissions.html', title: 'Cohort Session Permissions — Audience Collect Approval', desc: 'Recording consent collected on Skool join: Classroom replay yes, listen-only, or no record. Public YouTube never without a second named yes.', cat: 'Discovery Process', tags: 'cohort session permissions recording consent approval membership questions sunday replay skool classroom gdpr h5 h29' },
         { url: '5_Symbols/growth/linkedin-premium-decision.html', title: 'LinkedIn Premium Decision & Top Profile CTA', desc: 'Customer Creation task comparing Career (£14.99/mo), Business (£29.99/mo), and Sales Navigator Core (£79.99/mo) to market Skool link directly on LinkedIn profile header.', cat: 'Growth', tags: 'linkedin premium career business sales navigator cta profile marketing traffic stage 3 customer creation h5 h12 h13' },
         { url: '5_Symbols/growth/linkedin-vip-cowork.html', title: 'LinkedIn 30k Network Cap & Monday VIP Claude Cowork', desc: 'Strategy for managing LinkedIn 30,000 connection limit by only adding verified Skool members, plus Monday VIP Claude Cowork recruiter promotion over Delivery Pilot.', cat: 'Growth', tags: 'linkedin network 30000 30k connections cap mynetwork grow skool members buffer monday vip claude cowork recruiters delivery pilot h5 h12' },
         { url: '5_Symbols/product/deliverypilot-net.html', title: 'deliverypilot.net — Forward Deployed Engineer Accelerator', desc: 'Official web portal blueprint, 4-stage FDE roadmap, 3-tier offer ladder (Peek $0 / Sit In $1 / VIP $250), and 15-min VIP phone call sales playbook.', cat: 'Business Model', tags: 'deliverypilot deliverypilot.net portal forward deployed engineer fde contractor roadmap 4 stages vip phone call sales playbook skool peek sit in share screen h5 h8 h30' },
@@ -554,6 +557,7 @@
         { url: '5_Symbols/product/skool-roadmap.html', title: 'Skool Community & Learning Roadmap', desc: '4-phase Skool operational milestones: Foundation → MVP Classroom & Daily Visuals → 10 True Regulars → VIP Placement Alliance.', cat: 'Product', tags: 'skool roadmap community classroom mvp daily visuals 10 regulars vip alliance delivery pilot' },
         { url: '5_Symbols/strategy/audience-transformation.html', title: 'Audience Transformation (Input/Output)', desc: 'Matrix defining candidate starting input (prompt tinkerer / unverified CV) to Delivery Pilot certified output (£500-£1,000/day Forward Deployed AI Engineer).', cat: 'Strategy', tags: 'audience transformation input output delivery pilot forward deployed engineer fde contractor matrix h30' },
         { url: '5_Symbols/growth/audience-roadmap.html', title: 'Audience Transformation Roadmap', desc: '5-step practitioner journey: YouTube/LinkedIn content → Skool community cohorts → Claude Architect course MVP & daily visuals → VIP screen sharing → Delivery Pilot partnership.', cat: 'Growth', tags: 'audience roadmap customer journey youtube linkedin skool mvp course claude certified architect vip deliverypilot partnership' },
+        { url: '5_Symbols/growth/mvp-roadmap.html', title: 'MVP Roadmap — How New Jobs Get Created', desc: 'August 2026 operating plan from the community-driven growth diagram: Studio → Cohorts → Claude course → deliverypilot.net contractor persona → new jobs as the outcome.', cat: 'Growth', tags: 'mvp roadmap how new jobs get created studio cohorts claude course deliverypilot contractor persona august 2026 h30 h5 h8 h22' },
         { url: '5_Symbols/growth/inspirational-youtubers.html', title: 'Inspirational YouTubers & Creator Benchmarks', desc: 'Detailed strategic deconstruction of Ali Abdaal, NetworkChuck (including YouTube Short analysis), and TechWorld with Nana for AI Certification Helper.', cat: 'Growth', tags: 'inspirational youtubers creator benchmarks ali abdaal networkchuck tech with nana shorts animation video workflow devops h2 h10 h13 h28' },
         { url: '5_Symbols/product/skool-payout-dashboard.html', title: 'Skool Payout Dashboard & Settlement', desc: 'Real-time tracking of Skool and Stripe Connect balance, first paid $0.60 settlement, 7-14 day clearing cycle, and Wednesday payouts.', cat: 'Product', tags: 'skool payout dashboard settlement stripe delivery pilot balance pending wednesday clearance' }
     ];
@@ -1561,7 +1565,20 @@
         '5_Symbols/growth/90-day-execution-plan.html': [
             { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timelines', emoji: '📅' },
             { url: '5_Symbols/growth/test-plan.html', title: 'Test Plan', emoji: '🧪' },
-            { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' }
+            { url: '5_Symbols/dashboard/todo.html', title: 'Task List', emoji: '✅' },
+            { url: '5_Symbols/growth/mvp-roadmap.html', title: 'MVP Roadmap', emoji: '🗺️' }
+        ],
+        '5_Symbols/product/cohort-session-permissions.html': [
+            { url: '5_Symbols/product/skool-membership-questions.html', title: 'Membership Questions', emoji: '📝' },
+            { url: '5_Symbols/product/skool-workshop-upload.html', title: 'Workshop Upload', emoji: '🎥' },
+            { url: '5_Symbols/product/skool-community-golden-rules.html', title: 'Golden Rules', emoji: '🌟' },
+            { url: '5_Symbols/hypotheses/hyp-h29.html', title: 'H29 Listen', emoji: '👂' }
+        ],
+        '5_Symbols/growth/mvp-roadmap.html': [
+            { url: '5_Symbols/growth/audience-roadmap.html', title: 'Audience Roadmap', emoji: '🧭' },
+            { url: '5_Symbols/strategy/delivery-pilot-roadmap.html', title: 'Delivery Pilot Roadmap', emoji: '🧑‍✈️' },
+            { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Execution Plan', emoji: '🗓️' },
+            { url: '5_Symbols/hypotheses/hyp-h30.html', title: 'H30 Career Roadmap', emoji: '🧑‍✈️' }
         ],
         '5_Symbols/growth/funfair-tokens.html': [
             { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
