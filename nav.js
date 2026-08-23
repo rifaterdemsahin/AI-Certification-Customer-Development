@@ -96,6 +96,7 @@
                 ['5_Symbols/strategy/focus.html', '🎯 Focus'],
                 ['5_Symbols/strategy/target-audience.html', '👥 Target Audience'],
                 ['5_Symbols/strategy/audience-transformation.html', '🔄 Audience Transformation (Input/Output)'],
+                ['5_Symbols/strategy/structure-transformation-leadership.html', '🏛️ Structure, Transformation &amp; Leadership'],
                 ['5_Symbols/strategy/delivery-pilot-roadmap.html', '🧑‍✈️ Delivery Pilot Roadmap'],
                 ['5_Symbols/strategy/pain-points.html', '🎭 Customer Pain Points'],
                 ['5_Symbols/strategy/risk-analysis.html', '⚠️ Risk Analysis'],
@@ -111,6 +112,7 @@
                 ['5_Symbols/hypotheses/h1-not-connected.html', '🟡 Why H1 Sits Alone'],
                 ['5_Symbols/strategy/single-founder-bandwidth.html', '🧑‍💻 Single-Founder Bandwidth'],
                 ['5_Symbols/strategy/listen-more-than-you-speak.html', '👂 Listen More Than You Speak'],
+                ['5_Symbols/strategy/make-it-about-them.html', '🎯 Make It About Them (Not You)'],
                 ['5_Symbols/strategy/reading-and-learning-guardrails.html', '📖 Reading & Learning Guardrails'],
                 ['5_Symbols/strategy/the-castle-complexity-kills.html', '🏰 The Castle (Kafka: Complexity Kills)'],
                 ['5_Symbols/strategy/the-bed-of-procrustes.html', '🛏️ The Bed of Procrustes (Petrescu: Perception)'],
@@ -316,6 +318,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/make-it-about-them.html', title: 'Make It About Them, Not About You', desc: 'Post-mortem analysis of founder self-centricity (the Me-Trap), Hormozi value equation inversion, side-by-side comparison, and 5-point operational checklist.', cat: 'Strategy', tags: 'make it about them not about you founder ego me trap lecture fail post mortem hormozi value equation customer centricity dialogue h29 h24 h30 h5 h8' },
         { url: '5_Symbols/strategy/second-brain.html', title: 'AI at the Core: Second Brain Implementation & Niche Research', desc: 'Architecture, niche research, and customer discovery insights for placing AI at the core of personal knowledge management via 4-tier hybrid retrieval and PARA Obsidian vaults.', cat: 'Strategy', tags: 'second brain ai at the core niche research pkm obsidian para hybrid retrieval grep qdrant neo4j vector graph sude bora marianna customer discovery context window h5 h8 h20 h30' },
         { url: '5_Symbols/strategy/when-to-pivot.html', title: 'When to Pivot: Hypothesis Failure Thresholds & Timing', desc: 'Detailed decision triggers, falsification thresholds, timeout windows, and pivot vectors for Stage 1 & 2 hypotheses (H1, H2, H24, H3, H5, H4, H27, H21, H7, H8, H6).', cat: 'Strategy', tags: 'when to pivot pivot triggers hypothesis failure thresholds timeout deadlines red-line metrics h1 h2 h24 h3 h5 h4 h27 h21 h7 h8 h6 customer discovery validation lean steve blank strategy decision' },
         { url: '5_Symbols/strategy/the-castle-complexity-kills.html', title: 'The Castle (Kafka): Complexity Kills', desc: 'Bureaucracy and systemic inertia in business: keep architectures, onboarding, and pipelines simple and autonomous rather than building Kafka\'s Castle.', cat: 'Strategy', tags: 'kafka the castle complexity kills bureaucracy systemic inertia simplicity autonomy skool lean solo founder fde contractor h23 h29 h30 literature' },
@@ -565,6 +568,7 @@
         { url: '5_Symbols/cd/cd-hypothesis-interview-questions.html', title: 'Hypothesis Interview Questions', desc: 'Specific customer-interview questions mapped to every hypothesis (H1-H19), each with a listen-for cue for what would validate or kill it.', cat: 'Process', tags: 'interview questions hypothesis test validate kill customer discovery ask what to ask' },
         { url: '5_Symbols/product/skool-roadmap.html', title: 'Skool Community & Learning Roadmap', desc: '4-phase Skool operational milestones: Foundation → MVP Classroom & Daily Visuals → 10 True Regulars → VIP Placement Alliance.', cat: 'Product', tags: 'skool roadmap community classroom mvp daily visuals 10 regulars vip alliance delivery pilot' },
         { url: '5_Symbols/strategy/audience-transformation.html', title: 'Audience Transformation (Input/Output)', desc: 'Matrix defining candidate starting input (prompt tinkerer / unverified CV) to Delivery Pilot certified output (£500-£1,000/day Forward Deployed AI Engineer).', cat: 'Strategy', tags: 'audience transformation input output delivery pilot forward deployed engineer fde contractor matrix h30' },
+        { url: '5_Symbols/strategy/structure-transformation-leadership.html', title: 'Structure, Transformation & Leadership', desc: 'Strategic triad explaining how lean operational structure and authentic practitioner leadership forge irreversible career transformations.', cat: 'Strategy', tags: 'structure transformation leadership delivery pilot pexabo fde contractor 5-10-5 sprint kafka lean h30 h23 h29' },
         { url: '5_Symbols/growth/audience-roadmap.html', title: 'Audience Transformation Roadmap', desc: '5-step practitioner journey: YouTube/LinkedIn content → Skool community cohorts → Claude Architect course MVP & daily visuals → VIP screen sharing → Delivery Pilot partnership.', cat: 'Growth', tags: 'audience roadmap customer journey youtube linkedin skool mvp course claude certified architect vip deliverypilot partnership' },
         { url: '5_Symbols/growth/mvp-roadmap.html', title: 'MVP Roadmap — How New Jobs Get Created', desc: 'August 2026 operating plan from the community-driven growth diagram: Studio → Cohorts → Claude course → deliverypilot.net contractor persona → new jobs as the outcome.', cat: 'Growth', tags: 'mvp roadmap how new jobs get created studio cohorts claude course deliverypilot contractor persona august 2026 h30 h5 h8 h22' },
         { url: '5_Symbols/growth/inspirational-youtubers.html', title: 'Inspirational YouTubers & Creator Benchmarks', desc: 'Detailed strategic deconstruction of Ali Abdaal, NetworkChuck (including YouTube Short analysis), and TechWorld with Nana for AI Certification Helper.', cat: 'Growth', tags: 'inspirational youtubers creator benchmarks ali abdaal networkchuck tech with nana shorts animation video workflow devops h2 h10 h13 h28' },
