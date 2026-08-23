@@ -1,5 +1,8 @@
 # Skool Pricing Feedback — v1.1.0
 
+> [!NOTE]
+> **Superseded by [v1.2.0](skool-pricing-feedback-v1.2.0.md)** (2026-08-22): Updated with finalized benefit order, full replays on Free, tailored classrooms on Premium, and Saturday 1-1 time blocks on VIP.
+
 **Date:** 2026-08-22  
 **Supersedes:** `reports/skool-pricing-feedback-v1.0.0.md`  
 **Source:** Updated live Delivery Pilot pricing tier structure and feature descriptions at [skool.com/delivery-pilot-8938](https://www.skool.com/delivery-pilot-8938)  
