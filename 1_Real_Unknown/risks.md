@@ -106,6 +106,15 @@
 - **Mitigation:** Freemium $0/$1 entry keeps the funnel alive through downturns; credential-led employability demand is counter-cyclical — downturns push people to re-skill; monitored via funnel conversion metrics.
 - **Last Updated:** 2026-08-19
 
+### R-014: Instructional Clarity & Learner Comprehension Risk ("Rating Penalty")
+- **Status:** 🟠 Active
+- **Severity:** High
+- **Likelihood:** Medium
+- **Impact:** High (Learner confusion, negative student reviews, low course ratings, word-of-mouth referral stalls)
+- **Trigger:** Customer discovery feedback from Mehmet: *"Eğitim veriyon ama insanlar seni anlamazsa kimse sana güzel puan vermez"* ("You're giving training, but if people don't understand you, no one will give you a good rating / positive review.")
+- **Mitigation:** Adopt the 10-10-15 sprint delivery structure (5-10 min intro, 10 min demo, 15 min Q&amp;A), 3-tier preset project ladder (Foundational &rarr; Intermediate &rarr; Architect) with published preconditions and postconditions, visual whiteboard diagrams, and real-time comprehension verification checkpoints ("Check &amp; Help" loop).
+- **Last Updated:** 2026-08-24
+
 ---
 
 ## ✅ Solved Risks
@@ -193,6 +202,7 @@
 | 2026-07-12 | Smoke test runner implemented | R-007 | Downgraded High → Medium and reframed: runner exists (caught issue #1); remaining step is wiring it into `static.yml` as a deploy gate |
 | 2026-07-12 | Smoke gate wired into `static.yml` | R-S09 | Solved: `deploy` job requires the `smoke` job (SPEC-008 runner); Formula Agent owns the CI/CD pipeline |
 | 2026-08-19 | Macro & founder-income risk review | R-010 → R-013 | Added 4 active risks: IR35 & global contractor usage (High), business confidence falling with global wars (High), inside-IR35 day-job dependency (High), global economy slowing (Medium) — mirrored on `5_Symbols/strategy/risk-analysis.html` |
+| 2026-08-24 | Customer discovery pedagogical risk | R-014 | Added active risk: Instructional Clarity & Learner Comprehension ("Rating Penalty") from Mehmet's feedback (*"Eğitim veriyon ama insanlar seni anlamazsa kimse sana güzel puan vermez"*) |
 
 ---
 

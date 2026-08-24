@@ -1,3 +1,5 @@
+> **Superseded by** [`business-model-confidence-v1.9.60.md`](business-model-confidence-v1.9.60.md) (2026-08-24) — Mehmet pedagogical clarity / rating-penalty feedback; R-014 added; score holds 50.
+
 # Business Model Confidence Report — v1.9.59
 
 **Date:** 2026-08-23  

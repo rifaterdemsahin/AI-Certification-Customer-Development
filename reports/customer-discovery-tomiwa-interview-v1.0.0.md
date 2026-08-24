@@ -1,3 +1,6 @@
+> [!NOTE]
+> **SUPERSEDED:** This report has been expanded and superseded by [customer-discovery-tomiwa-interview-v1.1.0.md](customer-discovery-tomiwa-interview-v1.1.0.md) (2026-08-24).
+
 # Customer Discovery Report: Tomiwa Interview — Associate to Architect Progression & Ladder Validation
 
 **Report Version:** v1.0.0  
