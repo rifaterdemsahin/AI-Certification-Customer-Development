@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skool About Promo Video Script & 8s Animations | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .scene-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .scene-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        .scene-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .scene-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        .duration-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .script-block {
+            background: rgba(15, 23, 42, 0.75);
+            border-left: 4px solid var(--color-warning);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #f8fafc;
+        }
+        .animation-block {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .overlay-block {
+            background: rgba(16, 185, 129, 0.06);
+            border-left: 4px solid var(--color-success);
+            border-radius: 8px;
+            padding: 0.75rem 1.25rem;
+            margin-top: 0.75rem;
+            font-size: 0.88rem;
+            color: #cbd5e1;
+        }
+        .prompt-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.85rem;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.82rem;
+            color: #93c5fd;
+            margin-top: 0.75rem;
+            position: relative;
+        }
+        .interactive-simulator {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .timeline-bar {
+            display: flex;
+            gap: 6px;
+            margin: 1.5rem 0 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            border-radius: 10px;
+        }
+        .timeline-segment {
+            flex: 1;
+            height: 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .timeline-segment:hover {
+            background: rgba(99, 102, 241, 0.5);
+        }
+        .timeline-segment.active {
+            background: var(--color-primary);
+            box-shadow: 0 0 12px var(--color-primary);
+        }
+        .timeline-segment.passed {
+            background: var(--color-success);
+        }
+        .stage-screen {
+            background: #020617;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .stage-visual {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="skool-about.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Delivery Pilot About Copy
+        </a>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.3);">Stage 2 &middot; Video Marketing &middot; 8-Second Scene Animations</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🎬 Skool About Page Promo Video Script & 8s Animations</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 84ch; line-height: 1.65;">
+                High-converting promotional video and mixed-reality animation blueprint designed to promote the live <strong>Skool About Page</strong> (<a href="https://www.skool.com/delivery-pilot-8938/about" target="_blank" rel="noopener" style="color: var(--color-primary);">skool.com/delivery-pilot-8938/about</a>) across YouTube, LinkedIn, and social funnels. Formatted as exactly <strong>8 modular 8.0-second scenes (64s total)</strong> utilizing the Roger Rabbit animation SOP, founder voiceover (<a href="../growth/founder-voice-skool-cta.html" style="color: var(--color-primary);">H29</a>), and clear freemium tier positioning (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>: Peek $0, Sit In $1/mo, Share Screen $250/yr).
+            </p>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Total Duration:</span>
+                            <span class="info-value highlight-success">64 Seconds (8 Scenes &times; 8.0s)</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Target URL Promoted:</span>
+                            <span class="info-value"><a href="https://www.skool.com/delivery-pilot-8938/about" target="_blank" style="color: var(--color-primary); font-weight: 600;">skool.com/delivery-pilot-8938/about ↗</a></span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Animation Style:</span>
+                            <span class="info-value">Roger Rabbit Mixed-Reality (Google Flow / Canva)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Voiceover Talent:</span>
+                            <span class="info-value">Founder Voice (Rifat Erdem Sahin / Fal.ai ElevenLabs)</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Primary Call to Action:</span>
+                            <span class="info-value highlight-warning">Read About Page &amp; Join Sunday 9 PM Live Room</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Linked Hypotheses:</span>
+                            <span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>, <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>, <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; padding: 0; overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="skool-about-promo-hero.jpg" alt="Developer cockpit with animated holographic Claude AI architecture diagrams and Skool Delivery Pilot About page storyboard" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <!-- Quick Production Toolchain Links -->
+        <div class="card animate-fade-in" style="background: rgba(99, 102, 241, 0.05); border-color: rgba(99, 102, 241, 0.3); margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h3 style="margin: 0 0 0.25rem 0; font-size: 1.15rem; color: #fff;">🛠️ Production Toolchain Quick Access</h3>
+                    <p style="margin: 0; font-size: 0.88rem; color: var(--text-secondary);">Direct links to assemble, generate, and voice this 8-scene promotion.</p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <a href="https://www.canva.com/design/DAHTHTyS6UU/7E3NP6xGLeudx8yntX5BNw/edit?ui=e30" target="_blank" class="btn" style="background: #e11d48; color: #fff; border: 1px solid #e11d48; font-size: 0.85rem; padding: 0.45rem 0.85rem; text-decoration: none; border-radius: 8px; font-weight: 700;">🎞️ Canva Editor (DAHTHTyS6UU) &rarr;</a>
+                    <a href="https://labs.google/fx/tools/flow/project/7a19adee-e4ed-468a-a322-317faaa0eaa6" target="_blank" class="btn" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.85rem; padding: 0.45rem 0.85rem; text-decoration: none; border-radius: 8px;">🎨 Google Flow Animation &rarr;</a>
+                    <a href="https://fal.ai/models/fal-ai/elevenlabs/text-to-dialogue/eleven-v3" target="_blank" class="btn" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.85rem; padding: 0.45rem 0.85rem; text-decoration: none; border-radius: 8px;">🔊 Fal.ai Voice Studio &rarr;</a>
+                    <a href="https://www.skool.com/delivery-pilot-8938/about" target="_blank" class="btn" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.85rem; padding: 0.45rem 0.85rem; text-decoration: none; border-radius: 8px;">🚀 Live Skool About Page &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive 8-Second Scene Simulator -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">⏱️ Interactive 8-Second Scene Player & Teleprompter</h2>
+            <div class="interactive-simulator">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" id="player-status-badge">Ready to Play</span>
+                        <h3 style="margin: 0.5rem 0 0.2rem 0; font-size: 1.35rem;" id="player-scene-title">Scene 1: The Slide Deck Trap vs Live Cockpit</h3>
+                        <div style="color: var(--text-muted); font-size: 0.85rem;" id="player-time-indicator">00:00 - 00:08 (Scene 1 of 8)</div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <button type="button" class="btn btn-secondary" id="btn-prev" onclick="prevScene()" style="padding: 0.5rem 1rem;">&larr; Prev</button>
+                        <button type="button" class="btn btn-primary" id="btn-play-pause" onclick="togglePlay()" style="padding: 0.5rem 1.25rem; font-weight: 700;">▶ Play 64s</button>
+                        <button type="button" class="btn btn-secondary" id="btn-next" onclick="nextScene()" style="padding: 0.5rem 1rem;">Next &rarr;</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetPlayer()" style="padding: 0.5rem 0.85rem;">🔄 Reset</button>
+                    </div>
+                </div>
+
+                <!-- Timeline Navigation Bar -->
+                <div class="timeline-bar" id="timeline-container">
+                    <div class="timeline-segment active" onclick="jumpToScene(0)" title="Scene 1: The Slide Deck Trap"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(1)" title="Scene 2: The Production Wall"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(2)" title="Scene 3: The Sunday Practice Room"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(3)" title="Scene 4: 3 Transparent Doors"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(4)" title="Scene 5: No False Badges"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(5)" title="Scene 6: £1,000/Day Contractor Path"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(6)" title="Scene 7: High Signal Zero Spam"></div>
+                    <div class="timeline-segment" onclick="jumpToScene(7)" title="Scene 8: Skool About CTA"></div>
+                </div>
+
+                <!-- Visual Stage Canvas -->
+                <div class="stage-screen" id="stage-screen">
+                    <div class="stage-visual" id="stage-icon">🖥️ ⚡ 💥</div>
+                    <div style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;" id="stage-headline">
+                        "Stop Memorizing Boring Slides."
+                    </div>
+                    <div style="font-size: 0.95rem; color: #94a3b8; max-width: 65ch;" id="stage-animation-desc">
+                        Cartoon engineer bursts through a dull PowerPoint slide into a futuristic, multi-monitor AI architecture cockpit with glowing Claude blueprints.
+                    </div>
+                    <div style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.8rem; color: #38bdf8;" id="stage-overlay">
+                        ⚡ Overlay: NO BORING SLIDES. BUILD REAL AI ARCHITECTURE.
+                    </div>
+                </div>
+
+                <!-- Teleprompter / Spoken Voiceover Block -->
+                <div style="margin-top: 1.5rem; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-warning); font-weight: 700;" id="player-emotion-tag">
+                            🎙️ EMOTION: [PUNCHY & ENERGETIC]
+                        </span>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);" id="player-word-count">21 words &middot; ~158 WPM</span>
+                    </div>
+                    <div style="font-family: var(--font-body); font-size: 1.15rem; line-height: 1.6; color: #f8fafc; font-weight: 500;" id="player-spoken-script">
+                        "Tired of boring slide decks and fake exam promises? The Claude Certified Architect exam doesn’t care about memorized bullet points... it tests production muscle."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full 8-Scene Storyboard & Animation Specification -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎬 Complete 8-Scene Storyboard & Video Specification</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 80ch;">
+                Each 8.0-second scene is self-contained and modular, designed to grab immediate attention, destroy common course myths, explain the Sunday practice room mechanics, and drive traffic directly to the Skool About page.
+            </p>
+
+            <!-- Scene 1 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 1 &middot; The Hook</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">Tear Down the Slide Deck Trap</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:00 - 0:08 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Punchy &amp; Energetic):</strong><br>
+                    &ldquo;Tired of boring slide decks and fake exam promises? The Claude Certified Architect exam doesn’t care about memorized bullet points... it tests production muscle.&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    A 2D animated engineer in a hoodie punches through a flat, grey PowerPoint slide labeled &ldquo;Slide 1 of 850: What is Claude?&rdquo;. The screen shatters into digital glass shards, revealing a cinematic 3D developer cockpit with 3 curved OLED monitors running real-time Anthropic Claude API streaming logs, terminal windows, and architecture diagrams.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #f87171; font-weight: bold;">NO BORING SLIDES.</span> &rarr; <span style="color: #34d399; font-weight: bold;">BUILD REAL AI ARCHITECTURE.</span><br>
+                    SFX: Glass shatter impact followed by energetic futuristic synth riser.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    A vibrant mixed-reality scene where a stylized animated developer punches through a dull presentation screen into a dark-mode cyberpunk engineer battlestation with glowing neon orange and cyan Claude AI node charts. 16:9 4k 60fps.
+                </div>
+            </div>
+
+            <!-- Scene 2 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 2 &middot; The Real Problem</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">The Production Wall &amp; Rate Limits</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:08 - 0:16 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Authoritative &amp; Direct):</strong><br>
+                    &ldquo;When you hit rate limits, RAG vector drift, or multi-agent loops in production... standard video courses leave you stuck debugging alone in the dark.&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    Animated character looks stressed as warning triangles and red error dialogs pop up across the IDE: <code>HTTP 429 RateLimitExceeded</code> and <code>Vector Drift: Low Cosine Similarity</code>. A giant brick wall labeled &ldquo;The Production Wall&rdquo; drops onto the screen, trapping lonely developers in cubicles.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #fbbf24; font-weight: bold;">STUCK IN PRODUCTION?</span> &bull; <span style="color: #f87171; font-weight: bold;">NEVER DEBUG ALONE.</span><br>
+                    SFX: Digital warning siren glitch &amp; heavy stone thud as the wall lands.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    Animated engineer facing glowing red cascading server error popups, floating code matrices, rate limit warnings, with a dramatic cinematic spotlight in a dark tech studio.
+                </div>
+            </div>
+
+            <!-- Scene 3 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 3 &middot; The Solution</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">The Sunday Practice Room</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:16 - 0:24 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Warm &amp; Welcoming):</strong><br>
+                    &ldquo;That’s why we built Delivery Pilot. Every Sunday at 9 PM UK, we open our live Sunday Practice Room to solve Claude Architect problems live on screen!&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    A glowing neon clock flips smoothly to <code>Sunday 21:00 UK</code>. A virtual door swings wide open to reveal a collaborative room where dozens of avatars gather around a massive interactive whiteboard. Screen-shares light up in green, displaying Claude Sonnet 3.7 architecture flows and live terminal sessions.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #38bdf8; font-weight: bold;">EVERY SUNDAY &middot; 9:00 PM UK</span> &bull; <span style="color: #34d399; font-weight: bold;">LIVE PRACTICE ROOM</span><br>
+                    SFX: Soft chime bell, cheerful click of virtual room doors opening, ambient group hum.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    A glowing futuristic amphitheater where digital avatars and real laptop screencasts collaborate on an illuminated glass architecture board showing AI agent diagrams.
+                </div>
+            </div>
+
+            <!-- Scene 4 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 4 &middot; The 3 Doors</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">Peek, Sit In, Share Screen</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:24 - 0:32 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Transparent &amp; Punchy):</strong><br>
+                    &ldquo;Choose how close you sit: Peek completely free for zero dollars. Sit In on weekly screen-shares for one dollar. Or Share Your Screen as a VIP for two-fifty a year!&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    Three physical portals slide into frame side-by-side with glowing price tags:
+                    1. <strong>Door 1:</strong> Blue frame labeled &ldquo;Peek &middot; $0&rdquo; (Door has a glass window to look inside).
+                    2. <strong>Door 2:</strong> Green frame labeled &ldquo;Sit In &middot; $1/mo&rdquo; (Door opens to an auditorium seat).
+                    3. <strong>Door 3:</strong> Gold frame labeled &ldquo;Share Screen VIP &middot; $250/yr&rdquo; (Door opens to the main presenter stage with mic and screen control).
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #60a5fa; font-weight: bold;">PEEK: $0</span> &bull; <span style="color: #34d399; font-weight: bold;">SIT IN: $1/mo</span> &bull; <span style="color: #fbbf24; font-weight: bold;">SHARE SCREEN: $250/yr</span><br>
+                    SFX: Three distinct ascending mechanical door sliding sounds, gold sparkle chime.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    Three sleek glass portals standing in a futuristic studio glowing in blue, emerald green, and radiant gold with floating metallic coins and price tags.
+                </div>
+            </div>
+
+            <!-- Scene 5 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 5 &middot; Anti-Hype Guarantee</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">No False Badges &mdash; Real Competence</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:32 - 0:40 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Grounded &amp; Honest):</strong><br>
+                    &ldquo;Anthropic and Pearson VUE issue the official exam badge. We don’t sell pass guarantees... we build the hands-on architecture competence that makes passing inevitable.&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    An official Pearson VUE testing seal and Anthropic logo appear cleanly on screen, followed by a heavy rubber stamp slamming down with green ink: <strong>&ldquo;ZERO FAKE CLAIMS &bull; 100% PRACTITIONER SKILLS&rdquo;</strong>. Animated hands rapidly build and link microservice containers together.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #a78bfa; font-weight: bold;">PEARSON VUE ISSUES BADGES.</span> &rarr; <span style="color: #34d399; font-weight: bold;">WE BUILD YOUR SKILLS.</span><br>
+                    SFX: Heavy official stamp slam sound followed by crisp mechanical keyboard clacking.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    Official certificate badge glowing with security holograms, stamped with green verified checkmark, surrounded by live code terminal matrices.
+                </div>
+            </div>
+
+            <!-- Scene 6 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 6 &middot; Career Transformation</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">The £1,000/Day Contractor Path</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:40 - 0:48 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Confident &amp; Inspiring):</strong><br>
+                    &ldquo;Led by a contractor who’s billed over 1.3 million dollars in enterprise projects, we turn you into a high-earning Forward Deployed AI Engineer who co-bids on real tenders.&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    Founder avatar (Rifat Erdem Sahin) stands in front of a London/New York skyline holographic graph displaying <code>&pound;500 &ndash; &pound;1,000 / Day Enterprise Contract Rates</code>. A glowing roadmap connects 4 milestones: Hands-on Practice &rarr; Certification &rarr; Recruiter Promotion &rarr; Ultimate IT Contractor Alliance.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #38bdf8; font-weight: bold;">&pound;1.3M+ CONTRACTOR TRACK RECORD</span> &bull; <span style="color: #fbbf24; font-weight: bold;">FORWARD DEPLOYED ENGINEER</span><br>
+                    SFX: High-tech data stream whoosh, upbeat bassline progression.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    A confident engineer standing atop an enterprise glass skyscraper overlooking London skyline with floating golden data charts and glowing contracting roadmaps.
+                </div>
+            </div>
+
+            <!-- Scene 7 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 7 &middot; High Signal Community</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">Living Hubs &amp; Zero Spam</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:48 - 0:56 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Direct &amp; Energetic):</strong><br>
+                    &ldquo;Inside our Skool community, you get clean living hubs, zero notification spam, active peer unblocking, and Funfair Tokens to spend on practice exams.&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    A screencast of the Skool community interface displays organized evergreen hubs: Classroom, Community, Calendar. A little red animated spam bot tries to post a promotional link, gets shielded by a glowing security lock (Level 2 posting restriction), and is cleanly tossed into a recycle bin. A golden Funfair token flips into a user's wallet.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #34d399; font-weight: bold;">100% SIGNAL &middot; ZERO NOISE</span> &bull; <span style="color: #fbbf24; font-weight: bold;">EARN FUNFAIR TOKENS</span><br>
+                    SFX: Laser deflection zap sound for spam bot, pleasant arcade coin ring for token.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    A pristine modern community interface UI with floating gold 3D tokens, green checkmarks, and a digital laser shield blocking spam.
+                </div>
+            </div>
+
+            <!-- Scene 8 -->
+            <div class="scene-card">
+                <div class="scene-header">
+                    <div>
+                        <span class="scene-badge">Scene 8 &middot; The Call to Action</span>
+                        <h3 style="margin: 0.4rem 0 0; font-size: 1.2rem; color: #fff;">Visit Skool About &amp; Join Sunday</h3>
+                    </div>
+                    <span class="duration-badge">⏱️ 0:56 - 1:04 (8.0s)</span>
+                </div>
+                <div class="script-block">
+                    <strong>🎙️ Spoken Voiceover (Founder Voice - Strong Call to Action):</strong><br>
+                    &ldquo;Ready to see for yourself? Visit skool dot com slash delivery pilot slash about right now, pick your seat, and join us this Sunday at 9 PM UK!&rdquo;
+                </div>
+                <div class="animation-block">
+                    <strong>🎨 Roger Rabbit Animation &amp; Visual Action:</strong><br>
+                    A large browser window zooms into focus showing <code>skool.com/delivery-pilot-8938/about</code>. A cursor clicks the bright yellow &ldquo;Join Group&rdquo; button, unlocking the live calendar invite for Sunday 9 PM UK. The animated engineer gives a thumbs up, pointing directly at the URL bar.
+                </div>
+                <div class="overlay-block">
+                    <strong>🔤 Kinetic Text Overlay &amp; SFX:</strong><br>
+                    Text: <span style="color: #fbbf24; font-size: 1.1rem; font-weight: 800;">👉 skool.com/delivery-pilot-8938/about</span><br>
+                    SFX: Crisp mouse click sound, uplifting celebratory musical outro chord.
+                </div>
+                <div class="prompt-box">
+                    <strong>🤖 Google Flow / Visual Prompt:</strong><br>
+                    A bold cinematic closing screen with prominent glowing gold URL skool.com/delivery-pilot-8938/about, pulsating Join button, and Sunday 9 PM UK live badge.
+                </div>
+            </div>
+        </section>
+
+        <!-- Copy-Paste Ready Master Voiceover Teleprompter -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📋 Copy-Paste Master Voiceover Script (Fal.ai ElevenLabs / Founder)</h2>
+            <div class="card" style="background: rgba(15, 23, 42, 0.95); border: 1px solid var(--border-color); position: relative;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">Full 64-Second Voice Track (158 Words)</span>
+                    <button type="button" class="btn btn-secondary" onclick="copyMasterScript()" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">📋 Copy Teleprompter Text</button>
+                </div>
+                <pre id="master-voice-script" style="font-family: var(--font-mono, monospace); font-size: 0.9rem; line-height: 1.7; color: #f1f5f9; white-space: pre-wrap; margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px;">[punchy, energetic]
+Tired of boring slide decks and fake exam promises? The Claude Certified Architect exam doesn’t care about memorized bullet points... it tests production muscle.
+
+[authoritative, direct]
+When you hit rate limits, RAG vector drift, or multi-agent loops in production... standard video courses leave you stuck debugging alone in the dark.
+
+[warm, welcoming]
+That’s why we built Delivery Pilot. Every Sunday at 9 PM UK, we open our live Sunday Practice Room to solve Claude Architect problems live on screen!
+
+[transparent, upbeat]
+Choose how close you sit: Peek completely free for zero dollars. Sit In on weekly screen-shares for one dollar. Or Share Your Screen as a VIP for two-fifty a year!
+
+[grounded, honest]
+Anthropic and Pearson VUE issue the official exam badge. We don’t sell pass guarantees... we build the hands-on architecture competence that makes passing inevitable.
+
+[confident, inspiring]
+Led by a contractor who’s billed over 1.3 million dollars in enterprise projects, we turn you into a high-earning Forward Deployed AI Engineer who co-bids on real tenders.
+
+[direct, focused]
+Inside our Skool community, you get clean living hubs, zero notification spam, active peer unblocking, and Funfair Tokens to spend on practice exams.
+
+[strong, closing call to action]
+Ready to see for yourself? Visit skool dot com slash delivery pilot slash about right now, pick your seat, and join us this Sunday at 9 PM UK!</pre>
+            </div>
+        </section>
+
+        <!-- Strategic Cross-Linkages & Hypotheses -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Strategic Cross-Linkages &amp; Hypotheses</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.1rem;">Validated Business Principles</h3>
+                        <ul class="emoji-list">
+                            <li><strong><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5 (Freemium Entitlement Ladder)</a>:</strong> Clear 3-tier structure ($0 Peek / $1 Sit In / $250 VIP) removes checkout friction and previews Sunday calls without cannibalizing core revenue.</li>
+                            <li><strong><a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29 (Founder Voiceover SOP)</a>:</strong> AI voiceover teaches technical concepts, but community invitations and live Sunday calls are spoken with founder voice authority.</li>
+                            <li><strong><a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30 (Forward Deployed Engineer Persona)</a>:</strong> Positioning shifts from generic certificate seeker to high-value £500–£1,000/day enterprise contractor.</li>
+                            <li><strong><a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8 (Peer Unblocking &amp; Zero Spam)</a>:</strong> Living hubs and anti-spam rules ensure high signal retention.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <h3 class="card-title" style="font-size: 1.1rem;">Related Asset Pages</h3>
+                        <ul class="emoji-list">
+                            <li><a href="skool-about.html" style="color: var(--color-primary);">📝 Skool About Page Copy</a> &mdash; Paste-ready About tab text &amp; listing description.</li>
+                            <li><a href="skool-delivery-pilot-offer.html" style="color: var(--color-primary);">🚪 Delivery Pilot Offer Specs</a> &mdash; Peek / Sit In / Share Screen entitlements.</li>
+                            <li><a href="skool-orientation-video-script.html" style="color: var(--color-primary);">🎬 Orientation Video Script (64s)</a> &mdash; Internal onboarding video for members who just joined.</li>
+                            <li><a href="../growth/founder-voice-skool-cta.html" style="color: var(--color-primary);">🎙️ Founder Voice Skool CTA SOP</a> &mdash; Standard operating procedure for recording spoken CTAs.</li>
+                            <li><a href="../growth/roger-rabbit-animation.html" style="color: var(--color-primary);">🐇 Roger Rabbit Animation Style</a> &mdash; Mixed-reality animation production toolchain.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Revision Tracking -->
+    <footer class="container" style="margin-top: 3rem; padding-bottom: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">
+            Delivery Pilot &middot; AI Certification Customer Development &middot; Pexabo Ltd
+        </p>
+        <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; display: block; padding-top: 0.5rem; margin-top: 0.5rem;">
+            Latest Change: Created Skool About Promo Video Script & 8-second modular scene animations (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-about-promo-video-script.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+        </span>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        const scenes = [
+            {
+                id: 1,
+                title: "Scene 1: The Slide Deck Trap vs Live Cockpit",
+                time: "00:00 - 00:08 (Scene 1 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [PUNCHY & ENERGETIC]",
+                words: "21 words · ~158 WPM",
+                script: '"Tired of boring slide decks and fake exam promises? The Claude Certified Architect exam doesn’t care about memorized bullet points... it tests production muscle."',
+                icon: "🖥️ ⚡ 💥",
+                headline: '"Stop Memorizing Boring Slides."',
+                animDesc: "Cartoon engineer bursts through a dull PowerPoint slide into a futuristic, multi-monitor AI architecture cockpit with glowing Claude blueprints.",
+                overlay: "⚡ Overlay: NO BORING SLIDES. BUILD REAL AI ARCHITECTURE."
+            },
+            {
+                id: 2,
+                title: "Scene 2: The Production Wall & Rate Limits",
+                time: "00:08 - 00:16 (Scene 2 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [AUTHORITATIVE & DIRECT]",
+                words: "20 words · ~150 WPM",
+                script: '"When you hit rate limits, RAG vector drift, or multi-agent loops in production... standard video courses leave you stuck debugging alone in the dark."',
+                icon: "🛑 ⚠️ 🧱",
+                headline: '"The Production Wall Leaves You Stuck."',
+                animDesc: "Red HTTP 429 RateLimit and Vector Drift error popups cascade across the screen, dropping a massive brick wall in front of a lone developer.",
+                overlay: "⚠️ Overlay: STUCK IN PRODUCTION? NEVER DEBUG ALONE."
+            },
+            {
+                id: 3,
+                title: "Scene 3: The Sunday Practice Room",
+                time: "00:16 - 00:24 (Scene 3 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [WARM & WELCOMING]",
+                words: "22 words · ~165 WPM",
+                script: '"That’s why we built Delivery Pilot. Every Sunday at 9 PM UK, we open our live Sunday Practice Room to solve Claude Architect problems live on screen!"',
+                icon: "🚪 💡 🌐",
+                headline: '"Sunday 9 PM UK: Live Practice Room Opens."',
+                animDesc: "A glowing futuristic portal opens to reveal a room of animated engineers sharing terminals and debugging live Claude Sonnet 3.7 graphs together.",
+                overlay: "🌐 Overlay: EVERY SUNDAY · 9:00 PM UK LIVE"
+            },
+            {
+                id: 4,
+                title: "Scene 4: 3 Transparent Doors (Peek, Sit In, Share Screen)",
+                time: "00:24 - 00:32 (Scene 4 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [TRANSPARENT & UPBEAT]",
+                words: "24 words · ~180 WPM",
+                script: '"Choose how close you sit: Peek completely free for zero dollars. Sit In on weekly screen-shares for one dollar. Or Share Your Screen as a VIP for two-fifty a year!"',
+                icon: "🎟️ 🚪 👑",
+                headline: '"Peek: $0 | Sit In: $1/mo | Share Screen: $250/yr"',
+                animDesc: "Three sliding glass doors slide onto screen with glowing badges: $0 Blue Peek, $1 Emerald Sit In, and $250 Golden VIP Share Screen.",
+                overlay: "🎟️ Overlay: PEEK $0 · SIT IN $1/MO · SHARE SCREEN $250/YR"
+            },
+            {
+                id: 5,
+                title: "Scene 5: No False Badges — Real Hands-on Competence",
+                time: "00:32 - 00:40 (Scene 5 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [GROUNDED & HONEST]",
+                words: "20 words · ~150 WPM",
+                script: '"Anthropic and Pearson VUE issue the official exam badge. We don’t sell pass guarantees... we build the hands-on architecture competence that makes passing inevitable."',
+                icon: "🏅 🛡️ ✍️",
+                headline: '"Pearson VUE Issues Badges. We Build Real Skills."',
+                animDesc: "Official Pearson VUE stamp strikes the screen with green ink over a live interactive microservices terminal graph.",
+                overlay: "🛡️ Overlay: ZERO FAKE CLAIMS · 100% PRACTITIONER SKILLS"
+            },
+            {
+                id: 6,
+                title: "Scene 6: The £1,000/Day Contractor Path",
+                time: "00:40 - 00:48 (Scene 6 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [CONFIDENT & INSPIRING]",
+                words: "21 words · ~158 WPM",
+                script: '"Led by a contractor who’s billed over 1.3 million dollars in enterprise projects, we turn you into a high-earning Forward Deployed AI Engineer who co-bids on real tenders."',
+                icon: "💼 🚀 📈",
+                headline: '"£1.3M+ Contractor Track Record & Tender Alliance."',
+                animDesc: "Founder avatar stands before London city skyline with holographic £500-£1,000/day enterprise contract pipeline nodes glowing.",
+                overlay: "📈 Overlay: £500 - £1,000/DAY CONTRACTOR PIPELINE"
+            },
+            {
+                id: 7,
+                title: "Scene 7: High Signal Living Hubs & Zero Spam",
+                time: "00:48 - 00:56 (Scene 7 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [DIRECT & ENERGETIC]",
+                words: "18 words · ~135 WPM",
+                script: '"Inside our Skool community, you get clean living hubs, zero notification spam, active peer unblocking, and Funfair Tokens to spend on practice exams."',
+                icon: "🛡️ 🪙 📚",
+                headline: '"100% Signal, Zero Spam & Funfair Tokens."',
+                animDesc: "Skool community UI displays clean living hubs while a laser shield deflects a spam bot and awards a gold Funfair token.",
+                overlay: "🛡️ Overlay: HIGH SIGNAL · PEER UNBLOCKING · FUNFAIR TOKENS"
+            },
+            {
+                id: 8,
+                title: "Scene 8: Direct Skool About Page Call to Action",
+                time: "00:56 - 01:04 (Scene 8 of 8)",
+                duration: 8,
+                emotion: "🎙️ EMOTION: [STRONG CLOSING CTA]",
+                words: "22 words · ~165 WPM",
+                script: '"Ready to see for yourself? Visit skool dot com slash delivery pilot slash about right now, pick your seat, and join us this Sunday at 9 PM UK!"',
+                icon: "👉 🌟 🚀",
+                headline: '"skool.com/delivery-pilot-8938/about"',
+                animDesc: "Close-up of Skool About page as mouse clicks 'Join Group' and Sunday 9 PM UK calendar badge lights up with confetti.",
+                overlay: "👉 Overlay: VISIT skool.com/delivery-pilot-8938/about NOW"
+            }
+        ];
+
+        let currentSceneIndex = 0;
+        let isPlaying = false;
+        let playInterval = null;
+
+        function updateSceneDisplay(index) {
+            currentSceneIndex = index;
+            const scene = scenes[index];
+
+            document.getElementById('player-scene-title').textContent = scene.title;
+            document.getElementById('player-time-indicator').textContent = scene.time;
+            document.getElementById('player-emotion-tag').textContent = scene.emotion;
+            document.getElementById('player-word-count').textContent = scene.words;
+            document.getElementById('player-spoken-script').textContent = scene.script;
+
+            document.getElementById('stage-icon').textContent = scene.icon;
+            document.getElementById('stage-headline').textContent = scene.headline;
+            document.getElementById('stage-animation-desc').textContent = scene.animDesc;
+            document.getElementById('stage-overlay').textContent = scene.overlay;
+
+            // Update timeline segments
+            const segments = document.querySelectorAll('.timeline-segment');
+            segments.forEach((seg, idx) => {
+                seg.className = 'timeline-segment';
+                if (idx === index) {
+                    seg.classList.add('active');
+                } else if (idx < index) {
+                    seg.classList.add('passed');
+                }
+            });
+        }
+
+        function nextScene() {
+            if (currentSceneIndex < scenes.length - 1) {
+                updateSceneDisplay(currentSceneIndex + 1);
+            } else {
+                pausePlayer();
+                updateSceneDisplay(0);
+            }
+        }
+
+        function prevScene() {
+            if (currentSceneIndex > 0) {
+                updateSceneDisplay(currentSceneIndex - 1);
+            }
+        }
+
+        function jumpToScene(index) {
+            updateSceneDisplay(index);
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                pausePlayer();
+            } else {
+                startPlayer();
+            }
+        }
+
+        function startPlayer() {
+            isPlaying = true;
+            document.getElementById('btn-play-pause').textContent = "⏸ Pause";
+            document.getElementById('btn-play-pause').classList.remove('btn-primary');
+            document.getElementById('btn-play-pause').classList.add('btn-secondary');
+            document.getElementById('player-status-badge').textContent = "Playing 8s Animation Loop";
+            document.getElementById('player-status-badge').style.background = "rgba(56, 189, 248, 0.2)";
+            document.getElementById('player-status-badge').style.color = "#38bdf8";
+
+            playInterval = setInterval(() => {
+                if (currentSceneIndex < scenes.length - 1) {
+                    nextScene();
+                } else {
+                    pausePlayer();
+                    updateSceneDisplay(0);
+                }
+            }, 8000);
+        }
+
+        function pausePlayer() {
+            isPlaying = false;
+            clearInterval(playInterval);
+            document.getElementById('btn-play-pause').textContent = "▶ Play 64s";
+            document.getElementById('btn-play-pause').classList.remove('btn-secondary');
+            document.getElementById('btn-play-pause').classList.add('btn-primary');
+            document.getElementById('player-status-badge').textContent = "Paused";
+            document.getElementById('player-status-badge').style.background = "rgba(245, 158, 11, 0.2)";
+            document.getElementById('player-status-badge').style.color = "#fbbf24";
+        }
+
+        function resetPlayer() {
+            pausePlayer();
+            updateSceneDisplay(0);
+            document.getElementById('player-status-badge').textContent = "Ready to Play";
+            document.getElementById('player-status-badge').style.background = "rgba(16, 185, 129, 0.2)";
+            document.getElementById('player-status-badge').style.color = "#34d399";
+        }
+
+        function copyMasterScript() {
+            const scriptText = document.getElementById('master-voice-script').innerText;
+            navigator.clipboard.writeText(scriptText).then(() => {
+                alert("Master voiceover script copied to clipboard!");
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSceneDisplay(0);
+        });
+    </script>
+</body>
+</html>
