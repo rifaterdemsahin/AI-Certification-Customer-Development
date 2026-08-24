@@ -1,7 +1,7 @@
-# Customer Discovery Interview: Bayo
+# Customer Discovery Interview: B.
 
 - **Date Logged:** Aug 24, 2026, 12:02 PM
-- **Candidate Name:** Bayo (IT Practitioner / Cohort Member)
+- **Candidate Name:** B. (IT Practitioner / Cohort Member)
 - **Channel / Location:** WhatsApp Video Message (Direct Feedback)
 - **Referral / Source:** Live Cohort & Delivery Pilot Community
 - **Related Hypotheses:** H24, H29, H1, H5, H8, H25, H30
@@ -25,7 +25,7 @@
 - **The "Too Many Irons in the Fire" Syndrome:** Over-commitment across multiple fronts leads to burnout and drop-off if educational products demand heavy synchronous presence without low-friction async bridges.
 
 ## 5. Key Gains Identified & Operational Strategy
-- **Uncompromised Intent for Anthropic Certification (H1 / H25):** Despite extreme fatigue, Bayo explicitly reaffirms his intention to pursue the Anthropic qualification (*"although I'm definitely going to be doing the Anthropic qualification"*), validating sustained market demand for the credential once head space clears.
+- **Uncompromised Intent for Anthropic Certification (H1 / H25):** Despite extreme fatigue, B. explicitly reaffirms his intention to pursue the Anthropic qualification (*"although I'm definitely going to be doing the Anthropic qualification"*), validating sustained market demand for the credential once head space clears.
 - **Voluntary Redundancy as a Catalyst for Forward Deployed Engineer / Contractor Pivot (H30):** Exiting a legacy role creates the exact window needed to upskill and reposition as an independent AI contractor / Delivery Pilot partner.
 - **Proactive Trust & Relationship Retention (H29):** High-touch, empathetic community culture prevents ghosting; candidate feels safe and valued enough to send a personal video apology explaining his timeline rather than churning silently.
 - **Asynchronous Living Hub Value:** Highlights the necessity of evergreen video replays, structured onboarding checklists, and modular catch-up materials so members can resume momentum post-exit.
