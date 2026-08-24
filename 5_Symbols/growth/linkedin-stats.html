@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Page Analytics: Delivery Pilot | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .analytics-hero-card {
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.12) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(10, 102, 194, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .analytics-hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #0a66c2;
+        }
+        .linkedin-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(10, 102, 194, 0.2);
+            color: #70b5f9;
+            border: 1px solid rgba(10, 102, 194, 0.4);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .stat-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .stat-box:hover {
+            transform: translateY(-2px);
+            border-color: #0a66c2;
+        }
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .stat-tip {
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid #0a66c2;
+            padding: 0.5rem 0.65rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 0.5rem;
+        }
+        .stat-status-down {
+            color: #ef4444;
+        }
+        .stat-status-zero {
+            color: #94a3b8;
+        }
+        .action-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .action-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            color: #38bdf8;
+        }
+        .action-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+        .playbook-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+        }
+        .step-badge {
+            background: #0a66c2;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <a href="metrics-dashboard.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                &larr; Back to Metrics Dashboard
+            </a>
+            <span style="color: var(--text-secondary);">&bull;</span>
+            <a href="youtube-channel-metrics.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                📺 YouTube Channel Metrics
+            </a>
+            <span style="color: var(--text-secondary);">&bull;</span>
+            <a href="linkedin-vip-cowork.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                💼 LinkedIn 30k Cap &amp; VIP Cowork
+            </a>
+        </div>
+
+        <div class="analytics-hero-card animate-fade-in">
+            <span class="linkedin-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66 1.66 1.66 0 0 0-1.66-1.66Z"/></svg>
+                LinkedIn Page Telemetry &middot; Weekly Analytics
+            </span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 0.5rem;">
+                📊 Weekly Page Analytics: Delivery Pilot
+            </h1>
+            <p style="color: #94a3b8; font-size: 1rem; margin-bottom: 1.25rem;">
+                Administrator: <strong>Erdem Sahin</strong> &bull; Entity: <strong>Delivery Pilot</strong> &bull; Reporting Window: <strong style="color: #38bdf8;">8/9/2026 &ndash; 8/15/2026</strong> (Trailing 7-Day Performance)
+            </p>
+            <p style="color: var(--text-secondary); max-width: 82ch; line-height: 1.65; margin: 0;">
+                Live telemetry capture from the official LinkedIn company page of <strong>Delivery Pilot</strong>. Tracks organic top-of-funnel discovery, company updates, unique visitor volume, and follower conversion efficiency against hypotheses <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> (Organic Cohort Sales), <a href="../hypotheses/hyp-h7.html" style="color: var(--color-primary);">H7</a> (CTR &amp; Conversion Funnel), and <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a> (Delivery Pilot Transformation &amp; B2B Alliance).
+            </p>
+        </div>
+
+        <section class="content-section animate-fade-in">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h2 class="section-title" style="margin: 0;">📈 Recorded Weekly Telemetry (8/9/2026 &ndash; 8/15/2026)</h2>
+                <span class="badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1;">Baseline Audit &middot; Pre-Campaign Period</span>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div>
+                        <div class="stat-num stat-status-zero">0</div>
+                        <div class="stat-label">Visitors</div>
+                    </div>
+                    <div class="stat-tip">
+                        💡 <strong>LinkedIn Recommendation:</strong> To drive more visitors to Delivery Pilot, post regularly.
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div>
+                        <div class="stat-num stat-status-zero">0</div>
+                        <div class="stat-label">Organic Post Impressions</div>
+                    </div>
+                    <div class="stat-tip">
+                        💡 <strong>LinkedIn Recommendation:</strong> To drive impressions, engage audiences with different types of media.
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div>
+                        <div class="stat-num stat-status-zero">0</div>
+                        <div class="stat-label">Updates Published</div>
+                    </div>
+                    <div class="stat-tip">
+                        💡 <strong>LinkedIn Recommendation:</strong> To post updates, leverage your admin feed and relevant hashtags.
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div>
+                        <div class="stat-num stat-status-down">-1</div>
+                        <div class="stat-label">New Followers</div>
+                    </div>
+                    <div class="stat-tip">
+                        💡 <strong>LinkedIn Recommendation:</strong> To grow your audience, invite connections to follow Delivery Pilot.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="background: rgba(15, 23, 42, 0.5); border-left: 4px solid var(--color-info); margin-top: 1.5rem;">
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.6;">
+                    ℹ️ <em>Telemetry Notes:</em> Percentage change shown by LinkedIn is calculated against the previous 7 days. The recorded figures confirm zero publishing activity on the company page during this sprint window, resulting in flat discovery and a net drop of 1 follower due to baseline profile churn.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔍 Strategic Diagnosis &amp; Funnel Asymmetry</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #38bdf8;">
+                        <h3 style="color: #38bdf8; font-size: 1.2rem; margin-top: 0;">1. Personal Brand vs. Company Page Asymmetry</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65;">
+                            Rifat Erdem Sahin operates with a personal LinkedIn network capped near <strong>30,000 connections</strong> (<a href="linkedin-vip-cowork.html" style="color: var(--color-primary);">LinkedIn 30k Cap</a>). However, organic sharing and discovery efforts have been primarily channeled through personal DMs, YouTube video descriptions, and Skool community posts.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65;">
+                            The <strong>Delivery Pilot</strong> company page has remained an unpopulated entity placeholder. Because the LinkedIn algorithm suppresses dormant pages, zero updates equate directly to zero organic impressions and zero discovery.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #f59e0b;">
+                        <h3 style="color: #f59e0b; font-size: 1.2rem; margin-top: 0;">2. Role of the Company Page in Stage 2 &rarr; 3</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65;">
+                            While YouTube and personal LinkedIn profiles acquire individual students and FDE candidates (<a href="../product/youtube-skool-handoff.html" style="color: var(--color-primary);">Audience Handoff</a>), the <strong>Delivery Pilot</strong> company page serves as the critical <em>institutional proof anchor</em> for:
+                        </p>
+                        <ul class="emoji-list" style="font-size: 0.875rem; color: var(--text-secondary);">
+                            <li>🏢 Enterprise clients and hiring managers verifying contractor alliance credibility (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).</li>
+                            <li>🤝 Partner companies seating Pearson VUE Claude Architect candidates (<a href="../product/partners.html" style="color: var(--color-primary);">Partners</a>).</li>
+                            <li>💼 VIP Claude Cowork alumni tagging Delivery Pilot as their verified practice guild.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🚀 4-Step Activation Playbook for Delivery Pilot LinkedIn Page</h2>
+            <div class="card">
+                <div class="playbook-step">
+                    <div class="step-badge">1</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.35rem 0; color: var(--text-primary);">Leverage 250 Monthly Admin Invitations</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+                            LinkedIn grants company page admins 250 invitation credits every month that replenish upon acceptance. Rifat will systematically invite active Skool community members, Sunday workshop attendees, and target cloud contractor recruiters from his 30k personal network.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="playbook-step">
+                    <div class="step-badge">2</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.35rem 0; color: var(--text-primary);">Syndicate Animated Roger Rabbit Short Clips (aug-video-animation-2)</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+                            Convert YouTube concept animations (e.g. <em>"Building an AI Knowledge Engine"</em>, <em>"Context Engineering"</em>) into native LinkedIn video posts with multi-media carousels. LinkedIn video posts achieve up to 3x higher organic reach than plain text.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="playbook-step">
+                    <div class="step-badge">3</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.35rem 0; color: var(--text-primary);">Deploy Daily Community Promotion Templates</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+                            Execute the copy-paste post templates from <a href="daily-community-promotion-templates.html" style="color: var(--color-primary);">Daily Promo Templates</a> on a bi-weekly cadence (Tuesday Practitioner Insight &amp; Thursday VIP Cowork Spotlight) utilizing hashtags <code>#ForwardDeployedEngineer #AICertification #ClaudeArchitect #DeliveryPilot #DevOps</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="playbook-step">
+                    <div class="step-badge">4</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.35rem 0; color: var(--text-primary);">Publish LinkedIn Newsletter Editions</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+                            Publish the finalized newsletter edition (<a href="linkedin-newsletter.html" style="color: var(--color-primary);">LinkedIn Newsletter: Skool &amp; Delivery Pilot</a>) under the Delivery Pilot organization umbrella to generate push notifications to all subscribers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📊 Cross-Channel Telemetry Comparison</h2>
+            <div class="card">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Channel</th>
+                            <th style="padding: 0.75rem 0.5rem;">Active Metric</th>
+                            <th style="padding: 0.75rem 0.5rem;">Current Baseline</th>
+                            <th style="padding: 0.75rem 0.5rem;">Next Milestone Target</th>
+                            <th style="padding: 0.75rem 0.5rem;">Hypothesis</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.9rem;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600; color: #0a66c2;">LinkedIn Company Page</td>
+                            <td style="padding: 0.75rem 0.5rem;">Weekly Impressions &amp; Followers</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #ef4444;">0 imp / -1 net flw (8/9-8/15)</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8;">&gt;500 imp / +25 followers/wk</td>
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600; color: #0077b5;">LinkedIn Founder Profile</td>
+                            <td style="padding: 0.75rem 0.5rem;">Total Connections</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #10b981;">~30,000 (At Platform Cap)</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #cbd5e1;">Curate Skool-only adds</td>
+                            <td style="padding: 0.75rem 0.5rem;"><a href="linkedin-vip-cowork.html" style="color: var(--color-primary);">Cap SOP</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600; color: #ff0000;">YouTube Channel</td>
+                            <td style="padding: 0.75rem 0.5rem;">Subscribers &amp; Watch Retention</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #f59e0b;">~30 subs / 62.6% top retention</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8;">30,000 subs (<a href="../hypotheses/hyp-h13.html" style="color: var(--color-primary);">H13</a>)</td>
+                            <td style="padding: 0.75rem 0.5rem;"><a href="youtube-channel-metrics.html" style="color: var(--color-primary);">YouTube Metrics</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600; color: #10b981;">Skool Community</td>
+                            <td style="padding: 0.75rem 0.5rem;">Total Members &amp; Live Regulars</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #10b981;">21 members / 10 regulars target</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #38bdf8;">100 members (<a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>)</td>
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../product/skool-delivery-pilot-offer.html" style="color: var(--color-primary);">Offer Spec</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border-color); margin-top: 3rem;">
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            AI Certification Helper &mdash; Customer Development Framework
+        </p>
+        <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; display: inline-block;">
+            Latest Change: Initial creation of LinkedIn Page Analytics baseline (8/9/2026 - 8/15/2026) telemetry, strategic asymmetry diagnosis, and 4-step page activation playbook (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/linkedin-stats.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+        </span>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

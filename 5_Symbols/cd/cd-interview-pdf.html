@@ -395,6 +395,7 @@
                 </label>
                 <select id="interview-select" class="form-control" style="width: auto; min-width: 250px; background: #1f2937; color: #fff; border: 1px solid var(--border-accent); border-radius: 6px; padding: 0.4rem 0.75rem;" onchange="loadInterview(this.value)">
                     <option value="blank">📝 📄 Blank Printable Sheet (Ruled Lines for OCR Notes)</option>
+                    <option value="jamal">👤 Jamal (IT Consultant &mdash; Exam Score 644 &amp; Consulting Firm $100 Bonus)</option>
                     <option value="b">👤 B. (Burnout, Voluntary Redundancy &amp; Anthropic Qualification Intent)</option>
                     <option value="bayo" style="display:none;">👤 B. (Burnout, Voluntary Redundancy &amp; Anthropic Qualification Intent)</option>
                     <option value="charles">👤 Charles ("Cooking Steak: Low &amp; Slow" &amp; Non-Urgent AI Projects)</option>
@@ -558,6 +559,20 @@
     <script src="../../main.js"></script>
 
     <script>
+        var jamalInterviewData = {
+            name: "Jamal (IT Consultant)",
+            channel: "Professional Network & Enterprise Consulting",
+            referral: "Enterprise Consulting Discovery",
+            date: "Aug 24, 2026 • Enterprise Discovery",
+            hypotheses: ["H12 (Consulting B2B Demand)", "H27 (Practice Exam Gap)", "H8 (Live Cohort PMF)", "H21 ($29 Exam Prep Bundle)", "H25 (Cert Bifurcation)", "H1 (Skills Demand)", "H3 (WTP / Bonus Arbitrage)", "H30 (Delivery Pilot / Contractor)"],
+            routine: "Working as an IT consultant on client delivery projects; studying for cloud & AI vendor certifications subsidized by employer.",
+            workaround: "Company paid entry fee for Claude Certified Architect Foundations; studied standard docs and online materials, but lacked scenario mock exams.",
+            stories: "Candidate Account: Jamal sat for the Claude Certified Architect Foundations exam. His company paid his entry exam fee and offers a $100 dollar bonus for passing. He studied, but it was not enough—he scored 644/1000 (pass threshold is 720). Major consulting firms (Accenture, IBM, Capgemini) provide these fee sponsorships and $100 bonuses to build certified practitioner quotas for Claude Partner Network tiers.",
+            pains: "Scored 644 (76 points below pass line); general study materials lack scenario depth; near-miss frustration after employer sponsored the voucher.",
+            gains: "Validation of B2B consulting sponsorship and $100 pass bonuses; immediate positive ROI ($71 net) for buying the $29 Exam Prep Bundle to bridge the 644->720 gap.",
+            gtm: "• Bonus Arbitrage Marketing (H21/H12): Market the $29 Prep Bundle directly to Accenture/IBM/Capgemini consultants as a guaranteed way to unlock their $100 pass bonus.\n• Practice Exam Gap Framing (H27): Highlight that general reading leads to 600-band near misses; realistic mock exams with domain diagnostics are mandatory."
+        };
+
         var bInterviewData = {
             name: "B. (IT Practitioner & Cohort Member)",
             channel: "WhatsApp Video Message (Direct Feedback)",
@@ -574,6 +589,7 @@
 
         // Pre-loaded Customer Discovery Interview Database
         var interviewDatabase = {
+            jamal: jamalInterviewData,
             b: bInterviewData,
             bayo: bInterviewData,
             charles: {

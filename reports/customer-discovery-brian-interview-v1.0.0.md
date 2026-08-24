@@ -1,6 +1,9 @@
+> [!NOTE]
+> **Superseded by v1.1.0:** See [customer-discovery-brian-interview-v1.1.0.md](customer-discovery-brian-interview-v1.1.0.md) for the 2026-08-24 update on multi-timezone coordination (India & US), slot scarcity, and failure-triggered course enrollment.
+
 # Customer Discovery Report: Brian Interview — "Skills Pay the Bills" & The Indispensable Guide Model
 
-**Report Version:** v1.0.0  
+**Report Version:** v1.0.0 (Superseded by v1.1.0)  
 **Date:** 2026-08-20  
 **Interview Source:** `interview_brian_2026-08-20.md`  
 **Candidate:** Brian (Professional Network & Skool Community / Sunday Cohort Attendee)  
