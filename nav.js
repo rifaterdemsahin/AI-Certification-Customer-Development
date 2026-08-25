@@ -130,6 +130,7 @@
                 ['5_Symbols/strategy/the-brothers-karamazov.html', '⚖️ The Brothers Karamazov (Dostoevsky: Emotions)'],
                 ['5_Symbols/product/vc-deck.html', '🎤 VC Deck'],
                 ['5_Symbols/product/vc-feedback.html', '🏦 VC Constructive Feedback'],
+                ['5_Symbols/product/chatgpt-investor-feedback.html', '🤖 ChatGPT Investor Feedback'],
                 ['5_Symbols/strategy/alex-hormozi-agent.html', '🏋️ Alex Hormozi Agent'],
                 ['5_Symbols/strategy/one-vs-many-live.html', '🏟️ 1-1 vs One Live Class'],
                 ['5_Symbols/strategy/leverages.html', '🏋️ Leverages & Unfair Advantages'],
@@ -338,6 +339,8 @@
                 ['markdown_renderer.html?src=reports/customer-discovery-rakesh-interview-v1.0.0.md', '👤 Rakesh CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-apo-interview-v1.0.0.md', '👤 Apo CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-baran-g-interview-v1.0.0.md', '👤 Baran G CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-mehmet-interview-v1.0.0.md', '👤 Mehmet CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/chatgpt-narrative-and-investor-feedback-v1.0.0.md', '🤖 ChatGPT Investor Feedback v1.0'],
                 ['markdown_renderer.html?src=reports/cohort-session-8-analysis-v1.0.0.md', '🎙️ Cohort Session 8 Deep Dive v1.0'],
                 ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0'],
                 ['markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', '📡 Skool Availability v1.0'],
@@ -353,6 +356,9 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/product/chatgpt-investor-feedback.html', title: 'ChatGPT Investor & Narrative Feedback', desc: 'Critical external assessment from ChatGPT Web Version: concept 8/10, market logic 8/10, investor readiness 6/10, 4 rewritten core cards, secret insight, and 6-step value stack.', cat: 'Product', tags: 'chatgpt investor feedback web version narrative 4 core cards secret insight visual ai education value stack tam sam som research and markets pearson vue gov uk vc pitch h1 h2 h3 h5 h6 h8 h12 h21' },
+        { url: 'markdown_renderer.html?src=reports/chatgpt-narrative-and-investor-feedback-v1.0.0.md', title: 'ChatGPT Narrative & Investor Readiness Feedback Report v1.0.0', desc: 'Detailed report evaluating business model narrative, 4 core cards, TAM/SAM/SOM market sizing rigor, defensible secret insight, and cohort value stack.', cat: 'Docs', tags: 'chatgpt narrative investor readiness feedback report 4 core cards secret insight visual ai education value stack research and markets pearson vue gov uk h1 h2 h3 h5 h6 h8 h12 h21 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-mehmet-interview-v1.0.0.md', title: 'Customer Discovery Report: Mehmet Interview', desc: 'Qualitative analysis of Mehmet interview on "1k Short vs. 3dk Course", creator watering holes (Erhan Meydan, Suna & Akın), reverse response marketing, and £1,000 corporate vs D2C membership pricing.', cat: 'Docs', tags: 'mehmet customer discovery interview shorts reels micro format 1k short 3dk course erhan meydan suna akin reverse response marketing corporate 1000 pound d2c membership founder schedule time discipline h2 h3 h5 h10 h12 h21 h24 h28 h29 h30 report' },
         { url: '5_Symbols/dashboard/content-kanban-release-schedule.html', title: 'Content Kanban & 5-Minute Video Release Master Schedule', desc: 'Visual Kanban board and chronological 12-week video release calendar pairing 5-minute modular lessons with explicit Learning Objectives and Key Results.', cat: 'Dashboard', tags: 'kanban release schedule content calendar 5-minute video modular learning objectives key results okrs video production aug-video-animation-2 youtube skool lo kr h2 h4 h5 h10 h29 h30' },
         { url: '5_Symbols/growth/course-curriculum-learning-objectives.html', title: 'AI Course Curriculum & 5-Minute Video Learning Objectives (LOs & KRs)', desc: 'Modular 5-minute video blueprints pairing Learning Objectives (LOs) with Key Results (KRs) across Certified Associate, Developer, and Certified Architect tracks, linked to Content Locator.', cat: 'Growth', tags: 'course curriculum 5-minute video learning objectives key results okrs certified associate foundations developer track certified architect foundations claude architect professional content locator flywheel churn reduction single founder bandwidth h2 h4 h5 h10 h29 h30' },
         { url: '5_Symbols/strategy/enterprise-demanded-certifications.html', title: 'Enterprise Demanded Certifications & Job Spec Breakdown', desc: 'Breakdown of active 18-month M365 Copilot Solution Architect contract spec requiring MS-102, SC-401, AB-900, AB-100, AB-730, and the 2+ certification screening gate for enterprise AI.', cat: 'Strategy', tags: 'enterprise demanded certifications job spec microsoft 365 copilot solution architect 18-month contract paye uk ireland remote ms-102 sc-401 ab-900 ab-100 ab-730 copilot studio ai agents purview entra id security governance change management h1 h14 h25 h30' },
