@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Kanban &middot; 5-Minute Video Release Schedule | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="description" content="Interactive visual Kanban board and multi-track release schedule for 5-minute modular AI course videos across Certified Associate, Developer, and Architect tracks.">
+    <style>
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+        .kanban-col {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+        .kanban-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .kanban-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 0.85rem;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+        .kanban-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+        }
+        .kanban-tag {
+            font-size: 0.72rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+        }
+        .tag-associate { background: rgba(99, 102, 241, 0.2); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.4); }
+        .tag-dev { background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.4); }
+        .tag-arch { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+        .tag-pro { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .schedule-table th, .schedule-table td {
+            padding: 0.85rem 0.65rem;
+        }
+        .filter-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--color-primary);
+            color: #fff;
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="weekly-todos.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Weekly Operating Cadence (weekly-todos.html)
+        </a>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary); position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Visual Production Pipeline &middot; 5-Min Modular Engine</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin: 0.75rem 0 0.5rem 0;">📋 Content Kanban &amp; Video Release Schedule</h1>
+                    <p style="color: var(--text-secondary); max-width: 82ch; font-size: 1.05rem; line-height: 1.6;">
+                        Real-time visual Kanban board and chronological release calendar for 5-minute modular certification videos. Pairs every release with its explicit <strong>Learning Objective (LO)</strong>, <strong>Key Result artifact (KR)</strong>, and <strong>Community Flywheel Hook</strong> to turn organic discovery into compounding Skool enrollment.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="../growth/course-curriculum-learning-objectives.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.65rem 1.25rem; border-radius: 8px; text-align: center; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);">
+                        🎯 View Full LO &amp; KR Matrix &rarr;
+                    </a>
+                    <a href="https://rifaterdemsahin.github.io/content-locator-for-ai-certification-courses/" target="_blank" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.45rem 1rem; border-radius: 6px; text-align: center;">
+                        📍 Live Content Locator
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metric Pulse Cards -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2rem;">
+            <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div class="metric-card" style="border-top: 3px solid #38bdf8;">
+                    <div class="metric-val" style="color: #38bdf8;">3 Videos / Wk</div>
+                    <div class="metric-lbl">Production Cadence (Tue &middot; Thu &middot; Sat)</div>
+                </div>
+                <div class="metric-card" style="border-top: 3px solid #818cf8;">
+                    <div class="metric-val" style="color: #818cf8;">300s / Video</div>
+                    <div class="metric-lbl">Atomic 5-Min Modular Format</div>
+                </div>
+                <div class="metric-card" style="border-top: 3px solid #10b981;">
+                    <div class="metric-val" style="color: #34d399;">100% Matched</div>
+                    <div class="metric-lbl">Learning Objectives &amp; Key Results</div>
+                </div>
+                <div class="metric-card" style="border-top: 3px solid #f59e0b;">
+                    <div class="metric-val" style="color: #fbbf24;">4 Tracks</div>
+                    <div class="metric-lbl">Associate &middot; Dev &middot; Arch &middot; Pro</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Interactive Kanban Board -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">📌 Live Production Kanban Board</h2>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button class="filter-btn active" onclick="filterKanban('all', this)">All Tracks</button>
+                    <button class="filter-btn" onclick="filterKanban('associate', this)">Associate</button>
+                    <button class="filter-btn" onclick="filterKanban('dev', this)">Developer</button>
+                    <button class="filter-btn" onclick="filterKanban('arch', this)">Architect</button>
+                    <button class="filter-btn" onclick="filterKanban('pro', this)">Professional</button>
+                </div>
+            </div>
+
+            <div class="kanban-board">
+                <!-- Column 1: Backlog -->
+                <div class="kanban-col">
+                    <div class="kanban-header">
+                        <span style="color: var(--text-secondary);">📥 Backlog</span>
+                        <span class="badge" style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: var(--text-muted);">9 Queued</span>
+                    </div>
+
+                    <div class="kanban-card" data-track="arch">
+                        <span class="kanban-tag tag-arch">Arch Foundations</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 2.2: Integrating Backend Systems &amp; Custom MCP Servers</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">PostgreSQL / Vector DB live connector harness.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Live SQL semantic queries from Claude.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="dev">
+                        <span class="kanban-tag tag-dev">Developer Track</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 2.3: Token Optimization &amp; Prompt Caching</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Breakpoints, cost controls, and latency trimming.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: 85%+ cache read hit on 100k token repo.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="pro">
+                        <span class="kanban-tag tag-pro">Architect Pro</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Module 3: Project-Level Steering &amp; Session Isolation</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Persistent CLAUDE.md hierarchy and sandboxed execution.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Deterministic multi-tenant execution guardrails.</div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Scripting & Storyboarding -->
+                <div class="kanban-col">
+                    <div class="kanban-header">
+                        <span style="color: #fbbf24;">📝 Scripting &amp; LO/KR</span>
+                        <span class="badge" style="font-size: 0.75rem; background: rgba(245, 158, 11, 0.15); color: #fbbf24;">3 Active</span>
+                    </div>
+
+                    <div class="kanban-card" data-track="associate">
+                        <span class="kanban-tag tag-associate">Associate</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 2.1: Configuring Projects &amp; Custom Instructions</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Structuring persistent knowledge docs and steering personas.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: 3-doc Project workspace initialized.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="associate">
+                        <span class="kanban-tag tag-associate">Associate</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 2.2: Research Mode &amp; Interactive Artifacts</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Generating standalone React and SVG interactive tools.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Standalone ROI Calculator artifact.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="dev">
+                        <span class="kanban-tag tag-dev">Developer Track</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 1.2: Building Agents with the Agent SDK</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Recursive agent loop with state passing and tool calls.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Autonomous JSON updater agent script.</div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Animating & Recording -->
+                <div class="kanban-col">
+                    <div class="kanban-header">
+                        <span style="color: #38bdf8;">🎬 Animating &amp; Rendering</span>
+                        <span class="badge" style="font-size: 0.75rem; background: rgba(14, 165, 233, 0.15); color: #38bdf8;">2 In Progress</span>
+                    </div>
+
+                    <div class="kanban-card" data-track="associate">
+                        <span class="kanban-tag tag-associate">Associate</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 1.2: Task Decomposition &amp; Multi-Step Reasoning</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Canva storyboard rendering &middot; Python canvas motion engine.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Modular RFP breakdown prompt matrix.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="arch">
+                        <span class="kanban-tag tag-arch">Arch Foundations</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 1.1: Agentic Loop &amp; Controlling stop_reason</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Parsing <code>tool_use</code> and trapping unrecoverable errors.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Deterministic loop with graceful fallbacks.</div>
+                    </div>
+                </div>
+
+                <!-- Column 4: Verification & Gate Testing -->
+                <div class="kanban-col">
+                    <div class="kanban-header">
+                        <span style="color: #c084fc;">🧪 Verification &amp; Release Gate</span>
+                        <span class="badge" style="font-size: 0.75rem; background: rgba(168, 85, 247, 0.15); color: #c084fc;">1 In Review</span>
+                    </div>
+
+                    <div class="kanban-card" data-track="associate">
+                        <span class="kanban-tag tag-associate">Associate</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 1.1: Core Prompting Principles &amp; Structured Formats</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Checking video description, pinned Skool CTA, and artifact link.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: 5-part XML template generates valid JSON.</div>
+                    </div>
+                </div>
+
+                <!-- Column 5: Published & Live -->
+                <div class="kanban-col">
+                    <div class="kanban-header">
+                        <span style="color: #34d399;">🚀 Published &amp; Live</span>
+                        <span class="badge" style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.15); color: #34d399;">3 Live</span>
+                    </div>
+
+                    <div class="kanban-card" data-track="pro">
+                        <span class="kanban-tag tag-pro">Architect Pro</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Intro: Claude Certified Architect Professional Overview</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Live on YouTube &amp; Skool Classroom.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Pearson VUE blueprint walkthrough complete.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="dev">
+                        <span class="kanban-tag tag-dev">Developer Track</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 2.1: Custom SQLite MCP Server in Python</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Public repo template + video walkthrough live.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Verified MCP connection to Claude Desktop.</div>
+                    </div>
+
+                    <div class="kanban-card" data-track="associate">
+                        <span class="kanban-tag tag-associate">Associate</span>
+                        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.35rem;">Video 3.2: Responsible AI, Risk &amp; Data Privacy</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">PII redaction system prompt shared in Skool Feed.</div>
+                        <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.4rem;">KR: Zero-leak PII masking regex &amp; prompt.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chronological Release Schedule Table -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">📅 12-Week Video Release Master Calendar</h2>
+                <span class="status-pill status-validated">Cadence: 3 Videos / Week (Tue &middot; Thu &middot; Sat)</span>
+            </div>
+
+            <div class="card" style="overflow-x: auto; padding: 0;">
+                <table class="schedule-table" style="width: 100%; border-collapse: collapse; text-align: left; min-width: 900px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); background: rgba(255,255,255,0.02); color: var(--text-primary); font-size: 0.9rem;">
+                            <th style="width: 100px;">Target Date</th>
+                            <th style="width: 130px;">Track</th>
+                            <th style="width: 220px;">Video Title &amp; Module</th>
+                            <th>Learning Objective (LO)</th>
+                            <th style="width: 240px;">Key Result Artifact (KR)</th>
+                            <th style="width: 100px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.88rem; color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(99, 102, 241, 0.03);">
+                            <td><strong style="color: #c7d2fe;">Tue, Aug 25</strong></td>
+                            <td><span class="kanban-tag tag-associate">Associate M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.1: Core Prompting Principles</strong></td>
+                            <td>XML tag framing, role delimiters, and few-shot formatting.</td>
+                            <td style="color: #34d399;">5-part XML prompt yielding 100% structured JSON.</td>
+                            <td><span class="status-pill status-in-review" style="font-size: 0.75rem;">In Review</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td><strong style="color: #c7d2fe;">Thu, Aug 27</strong></td>
+                            <td><span class="kanban-tag tag-associate">Associate M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.2: Task Decomposition &amp; Reasoning</strong></td>
+                            <td>Scratchpad reasoning, sub-task isolation, and step verification.</td>
+                            <td style="color: #34d399;">3-step modular RFP analysis template.</td>
+                            <td><span class="status-pill status-in-progress" style="font-size: 0.75rem;">Rendering</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td><strong style="color: #c7d2fe;">Sat, Aug 29</strong></td>
+                            <td><span class="kanban-tag tag-associate">Associate M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.3: Output Evaluation &amp; Hallucinations</strong></td>
+                            <td>Grounded citation verification and negative constraints.</td>
+                            <td style="color: #34d399;">Automated fact-checking prompt checklist.</td>
+                            <td><span class="status-pill status-planned" style="font-size: 0.75rem;">Scripting</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(14, 165, 233, 0.03);">
+                            <td><strong style="color: #38bdf8;">Tue, Sep 01</strong></td>
+                            <td><span class="kanban-tag tag-dev">Developer M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.1: Streaming API &amp; Contracts</strong></td>
+                            <td>SSE chunk consumption and async message contract handling.</td>
+                            <td style="color: #34d399;">Typewriter CLI streaming script (Python/Node).</td>
+                            <td><span class="status-pill status-planned" style="font-size: 0.75rem;">Planned</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td><strong style="color: #38bdf8;">Thu, Sep 03</strong></td>
+                            <td><span class="kanban-tag tag-dev">Developer M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.2: Building Agents with Agent SDK</strong></td>
+                            <td>Multi-turn loops, tool schema injection, recursive thinking.</td>
+                            <td style="color: #34d399;">Runnable JSON file updater agent script.</td>
+                            <td><span class="status-pill status-planned" style="font-size: 0.75rem;">Planned</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td><strong style="color: #38bdf8;">Sat, Sep 05</strong></td>
+                            <td><span class="kanban-tag tag-dev">Developer M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.3: Tool Use &amp; Argument Validation</strong></td>
+                            <td>JSON schema enforcement with Pydantic/Zod.</td>
+                            <td style="color: #34d399;">Strict Pydantic tool validator catching errors.</td>
+                            <td><span class="status-pill status-planned" style="font-size: 0.75rem;">Planned</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(168, 85, 247, 0.03);">
+                            <td><strong style="color: #c084fc;">Tue, Sep 08</strong></td>
+                            <td><span class="kanban-tag tag-arch">Architect M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.1: Agentic Loop &amp; stop_reason</strong></td>
+                            <td>Controlling <code>stop_reason == "tool_use"</code> transitions.</td>
+                            <td style="color: #34d399;">Deterministic agent loop halting on error.</td>
+                            <td><span class="status-pill status-in-progress" style="font-size: 0.75rem;">Rendering</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td><strong style="color: #c084fc;">Thu, Sep 10</strong></td>
+                            <td><span class="kanban-tag tag-arch">Architect M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.2: Multi-Agent Coordinator Patterns</strong></td>
+                            <td>Lead architect delegating to worker subagents.</td>
+                            <td style="color: #34d399;">2-tier supervisor-worker orchestration script.</td>
+                            <td><span class="status-pill status-planned" style="font-size: 0.75rem;">Planned</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td><strong style="color: #c084fc;">Sat, Sep 12</strong></td>
+                            <td><span class="kanban-tag tag-arch">Architect M1</span></td>
+                            <td><strong style="color: var(--text-primary);">Video 1.3: DAG Task Decomposition</strong></td>
+                            <td>Parallel tool calling and execution aggregation.</td>
+                            <td style="color: #34d399;">Parallel tool benchmark completing in &lt;1.5s.</td>
+                            <td><span class="status-pill status-planned" style="font-size: 0.75rem;">Planned</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Cross-System Navigation -->
+        <section class="content-section animate-fade-in">
+            <div class="card" style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.3);">
+                <h3 style="margin-top: 0; font-size: 1.2rem; color: #c7d2fe;">🔗 Connected Dashboards &amp; Operating Links</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                    This Kanban board and release schedule synchronize with the master Customer Development task lists and learning objectives:
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="weekly-todos.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        🗓️ Weekly Todos &amp; Cadence
+                    </a>
+                    <a href="../growth/course-curriculum-learning-objectives.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        🎯 Course LO &amp; KR Matrix
+                    </a>
+                    <a href="todo.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        ✅ Master Task List
+                    </a>
+                    <a href="../growth/content-analysis.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        📊 Content Analysis &amp; Retention
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Published Content Kanban &amp; 12-Week Video Release Master Schedule paired with Learning Objectives and Key Results (2026-08-25) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/content-kanban-release-schedule.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/dashboard/content-kanban-release-schedule.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        function filterKanban(track, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cards = document.querySelectorAll('.kanban-card');
+            cards.forEach(card => {
+                if (track === 'all' || card.getAttribute('data-track') === track) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

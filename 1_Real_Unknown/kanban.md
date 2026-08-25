@@ -52,7 +52,15 @@
 ## 🔄 In Progress
 *Active tasks currently being worked on.*
 
-*No active tasks in progress.*
+- [ ] **TSK-012: 5-Minute Modular Video Release Schedule & LO/KR Engine**
+  - **Assignee:** Gemini / Human
+  - **Details:** Script, storyboard, and render 3 videos/week (Associate, Developer, Architect tracks) with matched LOs/KRs on `5_Symbols/dashboard/content-kanban-release-schedule.html`.
+  - **Stage Reference:** [5_Symbols/dashboard/content-kanban-release-schedule.html](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/5_Symbols/dashboard/content-kanban-release-schedule.html)
+
+- [ ] **TSK-013: Video 1.1 Rendering & Artifact Validation (Associate Track)**
+  - **Assignee:** Human / Gemini
+  - **Details:** Validate 5-part XML prompt producing 100% structured JSON and verify pinned Skool community link.
+  - **Stage Reference:** [5_Symbols/growth/course-curriculum-learning-objectives.html](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/5_Symbols/growth/course-curriculum-learning-objectives.html)
 
 ---
 

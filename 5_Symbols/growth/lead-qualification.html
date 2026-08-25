@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Qualification Engine &amp; Candidate Scorecard | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .qual-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .qual-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+        }
+        .scorecard-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .score-display-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .question-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .question-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .option-label:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--color-primary);
+        }
+        .option-label input[type="radio"] {
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .tier-badge {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .tier-disqualified {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid #ef4444;
+        }
+        .tier-nurture {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fde68a;
+            border: 1px solid #f59e0b;
+        }
+        .tier-standard {
+            background: rgba(6, 182, 212, 0.2);
+            color: #a5f3fc;
+            border: 1px solid #06b6d4;
+        }
+        .tier-vip {
+            background: rgba(16, 185, 129, 0.2);
+            color: #a7f3d0;
+            border: 1px solid #10b981;
+        }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .matrix-table th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .matrix-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            vertical-align: top;
+        }
+        .script-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin: 0.75rem 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <a href="sales-pipeline.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                &larr; Sales Pipeline
+            </a>
+            <span style="color: var(--text-secondary);">&middot;</span>
+            <a href="lead-qualification-system.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                🚫 Anti-Admittance System
+            </a>
+            <span style="color: var(--text-secondary);">&middot;</span>
+            <a href="hormozi-vip-leadgen.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                🏋️ Hormozi VIP Lead Gen
+            </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">
+                Growth Engine &middot; Pipeline Gatekeeping &middot; BANT / Hormozi Qualification
+            </span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                🎯 Dedicated Lead Qualification Engine &amp; Candidate Scorecard
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; max-width: 880px;">
+                In a high-ticket contractor community and certification prep ecosystem, <strong>time is the scarcest asset</strong>. As single founder Rifat Erdem Sahin operates alongside active enterprise consulting (<a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-primary);">see single-founder bandwidth</a>), we do not take calls with tire-kickers. Every inbound lead is systematically triaged, scored, and routed through our <strong>4-Tier Lead Qualification Engine</strong> (see <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>, and <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).
+            </p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span class="status-pill" style="color: var(--color-primary);">🛡️ Zero Free 1-on-1s for Spectators</span>
+                <span class="status-pill" style="color: var(--color-warning);">⚡ Automatic Channel Triage</span>
+                <span class="status-pill" style="color: var(--color-success);">💎 VIP Forward Deployed Track</span>
+                <span class="status-pill" style="color: var(--color-info);">📊 100-Point Candidate Scorecard</span>
+            </div>
+        </div>
+
+        <!-- Interactive Lead Qualification Scorecard -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧮 Interactive Candidate Qualification Scorecard</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Select the candidate's attributes across technical readiness, urgency, budget/skin-in-the-game, weekly time commitment, and strategic goal to generate their real-time qualification score and pipeline destination.
+            </p>
+
+            <div class="scorecard-container">
+                <form id="qualForm">
+                    <!-- Q1: Technical Background -->
+                    <div class="question-group">
+                        <div class="question-title">1. Technical Baseline &amp; Role Background (Max 25 pts)</div>
+                        <label class="option-label">
+                            <input type="radio" name="q_tech" value="25" checked onchange="calcQualScore()">
+                            <span><strong>Active IT Contractor / Senior Engineer / Architect:</strong> 5+ years experience in Cloud/DevOps/Software with active terminal/git muscle memory. (+25 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_tech" value="18" onchange="calcQualScore()">
+                            <span><strong>Mid-Level Developer / SysAdmin / Data Analyst:</strong> 2–4 years technical experience looking to transition into AI Architecture. (+18 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_tech" value="8" onchange="calcQualScore()">
+                            <span><strong>Non-technical / Career Switcher:</strong> Motivated self-learner with basic digital literacy, no coding experience. (+8 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_tech" value="0" onchange="calcQualScore()">
+                            <span><strong>Spectator / Generic Inquirer:</strong> Unclear background, refuses to share role, looking for "no code make money fast". (0 pts)</span>
+                        </label>
+                    </div>
+
+                    <!-- Q2: Urgency & Exam Timeline -->
+                    <div class="question-group">
+                        <div class="question-title">2. Urgency &amp; Certification Timeline (Max 25 pts)</div>
+                        <label class="option-label">
+                            <input type="radio" name="q_urgency" value="25" checked onchange="calcQualScore()">
+                            <span><strong>Immediate &amp; Defined (14–45 Days):</strong> Booking Claude Architect / Copilot exam or preparing for imminent £500+/day contract interview. (+25 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_urgency" value="18" onchange="calcQualScore()">
+                            <span><strong>Medium-Term (60–90 Days):</strong> Actively upskilling for Q3/Q4 performance cycle or upcoming contract renewal. (+18 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_urgency" value="10" onchange="calcQualScore()">
+                            <span><strong>Exploratory (6+ Months):</strong> Curious about AI landscape with no specific date on Pearson VUE / Anthropic portal. (+10 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_urgency" value="0" onchange="calcQualScore()">
+                            <span><strong>No Urgency / Passive:</strong> "Just browsing what's out there". (0 pts)</span>
+                        </label>
+                    </div>
+
+                    <!-- Q3: Skin-in-the-Game & Investment Readiness -->
+                    <div class="question-group">
+                        <div class="question-title">3. Budget &amp; Commercial Skin-in-the-Game (Max 25 pts)</div>
+                        <label class="option-label">
+                            <input type="radio" name="q_budget" value="25" checked onchange="calcQualScore()">
+                            <span><strong>VIP / Premium Ready ($250/yr VIP Seat or Corporate Expense):</strong> Willing to invest in screen-shares, recruiter intros, and private labs. (+25 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_budget" value="18" onchange="calcQualScore()">
+                            <span><strong>Standard Paid Member ($10/mo or $29 Mock Exam Bundle):</strong> Self-funded, values practice materials and weekly live calls. (+18 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_budget" value="10" onchange="calcQualScore()">
+                            <span><strong>Freemium Preview ($0 / $1 Peek Tier):</strong> Wants to preview Sunday session before committing budget. (+10 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_budget" value="0" onchange="calcQualScore()">
+                            <span><strong>Zero Investment / Entitled:</strong> Demands 1-on-1 bespoke coaching and exam leak dumps for free. (0 pts)</span>
+                        </label>
+                    </div>
+
+                    <!-- Q4: Weekly Commitment & Practice Discipline -->
+                    <div class="question-group">
+                        <div class="question-title">4. Weekly Time Commitment &amp; Lab Discipline (Max 25 pts)</div>
+                        <label class="option-label">
+                            <input type="radio" name="q_time" value="25" checked onchange="calcQualScore()">
+                            <span><strong>Dedicated &amp; Accountable (5+ Hours/wk):</strong> Attends Sunday 1pm UK live lab with camera on, pushes git code weekly. (+25 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_time" value="18" onchange="calcQualScore()">
+                            <span><strong>Consistent Async (3–4 Hours/wk):</strong> Cannot always make Sunday live due to family/work, completes async replays and repos. (+18 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_time" value="8" onchange="calcQualScore()">
+                            <span><strong>Sporadic (&lt; 2 Hours/wk):</strong> Only watches YouTube snippets irregularly during commute. (+8 pts)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q_time" value="0" onchange="calcQualScore()">
+                            <span><strong>Zero Time Commitment:</strong> "I don't have time to practice, can you just give me the answers?". (0 pts)</span>
+                        </label>
+                    </div>
+                </form>
+
+                <!-- Score Output Box -->
+                <div id="scoreBox" class="score-display-box">
+                    <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Total Candidate Qualification Score</div>
+                    <div id="totalScore" style="font-size: 3rem; font-weight: 800; font-family: var(--font-heading); color: #10b981; margin: 0.5rem 0;">100 / 100</div>
+                    <div id="tierBadgeContainer" style="margin-bottom: 1rem;">
+                        <span class="tier-badge tier-vip">🟣 Fast-Track VIP Delivery Pilot</span>
+                    </div>
+                    <div id="verdictText" style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.6; max-width: 750px; margin: 0 auto;">
+                        <strong>Action:</strong> Fast-track into Sunday Screen-Share Seat + Monday VIP Recruiter Cowork. Invite to co-bid on enterprise tenders via the Delivery Pilot Alliance (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4-Tier Lead Qualification Triage Rubric -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🚦 The 4-Tier Funnel Triage Rubric</h2>
+            <div class="card" style="overflow-x: auto;">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Score Band</th>
+                            <th>Qualification Tier</th>
+                            <th>Target Candidate Persona</th>
+                            <th>Automated Funnel Destination</th>
+                            <th>Founder Bandwidth Allocation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; color: #10b981;">90 – 100 Pts</td>
+                            <td><span class="tier-badge tier-vip">VIP Delivery Pilot</span></td>
+                            <td>Senior Contractors, Lead Architects, FDE Candidates aiming for £500–£1,000+/day contracts.</td>
+                            <td>VIP $250/yr Seat &rarr; Sunday Live Screen-Share &rarr; Monday VIP Recruiter Cowork &rarr; Enterprise Tender Co-Bidding.</td>
+                            <td><strong>High Priority:</strong> Live 1-on-1 presets, custom architecture feedback, direct recruiter promotion.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: #06b6d4;">70 – 89 Pts</td>
+                            <td><span class="tier-badge tier-standard">Active Premium</span></td>
+                            <td>Mid/Senior DevOps &amp; Cloud Engineers studying for Claude Architect or Copilot credentials.</td>
+                            <td>$10/mo Prep Membership &rarr; Sunday Live Group Labs &rarr; $29 Mock Exam Practice Repo Bundle.</td>
+                            <td><strong>Group Scale:</strong> Sunday breakout assistance, Skool living hubs moderation, automated bot review.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: #f59e0b;">40 – 69 Pts</td>
+                            <td><span class="tier-badge tier-nurture">Freemium Nurture</span></td>
+                            <td>Exploratory learners, junior devs, or career transitioners testing the waters.</td>
+                            <td>$0 / $1 Peek Tier &rarr; Level 2 Skool Posting Restriction &rarr; Free YouTube Jab-Jab Educational Series.</td>
+                            <td><strong>Zero Manual Founder Time:</strong> Fully automated onboarding checklist and video orientation.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: #ef4444;">0 – 39 Pts</td>
+                            <td><span class="tier-badge tier-disqualified">Disqualified</span></td>
+                            <td>Tire-kickers, spam promoters, crypto dropshippers, exam dump seekers.</td>
+                            <td><strong>Polite Immediate Rejection / Block.</strong> Direct to public YouTube channel playlists only.</td>
+                            <td><strong>Strict Disqualification:</strong> 0 seconds of founder attention. Application declined at Skool gate.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Channel-Specific Qualification Flows -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🌐 Inbound Channel Qualification Playbooks</h2>
+            
+            <div class="grid">
+                <!-- Channel 1: Skool Membership Intake -->
+                <div class="col-6">
+                    <div class="qual-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <h3 style="margin: 0; color: var(--color-warning); font-size: 1.2rem;">1. Skool Membership Intake Gate</h3>
+                            <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fde68a;">Gate 1</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                            Every applicant to the Skool community must answer 3 mandatory intake questions (<a href="../product/skool-membership-questions.html" style="color: var(--color-primary);">see spec</a>). If any question is blank or spammy, membership is declined immediately.
+                        </p>
+                        <div class="script-box">
+                            <strong>Intake Questions:</strong><br>
+                            1. What is your current technical role and cloud/AI experience level?<br>
+                            2. Which certification or enterprise outcome are you preparing for in the next 30–60 days?<br>
+                            3. Can you commit to at least 3 hours/week of hands-on practice labs?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Channel 2: LinkedIn DMs & InMail -->
+                <div class="col-6">
+                    <div class="qual-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <h3 style="margin: 0; color: #38bdf8; font-size: 1.2rem;">2. LinkedIn DMs &amp; 30k Cap Triage</h3>
+                            <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #bae6fd;">Gate 2</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                            Because Rifat's LinkedIn is capped at 30,000 connections (<a href="linkedin-vip-cowork.html" style="color: var(--color-primary);">see LinkedIn 30k Cap</a>), incoming DMs are batch-answered weekly. Connection requests without verified Skool email are rejected.
+                        </p>
+                        <div class="script-box">
+                            <strong>Qualification Auto-Reply:</strong><br>
+                            "Thanks for reaching out! Because my network is at capacity, I only connect with active peers building hands-on AI architectures in our Skool cohort. Join us at skool.com/delivery-pilot — introduce yourself there and let's build together on Sunday!"
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Channel 3: YouTube Comments Batch Triage -->
+                <div class="col-6">
+                    <div class="qual-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <h3 style="margin: 0; color: #f43f5e; font-size: 1.2rem;">3. YouTube Comments Weekly Triage</h3>
+                            <span class="badge" style="background: rgba(244, 63, 94, 0.15); color: #fecdd3;">Gate 3</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                            Commenters asking deep architectural questions or expressing certification exam anxiety are qualified via pinned comment links to the free Jab-Jab package (<a href="free-youtube-jab-jab-package.html" style="color: var(--color-primary);">see Jab-Jab package</a>).
+                        </p>
+                        <div class="script-box">
+                            <strong>Triage Script:</strong><br>
+                            "Great catch on the vector retrieval latency. We broke down the full production code repo for this in Sunday's lab. Grab the free architecture template and join the Sunday live lab in our Skool description link."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Channel 4: Enterprise B2B & Partner Inquiries -->
+                <div class="col-6">
+                    <div class="qual-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <h3 style="margin: 0; color: #10b981; font-size: 1.2rem;">4. Enterprise &amp; Partner Referrals</h3>
+                            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #a7f3d0;">Gate 4</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                            Corporate teams looking to certify 10+ engineers or enterprise partners seating candidates (see Cheuk National Grid finding F12) are qualified on team size, Pearson VUE voucher sponsorship, and delivery timeline.
+                        </p>
+                        <div class="script-box">
+                            <strong>Enterprise Criteria:</strong><br>
+                            &bull; Minimum 5 engineers per cohort<br>
+                            &bull; Dedicated partner sponsor / voucher provision<br>
+                            &bull; Custom enterprise repository sandbox setup
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disqualification Scripts & Re-Routing -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🚫 Disqualification Scripts (Hormozi Anti-Admittance)</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+                    When a lead is disqualified, we deliver an immediate, polite, but firm redirection. This protects community quality, reinforces exclusivity, and prevents time waste.
+                </p>
+
+                <div class="grid">
+                    <div class="col-6">
+                        <div style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-left: 4px solid #ef4444; border-radius: 8px; padding: 1.25rem;">
+                            <strong style="color: #ef4444;">Scenario A: Asking for Dumps or Exam Leaks</strong>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0;">
+                                <em>"We strictly teach hands-on architecture engineering. Pearson VUE and Anthropic proctored exams evaluate applied judgment, not memorized dumps. If you want dumps, this community is not for you. Check out our public YouTube channel for conceptual primers."</em>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-left: 4px solid #f59e0b; border-radius: 8px; padding: 1.25rem;">
+                            <strong style="color: #f59e0b;">Scenario B: Asking for Uncapped Free 1-on-1 Time</strong>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0;">
+                                <em>"As an active contractor operating enterprise engagements, Rifat's 1-on-1 calendar is strictly reserved for Delivery Pilot VIP members during Monday coworks. You are welcome to join our Sunday group lab or ask questions asynchronously in our Skool hubs."</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Customer Discovery Qualification Case Studies -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📂 Empirical Customer Discovery Qualification Verdicts</h2>
+            <div class="card">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>Context &amp; Trigger</th>
+                            <th>Qualification Score</th>
+                            <th>Resulting Tier &amp; Outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Jamal</strong></td>
+                            <td>Accenture/IBM/Capgemini consultant, failed Claude Architect (644/1000), corporate voucher &amp; $100 pass bonus.</td>
+                            <td style="color: #10b981; font-weight: 700;">92 / 100</td>
+                            <td><span class="tier-badge tier-vip">VIP Delivery Pilot</span> &rarr; Enrolled for mock exams &amp; Sunday screen-share.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B.</strong></td>
+                            <td>Burnout, voluntary redundancy from tech role, preparing Anthropic qualification, high async commitment.</td>
+                            <td style="color: #10b981; font-weight: 700;">90 / 100</td>
+                            <td><span class="tier-badge tier-vip">VIP Delivery Pilot</span> &rarr; Fast-tracked to async video replays &amp; FDE roadmap.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tomiwa</strong></td>
+                            <td>Passed Associate in 2 days, 1-month prep for Claude Architect, aiming for contractor rate uplift.</td>
+                            <td style="color: #10b981; font-weight: 700;">95 / 100</td>
+                            <td><span class="tier-badge tier-vip">VIP Delivery Pilot</span> &rarr; Fast-tracked to Monday VIP Recruiter Cowork.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brian</strong></td>
+                            <td>India/US timezone coordination, needs concrete study slot as forcing function, post-failure retake.</td>
+                            <td style="color: #06b6d4; font-weight: 700;">82 / 100</td>
+                            <td><span class="tier-badge tier-standard">Active Premium</span> &rarr; Scheduled into Sunday lab slot.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cheuk</strong> (National Grid)</td>
+                            <td>Enterprise partner access block (F12 finding); tried to enroll, needed partner company seat assistance.</td>
+                            <td style="color: #10b981; font-weight: 700;">94 / 100</td>
+                            <td><span class="tier-badge tier-vip">Partner Cohort</span> &rarr; Routed to partner company seat arrangement.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Hypothesis Linkage Matrix -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🧪 Hypothesis Linkage Matrix</h2>
+            <div class="card">
+                <div class="grid">
+                    <div class="col-6">
+                        <ul class="emoji-list">
+                            <li><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary); font-weight: 600;">Hypothesis H5</a>: Paid Skool ladder ($0 peek &rarr; $1 &rarr; $10/mo &rarr; $250 VIP) qualifies candidates based on commitment rather than open-access spam.</li>
+                            <li><a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary); font-weight: 600;">Hypothesis H8</a>: Sunday 1-hour live lab acts as the core qualification forcing function separating spectators from serious practitioners.</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="emoji-list">
+                            <li><a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary); font-weight: 600;">Hypothesis H29</a>: Single-founder bandwidth constraints require strict batch triage and automated disqualification to preserve delivery quality.</li>
+                            <li><a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary); font-weight: 600;">Hypothesis H30</a>: Delivery Pilot Alliance qualifies members into high-ticket enterprise tender co-bidding (£500&ndash;£1,000+/day).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+            <div style="margin-bottom: 0.5rem;">
+                <a href="sales-pipeline.html" style="color: var(--color-primary); margin: 0 0.75rem;">Sales Pipeline</a> &middot;
+                <a href="lead-qualification-system.html" style="color: var(--color-primary); margin: 0 0.75rem;">Hormozi Anti-Admittance</a> &middot;
+                <a href="hormozi-vip-leadgen.html" style="color: var(--color-primary); margin: 0 0.75rem;">Hormozi VIP Lead Gen</a> &middot;
+                <a href="../strategy/delivery-pilot-roadmap.html" style="color: var(--color-primary); margin: 0 0.75rem;">Delivery Pilot Roadmap</a> &middot;
+                <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary); margin: 0 0.75rem;">Hypothesis H5</a>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; display: block;">
+                Latest Change: Dedicated Lead Qualification Page Created with Interactive Scorecard &amp; Channel Playbooks (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/lead-qualification.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        function calcQualScore() {
+            var form = document.getElementById('qualForm');
+            var tech = parseInt(form.querySelector('input[name="q_tech"]:checked').value) || 0;
+            var urgency = parseInt(form.querySelector('input[name="q_urgency"]:checked').value) || 0;
+            var budget = parseInt(form.querySelector('input[name="q_budget"]:checked').value) || 0;
+            var time = parseInt(form.querySelector('input[name="q_time"]:checked').value) || 0;
+
+            var total = tech + urgency + budget + time;
+            document.getElementById('totalScore').innerText = total + ' / 100';
+
+            var badgeContainer = document.getElementById('tierBadgeContainer');
+            var verdictText = document.getElementById('verdictText');
+            var scoreVal = document.getElementById('totalScore');
+
+            if (total >= 90) {
+                scoreVal.style.color = '#10b981';
+                badgeContainer.innerHTML = '<span class="tier-badge tier-vip">🟣 Fast-Track VIP Delivery Pilot</span>';
+                verdictText.innerHTML = '<strong>Action:</strong> Fast-track into Sunday Screen-Share Seat + Monday VIP Recruiter Cowork. Invite to co-bid on enterprise tenders via the Delivery Pilot Alliance (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).';
+            } else if (total >= 70) {
+                scoreVal.style.color = '#06b6d4';
+                badgeContainer.innerHTML = '<span class="tier-badge tier-standard">🟢 Active Premium Prep</span>';
+                verdictText.innerHTML = '<strong>Action:</strong> Enroll in $10/mo Prep Membership &amp; $29 Mock Exam Practice Repo Bundle. Invite to Sunday 1pm UK Live Breakout Labs (<a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>).';
+            } else if (total >= 40) {
+                scoreVal.style.color = '#f59e0b';
+                badgeContainer.innerHTML = '<span class="tier-badge tier-nurture">🟡 Freemium Nurture</span>';
+                verdictText.innerHTML = '<strong>Action:</strong> Route to $0/$1 Peek Tier on Skool. Enforce Level 2 Anti-Spam Posting Restriction and nurture via Free YouTube Jab-Jab Course (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>).';
+            } else {
+                scoreVal.style.color = '#ef4444';
+                badgeContainer.innerHTML = '<span class="tier-badge tier-disqualified">🔴 Disqualified / Spectator</span>';
+                verdictText.innerHTML = '<strong>Action:</strong> Decline Skool membership request. Direct politely to public YouTube playlists only. Zero founder manual time spent.';
+            }
+        }
+    </script>
+</body>
+</html>
