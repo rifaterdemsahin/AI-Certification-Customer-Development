@@ -395,6 +395,7 @@
                 </label>
                 <select id="interview-select" class="form-control" style="width: auto; min-width: 250px; background: #1f2937; color: #fff; border: 1px solid var(--border-accent); border-radius: 6px; padding: 0.4rem 0.75rem;" onchange="loadInterview(this.value)">
                     <option value="blank">📝 📄 Blank Printable Sheet (Ruled Lines for OCR Notes)</option>
+                    <option value="cheuk_ho_s2">👤 Cheuk Ho (AI Fatigue, Engagement Friction &amp; Founder Voice Mandate)</option>
                     <option value="mehmet">👤 Mehmet (Shorts Dominance, Erhan Meydan &amp; Suna Benchmarks, Reverse Marketing &amp; Corporate Pricing)</option>
                     <option value="jamal">👤 Jamal (IT Consultant &mdash; Exam Score 644 &amp; Consulting Firm $100 Bonus)</option>
                     <option value="b">👤 B. (Burnout, Voluntary Redundancy &amp; Anthropic Qualification Intent)</option>
@@ -604,6 +605,19 @@
 
         // Pre-loaded Customer Discovery Interview Database
         var interviewDatabase = {
+            cheuk_ho_s2: {
+                name: "Cheuk Ho (National Grid)",
+                channel: "LinkedIn / WhatsApp DM",
+                referral: "Enterprise Colleague & Technical Critic",
+                date: "Aug 26, 2026 • Discovery Feedback",
+                hypotheses: ["H28 (Social Media Engagement)", "H29 (Listen > Speak)", "H2 (Micro-Format)", "H10 (Quality Floor)", "H4 (Acquisition Funnel)", "H5 (Cohort Enrollment)", "H24 (Cognitive Filter)", "H30 (Contractor Reality)"],
+                routine: "Browsing LinkedIn and professional developer feeds daily; scanning for genuine practitioner insights while filtering out generic AI-generated thought leadership.",
+                workaround: "Ignoring or scrolling past synthetic, bot-generated posts; only engaging with authentic practitioner perspectives and real war stories.",
+                stories: "Verbatim: 'Your posts are too AI generated - most people may not want to engage with they can tell it\\'s not you.'",
+                pains: "AI content fatigue; synthetic formatting and robotic tone repel high-intent peer engagement and suppress post reach.",
+                gains: "High-trust community connection; authentic founder voice and $1.3M+ contractor war stories unlock comments, reposts, and inbound discovery.",
+                gtm: "• Written Founder Voice SOP (H29/H10): Use AI for research scaffolding, but write narrative copy in 100% authentic founder voice.\n• Authenticity Moat (H30): Lead with real contractor lessons, £1,000/day battle scars, and contrarian practitioner takes."
+            },
             mehmet: mehmetInterviewData,
             jamal: jamalInterviewData,
             b: bInterviewData,
