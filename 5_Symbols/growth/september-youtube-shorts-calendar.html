@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>September YouTube Shorts Release Calendar | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="description" content="September 2026 YouTube Shorts publishing calendar and content strategy mapping sub-60s AI glossary clips to Claude Associate, Developer, and Architect certification learning objectives.">
+    <style>
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .calendar-day-head {
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .calendar-cell {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75rem;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+        .calendar-cell:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+        }
+        .calendar-cell.empty {
+            background: rgba(15, 23, 42, 0.2);
+            border-style: dashed;
+            opacity: 0.4;
+        }
+        .calendar-cell.publish-day {
+            border-left: 3px solid var(--color-primary);
+            background: rgba(30, 41, 59, 0.8);
+        }
+        .calendar-cell.live-day {
+            border-left: 3px solid var(--color-success);
+            background: rgba(16, 185, 129, 0.08);
+        }
+        .day-number {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .short-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin-bottom: 0.35rem;
+        }
+        .short-meta {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+        }
+        .tag-short {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .tag-assoc { background: rgba(99, 102, 241, 0.2); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.4); }
+        .tag-dev { background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.4); }
+        .tag-arch { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+        .tag-live { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+        @media (max-width: 900px) {
+            .calendar-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .calendar-day-head {
+                display: none;
+            }
+            .calendar-cell {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Navigation Breadcrumbs -->
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <a href="youtube-shorts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                &larr; Back to YouTube Shorts Flywheel
+            </a>
+            <span style="color: var(--text-secondary);">&bull;</span>
+            <a href="glossary-short-pipeline.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                🚂 1-Hour Train Glossary Pipeline
+            </a>
+            <span style="color: var(--text-secondary);">&bull;</span>
+            <a href="../dashboard/content-kanban-release-schedule.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                📋 Content Kanban
+            </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Growth &middot; Content Strategy &middot; September 2026</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin: 0.75rem 0 0.5rem 0;">📅 September YouTube Shorts Release Calendar</h1>
+                    <p style="color: var(--text-secondary); max-width: 82ch; font-size: 1.05rem; line-height: 1.65;">
+                        Daily release cadence and production blueprint for sub-60 second AI certification glossary Shorts during <strong>September 2026</strong>. Following Daniel Priestley's 5-Step Path (<a href="../hypotheses/hyp-h32.html" style="color: var(--color-primary);">H32</a>), each Short acts as a high-retention entry hook pointing directly to a full YouTube playlist module and driving qualified candidates to the Sunday live cohort and Skool community.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="glossary-short-pipeline.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.65rem 1.25rem; border-radius: 8px; text-align: center; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);">
+                        🚂 1-Hour Train SOP &rarr;
+                    </a>
+                    <a href="../product/skool-live-join.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.45rem 1rem; border-radius: 6px; text-align: center;">
+                        🚪 Skool Cohort CTA
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metric Pulse Cards -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2rem;">
+            <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div class="metric-card" style="border-top: 3px solid #38bdf8;">
+                    <div class="metric-val" style="color: #38bdf8;">13 Shorts</div>
+                    <div class="metric-lbl">September Release Target (3x/Wk Commute SOP)</div>
+                </div>
+                <div class="metric-card" style="border-top: 3px solid #10b981;">
+                    <div class="metric-val" style="color: #34d399;">&ge; 40% AVD</div>
+                    <div class="metric-lbl">Retention Target Floor (H2 / H10 Quality Gate)</div>
+                </div>
+                <div class="metric-card" style="border-top: 3px solid #818cf8;">
+                    <div class="metric-val" style="color: #818cf8;">1-Hour / Short</div>
+                    <div class="metric-lbl">Production Budget (Gemini &rarr; Flow &rarr; Canva)</div>
+                </div>
+                <div class="metric-card" style="border-top: 3px solid #f59e0b;">
+                    <div class="metric-val" style="color: #fbbf24;">Short &rarr; Course &rarr; Skool</div>
+                    <div class="metric-lbl">Priestley Conversion Loop (H32)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- September Calendar Section -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">🗓️ September 2026 Master Calendar</h2>
+                <div style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; color: var(--text-secondary);">
+                    <span style="display: inline-block; width: 10px; height: 10px; background: var(--color-primary); border-radius: 2px;"></span> Published Short
+                    <span style="display: inline-block; width: 10px; height: 10px; background: var(--color-success); border-radius: 2px; margin-left: 0.5rem;"></span> Sunday Live Cohort
+                </div>
+            </div>
+
+            <div class="calendar-grid">
+                <!-- Day Headers -->
+                <div class="calendar-day-head">Tue (Sep 1)</div>
+                <div class="calendar-day-head">Wed (Sep 2)</div>
+                <div class="calendar-day-head">Thu (Sep 3)</div>
+                <div class="calendar-day-head">Fri (Sep 4)</div>
+                <div class="calendar-day-head">Sat (Sep 5)</div>
+                <div class="calendar-day-head">Sun (Sep 6)</div>
+                <div class="calendar-day-head">Mon (Sep 7)</div>
+
+                <!-- Week 1: Sep 1 - Sep 7 -->
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 1</span><span class="tag-short tag-assoc">Assoc</span></div>
+                    <div class="short-title">What is an LLM? (Next-Token Predictor)</div>
+                    <div class="short-meta">Points at: Associate Foundations Playlist module</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 2</div>
+                    <div class="short-meta">Scripting &amp; Canva rendering</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 3</span><span class="tag-short tag-dev">Dev</span></div>
+                    <div class="short-title">Context Window &amp; Working Memory</div>
+                    <div class="short-meta">Points at: Claude Developer Token Limits</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 4</div>
+                    <div class="short-meta">Community moderation &amp; Q&amp;A</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 5</span><span class="tag-short tag-assoc">Assoc</span></div>
+                    <div class="short-title">Hallucination vs Fact (Grounding)</div>
+                    <div class="short-meta">Points at: Citation Prompting Lab</div>
+                </div>
+                <div class="calendar-cell live-day">
+                    <div class="day-number"><span>Sep 6</span><span class="tag-short tag-live">Live Cohort</span></div>
+                    <div class="short-title">Sunday Live Cohort #10</div>
+                    <div class="short-meta">21:00 UK &middot; Hands-on AI Brain Lab</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 7</div>
+                    <div class="short-meta">Monday VIP Review &amp; Analytics</div>
+                </div>
+
+                <!-- Week 2: Sep 8 - Sep 14 -->
+                <!-- Day Headers -->
+                <div class="calendar-day-head">Tue (Sep 8)</div>
+                <div class="calendar-day-head">Wed (Sep 9)</div>
+                <div class="calendar-day-head">Thu (Sep 10)</div>
+                <div class="calendar-day-head">Fri (Sep 11)</div>
+                <div class="calendar-day-head">Sat (Sep 12)</div>
+                <div class="calendar-day-head">Sun (Sep 13)</div>
+                <div class="calendar-day-head">Mon (Sep 14)</div>
+
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 8</span><span class="tag-short tag-assoc">Assoc</span></div>
+                    <div class="short-title">System Prompt vs User Prompt</div>
+                    <div class="short-meta">Points at: Prompting Hierarchy Guide</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 9</div>
+                    <div class="short-meta">Train commute editing slot</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 10</span><span class="tag-short tag-dev">Dev</span></div>
+                    <div class="short-title">Temperature &amp; Sampling Randomness</div>
+                    <div class="short-meta">Points at: Developer API Parameters</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 11</div>
+                    <div class="short-meta">Skool member onboarding review</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 12</span><span class="tag-short tag-arch">Arch</span></div>
+                    <div class="short-title">Embeddings: Turning Meaning into Math</div>
+                    <div class="short-meta">Points at: Architect RAG Architecture</div>
+                </div>
+                <div class="calendar-cell live-day">
+                    <div class="day-number"><span>Sep 13</span><span class="tag-short tag-live">Live Cohort</span></div>
+                    <div class="short-title">Sunday Live Cohort #11</div>
+                    <div class="short-meta">21:00 UK &middot; Vector DB &amp; Search Lab</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 14</div>
+                    <div class="short-meta">VIP 1:1 Coaching Calls</div>
+                </div>
+
+                <!-- Week 3: Sep 15 - Sep 21 -->
+                <div class="calendar-day-head">Tue (Sep 15)</div>
+                <div class="calendar-day-head">Wed (Sep 16)</div>
+                <div class="calendar-day-head">Thu (Sep 17)</div>
+                <div class="calendar-day-head">Fri (Sep 18)</div>
+                <div class="calendar-day-head">Sat (Sep 19)</div>
+                <div class="calendar-day-head">Sun (Sep 20)</div>
+                <div class="calendar-day-head">Mon (Sep 21)</div>
+
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 15</span><span class="tag-short tag-arch">Arch</span></div>
+                    <div class="short-title">RAG in 45 Seconds (Retrieval Augmented)</div>
+                    <div class="short-meta">Points at: RAISE RAG Masterclass</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 16</div>
+                    <div class="short-meta">Gemini script optimization</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 17</span><span class="tag-short tag-arch">Arch</span></div>
+                    <div class="short-title">Vector DBs: Nearest Neighbor Search</div>
+                    <div class="short-meta">Points at: Qdrant / Neo4j Hybrid Module</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 18</div>
+                    <div class="short-meta">Content Locator sync</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 19</span><span class="tag-short tag-arch">Arch</span></div>
+                    <div class="short-title">Fine-Tuning vs RAG (Weights vs Index)</div>
+                    <div class="short-meta">Points at: Architect Decision Matrix</div>
+                </div>
+                <div class="calendar-cell live-day">
+                    <div class="day-number"><span>Sep 20</span><span class="tag-short tag-live">Live Cohort</span></div>
+                    <div class="short-title">Sunday Live Cohort #12</div>
+                    <div class="short-meta">21:00 UK &middot; MCP Tool Integration</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 21</div>
+                    <div class="short-meta">Weekly retention &amp; analytics check</div>
+                </div>
+
+                <!-- Week 4: Sep 22 - Sep 30 -->
+                <div class="calendar-day-head">Tue (Sep 22)</div>
+                <div class="calendar-day-head">Wed (Sep 23)</div>
+                <div class="calendar-day-head">Thu (Sep 24)</div>
+                <div class="calendar-day-head">Fri (Sep 25)</div>
+                <div class="calendar-day-head">Sat (Sep 26)</div>
+                <div class="calendar-day-head">Sun (Sep 27)</div>
+                <div class="calendar-day-head">Mon (Sep 28&ndash;30)</div>
+
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 22</span><span class="tag-short tag-dev">Dev</span></div>
+                    <div class="short-title">AI Agents vs Chatbots (Tools &amp; Loops)</div>
+                    <div class="short-meta">Points at: Autonomous Agent Workshop</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 23</div>
+                    <div class="short-meta">Flow video template rendering</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 24</span><span class="tag-short tag-arch">Arch</span></div>
+                    <div class="short-title">MCP (Model Context Protocol) Explained</div>
+                    <div class="short-meta">Points at: Claude Architect MCP Spec</div>
+                </div>
+                <div class="calendar-cell empty">
+                    <div class="day-number">Sep 25</div>
+                    <div class="short-meta">Skool community check</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 26</span><span class="tag-short tag-arch">Arch</span></div>
+                    <div class="short-title">AI Guardrails &amp; PII Masking</div>
+                    <div class="short-meta">Points at: Enterprise Security Suite</div>
+                </div>
+                <div class="calendar-cell live-day">
+                    <div class="day-number"><span>Sep 27</span><span class="tag-short tag-live">Live Cohort</span></div>
+                    <div class="short-title">Sunday Live Cohort #13</div>
+                    <div class="short-meta">21:00 UK &middot; Enterprise Security &amp; Safety</div>
+                </div>
+                <div class="calendar-cell publish-day">
+                    <div class="day-number"><span>Sep 29</span><span class="tag-short tag-assoc">Assoc</span></div>
+                    <div class="short-title">Transformers in Plain English</div>
+                    <div class="short-meta">Points at: Certified Associate Foundations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Content Table -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">📋 September Shorts Release Inventory &amp; Funnel Destinations</h2>
+            <div class="card" style="overflow-x: auto; padding: 0;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 900px; font-size: 0.88rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); background: rgba(255,255,255,0.02); color: var(--text-primary);">
+                            <th style="padding: 0.85rem 0.65rem; width: 100px;">Release Date</th>
+                            <th style="padding: 0.85rem 0.65rem; width: 120px;">Track</th>
+                            <th style="padding: 0.85rem 0.65rem; width: 220px;">Short Title &amp; Keyword</th>
+                            <th style="padding: 0.85rem 0.65rem;">Core First-Principles Message</th>
+                            <th style="padding: 0.85rem 0.65rem; width: 200px;">Points at (Full Video)</th>
+                            <th style="padding: 0.85rem 0.65rem; width: 120px;">Skool CTA Link</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Tue, Sep 01</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-assoc">Associate</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">What is an LLM</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Next-token probability engine, not a sentient brain.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Associate Foundations Video 1.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Thu, Sep 03</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-dev">Developer</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Context Window</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Working memory capacity and degradation risks.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Developer Token Optimisation Video 2.3</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Sat, Sep 05</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-assoc">Associate</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Hallucinations</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Confident plausible wrongness and grounding strategies.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Associate Output Verification Video 1.3</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Tue, Sep 08</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-assoc">Associate</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">System Prompting</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Instruction boundary layer vs user prompt input.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Associate Project Setup Video 2.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Thu, Sep 10</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-dev">Developer</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Temperature Knob</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Sampling entropy: deterministic code vs creative writing.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Developer API Masterclass Video 1.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Sat, Sep 12</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-arch">Architect</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Embeddings</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">High-dimensional vector coordinates for semantic distance.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Architect RAG Architecture Video 2.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Tue, Sep 15</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-arch">Architect</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">RAG Pipeline</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Fetch dynamic facts first, then synthesize with LLM.</td>
+                            <td style="padding: 0.75rem 0.65rem;">RAISE RAG Copilot Video 1.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Thu, Sep 17</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-arch">Architect</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Vector Databases</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">HNSW indexing &amp; cosine similarity lookup.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Architect Second Brain Module 2.2</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Sat, Sep 19</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-arch">Architect</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Fine-Tuning vs RAG</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Updating parametric weights vs real-time knowledge retrieval.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Architect System Specs Video 3.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Tue, Sep 22</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-dev">Developer</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Agents vs Chatbots</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Autonomous tool execution loops vs single response chats.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Developer Agent SDK Video 1.2</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Thu, Sep 24</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-arch">Architect</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">MCP Servers</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Model Context Protocol as standard AI device driver.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Architect Custom MCP Video 2.2</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Sat, Sep 26</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-arch">Architect</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">AI Guardrails</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">PII redaction and output schema compliance.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Associate Data Privacy Video 3.2</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: #c7d2fe;">Tue, Sep 29</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;"><span class="tag-short tag-assoc">Associate</span></td>
+                            <td style="padding: 0.75rem 0.65rem;"><strong style="color: var(--text-primary);">Transformers</strong></td>
+                            <td style="padding: 0.75rem 0.65rem;">Self-attention mechanism without mathematical jargon.</td>
+                            <td style="padding: 0.75rem 0.65rem;">Associate Core Foundations Video 1.1</td>
+                            <td style="padding: 0.75rem 0.65rem; color: #34d399;">skool.com/delivery-pilot-8938</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Operating Guidelines & Flywheel Rules -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">⚙️ Operating Guidelines &amp; Flywheel Rules</h2>
+            <div class="card" style="border-left: 4px solid var(--color-warning); background: rgba(245, 158, 11, 0.05);">
+                <ul class="emoji-list" style="margin-bottom: 0;">
+                    <li><span class="emoji">⏱️</span><span style="color: var(--text-secondary);"><strong>Strict 1-Commute-Hour SOP:</strong> Build each Short using the 1-Hour Train Glossary Pipeline (<a href="glossary-short-pipeline.html" style="color: var(--color-primary);">Gemini &rarr; Flow &rarr; Canva &rarr; Post</a>) to maintain single-founder bandwidth (<a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Time Ledger</a>).</span></li>
+                    <li><span class="emoji">🎯</span><span style="color: var(--text-secondary);"><strong>Priestley Flywheel Alignment (H32):</strong> Shorts are notice tools (&lt;60s), not full courses. Always point at a YouTube course module and pin the Skool group URL (<code>skool.com/delivery-pilot-8938</code>). Never end on a dead end.</span></li>
+                    <li><span class="emoji">📊</span><span style="color: var(--text-secondary);"><strong>Validation Quality Gate (H2 / H10):</strong> Monitor Average View Duration (AVD). Maintain &ge; 40% AVD as the quality threshold before scaling production.</span></li>
+                    <li><span class="emoji">🛑</span><span style="color: var(--text-secondary);"><strong>Tuncer Sanity Check:</strong> Do not grind out a 300-video backlog without converting views to Skool members and Sunday live attendance. Measure real member signups, not raw view counts alone.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- See Also Cross Links -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔗 Connected Systems &amp; See Also</h2>
+            <p style="color: var(--text-secondary);">
+                <a href="youtube-shorts.html" style="color: var(--color-primary);">YouTube Shorts Flywheel</a> &middot;
+                <a href="glossary-short-pipeline.html" style="color: var(--color-info);">1-Hour Train Pipeline</a> &middot;
+                <a href="../dashboard/content-kanban-release-schedule.html" style="color: var(--color-info);">Content Kanban</a> &middot;
+                <a href="course-curriculum-learning-objectives.html" style="color: var(--color-info);">Course LO &amp; KR Matrix</a> &middot;
+                <a href="youtube-channel-metrics.html" style="color: var(--color-info);">YouTube Channel Metrics</a> &middot;
+                <a href="../hypotheses/hyp-h32.html" style="color: var(--color-primary);">H32 Priestley Path</a> &middot;
+                <a href="../product/skool-live-join.html" style="color: var(--color-info);">Sunday Skool Join Guide</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Published September YouTube Shorts Release Calendar &amp; Glossary Funnel Mapping (2026-08-27) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/september-youtube-shorts-calendar.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/growth/september-youtube-shorts-calendar.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
