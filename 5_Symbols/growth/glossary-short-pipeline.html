@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Hour Train Glossary Pipeline | Print &amp; Memorize</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .pdf-toolbar {
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid var(--border-accent);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin: 0 auto 2rem;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-print {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+        .a4-wrapper { display: flex; justify-content: center; margin-bottom: 3rem; }
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            background: #fff;
+            color: #0f172a;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+            padding: 11mm 12mm 9mm;
+            box-sizing: border-box;
+            font-family: Inter, "Outfit", sans-serif;
+        }
+        .a4-page h1 {
+            font-size: 18pt;
+            margin: 0 0 2px;
+            letter-spacing: -0.03em;
+            color: #1e1b4b;
+        }
+        .say-this {
+            background: #1e1b4b;
+            color: #fff;
+            text-align: center;
+            font-size: 13pt;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 8px 10px;
+            border-radius: 8px;
+            margin: 8px 0 10px;
+        }
+        .say-this small { display: block; font-size: 8pt; font-weight: 500; opacity: 0.85; letter-spacing: 0.02em; margin-top: 2px; }
+        .meta-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            font-size: 8pt;
+            margin-bottom: 8px;
+        }
+        .meta-strip div { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 7px; }
+        .meta-strip span { display: block; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; font-weight: 700; }
+        .steps { display: flex; flex-direction: column; gap: 6px; }
+        .step {
+            display: grid;
+            grid-template-columns: 28px 52px 1fr 48px;
+            gap: 8px;
+            align-items: start;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 6px 8px;
+        }
+        .n {
+            width: 26px; height: 26px;
+            background: #1e1b4b; color: #fff;
+            border-radius: 50%;
+            font-weight: 800; font-size: 11pt;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .tool { font-size: 8pt; font-weight: 800; color: #4338ca; text-transform: uppercase; padding-top: 4px; }
+        .body { font-size: 8.5pt; line-height: 1.35; color: #0f172a; }
+        .body strong { color: #1e1b4b; }
+        .clock { font-size: 8pt; font-weight: 800; color: #059669; text-align: right; padding-top: 4px; font-variant-numeric: tabular-nums; }
+        .clock small { display: block; font-weight: 600; color: #64748b; font-size: 6.5pt; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+        .box { border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 7px 8px; font-size: 8pt; line-height: 1.35; }
+        .box h3 { margin: 0 0 4px; font-size: 9pt; color: #1e1b4b; }
+        .box ul { margin: 0; padding-left: 14px; }
+        .checks { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+        .chk { border: 1.2px solid #475569; border-radius: 4px; padding: 2px 6px; font-size: 7.5pt; font-weight: 700; }
+        .chk i { display: inline-block; width: 9px; height: 9px; border: 1.3px solid #334155; margin-right: 3px; vertical-align: -1px; }
+        .foot { border-top: 1px solid #e2e8f0; margin-top: 8px; padding-top: 5px; font-size: 7pt; color: #64748b; display: flex; justify-content: space-between; }
+        @page { size: A4 portrait; margin: 8mm 10mm; }
+        @media print {
+            html, body { background: #fff !important; margin: 0; padding: 0; }
+            #site-header, footer, .pdf-toolbar, .no-print, .screen-only { display: none !important; }
+            .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+            .a4-wrapper { margin: 0; }
+            .a4-page { box-shadow: none; width: 100%; min-height: auto; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+    <main class="container">
+        <a href="content-format.html" class="no-print" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; margin-bottom: 1rem; font-weight: 500;">&larr; Back to Short vs Long Form</a>
+
+        <div class="card no-print animate-fade-in" style="margin-bottom: 1.5rem; border-left: 5px solid var(--color-success);">
+            <span class="badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7;">Growth &middot; Printable SOP</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2rem; margin: 0.5rem 0;">🚂 1-Hour Train Glossary Pipeline</h1>
+            <p style="color: var(--text-secondary); max-width: 78ch;">
+                Founder correction: <a href="https://youtube.com/shorts/KVKJRdkH-B8" target="_blank" style="color: var(--color-primary);">KVKJRdkH-B8</a> was made in <strong>one hour on the train</strong>, not four. Tools: <strong>Gemini → Google Flow → Canva</strong>. Same stack as the Roger Rabbit orientation pipeline (see H29 voice report). Print the A4 sheet. Recite the five words until they are automatic. Then Day 2 of the common-language library is a commute, not a production crisis. Cites <a href="../hypotheses/hyp-h2.html" style="color: var(--color-warning);">H2</a>, <a href="../hypotheses/hyp-h4.html" style="color: var(--color-warning);">H4</a>, <a href="../hypotheses/hyp-h10.html" style="color: var(--color-warning);">H10</a>, <a href="../hypotheses/hyp-h28.html" style="color: var(--color-warning);">H28</a>, <a href="../hypotheses/hyp-h29.html" style="color: var(--color-warning);">H29</a>.
+            </p>
+        </div>
+
+        <div class="pdf-toolbar no-print">
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">A4 memory sheet &mdash; fold it in a jacket pocket. Recite on the platform before you sit down.</span>
+            <button type="button" class="btn-print" onclick="window.print()">🖨️ Print this page</button>
+        </div>
+
+        <div class="a4-wrapper">
+            <article class="a4-page">
+                <header>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                        <div>
+                            <h1>AI Common Language Library</h1>
+                            <p style="margin:0; font-size:9pt; color:#64748b;">1-hour train pipeline &middot; glossary Shorts &lt;60s &middot; Delivery Pilot</p>
+                        </div>
+                        <div style="background:#eef2ff; border:1px solid #c7d2fe; color:#4338ca; padding:4px 8px; border-radius:6px; font-size:8pt; font-weight:700; text-align:right;">H2 H4 H10 H28 H29<br>Print &amp; memorize</div>
+                    </div>
+                    <div class="say-this">
+                        TERM → GEMINI → FLOW → CANVA → POST
+                        <small>Say it. Then do it. One term per commute. Day N in the description.</small>
+                    </div>
+                    <div class="meta-strip">
+                        <div><span>Proof</span>KVKJRdkH-B8 tokenization 46s</div>
+                        <div><span>Clock</span>60 min on the train</div>
+                        <div><span>Cadence</span>3 shorts / week = 3 hours</div>
+                        <div><span>Rule</span>Feel smart, not stupid</div>
+                    </div>
+                </header>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="n">1</div>
+                        <div class="tool">Term</div>
+                        <div class="body"><strong>Pick one word</strong> from the library (tokenization, context window, RAG, tokens…). Write one first-principles sentence a beginner can repeat. Associate-level. No architect flex.</div>
+                        <div class="clock">:00<small>5 min</small></div>
+                    </div>
+                    <div class="step">
+                        <div class="n">2</div>
+                        <div class="tool">Gemini</div>
+                        <div class="body"><strong>Beat sheet only.</strong> 5–6 scenes × ~8 seconds = under 60s. Each beat: picture + one line of spoken/on-screen text. End with “Day N of the library — Day N+1 is [next term].”</div>
+                        <div class="clock">:05<small>15 min</small></div>
+                    </div>
+                    <div class="step">
+                        <div class="n">3</div>
+                        <div class="tool">Flow</div>
+                        <div class="body"><strong>Google Flow — one clip per beat.</strong> Same character / cockpit / mixed-reality look. Do not invent a new style mid-commute. If a clip fails, skip and keep moving.</div>
+                        <div class="clock">:20<small>20 min</small></div>
+                    </div>
+                    <div class="step">
+                        <div class="n">4</div>
+                        <div class="tool">Canva</div>
+                        <div class="body"><strong>9:16 timeline.</strong> Drop clips in order. Captions on every line. Cut dead air. Export MP4. Voice may teach (clone OK). Do <em>not</em> speak a Skool / Sunday ask on the train — pin or record that later.</div>
+                        <div class="clock">:40<small>15 min</small></div>
+                    </div>
+                    <div class="step">
+                        <div class="n">5</div>
+                        <div class="tool">Post</div>
+                        <div class="body"><strong>YouTube Shorts, public.</strong> Title = the term in human words. Description = Day N + Day N+1 tease. One Skool link. Then close the laptop. Log likes/views tomorrow (H28).</div>
+                        <div class="clock">:55<small>5 min</small></div>
+                    </div>
+                </div>
+
+                <div class="two-col">
+                    <div class="box">
+                        <h3>From memory (cover this, recite)</h3>
+                        <ul>
+                            <li>One term.</li>
+                            <li>Gemini writes the beats.</li>
+                            <li>Flow makes the pictures.</li>
+                            <li>Canva cuts the minute.</li>
+                            <li>Post Day N. Tease Day N+1.</li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h3>Never on the train</h3>
+                        <ul>
+                            <li>A second term in the same hour.</li>
+                            <li>A spoken Skool / Sunday closer.</li>
+                            <li>A new visual style.</li>
+                            <li>A 2-minute cut. Kill it at 59s.</li>
+                            <li>Opening Canva before Flow is done.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="checks">
+                    <span class="chk"><i></i>Axiom is one sentence</span>
+                    <span class="chk"><i></i>&lt;60 seconds</span>
+                    <span class="chk"><i></i>Viewer feels smart</span>
+                    <span class="chk"><i></i>9:16 export</span>
+                    <span class="chk"><i></i>Day N / N+1 in description</span>
+                    <span class="chk"><i></i>No spoken join-ask</span>
+                </div>
+
+                <div class="foot">
+                    <span>Delivery Pilot · Gemini → Google Flow → Canva · commute SOP 2026-08-27</span>
+                    <span>Proof: youtube.com/shorts/KVKJRdkH-B8</span>
+                </div>
+            </article>
+        </div>
+
+        <section class="content-section screen-only animate-fade-in">
+            <h2 class="section-title">Why this is the pipeline</h2>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">This is the same four-tool chain already used for Roger Rabbit orientation (Gemini session → Google Flow project → optional Fal.ai voice → Canva timeline), stripped to what fits a train seat. 3 glossary shorts a week at 1 hour each is <strong>3 hours</strong>, not the 11-hour YouTube ledger. Keep the 11h for longer cuts and Sunday prep. Cites H4 production capacity and H29 (Marianna + Meg asked; you shipped on a commute).</p>
+                <ol class="emoji-list">
+                    <li><span class="emoji">1</span><span style="color: var(--text-secondary);"><strong>Gemini</strong> — script and 8-second beats. Do not write a lecture.</span></li>
+                    <li><span class="emoji">2</span><span style="color: var(--text-secondary);"><strong>Google Flow</strong> — pictures. One clip per beat.</span></li>
+                    <li><span class="emoji">3</span><span style="color: var(--text-secondary);"><strong>Canva</strong> — assembly, captions, 9:16 export. Same as orientation project assembly.</span></li>
+                    <li><span class="emoji">4</span><span style="color: var(--text-secondary);"><strong>Post</strong> — Shorts. Library numbering in the description.</span></li>
+                </ol>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: 1-hour train glossary pipeline (Gemini → Flow → Canva); printable A4 memory sheet (2026-08-27) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/glossary-short-pipeline.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+    <script>
+        if (location.search.indexOf('print=1') !== -1) {
+            window.addEventListener('load', function () { setTimeout(function () { window.print(); }, 700); });
+        }
+    </script>
+</body>
+</html>

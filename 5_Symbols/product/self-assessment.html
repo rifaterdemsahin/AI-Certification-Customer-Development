@@ -15,17 +15,29 @@
             &larr; Back to Why Certification Matters
         </a>
 
-        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-primary);">
-            <span class="badge">For Prospects &middot; 2-Minute Quiz</span>
-            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🧭 Self-Assessment</h1>
-            <p style="color: var(--text-secondary); margin-top: 1rem;">
-                Three quick questions, then a straight recommendation &mdash; no email required to see your result. Nothing here is a promise of exam success; see the disclaimer at the end.
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid var(--color-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem;">
+                <span class="badge">For Prospects &middot; 2-Minute Diagnostic Quiz</span>
+                <a href="../growth/private-quiz-lead-magnet-tactic.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.3rem 0.75rem; text-decoration: none; border-color: rgba(168, 85, 247, 0.4); color: #d8b4fe;">
+                    🕵️ Private Quiz Tactic Blueprint &rarr;
+                </a>
+            </div>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🧭 Private Assessment: AI Superpower &amp; Roadmap Diagnostic</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.6;">
+                Answer three rapid diagnostic questions to unlock your recommended AI prep path &mdash; no email required to see your result. Identifies your current architectural readiness, budget alignment, and routes you directly to the optimal Delivery Pilot tier.
             </p>
         </div>
 
-        <div class="card" id="quiz-card">
+        <div class="card" id="quiz-card" style="margin-bottom: 2rem;">
             <div id="quiz-questions"></div>
             <div id="quiz-result" style="display:none;"></div>
+        </div>
+
+        <div class="card" style="border-left: 5px solid var(--color-info); background: rgba(56, 189, 248, 0.02);">
+            <h3 class="card-title" style="font-size: 1.1rem; color: var(--color-info); margin-bottom: 0.5rem;">🎯 Why Take This Assessment?</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                Customer discovery with <strong>Brian</strong> and <strong>Marianna</strong> confirms that unassisted engineers suffer from study procrastination and often overspend on outdated bootcamps. Taking 2 minutes to benchmark your timeline and study style ensures you get straight into the right container &mdash; whether that is the free live Sunday cohort, a $29 self-paced mock exam pack, or 1-on-1 VIP contractor mentoring.
+            </p>
         </div>
     </main>
 
@@ -36,7 +48,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: New page &mdash; interactive self-assessment quiz routing prospects to a fitting offer (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/self-assessment.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/self-assessment.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Integrated Private Quiz Lead Magnet diagnostic framing, fixed relative offer routing paths, and cross-linked tactic blueprint (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/self-assessment.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </div>
     </footer>
@@ -49,24 +61,24 @@
             {
                 q: 'When is your exam (or target date)?',
                 options: [
-                    { label: 'Within the next month', val: 'urgent' },
-                    { label: '1–3 months out', val: 'soon' },
-                    { label: 'Not scheduled yet, just exploring', val: 'exploring' }
+                    { label: 'Within the next month (Urgent / Fast-Track)', val: 'urgent' },
+                    { label: '1–3 months out (Active Preparation)', val: 'soon' },
+                    { label: 'Not scheduled yet, just exploring options', val: 'exploring' }
                 ]
             },
             {
                 q: 'What’s your budget for prep right now?',
                 options: [
-                    { label: '$0 — just want to see if this is worth it', val: 'free' },
-                    { label: 'Under $50, one-time', val: 'low' },
-                    { label: '$100+ for structured, live support', val: 'high' }
+                    { label: '$0 — just want to see if this is worth it (Free Cohort / Preview)', val: 'free' },
+                    { label: 'Under $50, one-time (Cheatsheets & Mock Exams)', val: 'low' },
+                    { label: '$100+ for structured, live 1-on-1 support & FDE alliance', val: 'high' }
                 ]
             },
             {
                 q: 'How do you prefer to study?',
                 options: [
                     { label: 'Solo, self-paced, on my own schedule', val: 'solo' },
-                    { label: 'With a live group for accountability', val: 'group' }
+                    { label: 'With a live group & peer accountability', val: 'group' }
                 ]
             }
         ];
@@ -78,10 +90,10 @@
         function renderQuestion() {
             var q = questions[qIndex];
             var html = '<h3 class="card-title" style="margin-bottom:1rem;">Question ' + (qIndex + 1) + ' of ' + questions.length + '</h3>';
-            html += '<p style="color:var(--text-primary); font-weight:500; margin-bottom:1rem;">' + q.q + '</p>';
+            html += '<p style="color:var(--text-primary); font-weight:500; font-size:1.1rem; margin-bottom:1rem;">' + q.q + '</p>';
             html += '<div style="display:flex; flex-direction:column; gap:0.75rem;">';
             q.options.forEach(function(opt, i) {
-                html += '<button class="btn btn-secondary quiz-opt" data-val="' + opt.val + '" style="text-align:left;">' + opt.label + '</button>';
+                html += '<button class="btn btn-secondary quiz-opt" data-val="' + opt.val + '" style="text-align:left; padding: 0.75rem 1rem; font-size: 0.95rem;">' + opt.label + '</button>';
             });
             html += '</div>';
             qArea.innerHTML = html;
@@ -108,29 +120,31 @@
             var title, desc, link, linkLabel;
 
             if (budget === 'free') {
-                title = '🌙 Start with the Free Sunday Cohort';
-                desc = 'No cost, live, and you’ll get a real feel for the format before spending anything.';
-                link = 'cd-watering-holes.html'; linkLabel = 'How to Join';
+                title = '🌙 Start with the Free Sunday Cohort ($0 Peek)';
+                desc = 'No cost, live screen-sharing, 10-10-15 sprint format, and you’ll get a real feel for the community before spending anything.';
+                link = '../cd/cd-watering-holes.html'; linkLabel = 'How to Join Live Cohort';
             } else if (budget === 'low' || (urgency === 'urgent' && style === 'solo')) {
                 title = '📦 The $29 Exam Prep Bundle fits best';
-                desc = 'Memory cards, a prep exam, and a mock exam — self-paced, one-time cost, good for a tight timeline. (This content is also included free if you later join the membership or a live cohort.)';
-                link = 'exam-prep-product.html'; linkLabel = 'See the Bundle';
+                desc = 'Memory cards, a prep exam, and a mock exam — self-paced, one-time cost, ideal for a tight timeline without recurring billing.';
+                link = 'exam-prep-product.html'; linkLabel = 'See the $29 Bundle';
             } else if (style === 'group' && budget === 'high') {
-                title = '🎓 The $250–$500 Live Cohort fits best';
-                desc = 'Live, structured, real-time problem-solving with peer accountability — join for 3 months ($250) or a full year ($500), both include everything in the $10/mo membership too.';
-                link = 'value-proposition.html'; linkLabel = 'See the Value Proposition';
+                title = '🎓 The $250 VIP Share Screen & Contractor Alliance fits best';
+                desc = 'Live 1-on-1 workshop presets (AI Security, Environment, HITL), Sunday screen-share, and recruiter promotion network for Forward Deployed Engineers.';
+                link = '../bmc/value-proposition.html'; linkLabel = 'See VIP Value Proposition';
             } else {
-                title = '💳 The $10/mo Membership fits best';
-                desc = 'Recorded cohort replays and ongoing access at low commitment — a middle path between free and live.';
-                link = 'bmc-revenue-streams.html'; linkLabel = 'See Revenue Streams';
+                title = '💳 The $10/mo Skool Membership fits best';
+                desc = 'Recorded cohort replays, Second Brain vaults, Claude Code CLI scripts, and community discussions — the ideal low-friction middle path.';
+                link = '../bmc/bmc-revenue-streams.html'; linkLabel = 'See Revenue & Membership Details';
             }
 
             resultArea.innerHTML =
-                '<h3 class="card-title" style="margin-bottom:0.75rem;">' + title + '</h3>' +
-                '<p style="color:var(--text-secondary); margin-bottom:1.5rem;">' + desc + '</p>' +
-                '<a href="' + link + '" class="btn btn-primary" style="margin-right:0.75rem;">' + linkLabel + '</a>' +
-                '<button id="quiz-restart" class="btn btn-secondary">Restart</button>' +
-                '<p style="color:var(--text-secondary); font-size:0.8rem; margin-top:1.5rem;">⚠️ This is a self-serve suggestion, not a guarantee of exam success — Anthropic alone issues the certification via Pearson VUE.</p>';
+                '<h3 class="card-title" style="margin-bottom:0.75rem; color: var(--color-success); font-size: 1.3rem;">' + title + '</h3>' +
+                '<p style="color:var(--text-secondary); line-height: 1.6; margin-bottom:1.5rem;">' + desc + '</p>' +
+                '<div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">' +
+                '<a href="' + link + '" class="btn btn-primary">' + linkLabel + ' &rarr;</a>' +
+                '<button id="quiz-restart" class="btn btn-secondary">Restart Quiz</button>' +
+                '</div>' +
+                '<p style="color:var(--text-secondary); font-size:0.8rem; margin-top:1.5rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">⚠️ This is a diagnostic suggestion based on your responses, not a guarantee of exam pass — Anthropic alone issues certification credentials via Pearson VUE.</p>';
 
             document.getElementById('quiz-restart').addEventListener('click', function() {
                 answers = [];

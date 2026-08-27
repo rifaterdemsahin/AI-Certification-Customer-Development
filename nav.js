@@ -195,6 +195,7 @@
                 ['5_Symbols/product/skool-workshop-upload.html', '🎬 2-Hour Workshop Upload Check'],
                 ['5_Symbols/product/member-bandwidth-guardrails.html', '🛡️ Member Bandwidth Guardrails'],
                 ['5_Symbols/product/skool-community-management.html', '🌱 Community Management (Garden)'],
+                ['5_Symbols/product/skool-validation-speed-setup.html', '⚡ Skool Validation Speed Setup'],
                 ['5_Symbols/product/community-rules-enforcement.html', '⚖️ Rules: Deletions, Bans &amp; Suspensions'],
                 ['5_Symbols/product/skool-level-2-posting-restriction.html', '🔒 Level 2 Posting Restriction'],
                 ['5_Symbols/product/skool-onboarding-checklist.html', '🚀 Onboarding Checklist Plugin'],
@@ -236,6 +237,7 @@
                 ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos'],
                 ['5_Symbols/growth/content-analysis.html', '🎬 Content Analysis'],
                 ['5_Symbols/growth/content-format.html', '🎬 Short vs Long Form'],
+                ['5_Symbols/growth/glossary-short-pipeline.html', '🚂 1-Hour Train Glossary Pipeline (Print)'],
                 ['5_Symbols/growth/youtube-channel-metrics.html', '📺 YouTube Channel Metrics'],
                 ['5_Symbols/growth/youtube-banner.html', '🖼️ YouTube Channel Top Banner'],
                 ['5_Symbols/growth/cohort-prep.html', '🧰 Cohort Prep'],
@@ -248,6 +250,7 @@
                 ['5_Symbols/growth/cost-side-model.html', '📉 Cost-Side Model'],
                 ['5_Symbols/growth/validation-repeat-gate.html', '🚪 Validation Repeat Gate'],
                 ['5_Symbols/growth/marketing-tactics.html', '📰 Marketing Tactics'],
+                ['5_Symbols/growth/private-quiz-lead-magnet-tactic.html', '🕵️ Private Quiz Lead Magnet Tactic'],
                 ['5_Symbols/growth/funfair-tokens.html', '🎡 Funfair Token System'],
                 ['5_Symbols/growth/youtube-titles-skool-mapping.html', '🎯 YouTube Titles → Skool Mapping'],
                 ['5_Symbols/growth/video-conversion-tactics.html', '🎬 Video End-Screen &amp; Conversion Tactics'],
@@ -281,7 +284,8 @@
                 ['5_Symbols/execution/4dx-discipline-1.html', '🎯 1. Focus on WIG'],
                 ['5_Symbols/execution/4dx-discipline-2.html', '⚖️ 2. Act on Leads'],
                 ['5_Symbols/execution/4dx-discipline-3.html', '📊 3. Keep Scoreboard'],
-                ['5_Symbols/execution/4dx-discipline-4.html', '🔄 4. Create Cadence']
+                ['5_Symbols/execution/4dx-discipline-4.html', '🔄 4. Create Cadence'],
+                ['5_Symbols/execution/eos-traction-alignment.html', '📘 EOS Traction Alignment (Wickman)']
             ]
         },
         {
@@ -310,6 +314,9 @@
                 ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
                 ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['5_Symbols/product/resources.html', '🌐 External Resources Directory'],
+                ['markdown_renderer.html?src=reports/customer-discovery-ai-common-language-library-short-v1.0.0.md', '📚 AI Common Language Library Short v1.0'],
+                ['markdown_renderer.html?src=reports/eos-traction-alignment-v1.0.0.md', '📘 EOS Traction Alignment Report v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-private-quiz-lead-magnet-v1.0.0.md', '🕵️ Private Quiz Tactic Report v1.0'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.4.0.md', '🧪 Acidity Check Report v1.4'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.3.0.md', '🧪 Acidity Check Report v1.3 (Historical)'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.2.0.md', '🧪 Acidity Check Report v1.2 (Historical)'],
@@ -327,6 +334,8 @@
                 ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification'],
                 ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation'],
                 ['markdown_renderer.html?src=reports/founder-voice-skool-cta-v1.0.0.md', '🎙️ Founder Voice vs AI Voice v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-marianna-pedagogy-first-principles-v1.0.0.md', '👤 Marianna Pedagogy &amp; First Principles CD v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-marianna-voice-roger-rabbit-v1.0.0.md', '👤 Marianna Voice + Roger Rabbit CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-cheuk-ho-interview-v1.0.0.md', '👤 Cheuk Ho CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-mehmet-interview-v1.0.0.md', '👤 Mehmet CD Interview v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-jamal-interview-v1.0.0.md', '👤 Jamal CD Interview v1.0'],
@@ -357,8 +366,12 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/growth/private-quiz-lead-magnet-tactic.html', title: 'Private Quiz Assessment Lead Magnet Tactic', desc: 'Persuasion engineering & video lead magnet tactic: 7 psychological levers from CIA-style assessment scripts, Brian & Marianna discovery synthesis, and interactive quiz routing.', cat: 'Growth', tags: 'private quiz assessment lead magnet video script cia persuasion engineering brian marianna self assessment superpower blind spot roger rabbit dalinea qr code h2 h4 h5 h10 h21 h24 h28 h29 h30' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-marianna-pedagogy-first-principles-v1.0.0.md', title: 'Customer Discovery Report: Marianna First Principles & Sub-60s Glossary Shorts', desc: 'Qualitative analysis of Marianna feedback on the Curse of Knowledge, Associate certification starting point, sub-60s first-principles glossary shorts, and empowering learners to feel smart.', cat: 'Docs', tags: 'marianna customer discovery interview first principles glossary shorts curse of knowledge associate certification feel smart not stupid audience empowerment pedagogical empathy roger rabbit fal.ai elevenlabs h2 h10 h24 h25 h29 h30 h1 h8 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-private-quiz-lead-magnet-v1.0.0.md', title: 'Customer Discovery Report: Private Quiz Lead Magnet Tactic v1.0', desc: 'Customer discovery synthesis and tactical report on assessment video lead magnets, psychological persuasion mechanics, and self-assessment routing.', cat: 'Docs', tags: 'private quiz lead magnet assessment video tactic report psychological persuasion engineering brian marianna cia tradecraft self assessment superpower blindspot h2 h4 h5 h10 h21 h24 h28 h29 h30 report' },
         { url: '5_Symbols/product/chatgpt-investor-feedback.html', title: 'ChatGPT Investor & Narrative Feedback', desc: 'Critical external assessment from ChatGPT Web Version: concept 8/10, market logic 8/10, investor readiness 6/10, 4 rewritten core cards, secret insight, and 6-step value stack.', cat: 'Product', tags: 'chatgpt investor feedback web version narrative 4 core cards secret insight visual ai education value stack tam sam som research and markets pearson vue gov uk vc pitch h1 h2 h3 h5 h6 h8 h12 h21' },
         { url: 'markdown_renderer.html?src=reports/chatgpt-narrative-and-investor-feedback-v1.0.0.md', title: 'ChatGPT Narrative & Investor Readiness Feedback Report v1.0.0', desc: 'Detailed report evaluating business model narrative, 4 core cards, TAM/SAM/SOM market sizing rigor, defensible secret insight, and cohort value stack.', cat: 'Docs', tags: 'chatgpt narrative investor readiness feedback report 4 core cards secret insight visual ai education value stack research and markets pearson vue gov uk h1 h2 h3 h5 h6 h8 h12 h21 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-marianna-voice-roger-rabbit-v1.0.0.md', title: 'Customer Discovery Report: Marianna Voice Clone + Roger Rabbit / Dalinea Signature', desc: 'Qualitative analysis of Marianna feedback to pair founder AI voice clone with dalinea Roger Rabbit mixed-reality animation for audience memorability, shipping fal.ai ElevenLabs studio.', cat: 'Docs', tags: 'marianna customer discovery interview dalinea roger rabbit founder ai voice clone fal.ai elevenlabs eleven-v3 memorable audience h2 h10 h17 h28 h29 h30 report' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-cheuk-ho-interview-v1.0.0.md', title: 'Customer Discovery Report: Cheuk Ho Interview', desc: 'Qualitative analysis of Cheuk Ho interview on AI-generated post fatigue, audience engagement friction, and written founder voice mandate.', cat: 'Docs', tags: 'cheuk cheuk ho customer discovery interview ai generated posts fatigue engagement friction founder voice authentic voice linkedin national grid h2 h4 h5 h10 h24 h28 h29 h30 report' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-mehmet-interview-v1.0.0.md', title: 'Customer Discovery Report: Mehmet Interview', desc: 'Qualitative analysis of Mehmet interview on "1k Short vs. 3dk Course", creator watering holes (Erhan Meydan, Suna & Akın), reverse response marketing, and £1,000 corporate vs D2C membership pricing.', cat: 'Docs', tags: 'mehmet customer discovery interview shorts reels micro format 1k short 3dk course erhan meydan suna akin reverse response marketing corporate 1000 pound d2c membership founder schedule time discipline h2 h3 h5 h10 h12 h21 h24 h28 h29 h30 report' },
         { url: '5_Symbols/dashboard/content-kanban-release-schedule.html', title: 'Content Kanban & 5-Minute Video Release Master Schedule', desc: 'Visual Kanban board and chronological 12-week video release calendar pairing 5-minute modular lessons with explicit Learning Objectives and Key Results.', cat: 'Dashboard', tags: 'kanban release schedule content calendar 5-minute video modular learning objectives key results okrs video production aug-video-animation-2 youtube skool lo kr h2 h4 h5 h10 h29 h30' },
@@ -408,6 +421,7 @@
         { url: '5_Symbols/strategy/enterprise-partnerships.html', title: 'Enterprise Partnerships & B2B Expansion', desc: 'Leveraging audience scale and student success stories to secure bulk corporate training contracts and high-value developer brand sponsorships.', cat: 'Strategy', tags: 'enterprise partnerships b2b expansion corporate training brand sponsorships partner network anthropic cambridge marianna h12 h17 h18' },
         { url: '5_Symbols/growth/platform-relationships-and-payments.html', title: 'Platform Ecosystem & Payment Settlement Architecture', desc: 'Detailed roles of YouTube, LinkedIn, and Skool in the acquisition-delivery funnel, and how Delivery Pilot settles all member and cohort payments via Stripe.', cat: 'Growth', tags: 'platform relationships payments organization delivery pilot youtube linkedin skool stripe settlement merchant banking h4 h5 h7 h12 h30' },
         { url: '5_Symbols/growth/future-sponsors.html', title: 'Future Sponsors & Strategic Sponsorship Roadmap', desc: 'Stage-gated sponsorship strategy for Stage 3/4 covering AI developer tooling, cloud providers, recruiter placements, and ethical guardrails.', cat: 'Growth', tags: 'future sponsors monetization sponsorships stage 3 4 brand partners cursor anthropic cloud recruiter placements advertising h13 h16' },
+        { url: '5_Symbols/growth/glossary-short-pipeline.html', title: '1-Hour Train Glossary Pipeline', desc: 'Printable A4: Term → Gemini → Flow → Canva → Post. One commute hour per common-language library Short.', cat: 'Growth', tags: 'pipeline gemini flow canva train glossary short print memorize h2 h4 h28' },
         { url: '5_Symbols/growth/content-format.html', title: 'Content Format: Short vs Long Form', desc: 'Where animated videos, workshops, and course-based videos live on YouTube, LinkedIn, and Skool — with the rationale for each.', cat: 'Growth', tags: 'short form long form youtube shorts linkedin skool animated workshop course format placement' },
         { url: '5_Symbols/growth/sales-marketing-roadmap.html', title: 'Sales & Marketing Roadmap', desc: 'Maps the 7-cohort Skool curriculum sequence (Foundations through Second Brain) to funnel stages, offers, and multi-cert expansion.', cat: 'Growth', tags: 'sales marketing roadmap skool cohorts curriculum funnel sequence forward deployed engineering second brain' },
         { url: '5_Symbols/strategy/practice-exams-gap.html', title: 'Practice Exam & Question Bank Gap', desc: 'Analysis of the critical product gap (lack of blueprint-mapped practice exams) and mitigation roadmap.', cat: 'Strategy', tags: 'practice exams question banks mock test blueprint validation gap risk' },
@@ -437,6 +451,7 @@
         { url: '5_Symbols/product/skool-offer-ideas.html', title: 'What You Can Offer on Skool (Skool Games Inspiration)', desc: 'Catalog of 10 high-converting offer structures, modular blueprints, Sunday live hot-seats, and XP leaderboard unlockables inspired by Skool Games.', cat: 'Business Model', tags: 'skool offer ideas skool games inspiration gamification leaderboards levels modules bootcamp h1 h5 h8' },
         { url: '5_Symbols/product/member-bandwidth-guardrails.html', title: 'Member Bandwidth Guardrails — Anti-Overload Metric', desc: 'Curriculum guardrails capping member study load at 3 to 4 hours/week to prevent cognitive burnout and cancellation churn (Al Jack Law).', cat: 'Business Model', tags: 'member bandwidth guardrails student cognitive load time budget overload churn 3 hours week al jack h2 h8' },
         { url: '5_Symbols/product/skool-community-management.html', title: 'Skool Community Management — The Garden Playbook', desc: 'Operational garden framework: prune weeds (broken window theory), add water (new member care), daily 5-minute checklist, and zero-tolerance moderation.', cat: 'Business Model', tags: 'skool community management garden weeds water culture daily care moderation spam bullying broken windows h8 h29' },
+        { url: '5_Symbols/product/skool-validation-speed-setup.html', title: 'Skool Validation Speed Setup — Exact Fix List', desc: 'Stage 2: messy Skool slows the two-launch $10k gate. Eight founder-owned setup fixes; refuse agency spend. H5, H8, H9.', cat: 'Business Model', tags: 'skool validation speed setup community messy incomplete 10k repeat gate about onboarding living hubs garden pass h5 h8 h9' },
         { url: '5_Symbols/product/community-rules-enforcement.html', title: 'Community Rules: Deletions, Bans & Suspensions Policy', desc: 'Comprehensive enforcement policy: when posts get deleted, when accounts are suspended (7-30 days), and zero-tolerance instant bans for harassment, scraping, and exam cheating.', cat: 'Business Model', tags: 'community rules deleted posts suspended banned moderation policy fast track bans appeals 3 strikes broken windows nda cheating h8 h29' },
         { url: '5_Symbols/product/skool-level-2-posting-restriction.html', title: 'Skool Level 2 Posting Restriction Milestone', desc: 'Admin setup, modal copy, and 5-point comment engagement gate to unlock standalone posting, filtering spam and nurturing 10 true regulars.', cat: 'Business Model', tags: 'skool level 2 posting restriction plugins settings 5 points comment likes anti-spam broken windows gamification leaderboards h5 h8 h29' },
         { url: '5_Symbols/product/skool-onboarding-checklist.html', title: 'Skool Onboarding Checklist & Welcome Milestone', desc: 'Admin setup and 3-step member activation widget (60s video, comment on post, download mobile app) driving Day-1 retention and Stage 3 customer creation.', cat: 'Business Model', tags: 'skool onboarding checklist welcome plugin 60s video comment mobile app download churn retention customer creation h5 h8 h13' },
@@ -467,6 +482,8 @@
         { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Act on Lead Measures', desc: 'Leveraging predictive, influenceable lead measures instead of lag measures.', cat: 'Execution', tags: '4dx execution leverage lead lag measure metrics predictive influenceable' },
         { url: '5_Symbols/execution/4dx-discipline-3.html', title: 'Discipline 3: Keep Scoreboard', desc: 'Visual scoreboard passing the 5-second rule of winning or losing.', cat: 'Execution', tags: '4dx execution visibility visual scoreboard winning losing 5 second rule' },
         { url: '5_Symbols/execution/4dx-discipline-4.html', title: 'Discipline 4: Create Cadence of Accountability', desc: 'Establishing weekly self-audit WIG meetings and commitment rhythm.', cat: 'Execution', tags: '4dx execution rhythm weekly meeting commitments cadence self audit roadmap' },
+        { url: '5_Symbols/execution/eos-traction-alignment.html', title: 'EOS Traction Alignment (Gino Wickman)', desc: 'Organizational Checkup 49/100 against 272 pages; V/TO, Rocks, Scorecard, Level 10, Accountability Chart for a solo founder.', cat: 'Execution', tags: 'eos traction gino wickman vto rocks scorecard level 10 ids accountability chart checkup h23' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-ai-common-language-library-short-v1.0.0.md', title: 'AI Common Language Library Short (Marianna + Meg)', desc: 'Shipped tokenization glossary short KVKJRdkH-B8: 30 views, 4 likes, 46s, 1h train Gemini Flow Canva. H28 In Testing.', cat: 'Docs', tags: 'marianna meg glossary tokenization youtube short h28 h2 h29 common language library' },
         { url: '5_Symbols/hypotheses/hyp-h23.html', title: 'H23: 4DX Weekly Accountable Rhythm', desc: 'Hypothesis detailing premises and conclusion of execution cadence.', cat: 'Strategy', tags: 'hypothesis h23 4dx rhythm weekly commitment self audit' },
         { url: '5_Symbols/bmc/bmc-capital-relationships.html', title: 'Capital Relationships', desc: 'Analyzing Constant Capital (tools), Variable Capital (labor), and Marxian surplus in the ecosystem.', cat: 'Business Model', tags: 'capital infrastructure tools marx marxian constant variable relationships' },
         { url: '5_Symbols/bmc/surplus-value.html', title: 'Surplus Value Creation', desc: 'Explaining how surplus value is generated from intellectual labor and infinite digital reproducibility.', cat: 'Business Model', tags: 'surplus value marx labor reproduction cost profit value' },
@@ -1524,7 +1541,13 @@
             { url: '5_Symbols/execution/4dx-discipline-1.html', title: 'Discipline 1: Focus', emoji: '🎯' },
             { url: '5_Symbols/execution/4dx-discipline-2.html', title: 'Discipline 2: Lead Measures', emoji: '⚖️' },
             { url: '5_Symbols/execution/4dx-discipline-3.html', title: 'Discipline 3: Scoreboard', emoji: '📊' },
-            { url: '5_Symbols/execution/4dx-discipline-4.html', title: 'Discipline 4: Cadence', emoji: '🔄' }
+            { url: '5_Symbols/execution/4dx-discipline-4.html', title: 'Discipline 4: Cadence', emoji: '🔄' },
+            { url: '5_Symbols/execution/eos-traction-alignment.html', title: 'EOS Traction Alignment', emoji: '📘' }
+        ],
+        '5_Symbols/execution/eos-traction-alignment.html': [
+            { url: '5_Symbols/execution/4dx-execution-crisis.html', title: '4DX Hub', emoji: '🌪️' },
+            { url: '5_Symbols/hypotheses/hyp-h23.html', title: 'H23 Execution Rhythm', emoji: '🟡' },
+            { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Plan', emoji: '🗓️' }
         ],
         '5_Symbols/execution/4dx-discipline-1.html': [
             { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'Execution Overview', emoji: '🌪️' },
@@ -1548,7 +1571,8 @@
         ],
         '5_Symbols/hypotheses/hyp-h23.html': [
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Tracker', emoji: '💭' },
-            { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'Execution Overview', emoji: '🌪️' }
+            { url: '5_Symbols/execution/4dx-execution-crisis.html', title: 'Execution Overview', emoji: '🌪️' },
+            { url: '5_Symbols/execution/eos-traction-alignment.html', title: 'EOS Traction Alignment', emoji: '📘' }
         ],
         'index.html': [
             { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' },
