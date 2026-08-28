@@ -3,115 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Being Useful for the Other vs. Building Content for Yourself | AI Certification Helper</title>
+    <title>How to Be Genuinely Useful for the Audience &middot; Being Useful for the Other | AI Certification Helper</title>
     <link rel="stylesheet" href="../../style.css">
+    <style>
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .pillar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .pillar-card:hover {
+            transform: translateY(-2px);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.04);
+            font-weight: 600;
+        }
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <div id="site-header"></div>
 
     <main class="container">
 
-        <a href="make-it-about-them.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
-            &larr; Back to Make It About Them
-        </a>
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <a href="make-it-about-them.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                &larr; Back to Make It About Them
+            </a>
+            <span style="color: var(--border-color);">|</span>
+            <a href="intentionality-digital-minimalism.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                🧘 Digital Minimalism &amp; Noise Filter
+            </a>
+            <span style="color: var(--border-color);">|</span>
+            <a href="../product/what-community-gets.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                🎁 What Community Gets (Dual-Engine)
+            </a>
+        </div>
 
-        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid var(--color-primary);">
-            <span class="badge" style="background-color: rgba(59, 130, 246, 0.15); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);">Strategy &middot; Process Sanity Check &middot; Value Creation</span>
-            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">🤝 Being Useful for the Other vs. Building Content for Yourself</h1>
-            <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 86ch; line-height: 1.65; font-size: 1.05rem;">
-                The fundamental divide in customer development: <strong>Building for yourself</strong> (intellectual indulgence, ego-stroking, vanity metrics, bragging) vs. <strong>Being useful for the other</strong> (listening to where the audience actually hurts, meeting them where they stand, transforming raw founder assets into actionable solution menus). This page documents empirical sanity checks from Rifat Erdem Sahin's journey and connects them directly across the whole project architecture. See <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>, <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a>, <a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25</a>, and <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>.
-            </p>
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(15, 23, 42, 0.85) 100%);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Strategy &middot; Master Operating Principle &middot; Value Creation</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.35rem; margin-bottom: 0.75rem; letter-spacing: -0.02em;">🤝 How Can This Business Be Genuinely Useful for the Audience?</h1>
+                    <p style="color: var(--text-secondary); max-width: 86ch; line-height: 1.65; font-size: 1.05rem;">
+                        The ultimate acid test for every video, workshop, post, and repository: <strong>Are we building for our own ego, or are we being genuinely useful for the audience?</strong>
+                    </p>
+                    <p style="color: var(--text-secondary); max-width: 86ch; line-height: 1.65; font-size: 1.05rem; margin-top: 0.5rem;">
+                        <em>"Building for yourself"</em> is vanity: intellectual self-indulgence, bragging to recruiters about 500 unorganized repositories, reading corporate slide decks, and lecturing down to people. <strong>"Being genuinely useful"</strong> is service: listening deeply to customer pain, breaking the Curse of Knowledge so students feel smart, delivering proctored credentials alongside working personal software, and elevating engineers into sovereign £500–£1,000+/day Forward Deployed Contractors.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
+                    <span class="pill-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">💎 100% Audience Utility</span>
+                    <span class="pill-badge" style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3);">🚫 0% Founder Vanity</span>
+                </div>
+            </div>
+
             <div class="grid" style="margin-top: 1.5rem;">
                 <div class="col-6">
                     <ul class="info-list">
                         <li class="info-item">
-                            <span class="info-label">Page ID:</span>
-                            <span class="info-value">being-useful-for-the-other.html</span>
+                            <span class="info-label">Operating Law:</span>
+                            <span class="info-value highlight-success">Make the Student the Hero (Luke Skywalker)</span>
                         </li>
                         <li class="info-item">
-                            <span class="info-label">Core Philosophy:</span>
-                            <span class="info-value highlight-success">Audience Utility &gt; Personal Vanity</span>
+                            <span class="info-label">Founder Role:</span>
+                            <span class="info-value">Practitioner Guide (Yoda) &middot; Rifat Erdem Sahin</span>
                         </li>
                         <li class="info-item">
-                            <span class="info-label">Owner:</span>
-                            <span class="info-value">Rifat Erdem Sahin</span>
+                            <span class="info-label">Core Delivery Vehicle:</span>
+                            <span class="info-value"><a href="../product/what-community-gets.html" style="color: var(--color-primary);">Dual-Engine Value Superpower</a></span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul class="info-list">
                         <li class="info-item">
-                            <span class="info-label">Operating Mandate:</span>
-                            <span class="info-value">Customer Problem Driven Iteration</span>
+                            <span class="info-label">Founder Passion Standard:</span>
+                            <span class="info-value" style="color: #ef4444;"><a href="../growth/inspirational-youtubers.html" style="color: #ef4444;">Gary Stevenson Direct-to-Lens Conviction</a></span>
                         </li>
                         <li class="info-item">
                             <span class="info-label">Linked Hypotheses:</span>
                             <span class="info-value">
-                                <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29 (Listen &gt; Speak)</a>,
-                                <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24 (Pain Drivers)</a>,
-                                <a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25 (Cert Value)</a>,
-                                <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30 (Delivery Pilot)</a>
+                                <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a> (Listen > Speak),
+                                <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a> (Emotional Drivers),
+                                <a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25</a> (Cert Laddering),
+                                <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a> (FDE Alliance)
                             </span>
                         </li>
                         <li class="info-item">
-                            <span class="info-label">Cross-References:</span>
-                            <span class="info-value"><a href="make-it-about-them.html" style="color: var(--color-primary);">Make It About Them</a> &middot; <a href="listen-more-than-you-speak.html" style="color: var(--color-primary);">Listen &gt; Speak</a> &middot; <a href="alex-hormozi-agent.html" style="color: var(--color-primary);">Hormozi Offer</a></span>
+                            <span class="info-label">Digital Minimalist Guardrail:</span>
+                            <span class="info-value"><a href="intentionality-digital-minimalism.html" style="color: var(--color-info);">Prune Noise &middot; Amplify Signal</a></span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Section: The Core Law & Contrast -->
-        <section class="content-section animate-fade-in">
-            <h2 class="section-title">⚖️ The Core Contrast: Building for Yourself vs. Being Useful</h2>
-            <div class="grid">
-                <div class="col-6">
-                    <div class="card" style="height: 100%; border-top: 4px solid var(--color-danger); background: rgba(239, 68, 68, 0.03);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-danger); text-transform: uppercase; letter-spacing: 0.05em;">❌ Building Content for Yourself</span>
-                            <span class="status-pill" style="background: rgba(239,68,68,0.1); color: var(--color-danger); border: 1px solid rgba(239,68,68,0.25); font-size: 0.75rem;">The Vanity Trap</span>
+        <!-- Section: The 6 Pillars of Genuine Utility -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">💎 The 6 Pillars of Genuine Audience Usefulness</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                How this business solves real problems and delivers undeniable, life-changing utility for our community.
+            </p>
+
+            <div class="pillar-grid">
+                <!-- Pillar 1 -->
+                <div class="pillar-card" style="border-top: 4px solid #3b82f6;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="pill-badge" style="background: rgba(59,130,246,0.15); color: #93c5fd;">Pillar 1 &middot; Pedagogy</span>
+                            <span style="font-size: 1.5rem;">🧠</span>
                         </div>
-                        <h3 class="card-title" style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.75rem;">Founder Ego &amp; Intellectual Self-Indulgence</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                            Starting with what <em>you</em> want to demonstrate, what makes <em>you</em> feel smart, or what showcases your elite pedigree ($1.3M+ contractor track record, complex multi-agent graphs).
+                        <h3 style="font-size: 1.2rem; color: #93c5fd; margin-bottom: 0.5rem;">Make Them Feel Smart, Never Stupid</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>Marianna's Customer Discovery Mandate:</strong> <em>"It is not good to make learners feel stupid; they must feel smart, capable, and empowered after watching our content."</em>
                         </p>
-                        <ul class="emoji-list" style="margin-top: 1rem;">
-                            <li><span class="emoji">🛑</span><span style="color: var(--text-secondary);"><strong>Target Audience Mismatch:</strong> Teaching master-level apex topics when 90% of prospective students are trying to cross the starting line.</span></li>
-                            <li><span class="emoji">🛑</span><span style="color: var(--text-secondary);"><strong>Unusable Bragging:</strong> Dumping massive credentials (e.g. <em>"Look at my 450 public GitHub repos"</em>) that intimidate or bore recruiters and learners alike.</span></li>
-                            <li><span class="emoji">🛑</span><span style="color: var(--text-secondary);"><strong>Zero Retention &amp; Conversion:</strong> Audience feels like passive spectators watching a museum exhibit instead of getting tools to solve their urgent problem.</span></li>
+                        <ul class="emoji-list" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li><strong>Break the Curse of Knowledge:</strong> Replace intimidating academic jargon with plain-English 60-second beat sheets (Tech with Nana benchmark).</li>
+                            <li><strong>Associate On-Ramp Before Architect:</strong> Build accessible Foundations modules so newcomers gain immediate confidence before tackling apex certifications (<a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25</a>).</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="card" style="height: 100%; border-top: 4px solid var(--color-success); background: rgba(16, 185, 129, 0.03);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-success); text-transform: uppercase; letter-spacing: 0.05em;">✅ Being Useful for the Other</span>
-                            <span class="status-pill" style="background: rgba(16,185,129,0.1); color: var(--color-success); border: 1px solid rgba(16,185,129,0.25); font-size: 0.75rem;">The Service Engine</span>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card" style="border-top: 4px solid #10b981;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="pill-badge" style="background: rgba(16,185,129,0.15); color: #34d399;">Pillar 2 &middot; Deliverables</span>
+                            <span style="font-size: 1.5rem;">🛠️</span>
                         </div>
-                        <h3 class="card-title" style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.75rem;">Empathetic Scaffolding &amp; Tangible Utility</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                            Starting with where the customer is bleeding today, listening during discovery, and packaging your deep technical inventory into modular, ready-to-run menus that solve their exact gap.
+                        <h3 style="font-size: 1.2rem; color: #34d399; margin-bottom: 0.5rem;">The Dual-Engine Value Superpower</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>Resolve the Certifications vs. Custom Apps Dilemma:</strong> Give students both the external key and the internal engine (<a href="../product/what-community-gets.html" style="color: var(--color-primary);">what-community-gets.html</a>).
                         </p>
-                        <ul class="emoji-list" style="margin-top: 1rem;">
-                            <li><span class="emoji">🚀</span><span style="color: var(--text-secondary);"><strong>Curriculum Laddering:</strong> Offering foundational and Associate courses alongside Architect, ensuring an accessible on-ramp for all skill levels.</span></li>
-                            <li><span class="emoji">🚀</span><span style="color: var(--text-secondary);"><strong>Preset Delivery Menu:</strong> Turning 450 repos into 1-1 session blueprints (AI Security, Environment, HITL) where candidates select and deploy custom solutions in 1 hour.</span></li>
-                            <li><span class="emoji">🚀</span><span style="color: var(--text-secondary);"><strong>High Trust &amp; Conversion:</strong> The learner becomes the hero (Luke Skywalker) who achieves tangible career leaps and passes certification exams.</span></li>
+                        <ul class="emoji-list" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li><strong>External Credibility (The Key):</strong> Proctored Pearson VUE / Credly certification badges to pass enterprise ATS resume filters and consulting RFPs.</li>
+                            <li><strong>Internal Mastery (The Superpower):</strong> Working personal AI applications (Obsidian Second Brain with Hybrid Search RAG, MCP servers, agent loops) for daily 10x leverage.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card" style="border-top: 4px solid #ef4444;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="pill-badge" style="background: rgba(239,68,68,0.15); color: #fca5a5;">Pillar 3 &middot; Conviction</span>
+                            <span style="font-size: 1.5rem;">🔥</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; color: #fca5a5; margin-bottom: 0.5rem;">Electrifying Passion &amp; Insider Truth</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>The Gary Stevenson Delivery Benchmark:</strong> Look straight into the camera lens with burning conviction and unvarnished truth (<a href="positive-ai-skills-message.html" style="color: var(--color-primary);">positive-ai-skills-message.html</a>).
+                        </p>
+                        <ul class="emoji-list" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li><strong>No Monotone Corporate Slides:</strong> Speak from the gut to wake engineers up to the reality of the AI workplace shift.</li>
+                            <li><strong>$1.3M+ Contractor Authority:</strong> Share real-world enterprise tradecraft from decades of billing high rates across UK and USA tech (Pexabo Ltd).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-card" style="border-top: 4px solid #8b5cf6;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="pill-badge" style="background: rgba(139,92,246,0.15); color: #c4b5fd;">Pillar 4 &middot; Actionability</span>
+                            <span style="font-size: 1.5rem;">📋</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; color: #c4b5fd; margin-bottom: 0.5rem;">60-Min Turnkey Presets Over 500-Repo Dumps</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>Resolve Inventory Vanity:</strong> Turn 500 static repositories into 4 curated, actionable Preset Menus (<a href="1-1-presets-pivot.html" style="color: var(--color-primary);">1-1-presets-pivot.html</a>).
+                        </p>
+                        <ul class="emoji-list" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li><strong>No Overwhelming Repos:</strong> Students pick from a clear menu: (1) Fast-Track Certs, (2) AI Security, (3) Environment IaC, (4) Human-in-the-Loop.</li>
+                            <li><strong>1-Hour Deployment ROI:</strong> In a single 1-on-1 VIP session, deploy a working enterprise sandbox clone directly into their environment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="pillar-card" style="border-top: 4px solid #f59e0b;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="pill-badge" style="background: rgba(245,158,11,0.15); color: #fbbf24;">Pillar 5 &middot; Community</span>
+                            <span style="font-size: 1.5rem;">🎙️</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; color: #fbbf24; margin-bottom: 0.5rem;">High-Touch Empathy &amp; Live Co-Working</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>Human Connection Over Automated Noise:</strong> Overcome AI content fatigue with authentic human care (<a href="../product/skool-community-management.html" style="color: var(--color-primary);">Garden Playbook</a>).
+                        </p>
+                        <ul class="emoji-list" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li><strong>Sunday Live Screen-Share Labs:</strong> Safe, collaborative workshop environment (Anna's 5-10-5 pacing) to debug code live.</li>
+                            <li><strong>Monday VIP Claude Cowork:</strong> Direct recruiter promotion, CV optimization, and tender bidding prep under the 30k LinkedIn network.</li>
+                            <li><strong>Daily 15-Min 1-on-1 Check-Ins:</strong> Direct founder DMs asking how members are doing personally with burnout and career shifts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="pillar-card" style="border-top: 4px solid #06b6d4;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="pill-badge" style="background: rgba(6,182,212,0.15); color: #67e8f9;">Pillar 6 &middot; Career Leap</span>
+                            <span style="font-size: 1.5rem;">🧑‍✈️</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; color: #67e8f9; margin-bottom: 0.5rem;">Economic Freedom &amp; Tender Co-Bidding</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <strong>The Ultimate Transformation Outcome:</strong> Moving from a disposable junior syntax coder to a sovereign £500–£1,000+/day Forward Deployed Engineer (<a href="delivery-pilot-roadmap.html" style="color: var(--color-primary);">H30</a>).
+                        </p>
+                        <ul class="emoji-list" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li><strong>Agile SME Turn-Key POCs:</strong> Rapid £3k–£10k automation projects providing verified case studies before enterprise pitches (<a href="b2c2b-business-model.html" style="color: var(--color-primary);">B2C2B Model</a>).</li>
+                            <li><strong>The Delivery Pilot Alliance:</strong> Co-bidding on enterprise AI consulting tenders under the Pexabo Ltd umbrella, sharing revenue and contracts.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section: Concrete Real-World Sanity Checks -->
-        <section class="content-section animate-fade-in">
-            <h2 class="section-title">🔍 Process Sanity Checks: Two Real-World Founder Pivots</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 82ch;">
-                True Customer Development requires honest retrospection and sanity checks. Here is how two real founder assumptions were falsified and successfully restructured to maximize audience utility:
+        <!-- Section: The 6-Question Pre-Creation Litmus Scorecard -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">⚖️ The "Audience Utility vs. Founder Vanity" Scorecard</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                Before writing a line of code, creating a slide deck, uploading a video, or launching a feature, run through these 6 litmus questions:
             </p>
 
+            <div class="card">
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%; color: var(--text-muted);">Litmus Question</th>
+                                <th style="width: 37.5%; color: #ef4444; background: rgba(239, 68, 68, 0.05);">❌ Founder Vanity (STOP &amp; KILL)</th>
+                                <th style="width: 37.5%; color: var(--color-success); background: rgba(16, 185, 129, 0.05);">💎 Genuine Audience Utility (PROCEED)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Demand Origin</strong></td>
+                                <td style="color: var(--text-secondary);">"I had a cool idea in the shower and built it in a vacuum."</td>
+                                <td style="color: var(--text-primary); font-weight: 500;"><strong>An actual human (B., Jamal, Sude, Brian, Marianna, Cheuk) explicitly asked for this during discovery.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Psychological Effect</strong></td>
+                                <td style="color: var(--text-secondary);">Makes the founder look smart and the student feel overwhelmed or inadequate.</td>
+                                <td style="color: var(--text-primary); font-weight: 500;"><strong>Makes the student feel smart, capable, and confident to take immediate action today.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Tangible Gain</strong></td>
+                                <td style="color: var(--text-secondary);">Theoretical concepts that don't translate to cash, certifications, or saved hours.</td>
+                                <td style="color: var(--text-primary); font-weight: 500;"><strong>Directly helps them pass Pearson VUE, secure a $100 bonus, or land a £500–£1,000/day contract.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Delivery Packaging</strong></td>
+                                <td style="color: var(--text-secondary);">Monuments: Dumping 500 raw repos or 45-minute unstructured slide lectures.</td>
+                                <td style="color: var(--text-primary); font-weight: 500;"><strong>Menus: Curated 60-second beat sheets, modular YouTube Course chapters, or 1-hour turnkey presets.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5. Communication Tone</strong></td>
+                                <td style="color: var(--text-secondary);">Monotone corporate slide-reading, academic posturing, or spam announcements.</td>
+                                <td style="color: var(--text-primary); font-weight: 500;"><strong>Electrifying Gary Stevenson raw conviction, direct eye contact, and living evergreen hubs.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>6. Bandwidth Reality</strong></td>
+                                <td style="color: var(--text-secondary);">Consumes finite hours on non-validating distractions without moving the $10k gate.</td>
+                                <td style="color: var(--text-primary); font-weight: 500;"><strong>Protects the 65h weekly ledger and safeguards against the H33 £100k opportunity cost ceiling.</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Process Sanity Checks (Real Founder Pivots) -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">🔍 Real-World Case Studies: How Founder Assumptions Were Pivoted for Utility</h2>
+            
             <!-- Case 1 -->
-            <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--color-warning);">
+            <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--color-warning);">
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
                     <h3 style="margin: 0; font-size: 1.25rem; color: var(--text-primary);">Case 1: The AI Certified Architect vs. Associate Course Pivot</h3>
                     <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">Curriculum Calibration &middot; H25 &amp; H1</span>
@@ -122,10 +319,10 @@
                         <div class="spec-box" style="border-left-color: var(--color-danger); height: 100%;">
                             <div class="spec-title" style="color: var(--color-danger);">Initial Approach (Building for Self)</div>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Assumption:</strong> As an elite enterprise architect who already cleared the highest exams, Rifat initially focused exclusively on the advanced <strong>Claude Certified Architect &ndash; Professional</strong> course.
+                                <strong>Assumption:</strong> As an enterprise architect who already cleared apex exams, Rifat initially focused exclusively on the advanced <strong>Claude Certified Architect &ndash; Professional</strong> track.
                             </p>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Reality Check / Audience Feedback:</strong> Discovery interviews and community intake (e.g. Tomiwa, Jamal, beginner joiners) revealed that 75%+ of the active audience was preparing for or clearing the <strong>Claude Certified Associate / Foundations</strong> exam first before daring to attempt Architect.
+                                <strong>Audience Reality Check:</strong> Discovery interviews (Tomiwa, Jamal, beginner joiners) revealed that 75%+ of prospective students needed to clear the <strong>Associate / Foundations</strong> exam first before attempting Architect.
                             </p>
                         </div>
                     </div>
@@ -133,10 +330,10 @@
                         <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
                             <div class="spec-title" style="color: var(--color-success);">Pivot to Utility (Being Useful for the Other)</div>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Sanity Check Action:</strong> Immediately expanded curriculum scope to create comprehensive <strong>Associate and Foundations prep modules</strong>, practice exam mock questions, and step-by-step onboarding ladders.
+                                <strong>Action:</strong> Immediately built comprehensive <strong>Associate and Foundations prep modules</strong>, practice simulators, and step-by-step onboarding tracks.
                             </p>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Outcome:</strong> Lowered cognitive barrier to entry, allowed candidates to experience rapid wins (e.g. Tomiwa clearing Associate in 2 days), and built a loyal feeder cohort naturally progressing to the Architect tier.
+                                <strong>Outcome:</strong> Lowered cognitive barrier to entry, produced quick wins (e.g. Tomiwa passing Associate in 2 days), and built a loyal feeder cohort naturally ascending to Architect.
                             </p>
                         </div>
                     </div>
@@ -146,7 +343,7 @@
             <!-- Case 2 -->
             <div class="card" style="border-left: 4px solid var(--color-info);">
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; font-size: 1.25rem; color: var(--text-primary);">Case 2: 450 Repos: From Recruiter Bragging to 1-1 Preset Delivery Menu</h3>
+                    <h3 style="margin: 0; font-size: 1.25rem; color: var(--text-primary);">Case 2: 500 Repos: From Recruiter Bragging to 1-1 Preset Delivery Menus</h3>
                     <span class="badge" style="background: rgba(6, 182, 212, 0.15); color: #67e8f9; border-color: rgba(6, 182, 212, 0.3);">Asset Productization &middot; H30 &amp; H5</span>
                 </div>
                 
@@ -155,10 +352,10 @@
                         <div class="spec-box" style="border-left-color: var(--color-danger); height: 100%;">
                             <div class="spec-title" style="color: var(--color-danger);">Initial Approach (Building for Self)</div>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Assumption:</strong> Bragging to recruiters and clients: <em>"Look at my profile, I created 450+ repositories demonstrating full-stack, DevOps, and AI mastery."</em>
+                                <strong>Assumption:</strong> Bragging: <em>"Look at my profile, I created 500+ repositories demonstrating full-stack, DevOps, and AI mastery."</em>
                             </p>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Reality Check / Audience Feedback:</strong> Recruiters don't read 450 repositories; they get confused by noise. Students see 450 repos and feel overwhelmed: <em>"Where do I even start? I don't have 10 years to build 450 repos."</em>
+                                <strong>Audience Reality Check:</strong> Recruiters don't read 500 repos. Students see 500 repos and feel intimidated: <em>"I don't have 10 years to build 500 repos; where do I even start?"</em>
                             </p>
                         </div>
                     </div>
@@ -166,163 +363,11 @@
                         <div class="spec-box" style="border-left-color: var(--color-success); height: 100%;">
                             <div class="spec-title" style="color: var(--color-success);">Pivot to Utility (Being Useful for the Other)</div>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Sanity Check Action:</strong> Refactored the 450 repos into <strong>curated Preset Solution Templates</strong> offered as an interactive "Menu" during 1-1 VIP sessions and Skool calendar slots (<a href="../product/skool-10-true-regulars.html" style="color: var(--color-primary);">Calendar Slots</a>: AI Security, Custom Environment Setup, Human-in-the-Loop Orchestration).
+                                <strong>Action:</strong> Refactored the 500 repos into <strong>4 Curated Preset Solution Menus</strong> offered during 1-1 VIP workshops (<a href="1-1-presets-pivot.html" style="color: var(--color-primary);">AI Security, Environment, HITL, Second Brain</a>).
                             </p>
                             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 0.5rem;">
-                                <strong>Outcome:</strong> In a 60-min 1-1 session, the client/member picks a preset from the menu, and the founder deploys a customized, working clone in minutes, delivering instant ROI and high perceived value.
+                                <strong>Outcome:</strong> In a single 60-minute 1-on-1 call, the candidate selects a preset and deploys a working enterprise clone immediately, delivering instant ROI.
                             </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: The 4-Stage Project Integration Grid -->
-        <section class="content-section animate-fade-in">
-            <h2 class="section-title">🌐 How "Being Useful" Integrates Across the Entire Project</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 84ch;">
-                "Being useful for the other" is not just a copywriting philosophy; it governs every component, channel, and stage of the <strong>AI Certification Customer Development</strong> operating system:
-            </p>
-            
-            <div class="grid">
-                <!-- 1. Customer Discovery & Interviews -->
-                <div class="col-6">
-                    <div class="card" style="height: 100%;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                            <span style="font-size: 1.5rem;">🔍</span>
-                            <h3 class="card-title" style="font-size: 1.15rem; margin: 0; color: var(--text-primary);">1. Customer Discovery &amp; Interviews</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            <strong>Self-Centric (Wrong):</strong> Pitching features, defending the roadmap, and validating personal brilliance.<br>
-                            <strong>Being Useful (Right):</strong> Asking open-ended questions about their real workday, observing failure points (e.g. Jamal failing at 644, B. experiencing burnout), and logging verbatim quotes in silence without pitching.
-                        </p>
-                        <div style="margin-top: 0.75rem; font-size: 0.85rem;">
-                            <a href="../cd/cd-interview-guide.html" style="color: var(--color-primary); font-weight: 600;">Discovery Guide &rarr;</a> &middot;
-                            <a href="listen-more-than-you-speak.html" style="color: var(--color-primary); font-weight: 600;">Listen &gt; Speak &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. YouTube & Content Engine -->
-                <div class="col-6">
-                    <div class="card" style="height: 100%;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                            <span style="font-size: 1.5rem;">🎬</span>
-                            <h3 class="card-title" style="font-size: 1.15rem; margin: 0; color: var(--text-primary);">2. YouTube &amp; Reverse Response Marketing</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            <strong>Self-Centric (Wrong):</strong> Whiteboard lectures explaining founder-favorite obscure algorithms.<br>
-                            <strong>Being Useful (Right):</strong> <a href="../growth/reverse-response-marketing.html" style="color: var(--color-primary);">Reverse Response Marketing</a>: taking trending AI hype videos, debunking myths with hard enterprise reality, and addressing viewer fears about job replacement and exam prep.
-                        </p>
-                        <div style="margin-top: 0.75rem; font-size: 0.85rem;">
-                            <a href="../growth/reverse-response-marketing.html" style="color: var(--color-primary); font-weight: 600;">Reverse Response &rarr;</a> &middot;
-                            <a href="../growth/content-format.html" style="color: var(--color-primary); font-weight: 600;">Content Format &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Skool Community & Sunday Live -->
-                <div class="col-6">
-                    <div class="card" style="height: 100%;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                            <span style="font-size: 1.5rem;">🏫</span>
-                            <h3 class="card-title" style="font-size: 1.15rem; margin: 0; color: var(--text-primary);">3. Skool Community &amp; Sunday Sessions</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            <strong>Self-Centric (Wrong):</strong> 2-hour founder monologues; daily spam announcements.<br>
-                            <strong>Being Useful (Right):</strong> The "Party / Workshop" format (Anna's 5-10-5 pacing), screen-share live coding, living resource hubs (<a href="../product/skool-static-posts.html" style="color: var(--color-primary);">Static Posts</a>), and celebrating student achievements.
-                        </p>
-                        <div style="margin-top: 0.75rem; font-size: 0.85rem;">
-                            <a href="../product/skool-static-posts.html" style="color: var(--color-primary); font-weight: 600;">Living Hubs &rarr;</a> &middot;
-                            <a href="../product/skool-community-golden-rules.html" style="color: var(--color-primary); font-weight: 600;">Golden Rules &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Delivery Pilot & Contractor Alliance -->
-                <div class="col-6">
-                    <div class="card" style="height: 100%;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                            <span style="font-size: 1.5rem;">🧑‍✈️</span>
-                            <h3 class="card-title" style="font-size: 1.15rem; margin: 0; color: var(--text-primary);">4. Delivery Pilot &amp; FDE Career Alliance</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            <strong>Self-Centric (Wrong):</strong> "Hire my consulting agency to build my projects."<br>
-                            <strong>Being Useful (Right):</strong> Equipping engineers with high-earning contractor capability (£500&ndash;£1,000+/day), optimizing their LinkedIn/CVs on Monday VIP Cowork, and co-bidding on enterprise tenders as an alliance.
-                        </p>
-                        <div style="margin-top: 0.75rem; font-size: 0.85rem;">
-                            <a href="delivery-pilot-roadmap.html" style="color: var(--color-primary); font-weight: 600;">Delivery Pilot Roadmap &rarr;</a> &middot;
-                            <a href="../growth/turn-community-to-movement.html" style="color: var(--color-primary); font-weight: 600;">Alliance Movement &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: The 4-Tier "Preset Menu" Framework -->
-        <section class="content-section animate-fade-in">
-            <h2 class="section-title">📋 The 450 Repos &rarr; 4-Tier "Preset Menu" Transformation</h2>
-            <div class="card" style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 780px;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
-                            <th style="padding: 1rem 0.75rem; width: 20%;">Menu Item (Preset Tier)</th>
-                            <th style="padding: 1rem 0.75rem; width: 40%;">Underlying Repositories &amp; Tech Stack</th>
-                            <th style="padding: 1rem 0.75rem; width: 40%; color: var(--color-success);">Immediate Utility for the Candidate</th>
-                        </tr>
-                    </thead>
-                    <tbody style="color: var(--text-secondary);">
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 0.9rem 0.75rem; color: var(--text-primary); font-weight: 700;">1. Fast-Track Cert On-Ramp</td>
-                            <td style="padding: 0.9rem 0.75rem;">Foundations &amp; Associate mock exam simulators, Pearson VUE scenario quiz engines, Claude API blueprint tests.</td>
-                            <td style="padding: 0.9rem 0.75rem; background: rgba(16,185,129,0.02);">Bridges the Jamal 644/1000 deficit; delivers instant practice confidence in 48 hours.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 0.9rem 0.75rem; color: var(--text-primary); font-weight: 700;">2. AI Security &amp; Guardrails</td>
-                            <td style="padding: 0.9rem 0.75rem;">Prompt injection firewalls, PII masking proxies, zero-trust token gateways, OWASP LLM top 10 evaluators.</td>
-                            <td style="padding: 0.9rem 0.75rem; background: rgba(16,185,129,0.02);">Gives candidates plug-and-play enterprise compliance proof for CISO and senior architect interviews.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 0.9rem 0.75rem; color: var(--text-primary); font-weight: 700;">3. Environment &amp; IaC Automation</td>
-                            <td style="padding: 0.9rem 0.75rem;">Terraform AI orchestrators, Docker multi-agent local clusters, GKE/Backstage templates, Cursor devcontainers.</td>
-                            <td style="padding: 0.9rem 0.75rem; background: rgba(16,185,129,0.02);">Eliminates 10-hour configuration headaches; candidates spin up end-to-end sandbox in 1 command.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.9rem 0.75rem; color: var(--text-primary); font-weight: 700;">4. Human-in-the-Loop (HITL) Workflow</td>
-                            <td style="padding: 0.9rem 0.75rem;">Approval webhooks, Telegram/Slack review bots, LangGraph checkpointing, automated contract co-bidding pipelines.</td>
-                            <td style="padding: 0.9rem 0.75rem; background: rgba(16,185,129,0.02);">Equips contractor members with £800/day FDE production architectures ready for enterprise deployment.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Section: Operational Guardrail & Checklist -->
-        <section class="content-section animate-fade-in">
-            <h2 class="section-title">🛡️ Founder Pre-Creation Sanity Checklist</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 80ch;">
-                Before writing a line of code, creating a slide deck, uploading a video, or planning a workshop, run through these 4 litmus questions:
-            </p>
-            <div class="card">
-                <div class="grid">
-                    <div class="col-6">
-                        <div class="spec-box" style="border-left-color: var(--color-primary); margin-bottom: 1rem;">
-                            <div class="spec-title">1. Did an actual human ask for this?</div>
-                            <div class="spec-desc">Is this in response to a customer discovery interview (Jamal, Brian, B., Tomiwa, Anna, Marianna), or did I invent it in a vacuum?</div>
-                        </div>
-                        <div class="spec-box" style="border-left-color: var(--color-primary);">
-                            <div class="spec-title">2. Does this bridge their current step?</div>
-                            <div class="spec-desc">Am I forcing them to jump from 0 to 100, or providing the exact ladder rung (e.g. Associate course) they need right now?</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="spec-box" style="border-left-color: var(--color-success); margin-bottom: 1rem;">
-                            <div class="spec-title">3. Is this a menu or a monument?</div>
-                            <div class="spec-desc">Am I building a museum of my accomplishments (monument) or an actionable preset they can order and run in 60 minutes (menu)?</div>
-                        </div>
-                        <div class="spec-box" style="border-left-color: var(--color-success);">
-                            <div class="spec-title">4. What is their measurable gain?</div>
-                            <div class="spec-desc">Will this help them pass Pearson VUE, secure a $100 employer bonus, land an £800/day contract, or save 5 hours this week?</div>
                         </div>
                     </div>
                 </div>
@@ -330,49 +375,33 @@
         </section>
 
         <!-- Section: Hypotheses & Links -->
-        <section class="content-section animate-fade-in">
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
             <h2 class="section-title">🔗 Related Hypotheses &amp; Frameworks</h2>
             <div class="card">
                 <ul class="emoji-list">
                     <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29 (Listen More Than You Speak)</a> &mdash; Empirical rule that listening to audience reality beats broadcasting unprompted expertise.</span></li>
                     <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25 (Certification Value &amp; Laddering)</a> &mdash; Grounding curriculum across Associate, Developer, and Architect tiers based on verified learner demand.</span></li>
-                    <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30 (Delivery Pilot Roadmap)</a> &mdash; Packaging 450 repos into contractor delivery presets for high-earning Forward Deployed Engineers.</span></li>
+                    <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30 (Delivery Pilot Roadmap)</a> &mdash; Packaging technical assets into contractor delivery presets for £500–£1,000+/day Forward Deployed Engineers.</span></li>
                     <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24 (Emotional Pain Drivers)</a> &mdash; Alleviating fear of failure, burnout, and career disposability by serving the learner's immediate journey.</span></li>
                     <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5 (Freemium &amp; Organic Cohort Sales)</a> &mdash; 1-1 VIP workshops and preset deployment menus driving high retention and referral momentum.</span></li>
+                    <li><span class="emoji">💭</span><span style="color: var(--text-secondary);"><a href="../hypotheses/hyp-h33.html" style="color: var(--color-warning);">H33 (£100k Pure-Time Pivot Ceiling)</a> &mdash; Enforcing a stop-loss reality check to ensure founder time is never wasted on non-validating distractions.</span></li>
                 </ul>
             </div>
         </section>
 
-        <section class="content-section animate-fade-in">
-            <h2 class="section-title">🔗 See Also</h2>
-            <p style="color: var(--text-secondary);">
-                <a href="1-1-presets-pivot.html" style="color: var(--color-primary); font-weight: 600;">1-1 Presets: 500-Repo Pivot</a> &middot;
-                <a href="make-it-about-them.html" style="color: var(--color-primary); font-weight: 600;">Make It About Them</a> &middot;
-                <a href="listen-more-than-you-speak.html" style="color: var(--color-primary); font-weight: 600;">Listen More Than You Speak</a> &middot;
-                <a href="one-vs-many-live.html" style="color: var(--color-primary); font-weight: 600;">1-1 vs One Live Class</a> &middot;
-                <a href="alex-hormozi-agent.html" style="color: var(--color-primary); font-weight: 600;">Alex Hormozi Agent</a> &middot;
-                <a href="delivery-pilot-roadmap.html" style="color: var(--color-primary); font-weight: 600;">Delivery Pilot Roadmap</a> &middot;
-                <a href="../product/skool-10-true-regulars.html" style="color: var(--color-primary); font-weight: 600;">10 True Regulars (VIP Presets)</a> &middot;
-                <a href="../cd/cd-interview-guide.html" style="color: var(--color-primary); font-weight: 600;">Customer Discovery Guide</a> &middot;
-                <a href="../growth/reverse-response-marketing.html" style="color: var(--color-primary); font-weight: 600;">Reverse Response Marketing</a> &middot;
-                <a href="../product/free-vip.html" style="color: var(--color-primary); font-weight: 600;">Free VIP &amp; Founder Pledge</a>
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+        <!-- Footer -->
+        <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.75rem; text-align: center;">
             <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
                 <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
-                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin (Pexabo Ltd)</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Cross-linked 1-1 Presets Pivot page and synchronized 500-repo curriculum conversion (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/strategy/being-useful-for-the-other.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/strategy/being-useful-for-the-other.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+                Latest Change: Elevated strategy page into the comprehensive master blueprint on How Can This Business Be Genuinely Useful for the Audience, adding the 6 Pillars of Genuine Utility and the 6-Question Pre-Creation Litmus Scorecard (2026-08-28) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/strategy/being-useful-for-the-other.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/strategy/being-useful-for-the-other.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
-        </div>
-    </footer>
+        </footer>
+    </main>
 
-    <script src="../../nav.js"></script>
     <script src="../../main.js"></script>
+    <script src="../../nav.js"></script>
 </body>
 </html>
