@@ -32,6 +32,7 @@
                 ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Promo Templates'],
                 ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos'],
                 ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Triggers & Thresholds)'],
+                ['5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', '⛔ £100k Pure-Time Pivot (H33)'],
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Discovery Interview Recorder'],
                 ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing'],
                 ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
@@ -95,6 +96,8 @@
         },
         {
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
+                ['5_Symbols/strategy/b2c2b-business-model.html', '🏢 B2C2B Business Model &amp; Sourcing'],
+                ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Positive AI Skills Message'],
                 ['5_Symbols/strategy/why-ai-cert-agentic-dev.html', '🤖 Why Agentic CustDev (Antigravity+Grok)'],
                 ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Thresholds)'],
                 ['5_Symbols/strategy/raise.html', '🚀 R.A.I.S.E.'],
@@ -206,6 +209,7 @@
                 ['5_Symbols/product/skool-new-joiner-welcome-and-faq.html', '👋 New Joiner Welcome &amp; FAQ'],
                 ['5_Symbols/product/skool-audience-emails-and-event-triggers.html', '📬 Skool Audience Emails &amp; Event Triggers'],
                 ['5_Symbols/product/skool-gamification-levels.html', '🏆 Skool Gamification &amp; Delivery Pilot L8/9'],
+                ['5_Symbols/product/what-community-gets.html', '🎁 What Does Community Get? (Dual-Engine)'],
                 ['5_Symbols/product/deliverypilot-net.html', '🌐 deliverypilot.net Portal']
             ]
         },
@@ -228,6 +232,7 @@
                 ['5_Symbols/growth/course-curriculum-learning-objectives.html', '🎯 5-Min Video Curriculum &amp; LOs'],
                 ['5_Symbols/growth/skool-break-even.html', '⚖️ Skool Break-Even &amp; $99 Milestone'],
                 ['5_Symbols/growth/quality-gates.html', '🚪 Quality Gates'],
+                ['5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', '⛔ £100k Pure-Time Pivot (H33)'],
                 ['5_Symbols/growth/stage-timelines.html', '📅 Stage Timelines'],
                 ['5_Symbols/growth/90-day-execution-plan.html', '🗓️ 90-Day Execution Plan'],
                 ['5_Symbols/dashboard/calendar.html', '🗓️ Milestone Calendar'],
@@ -238,6 +243,7 @@
                 ['5_Symbols/growth/content-analysis.html', '🎬 Content Analysis'],
                 ['5_Symbols/growth/content-format.html', '🎬 Short vs Long Form'],
                 ['5_Symbols/growth/glossary-short-pipeline.html', '🚂 1-Hour Train Glossary Pipeline (Print)'],
+                ['5_Symbols/growth/one-minute-shorts-tasks.html', '⚡ 1-Minute Shorts Tasks (Nana Style)'],
                 ['5_Symbols/growth/youtube-shorts.html', '📱 YouTube Shorts (product for prospects)'],
                 ['5_Symbols/growth/september-youtube-shorts-calendar.html', '📅 Sept YouTube Shorts Calendar'],
                 ['5_Symbols/growth/youtube-channel-metrics.html', '📺 YouTube Channel Metrics'],
@@ -316,6 +322,7 @@
                 ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
                 ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['5_Symbols/product/resources.html', '🌐 External Resources Directory'],
+                ['markdown_renderer.html?src=reports/customer-discovery-ilker-marianna-b2c2b-v1.0.0.md', '👤 Ilker &amp; Marianna B2C2B CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-ai-common-language-library-short-v1.0.0.md', '📚 AI Common Language Library Short v1.0'],
                 ['markdown_renderer.html?src=reports/eos-traction-alignment-v1.0.0.md', '📘 EOS Traction Alignment Report v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-private-quiz-lead-magnet-v1.0.0.md', '🕵️ Private Quiz Tactic Report v1.0'],
@@ -369,6 +376,11 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/b2c2b-business-model.html', title: 'B2C2B Business Model & Enterprise Sourcing Pipeline', desc: 'The B2C2B business model: empowering individual developers (B2C), transitioning through agile SME pilots (SME 2B), and scaling to large enterprise talent sourcing and Forward Deployed Engineers (Enterprise 2B).', cat: 'Strategy', tags: 'b2c2b business model b2c 2b enterprise sourcing talent sme small mid enterprise delivery pilot forward deployed engineer fde day rate ilker marianna h1 h12 h22 h30' },
+        { url: '5_Symbols/strategy/positive-ai-skills-message.html', title: 'The Core Message: Rapid AI Advancement & Positive Skills Elevation', desc: 'Why rapid AI capability increases enterprise skill expectations, and why the narrative is relentlessly positive: elevating engineers into 10x capability powerhouses and high-rate Delivery Pilots.', cat: 'Strategy', tags: 'positive message rapid ai skills expectations capability multiplier human agency doom gloom fear positive narrative ilker marianna delivery pilot fde h1 h24 h30' },
+        { url: '5_Symbols/product/what-community-gets.html', title: 'What Does the Community Get Out of This? (Dual-Engine Value)', desc: 'Dual-engine community value: proctored vendor certifications for external credibility (Pearson VUE / Credly) + real custom AI apps built for personal operational mastery (Second Brain, RAG, Agents).', cat: 'Product', tags: 'what does community get value proposition dual engine custom apps certifications pearson vue credly obsidian second brain hybrid rag sude brian b jamal tomiwa h1 h25 h30' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-ilker-marianna-b2c2b-v1.0.0.md', title: 'Customer Discovery Report: Ilker & Marianna B2C2B, Positive Skills & Custom Apps v1.0', desc: 'Customer discovery synthesis of Ilker & Marianna advisory session: B2C2B progressive 2B rollout via SMEs to enterprise sourcing, positive AI skills messaging, and dual-engine community value.', cat: 'Docs', tags: 'ilker marianna customer discovery interview b2c2b sme enterprise talent sourcing positive message rapid ai skills custom apps second brain dual engine report h1 h5 h8 h12 h22 h24 h25 h29 h30' },
+        { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_ilker_marianna_b2c2b_2026-08-28.md', title: 'Discovery Record: Ilker & Marianna Strategy Session (2026-08-28)', desc: 'Raw interview intake notes from Ilker & Marianna meeting covering B2C2B business model, SME-to-enterprise talent sourcing, positive AI skills narrative, and community custom app value.', cat: 'Docs', tags: 'interview ilker marianna b2c2b positive message custom apps discovery raw record 2026-08-28 h1 h12 h22 h24 h25 h30' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.0.0.md', title: 'Customer Discovery Report: Sude Ünal Interview', desc: 'Qualitative analysis of Sude Ünal discovery feedback on weekday cohort demand, Obsidian Second Brain hybrid RAG, multi-stage parallelization workflows, and environment inspection.', cat: 'Docs', tags: 'sude sude unal customer discovery interview weekday cohort live calls second brain obsidian rag hybrid search dense sparse bm25 parallelization workflow environment inspection verification post action h4 h5 h8 h10 h24 h29 h30 report' },
         { url: '5_Symbols/growth/private-quiz-lead-magnet-tactic.html', title: 'Private Quiz Assessment Lead Magnet Tactic', desc: 'Persuasion engineering & video lead magnet tactic: 7 psychological levers from CIA-style assessment scripts, Brian & Marianna discovery synthesis, and interactive quiz routing.', cat: 'Growth', tags: 'private quiz assessment lead magnet video script cia persuasion engineering brian marianna self assessment superpower blind spot roger rabbit dalinea qr code h2 h4 h5 h10 h21 h24 h28 h29 h30' },
         { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_tuncer_300_videos_validation_2026-08-27.md', title: 'Field Note: Tuncer 300 Videos Will Not Convert in Validation', desc: 'Tuncer discovery fence: a 300-video backlog is Stage 3 catalog scale, not Stage 2 Skool conversion. Agrees with 224 views / 28 days.', cat: 'Docs', tags: 'tuncer 300 videos youtube shorts validation skool h32 h4 h5 h9 h13 field note' },
@@ -617,7 +629,9 @@
         { url: '5_Symbols/growth/sales-pipeline.html', title: 'Sales Pipeline & Funnel', desc: 'Visualization of stages from YouTube view to subscription and cohort signup.', cat: 'Growth', tags: 'pipeline funnel conversion stages youtube subscription' },
         { url: '5_Symbols/growth/conversion-strategy.html', title: 'Conversion Strategy & Tactics', desc: 'Systematic funnel scan, drop-off diagnostics, Hormozi/Leeds conversion tactics, founder advice, and interactive revenue simulator.', cat: 'Growth', tags: 'conversion strategy tactics funnel leaks hormozi value equation leeds urgency calculator revenue' },
         { url: '5_Symbols/growth/flywheel.html', title: 'Customer Growth Flywheel', desc: 'Frictionless acquisition loops, retention programs, and graduate referral engines.', cat: 'Growth', tags: 'flywheel loops acquisition retention referral' },
-        { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates & Triggers', desc: 'Defined milestones to move from discovery to validation, creation, and building.', cat: 'Growth', tags: 'gates triggers milestones thresholds' },
+        { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates & Triggers', desc: 'Defined milestones to move from discovery to validation, creation, and building, plus Kill Gate K1 (£100k GBP pure-time pivot).', cat: 'Growth', tags: 'gates triggers milestones thresholds h33 pivot' },
+        { url: '5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', title: '£100k Pure-Time Pivot Milestone', desc: 'Four courses at £40k institutional value plus £60k founder time. If Discovery cannot become Validation and Skool cannot charge back at £100k GBP, pivot. Distinct from $100k ARR hire (H33).', cat: 'Growth', tags: 'pivot hundred k 100000 opportunity cost founder time four courses skool charge back discovery validation h33 kill gate' },
+        { url: '5_Symbols/hypotheses/hyp-h33.html', title: 'H33 · £100k Pure-Time Pivot', desc: 'Kill gate: 4 courses £40k + founder time £60k. Pivot if still stuck in Discovery with no Skool charge-back. Not H11 $100k ARR.', cat: 'Hypothesis Detail', tags: 'h33 hypothesis pivot opportunity cost 100k gbp courses founder time skool' },
         { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timeline Estimates', desc: 'Estimated start/exit date ranges for each of the four Customer Development stages, with a horizontal timeline diagram and a founder-bandwidth caveat.', cat: 'Growth', tags: 'timeline estimate schedule dates gantt stage duration' },
         { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Execution Plan', desc: 'Dated 2026-08-09 to 2026-11-06 execution plan in 3 phases with a full day-by-day calendar, operationalizing H19 stage estimates into a weekly cadence and milestone checklist.', cat: 'Growth', tags: '90 day execution plan phases weeks sprint schedule milestones checklist launch readiness day by day calendar' },
         { url: '5_Symbols/dashboard/calendar.html', title: 'Milestone Calendar', desc: 'Chronological list of named, dated milestones past and projected, expanding the H19 stage-timeline estimates into individual events, including 10 true regulars in Skool.', cat: 'Growth', tags: 'calendar milestones dates schedule roadmap timeline events 10 true regulars skool' },
@@ -642,6 +656,7 @@
         { url: '5_Symbols/growth/content-analysis.html', title: 'Content Analysis', desc: 'Per-video retention log tracking animated content performance against the 40% MVP target, seeded with a 68% first data point.', cat: 'Growth', tags: 'content analysis retention video performance analytics' },
         { url: '5_Symbols/growth/youtube-shorts.html', title: 'YouTube Shorts Flywheel', desc: 'First Shorts window (224 views / 28d; tokenization 34 views, 85.9% AVD), Priestley short→course→long flywheel, common-language keyword queue, Tuncer 300-video Validation fence (H32).', cat: 'Growth', tags: 'youtube shorts flywheel priestley tokenization llm glossary h32 h28 tuncer 300 videos validation skool' },
         { url: '5_Symbols/growth/september-youtube-shorts-calendar.html', title: 'September YouTube Shorts Release Calendar', desc: 'Daily release schedule and content inventory for September 2026 YouTube Shorts mapping AI glossary clips to Claude Associate, Developer, and Architect course learning objectives.', cat: 'Growth', tags: 'september youtube shorts calendar publishing release schedule content strategy glossary ai certification claude associate developer architect priestley flywheel h32 h2 h10' },
+        { url: '5_Symbols/growth/one-minute-shorts-tasks.html', title: '1-Minute Shorts Tasks (Nana Style)', desc: '11 atomic plain-English AI concept Shorts inspired by Tech with Nana: zero jargon, real-world analogies, 60s beat sheets, and a post-batch performance reassessment gate.', cat: 'Growth', tags: 'one minute shorts tasks nana tech with nana beat sheet analogies ml neural nets llm token context window vector rag fine tuning hallucination agents reassessment gate h32 h28' },
         { url: '5_Symbols/growth/youtube-channel-metrics.html', title: 'YouTube Channel Metrics', desc: 'Unified watch-time, views, and engagement view with expected-rate targets, including new H28 engagement-rate benchmarks.', cat: 'Growth', tags: 'youtube channel metrics watch time views engagement rate ctr likes comments subscribers' },
         { url: '5_Symbols/hypotheses/hyp-h32.html', title: 'H32 · Priestley Five-Step Path (CHAOS)', desc: 'Daniel Priestley standing-start path: apprenticeship, 90-day hustle, CHAOS, four-person ramp, seven-figure KPI. This business is in CHAOS.', cat: 'Hypothesis Detail', tags: 'h32 hypothesis priestley chaos apprenticeship side hustle product for prospects core offer seven figure kpi tuncer' },
         { url: '5_Symbols/growth/youtube-banner.html', title: 'YouTube Channel Top Banner', desc: 'Transformational 3-part banner mockup (No Experience → Split Brain → Get Certified in 90 Days) with enhanced Midjourney prompts.', cat: 'Growth', tags: 'youtube banner top header mockup graphic design prompt midjourney conversion' },
@@ -668,7 +683,7 @@
         { url: '5_Symbols/strategy/structure-transformation-leadership.html', title: 'Structure, Transformation & Leadership', desc: 'Strategic triad explaining how lean operational structure and authentic practitioner leadership forge irreversible career transformations.', cat: 'Strategy', tags: 'structure transformation leadership delivery pilot pexabo fde contractor 5-10-5 sprint kafka lean h30 h23 h29' },
         { url: '5_Symbols/growth/audience-roadmap.html', title: 'Audience Transformation Roadmap', desc: '5-step practitioner journey: YouTube/LinkedIn content → Skool community cohorts → Claude Architect course MVP & daily visuals → VIP screen sharing → Delivery Pilot partnership.', cat: 'Growth', tags: 'audience roadmap customer journey youtube linkedin skool mvp course claude certified architect vip deliverypilot partnership' },
         { url: '5_Symbols/growth/mvp-roadmap.html', title: 'MVP Roadmap — How New Jobs Get Created', desc: 'August 2026 operating plan from the community-driven growth diagram: Studio → Cohorts → Claude course → deliverypilot.net contractor persona → new jobs as the outcome.', cat: 'Growth', tags: 'mvp roadmap how new jobs get created studio cohorts claude course deliverypilot contractor persona august 2026 h30 h5 h8 h22' },
-        { url: '5_Symbols/growth/inspirational-youtubers.html', title: 'Inspirational YouTubers & Creator Benchmarks', desc: 'Detailed strategic deconstruction of Ali Abdaal, NetworkChuck (including YouTube Short analysis), and TechWorld with Nana for AI Certification Helper.', cat: 'Growth', tags: 'inspirational youtubers creator benchmarks ali abdaal networkchuck tech with nana shorts animation video workflow devops h2 h10 h13 h28' },
+        { url: '5_Symbols/growth/inspirational-youtubers.html', title: 'Inspirational YouTubers & Creator Benchmarks', desc: 'Detailed strategic deconstruction of Simplilearn (YouTube Courses tab & introductory paths), Ali Abdaal, NetworkChuck (including YouTube Short analysis), and TechWorld with Nana.', cat: 'Growth', tags: 'inspirational youtubers creator benchmarks simplilearn youtube courses ali abdaal networkchuck tech with nana shorts animation video workflow devops h2 h10 h13 h28' },
         { url: '5_Symbols/strategy/ai-job-creation-vs-apocalypse.html', title: 'AI Job Creation vs. Apocalypse (Tech CEOs vs Rifat Erdem Sahin)', desc: 'Macro labor economic thesis showing AI creates exponentially more jobs through human learning, Jevons paradox, and historical revolution precedent.', cat: 'Strategy', tags: 'ai job creation apocalypse tech ceo rifat erdem sahin farming industrial revolution jevons paradox fde multiplier h31' },
         { url: '5_Symbols/hypotheses/hyp-h31.html', title: 'H31 · AI Job Creation vs. Apocalypse', desc: 'Detail page with premise-conclusion-status SVG diagram for H31.', cat: 'Hypothesis Detail', tags: 'h31 hypothesis detail ai job creation apocalypse tech ceo rifat erdem sahin jevons paradox fde svg diagram' },
         { url: '5_Symbols/product/skool-payout-dashboard.html', title: 'Skool Payout Dashboard & Settlement', desc: 'Real-time tracking of Skool and Stripe Connect balance, first paid $0.60 settlement, 7-14 day clearing cycle, and Wednesday payouts.', cat: 'Product', tags: 'skool payout dashboard settlement stripe delivery pilot balance pending wednesday clearance' },
@@ -1735,6 +1750,18 @@
             { url: '5_Symbols/hypotheses/hyp-h21.html', title: 'H21 $29 Bundle', emoji: '📦' },
             { url: '5_Symbols/hypotheses/hyp-h8.html', title: 'H8 Cohort PMF', emoji: '💎' },
             { url: '5_Symbols/product/exam-performance-evidence.html', title: 'Exam Performance Evidence', emoji: '📊' }
+        ],
+        '5_Symbols/growth/hundred-k-opportunity-cost-pivot.html': [
+            { url: '5_Symbols/hypotheses/hyp-h33.html', title: 'H33 Kill Gate', emoji: '⛔' },
+            { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates', emoji: '🚪' },
+            { url: '5_Symbols/strategy/when-to-pivot.html', title: 'When to Pivot', emoji: '🔄' },
+            { url: '5_Symbols/dashboard/calendar.html', title: 'Milestone Calendar', emoji: '📅' }
+        ],
+        '5_Symbols/hypotheses/hyp-h33.html': [
+            { url: '5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', title: '£100k Milestone', emoji: '⛔' },
+            { url: '5_Symbols/hypotheses/hyp-h9.html', title: 'H9 $10k Gate', emoji: '🚪' },
+            { url: '5_Symbols/hypotheses/hyp-h11.html', title: 'H11 $100k ARR', emoji: '🏢' },
+            { url: '5_Symbols/strategy/when-to-pivot.html', title: 'When to Pivot', emoji: '🔄' }
         ]
     };
 
