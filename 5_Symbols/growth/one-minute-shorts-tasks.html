@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Minute Shorts Production Tasks (Nana Style) | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="description" content="Production task board and plain-English visual blueprints for 11 one-minute AI concept shorts inspired by Tech with Nana, featuring 60-second beat sheets, first-principles analogies, and a post-batch performance reassessment gate.">
+    <style>
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+        .task-card {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .task-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--color-primary);
+        }
+        .analogy-box {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 3px solid var(--color-primary);
+            padding: 0.75rem 0.85rem;
+            border-radius: 0 6px 6px 0;
+            margin: 0.75rem 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+        .beats-list {
+            margin: 0.5rem 0 0.75rem;
+            padding-left: 1.15rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .beats-list li {
+            margin-bottom: 0.25rem;
+        }
+        .nana-pillar {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <!-- Top Navigation Breadcrumbs -->
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center;">
+            <a href="youtube-shorts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                &larr; Back to YouTube Shorts Flywheel
+            </a>
+            <span style="color: var(--text-muted);">&bull;</span>
+            <a href="glossary-short-pipeline.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                🚂 1-Hour Train Pipeline
+            </a>
+            <span style="color: var(--text-muted);">&bull;</span>
+            <a href="../dashboard/todo.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                ✅ Master Task List
+            </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid #38bdf8; position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(56, 189, 248, 0.15); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.3);">Growth &middot; 1-Minute Shorts Tasks &middot; <a href="../hypotheses/hyp-h32.html" style="color: inherit;">H32</a> / <a href="../hypotheses/hyp-h28.html" style="color: inherit;">H28</a></span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin: 0.75rem 0 0.5rem 0;">⚡ 1-Minute Shorts Production Tasks</h1>
+                    <p style="color: var(--text-secondary); max-width: 82ch; font-size: 1.05rem; line-height: 1.6;">
+                        11 atomic, plain-English AI concept Shorts designed with <strong>Tech with Nana</strong> first-principles pedagogy: zero jargon, vivid real-world analogies, high visual retention, and a 1-minute execution clock. Every short points toward a YouTube course module or Sunday live workshop, followed by a <strong>post-batch performance reassessment gate</strong>.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="glossary-short-pipeline.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.65rem 1.25rem; border-radius: 8px; text-align: center; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);">
+                        🖨️ Printable Train SOP &rarr;
+                    </a>
+                    <a href="youtube-shorts.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.45rem 1rem; border-radius: 6px; text-align: center;">
+                        📊 View Shorts Analytics
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nana Pedagogical Principles -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">👩‍🏫 The "Tech with Nana" Pedagogy (Feel Smart, Not Stupid)</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="nana-pillar" style="border-top: 3px solid #38bdf8;">
+                        <strong style="color: #38bdf8; font-size: 1rem; display: block; margin-bottom: 0.4rem;">1. Intuitive Everyday Analogies</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.5;">
+                            Never introduce an abstract term without anchoring it in human experience first. (e.g. <em>RAG is a briefing memo before a meeting; Fine-tuning is hiring a 5-year industry veteran</em>).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="nana-pillar" style="border-top: 3px solid #34d399;">
+                        <strong style="color: #34d399; font-size: 1rem; display: block; margin-bottom: 0.4rem;">2. Visual First-Principles Diagrams</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.5;">
+                            Clean 2D animations and motion slides (Google Flow / Canva) with bold typography and contrasting nodes. No intimidating terminal screens or complex math formulas.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="nana-pillar" style="border-top: 3px solid #f59e0b;">
+                        <strong style="color: #fbbf24; font-size: 1rem; display: block; margin-bottom: 0.4rem;">3. Sub-60s Actionable Clarity</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.5;">
+                            5–6 scenes of 8–10 seconds each. Cut all filler and throat-clearing. End on a crisp takeaway: <em>"Day N of the AI Library — Day N+1 is [Next Term]"</em>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11 Shorts Production Tasks Grid -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">🎬 The 11 Shorts Production Tasks</h2>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">1 Shipped</span>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">1 In Scripting</span>
+                    <span class="badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-muted);">9 Queued</span>
+                </div>
+            </div>
+
+            <div class="task-grid">
+
+                <!-- Task 1: Machine Learning (ML) -->
+                <div class="task-card" style="border-top: 3px solid #38bdf8;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(56, 189, 248, 0.15); color: #7dd3fc;">Short 01 &middot; Foundations</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">1. Machine Learning (ML)</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #38bdf8;">💡 Nana Analogy:</strong> Instead of writing 10,000 rules to describe a dog, you show a child 10,000 photos of dogs and cats until their brain spots the patterns automatically.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> How do computers learn without being programmed rule-by-rule?</li>
+                            <li><strong>Old Way (8-18s):</strong> Traditional coding: If has whiskers, if has fur &rarr; breaks on a fluffy cat.</li>
+                            <li><strong>ML Way (18-32s):</strong> Feed 10,000 images into an algorithm; it finds the statistical patterns.</li>
+                            <li><strong>Real-world (32-45s):</strong> Spam filters, Netflix recommendations, Tesla autopilot.</li>
+                            <li><strong>Closer (45-55s):</strong> Day 1 done. Day 2 is Neural Networks.</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Foundations M1</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 2: Neural Network -->
+                <div class="task-card" style="border-top: 3px solid #818cf8;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(99, 102, 241, 0.15); color: #c7d2fe;">Short 02 &middot; Architecture</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">2. Neural Networks &amp; Training</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #818cf8;">💡 Nana Analogy:</strong> A stadium crowd passing a message. Each person makes a tiny judgment and nudges the message to the next row. Training is nudging them when they get it wrong.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> How does an artificial brain actually calculate a thought?</li>
+                            <li><strong>Structure (8-20s):</strong> Input layer &rarr; Hidden layers &rarr; Output layer. Tiny mathematical decision makers.</li>
+                            <li><strong>Training (20-35s):</strong> Guess, check against the right answer, adjust weights (backpropagation).</li>
+                            <li><strong>Scale (35-48s):</strong> From 100 neurons to 100 billion parameters.</li>
+                            <li><strong>Closer (48-56s):</strong> Next up: What happens when you train this on the entire internet? (LLMs).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Associate Track</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 3: LLM (Large Language Model) -->
+                <div class="task-card" style="border-top: 3px solid #fbbf24;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Short 03 &middot; Core Model</span>
+                            <span class="status-pill status-in-progress" style="font-size: 0.7rem;">In Scripting</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">3. LLM (Large Language Model)</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #fbbf24;">💡 Nana Analogy:</strong> The world's most powerful autocomplete. Having read trillions of pages, its only superpower is predicting the most likely next word.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> Claude and ChatGPT aren't human thinkers. They are autocomplete on steroids.</li>
+                            <li><strong>Mechanism (8-22s):</strong> "The sky is..." &rarr; Blue (92%), Dark (5%), Falling (1%). Next-token probability.</li>
+                            <li><strong>Giants (22-35s):</strong> ChatGPT, Claude, Gemini &mdash; why they feel creative through pure statistical depth.</li>
+                            <li><strong>Core Takeaway (35-48s):</strong> It does not "know" truth; it knows statistical word pairings.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: What is a "token" and how does the model count words?</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-warning); font-weight: 600;">Next Commute Priority</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 4: Token & Tokenization -->
+                <div class="task-card" style="border-top: 3px solid #34d399; background: rgba(16, 185, 129, 0.05);">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Short 04 &middot; Shipped</span>
+                            <span class="status-pill status-validated" style="font-size: 0.7rem;">Live (34v / 85.9% AVD)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">4. Token &amp; Tokenization</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #34d399;">💡 Nana Analogy:</strong> Chopping words into puzzle pieces. "Business" is 1 token; "Operations" might be 2 tokens. AI reads word chunks, not alphabet letters.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook:</strong> Why does your AI bill you in tokens instead of words?</li>
+                            <li><strong>Visual:</strong> Sentence chopped into colored syllable chunks.</li>
+                            <li><strong>Rule of thumb:</strong> 1,000 tokens ≈ 750 English words.</li>
+                            <li><strong>Live URL:</strong> <a href="https://youtube.com/shorts/KVKJRdkH-B8" target="_blank" style="color: var(--color-primary);">KVKJRdkH-B8</a> (85.9% average view duration).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: #34d399; font-weight: 600;">🟢 Shipped 26 Aug 2026</span>
+                        <a href="https://youtube.com/shorts/KVKJRdkH-B8" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Watch Short &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Task 5: Context Window -->
+                <div class="task-card" style="border-top: 3px solid #a855f7;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(168, 85, 247, 0.15); color: #c084fc;">Short 05 &middot; Memory</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">5. Context Window</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #c084fc;">💡 Nana Analogy:</strong> Your physical desk space. You can spread out 5 pages or 200 pages. Once the desk is full, older documents fall off the edge and are completely forgotten.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> Ever had ChatGPT forget what you said 10 minutes ago?</li>
+                            <li><strong>The Desk (8-22s):</strong> Context window is short-term working RAM, not permanent hard drive memory.</li>
+                            <li><strong>Evolution (22-35s):</strong> From 4k tokens (GPT-3) to 200k (Claude 3.5 Sonnet) to 2M (Gemini).</li>
+                            <li><strong>Risk (35-48s):</strong> Paste a 500-page book &rarr; attention degradation and truncation.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: How do we search millions of docs without overflowing the window? (Vectors).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Architect Track</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 6: Vector & Vector Embeddings -->
+                <div class="task-card" style="border-top: 3px solid #ec4899;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(236, 72, 153, 0.15); color: #f472b6;">Short 06 &middot; Math &amp; Search</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">6. Vectors &amp; Embeddings</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #f472b6;">💡 Nana Analogy:</strong> GPS coordinates for ideas. "Dog" and "Puppy" live on the same street in 1,536-dimensional space; "Submarine" lives on another continent.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> How does AI search by meaning instead of exact keyword spelling?</li>
+                            <li><strong>Numbers (8-22s):</strong> Turning words into long lists of floats: [0.14, -0.82, 0.95...].</li>
+                            <li><strong>Clustering (22-35s):</strong> "Hiring" sits right next to "Recruiting" in vector geometry.</li>
+                            <li><strong>Vector DB (35-48s):</strong> Storing millions of company notes in Pinecone / pgvector.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: How do we write instructions that steer this engine? (Prompting).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Second Brain / RAG</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 7: Prompt Engineering -->
+                <div class="task-card" style="border-top: 3px solid #14b8a6;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(20, 184, 166, 0.15); color: #5eead4;">Short 07 &middot; Steering</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">7. Prompt Engineering</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #5eead4;">💡 Nana Analogy:</strong> Handing an architect a blueprint vs shouting "build me a nice house." Clear framing, context, and output constraints prevent disastrous results.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> Why 90% of people get generic garbage from ChatGPT.</li>
+                            <li><strong>Bad Prompt (8-18s):</strong> "Write a marketing email" &rarr; generic corporate fluff.</li>
+                            <li><strong>Good Prompt (18-35s):</strong> Role + Audience + Offer + Strict JSON Format + "Ask me questions first."</li>
+                            <li><strong>The Secret (35-48s):</strong> Prompting isn't magic words; it is precise business communication.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: Giving the AI your private company files (RAG).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Associate Track M1</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 8: RAG (Retrieval-Augmented Generation) -->
+                <div class="task-card" style="border-top: 3px solid #6366f1;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(99, 102, 241, 0.15); color: #c7d2fe;">Short 08 &middot; Enterprise RAG</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">8. RAG (Retrieval-Augmented Gen)</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #818cf8;">💡 Nana Analogy:</strong> Handing an external consultant a briefing folder 30 seconds before they walk into a client meeting. They don't memorize it forever; they read it on the spot.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> How does an AI answer questions about your private 2026 company payroll?</li>
+                            <li><strong>The Problem (8-18s):</strong> Public models don't know your private internal docs.</li>
+                            <li><strong>The 3 Steps (18-35s):</strong> 1. Retrieve relevant PDF chunk &rarr; 2. Augment prompt &rarr; 3. Generate answer.</li>
+                            <li><strong>Zero Retraining (35-48s):</strong> Fast, cheap, and eliminates out-of-date hallucinations.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: When should you actually Fine-Tune instead of RAG?</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: RAISE RAG Playlist</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 9: Fine-Tuning -->
+                <div class="task-card" style="border-top: 3px solid #f97316;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(249, 115, 22, 0.15); color: #fdba74;">Short 09 &middot; Deep Training</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">9. Fine-Tuning</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #fdba74;">💡 Nana Analogy:</strong> Hiring a surgeon who spent 10 years in medical school. The medical intuition and vocabulary are baked into their neurological reflexes, not read from a pamphlet.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> RAG vs Fine-Tuning: What is the real difference?</li>
+                            <li><strong>RAG (8-20s):</strong> Open-book exam. Handing a briefing doc to a smart generalist.</li>
+                            <li><strong>Fine-Tuning (20-35s):</strong> Updating the model's actual weights on 50,000 specialized medical/legal transcripts.</li>
+                            <li><strong>When to use (35-48s):</strong> Changing tone, syntax, style, or highly regulated jargon.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: Why do even smart models make up fake facts? (Hallucination).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Architect Pro M2</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 10: Hallucination -->
+                <div class="task-card" style="border-top: 3px solid #ef4444;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(239, 68, 68, 0.15); color: #fca5a5;">Short 10 &middot; Safety &amp; HITL</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">10. Hallucination</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #fca5a5;">💡 Nana Analogy:</strong> An eager junior employee who doesn't want to admit they don't know the answer, so they invent a plausible-sounding fake report. Always verify!
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> AI models don't lie &mdash; they calculate probable grammar that happens to be false.</li>
+                            <li><strong>Why it happens (8-22s):</strong> Next-token prediction cares about grammatical flow, not factual truth.</li>
+                            <li><strong>Examples (22-35s):</strong> Fake legal citations, made-up Python libraries, phantom API endpoints.</li>
+                            <li><strong>The Solution (35-48s):</strong> Human-in-the-loop (HITL), strict groundings, RAG citations.</li>
+                            <li><strong>Closer (48-56s):</strong> Next: Turning passive chat AI into autonomous executing AI (Agents).</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: AI Security / HITL</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Task 11: AI Agents & Agentic AI -->
+                <div class="task-card" style="border-top: 3px solid #06b6d4;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(6, 182, 212, 0.15); color: #67e8f9;">Short 11 &middot; Forward Deployed AI</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">11. AI Agents &amp; Agentic AI</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #67e8f9;">💡 Nana Analogy:</strong> Generative AI is an advisor giving you recipes; Agentic AI is an autonomous chef equipped with knives, stove, CRM, and email to cook the dinner and deliver it.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> Stop chatting with AI. Make it do real work for you.</li>
+                            <li><strong>Gen AI vs Agentic (8-22s):</strong> Gen AI generates text; Agentic AI takes actions via tool calls.</li>
+                            <li><strong>Tool belt (22-35s):</strong> Connecting Claude to Asana, Mailchimp, CRM databases, terminal bash scripts.</li>
+                            <li><strong>Autonomous loop (35-48s):</strong> Plan &rarr; Act &rarr; Observe &rarr; Iterate until the goal is done.</li>
+                            <li><strong>Closer (48-56s):</strong> You are now fluent in the 11 pillars of AI. Ready to build live? See Sunday cohort.</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--color-info);">Course: Agent SDK &amp; MCP</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+                <!-- Ecosystem Summary / Bonus -->
+                <div class="task-card" style="border-top: 3px solid #64748b; background: rgba(30, 41, 59, 0.4);">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                            <span class="badge" style="font-size: 0.7rem; background: rgba(255, 255, 255, 0.08); color: var(--text-muted);">Batch Wrap-up</span>
+                            <span class="status-pill status-planned" style="font-size: 0.7rem;">Queued</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin: 0.2rem 0; color: var(--text-primary);">12. The Modern AI Ecosystem</h3>
+                        <div class="analogy-box">
+                            <strong style="color: #cbd5e1;">💡 Ecosystem Map:</strong> ChatGPT, Claude, Gemini as the brain models; Mailchimp, Asana, APIs as the hands; Model Context Protocol (MCP) as the nervous system.
+                        </div>
+                        <strong style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">60s Beat Sheet:</strong>
+                        <ol class="beats-list">
+                            <li><strong>Hook (0-8s):</strong> How all 11 AI pieces connect in an enterprise tech stack.</li>
+                            <li><strong>Map (8-28s):</strong> LLM Brain + Vector DB Memory + Agent Tools + Guardrail Boundary.</li>
+                            <li><strong>Takeaway (28-45s):</strong> Enterprise contractors don't write models; they orchestrate the ecosystem.</li>
+                            <li><strong>CTA (45-56s):</strong> Link to full YouTube playlist and live Sunday cohort lab.</li>
+                        </ol>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.65rem; margin-top: 0.65rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+                        <span style="color: var(--text-muted);">Batch Conclusion</span>
+                        <span style="color: var(--text-muted);">Est: 1h Commute</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Post-Batch Performance Reassessment Gate Protocol -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <div class="card" style="border-left: 5px solid #f59e0b; background: rgba(245, 158, 11, 0.04);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+                    <h2 class="section-title" style="margin: 0; color: #fbbf24;">🚦 Post-Batch Performance Reassessment Protocol</h2>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: rgba(245, 158, 11, 0.4);">Mandatory Stop Gate</span>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+                    Per founder mandate and Tuncer discovery findings: <strong>Do not build a 300-clip backlog without empirical validation</strong>. Upon publishing all 11 Shorts in this series, execute this strict scorecard review before writing another batch.
+                </p>
+
+                <div class="metrics-grid" style="margin-bottom: 1.5rem;">
+                    <div class="metric-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                        <div class="metric-val" style="color: #34d399;">&ge; 70.0%</div>
+                        <div class="metric-lbl">Target Average View Duration (AVD) (Tokenization achieved 85.9%)</div>
+                    </div>
+                    <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.3);">
+                        <div class="metric-val" style="color: #38bdf8;">&ge; 70% / 30%</div>
+                        <div class="metric-lbl">Viewed vs Swiped Away Ratio in YouTube Shorts Feed</div>
+                    </div>
+                    <div class="metric-card" style="border-color: rgba(245, 158, 11, 0.3);">
+                        <div class="metric-val" style="color: #fbbf24;">&ge; 4.0%</div>
+                        <div class="metric-lbl">Net Like Rate per View (<a href="../hypotheses/hyp-h28.html" style="color: var(--color-primary);">H28</a> Quality Floor)</div>
+                    </div>
+                    <div class="metric-card" style="border-color: rgba(168, 85, 247, 0.3);">
+                        <div class="metric-val" style="color: #c084fc;">&ge; 1 Skool Join</div>
+                        <div class="metric-lbl">Empirical conversion to Skool Free/Standard (<a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>)</div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: rgba(15, 23, 42, 0.6); margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.05rem; margin-top: 0; color: var(--text-primary);">📋 4-Step Reassessment Execution Checklist:</h3>
+                    <ol class="emoji-list">
+                        <li><span class="emoji">1️⃣</span><span style="color: var(--text-secondary);"><strong>Extract YouTube Studio Analytics:</strong> Log total views, average duration, like count, comment sentiment, and traffic source breakdown for all 11 URLs on <a href="content-analysis.html" style="color: var(--color-primary);">Content Analysis</a>.</span></li>
+                        <li><span class="emoji">2️⃣</span><span style="color: var(--text-secondary);"><strong>Identify Top 3 Retention Outliers:</strong> Rank the 11 concepts by AVD percentage and view count to pinpoint which topics generated the deepest audience engagement (e.g. Tokenization vs RAG).</span></li>
+                        <li><span class="emoji">3️⃣</span><span style="color: var(--text-secondary);"><strong>Expand Winners into 3–5 Min YouTube Course Modules:</strong> Take the top 3 concepts and develop full modular course videos paired with Learning Objectives and Key Results on <a href="../dashboard/content-kanban-release-schedule.html" style="color: var(--color-primary);">Content Kanban</a>.</span></li>
+                        <li><span class="emoji">4️⃣</span><span style="color: var(--text-secondary);"><strong>Turn Outliers into Sunday Live Labs:</strong> Feature the winning architectural topic as the hands-on lab demonstration in the upcoming Sunday 21:00 London cohort.</span></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cross-Links & Navigation -->
+        <section class="content-section animate-fade-in">
+            <div class="card" style="background: rgba(99, 102, 241, 0.06); border: 1px solid rgba(99, 102, 241, 0.25);">
+                <h3 style="margin-top: 0; font-size: 1.15rem; color: #c7d2fe;">🔗 Connected Growth &amp; Content Dashboards</h3>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
+                    <a href="youtube-shorts.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        📱 YouTube Shorts Flywheel
+                    </a>
+                    <a href="glossary-short-pipeline.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        🚂 1-Hour Train SOP
+                    </a>
+                    <a href="../dashboard/content-kanban-release-schedule.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        📋 Course Content Kanban
+                    </a>
+                    <a href="content-analysis.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        📊 Content Analysis
+                    </a>
+                    <a href="../dashboard/todo.html" class="btn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">
+                        ✅ Master Task List
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Published 1-Minute Shorts Production Tasks (11 plain-English concepts, Tech with Nana pedagogy, 60s beat sheets, and post-batch performance reassessment gate) (2026-08-27) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/one-minute-shorts-tasks.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/growth/one-minute-shorts-tasks.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
