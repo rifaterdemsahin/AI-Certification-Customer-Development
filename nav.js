@@ -98,6 +98,7 @@
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
                 ['5_Symbols/strategy/b2c2b-business-model.html', '🏢 B2C2B Business Model &amp; Sourcing'],
                 ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Positive AI Skills Message'],
+                ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Intentionality &amp; Digital Minimalism'],
                 ['5_Symbols/strategy/why-ai-cert-agentic-dev.html', '🤖 Why Agentic CustDev (Antigravity+Grok)'],
                 ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Thresholds)'],
                 ['5_Symbols/strategy/raise.html', '🚀 R.A.I.S.E.'],
@@ -376,6 +377,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/strategy/intentionality-digital-minimalism.html', title: 'Intentionality & Digital Minimalism: Removing Noise to Amplify Signal', desc: 'Applying Cal Newport\'s Digital Minimalism framework: scanning repository ideas, ruthlessly removing cognitive and digital noise, and focusing single-founder bandwidth on high-leverage signals.', cat: 'Strategy', tags: 'intentionality digital minimalism cal newport focus signal noise single founder bandwidth deep work gary stevenson living hubs preset menus pexabo fde h23 h29 h30 h33' },
         { url: '5_Symbols/strategy/b2c2b-business-model.html', title: 'B2C2B Business Model & Enterprise Sourcing Pipeline', desc: 'The B2C2B business model: empowering individual developers (B2C), transitioning through agile SME pilots (SME 2B), and scaling to large enterprise talent sourcing and Forward Deployed Engineers (Enterprise 2B).', cat: 'Strategy', tags: 'b2c2b business model b2c 2b enterprise sourcing talent sme small mid enterprise delivery pilot forward deployed engineer fde day rate ilker marianna h1 h12 h22 h30' },
         { url: '5_Symbols/strategy/positive-ai-skills-message.html', title: 'The Core Message: Rapid AI Advancement & Positive Skills Elevation', desc: 'Why rapid AI capability increases enterprise skill expectations, and why the narrative is relentlessly positive: elevating engineers into 10x capability powerhouses and high-rate Delivery Pilots.', cat: 'Strategy', tags: 'positive message rapid ai skills expectations capability multiplier human agency doom gloom fear positive narrative ilker marianna delivery pilot fde h1 h24 h30' },
         { url: '5_Symbols/product/what-community-gets.html', title: 'What Does the Community Get Out of This? (Dual-Engine Value)', desc: 'Dual-engine community value: proctored vendor certifications for external credibility (Pearson VUE / Credly) + real custom AI apps built for personal operational mastery (Second Brain, RAG, Agents).', cat: 'Product', tags: 'what does community get value proposition dual engine custom apps certifications pearson vue credly obsidian second brain hybrid rag sude brian b jamal tomiwa h1 h25 h30' },
