@@ -27,6 +27,9 @@
         { type: 'link', href: 'index.html', label: 'Hub', emoji: '🏠', className: 'nav-hub' },
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
+                ['5_Symbols/dashboard/favorites.html', '⭐ Favorites Hub &amp; Feedback'],
+                ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Core Message: Positive AI Skills Elevation'],
+                ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Being Intentional: Digital Minimalism'],
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule'],
                 ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Promo Templates'],
@@ -377,6 +380,7 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/dashboard/favorites.html', title: '⭐ Favorites & Feedback Hub', desc: 'Central hub for bookmarked favorite strategy pages, candidate feedback export, and AI agent feedback generation.', cat: 'Dashboard', tags: 'favorites feedback hub core message being intentional export markdown agent' },
         { url: '5_Symbols/strategy/intentionality-digital-minimalism.html', title: 'Intentionality & Digital Minimalism: Removing Noise to Amplify Signal', desc: 'Applying Cal Newport\'s Digital Minimalism framework: scanning repository ideas, ruthlessly removing cognitive and digital noise, and focusing single-founder bandwidth on high-leverage signals.', cat: 'Strategy', tags: 'intentionality digital minimalism cal newport focus signal noise single founder bandwidth deep work gary stevenson living hubs preset menus pexabo fde h23 h29 h30 h33' },
         { url: '5_Symbols/strategy/b2c2b-business-model.html', title: 'B2C2B Business Model & Enterprise Sourcing Pipeline', desc: 'The B2C2B business model: empowering individual developers (B2C), transitioning through agile SME pilots (SME 2B), and scaling to large enterprise talent sourcing and Forward Deployed Engineers (Enterprise 2B).', cat: 'Strategy', tags: 'b2c2b business model b2c 2b enterprise sourcing talent sme small mid enterprise delivery pilot forward deployed engineer fde day rate ilker marianna h1 h12 h22 h30' },
         { url: '5_Symbols/strategy/positive-ai-skills-message.html', title: 'The Core Message: Rapid AI Advancement & Positive Skills Elevation', desc: 'Why rapid AI capability increases enterprise skill expectations, and why the narrative is relentlessly positive: elevating engineers into 10x capability powerhouses and high-rate Delivery Pilots.', cat: 'Strategy', tags: 'positive message rapid ai skills expectations capability multiplier human agency doom gloom fear positive narrative ilker marianna delivery pilot fde h1 h24 h30' },

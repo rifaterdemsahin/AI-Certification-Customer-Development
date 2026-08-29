@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⭐ Favorites &amp; Feedback Hub | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .fav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .fav-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+        .fav-card.selected {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
+            background: rgba(99, 102, 241, 0.03);
+        }
+        .fav-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .fav-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            line-height: 1.35;
+        }
+        .fav-card-title:hover {
+            color: var(--color-primary);
+        }
+        .fav-select-checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+            margin-top: 2px;
+        }
+        .fav-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+        }
+        .rating-select, .feedback-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            padding: 0.45rem 0.65rem;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            outline: none;
+        }
+        .rating-select:focus, .feedback-input:focus {
+            border-color: var(--color-primary);
+        }
+        .copy-sticky-bar {
+            position: sticky;
+            bottom: 1.5rem;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border: 2px solid var(--color-primary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .preview-box {
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.85rem;
+            font-family: monospace;
+            font-size: 0.82rem;
+            color: #a7f3d0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <!-- Breadcrumb navigation -->
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center;">
+            <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                &larr; Back to Hub
+            </a>
+            <span style="color: var(--border-color);">|</span>
+            <span style="color: var(--text-primary); font-weight: 600;">⭐ Favorites &amp; Feedback Hub</span>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(15, 23, 42, 0.85) 100%);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">User Feedback Engine &middot; Strategic Favorites</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.2rem; margin: 0.5rem 0 0.5rem 0;">⭐ Favorites &amp; Feedback Generator</h1>
+                    <p style="color: var(--text-secondary); max-width: 86ch; line-height: 1.65; font-size: 1.02rem;">
+                        Review core strategy pages, pick apart favorite topics, add custom notes or feedback, and easily export your structured feedback back to the AI Agent (Jules) with one click at the bottom.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
+                    <span class="fav-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">✨ Core Message Included</span>
+                    <span class="fav-badge" style="background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.3);">🧘 Being Intentional Included</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Highlights Section -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">✨ Newly Added Core Favorites</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="border-top: 4px solid var(--color-success); height: 100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 0.5rem;">
+                            <span class="fav-badge" style="color: var(--color-success);">✨ Core Strategy</span>
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Added to Favorites</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">
+                            <a href="../strategy/positive-ai-skills-message.html" style="color: var(--text-primary); text-decoration: none;">✨ Core Message: Positive AI Skills Elevation</a>
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Why rapid AI advancement raises enterprise skill expectations and why our framing is relentlessly positive: turning developers into 10x high-rate Delivery Pilots.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="border-top: 4px solid var(--color-primary); height: 100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 0.5rem;">
+                            <span class="fav-badge" style="color: var(--color-primary);">🧘 Mindset &amp; Execution</span>
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Added to Favorites</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">
+                            <a href="../strategy/intentionality-digital-minimalism.html" style="color: var(--text-primary); text-decoration: none;">🧘 Being Intentional: Digital Minimalism</a>
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Applying Cal Newport's Digital Minimalism: scanning repository ideas, ruthlessly eliminating cognitive noise, and focusing single-founder bandwidth on pure signal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Favorites Matrix with Feedback Controls -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom: 1rem;">
+                <div>
+                    <h2 class="section-title" style="margin:0;">📋 All Bookmarked Favorites (<span id="fav-count">20</span>)</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top:0.25rem;">Check items to include in your feedback, rate them, and write specific comments.</p>
+                </div>
+                <div style="display:flex; gap:0.5rem;">
+                    <button id="btn-select-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Select All</button>
+                    <button id="btn-deselect-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Deselect All</button>
+                </div>
+            </div>
+
+            <div id="favorites-grid" class="fav-grid">
+                <!-- Dynamically populated or rendered items -->
+            </div>
+        </section>
+
+        <!-- Overall Feedback & Copy Section -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">💬 Overall Feedback for AI Agent (Jules)</h2>
+            <div class="card">
+                <label for="overall-notes" style="display:block; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">
+                    General Instructions, Feedback, or Next Steps:
+                </label>
+                <textarea id="overall-notes" class="feedback-input" rows="4" placeholder="e.g., Great progress on the Core Message and Digital Minimalism pages! Next, please refine the practice exam blueprint and update the confidence score."></textarea>
+
+                <div style="margin-top: 1.25rem;">
+                    <label style="display:block; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">
+                        📱 Formatted Markdown Preview (Live Output):
+                    </label>
+                    <div id="markdown-preview" class="preview-box">Select items above to generate feedback preview...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Copy Bar at the Bottom -->
+        <div class="copy-sticky-bar">
+            <div>
+                <strong style="color:var(--text-primary); font-size:1.05rem; display:block;">Ready to give feedback?</strong>
+                <span style="color:var(--text-secondary); font-size:0.85rem;" id="sticky-status-text">0 items selected for feedback</span>
+            </div>
+            <div style="display:flex; gap:0.75rem; align-items:center;">
+                <button id="btn-copy-feedback" class="btn btn-primary" style="padding:0.75rem 1.5rem; font-size:1rem; font-weight:600; display:inline-flex; align-items:center; gap:0.5rem; background:var(--gradient-success); border:none; color:#000;">
+                    <span>📋</span> Copy Feedback to Clipboard
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">&copy; 2026 AI Certification Helper &middot; Delivery Pilot Operating System</span>
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">Founder: Rifat Erdem Sahin (Pexabo Ltd)</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Created dedicated Favorites &amp; Feedback Hub with full page selection, individual reviews, markdown preview, and bottom copy button (2026-08-29)
+            </span>
+        </footer>
+
+    </main>
+
+    <script src="../../main.js"></script>
+    <script src="../../nav.js"></script>
+    <script>
+        (function() {
+            var favoritesList = [
+                {
+                    id: 'core-message',
+                    url: '5_Symbols/strategy/positive-ai-skills-message.html',
+                    title: '✨ Core Message: Positive AI Skills Elevation',
+                    cat: 'Strategy',
+                    emoji: '✨',
+                    desc: 'Why rapid AI advancement raises skill expectations and why our framing is relentlessly positive.'
+                },
+                {
+                    id: 'intentionality',
+                    url: '5_Symbols/strategy/intentionality-digital-minimalism.html',
+                    title: '🧘 Being Intentional: Digital Minimalism',
+                    cat: 'Strategy',
+                    emoji: '🧘',
+                    desc: 'Cal Newport Digital Minimalism framework: scanning repo ideas, eliminating noise, amplifying signal.'
+                },
+                {
+                    id: 'cohort-9',
+                    url: '5_Symbols/cd/cohort-session-9-analysis.html',
+                    title: '🎙️ Cohort Session 9 Analysis',
+                    cat: 'Discovery',
+                    emoji: '🎙️',
+                    desc: 'Pedagogy overhaul: 60-min cap, 10-10-15 structure, preset projects.'
+                },
+                {
+                    id: 'kanban',
+                    url: '5_Symbols/dashboard/content-kanban-release-schedule.html',
+                    title: '📋 Content Kanban & Release Schedule',
+                    cat: 'Dashboard',
+                    emoji: '📋',
+                    desc: '12-week video release calendar pairing 5-minute lessons with LOs and KRs.'
+                },
+                {
+                    id: 'promo-templates',
+                    url: '5_Symbols/growth/daily-community-promotion-templates.html',
+                    title: '📢 Daily Promo Templates',
+                    cat: 'Growth',
+                    emoji: '📢',
+                    desc: '7-day daily swipe file for Skool promotion and Sunday live cohort invitations.'
+                },
+                {
+                    id: 'weekly-todos',
+                    url: '5_Symbols/dashboard/weekly-todos.html',
+                    title: '🗓️ Weekly Todos',
+                    cat: 'Dashboard',
+                    emoji: '🗓️',
+                    desc: 'Operating lanes, day-by-day execution checklist, and 7-day recurring loop.'
+                },
+                {
+                    id: 'when-to-pivot',
+                    url: '5_Symbols/strategy/when-to-pivot.html',
+                    title: '🔄 When to Pivot (Triggers & Thresholds)',
+                    cat: 'Strategy',
+                    emoji: '🔄',
+                    desc: 'Detailed decision triggers and falsification thresholds for Stage 1 & 2 hypotheses.'
+                },
+                {
+                    id: 'hundred-k-pivot',
+                    url: '5_Symbols/growth/hundred-k-opportunity-cost-pivot.html',
+                    title: '⛔ £100k Pure-Time Pivot (H33)',
+                    cat: 'Growth',
+                    emoji: '⛔',
+                    desc: 'Kill gate: 4 courses £40k + £60k founder time opportunity cost ceiling.'
+                },
+                {
+                    id: 'cd-recorder',
+                    url: '5_Symbols/cd/cd-interview-recording.html',
+                    title: '📝 Discovery Interview Recorder',
+                    cat: 'Discovery',
+                    emoji: '📝',
+                    desc: 'Qualitative interview recording workspace with multi-select hypothesis mapping.'
+                },
+                {
+                    id: 'mvp-separation',
+                    url: '5_Symbols/comp/comp-mvp-separation.html',
+                    title: '⚖️ MVP Product vs. Marketing Separation',
+                    cat: 'Components',
+                    emoji: '⚖️',
+                    desc: 'Decoupling marketing acquisition from core product delivery.'
+                },
+                {
+                    id: 'reverse-response',
+                    url: '5_Symbols/growth/reverse-response-marketing.html',
+                    title: '🔄 Reverse Response Marketing',
+                    cat: 'Growth',
+                    emoji: '🔄',
+                    desc: 'Viral marketing framework through reverse engineering and second brain insights.'
+                },
+                {
+                    id: 'roger-rabbit',
+                    url: '5_Symbols/growth/roger-rabbit-animation.html',
+                    title: '🐇 Roger Rabbit Animation Style',
+                    cat: 'Growth',
+                    emoji: '🐇',
+                    desc: 'Mixed-reality animation style as a signature visual format.'
+                },
+                {
+                    id: 'bmc',
+                    url: '5_Symbols/bmc/business-model-canvas.html',
+                    title: '🖼️ Business Model Canvas',
+                    cat: 'Business Model',
+                    emoji: '🖼️',
+                    desc: 'Master 9-box canvas showing partners, key actions, value prop, and revenue.'
+                },
+                {
+                    id: 'hypothesis-tracker',
+                    url: '5_Symbols/hypotheses/hypothesis.html',
+                    title: '💭 Hypothesis Tracker',
+                    cat: 'Strategy',
+                    emoji: '💭',
+                    desc: 'Comprehensive dashboard tracking hypothesis validation status.'
+                },
+                {
+                    id: 'confidence-report',
+                    url: '5_Symbols/dashboard/confidence-report.html',
+                    title: '🧪 Confidence Report',
+                    cat: 'Dashboard',
+                    emoji: '🧪',
+                    desc: 'Whole-site sanity check scoring hypothesis validation and site integrity.'
+                },
+                {
+                    id: 'how-to-move-score',
+                    url: '5_Symbols/dashboard/how-to-move-the-score.html',
+                    title: '📈 How to Move the Score',
+                    cat: 'Dashboard',
+                    emoji: '📈',
+                    desc: 'Master playbook explaining the formula and evidence levers to increase confidence.'
+                },
+                {
+                    id: 'latest-pages',
+                    url: '5_Symbols/dashboard/latest-pages.html',
+                    title: '✨ Latest Pages',
+                    cat: 'Dashboard',
+                    emoji: '✨',
+                    desc: 'Sortable dashboard tracking recently created and updated pages.'
+                },
+                {
+                    id: 'project-stats',
+                    url: '5_Symbols/dashboard/project-stats.html',
+                    title: '📊 Project Stats',
+                    cat: 'Dashboard',
+                    emoji: '📊',
+                    desc: 'Counted snapshot of HTML pages, hypotheses, commits, and reports.'
+                },
+                {
+                    id: 'interview-guide',
+                    url: '5_Symbols/cd/cd-interview-guide.html',
+                    title: '🎤 Interview Guide',
+                    cat: 'Discovery',
+                    emoji: '🎤',
+                    desc: 'Playbook of open-ended pains/gains questions and listening guidelines.'
+                },
+                {
+                    id: 'todo-list',
+                    url: '5_Symbols/dashboard/todo.html',
+                    title: '✅ Task List',
+                    cat: 'Dashboard',
+                    emoji: '✅',
+                    desc: 'Recurring weekly execution loop and production task list.'
+                }
+            ];
+
+            var grid = document.getElementById('favorites-grid');
+            var favCountEl = document.getElementById('fav-count');
+            var markdownPreviewEl = document.getElementById('markdown-preview');
+            var stickyStatusEl = document.getElementById('sticky-status-text');
+            var overallNotesEl = document.getElementById('overall-notes');
+
+            if (favCountEl) favCountEl.textContent = favoritesList.length;
+
+            // Render cards
+            function renderGrid() {
+                var html = '';
+                favoritesList.forEach(function(item, idx) {
+                    var checkedAttr = (idx === 0 || idx === 1) ? 'checked' : ''; // Default check Core Message and Intentionality
+                    var selectedClass = checkedAttr ? ' selected' : '';
+
+                    html +=
+                        '<div class="fav-card' + selectedClass + '" id="card-' + item.id + '">' +
+                        '  <div class="fav-card-header">' +
+                        '    <div style="display:flex; align-items:center; gap:0.5rem;">' +
+                        '      <input type="checkbox" id="chk-' + item.id + '" class="fav-select-checkbox" data-id="' + item.id + '" ' + checkedAttr + '>' +
+                        '      <span class="fav-badge">' + item.emoji + ' ' + item.cat + '</span>' +
+                        '    </div>' +
+                        '    <a href="../../' + item.url + '" target="_blank" style="color:var(--text-muted); font-size:0.8rem; text-decoration:none;" title="Open Page">🔗 Open</a>' +
+                        '  </div>' +
+                        '  <a href="../../' + item.url + '" class="fav-card-title">' + item.title + '</a>' +
+                        '  <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">' + item.desc + '</p>' +
+                        '  <div style="display:flex; flex-direction:column; gap:0.4rem; margin-top:0.25rem;">' +
+                        '    <select id="rate-' + item.id + '" class="rating-select" data-id="' + item.id + '">' +
+                        '      <option value="🌟 Super Helpful">⭐⭐⭐⭐⭐ Super Helpful / Priority</option>' +
+                        '      <option value="✅ Approved / Solid">⭐⭐⭐⭐ Approved / Solid</option>' +
+                        '      <option value="🔄 Needs Revision">⭐⭐⭐ Needs Revision / Updates</option>' +
+                        '      <option value="❓ Question / Clarify">❓ Question / Discussion</option>' +
+                        '    </select>' +
+                        '    <input type="text" id="note-' + item.id + '" class="feedback-input" data-id="' + item.id + '" placeholder="Specific feedback or notes for this page...">' +
+                        '  </div>' +
+                        '</div>';
+                });
+                grid.innerHTML = html;
+
+                // Bind events
+                favoritesList.forEach(function(item) {
+                    var chk = document.getElementById('chk-' + item.id);
+                    var rate = document.getElementById('rate-' + item.id);
+                    var note = document.getElementById('note-' + item.id);
+                    var card = document.getElementById('card-' + item.id);
+
+                    if (chk) {
+                        chk.addEventListener('change', function() {
+                            if (this.checked) card.classList.add('selected');
+                            else card.classList.remove('selected');
+                            updateFeedbackPreview();
+                        });
+                    }
+                    if (rate) rate.addEventListener('change', updateFeedbackPreview);
+                    if (note) note.addEventListener('input', updateFeedbackPreview);
+                });
+            }
+
+            function updateFeedbackPreview() {
+                var selectedItems = [];
+                favoritesList.forEach(function(item) {
+                    var chk = document.getElementById('chk-' + item.id);
+                    if (chk && chk.checked) {
+                        var rateVal = document.getElementById('rate-' + item.id).value;
+                        var noteVal = document.getElementById('note-' + item.id).value.trim();
+                        selectedItems.push({
+                            title: item.title,
+                            url: item.url,
+                            rating: rateVal,
+                            note: noteVal
+                        });
+                    }
+                });
+
+                var overallText = overallNotesEl ? overallNotesEl.value.trim() : '';
+
+                if (stickyStatusEl) {
+                    stickyStatusEl.textContent = selectedItems.length + ' item' + (selectedItems.length === 1 ? '' : 's') + ' selected for feedback';
+                }
+
+                var md = '# 🌟 Favorites & Feedback Submission\n';
+                md += '*Generated on: ' + new Date().toLocaleDateString() + '*\n\n';
+
+                if (selectedItems.length > 0) {
+                    md += '## 📌 Reviewed Favorite Items (' + selectedItems.length + ')\n\n';
+                    selectedItems.forEach(function(s, index) {
+                        md += (index + 1) + '. **' + s.title + '**\n';
+                        md += '   - **Status/Rating:** ' + s.rating + '\n';
+                        md += '   - **Path:** `' + s.url + '`\n';
+                        if (s.note) {
+                            md += '   - **Feedback Note:** ' + s.note + '\n';
+                        }
+                        md += '\n';
+                    });
+                } else {
+                    md += '_No specific favorite pages checked._\n\n';
+                }
+
+                if (overallText) {
+                    md += '## 💬 Overall AI Agent Feedback & Next Steps\n\n';
+                    md += overallText + '\n\n';
+                }
+
+                markdownPreviewEl.textContent = md;
+            }
+
+            // Global buttons
+            document.getElementById('btn-select-all').addEventListener('click', function() {
+                favoritesList.forEach(function(item) {
+                    var chk = document.getElementById('chk-' + item.id);
+                    var card = document.getElementById('card-' + item.id);
+                    if (chk) chk.checked = true;
+                    if (card) card.classList.add('selected');
+                });
+                updateFeedbackPreview();
+            });
+
+            document.getElementById('btn-deselect-all').addEventListener('click', function() {
+                favoritesList.forEach(function(item) {
+                    var chk = document.getElementById('chk-' + item.id);
+                    var card = document.getElementById('card-' + item.id);
+                    if (chk) chk.checked = false;
+                    if (card) card.classList.remove('selected');
+                });
+                updateFeedbackPreview();
+            });
+
+            if (overallNotesEl) {
+                overallNotesEl.addEventListener('input', updateFeedbackPreview);
+            }
+
+            document.getElementById('btn-copy-feedback').addEventListener('click', function() {
+                var textToCopy = markdownPreviewEl.textContent;
+                var btn = this;
+                var originalHtml = btn.innerHTML;
+
+                navigator.clipboard.writeText(textToCopy).then(function() {
+                    btn.innerHTML = '<span>✅</span> Copied Feedback to Clipboard!';
+                    btn.style.background = '#10b981';
+                    setTimeout(function() {
+                        btn.innerHTML = originalHtml;
+                        btn.style.background = 'var(--gradient-success)';
+                    }, 2500);
+                }).catch(function() {
+                    var textarea = document.createElement('textarea');
+                    textarea.value = textToCopy;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try {
+                        document.execCommand('copy');
+                        btn.innerHTML = '<span>✅</span> Copied Feedback to Clipboard!';
+                        btn.style.background = '#10b981';
+                        setTimeout(function() {
+                            btn.innerHTML = originalHtml;
+                            btn.style.background = 'var(--gradient-success)';
+                        }, 2500);
+                    } catch (e) {
+                        alert('Could not copy automatically. Text logged to console.');
+                        console.log(textToCopy);
+                    }
+                    document.body.removeChild(textarea);
+                });
+            });
+
+            // Initial render
+            renderGrid();
+            updateFeedbackPreview();
+        })();
+    </script>
+</body>
+</html>
