@@ -107,6 +107,21 @@
             white-space: pre-wrap;
             word-break: break-word;
         }
+        .sort-btn {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .sort-btn.active {
+            border-color: var(--color-primary);
+            background: rgba(99, 102, 241, 0.18);
+            color: #c7d2fe;
+        }
     </style>
 </head>
 <body>
@@ -136,6 +151,7 @@
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
                     <span class="fav-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">✨ Core Message Included</span>
                     <span class="fav-badge" style="background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.3);">🧘 Being Intentional Included</span>
+                    <span class="fav-badge" style="background: rgba(56, 189, 248, 0.15); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.3);">📢 Daily Promo Templates Included</span>
                 </div>
             </div>
         </div>
@@ -172,6 +188,20 @@
                         </p>
                     </div>
                 </div>
+                <div class="col-6">
+                    <div class="card" style="border-top: 4px solid #38bdf8; height: 100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 0.5rem;">
+                            <span class="fav-badge" style="color: #7dd3fc;">📢 Growth Channel</span>
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Added to Favorites</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">
+                            <a href="../growth/daily-community-promotion-templates.html" style="color: var(--text-primary); text-decoration: none;">📢 Daily Community Promotion Templates</a>
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            7-day LinkedIn, X.com, and Sunday WhatsApp swipe file for Skool growth and 13:30 UK live cohort invites. Use A&rarr;Z sort below to find it under <strong>D</strong>.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -182,7 +212,11 @@
                     <h2 class="section-title" style="margin:0;">📋 All Bookmarked Favorites (<span id="fav-count">20</span>)</h2>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top:0.25rem;">Check items to include in your feedback, rate them, and write specific comments.</p>
                 </div>
-                <div style="display:flex; gap:0.5rem;">
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+                    <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600; letter-spacing:0.04em;">SORT</span>
+                    <button type="button" id="btn-sort-az" class="sort-btn active" aria-pressed="true">A &rarr; Z</button>
+                    <button type="button" id="btn-sort-za" class="sort-btn" aria-pressed="false">Z &rarr; A</button>
+                    <button type="button" id="btn-sort-default" class="sort-btn" aria-pressed="false">Original</button>
                     <button id="btn-select-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Select All</button>
                     <button id="btn-deselect-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Deselect All</button>
                 </div>
@@ -231,7 +265,7 @@
                 <span style="color: var(--text-secondary); font-size: 0.9rem;">Founder: Rifat Erdem Sahin (Pexabo Ltd)</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Added 5-Min Video Curriculum &amp; LOs to Favorites (2026-08-30) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/favorites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Featured Daily Community Promotion Templates and added A&rarr;Z / Z&rarr;A sort (2026-08-30) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/favorites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </footer>
 
@@ -285,10 +319,10 @@
                 {
                     id: 'promo-templates',
                     url: '5_Symbols/growth/daily-community-promotion-templates.html',
-                    title: '📢 Daily Promo Templates',
+                    title: '📢 Daily Community Promotion Templates',
                     cat: 'Growth',
                     emoji: '📢',
-                    desc: '7-day daily swipe file for Skool promotion and Sunday live cohort invitations.'
+                    desc: '7-day LinkedIn, X.com, and WhatsApp swipe file for Skool promotion and Sunday 13:30 UK live cohort invitations.'
                 },
                 {
                     id: 'weekly-todos',
@@ -417,15 +451,66 @@
             var markdownPreviewEl = document.getElementById('markdown-preview');
             var stickyStatusEl = document.getElementById('sticky-status-text');
             var overallNotesEl = document.getElementById('overall-notes');
+            var sortMode = 'az';
+            var defaultCheckedIds = { 'core-message': true, 'intentionality': true, 'promo-templates': true };
 
             if (favCountEl) favCountEl.textContent = favoritesList.length;
 
+            function azSortKey(title) {
+                var m = String(title).match(/[A-Za-z0-9£]/);
+                if (!m) return String(title).toLowerCase();
+                return String(title).slice(String(title).indexOf(m[0])).toLowerCase();
+            }
+
+            function orderedList() {
+                var copy = favoritesList.slice();
+                if (sortMode === 'az') {
+                    copy.sort(function(a, b) { return azSortKey(a.title).localeCompare(azSortKey(b.title), 'en', { sensitivity: 'base' }); });
+                } else if (sortMode === 'za') {
+                    copy.sort(function(a, b) { return azSortKey(b.title).localeCompare(azSortKey(a.title), 'en', { sensitivity: 'base' }); });
+                }
+                return copy;
+            }
+
+            function collectCardState() {
+                var state = {};
+                var hasAny = false;
+                favoritesList.forEach(function(item) {
+                    var chk = document.getElementById('chk-' + item.id);
+                    if (!chk) return;
+                    hasAny = true;
+                    var rate = document.getElementById('rate-' + item.id);
+                    var note = document.getElementById('note-' + item.id);
+                    state[item.id] = {
+                        checked: chk.checked,
+                        rating: rate ? rate.value : '',
+                        note: note ? note.value : ''
+                    };
+                });
+                return hasAny ? state : null;
+            }
+
+            function setSortButtons() {
+                var map = { az: 'btn-sort-az', za: 'btn-sort-za', def: 'btn-sort-default' };
+                Object.keys(map).forEach(function(key) {
+                    var btn = document.getElementById(map[key]);
+                    if (!btn) return;
+                    var on = (key === 'def' ? sortMode === 'default' : sortMode === key);
+                    btn.classList.toggle('active', on);
+                    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+            }
+
             // Render cards
             function renderGrid() {
+                var saved = collectCardState();
                 var html = '';
-                favoritesList.forEach(function(item, idx) {
-                    var checkedAttr = (idx === 0 || idx === 1) ? 'checked' : ''; // Default check Core Message and Intentionality
+                orderedList().forEach(function(item) {
+                    var checked = saved ? !!(saved[item.id] && saved[item.id].checked) : !!defaultCheckedIds[item.id];
+                    var checkedAttr = checked ? 'checked' : '';
                     var selectedClass = checkedAttr ? ' selected' : '';
+                    var savedRating = saved && saved[item.id] ? saved[item.id].rating : '';
+                    var savedNote = saved && saved[item.id] ? saved[item.id].note : '';
 
                     html +=
                         '<div class="fav-card' + selectedClass + '" id="card-' + item.id + '">' +
@@ -440,12 +525,12 @@
                         '  <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">' + item.desc + '</p>' +
                         '  <div style="display:flex; flex-direction:column; gap:0.4rem; margin-top:0.25rem;">' +
                         '    <select id="rate-' + item.id + '" class="rating-select" data-id="' + item.id + '">' +
-                        '      <option value="🌟 Super Helpful">⭐⭐⭐⭐⭐ Super Helpful / Priority</option>' +
-                        '      <option value="✅ Approved / Solid">⭐⭐⭐⭐ Approved / Solid</option>' +
-                        '      <option value="🔄 Needs Revision">⭐⭐⭐ Needs Revision / Updates</option>' +
-                        '      <option value="❓ Question / Clarify">❓ Question / Discussion</option>' +
+                        '      <option value="🌟 Super Helpful"' + (savedRating === '🌟 Super Helpful' ? ' selected' : '') + '>⭐⭐⭐⭐⭐ Super Helpful / Priority</option>' +
+                        '      <option value="✅ Approved / Solid"' + (savedRating === '✅ Approved / Solid' ? ' selected' : '') + '>⭐⭐⭐⭐ Approved / Solid</option>' +
+                        '      <option value="🔄 Needs Revision"' + (savedRating === '🔄 Needs Revision' ? ' selected' : '') + '>⭐⭐⭐ Needs Revision / Updates</option>' +
+                        '      <option value="❓ Question / Clarify"' + (savedRating === '❓ Question / Clarify' ? ' selected' : '') + '>❓ Question / Discussion</option>' +
                         '    </select>' +
-                        '    <input type="text" id="note-' + item.id + '" class="feedback-input" data-id="' + item.id + '" placeholder="Specific feedback or notes for this page...">' +
+                        '    <input type="text" id="note-' + item.id + '" class="feedback-input" data-id="' + item.id + '" placeholder="Specific feedback or notes for this page..." value="' + String(savedNote).replace(/"/g, '&quot;') + '">' +
                         '  </div>' +
                         '</div>';
                 });
@@ -518,6 +603,16 @@
                 markdownPreviewEl.textContent = md;
             }
 
+            function applySort(mode) {
+                sortMode = mode;
+                setSortButtons();
+                renderGrid();
+                updateFeedbackPreview();
+            }
+            document.getElementById('btn-sort-az').addEventListener('click', function() { applySort('az'); });
+            document.getElementById('btn-sort-za').addEventListener('click', function() { applySort('za'); });
+            document.getElementById('btn-sort-default').addEventListener('click', function() { applySort('default'); });
+
             // Global buttons
             document.getElementById('btn-select-all').addEventListener('click', function() {
                 favoritesList.forEach(function(item) {
@@ -576,7 +671,8 @@
                 });
             });
 
-            // Initial render
+            // Initial render (A→Z so Daily Community Promotion Templates sits under D)
+            setSortButtons();
             renderGrid();
             updateFeedbackPreview();
         })();

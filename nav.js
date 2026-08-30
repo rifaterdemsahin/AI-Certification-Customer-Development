@@ -34,7 +34,7 @@
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule'],
                 ['5_Symbols/growth/course-curriculum-learning-objectives.html', '🎯 5-Min Video Curriculum &amp; LOs'],
-                ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Promo Templates'],
+                ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Community Promotion Templates'],
                 ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos'],
                 ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Triggers & Thresholds)'],
                 ['5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', '⛔ £100k Pure-Time Pivot (H33)'],
@@ -823,7 +823,20 @@
                 headerHtml += linkHtml(group.href, labelWithEmoji, group.className);
             } else {
                 var hasActiveChild = false;
-                group.items.forEach(function (item) {
+                var dropdownItems = group.items;
+                if (group.className === 'nav-favorites' && group.items.length > 1) {
+                    var hubItem = group.items[0];
+                    var restItems = group.items.slice(1).slice().sort(function (a, b) {
+                        function key(label) {
+                            var m = String(label).match(/[A-Za-z0-9£]/);
+                            if (!m) return String(label).toLowerCase();
+                            return String(label).slice(String(label).indexOf(m[0])).toLowerCase();
+                        }
+                        return key(a[1]).localeCompare(key(b[1]), 'en', { sensitivity: 'base' });
+                    });
+                    dropdownItems = [hubItem].concat(restItems);
+                }
+                dropdownItems.forEach(function (item) {
                     if (isActive(item[0])) {
                         hasActiveChild = true;
                     }
@@ -832,7 +845,7 @@
                 headerHtml += '<li class="nav-dropdown">' +
                     '<span class="nav-dropdown-toggle ' + group.className + activeClass + '" tabindex="0">' + labelWithEmoji + ' &#9662;</span>' +
                     '<ul class="nav-dropdown-menu">';
-                group.items.forEach(function (item) {
+                dropdownItems.forEach(function (item) {
                     headerHtml += linkHtml(item[0], item[1], group.className);
                 });
                 headerHtml += '</ul></li>';
