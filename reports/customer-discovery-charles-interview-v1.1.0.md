@@ -1,3 +1,5 @@
+> **Superseded for the latest Charles ingest:** [v1.2.0 — Claude Cowork daily status report](customer-discovery-charles-interview-v1.2.0.md) (2026-08-30). This v1.1.0 file remains the 2026-08-29 MCP / competitors-unpaid record.
+
 # Customer Discovery Report: Charles Interview v1.1.0 — MCP Common Language, Competitors Unpaid
 
 **Report Version:** v1.1.0  

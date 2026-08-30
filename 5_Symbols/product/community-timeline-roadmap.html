@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Timeline &amp; Roadmap — From Cert Seeker to Vetted Delivery Pilot | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="description" content="Community Timeline & Roadmap for Delivery Pilot: The dual progression path from fast certification graduates to elite Delivery Pilots accessing the deliverypilot.net backend secret society.">
+    <style>
+        .timeline-container {
+            position: relative;
+            padding-left: 2.5rem;
+            margin: 2rem 0;
+        }
+        .timeline-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 14px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--color-primary), var(--color-info), var(--color-warning), var(--color-success), #a855f7);
+            border-radius: 2px;
+        }
+        .timeline-node {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 3px solid var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+        }
+        .timeline-dot.success { border-color: var(--color-success); box-shadow: 0 0 12px rgba(16, 185, 129, 0.4); }
+        .timeline-dot.warning { border-color: var(--color-warning); box-shadow: 0 0 12px rgba(245, 158, 11, 0.4); }
+        .timeline-dot.info { border-color: var(--color-info); box-shadow: 0 0 12px rgba(6, 182, 212, 0.4); }
+        .timeline-dot.purple { border-color: #a855f7; box-shadow: 0 0 12px rgba(168, 85, 247, 0.4); }
+        
+        .fork-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 850px) {
+            .fork-box {
+                grid-template-columns: 1fr;
+            }
+        }
+        .secret-society-card {
+            background: linear-gradient(180deg, rgba(30, 27, 75, 0.7), rgba(15, 23, 42, 0.85));
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        .secret-society-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .backend-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .backend-feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .backend-feature-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="skool-roadmap.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Skool Roadmap
+        </a>
+
+        <!-- Hero Header -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary); position: relative; overflow: hidden;">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Community Architecture</span>
+                <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.3);">deliverypilot.net Backend</span>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success); border-color: rgba(16, 185, 129, 0.3);">Stage 2 Validation</span>
+            </div>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin: 0.75rem 0 0.5rem 0;">🧭 Community Timeline &amp; Member Roadmap</h1>
+            <p style="color: var(--text-secondary); max-width: 90ch; font-size: 1.05rem; line-height: 1.6; margin-top: 0.75rem;">
+                Every member enters our ecosystem with unique career objectives. Some join strictly to pass their proctored AI certifications and graduate swiftly into the market; others journey through the final Skool stages to become <strong>vetted Delivery Pilots</strong> &mdash; entering the private <strong>deliverypilot.net backend secret society</strong> to command £500&ndash;£1,000+/day contracts and co-bid on enterprise tenders.
+            </p>
+            <div class="grid" style="margin-top: 1.25rem;">
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Community Nursery:</span><span class="info-value"><a href="https://www.skool.com/delivery-pilot-8938/about" target="_blank" style="color: var(--color-primary); font-weight: 600;">Skool (delivery-pilot-8938) ↗</a></span></li>
+                        <li class="info-item"><span class="info-label">Backend Transformation:</span><span class="info-value"><a href="deliverypilot-net.html" style="color: #c084fc; font-weight: 600;">deliverypilot.net Private Portal ↗</a></span></li>
+                        <li class="info-item"><span class="info-label">Fast Exit Track:</span><span class="info-value highlight-success">Proctored Certification &amp; Alumni Network</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="info-list">
+                        <li class="info-item"><span class="info-label">Elite Mastery Track:</span><span class="info-value highlight-warning">Vetted Delivery Pilot &amp; Corporate Tender Alliance</span></li>
+                        <li class="info-item"><span class="info-label">Founder Network:</span><span class="info-value">30k Capped LinkedIn Boost (Rifat Erdem Sahin)</span></li>
+                        <li class="info-item"><span class="info-label">Hypotheses:</span><span class="info-value"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> &middot; <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a> &middot; <a href="../hypotheses/hyp-h20.html" style="color: var(--color-primary);">H20</a> &middot; <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual Diagram & Roadmap Mockup -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🖼️ The Delivery Pilot Transformation Map</h2>
+            <div class="card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.6); border-color: rgba(99, 102, 241, 0.25);">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.25rem;">
+                    <img src="community-timeline-hero.jpg" alt="Delivery Pilot Community Timeline and Roadmap Infographic showing the fork in the road between Certification Graduates and the Secret Society Delivery Pilot Track" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-primary);">Visual Architecture:</strong> Illustrates the journey from collaborative Skool classrooms and mock exam practice to the glowing fork in the road, culminating in the private <code>deliverypilot.net</code> backend terminal and corporate tender alliance.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Fork in the Road: Two Legitimate Member Destinies -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🔀 The Fork in the Road: Two Respected Pathways</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 1.05rem;">
+                We do not trap members or force a one-size-fits-all agenda. Our community is designed with two clear, honored exit points based on individual ambition:
+            </p>
+            
+            <div class="fork-box">
+                <!-- Pathway A: Certification Sprint -->
+                <div class="card" style="border-top: 4px solid var(--color-success); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success); border-color: rgba(16, 185, 129, 0.3);">Track A &middot; Speed &amp; Validation</span>
+                            <span style="font-size: 1.5rem;">🎓 ⚡</span>
+                        </div>
+                        <h3 style="color: var(--color-success); font-size: 1.3rem; margin-bottom: 0.75rem;">The Certification Sprinter (Fast Exit)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            <strong>Intent:</strong> Professionals who need the vendor-backed Pearson VUE Credly badge (Claude Certified Architect / Associate, Azure AI) to clear enterprise HR filters, satisfy corporate mandates, or validate foundational knowledge.
+                        </p>
+                        <ul class="emoji-list" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            <li><strong>Duration:</strong> 2 to 6 weeks intensive study</li>
+                            <li><strong>Tools Used:</strong> Active-recall flashcards, mock quizzes, Sunday practice calls</li>
+                            <li><strong>Outcome:</strong> Exam passed, Credly badge pinned to LinkedIn, graduate status</li>
+                            <li><strong>Exit Policy:</strong> Warm farewell, encouraged to leave a review, invited to refer peers</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 0.85rem; background: rgba(16, 185, 129, 0.08); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.85rem; color: #a7f3d0;">
+                        <strong>Founder Philosophy:</strong> <em>"If you got your cert and leveled up your career, we did our job. We celebrate your graduation."</em>
+                    </div>
+                </div>
+
+                <!-- Pathway B: Delivery Pilot Transformation -->
+                <div class="card" style="border-top: 4px solid #a855f7; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(180deg, rgba(168, 85, 247, 0.05), rgba(15, 23, 42, 0.7));">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border-color: rgba(168, 85, 247, 0.3);">Track B &middot; Elite Mastery &amp; Sovereignty</span>
+                            <span style="font-size: 1.5rem;">🧑‍✈️ 🌐</span>
+                        </div>
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.75rem;">The Vetted Delivery Pilot (The Secret Society)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            <strong>Intent:</strong> Senior practitioners, architects, and aspirational contractors who want end-to-end delivery capability, high-day-rate contracts (£500&ndash;£1,000+/day), and direct participation in enterprise tender squads.
+                        </p>
+                        <ul class="emoji-list" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            <li><strong>Duration:</strong> Ongoing career alliance &amp; mastery (Months 2+)</li>
+                            <li><strong>Tools Used:</strong> deliverypilot.net backend portal, custom AI apps, RFP bidding</li>
+                            <li><strong>Outcome:</strong> Vetted Delivery Pilot status, enterprise placement, tender co-bids</li>
+                            <li><strong>Secret Society Access:</strong> Private mastermind, recruiter introductions, direct line to Rifat</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 0.85rem; background: rgba(168, 85, 247, 0.12); border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.3); font-size: 0.85rem; color: #e9d5ff;">
+                        <strong>The Destination:</strong> Full accession into <code>deliverypilot.net</code> backend portal with verified execution authority.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chronological Community Timeline -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">⏱️ Step-by-Step Community Timeline</h2>
+            
+            <div class="timeline-container">
+                <!-- Node 1 -->
+                <div class="timeline-node">
+                    <div class="timeline-dot info">1</div>
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                            <h3 style="color: var(--color-info); margin: 0; font-size: 1.15rem;">Phase 1: Onboarding &amp; Baseline Diagnostic (Weeks 1 &ndash; 2)</h3>
+                            <span class="status-pill" style="color: var(--color-info);">Level 1 &ndash; 2 on Skool</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                            New members enter the Skool community (<a href="skool-delivery-pilot-offer.html" style="color: var(--color-primary);">Peek $0 / Sit In $1</a>), introduce their technical background, configure their local Second Brain environment, and take their diagnostic baseline quiz.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; font-size: 0.85rem;">
+                            <div style="padding: 0.6rem; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px solid var(--border-color);">
+                                <strong>🎯 Objective:</strong> Setup Claude Code CLI, MCP servers, and identify knowledge gaps.
+                            </div>
+                            <div style="padding: 0.6rem; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px solid var(--border-color);">
+                                <strong>📅 Ritual:</strong> Attend first Sunday Practice Call as a silent observer or sit-in.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 2 -->
+                <div class="timeline-node">
+                    <div class="timeline-dot warning">2</div>
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                            <h3 style="color: var(--color-warning); margin: 0; font-size: 1.15rem;">Phase 2: Practice Sprints &amp; Mock Exam Drills (Weeks 3 &ndash; 6)</h3>
+                            <span class="status-pill" style="color: var(--color-warning);">Level 3 &ndash; 5 on Skool</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                            Intensive active-recall drills using digital memory cards, timed architecture quizzes, and live Sunday scenario breakdowns. Members master prompt caching, token budgets, RAG context windows, and tool routing.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; font-size: 0.85rem;">
+                            <div style="padding: 0.6rem; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px solid var(--border-color);">
+                                <strong>🎯 Objective:</strong> Score &gt;85% consistently across mock exams and scenario cards.
+                            </div>
+                            <div style="padding: 0.6rem; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px solid var(--border-color);">
+                                <strong>📅 Ritual:</strong> Active participation in Sunday live screen-shares and peer discussions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 3 (The Milestone & Fork) -->
+                <div class="timeline-node">
+                    <div class="timeline-dot success">3</div>
+                    <div class="card" style="border: 1px solid var(--color-success); background: linear-gradient(180deg, rgba(16, 185, 129, 0.04), rgba(15, 23, 42, 0.7));">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                            <h3 style="color: var(--color-success); margin: 0; font-size: 1.15rem;">Phase 3: Proctored Certification Milestone &amp; Track Decision (Weeks 6 &ndash; 8)</h3>
+                            <span class="status-pill" style="color: var(--color-success);">Pearson VUE Exam Day</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                            Members sit the official Anthropic Claude Certified Architect or Associate exam. Once the exam is passed, candidates encounter the fork:
+                        </p>
+                        <div class="grid" style="margin-top: 0.5rem;">
+                            <div class="col-6">
+                                <div style="padding: 0.75rem; background: rgba(16, 185, 129, 0.08); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.85rem;">
+                                    <strong style="color: var(--color-success);">🎓 Route A (Graduate):</strong> Post badge on LinkedIn, receive community alumni honors, and step out into the job market.
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div style="padding: 0.75rem; background: rgba(168, 85, 247, 0.08); border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.2); font-size: 0.85rem;">
+                                    <strong style="color: #c084fc;">🧑‍✈️ Route B (Delivery Pilot):</strong> Submit application for Delivery Pilot vetting to unlock the full <code>deliverypilot.net</code> backend ecosystem.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 4 (Delivery Pilot Elevation) -->
+                <div class="timeline-node">
+                    <div class="timeline-dot purple">4</div>
+                    <div class="card" style="border: 1px solid rgba(168, 85, 247, 0.4); background: linear-gradient(180deg, rgba(168, 85, 247, 0.08), rgba(15, 23, 42, 0.8));">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                            <h3 style="color: #c084fc; margin: 0; font-size: 1.15rem;">Phase 4: Advanced Skool Mastery &amp; Community Leadership (Weeks 8 &ndash; 12)</h3>
+                            <span class="status-pill" style="color: #d8b4fe;">Level 7 &ndash; 9 in Skool</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                            Aspiring Delivery Pilots lead Sunday screen-shares, mentor incoming cohort students, build sovereign AI applications, and complete the Ultimate IT Contractor curriculum (IR35, Ltd company, negotiation).
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; font-size: 0.85rem;">
+                            <div style="padding: 0.6rem; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px solid var(--border-color);">
+                                <strong>🎯 Objective:</strong> Build a production-ready custom AI app and complete contract rate strategy.
+                            </div>
+                            <div style="padding: 0.6rem; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px solid var(--border-color);">
+                                <strong>👑 Qualification:</strong> Peer-reviewed code review + Founder 1-on-1 vetting interview.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 5 (Secret Society Induction) -->
+                <div class="timeline-node" style="margin-bottom: 0;">
+                    <div class="timeline-dot purple">5</div>
+                    <div class="card" style="border: 2px solid #a855f7; box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                            <h3 style="color: #e9d5ff; margin: 0; font-size: 1.25rem;">Phase 5: Full Accession to deliverypilot.net Backend (The Secret Society)</h3>
+                            <span class="status-pill" style="color: #f3e8ff; background: rgba(168, 85, 247, 0.3); border-color: #a855f7;">Vetted Delivery Pilot</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                            The candidate is formally inducted as a <strong>Vetted Delivery Pilot</strong>. They receive authenticated login credentials to <strong>deliverypilot.net</strong>, accessing enterprise tender bidding squads, recruiter direct lineups, and partnership deals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Secret Society & Backend Transformation Engine -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <div class="secret-society-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <span class="badge" style="background: rgba(168, 85, 247, 0.25); color: #f3e8ff; border-color: #a855f7;">The Elite Transformation</span>
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; color: #fff; margin: 0.5rem 0 0.25rem 0;">🏛️ The Secret Society of Vetted Delivery Pilots</h2>
+                        <p style="color: #d8b4fe; font-size: 1rem; max-width: 80ch;">
+                            Why <code>deliverypilot.net</code> is not just another course &mdash; it is a closed alliance of senior AI engineering contractors who can deliver end-to-end value with zero hand-holding.
+                        </p>
+                    </div>
+                    <div style="padding: 0.75rem 1.25rem; background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 12px; text-align: center;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #e9d5ff; display: block;">Contract Power</span>
+                        <strong style="font-size: 1.4rem; color: #38bdf8;">£500&ndash;£1,000+/Day</strong>
+                    </div>
+                </div>
+
+                <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    Enterprise clients (banks, energy grids, defense, healthcare) do not hire generic junior prompt engineers. They require vetted, battle-tested professionals who understand compliance, private VPC deployments, MCP security boundaries, and corporate procurement. <strong>Delivery Pilots</strong> are pre-vetted, certified, and backed by a collective delivery network.
+                </p>
+
+                <!-- Backend Portal Features Breakdown -->
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(168, 85, 247, 0.3); padding-bottom: 0.5rem;">
+                    ⚙️ What Unlocks Inside the <code>deliverypilot.net</code> Backend Portal
+                </h3>
+
+                <div class="backend-feature-grid">
+                    <!-- Feature 1 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🧠 📇</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Membership Memory Cards</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Backend-synced spaced repetition memory cards. Algorithms adjust card intervals based on confidence, ensuring active recall of complex API parameters, token optimizations, and architecture trade-offs.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">📝 ⏱️</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Interactive Mock Quizzes</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Dynamic, scenario-driven exam simulators with automated backend scoring, detailed explanation graphs, and domain-by-domain weakness tracking.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">💼 🏢</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Ultimate IT Contractor Framework</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Founder proprietary $1.3M+ contracting blueprints: UK Ltd Co &amp; US LLC setups, IR35 compliance, rate negotiation scripts, contract terms, and client retention tactics.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🤝 🌐</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Partnership Portal</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Direct routing into Claude Enterprise Partner ecosystems. Bypasses partner-gated exam restrictions (<a href="../strategy/claude-partner-strategy.html" style="color: #38bdf8;">Finding F12</a>) and seats candidates directly with enterprise partners.
+                        </p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🎙️ 👥</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Monday VIP Claude Cowork &amp; Meetings</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Weekly private mastermind meetings and live screen-share cowork sessions. Live architectural teardowns, CV reviews, and strategic consulting directly with founder Rifat Erdem Sahin.
+                        </p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🚀 📈</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">30k LinkedIn Network Boost</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Direct advocacy to Rifat 30,000 capped executive and recruiter network. Delivery Pilots get featured posts, warm endorsements, and personal recruiter introductions.
+                        </p>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">📜 🏛️</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Enterprise Tenders &amp; RFP Squads</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Co-bidding on large-scale corporate AI transformation tenders (<a href="../hypotheses/hyp-h30.html" style="color: #38bdf8;">Hypothesis H30</a>). Delivery Pilots assemble into complementary delivery squads for Fortune 500 contracts.
+                        </p>
+                    </div>
+
+                    <!-- Feature 8 -->
+                    <div class="backend-feature-item">
+                        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🛡️ 👑</div>
+                        <h4 style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 0.4rem;">Corporate Lineups &amp; Vetted Trust</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                            Pre-cleared pipeline for staffing enterprise AI Centers of Excellence. Hiring managers bypass weeks of screening because Delivery Pilots have verified end-to-end execution proof.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Matrix: Skool Community vs. deliverypilot.net Backend -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">📊 Ecosystem Comparison: Skool Nursery vs. deliverypilot.net Backend</h2>
+            <div class="card" style="overflow-x: auto; padding: 0;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+                    <thead>
+                        <tr style="background: rgba(255, 255, 255, 0.04); border-bottom: 1px solid var(--border-color);">
+                            <th style="padding: 1rem 1.25rem;">Dimension</th>
+                            <th style="padding: 1rem 1.25rem; color: #67e8f9;">Skool Community ($0 / $1)</th>
+                            <th style="padding: 1rem 1.25rem; color: #fde68a;">Skool VIP ($250/yr)</th>
+                            <th style="padding: 1rem 1.25rem; color: #d8b4fe;">deliverypilot.net Backend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Primary Purpose</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">Practice, onboarding &amp; discussion</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">Sunday Screen-Share &amp; direct Q&amp;A</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff; font-weight: 600;">Vetted contractor alliance &amp; tenders</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Flashcards &amp; Memory Cards</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">Static sample decks</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">Full certification decks</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff;">Interactive spaced-repetition backend</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Mock Exam Quizzes</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">Community text quizzes</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">Sunday live scenario breakdown</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff;">Automated timed exam simulator</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Ultimate IT Contractor Guide</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; Not included</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; Not included</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff;">&check; Full $1.3M+ course &amp; templates</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Partnership Portal</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; Public only</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; Public only</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff;">&check; Anthropic partner seating access</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Monday VIP Cowork</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; None</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&check; Sit-in access</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff;">&check; Active 1-on-1 strategy &amp; teardown</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">Corporate Tender Co-Bidding</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; None</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; None</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff; font-weight: 600;">&check; Priority delivery squad allocation</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem 1.25rem; font-weight: 600;">30k LinkedIn Network Boost</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; None</td>
+                            <td style="padding: 1rem 1.25rem; color: var(--text-secondary);">&cross; Connection request only</td>
+                            <td style="padding: 1rem 1.25rem; color: #e9d5ff; font-weight: 600;">&check; Warm recruiter &amp; client promotion</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Summary & Action Steps -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">🚀 How to Enter the Ecosystem</h2>
+            <div class="grid">
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">1️⃣</div>
+                        <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.5rem;">Join Skool</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            Start with Standard ($0 Peek) or Premium ($1/mo Sit In) on Skool. Introduce yourself, access daily visual updates, and join Sunday practice sessions.
+                        </p>
+                        <a href="https://www.skool.com/delivery-pilot-8938/about" target="_blank" class="btn" style="width: 100%; text-align: center; font-size: 0.85rem;">Join Skool Group ↗</a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">2️⃣</div>
+                        <h3 style="color: var(--color-warning); font-size: 1.15rem; margin-bottom: 0.5rem;">Pass Your Cert</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            Utilize memory cards, practice exams, and Sunday screen-shares. Pass the Pearson VUE exam and claim your Credly badge. Choose your fork.
+                        </p>
+                        <a href="skool-delivery-pilot-offer.html" class="btn" style="width: 100%; text-align: center; font-size: 0.85rem; background: rgba(245, 158, 11, 0.15); color: #fde68a; border-color: rgba(245, 158, 11, 0.3);">View Offer Ladder &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="height: 100%; border: 1px solid rgba(168, 85, 247, 0.4);">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">3️⃣</div>
+                        <h3 style="color: #c084fc; font-size: 1.15rem; margin-bottom: 0.5rem;">Access deliverypilot.net</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            Reach Skool Level 8/9, submit your custom AI app, complete vetting, and receive your credentials for the private backend secret society.
+                        </p>
+                        <a href="deliverypilot-net.html" class="btn" style="width: 100%; text-align: center; font-size: 0.85rem; background: rgba(168, 85, 247, 0.2); color: #e9d5ff; border-color: #a855f7;">Explore Portal Spec &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standard Footer with Revision Tracking -->
+        <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.75rem; align-items: center; text-align: center;">
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; font-size: 0.9rem;">
+                <a href="../../index.html" style="color: var(--text-secondary); text-decoration: none;">Hub</a>
+                <a href="skool-roadmap.html" style="color: var(--text-secondary); text-decoration: none;">Skool Roadmap</a>
+                <a href="deliverypilot-net.html" style="color: var(--text-secondary); text-decoration: none;">deliverypilot.net</a>
+                <a href="../strategy/delivery-pilot-roadmap.html" style="color: var(--text-secondary); text-decoration: none;">Career Roadmap</a>
+                <a href="../hypotheses/hypothesis.html" style="color: var(--text-secondary); text-decoration: none;">Hypotheses</a>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Created Community Timeline &amp; Roadmap detailing the Certification Exit vs. Delivery Pilot Secret Society fork in deliverypilot.net (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/community-timeline-roadmap.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

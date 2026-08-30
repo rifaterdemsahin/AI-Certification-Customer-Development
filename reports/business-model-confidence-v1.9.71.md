@@ -1,3 +1,5 @@
+> **Superseded by** [v1.9.72](business-model-confidence-v1.9.72.md) (2026-08-30). Numbers below are the historical record for this run.
+
 # Business Model Confidence Report — v1.9.71
 
 **Date:** 2026-08-30  

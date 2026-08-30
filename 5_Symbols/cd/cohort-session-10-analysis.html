@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cohort Session 10 Analysis | Follow the Money</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .arch-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-normal);
+        }
+        .arch-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        .arch-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .quote-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--color-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin: 0.75rem 0;
+            color: var(--text-secondary);
+        }
+        .todo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="archived-interview-transcripts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Archived Transcripts &amp; Interviews
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-warning); position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fde68a; border-color: rgba(245, 158, 11, 0.3);">Customer Discovery &middot; Live Cohort Simulation</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🎙️ AI Cohort Session 10: Follow the Money</h1>
+                    <p style="color: var(--text-secondary); max-width: 78ch; font-size: 1.05rem; line-height: 1.6;">
+                        Sunday 30 Aug 2026 with <strong>Mariana</strong> and <strong>Chidi</strong> (first named Skool student). Faceless shorts are lifting Skool joins; the B2C&rarr;B2B placement story is still a slogan until payroll, partners, and a written money path exist. See <a href="../hypotheses/hyp-h12.html" style="color: var(--color-primary);">H12</a>, <a href="../hypotheses/hyp-h22.html" style="color: var(--color-primary);">H22</a>, <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>. Not a paid enrollment.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="archived-interview-transcripts.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 8px; text-align: center;">
+                        📂 View All Transcripts
+                    </a>
+                    <a href="../dashboard/todo.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-align: center;">
+                        ✅ View Action Items in todo.html
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🖼️ Session 10 Money-Path Slide</h2>
+            <div class="card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.6); border-color: rgba(245, 158, 11, 0.25);">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.25rem;">
+                    <img src="cohort-session-10-analysis-hero.jpg" alt="Glass boardroom with a golden funnel from consumer screens into an enterprise tower" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-primary);">Chidi&rsquo;s test:</strong> shorts &rarr; Skool &rarr; certified pool &rarr; partner payroll &rarr; cash. The vehicle is AI; the missing badge is the Uber license.
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <a href="cohort-session-9-analysis.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            &larr; Session 9 Analysis
+                        </a>
+                        <a href="../../markdown_renderer.html?src=reports/cohort-session-10-analysis-v1.0.0.md" class="btn" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde68a; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            📄 Read Full Markdown Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">⚡ Session 10 Discovery Signals Snapshot</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #60a5fa;">5&times;</div>
+                    <div class="metric-lbl">Shorts viewer retention (summary PDF)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #34d399;">~30</div>
+                    <div class="metric-lbl">Founder-stated Skool joins (not paid)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #fbbf24;">100+</div>
+                    <div class="metric-lbl">Skool conversations vs YouTube silence</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #c084fc;">48</div>
+                    <div class="metric-lbl">Feasibility agent score after more ideas (was 50)</div>
+                </div>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">$0 and $1 Skool joins are not paid enrollments. Status on <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a> / <a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a> unchanged.</p>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">👥 Participant Discovery Signals &amp; Verbatim VoC</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-blue">Enterprise QA &amp; Research</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Mariana</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Repeats the Session 9 / first-principles brief: complexity is the obstacle. UK buyers need five in-person meetings. Cold email is dead. Chamber and communities beat pitch-slap.
+                        </p>
+                        <div class="quote-box">
+                            &ldquo;Your main obstacle is to complexity. Go to the simplicity. Be as simple as possible. This is your task.&rdquo;
+                        </div>
+                        <div class="quote-box">
+                            &ldquo;In the UK, networking and personal communication is the key&hellip; meet them at least five times before there is a probability that they will listen to your idea.&rdquo;
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #60a5fa;">Validation:</strong> <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a> cognitive overload + <a href="../hypotheses/hyp-h12.html" style="color: var(--color-primary);">H12</a> watering-hole path (Chamber, Triton Square), not cold email.
+                    </div>
+                </div>
+
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-purple">First Skool Student &amp; AWS Practitioner</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Chidi</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            First named student. Advocated faceless shorts for months. Spent the hour walking the B2B value stream: budget code, purchasing, payroll, insurance, partner sales. C Prime cannot close for itself.
+                        </p>
+                        <div class="quote-box">
+                            &ldquo;Slow down, Rifat. You&rsquo;re a Ferrari, I&rsquo;m just a golf&hellip; drink water from the fire hose, they&rsquo;ll just be overwhelmed.&rdquo;
+                        </div>
+                        <div class="quote-box">
+                            &ldquo;If I have a brand new Toyota Corolla outside, it is the vehicle, that&rsquo;s AI. But unless I go and get my Uber license and go out and get customers, no money will come in.&rdquo;
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #c084fc;">Validation:</strong> <a href="../hypotheses/hyp-h12.html" style="color: var(--color-primary);">H12</a> / <a href="../hypotheses/hyp-h22.html" style="color: var(--color-primary);">H22</a> stay Planned until the payroll/partner procedure is written. Next Sunday topic is money, not another stack demo.
+                    </div>
+                </div>
+
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-amber">Founder &amp; FDE Contractor</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Rifat</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Thin room, good shorts day. Names Ilker&rsquo;s B2C&rarr;B2B line. Wants to play <em>into</em> Capgemini / IBM / C Prime with ~10 certified people as a BD unlock. Feasibility agent dropped 50 &rarr; 48 as ideas stacked.
+                        </p>
+                        <div class="quote-box">
+                            &ldquo;This is not a B2C business. This is B2C to B&hellip; delivery pilots&hellip; convert them from C to B.&rdquo;
+                        </div>
+                        <div class="quote-box">
+                            &ldquo;I got 100 plus conversations. I was unable to get the conversations on YouTube&hellip; On Skool, I started to get interaction.&rdquo;
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #fbbf24;">Listen:speak:</strong> ~42% of words (Chidi 42%, Mariana 16%). Better than a founder lecture, still not 2:1. See <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🛠️ The 4 Action Pillars Resulting from Session 10</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #fbbf24;">
+                        <h3 style="font-family: var(--font-heading); color: #fbbf24; font-size: 1.15rem; margin-bottom: 0.75rem;">1. 💰 Map the money path</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li>Write the partner value stream: who we call, budget code, insurance, payroll.</li>
+                            <li>Do not treat AstraZeneca as a live deal. It is an example.</li>
+                            <li>Cash still means $10/mo or $250&ndash;$500. $0/$1 do not count (<a href="../hypotheses/hyp-h9.html" style="color: var(--color-primary);">H9</a>).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%; border-top: 3px solid #34d399;">
+                        <h3 style="font-family: var(--font-heading); color: #34d399; font-size: 1.15rem; margin-bottom: 0.75rem;">2. 🎯 One-page simplicity</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li>Mariana: one sheet of paper. ROI, not frameworks.</li>
+                            <li>Name four Anthropic tracks: Associate, Developer, Architect Foundations, Architect Professional.</li>
+                            <li>Community starts Associate; Developer needs a working MCP server.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6" style="margin-top: 1rem;">
+                    <div class="card" style="height: 100%; border-top: 3px solid #60a5fa;">
+                        <h3 style="font-family: var(--font-heading); color: #60a5fa; font-size: 1.15rem; margin-bottom: 0.75rem;">3. 🤝 Partner &amp; chamber watering holes</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li>Follow up Deloitte incubator / Samit (Clayton Hotel).</li>
+                            <li>Keep Thursday Triton Square / Anthropic Venture Caf&eacute;.</li>
+                            <li>Add British Chamber of Commerce; five meetings before the pitch.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6" style="margin-top: 1rem;">
+                    <div class="card" style="height: 100%; border-top: 3px solid #c084fc;">
+                        <h3 style="font-family: var(--font-heading); color: #c084fc; font-size: 1.15rem; margin-bottom: 0.75rem;">4. 📹 Shorts + next Sunday</h3>
+                        <ul style="padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            <li>Keep faceless shorts as Skool acquisition, not YouTube ads.</li>
+                            <li>Next live topic: <strong>how we make money</strong> (Chidi). Cap 60 minutes. 13:30&ndash;14:30 UK.</li>
+                            <li>Collaborative one-pager &mdash; do not send the founder away to &ldquo;go find answers.&rdquo;</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">📋 Action Items &amp; To-Do Checklist for Founder</h2>
+            <div class="card">
+                <div class="todo-item">
+                    <span>🗺</span>
+                    <div><strong>Map B2B monetization pathways:</strong> pricing, offer, and partner vs direct enterprise placement (<a href="../hypotheses/hyp-h12.html" style="color: var(--color-primary);">H12</a>).</div>
+                </div>
+                <div class="todo-item">
+                    <span>🎓</span>
+                    <div><strong>Publish the four-track ladder:</strong> Associate &rarr; Developer &rarr; Architect Foundations &rarr; Architect Professional (<a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25</a>).</div>
+                </div>
+                <div class="todo-item">
+                    <span>✨</span>
+                    <div><strong>One-page ROI value prop:</strong> Mariana&rsquo;s paper-on-the-wall. Kill extra ideas that dropped the feasibility score 50&rarr;48.</div>
+                </div>
+                <div class="todo-item">
+                    <span>🏢</span>
+                    <div><strong>Samit / Deloitte incubator follow-up:</strong> Clayton Hotel, Station Road. Named next step, not a new idea.</div>
+                </div>
+                <div class="todo-item">
+                    <span>☕</span>
+                    <div><strong>Triton Square Thursday + Chamber:</strong> five meetings before the pitch (<a href="cd-watering-holes.html" style="color: var(--color-primary);">Watering Holes</a>).</div>
+                </div>
+                <div class="todo-item">
+                    <span>📹</span>
+                    <div><strong>Keep the shorts clock:</strong> faceless pipeline into Skool, not ad-revenue watch hours (<a href="../growth/animation-shorts-pipeline.html" style="color: var(--color-primary);">Animation SOP</a>).</div>
+                </div>
+                <div class="todo-item">
+                    <span>🗓️</span>
+                    <div><strong>Next Sunday agenda = how we make money:</strong> Corolla / Uber-license walkthrough, 60-minute cap, 13:30 UK.</div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>AI Certification Helper &copy; 2026 &middot; Steve Blank Customer Development Engine</div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="archived-interview-transcripts.html" style="color: var(--color-primary); text-decoration: none;">Archived Transcripts</a>
+                    <a href="../dashboard/todo.html" style="color: var(--color-primary); text-decoration: none;">Task List</a>
+                    <a href="../dashboard/weekly-todos.html" style="color: var(--color-primary); text-decoration: none;">Weekly Todos</a>
+                </div>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added AI Cohort Session 10 analysis &mdash; follow the money, B2C&rarr;B2B, simplicity, and partner payroll gate (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cohort-session-10-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
