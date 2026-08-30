@@ -33,6 +33,7 @@
                 ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule'],
+                ['5_Symbols/growth/course-curriculum-learning-objectives.html', '🎯 5-Min Video Curriculum &amp; LOs'],
                 ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Promo Templates'],
                 ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos'],
                 ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Triggers & Thresholds)'],
