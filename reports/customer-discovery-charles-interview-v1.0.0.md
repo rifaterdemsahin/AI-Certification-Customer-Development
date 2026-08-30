@@ -1,3 +1,5 @@
+> **Superseded for follow-up evidence by** [v1.1.0](customer-discovery-charles-interview-v1.1.0.md) (2026-08-29 WhatsApp: MCP common language, competitors unpaid). This v1.0.0 file remains the 2026-08-22 “cooking steak” record.
+
 # Customer Discovery Report: Charles Interview — "Cooking Steak: Low & Slow" vs. Commercial Time Pressure
 
 **Report Version:** v1.0.0  
