@@ -1,19 +1,13 @@
-> **Superseded by** [v1.9.70](business-model-confidence-v1.9.70.md) (2026-08-30). Numbers below are the historical record for this run.
+# Business Model Confidence Report — v1.9.70
 
-# Business Model Confidence Report — v1.9.69
-
-**Date:** 2026-08-27  
+**Date:** 2026-08-30  
 **Produced by:** the `business-model-sanity-check` skill  
-**What changed vs. v1.9.68:**
-1. **H33 added** — £100k GBP pure-time pivot (Kill Gate K1). Four courses at £40,000 institutional value plus £60,000 of founder time (114 days at the £525/day IR35 rate). If the ledger fills and Discovery still cannot become Validation **and** Skool cannot charge back ($10/mo or $250–$500; $0 Peek / $1 Sit In do not count), pivot that week. Distinct from H11 $100,000 USD ARR hire.
-2. Milestone page `5_Symbols/growth/hundred-k-opportunity-cost-pivot.html` plus `hyp-h33.html`. Wired into Quality Gates, Milestone Calendar, When to Pivot, Cost-Side Model, BMC Cost Structure, Favorites + Growth nav.
-3. Hypothesis Validation denominator is now **32** (H1–H25, H27–H33; H26 unused). H33 scores ⚪ 20.
+**What changed vs. v1.9.69:**
+1. Re-scan after embedding the core-message YouTube Short [`OGB69NVn8ZU`](https://youtube.com/shorts/OGB69NVn8ZU) (*They Called AI a Con. I Walked In Anyway.*) on `5_Symbols/strategy/positive-ai-skills-message.html`.
+2. Hypothesis statuses unchanged. A manifesto Short is positioning evidence for H1 / H24 / H31, not paid conversion (H5 / H9). Score holds flat.
+3. `HYPOTHESIS.md` **v1.264.0**.
 
-`HYPOTHESIS.md` **v1.255.0**.
-
----
-
-> Previous version: [v1.9.68](business-model-confidence-v1.9.68.md)
+> Previous version: [v1.9.69](business-model-confidence-v1.9.69.md)
 
 ## Overall Score
 
@@ -23,18 +17,18 @@
 overall = round(0.7 × 35.0 + 0.3 × 80.0) = round(24.50 + 24.00) = 48
 ```
 
-| Sub-score | v1.9.68 | v1.9.69 (this run) |
+| Sub-score | v1.9.69 | v1.9.70 (this run) |
 |---|---|---|
-| Hypothesis Validation Score | 35.5 / 100 | **35.0 / 100** |
+| Hypothesis Validation Score | 35.0 / 100 | **35.0 / 100** |
 | Site Integrity Score | 80.0 / 100 | **80.0 / 100** |
-| **Overall** | **49 / 100** | **48 / 100** |
+| **Overall** | **48 / 100** | **48 / 100** |
 
-The drop is not “the pivot fired.” It is one new ⚪ Decided kill-gate (H33) on a 32-row average. Paid conversion is still unproven. The £100k ceiling is a stop-loss, not evidence.
+A positive AI manifesto Short does not move the number. Paid conversion is still unproven.
 
 ### What Moves the Score Next
-1. Paid conversion (H5 / H9) remains the lever. The £100k ledger is a clock, not a substitute for cash.
-2. Log courses and founder days against the H33 buckets so the kill date is measurable.
-3. Do not confuse £100k GBP opportunity cost with $100k USD ARR (H11).
+1. Paid conversion (H5 / H9) remains the lever. $0 Peek / $1 Sit In do not count.
+2. Seat a named candidate through a partner (F12 remaining).
+3. Do not confuse £100k GBP opportunity cost (H33) with $100k USD ARR (H11).
 
 ## Hypothesis Validation — 35.0 / 100
 
@@ -83,14 +77,14 @@ Starts at 100.
 
 | Check | Deduction | Note |
 |---|---|---|
-| Acidity still open (F2, F11) | −10 | Unchanged |
+| Acidity still open (F2, F11) | −10 | Unchanged (`acidity-check-report-v1.4.0.md`) |
 | Acidity partial (F3, F7, F9, F12) | −10 | Unchanged |
-| Broken local links | 0 | 5 template-literal false positives (`' + link + '`, `${page.url}`, etc.). No real missing files. |
-| Orphaned pages | 0 scored | Untracked `one-minute-shorts-tasks.html` is prior WIP, not this batch; not wired. H33 pages are in `nav.js` Favorites + Growth + searchIndex. |
-| HYPOTHESIS table vs Status | 0 | H33 row matches ⚪ Hypothesized/Decided |
-| Headline number consistency | 0 | $10k / 1,000x / $100k ARR / >40% unchanged. £100k GBP is a different claim (H33), explicitly labeled not H11. |
-| Uncommitted-work | 0 this run | Distinct H33 batch is new work; prior 80 already excluded a standing dirty tree from the integrity number. Not double-penalized. |
+| Broken local links | 0 | Fresh HTML scan: 1 false-positive `$2` in `markdown_renderer.html` template code. No real missing files. |
+| Orphaned pages | 0 scored | Core-message page already in nav / searchIndex. |
+| HYPOTHESIS table vs Status | 0 | Leading emojis match the v1.9.69 table. |
+| Headline number consistency | 0 | $10k / 1,000x / $100k ARR / >40% unchanged. |
+| Uncommitted-work | 0 this run | This batch (Short embed + this report) is the commit being pushed; not double-penalized against the standing 80. |
 
 ## Highest-leverage next action
 
-A named paid enrollment (H5/H9). H33 only tells you when to stop if that never happens.
+A named paid enrollment (H5/H9). The Short is the message; it is not the $10k gate.
