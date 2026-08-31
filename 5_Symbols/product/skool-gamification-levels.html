@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skool Gamification Levels &amp; Level 8/9 Delivery Pilot Graduation | AI Certification Helper</title>
+    <title>Skool Gamification Levels &amp; Level 1–9 Delivery Pilot Value Ladder | AI Certification Helper</title>
     <link rel="stylesheet" href="../../style.css">
     <style>
         .level-card {
@@ -25,24 +25,72 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 52px;
-            height: 52px;
+            width: 54px;
+            height: 54px;
             border-radius: 12px;
             font-size: 1.25rem;
             font-weight: 800;
             flex-shrink: 0;
         }
-        .level-1-3 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
-        .level-4-7 { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .level-1 { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+        .level-2 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .level-3 { background: rgba(6, 182, 212, 0.15); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
+        .level-4 { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .level-5 { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+        .level-6 { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }
+        .level-7 { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
         .level-8 { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 2px solid #10b981; }
-        .level-9 { background: rgba(147, 51, 234, 0.2); color: #c084fc; border: 2px solid #a855f7; }
+        .level-9 { background: rgba(234, 179, 8, 0.2); color: #facc15; border: 2px solid #eab308; }
+        
         .pilot-perk-box {
             background: rgba(16, 185, 129, 0.08);
             border: 1px solid rgba(16, 185, 129, 0.3);
             border-left: 5px solid #10b981;
             border-radius: 10px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+        .audit-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 1.5rem;
-            margin-top: 1.5rem;
+        }
+        .dist-bar-container {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .dist-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+        .dist-bar-label {
+            width: 80px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .dist-bar-track {
+            flex-grow: 1;
+            background: rgba(255, 255, 255, 0.05);
+            height: 18px;
+            border-radius: 9px;
+            overflow: hidden;
+            position: relative;
+        }
+        .dist-bar-fill {
+            height: 100%;
+            border-radius: 9px;
+            transition: width 0.4s ease;
+        }
+        .dist-bar-value {
+            width: 45px;
+            text-align: right;
+            font-weight: 700;
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -55,94 +103,355 @@
         </a>
 
         <!-- Hero Card -->
-        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid #10b981;">
-            <span class="badge" style="background-color: rgba(16, 185, 129, 0.15); color: #a7f3d0; border-color: rgba(16, 185, 129, 0.3);">Community Progression &middot; Skool Gamification Architecture</span>
-            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🏆 Skool Gamification Levels: Level 8 &amp; 9 Delivery Pilot Graduation</h1>
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; border-left: 5px solid var(--color-primary);">
+            <span class="badge" style="background-color: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Community Architecture &middot; Skool Gamification Redesign</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🏆 Skool Gamification Levels: Level 1–9 Incentive &amp; Unlock Engine</h1>
             <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; max-width: 850px;">
-                <strong>Only let a select few who complete the roadmap become a Delivery Pilot.</strong> We utilize Skool's native gamification levels (1&ndash;9) to establish meritocratic scarcity and massive perceived value. Members don't buy the Delivery Pilot title &mdash; they <strong>earn it at Level 8</strong> by mastering the roadmap, passing proctored exams, and deploying real code. At <strong>Level 9</strong>, alumni step up to onboard and bring new engineers in, driving perpetual viral growth (see <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>, <a href="../hypotheses/hyp-h20.html" style="color: var(--color-primary);">H20</a>, and <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).
+                Gamification on Skool is not merely points—it is the <strong>behavioral conveyor belt</strong> that converts passive YouTube lurkers into active contributors, certified AI architects, and £500–£1,000/day enterprise Delivery Pilots. Below is the empirical audit of our current live member distribution alongside the <strong>proposed 9-level unlock architecture</strong> optimized for engineer transformation and community health (see <a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a>, <a href="../hypotheses/hyp-h8.html" style="color: var(--color-primary);">H8</a>, <a href="../hypotheses/hyp-h20.html" style="color: var(--color-primary);">H20</a>, and <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>).
             </p>
             <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span class="status-pill" style="color: var(--color-primary);">🎮 Gamification Architecture</span>
+                <span class="status-pill" style="color: var(--color-warning);">⚡ Current State Audit: 88% at L1</span>
                 <span class="status-pill" style="color: var(--color-success);">🧑‍✈️ Level 8 Delivery Pilot</span>
-                <span class="status-pill" style="color: var(--color-primary);">🌟 Level 9 Alumni Mentor</span>
-                <span class="status-pill" style="color: var(--color-warning);">🎮 Meritocratic Gamification</span>
                 <span class="status-pill" style="color: var(--color-info);">💎 Earned Scarcity</span>
             </div>
         </div>
 
-        <!-- The Level Hierarchy -->
+        <!-- Live State Audit & Diagnosis -->
         <section class="content-section animate-fade-in">
-            <h2 class="section-title">🪜 Skool Level Hierarchy &amp; Roadmap Milestones</h2>
+            <h2 class="section-title">📊 Current Reality Audit: The "Level 1 Cliff" Problem</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="audit-card" style="height: 100%;">
+                        <h3 style="color: var(--color-warning); font-size: 1.15rem; margin-bottom: 0.75rem;">Current Live Member Distribution</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            Live metrics from the Delivery Pilot Skool group (Founder: <em>Rifat Erdem Sahin, Level 4, 90 pts to L5</em>):
+                        </p>
 
-            <!-- Level 1-3 -->
+                        <div class="dist-bar-container">
+                            <div class="dist-bar-row">
+                                <div class="dist-bar-label">Level 1</div>
+                                <div class="dist-bar-track">
+                                    <div class="dist-bar-fill" style="width: 88%; background: #60a5fa;"></div>
+                                </div>
+                                <div class="dist-bar-value">88%</div>
+                            </div>
+                            <div class="dist-bar-row">
+                                <div class="dist-bar-label">Level 2</div>
+                                <div class="dist-bar-track">
+                                    <div class="dist-bar-fill" style="width: 8%; background: #22d3ee;"></div>
+                                </div>
+                                <div class="dist-bar-value">8%</div>
+                            </div>
+                            <div class="dist-bar-row">
+                                <div class="dist-bar-label">Level 3</div>
+                                <div class="dist-bar-track">
+                                    <div class="dist-bar-fill" style="width: 0%; background: #fbbf24;"></div>
+                                </div>
+                                <div class="dist-bar-value">0%</div>
+                            </div>
+                            <div class="dist-bar-row">
+                                <div class="dist-bar-label">Level 4</div>
+                                <div class="dist-bar-track">
+                                    <div class="dist-bar-fill" style="width: 4%; background: #fb923c;"></div>
+                                </div>
+                                <div class="dist-bar-value">4%</div>
+                            </div>
+                            <div class="dist-bar-row">
+                                <div class="dist-bar-label">Level 5–9</div>
+                                <div class="dist-bar-track">
+                                    <div class="dist-bar-fill" style="width: 0%; background: #a855f7;"></div>
+                                </div>
+                                <div class="dist-bar-value">0%</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem;">
+                            <strong>Current Unlocks:</strong> L1 unlocks <em>"Certified Architect Professional"</em> &middot; L2 unlocks <em>"Exam Prep"</em> &middot; L3–9 unlock nothing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="audit-card" style="height: 100%; border-left: 4px solid #ef4444;">
+                        <h3 style="color: #f87171; font-size: 1.15rem; margin-bottom: 0.75rem;">⚠️ The 3 Core Structural Flaws</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+                            <div>
+                                <strong style="color: #fff;">1. Premature Core Course Giveaway at Level 1:</strong>
+                                By unlocking the flagship <em>"Certified Architect Professional"</em> course at Level 1 immediately upon joining, 88% of members get maximum consumption value without ever leaving a comment or attending a Sunday live lab.
+                            </div>
+                            <div>
+                                <strong style="color: #fff;">2. The Level 3–9 "Engagement Desert":</strong>
+                                Because Levels 3, 5, 6, 7, 8, and 9 have no defined course, toolkit, or permission unlocks, members stall out at Level 2. There is no milestone incentive between 5 points and eternity.
+                            </div>
+                            <div>
+                                <strong style="color: #fff;">3. Missing Contractor Transformation Linkage (H30):</strong>
+                                Engineers join to pass exams and become £500–£1,000/day contractors. Gamification must reward second-brain setups, mock exam performance, day-rate negotiations, and recruiter promotions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proposed Level Architecture Table -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🪜 Proposed Skool Gamification Architecture (Level 1–9)</h2>
+            <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 2rem;">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: rgba(15, 23, 42, 0.85); border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                                <th style="padding: 1rem 0.75rem;">Level</th>
+                                <th style="padding: 1rem 0.75rem;">Points / Threshold</th>
+                                <th style="padding: 1rem 0.75rem;">Audience Persona / Role</th>
+                                <th style="padding: 1rem 0.75rem;">What Unlocks (Course / Asset / Permission)</th>
+                                <th style="padding: 1rem 0.75rem;">Behavioral Objective</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--text-secondary);">
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(148, 163, 184, 0.03);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #94a3b8;"><span class="badge" style="background: rgba(148,163,184,0.2); color: #cbd5e1;">Level 1</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">0 pts (Instant Join)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #cbd5e1; font-weight: 600;">🛫 Cadet / Explorer</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Fast-Track Starter Kit</strong><br>
+                                    &bull; 64s Orientation Video &amp; Golden Rules<br>
+                                    &bull; Setup Lab: Claude CLI, Ollama &amp; Python Starter Code<br>
+                                    &bull; Sunday Live Calendar Access (13:30 London) &amp; Replays
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #94a3b8;">Immediate frictionless onboarding; prevents course overwhelm.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(59, 130, 246, 0.05);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #60a5fa;"><span class="badge" style="background: rgba(59,130,246,0.2); color: #93c5fd;">Level 2</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">5 pts (~5 comment likes)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #93c5fd; font-weight: 600;">⚡ Active Contributor</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Posting Rights + Module 1 &amp; 2</strong><br>
+                                    &bull; ✨ <em>Standalone Post Creation Plugin unlocked</em><br>
+                                    &bull; Claude Certified Architect: Module 1 (Prompt Eng.)<br>
+                                    &bull; Claude Certified Architect: Module 2 (Context Eng.)
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #93c5fd;">Eliminates spam; rewards helpful comments with first core modules.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(6, 182, 212, 0.03);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #22d3ee;"><span class="badge" style="background: rgba(6,182,212,0.2); color: #67e8f9;">Level 3</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">20 pts (1–2 weeks active)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #67e8f9; font-weight: 600;">🧭 Study Regular</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Exam Prep Vault &amp; Mock Simulator #1</strong><br>
+                                    &bull; 60-Question Diagnostic Mock Exam Simulator #1<br>
+                                    &bull; Obsidian / Anki Memory Flashcard Vault<br>
+                                    &bull; Private Quiz Assessment breakdown logic
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #67e8f9;">Creates urgency to reach 20 pts; gives diagnostic test for certification.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(245, 158, 11, 0.05);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #fbbf24;"><span class="badge" style="background: rgba(245,158,11,0.2); color: #fde68a;">Level 4</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">65 pts (Dedicated Builder)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #fde68a; font-weight: 600;">🛠️ Flight Engineer</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Advanced Enterprise Labs &amp; MCP</strong><br>
+                                    &bull; Claude Architect Modules 3 &amp; 4 (HITL, RAG, Swarms)<br>
+                                    &bull; Enterprise MCP Server Production Templates<br>
+                                    &bull; Eligible for Sunday Screen-Share Spotlight
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #fde68a;">Hands-on coding milestone; bridges theory to deployable code (Founder current tier).</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(249, 115, 22, 0.03);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #fb923c;"><span class="badge" style="background: rgba(249,115,22,0.2); color: #fdba74;">Level 5</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">155 pts (Community Pillar)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #fdba74; font-weight: 600;">💼 Senior Practitioner</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Ultimate IT Contractor Toolkit</strong><br>
+                                    &bull; £500–£1,000/day Day-Rate Negotiation &amp; IR35 Guide<br>
+                                    &bull; AI Solution Architect CV &amp; LinkedIn Teardown System<br>
+                                    &bull; Breakout Room Peer Facilitator access
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #fdba74;">Directly answers economic transformation needs of the audience (H30).</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(236, 72, 153, 0.03);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #f472b6;"><span class="badge" style="background: rgba(236,72,153,0.2); color: #fbcfe8;">Level 6</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">515 pts (Lead Specialist)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #fbcfe8; font-weight: 600;">🎯 Mission Specialist</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: VIP Office Hours Archive &amp; Mock #2</strong><br>
+                                    &bull; Full 1-on-1 VIP Session Replay Vault (Presets 1–4)<br>
+                                    &bull; Advanced Hard-Mode Mock Exam #2 (Partner-Gated)<br>
+                                    &bull; "Delivery Pilot Candidate" Badge
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #fbcfe8;">Retains veteran members as mentors; provides high-tier prep vault.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(168, 85, 247, 0.05);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #c084fc;"><span class="badge" style="background: rgba(168,85,247,0.2); color: #e9d5ff;">Level 7</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">2,015 pts (Staff Contributor)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #e9d5ff; font-weight: 600;">🛡️ Squadron Leader / TA</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Enterprise RFP &amp; TA Fast-Track</strong><br>
+                                    &bull; Delivery Pilot Tender Co-Bidding Guidelines &amp; SOWs<br>
+                                    &bull; Eligible for paid Community Moderator / TA role (<a href="skool-community-management.html" style="color: #c084fc; text-decoration: underline;">Garden Playbook</a>)<br>
+                                    &bull; 1-on-1 Architecture Review with Rifat Erdem Sahin
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #e9d5ff;">Solves founder bandwidth bottleneck (H11) by hiring/empowering top regulars.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(16, 185, 129, 0.08);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #34d399;"><span class="badge" style="background: rgba(16,185,129,0.2); color: #a7f3d0; border: 1px solid #10b981;">Level 8</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">8,015 pts (Elite Gate)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #34d399; font-weight: 700;">🧑‍✈️ Delivery Pilot (Graduation)</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Recruiter Cowork &amp; Enterprise Placement</strong><br>
+                                    &bull; <em>Verification Requirement:</em> Proctored Pearson VUE Credly badge + Repo portfolio<br>
+                                    &bull; Direct admission to Monday VIP Recruiter Cowork sessions<br>
+                                    &bull; Profile promoted across the Delivery Pilot network to clients
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #34d399;">The pinnacle earned achievement of the customer journey (H30).</td>
+                            </tr>
+                            <tr style="background: rgba(234, 179, 8, 0.08);">
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 700; color: #facc15;"><span class="badge" style="background: rgba(234,179,8,0.2); color: #fef08a; border: 1px solid #eab308;">Level 9</span></td>
+                                <td style="padding: 0.85rem 0.75rem; font-weight: 600; color: #fff;">30,015 pts (Legend Tier)</td>
+                                <td style="padding: 0.85rem 0.75rem; color: #facc15; font-weight: 700;">🌟 Delivery Pilot Rainmaker</td>
+                                <td style="padding: 0.85rem 0.75rem;">
+                                    <strong>Unlock: Alliance Profit-Share &amp; Permanent VIP</strong><br>
+                                    &bull; Profit-share on co-delivered enterprise consulting contracts<br>
+                                    &bull; Co-Host privileges for Sunday Live Masterclasses<br>
+                                    &bull; Permanent VIP access to all multi-cert expansions
+                                </td>
+                                <td style="padding: 0.85rem 0.75rem; color: #facc15;">Perpetual viral engine (H20 MAOT); alumni mentor newcomers.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive Breakdown by Tier -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔍 Tier-by-Tier Strategic Rationale</h2>
+
+            <!-- Tier 1: Cadets & Contributors -->
             <div class="level-card">
-                <div class="level-badge level-1-3">L1–3</div>
+                <div class="level-badge level-2">L1–2</div>
                 <div style="flex-grow: 1;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-                        <h3 style="margin: 0; color: #60a5fa; font-size: 1.15rem;">Cadet Stage: Onboarding, Community Ethics &amp; Setup</h3>
-                        <span class="badge" style="background: rgba(59, 130, 246, 0.15); color: #93c5fd;">Foundational</span>
+                        <h3 style="margin: 0; color: #60a5fa; font-size: 1.15rem;">Stage 1: Onboarding &amp; Anti-Spam Gate (0–5 Points)</h3>
+                        <span class="badge" style="background: rgba(59, 130, 246, 0.15); color: #93c5fd;">Foundational Activation</span>
                     </div>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0.25rem 0;">
-                        Complete orientation, install Claude CLI / Ollama / Python tools, answer membership discovery surveys, and unlock Level 2 community post creation.
+                        <strong>The Friction Cure:</strong> Rather than dumping 40 hours of advanced curriculum on Day 1, Level 1 gives quick wins (Claude CLI, Ollama, Sunday Zoom links). Members earn 5 points by introducing themselves or answering peer questions on founder hubs, which unlocks both posting privileges and the initial Architecture modules.
                     </p>
                 </div>
             </div>
 
-            <!-- Level 4-7 -->
+            <!-- Tier 2: Study Regulars & Builders -->
             <div class="level-card">
-                <div class="level-badge level-4-7">L4–7</div>
+                <div class="level-badge level-4">L3–4</div>
                 <div style="flex-grow: 1;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-                        <h3 style="margin: 0; color: #fbbf24; font-size: 1.15rem;">Flight Engineer: Hands-On Repos &amp; Exam Simulations</h3>
-                        <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fde68a;">Practitioner</span>
+                        <h3 style="margin: 0; color: #fbbf24; font-size: 1.15rem;">Stage 2: Exam Simulation &amp; MCP Repos (20–65 Points)</h3>
+                        <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fde68a;">Active Practitioner</span>
                     </div>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0.25rem 0;">
-                        Build 3+ real GitHub repos (MCP servers, RAG pipelines, HITL agent workflows), attend Sunday live labs, and score >80% on mock certification diagnostic exams.
+                        <strong>The Engagement Engine:</strong> Level 3 unlocks the 60-question Mock Exam and flashcards, solving the <em>"How do I test my readiness?"</em> pain point. Level 4 unlocks production-grade Model Context Protocol (MCP) server blueprints and multi-agent HITL code, recognizing members who regularly attend Sunday sessions.
                     </p>
                 </div>
             </div>
 
-            <!-- Level 8 -->
+            <!-- Tier 3: Contractor Mastery & Mentorship -->
+            <div class="level-card">
+                <div class="level-badge level-6">L5–7</div>
+                <div style="flex-grow: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                        <h3 style="margin: 0; color: #f472b6; font-size: 1.15rem;">Stage 3: £500–£1,000/day Commercial Mastery &amp; Moderator Role (155–2,015 Points)</h3>
+                        <span class="badge" style="background: rgba(236, 72, 153, 0.15); color: #fbcfe8;">Commercial Contractor</span>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0.25rem 0;">
+                        <strong>Economic Freedom Alignment:</strong> Connects technical knowledge to high-earning contractor capability. Unlocks IR35 frameworks, CV teardowns, private VIP recordings, and tender co-bidding templates. Top members at Level 7 are recruited as paid TAs and community moderators (<a href="skool-community-management.html" style="color: var(--color-primary);">Garden Playbook</a>), preserving founder bandwidth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tier 4: Delivery Pilot Graduation & Rainmaker -->
             <div class="level-card" style="border: 2px solid #10b981;">
-                <div class="level-badge level-8">L8</div>
+                <div class="level-badge level-8">L8–9</div>
                 <div style="flex-grow: 1;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-                        <h3 style="margin: 0; color: #34d399; font-size: 1.25rem;">🧑‍✈️ Level 8 Graduation: Official Delivery Pilot</h3>
-                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #a7f3d0; border: 1px solid #10b981;">Elite Milestone</span>
+                        <h3 style="margin: 0; color: #34d399; font-size: 1.25rem;">Stage 4: 🧑‍✈️ Delivery Pilot Graduation &amp; Rainmaker Alliance (8,015–30,015 Points)</h3>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #a7f3d0; border: 1px solid #10b981;">Elite Climax</span>
                     </div>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0.25rem 0;">
-                        <strong>Requirements:</strong> Official proctored Pearson VUE / Credly certification badge + completed production architecture portfolio + approved Delivery Pilot review.
+                        <strong>Meritocratic Scarcity:</strong> Delivery Pilot status cannot be bought—it must be earned through proctored Credly exam badges, production code portfolios, and community leadership. Level 8 graduates get promoted to recruiters on Monday VIP sessions. Level 9 Rainmakers co-deliver enterprise tenders with revenue share.
                     </p>
                     <div class="pilot-perk-box">
-                        <strong style="color: #34d399;">💎 Delivery Pilot Privileges:</strong>
+                        <strong style="color: #34d399;">💎 Delivery Pilot Privileges (Level 8 &amp; 9):</strong>
                         <ul style="margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
                             <li>Direct admission to Monday VIP Claude Recruiter Cowork sessions.</li>
-                            <li>Profile promoted across the Delivery Pilot agency network to enterprise clients.</li>
+                            <li>Profile featured in the Delivery Pilot enterprise contractor roster.</li>
                             <li>Eligible to co-bid on £500–£1,000+/day enterprise RFP tenders as a contractor collective.</li>
                             <li>Special "Delivery Pilot" badge displayed across Skool and LinkedIn.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Level 9 -->
-            <div class="level-card" style="border: 2px solid #a855f7;">
-                <div class="level-badge level-9">L9</div>
-                <div style="flex-grow: 1;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-                        <h3 style="margin: 0; color: #c084fc; font-size: 1.25rem;">🌟 Level 9: Delivery Pilot Alumni &amp; Community Rainmaker</h3>
-                        <span class="badge" style="background: rgba(147, 51, 234, 0.2); color: #e9d5ff; border: 1px solid #a855f7;">Alumni Leader</span>
+        <!-- Admin Configuration & SOP Procedures -->
+        <section class="content-section animate-fade-in">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h2 class="section-title" style="margin: 0;">🛠️ Standard Operating Procedure: Setting Up &amp; Managing Levels in Skool</h2>
+                <a href="skool-levels-sop.html" class="btn" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.4); color: #c7d2fe; text-decoration: none; padding: 0.4rem 0.85rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem;">
+                    ⚙️ View Dedicated SOP Document &rarr;
+                </a>
+            </div>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">
+                    <strong>Purpose:</strong> Provide step-by-step instructions for group administrators to configure custom level names, gate courses by level, and set up plugin level permissions on Skool. Follow these 3 operational procedures:
+                </p>
+                <div class="grid">
+                    <div class="col-4">
+                        <div class="spec-box" style="border-left-color: #38bdf8; height: 100%;">
+                            <div class="spec-title">Procedure 1: Customize Level Names</div>
+                            <div class="spec-desc">
+                                1. Go to homepage &rarr; Click <strong>Leaderboards</strong>.<br>
+                                2. Click <strong>gear icon (⚙️)</strong> in top-left to open <em>Leaderboards / Naming</em> modal.<br>
+                                3. Type custom tier titles (Level 1–9).<br>
+                                4. Click <strong>SAVE</strong> at bottom-right.
+                            </div>
+                        </div>
                     </div>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0.25rem 0;">
-                        <strong>Requirements:</strong> Successfully landed an enterprise AI contract/promotion + actively mentoring new cadets + bringing new qualified engineers into the ecosystem.
-                    </p>
-                    <div style="background: rgba(147, 51, 234, 0.08); border: 1px solid rgba(147, 51, 234, 0.3); border-left: 5px solid #a855f7; border-radius: 10px; padding: 1.25rem; margin-top: 1rem;">
-                        <strong style="color: #c084fc;">🚀 Level 9 Rainmaker Responsibilities &amp; Rewards:</strong>
-                        <ul style="margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-                            <li>Hosts breakout lab sessions and peer code reviews on Sunday cohorts.</li>
-                            <li>Brings qualified contractor colleagues into the Skool community (viral MAOT referral flywheel).</li>
-                            <li>Receives profit-share on co-delivered enterprise consulting contracts.</li>
-                            <li>Lifetime VIP access to all future masterclasses and enterprise toolkits.</li>
-                        </ul>
+                    <div class="col-4">
+                        <div class="spec-box" style="border-left-color: #10b981; height: 100%;">
+                            <div class="spec-title">Procedure 2: Gate Course Access</div>
+                            <div class="spec-desc">
+                                1. Click <strong>Classroom</strong> tab.<br>
+                                2. Hover over target course &rarr; Select <strong>Edit Course</strong> (or <em>+ Add Course</em>).<br>
+                                3. Locate <strong>Access</strong> dropdown.<br>
+                                4. Select <strong>Level unlock</strong> &amp; choose minimum level requirement.<br>
+                                5. Click <strong>Save</strong>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="spec-box" style="border-left-color: #a855f7; height: 100%;">
+                            <div class="spec-title">Procedure 3: Restrict Posting &amp; Chat</div>
+                            <div class="spec-desc">
+                                1. Click <strong>Settings (⚙️)</strong> &rarr; Select <strong>Plugins</strong>.<br>
+                                2. Configure level-based toggles:<br>
+                                &bull; <em>Unlock chat at a level:</em> restrict DM/Chat access.<br>
+                                &bull; <em>Unlock posting at Level 2/3:</em> prevent new account spam.<br>
+                                3. Close modal to apply automatically.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-left: 5px solid #f59e0b; border-radius: 8px; padding: 1rem 1.25rem;">
+                    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <span style="font-size: 1.25rem;">🔁</span>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+                            <strong style="color: #fbbf24;">Quarterly Task to Review &amp; Update (Every 90 Days):</strong>
+                            Group administrators must review the member distribution across Levels 1–9 quarterly. If members stall at Level 1 (e.g. 88% bottleneck), calibrate comment prompts, audit new Classroom module level locks, and ensure chat/posting plugins remain active to uphold community signal (tracked in <a href="../dashboard/todo.html" style="color: var(--color-primary); text-decoration: underline;">Task List</a> &amp; <a href="skool-levels-sop.html" style="color: var(--color-primary); text-decoration: underline;">Levels SOP</a>).
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,13 +460,14 @@
         <!-- Footer -->
         <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
             <div style="margin-bottom: 0.5rem;">
+                <a href="skool-levels-sop.html" style="color: var(--color-primary); margin: 0 0.75rem;">Skool Levels SOP</a> &middot;
                 <a href="../strategy/delivery-pilot-roadmap.html" style="color: var(--color-primary); margin: 0 0.75rem;">Delivery Pilot Roadmap</a> &middot;
-                <a href="../growth/lead-qualification-system.html" style="color: var(--color-primary); margin: 0 0.75rem;">Lead Qualification</a> &middot;
-                <a href="../growth/free-youtube-jab-jab-package.html" style="color: var(--color-primary); margin: 0 0.75rem;">Free YouTube Package</a> &middot;
-                <a href="../product/skool-community-golden-rules.html" style="color: var(--color-primary); margin: 0 0.75rem;">Golden Rules</a>
+                <a href="skool-level-2-posting-restriction.html" style="color: var(--color-primary); margin: 0 0.75rem;">Level 2 Posting Gate</a> &middot;
+                <a href="skool-community-golden-rules.html" style="color: var(--color-primary); margin: 0 0.75rem;">Golden Rules</a> &middot;
+                <a href="../growth/sales-tactics.html" style="color: var(--color-primary); margin: 0 0.75rem;">Sales Tactics</a>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; display: block;">
-                Latest Change: Skool Gamification Levels &amp; Level 8/9 Graduation Architecture Created (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-gamification-levels.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Added Standard Operating Procedure (SOP) for Setting Up &amp; Managing Levels in Skool, Course Gating, Plugin Permissions, and Quarterly Review Cadence (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/product/skool-gamification-levels.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/product/skool-gamification-levels.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
             </span>
         </footer>
     </main>

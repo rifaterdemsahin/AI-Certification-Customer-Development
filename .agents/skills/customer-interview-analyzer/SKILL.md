@@ -14,8 +14,9 @@ This skill provides an automated, rigorous methodology for ingesting, analyzing,
 ## 🎯 Purpose & Scope
 
 When a new customer discovery interview markdown file (e.g. `interview_apo_2026-08-18.md`, `interview_baran_g_2026-08-18.md`) is provided, this skill guides the AI agent to:
-1. **Extract Structured Interview Fields**:
-   - Candidate Name, Date, Channel / Watering Hole (e.g. F2F Cambridge, Teams, LinkedIn, Live Cohort), Referral Source.
+1. **Extract Structured Interview Fields & Privacy Guardrail**:
+   - **Privacy Rule:** Strictly use **first names only** (e.g. `Sude`, `Brian`, `Bora`, `Charles`, `Marianna`, `Mehmet`, `Cheuk`, `Faruk`, `Jamal`, `Tomiwa`, `Erdem`; candidate B. as `B.`). Never include last names when ingesting, archiving, analyzing, or citing feedback.
+   - Candidate Name (First Name Only), Date, Channel / Watering Hole (e.g. F2F Cambridge, Teams, LinkedIn, Live Cohort), Referral Source.
    - Tagged Hypotheses (e.g. H1, H24, H25, H29, H30).
    - 1. Day-In / Day-Out (Routine & Habits).
    - 2. Current Workarounds (How they solve it today without our product).

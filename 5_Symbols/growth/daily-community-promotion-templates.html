@@ -122,6 +122,48 @@
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
+        .download-asset-btn {
+            background: rgba(99, 102, 241, 0.18);
+            border: 1px solid rgba(99, 102, 241, 0.45);
+            color: #c7d2fe;
+            text-decoration: none;
+            font-size: 0.82rem;
+            padding: 0.42rem 0.85rem;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all 0.2s ease;
+        }
+        .download-asset-btn:hover {
+            background: rgba(99, 102, 241, 0.35);
+            border-color: #818cf8;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .visual-preview-box {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+        .visual-preview-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 0.65rem;
+        }
+        .visual-action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
         @media (max-width: 860px) {
             .dual-tabs-grid {
                 grid-template-columns: 1fr;
@@ -171,7 +213,7 @@
                         <strong style="color: var(--text-primary);">Channels:</strong> Daily public broadcast on <strong>LinkedIn</strong> &amp; <strong>X.com</strong> &middot; Direct warm nurture on <strong>WhatsApp</strong> (Sunday morning 10:00–12:00 UK) &middot; Live hands-on lab on <strong>Skool</strong> (Sunday 13:30 UK).
                     </div>
                     <div style="display: flex; gap: 0.75rem;">
-                        <a href="https://www.skool.com/ai-certification-helper/about" target="_blank" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                        <a href="https://www.skool.com/delivery-pilot-8938" target="_blank" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
                             🏫 Skool Community ($0)
                         </a>
                         <a href="https://deliverypilot.net/" target="_blank" class="btn" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #7dd3fc; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
@@ -226,6 +268,15 @@
                     </div>
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-weekly-schedule.jpg" alt="Weekly Live Schedule Calendar Graphic for Skool & Triton Square" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Calendar Graphic (Optimized for LinkedIn &amp; X)</span>
+                        <a href="daily-promo-weekly-schedule.jpg" download="daily-promo-weekly-schedule.jpg" class="download-asset-btn">⬇️ Download Schedule Graphic</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -237,8 +288,8 @@
 Here is our live session schedule across the next two weeks inside the Delivery Pilot community:
 
 ⚙️ Tue, Sep 1 @ 7:00 PM – 9:00 PM UK
-1-1 Workshop for intermediate
-Skool call (Custom MCP integration, architecture design &amp; prompt engineering)
+1-1 Workshop for Intermediate
+Skool Call (Custom MCP integration, architecture design &amp; prompt engineering)
 
 📍 Thu, Sep 3 @ 6:00 PM – 9:00 PM UK
 Meetup in Triton Square
@@ -246,23 +297,23 @@ In-Person (Triton Square, London NW1 · Enterprise networking &amp; Claude build
 
 🚀 Fri, Sep 4 @ 7:00 PM – 9:00 PM UK
 1-1 Advanced Level Workshops
-Skool call (Advanced agentic systems, HITL workflows &amp; enterprise security)
+Skool Call (Advanced agentic systems, HITL workflows &amp; enterprise security)
 
 👥 Sun, Sep 6 @ 1:30 PM – 2:30 PM UK
 Cohort Online Meeting
-Skool call (Interactive group scenario drills, architectural pacing &amp; open Q&amp;A)
+Skool Call (Interactive group scenario drills, architectural pacing &amp; open Q&amp;A)
 
 📢 Mon, Sep 7 @ 11:30 AM – 12:00 PM UK
 Delivery Pilot Promotion
-Skool call (Contractor profile optimization, recruiter positioning &amp; VIP spotlight)
+Skool Call (Contractor profile optimization, recruiter positioning &amp; VIP spotlight)
 
 🔰 Mon, Sep 7 @ 7:00 PM – 9:00 PM UK
 1-1 Workshop for Beginners
-Skool call (Foundations, developer environment setup &amp; Claude Code CLI)
+Skool Call (Foundations, developer environment setup &amp; Claude Code CLI)
 
 ⚙️ Tue, Sep 8 @ 7:00 PM – 9:00 PM UK
-1-1 Workshop for intermediate
-Skool call (Intermediate architecture design &amp; custom MCP workflows)
+1-1 Workshop for Intermediate
+Skool Call (Intermediate architecture design &amp; custom MCP workflows)
 
 📍 Thu, Sep 10 @ 6:00 PM – 9:00 PM UK
 Meetup in Triton Square
@@ -270,15 +321,15 @@ In-Person (Triton Square, London NW1 · Practitioner discussions &amp; co-biddin
 
 🚀 Fri, Sep 11 @ 7:00 PM – 9:00 PM UK
 1-1 Advanced Level Workshops
-Skool call (Enterprise guardrails &amp; multi-agent orchestration)
+Skool Call (Enterprise guardrails &amp; multi-agent orchestration)
 
 👥 Sun, Sep 13 @ 1:30 PM – 2:30 PM UK
 Cohort Online Meeting
-Skool call (Group scenario drills &amp; live architectural Q&amp;A)
+Skool Call (Group scenario drills &amp; live architectural Q&amp;A)
 
 🔰 Mon, Sep 14 @ 7:00 PM – 9:00 PM UK
 1-1 Workshop for Beginners
-Skool call (Foundations, developer environment &amp; tooling)
+Skool Call (Foundations, developer environment &amp; tooling)
 
 ---
 
@@ -339,6 +390,15 @@ Grab your live room links inside Skool:
                     <strong>Core Angle:</strong> Moving away from generic chatbots toward bespoke, workflow-embedded personal agents.
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-monday-custom-agents.jpg" alt="Monday Customization vs Generic AI Comparison Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Monday Graphic (Custom Agents vs 2023 Chatbots)</span>
+                        <a href="daily-promo-monday-custom-agents.jpg" download="daily-promo-monday-custom-agents.jpg" class="download-asset-btn">⬇️ Download Monday Visual</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -347,19 +407,26 @@ Grab your live room links inside Skool:
                         </div>
                         <div class="post-text" id="post-monday-li">Generic AI is a commodity. Customized AI is leverage. 🚀
 
-Most people still use LLMs like a glorified search engine or casual chat box. But the real 10x productivity shift happens when you stop chatting and start configuring bespoke personal agents tailored to your exact workflows, rules, and codebase.
+Most people still use LLMs like a glorified search engine or casual chat box.
+
+The real 10x productivity shift happens when you stop chatting and start configuring bespoke personal agents tailored to your exact workflows, rules, and codebase.
 
 In a customization-based world:
+
 1️⃣ Your personal agent knows your coding standards and architectural guardrails.
+
 2️⃣ It handles tedious repetitive tasks asynchronously in the background.
+
 3️⃣ You transition from being a manual typist to an orchestrator of intelligent systems.
 
 This is why self-learning is no longer optional—it’s the foundational skill for modern software engineers and IT contractors.
 
-Every Sunday at 13:30 UK (London time), we host a FREE live, hands-on screen-sharing cohort where we build, break, and customize real AI agent systems together. No passive slide decks—just real code and practitioner insights.
+Every Sunday at 13:30 UK (London time), we host a FREE live, hands-on screen-sharing cohort where we build, break, and customize real AI agent systems together.
+
+No passive slide decks—just real code and practitioner insights.
 
 👉 Join our free community and grab your Sunday live room link:
-https://www.skool.com/ai-certification-helper/about
+https://www.skool.com/delivery-pilot-8938
 
 What is the single most customized workflow you’ve built with AI so far? Let me know below! 👇
 
@@ -373,7 +440,8 @@ What is the single most customized workflow you’ve built with AI so far? Let m
                         </div>
                         <div class="post-text" id="post-monday-x">Generic AI is a commodity. Customized AI is leverage. 🧵
 
-Chatting with LLMs in the browser is 2023. 
+Chatting with LLMs in the browser is 2023.
+
 In 2026, top engineers configure bespoke personal agents that:
 • Know their exact architecture &amp; lint rules
 • Run tests &amp; debug in the background
@@ -381,10 +449,12 @@ In 2026, top engineers configure bespoke personal agents that:
 
 Self-directed learning is the new competitive moat.
 
-We build &amp; customize agent systems live on Sunday afternoons (13:30 UK). 100% free screen-sharing lab.
+We build &amp; customize agent systems live on Sunday afternoons (13:30 UK).
+
+100% free screen-sharing lab.
 
 Grab your link inside our free Skool:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 #buildinpublic #AIagents #softwareengineering</div>
                     </div>
@@ -403,6 +473,15 @@ Grab your link inside our free Skool:
                     <strong>Core Angle:</strong> Tool use, APIs, and the Model Context Protocol (MCP) as the real architectural bridge to production AI.
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-tuesday-mcp-architecture.jpg" alt="Tuesday Model Context Protocol MCP Topology Schematic Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Tuesday Graphic (MCP Architecture Topology)</span>
+                        <a href="daily-promo-tuesday-mcp-architecture.jpg" download="daily-promo-tuesday-mcp-architecture.jpg" class="download-asset-btn">⬇️ Download Tuesday MCP Graphic</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -411,19 +490,24 @@ Grab your link inside our free Skool:
                         </div>
                         <div class="post-text" id="post-tuesday-li">Why raw LLM model size matters far less than plumbing &amp; tool architecture. 🛠️
 
-Everyone gets hyped about new model benchmark scores. But in enterprise systems, raw intelligence without context is useless. 
+Everyone gets hyped about new model benchmark scores.
+
+But in enterprise systems, raw intelligence without context is useless.
 
 The real breakthroughs come from:
+
 🔹 Model Context Protocol (MCP) servers connecting LLMs to internal databases and APIs
+
 🔹 Structured tool-calling and autonomous subagent delegation
+
 🔹 Dynamic context injection that stays strictly within token budget limits
 
 If you can’t connect an AI model to your files, terminal, databases, and third-party APIs with secure permissions, you’re stuck in a sandbox.
 
 In our free AI Certification community, we dissect the actual architectural patterns powering modern agentic systems—and prepare for enterprise-level credentials (like Claude Certified Architect).
 
-Join our upcoming Sunday live screen-sharing session (9–11 PM UK):
-👉 https://www.skool.com/ai-certification-helper/about
+Join our upcoming Sunday live screen-sharing session (13:30–14:30 UK London time):
+👉 https://www.skool.com/delivery-pilot-8938
 
 Are you experimenting with MCP tools or custom API integrations yet? Drop your setup below! 👇
 
@@ -444,7 +528,7 @@ MCP (Model Context Protocol) is the real architecture unlock for 2026.
 Every Sunday at 13:30 UK, we tear down live MCP configs &amp; prep for Claude Certified Architect.
 
 Join free:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 #MCP #Anthropic #Claude #ClaudeArchitect</div>
                     </div>
@@ -463,6 +547,15 @@ Join free:
                     <strong>Core Angle:</strong> Building an externalized cognitive engine that compounds your knowledge over months and years.
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-wednesday-second-brain-rag.jpg" alt="Wednesday Second Brain and Vector RAG Architecture Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Wednesday Graphic (Markdown Vault + Vector RAG Engine)</span>
+                        <a href="daily-promo-wednesday-second-brain-rag.jpg" download="daily-promo-wednesday-second-brain-rag.jpg" class="download-asset-btn">⬇️ Download Wednesday Second Brain Graphic</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -474,16 +567,21 @@ Join free:
 The most powerful advantage in 2026 isn't just having access to an AI model—it's having a dedicated "Second Brain" that indexes your decisions, technical notes, architectures, and lessons learned.
 
 How modern practitioners build external memory:
+
 ⚡ Vector embeddings + hybrid search for rapid semantic retrieval
+
 ⚡ Markdown-first knowledge repositories with structured metadata
+
 ⚡ Local knowledge graphs linking hypotheses, experiments, and code solutions
 
 When your AI assistant has indexed your entire history, onboarding onto a new contract or complex code repository takes hours instead of weeks.
 
-We explore Second Brain architectures, vector retrieval, and practical memory systems in our weekly Sunday night study group.
+We explore Second Brain architectures, vector retrieval, and practical memory systems in our weekly Sunday study group.
 
 Come sit in on Sunday at 13:30 London time:
-👉 Free access in our Skool community: https://www.skool.com/ai-certification-helper/about
+
+👉 Free access in our Skool community:
+https://www.skool.com/delivery-pilot-8938
 
 How do you organize your personal knowledge base today? Notion, Obsidian, plain Markdown, or pure memory? 👇
 
@@ -505,7 +603,7 @@ Build a Second Brain:
 Your assistant should know everything you built over the last 3 years.
 
 Learn how we wire this live on Sunday (13:30 UK):
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 #SecondBrain #Obsidian #PKM #VectorDB</div>
                     </div>
@@ -524,6 +622,15 @@ Learn how we wire this live on Sunday (13:30 UK):
                     <strong>Core Angle:</strong> Writing rigorous specifications and behavioral guardrails rather than manually typing syntax.
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-thursday-spec-driven-coding.jpg" alt="Thursday Spec-Driven Development 4-Step Pipeline Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Thursday Graphic (Spec &rarr; Guardrails &rarr; Subagents &rarr; Delivery)</span>
+                        <a href="daily-promo-thursday-spec-driven-coding.jpg" download="daily-promo-thursday-spec-driven-coding.jpg" class="download-asset-btn">⬇️ Download Thursday Spec Graphic</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -532,19 +639,25 @@ Learn how we wire this live on Sunday (13:30 UK):
                         </div>
                         <div class="post-text" id="post-thursday-li">Coding is no longer about typing syntax. It's about writing bulletproof specifications. 💻⚡
 
-If you prompt an AI agent with vague requirements, you get sloppy code, hallucinations, and endless bug chasing. 
+If you prompt an AI agent with vague requirements, you get sloppy code, hallucinations, and endless bug chasing.
 
 Top engineers have adopted Spec-Driven Development:
+
 📋 Define clear interface contracts, acceptance criteria, and edge cases first.
+
 🔒 Equip the agent with precise constraints, style guides, and testing tools.
+
 🔄 Review diffs and orchestrate subagents rather than writing boilerplate by hand.
 
 The result? 10x delivery speed with fewer architectural blindspots.
 
 Want to see how we pair-program live with autonomous agent teams and multi-agent workflows? Join our Sunday cohort session at 13:30 UK.
 
-👉 Free community access: https://www.skool.com/ai-certification-helper/about
-👉 Explore our contractor roadmap: https://deliverypilot.net/
+👉 Free community access:
+https://www.skool.com/delivery-pilot-8938
+
+👉 Explore our contractor roadmap:
+https://deliverypilot.net/
 
 Are you using specification files or prompt files in your daily coding? Let's discuss in the comments! 👇
 
@@ -566,7 +679,7 @@ How 10x engineers work today:
 Code at the speed of thought.
 
 We do live agentic coding screen shares every Sunday at 13:30 UK:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 #AgenticCoding #Cursor #Claude #DevLife</div>
                     </div>
@@ -585,6 +698,15 @@ We do live agentic coding screen shares every Sunday at 13:30 UK:
                     <strong>Core Angle:</strong> Bridging the gap between toy demos and regulated enterprise environments (£500-£1,000/day contractor rates).
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-friday-enterprise-certifications.jpg" alt="Friday Enterprise AI Architecture and Claude Certified Blueprint Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Friday Graphic (£500–£1k/day Enterprise Reality vs Blueprint)</span>
+                        <a href="daily-promo-friday-enterprise-certifications.jpg" download="daily-promo-friday-enterprise-certifications.jpg" class="download-asset-btn">⬇️ Download Friday Enterprise Graphic</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -593,17 +715,24 @@ We do live agentic coding screen shares every Sunday at 13:30 UK:
                         </div>
                         <div class="post-text" id="post-friday-li">Toy AI demos are fun. Regulated enterprise production is where the money is. 💼🏦
 
-Enterprises aren't looking for people who can generate cool images. They are desperately looking for certified architects who understand:
+Enterprises aren't looking for people who can generate cool images.
+
+They are desperately looking for certified architects who understand:
+
 🛡️ Zero-trust security, data privacy, and compliance guardrails
+
 📊 Latency vs cost trade-offs across cloud providers (AWS, Azure, GCP, Anthropic)
+
 🔑 Partner status requirements (vendor-certified staff required for tender bidding)
 
 Having verified credentials like Claude Certified Architect or cloud AI certifications is the fastest way to signal institutional credibility and command £500–£1,000+/day contractor rates.
 
-We don't sell exam dumps or fake guarantees. We run an active practitioner alliance where we study blueprints, solve real practice scenarios, and support each other through the certification journey.
+We don't sell exam dumps or fake guarantees.
+
+We run an active practitioner alliance where we study blueprints, solve real practice scenarios, and support each other through the certification journey.
 
 Join us this Sunday (13:30–14:30 UK London time):
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 Are enterprise clients at your company asking for AI governance and certifications yet? 👇
 
@@ -623,7 +752,7 @@ Enterprises demand:
 • Official vendor-certified architects
 
 Prep for Claude Certified Architect with real contractors this Sunday (13:30 UK):
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 #EnterpriseAI #ClaudeArchitect #CloudCert</div>
                     </div>
@@ -642,6 +771,15 @@ Prep for Claude Certified Architect with real contractors this Sunday (13:30 UK)
                     <strong>Core Angle:</strong> Becoming an adaptive problem solver who learns in public and deploys directly onto the front lines.
                 </div>
 
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-saturday-fde-mindset.jpg" alt="Saturday Forward Deployed Engineer FDE Playbook Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Saturday Graphic (3 Pillars of the FDE Advantage)</span>
+                        <a href="daily-promo-saturday-fde-mindset.jpg" download="daily-promo-saturday-fde-mindset.jpg" class="download-asset-btn">⬇️ Download Saturday FDE Graphic</a>
+                    </div>
+                </div>
+
                 <div class="dual-tabs-grid">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -651,18 +789,21 @@ Prep for Claude Certified Architect with real contractors this Sunday (13:30 UK)
                         <div class="post-text" id="post-saturday-li">The era of the siloed specialist is fading. Enter the Forward Deployed Engineer. ⚡
 
 What makes an FDE irreplaceable in the AI age?
+
 1️⃣ Radical curiosity: You don't wait for a company training budget; you learn the new stack over the weekend.
+
 2️⃣ Direct problem solving: You sit with stakeholders, identify bottlenecks, and ship customized AI workflows that solve actual business pains.
+
 3️⃣ Community compounding: You share your findings, test hypotheses with peers, and learn 5x faster than lone operators.
 
 Self-directed learning is your greatest unfair advantage.
 
-Tomorrow night (Sunday @ 13:30 UK London time), our free cohort meets live to screen-share real setups, review certification blueprints, and debug live code.
+Tomorrow (Sunday @ 13:30 UK London time), our free cohort meets live to screen-share real setups, review certification blueprints, and debug live code.
 
 No cost. No gatekeeping. Just practitioners helping practitioners.
 
 👉 Reserve your spot and get the live meeting link inside our free Skool community:
-https://www.skool.com/ai-certification-helper/about
+https://www.skool.com/delivery-pilot-8938
 
 What AI project are you building or tinkering with this weekend? Let me know below! 👇
 
@@ -684,7 +825,7 @@ Practitioners who learn stacks over the weekend, automate messy workflows, and s
 Tomorrow (Sunday @ 13:30 UK) we meet live to build &amp; debug together.
 
 Join free:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 #FDE #BuildInPublic #SoftwareEngineering</div>
                     </div>
@@ -697,6 +838,15 @@ Join free:
                     <div>
                         <span class="tag-pill" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">SUNDAY &middot; Day 7 (LIVE CALL DAY)</span>
                         <strong style="color: #34d399; margin-left: 0.5rem; font-size: 1.15rem;">🎟️ Sunday Live Broadcast &amp; WhatsApp Outreach Protocol</strong>
+                    </div>
+                </div>
+
+                <!-- Visual Asset Card -->
+                <div class="visual-preview-box">
+                    <img src="daily-promo-sunday-live-cohort-lab.jpg" alt="Sunday Live Cohort Screen Sharing Broadcast Graphic" class="visual-preview-img">
+                    <div class="visual-action-bar">
+                        <span style="font-size: 0.82rem; color: var(--text-secondary);">🖼️ 1200x675 High-Res Sunday Graphic (Live 13:30 UK Screen-Sharing Lab)</span>
+                        <a href="daily-promo-sunday-live-cohort-lab.jpg" download="daily-promo-sunday-live-cohort-lab.jpg" class="download-asset-btn">⬇️ Download Sunday Live Lab Graphic</a>
                     </div>
                 </div>
 
@@ -715,14 +865,16 @@ Join free:
                     <div class="post-text" id="post-sunday-wa" style="border-color: rgba(37, 211, 102, 0.2); background: rgba(0, 20, 10, 0.4);">Hey everyone! 👋 Quick heads up for today's free AI cohort session:
 
 🕒 When: Today (Sunday) @ 13:30 – 14:30 UK (London time)
+
 💻 Format: Live hands-on screen sharing, open mic, zero slides!
+
 🎯 What we're tackling today:
   • Custom AI agent workflows &amp; MCP tool setups
   • Claude Certified Architect exam scenario breakdown
   • Live code debugging &amp; contractor strategy Q&amp;A
 
 If you haven't joined yet, grab the free room link inside Skool:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 See you at 13:30 UK! 🚀</div>
                 </div>
@@ -739,8 +891,11 @@ See you at 13:30 UK! 🚀</div>
 Tired of endless text tutorials and prerecorded slide decks?
 
 Join us live today for our weekly 60-minute interactive study &amp; architecture session:
+
 🕒 When: Tonight, Sunday 13:30–14:30 UK (London time)
+
 💻 Format: Live screen-sharing, open microphone, live terminal &amp; code walkthroughs
+
 🎯 Topics we'll tackle tonight:
    • Custom AI agent architectures and MCP tool configurations
    • AI Certification prep (Claude Certified Architect blueprint breakdown)
@@ -749,7 +904,7 @@ Join us live today for our weekly 60-minute interactive study &amp; architecture
 Whether you're an experienced contractor or just getting started with customized AI workflows, you are warmly invited.
 
 🎟️ 100% Free. Grab the Zoom/Skool live room link here:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
 Drop a 'See you tonight' below if you're joining! 👇
 
@@ -764,20 +919,119 @@ Drop a 'See you tonight' below if you're joining! 👇
                         <div class="post-text" id="post-sunday-x">🔴 TODAY @ 13:30 UK: Live AI Architecture &amp; Screen-Share Lab! 🚀
 
 No slides. Just real code, terminal walkthroughs, and peer debugging:
+
 • MCP server setups &amp; agent tools
 • Claude Certified Architect exam breakdown
 • Open Q&amp;A + contractor insights
 
 100% Free inside our Skool community:
-👉 https://www.skool.com/ai-certification-helper/about
+👉 https://www.skool.com/delivery-pilot-8938
 
-See you tonight! 👇
-
-#buildinpublic #ClaudeArchitect #AI #DevLab</div>
+See you tonight! 👇</div>
                     </div>
                 </div>
             </div>
 
+        </section>
+
+        <!-- Weekly Recurring Tasks Section: Post Weekly Invites & Daily Promotions -->
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">🗓️ Weekly Tasks: 7-Day Protocol to Post Weekly Invites</h2>
+                <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.3);">Execution Cadence &middot; Weekly Recurring Loop</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 82ch;">
+                Follow this step-by-step 7-day checklist to download each post's distinct visual graphic, copy the swipe text, and maintain consistent multi-channel momentum across LinkedIn, X.com, Skool, and WhatsApp.
+            </p>
+
+            <div class="card" style="padding: 0; overflow-x: auto; margin-bottom: 1.5rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 780px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); background: rgba(255,255,255,0.02); color: var(--text-primary);">
+                            <th style="padding: 0.85rem; width: 110px;">Day</th>
+                            <th style="padding: 0.85rem; width: 180px;">Action &amp; Visual</th>
+                            <th style="padding: 0.85rem;">Step-by-Step Task Instructions</th>
+                            <th style="padding: 0.85rem; width: 140px;">Quick Jump</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #38bdf8;">MONDAY</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: var(--text-primary);">Day 1 Graphic &amp; Reset</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. Download <code>daily-promo-monday-custom-agents.jpg</code>.<br>
+                                2. Copy Monday LinkedIn &amp; X text (<a href="#template-monday" style="color: var(--color-primary);">#template-monday</a>).<br>
+                                3. Post to LinkedIn (08:30 UK) &amp; X.com (12:00 UK).<br>
+                                4. Host VIP Recruiter Cowork session (11:30 AM UK) &amp; VIP 1-1 Workshop (19:00 UK).
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="daily-promo-monday-custom-agents.jpg" download="daily-promo-monday-custom-agents.jpg" class="download-asset-btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem;">⬇️ Visual</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #c084fc;">TUESDAY</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: var(--text-primary);">Day 2 MCP Graphic</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. Download <code>daily-promo-tuesday-mcp-architecture.jpg</code>.<br>
+                                2. Copy Tuesday MCP swipe text (<a href="#template-tuesday" style="color: var(--color-primary);">#template-tuesday</a>).<br>
+                                3. Post to LinkedIn &amp; X.com.<br>
+                                4. Host Tuesday VIP 1-1 Workshop (19:00 UK: Environment &amp; App Setup).
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="daily-promo-tuesday-mcp-architecture.jpg" download="daily-promo-tuesday-mcp-architecture.jpg" class="download-asset-btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem;">⬇️ Visual</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #fbbf24;">WEDNESDAY</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: var(--text-primary);">Day 3 Memory &amp; RAG</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. Download <code>daily-promo-wednesday-second-brain-rag.jpg</code>.<br>
+                                2. Copy Wednesday Second Brain swipe text (<a href="#template-wednesday" style="color: var(--color-primary);">#template-wednesday</a>).<br>
+                                3. Release 5-min Video animation &amp; publish cohort prep install prerequisites.
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="daily-promo-wednesday-second-brain-rag.jpg" download="daily-promo-wednesday-second-brain-rag.jpg" class="download-asset-btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem;">⬇️ Visual</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #34d399;">THURSDAY</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: var(--text-primary);">Day 4 Spec-Driven Dev</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. Download <code>daily-promo-thursday-spec-driven-coding.jpg</code>.<br>
+                                2. Copy Thursday Spec-Driven Coding swipe text (<a href="#template-thursday" style="color: var(--color-primary);">#template-thursday</a>).<br>
+                                3. Host in-person meetup at Triton Square, London NW1 (18:00–21:00 UK).
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="daily-promo-thursday-spec-driven-coding.jpg" download="daily-promo-thursday-spec-driven-coding.jpg" class="download-asset-btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem;">⬇️ Visual</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #38bdf8;">FRIDAY</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: var(--text-primary);">Day 5 Enterprise AI</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. Download <code>daily-promo-friday-enterprise-certifications.jpg</code>.<br>
+                                2. Copy Friday Enterprise AI swipe text (<a href="#template-friday" style="color: var(--color-primary);">#template-friday</a>).<br>
+                                3. Host Friday Advanced Level Workshop (19:00 UK).
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="daily-promo-friday-enterprise-certifications.jpg" download="daily-promo-friday-enterprise-certifications.jpg" class="download-asset-btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem;">⬇️ Visual</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(225, 29, 72, 0.04);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #fb7185;">SATURDAY</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #fb7185;">Post Weekly Cohort Invite</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. Open <a href="linkedin-saturday-invites.html" style="color: #7dd3fc; font-weight: 600;">Saturday LinkedIn Invites</a> for the active calendar date (Weeks 1–8).<br>
+                                2. Download that week's unique visual and copy the dated invitation text (never write &ldquo;Today&rdquo;).<br>
+                                3. Attach image and publish to LinkedIn &amp; X.com inviting to Sunday 13:30–14:30 London time.<br>
+                                4. Provide two doors: Live Skool link + free group entrance.
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="linkedin-saturday-invites.html" class="btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; background: rgba(225, 29, 72, 0.2); border: 1px solid rgba(225, 29, 72, 0.5); color: #fecdd3; text-decoration: none; border-radius: 4px;">🗓️ Saturday Invites</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(16, 185, 129, 0.04);">
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #34d399;">SUNDAY (LIVE DAY)</strong></td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><strong style="color: #34d399;">WhatsApp + Live Lab</strong></td>
+                            <td style="padding: 0.85rem;">
+                                1. <strong>10:00–12:00 UK:</strong> Broadcast Sunday Morning WhatsApp reminder (<a href="#post-sunday-wa" style="color: #25D366; font-weight: 600;">#post-sunday-wa</a>) with <code>daily-promo-sunday-live-cohort-lab.jpg</code> to study groups &amp; DMs.<br>
+                                2. <strong>12:00 UK:</strong> Post Sunday Live social blast on LinkedIn &amp; X.<br>
+                                3. <strong>13:30–14:30 UK:</strong> Deliver live hands-on screen-sharing cohort lab.<br>
+                                4. <strong>14:30–16:00 UK:</strong> Upload recording to Skool Classroom &amp; reset weekly task list.
+                            </td>
+                            <td style="padding: 0.85rem; vertical-align: top;"><a href="daily-promo-sunday-live-cohort-lab.jpg" download="daily-promo-sunday-live-cohort-lab.jpg" class="download-asset-btn" style="padding: 0.25rem 0.6rem; font-size: 0.78rem;">⬇️ Sunday Visual</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- Multi-Channel Distribution Matrix -->
@@ -834,7 +1088,7 @@ See you tonight! 👇
                 </div>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Featured in Favorites hub with A&rarr;Z sort (2026-08-30) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/daily-community-promotion-templates.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Enhanced readability and paragraph spacing with clean line breaks across all swipe templates and updated canonical Skool link https://www.skool.com/delivery-pilot-8938 (2026-08-31) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/growth/daily-community-promotion-templates.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </footer>
 

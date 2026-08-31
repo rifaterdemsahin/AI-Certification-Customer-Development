@@ -1,9 +1,12 @@
-# Customer Discovery Report: Sude Ünal Interview — Weekday Cohort Application, Obsidian Second Brain Hybrid RAG & Parallelized Agent Workflows
+# Customer Discovery Report: Sude Interview — Weekday Cohort Application, Obsidian Second Brain Hybrid RAG & Parallelized Agent Workflows
 
-**Report Version:** v1.0.0  
+> [!NOTE]
+> **Superseded by [v1.1.0](customer-discovery-sude-unal-interview-v1.1.0.md)** (2026-08-31): Updated with Sude's academic lab feedback, demonstrating Second Brain / AI Agent thought leadership with university faculty and multi-user knowledge graph ontology analysis.
+
+**Report Version:** v1.0.0 (Historical)  
 **Date:** 2026-08-27  
 **Interview Source:** `3_Simulation/Interviews/interview_sude_unal_2026-08-27.md`  
-**Candidate:** Sude Ünal (Founding Cohort Member, AI & Software Practitioner)  
+**Candidate:** Sude (Founding Cohort Member, AI & Software Practitioner)  
 **Channel:** Skool Community / Direct Message Discovery Exchange  
 **Tracked Hypotheses Mapped:** [H4 (Acquisition Funnel & Conversion)](../5_Symbols/hypotheses/hyp-h4.html), [H5 (Skool Freemium & Cohort Operations)](../5_Symbols/hypotheses/hyp-h5.html), [H8 (Exam-Ready PMF & Hands-on Labs)](../5_Symbols/hypotheses/hyp-h8.html), [H10 (Content Quality Floor & Architectural Depth)](../5_Symbols/hypotheses/hyp-h10.html), [H24 (Cognitive Load & Execution Gap)](../5_Symbols/hypotheses/hyp-h24.html), [H29 (Listen > Speak & Feedback Integration)](../5_Symbols/hypotheses/hyp-h29.html), [H30 (Delivery Pilot FDE Roadmap & Second Brain Toolchain)](../5_Symbols/hypotheses/hyp-h30.html)
 
@@ -11,7 +14,7 @@
 
 ## 1. Executive Summary & Strategic Context
 
-On August 27, 2026 at 17:44 BST, founding cohort member **Sude Ünal** provided comprehensive qualitative customer discovery feedback after finishing the asynchronous session recordings. Her feedback delivers critical operational and technical validation across three core domains:
+On August 27, 2026 at 17:44 BST, founding cohort member **Sude** provided comprehensive qualitative customer discovery feedback after finishing the asynchronous session recordings. Her feedback delivers critical operational and technical validation across three core domains:
 
 1. **Demand for Mid-Week Application Calls (H5 / H30 / H4):**
    - Sude highlighted an essential learning dynamic: watching session recordings asynchronously provides theoretical grounding, but **weekday live calls are critical for practical implementation** (*"I think that during the week calls would be useful for us to applying what we've learned from you... I will definetly schedule my time for next weeks into weekday sessions"*).
@@ -33,7 +36,7 @@ On August 27, 2026 at 17:44 BST, founding cohort member **Sude Ünal** provided 
 ## 2. Customer Discovery Qualitative Breakdown
 
 ### Profile & Intake Data
-* **Candidate:** Sude Ünal
+* **Candidate:** Sude
 * **Role / Persona:** Founding Cohort Member, AI & Software Practitioner (Persona 2 & 4: Practitioner & Forward Deployed Engineer)
 * **Channel:** Skool Community Direct Message Exchange
 * **Primary Media Habit:** Asynchronous video catch-up followed by active weekday hands-on coding

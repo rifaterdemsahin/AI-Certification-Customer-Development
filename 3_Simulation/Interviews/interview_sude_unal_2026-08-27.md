@@ -1,7 +1,7 @@
-# Customer Discovery Interview: Sude Ünal
+# Customer Discovery Interview: Sude
 
 - **Date Logged:** Aug 27, 2026, 17:44 BST
-- **Candidate Name:** Sude Ünal (Founding Cohort Member, AI & Software Practitioner)
+- **Candidate Name:** Sude (Founding Cohort Member, AI & Software Practitioner)
 - **Channel / Location:** Skool Community / Direct Message Discovery Exchange
 - **Referral / Source:** Delivery Pilot Founding Cohort Member / Skool Community
 - **Related Hypotheses:** H4, H5, H8, H10, H24, H29, H30

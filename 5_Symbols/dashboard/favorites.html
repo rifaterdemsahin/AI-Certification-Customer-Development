@@ -10,7 +10,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 1.25rem;
-            margin-top: 1.5rem;
+            margin-top: 1.25rem;
         }
         .fav-card {
             background: var(--bg-card);
@@ -23,10 +23,105 @@
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             position: relative;
         }
+        .fav-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
         .fav-card.selected {
             border-color: var(--color-primary);
-            box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
-            background: rgba(99, 102, 241, 0.03);
+            box-shadow: 0 0 16px rgba(99, 102, 241, 0.25);
+            background: rgba(99, 102, 241, 0.04);
+        }
+        .fav-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .fav-search {
+            min-width: 220px;
+            flex: 1 1 220px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            padding: 0.4rem 0.7rem;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            outline: none;
+        }
+        .fav-search:focus {
+            border-color: var(--color-primary);
+        }
+        .letter-rail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            margin-top: 0.75rem;
+        }
+        .letter-chip {
+            min-width: 1.7rem;
+            padding: 0.2rem 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.03);
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+        .letter-chip.active {
+            border-color: var(--color-primary);
+            background: rgba(99, 102, 241, 0.2);
+            color: #c7d2fe;
+        }
+        .letter-chip:disabled {
+            opacity: 0.28;
+            cursor: default;
+        }
+        .fav-cat-break {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.25rem;
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .fav-cat-break::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+        .sort-flow {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.65rem;
+            margin-top: 1.25rem;
+        }
+        .sort-flow-step {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.75rem 0.85rem;
+        }
+        .sort-flow-step strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.88rem;
+            margin-bottom: 0.2rem;
+        }
+        .sort-flow-step span {
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+        @media (max-width: 720px) {
+            .sort-flow { grid-template-columns: 1fr 1fr; }
         }
         .fav-card-header {
             display: flex;
@@ -145,7 +240,7 @@
                     <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">User Feedback Engine &middot; Strategic Favorites</span>
                     <h1 style="font-family: var(--font-heading); font-size: 2.2rem; margin: 0.5rem 0 0.5rem 0;">⭐ Favorites &amp; Feedback Generator</h1>
                     <p style="color: var(--text-secondary); max-width: 86ch; line-height: 1.65; font-size: 1.02rem;">
-                        Review core strategy pages, pick apart favorite topics, add custom notes or feedback, and easily export your structured feedback back to the AI Agent (Jules) with one click at the bottom.
+                        Sort, search, and rate the bookmarked strategy pages, then copy a markdown packet in <strong>the same order you see</strong> for the AI agent. Sort is an execution tool, not a paid-enrollment claim — see <a href="../hypotheses/hyp-h23.html" style="color: var(--color-primary);">H23</a>.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
@@ -153,6 +248,12 @@
                     <span class="fav-badge" style="background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.3);">🧘 Being Intentional Included</span>
                     <span class="fav-badge" style="background: rgba(56, 189, 248, 0.15); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.3);">📢 Daily Promo Templates Included</span>
                 </div>
+            </div>
+            <div class="sort-flow" aria-label="How copy uses the current sort">
+                <div class="sort-flow-step"><strong>1. Sort</strong><span>A→Z, category, selected first, or rating — not the original dump order.</span></div>
+                <div class="sort-flow-step"><strong>2. Filter</strong><span>Search or tap a letter (Daily Promo sits under D).</span></div>
+                <div class="sort-flow-step"><strong>3. Rate</strong><span>Check items, pick a rating, add a note.</span></div>
+                <div class="sort-flow-step"><strong>4. Copy</strong><span>The sticky button pastes that sorted list plus your feedback.</span></div>
             </div>
         </div>
 
@@ -198,7 +299,7 @@
                             <a href="../growth/daily-community-promotion-templates.html" style="color: var(--text-primary); text-decoration: none;">📢 Daily Community Promotion Templates</a>
                         </h3>
                         <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                            7-day LinkedIn, X.com, and Sunday WhatsApp swipe file for Skool growth and 13:30 UK live cohort invites. Use A&rarr;Z sort below to find it under <strong>D</strong>.
+                            7-day LinkedIn, X.com, and Sunday WhatsApp swipe file for Skool growth and 13:30 UK live cohort invites. Use A&rarr;Z plus the letter rail to find it under <strong>D</strong>, then copy.
                         </p>
                     </div>
                 </div>
@@ -207,20 +308,26 @@
 
         <!-- All Favorites Matrix with Feedback Controls -->
         <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom: 1rem;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom: 0.75rem;">
                 <div>
                     <h2 class="section-title" style="margin:0;">📋 All Bookmarked Favorites (<span id="fav-count">20</span>)</h2>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top:0.25rem;">Check items to include in your feedback, rate them, and write specific comments.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top:0.25rem;">Sort and filter first. Copy uses this order. Check items to include in the feedback packet.</p>
                 </div>
-                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+                <div class="fav-toolbar">
                     <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600; letter-spacing:0.04em;">SORT</span>
-                    <button type="button" id="btn-sort-az" class="sort-btn active" aria-pressed="true">A &rarr; Z</button>
-                    <button type="button" id="btn-sort-za" class="sort-btn" aria-pressed="false">Z &rarr; A</button>
-                    <button type="button" id="btn-sort-default" class="sort-btn" aria-pressed="false">Original</button>
-                    <button id="btn-select-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Select All</button>
-                    <button id="btn-deselect-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Deselect All</button>
+                    <button type="button" id="btn-sort-az" class="sort-btn active" data-sort="az" aria-pressed="true">A &rarr; Z</button>
+                    <button type="button" id="btn-sort-za" class="sort-btn" data-sort="za" aria-pressed="false">Z &rarr; A</button>
+                    <button type="button" id="btn-sort-cat" class="sort-btn" data-sort="cat" aria-pressed="false">Category</button>
+                    <button type="button" id="btn-sort-selected" class="sort-btn" data-sort="selected" aria-pressed="false">Selected first</button>
+                    <button type="button" id="btn-sort-rating" class="sort-btn" data-sort="rating" aria-pressed="false">Rating</button>
+                    <button type="button" id="btn-sort-default" class="sort-btn" data-sort="default" aria-pressed="false">Original</button>
+                    <input type="search" id="fav-search" class="fav-search" placeholder="Search title, category, path…" aria-label="Filter favorites">
+                    <button id="btn-select-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Select visible</button>
+                    <button id="btn-deselect-all" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.8rem;">Deselect all</button>
                 </div>
             </div>
+            <div id="letter-rail" class="letter-rail" aria-label="Jump to letter"></div>
+            <p id="sort-status" style="color:var(--text-muted); font-size:0.8rem; margin:0.6rem 0 0 0;">Sorted A → Z</p>
 
             <div id="favorites-grid" class="fav-grid">
                 <!-- Dynamically populated or rendered items -->
@@ -238,7 +345,7 @@
 
                 <div style="margin-top: 1.25rem;">
                     <label style="display:block; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">
-                        📱 Formatted Markdown Preview (Live Output):
+                        📱 Formatted Markdown Preview (live, in current sort):
                     </label>
                     <div id="markdown-preview" class="preview-box">Select items above to generate feedback preview...</div>
                 </div>
@@ -248,12 +355,16 @@
         <!-- Sticky Copy Bar at the Bottom -->
         <div class="copy-sticky-bar">
             <div>
-                <strong style="color:var(--text-primary); font-size:1.05rem; display:block;">Ready to give feedback?</strong>
+                <strong style="color:var(--text-primary); font-size:1.05rem; display:block;">Copy the sorted packet</strong>
                 <span style="color:var(--text-secondary); font-size:0.85rem;" id="sticky-status-text">0 items selected for feedback</span>
+                <label style="display:flex; align-items:center; gap:0.45rem; margin-top:0.55rem; color:var(--text-secondary); font-size:0.82rem; cursor:pointer;">
+                    <input type="checkbox" id="chk-include-catalog" checked style="accent-color: var(--color-primary);">
+                    Include full sorted catalog (visible order) in the copy
+                </label>
             </div>
-            <div style="display:flex; gap:0.75rem; align-items:center;">
+            <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
                 <button id="btn-copy-feedback" class="btn btn-primary" style="padding:0.75rem 1.5rem; font-size:1rem; font-weight:600; display:inline-flex; align-items:center; gap:0.5rem; background:var(--gradient-success); border:none; color:#000;">
-                    <span>📋</span> Copy Feedback to Clipboard
+                    <span>📋</span> Copy Sorted Feedback
                 </button>
             </div>
         </div>
@@ -265,7 +376,7 @@
                 <span style="color: var(--text-secondary); font-size: 0.9rem;">Founder: Rifat Erdem Sahin (Pexabo Ltd)</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Featured Daily Community Promotion Templates and added A&rarr;Z / Z&rarr;A sort (2026-08-30) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/favorites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Practical sorts (A→Z, category, selected first, rating) plus copy in that order (2026-08-31) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/favorites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </footer>
 
@@ -293,12 +404,28 @@
                     desc: 'Cal Newport Digital Minimalism framework: scanning repo ideas, eliminating noise, amplifying signal.'
                 },
                 {
+                    id: 'cohort-10',
+                    url: '5_Symbols/cd/cohort-session-10-analysis.html',
+                    title: '🎙️ Cohort Session 10 Analysis',
+                    cat: 'Discovery',
+                    emoji: '🎙️',
+                    desc: 'Mariana + Chidi: faceless shorts, Skool joins (~30, not paid), next Sunday is how we make money.'
+                },
+                {
                     id: 'cohort-9',
                     url: '5_Symbols/cd/cohort-session-9-analysis.html',
                     title: '🎙️ Cohort Session 9 Analysis',
                     cat: 'Discovery',
                     emoji: '🎙️',
                     desc: 'Pedagogy overhaul: 60-min cap, 10-10-15 structure, preset projects.'
+                },
+                {
+                    id: 'animation-pipeline',
+                    url: '5_Symbols/growth/animation-shorts-pipeline.html',
+                    title: '🎬 Animation Shorts Pipeline & Tools',
+                    cat: 'Growth',
+                    emoji: '🎬',
+                    desc: 'Video 6 studio SOP: Jules Pages board, Gemini, Google Flow, Canva, ElevenLabs, YouTube Studio.'
                 },
                 {
                     id: 'kanban',
@@ -451,10 +578,45 @@
             var markdownPreviewEl = document.getElementById('markdown-preview');
             var stickyStatusEl = document.getElementById('sticky-status-text');
             var overallNotesEl = document.getElementById('overall-notes');
+            var sortStatusEl = document.getElementById('sort-status');
+            var letterRailEl = document.getElementById('letter-rail');
+            var searchEl = document.getElementById('fav-search');
+            var includeCatalogEl = document.getElementById('chk-include-catalog');
+            var STORE_KEY = 'aicert-fav-hub-v2';
+            var SORT_LABELS = {
+                az: 'A → Z (letter, ignoring emoji)',
+                za: 'Z → A',
+                cat: 'Category, then A → Z',
+                selected: 'Selected first, then A → Z',
+                rating: 'Rating (priority first)',
+                'default': 'Original featured order'
+            };
+            var RATING_RANK = {
+                '🌟 Super Helpful': 0,
+                '✅ Approved / Solid': 1,
+                '🔄 Needs Revision': 2,
+                '❓ Question / Clarify': 3
+            };
             var sortMode = 'az';
+            var letterFilter = '';
+            var searchQuery = '';
             var defaultCheckedIds = { 'core-message': true, 'intentionality': true, 'promo-templates': true };
+            var memoryState = null;
 
-            if (favCountEl) favCountEl.textContent = favoritesList.length;
+            (function loadStore() {
+                try {
+                    var raw = localStorage.getItem(STORE_KEY);
+                    if (!raw) return;
+                    var parsed = JSON.parse(raw);
+                    if (parsed.sortMode && SORT_LABELS[parsed.sortMode]) sortMode = parsed.sortMode;
+                    if (typeof parsed.letterFilter === 'string') letterFilter = parsed.letterFilter;
+                    if (typeof parsed.search === 'string') searchQuery = parsed.search;
+                    if (parsed.cards) memoryState = parsed.cards;
+                    if (overallNotesEl && typeof parsed.overall === 'string') overallNotesEl.value = parsed.overall;
+                    if (includeCatalogEl && typeof parsed.includeCatalog === 'boolean') includeCatalogEl.checked = parsed.includeCatalog;
+                    if (searchEl) searchEl.value = searchQuery;
+                } catch (e) {}
+            })();
 
             function azSortKey(title) {
                 var m = String(title).match(/[A-Za-z0-9£]/);
@@ -462,14 +624,14 @@
                 return String(title).slice(String(title).indexOf(m[0])).toLowerCase();
             }
 
-            function orderedList() {
-                var copy = favoritesList.slice();
-                if (sortMode === 'az') {
-                    copy.sort(function(a, b) { return azSortKey(a.title).localeCompare(azSortKey(b.title), 'en', { sensitivity: 'base' }); });
-                } else if (sortMode === 'za') {
-                    copy.sort(function(a, b) { return azSortKey(b.title).localeCompare(azSortKey(a.title), 'en', { sensitivity: 'base' }); });
-                }
-                return copy;
+            function firstLetter(title) {
+                var key = azSortKey(title);
+                var ch = key.charAt(0).toUpperCase();
+                return /[A-Z]/.test(ch) ? ch : '#';
+            }
+
+            function compareAz(a, b) {
+                return azSortKey(a.title).localeCompare(azSortKey(b.title), 'en', { sensitivity: 'base' });
             }
 
             function collectCardState() {
@@ -490,28 +652,145 @@
                 return hasAny ? state : null;
             }
 
+            function cardStateFor(item, saved) {
+                if (saved && saved[item.id]) return saved[item.id];
+                if (memoryState && memoryState[item.id]) return memoryState[item.id];
+                return {
+                    checked: !!defaultCheckedIds[item.id],
+                    rating: '',
+                    note: ''
+                };
+            }
+
+            function isChecked(item, saved) {
+                return !!cardStateFor(item, saved).checked;
+            }
+
+            function ratingValue(item, saved) {
+                return cardStateFor(item, saved).rating || '🌟 Super Helpful';
+            }
+
+            function matchesFilter(item) {
+                if (letterFilter && firstLetter(item.title) !== letterFilter) return false;
+                var q = searchQuery.trim().toLowerCase();
+                if (!q) return true;
+                return (item.title + ' ' + item.desc + ' ' + item.cat + ' ' + item.url).toLowerCase().indexOf(q) !== -1;
+            }
+
+            function orderedList(saved) {
+                var copy = favoritesList.filter(matchesFilter);
+                if (sortMode === 'az') {
+                    copy.sort(compareAz);
+                } else if (sortMode === 'za') {
+                    copy.sort(function(a, b) { return compareAz(b, a); });
+                } else if (sortMode === 'cat') {
+                    copy.sort(function(a, b) {
+                        var c = String(a.cat).localeCompare(String(b.cat), 'en', { sensitivity: 'base' });
+                        return c !== 0 ? c : compareAz(a, b);
+                    });
+                } else if (sortMode === 'selected') {
+                    copy.sort(function(a, b) {
+                        var da = isChecked(a, saved) ? 0 : 1;
+                        var db = isChecked(b, saved) ? 0 : 1;
+                        if (da !== db) return da - db;
+                        return compareAz(a, b);
+                    });
+                } else if (sortMode === 'rating') {
+                    copy.sort(function(a, b) {
+                        var ra = RATING_RANK[ratingValue(a, saved)];
+                        var rb = RATING_RANK[ratingValue(b, saved)];
+                        if (ra === undefined) ra = 9;
+                        if (rb === undefined) rb = 9;
+                        if (ra !== rb) return ra - rb;
+                        return compareAz(a, b);
+                    });
+                }
+                return copy;
+            }
+
+            function persist() {
+                try {
+                    localStorage.setItem(STORE_KEY, JSON.stringify({
+                        sortMode: sortMode,
+                        letterFilter: letterFilter,
+                        search: searchQuery,
+                        includeCatalog: includeCatalogEl ? includeCatalogEl.checked : true,
+                        cards: collectCardState() || memoryState || {},
+                        overall: overallNotesEl ? overallNotesEl.value : ''
+                    }));
+                } catch (e) {}
+            }
+
             function setSortButtons() {
-                var map = { az: 'btn-sort-az', za: 'btn-sort-za', def: 'btn-sort-default' };
-                Object.keys(map).forEach(function(key) {
-                    var btn = document.getElementById(map[key]);
-                    if (!btn) return;
-                    var on = (key === 'def' ? sortMode === 'default' : sortMode === key);
+                var buttons = document.querySelectorAll('[data-sort]');
+                buttons.forEach(function(btn) {
+                    var on = btn.getAttribute('data-sort') === sortMode;
                     btn.classList.toggle('active', on);
                     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
                 });
             }
 
-            // Render cards
+            function renderLetterRail() {
+                if (!letterRailEl) return;
+                var present = {};
+                favoritesList.forEach(function(item) { present[firstLetter(item.title)] = true; });
+                var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+                var html = '<button type="button" class="letter-chip' + (letterFilter === '' ? ' active' : '') + '" data-letter="">All</button>';
+                letters.forEach(function(L) {
+                    var on = letterFilter === L;
+                    var disabled = !present[L];
+                    html += '<button type="button" class="letter-chip' + (on ? ' active' : '') + '"' + (disabled ? ' disabled' : '') + ' data-letter="' + L + '">' + L + '</button>';
+                });
+                letterRailEl.innerHTML = html;
+                letterRailEl.querySelectorAll('.letter-chip').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        if (btn.disabled) return;
+                        letterFilter = btn.getAttribute('data-letter') || '';
+                        renderGrid();
+                        updateFeedbackPreview();
+                    });
+                });
+            }
+
+            function bindCard(item) {
+                var chk = document.getElementById('chk-' + item.id);
+                var rate = document.getElementById('rate-' + item.id);
+                var note = document.getElementById('note-' + item.id);
+                var card = document.getElementById('card-' + item.id);
+                if (chk) {
+                    chk.addEventListener('change', function() {
+                        if (card) card.classList.toggle('selected', this.checked);
+                        if (sortMode === 'selected' || sortMode === 'rating') {
+                            renderGrid();
+                        }
+                        updateFeedbackPreview();
+                    });
+                }
+                if (rate) {
+                    rate.addEventListener('change', function() {
+                        if (sortMode === 'rating') renderGrid();
+                        updateFeedbackPreview();
+                    });
+                }
+                if (note) note.addEventListener('input', updateFeedbackPreview);
+            }
+
             function renderGrid() {
                 var saved = collectCardState();
+                var list = orderedList(saved);
                 var html = '';
-                orderedList().forEach(function(item) {
-                    var checked = saved ? !!(saved[item.id] && saved[item.id].checked) : !!defaultCheckedIds[item.id];
-                    var checkedAttr = checked ? 'checked' : '';
-                    var selectedClass = checkedAttr ? ' selected' : '';
-                    var savedRating = saved && saved[item.id] ? saved[item.id].rating : '';
-                    var savedNote = saved && saved[item.id] ? saved[item.id].note : '';
-
+                var lastCat = null;
+                if (list.length === 0) {
+                    html = '<div class="fav-cat-break">No pages match this sort/filter. Clear search or tap All.</div>';
+                }
+                list.forEach(function(item) {
+                    if (sortMode === 'cat' && item.cat !== lastCat) {
+                        html += '<div class="fav-cat-break">' + item.cat + '</div>';
+                        lastCat = item.cat;
+                    }
+                    var st = cardStateFor(item, saved);
+                    var checkedAttr = st.checked ? 'checked' : '';
+                    var selectedClass = st.checked ? ' selected' : '';
                     html +=
                         '<div class="fav-card' + selectedClass + '" id="card-' + item.id + '">' +
                         '  <div class="fav-card-header">' +
@@ -525,74 +804,82 @@
                         '  <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">' + item.desc + '</p>' +
                         '  <div style="display:flex; flex-direction:column; gap:0.4rem; margin-top:0.25rem;">' +
                         '    <select id="rate-' + item.id + '" class="rating-select" data-id="' + item.id + '">' +
-                        '      <option value="🌟 Super Helpful"' + (savedRating === '🌟 Super Helpful' ? ' selected' : '') + '>⭐⭐⭐⭐⭐ Super Helpful / Priority</option>' +
-                        '      <option value="✅ Approved / Solid"' + (savedRating === '✅ Approved / Solid' ? ' selected' : '') + '>⭐⭐⭐⭐ Approved / Solid</option>' +
-                        '      <option value="🔄 Needs Revision"' + (savedRating === '🔄 Needs Revision' ? ' selected' : '') + '>⭐⭐⭐ Needs Revision / Updates</option>' +
-                        '      <option value="❓ Question / Clarify"' + (savedRating === '❓ Question / Clarify' ? ' selected' : '') + '>❓ Question / Discussion</option>' +
+                        '      <option value="🌟 Super Helpful"' + (st.rating === '🌟 Super Helpful' || !st.rating ? ' selected' : '') + '>⭐⭐⭐⭐⭐ Super Helpful / Priority</option>' +
+                        '      <option value="✅ Approved / Solid"' + (st.rating === '✅ Approved / Solid' ? ' selected' : '') + '>⭐⭐⭐⭐ Approved / Solid</option>' +
+                        '      <option value="🔄 Needs Revision"' + (st.rating === '🔄 Needs Revision' ? ' selected' : '') + '>⭐⭐⭐ Needs Revision / Updates</option>' +
+                        '      <option value="❓ Question / Clarify"' + (st.rating === '❓ Question / Clarify' ? ' selected' : '') + '>❓ Question / Discussion</option>' +
                         '    </select>' +
-                        '    <input type="text" id="note-' + item.id + '" class="feedback-input" data-id="' + item.id + '" placeholder="Specific feedback or notes for this page..." value="' + String(savedNote).replace(/"/g, '&quot;') + '">' +
+                        '    <input type="text" id="note-' + item.id + '" class="feedback-input" data-id="' + item.id + '" placeholder="Specific feedback or notes for this page..." value="' + String(st.note || '').replace(/"/g, '&quot;') + '">' +
                         '  </div>' +
                         '</div>';
                 });
                 grid.innerHTML = html;
-
-                // Bind events
-                favoritesList.forEach(function(item) {
-                    var chk = document.getElementById('chk-' + item.id);
-                    var rate = document.getElementById('rate-' + item.id);
-                    var note = document.getElementById('note-' + item.id);
-                    var card = document.getElementById('card-' + item.id);
-
-                    if (chk) {
-                        chk.addEventListener('change', function() {
-                            if (this.checked) card.classList.add('selected');
-                            else card.classList.remove('selected');
-                            updateFeedbackPreview();
-                        });
-                    }
-                    if (rate) rate.addEventListener('change', updateFeedbackPreview);
-                    if (note) note.addEventListener('input', updateFeedbackPreview);
-                });
+                list.forEach(bindCard);
+                if (favCountEl) favCountEl.textContent = list.length + (list.length === favoritesList.length ? '' : ' / ' + favoritesList.length);
+                renderLetterRail();
+                setSortButtons();
+                if (sortStatusEl) {
+                    var extra = [];
+                    if (searchQuery) extra.push('search “' + searchQuery + '”');
+                    if (letterFilter) extra.push('letter ' + letterFilter);
+                    sortStatusEl.textContent = 'Sorted ' + SORT_LABELS[sortMode] + (extra.length ? ' · ' + extra.join(' · ') : '') + '. Copy uses this order.';
+                }
             }
 
-            function updateFeedbackPreview() {
+            function buildMarkdown() {
+                var saved = collectCardState();
+                var list = orderedList(saved);
                 var selectedItems = [];
-                favoritesList.forEach(function(item) {
-                    var chk = document.getElementById('chk-' + item.id);
-                    if (chk && chk.checked) {
-                        var rateVal = document.getElementById('rate-' + item.id).value;
-                        var noteVal = document.getElementById('note-' + item.id).value.trim();
-                        selectedItems.push({
-                            title: item.title,
-                            url: item.url,
-                            rating: rateVal,
-                            note: noteVal
-                        });
-                    }
+                list.forEach(function(item) {
+                    var st = cardStateFor(item, saved);
+                    if (!st.checked) return;
+                    selectedItems.push({
+                        title: item.title,
+                        url: item.url,
+                        cat: item.cat,
+                        rating: ratingValue(item, saved),
+                        note: (st.note || '').trim()
+                    });
                 });
-
                 var overallText = overallNotesEl ? overallNotesEl.value.trim() : '';
-
-                if (stickyStatusEl) {
-                    stickyStatusEl.textContent = selectedItems.length + ' item' + (selectedItems.length === 1 ? '' : 's') + ' selected for feedback';
-                }
+                var includeCatalog = includeCatalogEl ? includeCatalogEl.checked : true;
+                var filterBits = [];
+                if (searchQuery) filterBits.push('search=' + searchQuery);
+                if (letterFilter) filterBits.push('letter=' + letterFilter);
 
                 var md = '# 🌟 Favorites & Feedback Submission\n';
-                md += '*Generated on: ' + new Date().toLocaleDateString() + '*\n\n';
+                md += '*Generated on: ' + new Date().toLocaleString() + '*\n';
+                md += '*Sort: ' + SORT_LABELS[sortMode] + '*\n';
+                md += '*Filter: ' + (filterBits.length ? filterBits.join(', ') : 'none') + '*\n';
+                md += '*Visible: ' + list.length + ' of ' + favoritesList.length + '*\n';
+                md += '*Hypothesis: H23 (4DX weekly accountable rhythm) — `5_Symbols/hypotheses/hyp-h23.html`*\n\n';
+
+                if (includeCatalog) {
+                    md += '## 📋 Sorted catalog (' + list.length + ' visible)\n\n';
+                    if (list.length === 0) {
+                        md += '_Nothing visible under this sort/filter._\n\n';
+                    } else {
+                        list.forEach(function(item, index) {
+                            var st = cardStateFor(item, saved);
+                            var mark = st.checked ? ' [selected]' : '';
+                            md += (index + 1) + '. **' + item.title + '**' + mark + ' — `' + item.url + '`\n';
+                        });
+                        md += '\n';
+                    }
+                }
 
                 if (selectedItems.length > 0) {
-                    md += '## 📌 Reviewed Favorite Items (' + selectedItems.length + ')\n\n';
+                    md += '## 📌 Reviewed favorite items (' + selectedItems.length + ', same sort)\n\n';
                     selectedItems.forEach(function(s, index) {
                         md += (index + 1) + '. **' + s.title + '**\n';
                         md += '   - **Status/Rating:** ' + s.rating + '\n';
+                        md += '   - **Category:** ' + s.cat + '\n';
                         md += '   - **Path:** `' + s.url + '`\n';
-                        if (s.note) {
-                            md += '   - **Feedback Note:** ' + s.note + '\n';
-                        }
+                        if (s.note) md += '   - **Feedback Note:** ' + s.note + '\n';
                         md += '\n';
                     });
                 } else {
-                    md += '_No specific favorite pages checked._\n\n';
+                    md += '_No specific favorite pages checked. Sorted catalog above is the packet._\n\n';
                 }
 
                 if (overallText) {
@@ -600,27 +887,47 @@
                     md += overallText + '\n\n';
                 }
 
-                markdownPreviewEl.textContent = md;
+                return { md: md, selectedCount: selectedItems.length, visibleCount: list.length };
+            }
+
+            function updateFeedbackPreview() {
+                var packet = buildMarkdown();
+                if (stickyStatusEl) {
+                    stickyStatusEl.textContent = packet.selectedCount + ' selected · ' + packet.visibleCount + ' visible · sort ' + SORT_LABELS[sortMode];
+                }
+                markdownPreviewEl.textContent = packet.md;
+                persist();
             }
 
             function applySort(mode) {
                 sortMode = mode;
-                setSortButtons();
                 renderGrid();
                 updateFeedbackPreview();
             }
-            document.getElementById('btn-sort-az').addEventListener('click', function() { applySort('az'); });
-            document.getElementById('btn-sort-za').addEventListener('click', function() { applySort('za'); });
-            document.getElementById('btn-sort-default').addEventListener('click', function() { applySort('default'); });
 
-            // Global buttons
+            document.querySelectorAll('[data-sort]').forEach(function(btn) {
+                btn.addEventListener('click', function() { applySort(btn.getAttribute('data-sort')); });
+            });
+
+            if (searchEl) {
+                searchEl.addEventListener('input', function() {
+                    searchQuery = searchEl.value;
+                    renderGrid();
+                    updateFeedbackPreview();
+                });
+            }
+            if (includeCatalogEl) {
+                includeCatalogEl.addEventListener('change', updateFeedbackPreview);
+            }
+
             document.getElementById('btn-select-all').addEventListener('click', function() {
-                favoritesList.forEach(function(item) {
+                orderedList(collectCardState()).forEach(function(item) {
                     var chk = document.getElementById('chk-' + item.id);
                     var card = document.getElementById('card-' + item.id);
                     if (chk) chk.checked = true;
                     if (card) card.classList.add('selected');
                 });
+                if (sortMode === 'selected') renderGrid();
                 updateFeedbackPreview();
             });
 
@@ -631,6 +938,7 @@
                     if (chk) chk.checked = false;
                     if (card) card.classList.remove('selected');
                 });
+                if (sortMode === 'selected') renderGrid();
                 updateFeedbackPreview();
             });
 
@@ -638,40 +946,48 @@
                 overallNotesEl.addEventListener('input', updateFeedbackPreview);
             }
 
+            function flashCopied(btn, originalHtml) {
+                btn.innerHTML = '<span>✅</span> Copied sorted packet';
+                btn.style.background = '#10b981';
+                setTimeout(function() {
+                    btn.innerHTML = originalHtml;
+                    btn.style.background = 'var(--gradient-success)';
+                }, 2500);
+            }
+
             document.getElementById('btn-copy-feedback').addEventListener('click', function() {
-                var textToCopy = markdownPreviewEl.textContent;
+                var packet = buildMarkdown();
+                var textToCopy = packet.md;
                 var btn = this;
                 var originalHtml = btn.innerHTML;
+                markdownPreviewEl.textContent = textToCopy;
 
-                navigator.clipboard.writeText(textToCopy).then(function() {
-                    btn.innerHTML = '<span>✅</span> Copied Feedback to Clipboard!';
-                    btn.style.background = '#10b981';
-                    setTimeout(function() {
-                        btn.innerHTML = originalHtml;
-                        btn.style.background = 'var(--gradient-success)';
-                    }, 2500);
-                }).catch(function() {
+                function fallbackCopy() {
                     var textarea = document.createElement('textarea');
                     textarea.value = textToCopy;
+                    textarea.setAttribute('readonly', '');
+                    textarea.style.position = 'fixed';
+                    textarea.style.left = '-9999px';
                     document.body.appendChild(textarea);
                     textarea.select();
                     try {
                         document.execCommand('copy');
-                        btn.innerHTML = '<span>✅</span> Copied Feedback to Clipboard!';
-                        btn.style.background = '#10b981';
-                        setTimeout(function() {
-                            btn.innerHTML = originalHtml;
-                            btn.style.background = 'var(--gradient-success)';
-                        }, 2500);
+                        flashCopied(btn, originalHtml);
                     } catch (e) {
-                        alert('Could not copy automatically. Text logged to console.');
-                        console.log(textToCopy);
+                        alert('Could not copy automatically. Text is in the preview box.');
                     }
                     document.body.removeChild(textarea);
-                });
+                }
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(textToCopy).then(function() {
+                        flashCopied(btn, originalHtml);
+                    }).catch(fallbackCopy);
+                } else {
+                    fallbackCopy();
+                }
             });
 
-            // Initial render (A→Z so Daily Community Promotion Templates sits under D)
             setSortButtons();
             renderGrid();
             updateFeedbackPreview();

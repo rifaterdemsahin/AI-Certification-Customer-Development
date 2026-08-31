@@ -65,6 +65,7 @@
         {
             type: 'dropdown', label: 'Discovery Process', emoji: '📍', className: 'nav-discovery', items: [
                 ['5_Symbols/cd/cd-process.html', '📍 Process Overview'],
+                ['5_Symbols/cd/b2b-insurance-training-needs.html', '🏢 B2B Insurance AI Training &amp; B-MAD'],
                 ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
                 ['5_Symbols/cd/cd-watering-holes.html', '🌐 Watering Holes &amp; Outreach'],
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
@@ -218,6 +219,7 @@
                 ['5_Symbols/product/skool-new-joiner-welcome-and-faq.html', '👋 New Joiner Welcome &amp; FAQ'],
                 ['5_Symbols/product/skool-audience-emails-and-event-triggers.html', '📬 Skool Audience Emails &amp; Event Triggers'],
                 ['5_Symbols/product/skool-gamification-levels.html', '🏆 Skool Gamification &amp; Delivery Pilot L8/9'],
+                ['5_Symbols/product/skool-levels-sop.html', '⚙️ Skool Levels Setup &amp; Managing SOP'],
                 ['5_Symbols/product/what-community-gets.html', '🎁 What Does Community Get? (Dual-Engine)'],
                 ['5_Symbols/product/deliverypilot-net.html', '🌐 deliverypilot.net Portal']
             ]
@@ -267,6 +269,8 @@
                 ['5_Symbols/growth/pricing-change-strategy.html', '📈 Pricing Change Strategy'],
                 ['5_Symbols/growth/cost-side-model.html', '📉 Cost-Side Model'],
                 ['5_Symbols/growth/validation-repeat-gate.html', '🚪 Validation Repeat Gate'],
+                ['5_Symbols/growth/sales-tactics.html', '🎯 Sales Tactics'],
+                ['5_Symbols/growth/fast-conversion-shorts.html', '⚡ Fast-Conversion Shorts'],
                 ['5_Symbols/growth/marketing-tactics.html', '📰 Marketing Tactics'],
                 ['5_Symbols/growth/private-quiz-lead-magnet-tactic.html', '🕵️ Private Quiz Lead Magnet Tactic'],
                 ['5_Symbols/growth/funfair-tokens.html', '🎡 Funfair Token System'],
@@ -334,6 +338,7 @@
                 ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
                 ['5_Symbols/dashboard/sitemap.html', '🗺️ Site Map'],
                 ['5_Symbols/product/resources.html', '🌐 External Resources Directory'],
+                ['markdown_renderer.html?src=reports/customer-discovery-b2b-insurance-training-v1.0.0.md', '🏢 B2B Insurance AI Training CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-ilker-marianna-b2c2b-v1.0.0.md', '👤 Ilker &amp; Marianna B2C2B CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-ai-common-language-library-short-v1.0.0.md', '📚 AI Common Language Library Short v1.0'],
                 ['markdown_renderer.html?src=reports/eos-traction-alignment-v1.0.0.md', '📘 EOS Traction Alignment Report v1.0'],
@@ -343,19 +348,24 @@
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.2.0.md', '🧪 Acidity Check Report v1.2 (Historical)'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.1.0.md', '🧪 Acidity Check Report v1.1 (Historical)'],
                 ['markdown_renderer.html?src=reports/acidity-check-report-v1.0.md', '🧪 Acidity Check Report v1.0 (Historical)'],
-                ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '⚖️ Market Validation Argument'],
-                ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '🤖 AI Adoption &amp; Skills Gap'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.8.0.md', '🧠 Exam Prep &amp; Student Behavior'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.7.0.md', '🧠 Exam Prep &amp; Student Behavior v1.7 (Historical)'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md', '🧠 Exam Prep &amp; Student Behavior v1.6 (Historical)'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.5.0.md', '🧠 Exam Prep &amp; Student Behavior v1.5 (Historical)'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.4.0.md', '🧠 Exam Prep &amp; Student Behavior v1.4 (Historical)'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.3.0.md', '🧠 Exam Prep &amp; Student Behavior v1.3 (Historical)'],
-                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '🧠 Exam Prep &amp; Student Behavior v1.2 (Historical)'],
-                ['markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md', '🔍 TAM/SAM/SOM Verification'],
-                ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '⚖️ Perplexity R.A.I.S.E. Validation'],
-                ['markdown_renderer.html?src=reports/founder-voice-skool-cta-v1.0.0.md', '🎙️ Founder Voice vs AI Voice v1.0'],
-                ['markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.0.0.md', '👤 Sude Ünal CD Interview v1.0'],
+                ['markdown_renderer.html?src=reports/market-validation-argument-v1.0.md', '🏛️ Market Validation Argument'],
+                ['markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md', '📈 AI Adoption &amp; Skills Gap'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.7.0.md', '📊 Exam Prep Market v1.7'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md', '📊 Exam Prep Market v1.6 (Historical)'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.5.0.md', '📊 Exam Prep Market v1.5 (Historical)'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.4.0.md', '📊 Exam Prep Market v1.4 (Historical)'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.3.0.md', '📊 Exam Prep Market v1.3 (Historical)'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.2.0.md', '📊 Exam Prep Market v1.2 (Historical)'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.1.0.md', '📊 Exam Prep Market v1.1 (Historical)'],
+                ['markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.0.md', '📊 Exam Prep Market v1.0 (Historical)'],
+                ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.2.0.md', '💎 Skool Pricing Feedback v1.2'],
+                ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.1.0.md', '💎 Skool Pricing Feedback v1.1 (Historical)'],
+                ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💎 Skool Pricing Feedback v1.0 (Historical)'],
+                ['markdown_renderer.html?src=reports/skool-founder-posting-sanity-check-v1.0.md', '📝 Skool Posting Sanity Check'],
+                ['markdown_renderer.html?src=reports/skool-workshop-upload-sanity-check-v1.0.md', '🎬 Workshop Upload Sanity Check'],
+                ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '🔍 Perplexity RAISE Validation'],
+                ['markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.1.0.md', '👤 Sude CD Feedback v1.1 (Academic Lab)'],
+                ['markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.0.0.md', '👤 Sude CD Interview v1.0 (Historical)'],
                 ['markdown_renderer.html?src=reports/customer-discovery-marianna-pedagogy-first-principles-v1.0.0.md', '👤 Marianna Pedagogy &amp; First Principles CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-marianna-voice-roger-rabbit-v1.0.0.md', '👤 Marianna Voice + Roger Rabbit CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-cheuk-ho-interview-v1.0.0.md', '👤 Cheuk Ho CD Interview v1.0'],
@@ -378,8 +388,7 @@
                 ['markdown_renderer.html?src=reports/chatgpt-narrative-and-investor-feedback-v1.0.0.md', '🤖 ChatGPT Investor Feedback v1.0'],
                 ['markdown_renderer.html?src=reports/cohort-session-8-analysis-v1.0.0.md', '🎙️ Cohort Session 8 Deep Dive v1.0'],
                 ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0'],
-                ['markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', '📡 Skool Availability v1.0'],
-                ['markdown_renderer.html?src=reports/score-fluctuation-analysis-v1.0.0.md', '📈 Score Fluctuation Analysis v1.0']
+                ['markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', '📡 Skool Availability v1.0']
             ]
         },
         {
@@ -391,14 +400,16 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
-        { url: '5_Symbols/dashboard/favorites.html', title: '⭐ Favorites & Feedback Hub', desc: 'Central hub for bookmarked favorite strategy pages, candidate feedback export, and AI agent feedback generation.', cat: 'Dashboard', tags: 'favorites feedback hub core message being intentional export markdown agent' },
+        { url: '5_Symbols/dashboard/favorites.html', title: '⭐ Favorites & Feedback Hub', desc: 'Sort, search, and copy bookmarked strategy pages in the same order for AI agent feedback.', cat: 'Dashboard', tags: 'favorites feedback hub sort copy clipboard a-z category selected rating letter rail core message being intentional export markdown agent h23' },
         { url: '5_Symbols/strategy/intentionality-digital-minimalism.html', title: 'Intentionality & Digital Minimalism: Removing Noise to Amplify Signal', desc: 'Applying Cal Newport\'s Digital Minimalism framework: scanning repository ideas, ruthlessly removing cognitive and digital noise, and focusing single-founder bandwidth on high-leverage signals.', cat: 'Strategy', tags: 'intentionality digital minimalism cal newport focus signal noise single founder bandwidth deep work gary stevenson living hubs preset menus pexabo fde h23 h29 h30 h33' },
         { url: '5_Symbols/strategy/b2c2b-business-model.html', title: 'B2C2B Business Model & Enterprise Sourcing Pipeline', desc: 'The B2C2B business model: empowering individual developers (B2C), transitioning through agile SME pilots (SME 2B), and scaling to large enterprise talent sourcing and Forward Deployed Engineers (Enterprise 2B).', cat: 'Strategy', tags: 'b2c2b business model b2c 2b enterprise sourcing talent sme small mid enterprise delivery pilot forward deployed engineer fde day rate ilker marianna h1 h12 h22 h30' },
         { url: '5_Symbols/strategy/positive-ai-skills-message.html', title: 'The Core Message: Rapid AI Advancement & Positive Skills Elevation', desc: 'Why rapid AI capability increases enterprise skill expectations, and why the narrative is relentlessly positive: elevating engineers into 10x capability powerhouses and high-rate Delivery Pilots.', cat: 'Strategy', tags: 'positive message rapid ai skills expectations capability multiplier human agency doom gloom fear positive narrative ilker marianna delivery pilot fde h1 h24 h30' },
         { url: '5_Symbols/product/what-community-gets.html', title: 'What Does the Community Get Out of This? (Dual-Engine Value)', desc: 'Dual-engine community value: proctored vendor certifications for external credibility (Pearson VUE / Credly) + real custom AI apps built for personal operational mastery (Second Brain, RAG, Agents).', cat: 'Product', tags: 'what does community get value proposition dual engine custom apps certifications pearson vue credly obsidian second brain hybrid rag sude brian b jamal tomiwa h1 h25 h30' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-ilker-marianna-b2c2b-v1.0.0.md', title: 'Customer Discovery Report: Ilker & Marianna B2C2B, Positive Skills & Custom Apps v1.0', desc: 'Customer discovery synthesis of Ilker & Marianna advisory session: B2C2B progressive 2B rollout via SMEs to enterprise sourcing, positive AI skills messaging, and dual-engine community value.', cat: 'Docs', tags: 'ilker marianna customer discovery interview b2c2b sme enterprise talent sourcing positive message rapid ai skills custom apps second brain dual engine report h1 h5 h8 h12 h22 h24 h25 h29 h30' },
         { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_ilker_marianna_b2c2b_2026-08-28.md', title: 'Discovery Record: Ilker & Marianna Strategy Session (2026-08-28)', desc: 'Raw interview intake notes from Ilker & Marianna meeting covering B2C2B business model, SME-to-enterprise talent sourcing, positive AI skills narrative, and community custom app value.', cat: 'Docs', tags: 'interview ilker marianna b2c2b positive message custom apps discovery raw record 2026-08-28 h1 h12 h22 h24 h25 h30' },
-        { url: 'markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.0.0.md', title: 'Customer Discovery Report: Sude Ünal Interview', desc: 'Qualitative analysis of Sude Ünal discovery feedback on weekday cohort demand, Obsidian Second Brain hybrid RAG, multi-stage parallelization workflows, and environment inspection.', cat: 'Docs', tags: 'sude sude unal customer discovery interview weekday cohort live calls second brain obsidian rag hybrid search dense sparse bm25 parallelization workflow environment inspection verification post action h4 h5 h8 h10 h24 h29 h30 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.1.0.md', title: 'Customer Discovery Report: Sude Academic Lab Visit & Multi-User Ontology v1.1', desc: 'Sude customer discovery feedback: instructing university faculty/PhDs on Obsidian Second Brains, diagnosing multi-user ontology collision / semantic drift risks, and organic founder advocacy.', cat: 'Docs', tags: 'sude customer discovery interview academic lab university professor phd students second brain obsidian multi-user shared second brain ontology collision semantic drift agent concepts founder attribution delight maot h5 h8 h12 h20 h22 h29 h30 report' },
+        { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_sude_unal_2026-08-31.md', title: 'Discovery Record: Sude Academic Lab Visit (2026-08-31)', desc: 'Raw feedback and discovery notes from Sude explaining Second Brains & AI agents to university faculty and analyzing multi-user knowledge integration limits.', cat: 'Docs', tags: 'interview sude academic lab second brain obsidian multi user ontology collision raw feedback 2026-08-31 h5 h8 h20 h30' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.0.0.md', title: 'Customer Discovery Report: Sude Interview (Historical v1.0)', desc: 'Qualitative analysis of Sude discovery feedback on weekday cohort demand, Obsidian Second Brain hybrid RAG, multi-stage parallelization workflows, and environment inspection.', cat: 'Docs', tags: 'sude customer discovery interview weekday cohort live calls second brain obsidian rag hybrid search dense sparse bm25 parallelization workflow environment inspection verification post action h4 h5 h8 h10 h24 h29 h30 report' },
         { url: '5_Symbols/growth/private-quiz-lead-magnet-tactic.html', title: 'Private Quiz Assessment Lead Magnet Tactic', desc: 'Persuasion engineering & video lead magnet tactic: 7 psychological levers from CIA-style assessment scripts, Brian & Marianna discovery synthesis, and interactive quiz routing.', cat: 'Growth', tags: 'private quiz assessment lead magnet video script cia persuasion engineering brian marianna self assessment superpower blind spot roger rabbit dalinea qr code h2 h4 h5 h10 h21 h24 h28 h29 h30' },
         { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_tuncer_300_videos_validation_2026-08-27.md', title: 'Field Note: Tuncer 300 Videos Will Not Convert in Validation', desc: 'Tuncer discovery fence: a 300-video backlog is Stage 3 catalog scale, not Stage 2 Skool conversion. Agrees with 224 views / 28 days.', cat: 'Docs', tags: 'tuncer 300 videos youtube shorts validation skool h32 h4 h5 h9 h13 field note' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-marianna-pedagogy-first-principles-v1.0.0.md', title: 'Customer Discovery Report: Marianna First Principles & Sub-60s Glossary Shorts', desc: 'Qualitative analysis of Marianna feedback on the Curse of Knowledge, Associate certification starting point, sub-60s first-principles glossary shorts, and empowering learners to feel smart.', cat: 'Docs', tags: 'marianna customer discovery interview first principles glossary shorts curse of knowledge associate certification feel smart not stupid audience empowerment pedagogical empathy roger rabbit fal.ai elevenlabs h2 h10 h24 h25 h29 h30 h1 h8 report' },
@@ -455,6 +466,7 @@
         { url: '5_Symbols/growth/truth-in-marketing-evidence.html', title: 'Truth in Marketing: What Data We Promote vs. Protect', desc: 'Radical transparency on what data members put in, what outputs they take out, and what verified empirical truth we promote publicly while protecting privacy.', cat: 'Growth', tags: 'truth in marketing empirical data input output promote protect privacy anonymization b b. credly passes h5 h8 h29 h30' },
         { url: '5_Symbols/growth/free-youtube-jab-jab-package.html', title: 'Free YouTube Course: Jab, Jab, Left Hook & Roadmap Package', desc: 'Releasing 100% of course content free on YouTube one-by-one, using the roadmap and Skool community as the Left Hook package to shatter perceived value limits.', cat: 'Growth', tags: 'free youtube course jab jab left hook roadmap packaging perceived value garyvee hormozi skool community h2 h5 h10 h30' },
         { url: '5_Symbols/product/skool-gamification-levels.html', title: 'Skool Gamification Levels & Level 8/9 Delivery Pilot Graduation', desc: 'Scarcity and gamification architecture: only select few who complete roadmap reach Level 8 Delivery Pilot, and Level 9 alumni bring new engineers into the ecosystem.', cat: 'Business Model', tags: 'skool gamification levels level 8 delivery pilot level 9 alumni mentor viral growth referrals maot h5 h8 h20 h30' },
+        { url: '5_Symbols/product/skool-levels-sop.html', title: 'SOP: Setting Up & Managing Levels in Skool', desc: 'Standard Operating Procedure for group administrators: custom level names, course gating, plugin permissions, and quarterly maintenance review schedule.', cat: 'Product', tags: 'skool sop standard operating procedure levels setup managing course gating level unlock plugins chat posting quarterly review h5 h8 h30' },
         { url: '5_Symbols/growth/free-educational-content-strategy.html', title: 'Free Educational Content Strategy', desc: 'Promote open-source platform code on GitHub and animated tutorials on YouTube using Google Flow and custom AI voiceovers with zero financial cash burn.', cat: 'Growth', tags: 'free educational content github youtube open source google flow ai voiceover zero cash burn sweat equity h2 h10' },
         { url: '5_Symbols/growth/skool-break-even.html', title: 'Skool Break-Even & Pricing Evolution', desc: 'Financial cost recovery model for Skool $99/mo fixed fee across preview and cohort tiers, plus the milestone gate to transition pricing to $99/mo.', cat: 'Growth', tags: 'skool break even cost recovery unit economics milestone 99 month transition pricing freemium h5 h9' },
         { url: '5_Symbols/strategy/multi-platform-workflow.html', title: 'Multi-Platform Workflow & Customer Journey', desc: 'Connecting Google services, GitHub codebase, YouTube traffic engine, and Skool community into an end-to-end customer journey.', cat: 'Strategy', tags: 'multi platform workflow customer journey google flow github youtube skool orchestration pipeline h5 h30' },
@@ -673,7 +685,9 @@
         { url: '5_Symbols/growth/pricing-change-strategy.html', title: 'Pricing Change Strategy & Milestone Roadmap', desc: 'Transition roadmap for Tier 2 ($1→$10/mo) and Tier 3 ($250→$1,000/yr), triggered by 4 stage milestones with grandfathering rules.', cat: 'Growth', tags: 'pricing change strategy tier progression sit in share screen milestones grandfathering urgency' },
         { url: '5_Symbols/growth/cost-side-model.html', title: 'Cost-Side Model', desc: 'Business-level cost stack, founder time-opportunity cost, and break-even math against the $100/mo infra cost.', cat: 'Growth', tags: 'cost side model break even infra opportunity cost' },
         { url: '5_Symbols/growth/validation-repeat-gate.html', title: 'Validation Repeat Gate', desc: 'Revises the $10k Stage 2 exit gate to require 2 consecutive cohort launches instead of one.', cat: 'Growth', tags: 'validation repeat gate two launches revenue false positive' },
-        { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines plus Reverse Response, Funfair Tokens, Private Quiz, and Face-to-Face Core Message (NetworkChuck pattern).', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds networkchuck face to face core message' },
+        { url: '5_Symbols/growth/sales-tactics.html', title: '🎯 Sales Tactics', desc: 'Concise catalog of core sales tactics: Fast-Conversion Shorts (TzjDPMfsb3o), Face-to-Face Core Message, Reverse Response, Private Quiz, Funfair Tokens, and Skool Outro Cards.', cat: 'Growth', tags: 'sales tactics fast conversion shorts tzjdpmfsb3o face to face reverse response funfair tokens private quiz skool card cta conversion' },
+        { url: '5_Symbols/growth/fast-conversion-shorts.html', title: '⚡ Fast-Conversion Shorts (TzjDPMfsb3o Pattern)', desc: 'The 60-Second Video Sales Tactic: 4-beat conversion architecture (hook, high-density proof, bridge CTA, infinite loop) converting short viewers into Skool members.', cat: 'Growth', tags: 'fast conversion shorts video sales tactic 60 second conversion tzjdpmfsb3o beat sheet pattern interrupt skool cta infinite loop h2 h5 h10 h30' },
+        { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines plus Reverse Response, Funfair Tokens, Private Quiz, Fast-Conversion Shorts, and Face-to-Face Core Message.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds networkchuck face to face core message fast conversion shorts' },
         { url: '5_Symbols/growth/funfair-tokens.html', title: '🎡 Funfair Token System: Time-Based Tokens', desc: 'Audience earns time-based tokens that expire weekly and spends them at stalls inside the fair on Memory Cards, Mock Exams, and the Ultimate IT Contractor Course.', cat: 'Growth', tags: 'funfair tokens time based expiry gamification engagement memory cards mock exams contractor course stalls urgency h21 h30' },
         { url: '5_Symbols/growth/face-to-face-core-message.html', title: '☕ Face-to-Face Core Message (NetworkChuck Pattern)', desc: 'Share the Video 6 core message looking at the audience — LinkedIn talking-head, Triton Square, Sunday live, founder-on-lens closer. Chuck Keith pattern: one hard line, then listen.', cat: 'Growth', tags: 'face to face core message networkchuck chuck keith linkedin talking head triton square sunday founder voice h2 h5 h29' },
         { url: '5_Symbols/growth/youtube-titles-skool-mapping.html', title: 'YouTube Titles → Skool Content Mapping', desc: 'Eight YouTube title ideas mapped to their intended Skool landing destination (free feed, $10/mo membership, $29 bundle, or live cohort), each with a stated rationale.', cat: 'Growth', tags: 'youtube titles skool mapping funnel destination classroom membership bundle cohort headlines' },
@@ -1763,6 +1777,19 @@
             { url: '5_Symbols/strategy/delivery-pilot-roadmap.html', title: 'Delivery Pilot Roadmap', emoji: '🧑‍✈️' },
             { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Execution Plan', emoji: '🗓️' },
             { url: '5_Symbols/hypotheses/hyp-h30.html', title: 'H30 Career Roadmap', emoji: '🧑‍✈️' }
+        ],
+        '5_Symbols/growth/sales-tactics.html': [
+            { url: '5_Symbols/growth/fast-conversion-shorts.html', title: 'Fast-Conversion Shorts', emoji: '⚡' },
+            { url: '5_Symbols/growth/sales-pipeline.html', title: 'Sales Pipeline', emoji: '📊' },
+            { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
+            { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video Conversion Tactics', emoji: '🎬' }
+        ],
+        '5_Symbols/growth/fast-conversion-shorts.html': [
+            { url: '5_Symbols/growth/sales-tactics.html', title: 'Sales Tactics', emoji: '🎯' },
+            { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
+            { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video Conversion Tactics', emoji: '🎬' },
+            { url: '5_Symbols/growth/sales-pipeline.html', title: 'Sales Pipeline', emoji: '📊' },
+            { url: '5_Symbols/growth/founder-voice-skool-cta.html', title: 'Founder Voice SOP', emoji: '🎙️' }
         ],
         '5_Symbols/growth/funfair-tokens.html': [
             { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
