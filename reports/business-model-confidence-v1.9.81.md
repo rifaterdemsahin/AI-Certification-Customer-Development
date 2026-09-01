@@ -1,3 +1,5 @@
+> Superseded by [v1.9.82](business-model-confidence-v1.9.82.md) (2026-09-01)
+
 # Business Model Confidence Report — v1.9.81
 
 > **Superseded by [v1.9.82](business-model-confidence-v1.9.82.md).**
