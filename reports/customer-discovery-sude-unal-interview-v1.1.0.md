@@ -1,6 +1,8 @@
 # Customer Discovery Report: Sude — Academic Lab Thought Leadership, Second Brain Multi-User Ontology Drift & Organic Student Advocacy
 
-**Report Version:** v1.1.0  
+> ⚠️ **Superseded by [Customer Discovery Report v1.2.0 (Multi-Skilled Developer & Agentic AI Infrastructure Portfolio)](customer-discovery-sude-interview-v1.2.0.md)** (2026-09-01).
+
+**Report Version:** v1.1.0 (Historical)  
 **Date:** 2026-08-31  
 **Interview Sources:** `3_Simulation/Interviews/interview_sude_unal_2026-08-31.md` & `3_Simulation/Interviews/interview_sude_unal_2026-08-27.md`  
 **Candidate:** Sude (Founding Cohort Member, AI & Software Practitioner)  
