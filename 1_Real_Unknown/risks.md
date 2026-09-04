@@ -115,6 +115,15 @@
 - **Mitigation:** Adopt the 10-10-15 sprint delivery structure (5-10 min intro, 10 min demo, 15 min Q&amp;A), 3-tier preset project ladder (Foundational &rarr; Intermediate &rarr; Architect) with published preconditions and postconditions, visual whiteboard diagrams, and real-time comprehension verification checkpoints ("Check &amp; Help" loop).
 - **Last Updated:** 2026-08-24
 
+### R-015: YouTube Content Misalignment & Low Subscriber Yield per Video
+- **Status:** 🟠 Active
+- **Severity:** High
+- **Likelihood:** Medium
+- **Impact:** High (Niche or obscure video topics produce low subscriber acquisition per video, slowing progression toward the H13 1,000x subscriber target)
+- **Trigger:** Publishing videos on unresearched or overly narrow technical topics without aligning to popular medium concepts or high-intent search queries.
+- **Mitigation:** Sanity check video topics against popular medium concepts; execute Reverse Response Marketing and 60s Fast-Conversion Shorts; track **Subscriber Count per Video** (current baseline: ~700 subscribers / 32 videos = ~21.9 subs/video, x24 factor from initial 30 sub baseline) as a key demand creation metric.
+- **Last Updated:** 2026-09-02
+
 ---
 
 ## ✅ Solved Risks
@@ -203,6 +212,7 @@
 | 2026-07-12 | Smoke gate wired into `static.yml` | R-S09 | Solved: `deploy` job requires the `smoke` job (SPEC-008 runner); Formula Agent owns the CI/CD pipeline |
 | 2026-08-19 | Macro & founder-income risk review | R-010 → R-013 | Added 4 active risks: IR35 & global contractor usage (High), business confidence falling with global wars (High), inside-IR35 day-job dependency (High), global economy slowing (Medium) — mirrored on `5_Symbols/strategy/risk-analysis.html` |
 | 2026-08-24 | Customer discovery pedagogical risk | R-014 | Added active risk: Instructional Clarity & Learner Comprehension ("Rating Penalty") from Mehmet's feedback (*"Eğitim veriyon ama insanlar seni anlamazsa kimse sana güzel puan vermez"*) |
+| 2026-09-02 | YouTube content alignment risk | R-015 | Added active risk: YouTube Content Misalignment & Low Subscriber Yield per Video (~700 subs / 32 videos, x24 growth factor, tracking subs/video metric) |
 
 ---
 
