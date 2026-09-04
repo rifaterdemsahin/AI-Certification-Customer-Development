@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sude First 1-1 Session | Critical Value Analysis</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .arch-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .arch-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .tag-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .quote-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--color-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin: 0.75rem 0;
+            color: var(--text-secondary);
+        }
+        .todo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .score-bar {
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            overflow: hidden;
+            margin-top: 0.65rem;
+        }
+        .score-fill { height: 100%; border-radius: 999px; }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="archived-interview-transcripts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Archived Transcripts &amp; Interviews
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid #c084fc; position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; border-color: rgba(168, 85, 247, 0.3);">Customer Discovery &middot; First Dedicated 1-1</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🎧 Sude First 1-1: Ph.D. Fork + Google Flow</h1>
+                    <p style="color: var(--text-secondary); max-width: 78ch; font-size: 1.05rem; line-height: 1.6;">
+                        Founding member <strong>Sude</strong> (Ireland intern/student) sat the first dedicated 1-1 with the Cambridge founder. Two live problems: a funded UCD Ph.D. versus industry salary now, and an LLM-chunking RAG app that failed LinkedIn engagement. Strong Discovery. Not Validation. Not a paid enrollment. See <a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a>, <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>, <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>, <a href="../hypotheses/hyp-h33.html" style="color: var(--color-primary);">H33</a>.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="../../markdown_renderer.html?src=reports/customer-discovery-sude-1-1-v1.0.0.md" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 8px; text-align: center;">
+                        📄 Full Report v1.0.0
+                    </a>
+                    <a href="../../markdown_renderer.html?src=3_Simulation/Interviews/interview_sude_2026-09-04.md" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-align: center;">
+                        Raw Record
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🖼️ Session Visual</h2>
+            <div class="card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.6);">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.25rem;">
+                    <img src="sude-1-1-session-hero.jpg" alt="Glass video-call studio with a 2x3 RAG storyboard wall: library catalog, semantic scissors, token allocation" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                    Hands-on Google Flow lab: 2&times;3 storyboard covering RAG architecture, semantic scissors, and token allocation, with a persistent character model. Animation still teaches; this 1-1 is a production lab, not a lecture. SOP: <a href="../growth/animation-shorts-pipeline.html" style="color: var(--color-primary);">Animation Shorts Pipeline</a>.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">⚖️ Critical Value Score</h2>
+            <p style="color: var(--text-secondary); max-width: 80ch; margin-bottom: 1.25rem;">
+                Scored as <strong>evidence for the business</strong>, not as a compliment to the call. Overall grade: <strong style="color: #c084fc;">keep as Discovery, do not count as Validation</strong>. Full rubric in the <a href="../../markdown_renderer.html?src=reports/customer-discovery-sude-1-1-v1.0.0.md" style="color: var(--color-primary);">v1.0.0 report</a>.
+            </p>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #34d399;">8/10</div>
+                    <div class="metric-lbl">Discovery quality</div>
+                    <div class="score-bar"><div class="score-fill" style="width: 80%; background: #34d399;"></div></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #60a5fa;">7/10</div>
+                    <div class="metric-lbl">Product demand (Flow SOP)</div>
+                    <div class="score-bar"><div class="score-fill" style="width: 70%; background: #60a5fa;"></div></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #f87171;">1/10</div>
+                    <div class="metric-lbl">Revenue / H5 cash</div>
+                    <div class="score-bar"><div class="score-fill" style="width: 10%; background: #f87171;"></div></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #fbbf24;">3/10</div>
+                    <div class="metric-lbl">Unit economics (H33)</div>
+                    <div class="score-bar"><div class="score-fill" style="width: 30%; background: #fbbf24;"></div></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #fbbf24;">4/10</div>
+                    <div class="metric-lbl">Strategic coherence (H30)</div>
+                    <div class="score-bar"><div class="score-fill" style="width: 40%; background: #fbbf24;"></div></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val" style="color: #fbbf24;">4/10</div>
+                    <div class="metric-lbl">Listen:speak (H29)</div>
+                    <div class="score-bar"><div class="score-fill" style="width: 40%; background: #fbbf24;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🔍 What the session bought vs what it costs</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <span class="arch-tag tag-green">Keep</span>
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.05rem;">Activation is real</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0; line-height: 1.55;">She already shipped an LLM-chunking RAG web app. This is proof-of-work, not a “I watched the video” thank-you. Matches her 2026-09-01 ask for a portfolio of real products (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a> / <a href="../hypotheses/hyp-h25.html" style="color: var(--color-primary);">H25</a>).</p>
+                </div>
+                <div class="arch-card">
+                    <span class="arch-tag tag-blue">Keep</span>
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.05rem;">H2 failure is useful</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0; line-height: 1.55;">Low LinkedIn engagement on a technically correct post is the same “self vs others” line as Marianna: library-catalog metaphors beat raw code. n=1 on reach, but the pedagogical diagnosis is consistent.</p>
+                </div>
+                <div class="arch-card">
+                    <span class="arch-tag tag-amber">Cap</span>
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.05rem;">1-1 is expensive time</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0; line-height: 1.55;">Founder rate £525/day. A 60–90 min 1-1 is ~£65–£100 of H33 ledger with $0 cash. VIP is Sunday screen-share, not on-demand 1:1. Convert this into a named preset, then run it on Sunday. See <a href="../strategy/one-vs-many-live.html" style="color: var(--color-primary);">1 vs many live</a> and <a href="../strategy/1-1-presets-pivot.html" style="color: var(--color-primary);">1-1 presets</a>.</p>
+                </div>
+                <div class="arch-card">
+                    <span class="arch-tag tag-red">Do not leak</span>
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.05rem;">Ph.D. advice ≠ the offer</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin: 0; line-height: 1.55;">Personal advice (BCI cooling, funded research shelter, Ireland 5-year residency) can be kind and still contradict the public slogan <em>Get Certified in AI. Shape the Future.</em> and the FDE/contractor ladder. Do not write a Ph.D. track into Skool About, Saturday invites, or the elevator pitch. See <a href="../strategy/slogan.html" style="color: var(--color-primary);">slogan.html</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🗣️ Two problems in the room</h2>
+            <div class="grid">
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <span class="arch-tag tag-amber">Career fork</span>
+                        <h3 style="margin: 0 0 0.75rem;">Ph.D. vs industry</h3>
+                        <div class="quote-box">Fully funded 4-year UCD offer, €25,000/year, AI agents / recommendation algorithms. Sude wants industry, salary, and work experience rather than 4–5 more student years.</div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">Founder frame: cooling junior market (BCI), ride the AI wave inside funded research, Ireland residency clock. Treat as <strong>her decision inputs</strong>, not a product SKU. Persona mix: student/jobseeker (1) plus practitioner builder (2).</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 100%;">
+                        <span class="arch-tag tag-purple">Content lab</span>
+                        <h3 style="margin: 0 0 0.75rem;">Chunking video in Google Flow</h3>
+                        <div class="quote-box">A working RAG chunking app posted to LinkedIn with low engagement. Live rebuild: 2&times;3 storyboard, persistent character “Dara”, Flow credits, ElevenLabs clone so AI/human audio does not jump.</div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">This is the 2026-09-01 multi-skill ask, delivered. Next artifact belongs on LinkedIn <em>and</em> in the classroom preset, with feedback from Mariana, Maggie, and Ilker.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🔗 Hypothesis map</h2>
+            <div class="card" style="overflow-x: auto;">
+                <table class="sortable-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color);">
+                            <th style="padding: 0.75rem 0.5rem;">ID</th>
+                            <th style="padding: 0.75rem 0.5rem;">Signal</th>
+                            <th style="padding: 0.75rem 0.5rem;">Status move</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a></td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">Dense self-content failed; visual storyboard is the requested fix. Flow + ElevenLabs taught live.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #fbbf24;">No emoji change. Corroborates In Testing.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h5.html" style="color: var(--color-primary);">H5</a></td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">High-touch founding-member 1-1. $0 cash.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #fbbf24;">Does not count as paid enrollment.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a></td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">Salary-now anxiety vs four-year student shelter; residency clock.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #fbbf24;">Emotional driver logged, not monetized.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a></td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">Mentor-heavy: BCI advice + toolchain teaching. Listen:speak not 2:1.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #fbbf24;">Warning, not a credited ship.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a></td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">She wants industry + portfolio. Founder advised Ph.D. shelter. Tension with the FDE ladder.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #fbbf24;">Keep the public path; do not productize the Ph.D.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h33.html" style="color: var(--color-primary);">H33</a></td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">Unbounded 1-1 spends the £60k time ledger with no Skool charge-back.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: #fbbf24;">Cap. Preset or Sunday only.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">✅ Next actions</h2>
+            <div class="card">
+                <div class="todo-item">
+                    <span>🎬</span>
+                    <div><strong>Sude:</strong> Rebuild the chunking video in Google Flow for a broader audience (library catalog, semantic scissors). Share with Mariana, Maggie, Ilker.</div>
+                </div>
+                <div class="todo-item">
+                    <span>🎛️</span>
+                    <div><strong>Founder:</strong> Name this as a 1-1 preset — “RAG Chunking Storyboard (Google Flow)” — on <a href="../strategy/1-1-presets-pivot.html" style="color: var(--color-primary);">1-1-presets-pivot.html</a>. Do not open the calendar.</div>
+                </div>
+                <div class="todo-item">
+                    <span>⛔</span>
+                    <div><strong>Guardrail:</strong> Ph.D. / BCI / residency advice stays private. Public copy stays <a href="../strategy/slogan.html" style="color: var(--color-primary);">Get Certified in AI. Shape the Future.</a></div>
+                </div>
+                <div class="todo-item">
+                    <span>🔊</span>
+                    <div><strong>SOP:</strong> Keep ElevenLabs clone in the video tutorials; AI may teach, founder voice on spoken asks (<a href="../growth/founder-voice-skool-cta.html" style="color: var(--color-primary);">Founder Voice SOP</a>).</div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>AI Certification Helper &copy; 2026 &middot; Steve Blank Customer Development Engine</div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="archived-interview-transcripts.html" style="color: var(--color-primary); text-decoration: none;">Archived Transcripts</a>
+                    <a href="../strategy/one-vs-many-live.html" style="color: var(--color-primary); text-decoration: none;">1 vs Many Live</a>
+                    <a href="../dashboard/todo.html" style="color: var(--color-primary); text-decoration: none;">Task List</a>
+                </div>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: First dedicated Sude 1-1 ingested as Discovery evidence with a critical value analysis (not a paid enrollment, 2026-09-04) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/sude-1-1-session.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

@@ -28,8 +28,10 @@
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
                 ['5_Symbols/dashboard/favorites.html', '⭐ Favorites Hub &amp; Feedback'],
+                ['5_Symbols/strategy/slogan.html', '📣 Slogan: Get Certified in AI. Shape the Future.'],
                 ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Core Message: Positive AI Skills Elevation'],
                 ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Being Intentional: Digital Minimalism'],
+                ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)'],
                 ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule'],
@@ -72,6 +74,7 @@
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
                 ['5_Symbols/cd/interview-hcl-devops-screen.html', '🎙️ HCL SRE/DevOps Screen (2026-08-24)'],
                 ['5_Symbols/cd/cd-interview-pdf.html', '🖨️ 1-Page A4 Interview PDF'],
+                ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)'],
                 ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/cd/cohort-session-8-analysis.html', '🎙️ Cohort Session 8 Analysis'],
@@ -106,6 +109,7 @@
         {
             type: 'dropdown', label: 'Strategy', emoji: '🎯', className: 'nav-strategy', items: [
                 ['5_Symbols/strategy/b2c2b-business-model.html', '🏢 B2C2B Business Model &amp; Sourcing'],
+                ['5_Symbols/strategy/slogan.html', '📣 Slogan &amp; Elevator Pitch'],
                 ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Positive AI Skills Message'],
                 ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Intentionality &amp; Digital Minimalism'],
                 ['5_Symbols/strategy/why-ai-cert-agentic-dev.html', '🤖 Why Agentic CustDev (Antigravity+Grok)'],
@@ -367,6 +371,7 @@
                 ['markdown_renderer.html?src=reports/skool-workshop-upload-sanity-check-v1.0.md', '🎬 Workshop Upload Sanity Check'],
                 ['markdown_renderer.html?src=reports/raise-validation-perplexity-v1.0.0.md', '🔍 Perplexity RAISE Validation'],
                 ['markdown_renderer.html?src=reports/customer-discovery-enterprise-openshift-onboarding-v1.0.0.md', '🏢 Enterprise OpenShift Onboarding CD v1.0'],
+                ['markdown_renderer.html?src=reports/customer-discovery-sude-1-1-v1.0.0.md', '👤 Sude First 1-1 CD Report v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-sude-interview-v1.2.0.md', '👤 Sude CD Interview v1.2 (Multi-Skilled FDE)'],
                 ['markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.1.0.md', '👤 Sude CD Feedback v1.1 (Historical)'],
                 ['markdown_renderer.html?src=reports/customer-discovery-sude-unal-interview-v1.0.0.md', '👤 Sude CD Interview v1.0 (Historical)'],
@@ -404,12 +409,16 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/cd/sude-1-1-session.html', title: 'Sude First 1-1: Ph.D. Fork + Google Flow (Critical Value Analysis)', desc: 'First dedicated 1-1 with founding member Sude: funded UCD Ph.D. versus industry salary, RAG chunking LinkedIn miss, live Google Flow storyboard. Discovery keep, Validation do not count. Not a paid enrollment.', cat: 'Discovery', tags: 'sude 1-1 one on one phd ucd google flow rag chunking linkedin elevenlabs critical value analysis h1 h2 h5 h24 h29 h30 h33' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-sude-1-1-v1.0.0.md', title: 'Customer Discovery Report: Sude First 1-1 v1.0', desc: 'Versioned critical-value analysis of Sude first dedicated 1-1: Discovery 8/10, revenue 1/10, H33 unit economics 3/10. Not a paid enrollment.', cat: 'Docs', tags: 'sude customer discovery 1-1 report phd google flow rag chunking h2 h29 h30 h33 report' },
+        { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_sude_2026-09-04.md', title: 'Discovery Record: Sude First 1-1 (2026-09-04)', desc: 'Raw intake from Sude first dedicated 1-1: UCD Ph.D. offer, industry salary goal, LLM chunking LinkedIn miss, Google Flow lab.', cat: 'Docs', tags: 'interview sude 1-1 phd ucd rag chunking google flow 2026-09-04 raw record h2 h24 h30' },
         { url: '5_Symbols/cd/enterprise-openshift-onboarding.html', title: '🏢 Enterprise OpenShift Onboarding & Findable Content Engine', desc: 'Workplace discovery from 2 enterprise recruits using Udemy (Imran & Coombes) to navigate OpenShift: building findable YouTube shorts, an organized Skool hub, and easy-to-follow core messaging.', cat: 'Discovery', tags: 'enterprise openshift onboarding content engine findable youtube skool imran coombes capgemini consulting udemy kubernetes containers fde core message easy to follow h1 h2 h4 h8 h10 h12 h14 h24 h25 h29 h30' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-enterprise-openshift-onboarding-v1.0.0.md', title: 'Customer Discovery Report: Enterprise OpenShift Onboarding & Learning Engine v1.0', desc: 'Customer discovery synthesis of enterprise onboarding void at Capgemini: new starters learning OpenShift on Udemy, search discoverability on YouTube, Skool classroom presets, and core message cadence.', cat: 'Docs', tags: 'enterprise openshift onboarding customer discovery report imran coombes udemy youtube search engine skool presets fde contractor delivery pilot core message h1 h2 h4 h8 h10 h12 h14 h24 h25 h29 h30 report' },
         { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_enterprise_onboarding_openshift_2026-09-01.md', title: 'Discovery Record: Enterprise OpenShift Onboarding (2026-09-01)', desc: 'Raw discovery intake notes from 2 new starters in enterprise delivery team learning OpenShift via Udemy courses (Imran and Coombes).', cat: 'Docs', tags: 'interview enterprise onboarding openshift udemy imran coombes capgemini starters recruits raw record 2026-09-01 h1 h4 h12 h24 h30' },
         { url: '5_Symbols/dashboard/favorites.html', title: '⭐ Favorites & Feedback Hub', desc: 'Sort, search, and copy bookmarked strategy pages in the same order for AI agent feedback.', cat: 'Dashboard', tags: 'favorites feedback hub sort copy clipboard a-z category selected rating letter rail core message being intentional export markdown agent h23' },
         { url: '5_Symbols/strategy/intentionality-digital-minimalism.html', title: 'Intentionality & Digital Minimalism: Removing Noise to Amplify Signal', desc: 'Applying Cal Newport\'s Digital Minimalism framework: scanning repository ideas, ruthlessly removing cognitive and digital noise, and focusing single-founder bandwidth on high-leverage signals.', cat: 'Strategy', tags: 'intentionality digital minimalism cal newport focus signal noise single founder bandwidth deep work gary stevenson living hubs preset menus pexabo fde h23 h29 h30 h33' },
         { url: '5_Symbols/strategy/b2c2b-business-model.html', title: 'B2C2B Business Model & Enterprise Sourcing Pipeline', desc: 'The B2C2B business model: empowering individual developers (B2C), transitioning through agile SME pilots (SME 2B), and scaling to large enterprise talent sourcing and Forward Deployed Engineers (Enterprise 2B).', cat: 'Strategy', tags: 'b2c2b business model b2c 2b enterprise sourcing talent sme small mid enterprise delivery pilot forward deployed engineer fde day rate ilker marianna h1 h12 h22 h30' },
+        { url: '5_Symbols/strategy/slogan.html', title: 'Slogan & Elevator Pitch: Get Certified in AI. Shape the Future.', desc: 'Canonical public slogan and 20-second elevator pitch for YouTube, LinkedIn, Skool About, and face-to-face opens — with an honest map to the Delivery Pilot offer and no pass guarantee.', cat: 'Strategy', tags: 'slogan elevator pitch get certified in ai shape the future brand copy youtube linkedin skool about face to face h1 h24 h30 h8 h5' },
         { url: '5_Symbols/strategy/positive-ai-skills-message.html', title: 'The Core Message: Rapid AI Advancement & Positive Skills Elevation', desc: 'Why rapid AI capability increases enterprise skill expectations, and why the narrative is relentlessly positive: elevating engineers into 10x capability powerhouses and high-rate Delivery Pilots.', cat: 'Strategy', tags: 'positive message rapid ai skills expectations capability multiplier human agency doom gloom fear positive narrative ilker marianna delivery pilot fde h1 h24 h30' },
         { url: '5_Symbols/product/what-community-gets.html', title: 'What Does the Community Get Out of This? (Dual-Engine Value)', desc: 'Dual-engine community value: proctored vendor certifications for external credibility (Pearson VUE / Credly) + real custom AI apps built for personal operational mastery (Second Brain, RAG, Agents).', cat: 'Product', tags: 'what does community get value proposition dual engine custom apps certifications pearson vue credly obsidian second brain hybrid rag sude brian b jamal tomiwa h1 h25 h30' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-community-recommendations-fun-v1.0.0.md', title: 'Customer Discovery Report: Collaborative Growth & Fun over Monologue Lecture v1.0', desc: 'Customer discovery qualitative feedback on peer recommendation loops, collaborative growth, intrinsic motivation vs obligation, and fun party format over monologue lecturing.', cat: 'Docs', tags: 'community qualitative feedback peer recommendations collaborative growth intrinsic motivation obligation fun party format lecture h5 h8 h20 h29 report' },
@@ -1620,6 +1629,12 @@
     ];
 
     var relatedConceptsOverride = {
+        '5_Symbols/strategy/slogan.html': [
+            { url: '5_Symbols/strategy/positive-ai-skills-message.html', title: 'Positive AI Skills Message', emoji: '✨' },
+            { url: '5_Symbols/growth/face-to-face-core-message.html', title: 'Face-to-Face Core Message', emoji: '☕' },
+            { url: '5_Symbols/product/skool-about.html', title: 'Delivery Pilot About', emoji: '📝' },
+            { url: '5_Symbols/bmc/value-proposition.html', title: 'Value Proposition', emoji: '💎' }
+        ],
         '5_Symbols/growth/founder-voice-skool-cta.html': [
             { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video Conversion Tactics', emoji: '🎬' },
             { url: '5_Symbols/growth/free-educational-content-strategy.html', title: 'Free Content Strategy', emoji: '📺' },
