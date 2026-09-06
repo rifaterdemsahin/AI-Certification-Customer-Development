@@ -842,19 +842,19 @@
         return fullDate;
     }
 
-    function linkHtml(href, label, className) {
+    function linkHtml(href, label, className, sectionAttr, hiddenAttr) {
         var active = isActive(href) ? ' active' : '';
         var finalHref = href.indexOf('http') === 0 ? href : (pathPrefix + href);
         var cls = className ? (' ' + className) : '';
-        
+
         var reviewDate = getLatestReviewDate(href);
         var reviewHtml = '';
         if (reviewDate) {
             var shortDate = getShortDate(reviewDate);
             reviewHtml = ' <span class="menu-review-indicator" title="Reviewed on ' + reviewDate + '">👁️ ' + shortDate + '</span>';
         }
-        
-        return '<li><a href="' + finalHref + '" class="nav-link' + cls + active + '">' + label + reviewHtml + '</a></li>';
+
+        return '<li' + (sectionAttr || '') + (hiddenAttr || '') + '><a href="' + finalHref + '" class="nav-link' + cls + active + '">' + label + reviewHtml + '</a></li>';
     }
 
     function buildHeaderHtml() {
@@ -914,15 +914,39 @@
                         hasActiveChild = true;
                     }
                 });
+
+                // Precompute per-section collapse state, forcing open any section
+                // that contains the current page (without altering saved preference).
+                var sectionMeta = {};
+                var sweepId = null;
+                dropdownItems.forEach(function (item) {
+                    if (item.header) {
+                        sweepId = group.className + '__' + slugify(item.header);
+                        sectionMeta[sweepId] = { collapsed: isSectionCollapsed(sweepId), hasActive: false };
+                    } else if (sweepId && isActive(item[0])) {
+                        sectionMeta[sweepId].hasActive = true;
+                    }
+                });
+
                 var activeClass = hasActiveChild ? ' active' : '';
                 headerHtml += '<li class="nav-dropdown">' +
                     '<span class="nav-dropdown-toggle ' + group.className + activeClass + '" tabindex="0">' + labelWithEmoji + ' &#9662;</span>' +
                     '<ul class="nav-dropdown-menu">';
+                var currentSectionId = null;
+                var currentSectionCollapsed = false;
                 dropdownItems.forEach(function (item) {
                     if (item.header) {
-                        headerHtml += '<li class="nav-dropdown-header">' + item.header + '</li>';
+                        currentSectionId = group.className + '__' + slugify(item.header);
+                        var meta = sectionMeta[currentSectionId];
+                        currentSectionCollapsed = meta.collapsed && !meta.hasActive;
+                        var caret = currentSectionCollapsed ? '&#9656;' : '&#9662;';
+                        headerHtml += '<li class="nav-dropdown-header' + (currentSectionCollapsed ? ' collapsed' : '') +
+                            '" data-section="' + currentSectionId + '" tabindex="0" role="button" aria-expanded="' + (!currentSectionCollapsed) + '">' +
+                            '<span class="nav-dropdown-header-caret">' + caret + '</span> ' + item.header + '</li>';
                     } else {
-                        headerHtml += linkHtml(item[0], item[1], group.className);
+                        var hiddenAttr = currentSectionCollapsed ? ' hidden' : '';
+                        var sectionAttr = currentSectionId ? (' data-section="' + currentSectionId + '"') : '';
+                        headerHtml += linkHtml(item[0], item[1], group.className, sectionAttr, hiddenAttr);
                     }
                 });
                 headerHtml += '</ul></li>';
@@ -1035,6 +1059,35 @@
             if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length,c.length));
         }
         return null;
+    }
+
+    // Nav dropdown section collapse state (default collapsed)
+    function getCollapsedSectionsMap() {
+        var raw = getCookie('site_nav_collapsed');
+        if (!raw) return {};
+        try {
+            return JSON.parse(raw);
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function isSectionCollapsed(sectionId) {
+        var map = getCollapsedSectionsMap();
+        if (Object.prototype.hasOwnProperty.call(map, sectionId)) {
+            return !!map[sectionId];
+        }
+        return true; // default collapsed
+    }
+
+    function setSectionCollapsed(sectionId, collapsed) {
+        var map = getCollapsedSectionsMap();
+        map[sectionId] = !!collapsed;
+        setCookie('site_nav_collapsed', JSON.stringify(map), 365);
+    }
+
+    function slugify(text) {
+        return String(text).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     }
 
     function getNotes() {
@@ -2317,6 +2370,37 @@
         initTourEvents();
     }
 
+    function toggleNavSection(header) {
+        var sectionId = header.getAttribute('data-section');
+        if (!sectionId) return;
+        var collapsed = !header.classList.contains('collapsed');
+        header.classList.toggle('collapsed', collapsed);
+        header.setAttribute('aria-expanded', String(!collapsed));
+        var caret = header.querySelector('.nav-dropdown-header-caret');
+        if (caret) caret.innerHTML = collapsed ? '&#9656;' : '&#9662;';
+        var next = header.nextElementSibling;
+        while (next && !next.classList.contains('nav-dropdown-header')) {
+            if (collapsed) next.setAttribute('hidden', ''); else next.removeAttribute('hidden');
+            next = next.nextElementSibling;
+        }
+        setSectionCollapsed(sectionId, collapsed);
+    }
+
+    function bindNavSectionToggles() {
+        document.addEventListener('click', function (e) {
+            var header = e.target.closest && e.target.closest('.nav-dropdown-header');
+            if (header) toggleNavSection(header);
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            var header = e.target.closest && e.target.closest('.nav-dropdown-header');
+            if (header) {
+                e.preventDefault();
+                toggleNavSection(header);
+            }
+        });
+    }
+
     function bindHeaderButtons() {
         var searchBtn = document.getElementById('nav-search-btn');
         if (searchBtn) {
@@ -2353,6 +2437,7 @@
         if (mount) {
             mount.innerHTML = buildHeaderHtml();
             bindHeaderButtons();
+            bindNavSectionToggles();
             // Initialize overlays after mounting header to ensure elements are ready
             initOverlays();
         }

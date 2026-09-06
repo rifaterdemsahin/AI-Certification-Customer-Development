@@ -297,6 +297,24 @@ header {
     padding-top: 0.25rem;
 }
 
+.nav-dropdown-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.nav-dropdown-header:hover {
+    color: var(--color-primary, var(--text-secondary));
+}
+
+.nav-dropdown-header-caret {
+    font-size: 0.65rem;
+    display: inline-block;
+    width: 0.8rem;
+}
+
 .nav-menu {
     flex-wrap: wrap;
 }
