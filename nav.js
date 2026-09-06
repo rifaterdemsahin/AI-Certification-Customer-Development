@@ -1023,7 +1023,7 @@
         '        <span class="indicator-value" id="notes-current-page-title"></span>' +
         '      </div>' +
         '      <div class="add-note-form">' +
-        '        <textarea id="note-textarea" placeholder="Write a note for this page..." rows="3"></textarea>' +
+        '        <textarea id="note-textarea" placeholder="Write a note. It saves in the site_notes cookie with this page and a timestamp." rows="3"></textarea>' +
         '        <button id="add-note-btn" class="btn btn-primary">Add Note to Page</button>' +
         '      </div>' +
         '      <div class="notes-divider"></div>' +
@@ -1033,6 +1033,7 @@
         '      <div id="notes-list" class="notes-list-container"></div>' +
         '    </div>' +
         '    <div class="drawer-footer">' +
+        '      <button id="export-notes-md-btn" class="btn btn-primary">⬇️ Export .md</button>' +
         '      <button id="copy-notes-btn" class="btn btn-secondary">📋 Copy All (Markdown)</button>' +
         '      <button id="clear-notes-btn" class="btn btn-danger">🗑️ Clear All</button>' +
         '    </div>' +
@@ -1102,6 +1103,127 @@
 
     function saveNotes(notes) {
         setCookie('site_notes', JSON.stringify(notes), 365);
+        var saved = getNotes();
+        if (saved.length !== notes.length) {
+            alert('The site_notes cookie could not hold every note (browser cookie limit). Export to a .md file now, then delete older notes.');
+            return false;
+        }
+        return true;
+    }
+
+    function stampNow() {
+        var now = new Date();
+        var date = now.toLocaleString('en-GB', {
+            timeZone: 'Europe/London',
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }) + ' UK';
+        return { savedAt: now.toISOString(), date: date };
+    }
+
+    function noteTimeLabel(note) {
+        if (note && note.date) return note.date;
+        if (note && note.savedAt) {
+            try {
+                return new Date(note.savedAt).toLocaleString('en-GB', {
+                    timeZone: 'Europe/London',
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }) + ' UK';
+            } catch (e) {
+                return String(note.savedAt);
+            }
+        }
+        return 'time not recorded';
+    }
+
+    function absoluteNoteUrl(pageUrl) {
+        var url = pageUrl || '';
+        if (url.indexOf('http') === 0) return url;
+        var absoluteUrl = location.protocol + '//' + location.host + (location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/' + pathPrefix + url).replace(/\/\.\.\//g, '/').replace(/\/+/g, '/');
+        if (location.protocol === 'file:') {
+            var currentPath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
+            var resolvedPath = (currentPath + '/' + pathPrefix + url);
+            var stack = [];
+            var parts = resolvedPath.split('/');
+            for (var p = 0; p < parts.length; p++) {
+                if (parts[p] === '..') stack.pop();
+                else if (parts[p] !== '.' && parts[p] !== '') stack.push(parts[p]);
+            }
+            absoluteUrl = 'file:///' + stack.join('/');
+        }
+        return absoluteUrl;
+    }
+
+    function buildNotesMarkdown(notes) {
+        var exported = stampNow();
+        var md = '# Site Tour Notes\n\n';
+        md += '- Exported: ' + exported.date + ' (`' + exported.savedAt + '`)\n';
+        md += '- Storage: browser cookie `site_notes` (path=/, 365 days)\n';
+        md += '- Notes: ' + notes.length + '\n\n';
+        md += 'these are tasks to be asked to be implemented and would be fed back to the ai agent\n\n';
+        notes.forEach(function(note, index) {
+            var title = note.pageTitle || 'Untitled page';
+            var path = note.pageUrl || '';
+            md += '## ' + (index + 1) + '. ' + title + '\n\n';
+            md += '- Page: [' + title + '](' + absoluteNoteUrl(path) + ')\n';
+            md += '- Path: `' + path + '`\n';
+            md += '- Time: ' + noteTimeLabel(note) + '\n';
+            if (note.savedAt) md += '- ISO: `' + note.savedAt + '`\n';
+            md += '\n' + (note.text || '') + '\n\n---\n\n';
+        });
+        return md;
+    }
+
+    function downloadTextFile(filename, text) {
+        var blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+        var objectUrl = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = objectUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1500);
+    }
+
+    function flashExportButtons() {
+        ['export-notes-md-btn', 'tour-export-md-btn'].forEach(function(id) {
+            var btn = document.getElementById(id);
+            if (!btn) return;
+            var original = btn.innerHTML;
+            btn.innerHTML = '✅ Saved .md';
+            setTimeout(function() { btn.innerHTML = original; }, 1800);
+        });
+    }
+
+    function exportNotesMarkdown() {
+        var notes = getNotes();
+        if (notes.length === 0) {
+            alert('No notes in the site_notes cookie yet.');
+            return;
+        }
+        var stamp = stampNow();
+        var filename = 'site-tour-notes-' + stamp.savedAt.slice(0, 10) + '.md';
+        downloadTextFile(filename, buildNotesMarkdown(notes));
+        setCookie('site_notes_last_export', JSON.stringify({
+            file: filename,
+            at: stamp.savedAt,
+            date: stamp.date,
+            count: notes.length
+        }), 365);
+        flashExportButtons();
     }
 
     // Theme Utilities
@@ -1170,16 +1292,17 @@
             notesHtml += 
                 '<div class="note-item" id="note-item-' + note.id + '">' +
                 '  <div class="note-item-header">' +
-                '    <a href="' + finalNoteUrl + '" class="note-item-page">' + note.pageTitle + '</a>' +
+                '    <a href="' + finalNoteUrl + '" class="note-item-page">Page: ' + escapeHtml(note.pageTitle || 'Untitled page') + '</a>' +
                 '    <div style="display: flex; gap: 0.4rem;">' +
                 '      <button class="note-edit-btn" data-id="' + note.id + '" title="Edit Note" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:0.85rem; transition:var(--transition-fast);">✏️</button>' +
                 '      <button class="note-delete-btn" data-id="' + note.id + '" title="Delete Note" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:0.85rem; transition:var(--transition-fast);">🗑️</button>' +
                 '    </div>' +
                 '  </div>' +
+                '  <div class="note-item-path" style="font-size:0.75rem; color:var(--text-muted); margin:0.15rem 0 0.35rem;">Path: ' + escapeHtml(note.pageUrl || '') + '</div>' +
                 '  <div class="note-item-body">' +
                 '    <div class="note-item-text">' + escapeHtml(note.text) + '</div>' +
                 '  </div>' +
-                '  <div class="note-item-date">' + note.date + '</div>' +
+                '  <div class="note-item-date">Time: ' + escapeHtml(noteTimeLabel(note)) + '</div>' +
                 '</div>';
         }
         listContainer.innerHTML = notesHtml;
@@ -1257,49 +1380,41 @@
             return;
         }
         var notes = getNotes();
-        var now = new Date();
-        var dateString = now.toLocaleString('en-US', { 
-            month: 'short', 
-            day: 'numeric', 
-            year: 'numeric',
-            hour: '2-digit', 
-            minute: '2-digit' 
-        });
+        var stamp = stampNow();
         
         notes.forEach(function(note) {
             if (note.id === id) {
                 note.text = text;
-                note.date = dateString + ' (edited)';
+                note.date = stamp.date + ' (edited)';
+                note.savedAt = stamp.savedAt;
+                note.pageUrl = note.pageUrl || currentPageUrl;
+                note.pageTitle = note.pageTitle || currentPageTitle;
             }
         });
         saveNotes(notes);
         renderNotes();
+        renderTourNotes();
         mountHeader();
     }
 
     function addNote(text) {
         if (!text.trim()) return;
         var notes = getNotes();
-        var now = new Date();
-        var dateString = now.toLocaleString('en-US', { 
-            month: 'short', 
-            day: 'numeric', 
-            year: 'numeric',
-            hour: '2-digit', 
-            minute: '2-digit' 
-        });
+        var stamp = stampNow();
         
         var newNote = {
             id: Date.now(),
             pageUrl: currentPageUrl,
             pageTitle: currentPageTitle,
             text: text,
-            date: dateString
+            date: stamp.date,
+            savedAt: stamp.savedAt
         };
         
         notes.push(newNote);
         saveNotes(notes);
         renderNotes();
+        renderTourNotes();
         mountHeader();
     }
 
@@ -1310,6 +1425,7 @@
         });
         saveNotes(filtered);
         renderNotes();
+        renderTourNotes();
         mountHeader();
     }
 
@@ -1317,6 +1433,7 @@
         if (confirm('Are you sure you want to clear all your saved notes? This will delete the cookie.')) {
             saveNotes([]);
             renderNotes();
+            renderTourNotes();
             mountHeader();
         }
     }
@@ -1328,36 +1445,7 @@
             return;
         }
         
-        var md = '# AI Certification Helper - Workspace Notes\n';
-        md += '*Generated on: ' + new Date().toLocaleDateString() + '*\n\n';
-        
-        notes.forEach(function(note, index) {
-            var absoluteUrl = location.protocol + '//' + location.host + (location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/' + pathPrefix + note.pageUrl).replace(/\/\.\.\//g, '/').replace(/\/+/g, '/');
-            if (location.protocol === 'file:') {
-                var currentPath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
-                var resolvedPath = (currentPath + '/' + pathPrefix + note.pageUrl);
-                var stack = [];
-                var parts = resolvedPath.split('/');
-                for (var p = 0; p < parts.length; p++) {
-                    if (parts[p] === '..') {
-                        stack.pop();
-                    } else if (parts[p] !== '.' && parts[p] !== '') {
-                        stack.push(parts[p]);
-                    }
-                }
-                absoluteUrl = 'file:///' + stack.join('/');
-            }
-            
-            md += '### [' + note.pageTitle + '](' + absoluteUrl + ')\n';
-            md += '*Saved on: ' + note.date + '*\n\n';
-            md += note.text + '\n\n';
-            if (index < notes.length - 1) {
-                md += 'these are tasks to be asked to be implemented and would be fed back to the ai agent\n\n';
-            }
-            md += '---\n\n';
-        });
-        
-        md = md.substring(0, md.length - 5);
+        var md = buildNotesMarkdown(notes);
         
         var copyBtn = document.getElementById('copy-notes-btn');
         var originalText = copyBtn.innerHTML;
@@ -1584,7 +1672,7 @@
         }
         var pageTitleEl = document.getElementById('notes-current-page-title');
         if (pageTitleEl) {
-            pageTitleEl.textContent = currentPageTitle;
+            pageTitleEl.textContent = currentPageTitle + ' · ' + currentPageUrl;
         }
         renderNotes();
     }
@@ -1626,104 +1714,82 @@
     // ==========================================
     // Guided Tour Data and Logic
     // ==========================================
-    var tourStops = [
-        {
-            url: 'index.html',
-            title: 'Customer Development Hub',
-            desc: 'The starting point. It maps all stages, business validation frameworks, and milestones in Steve Blank\'s framework.',
-            emoji: '🏠'
-        },
-        {
-            url: 'motivation.html',
-            title: 'Founder Motivation & ICP',
-            desc: 'The strategic \'why\' of the project. Understand Rifat\'s personal rules, target personas, revenue streams, and exit gates.',
-            emoji: '🔥'
-        },
-        {
-            url: '5_Symbols/cd/cd-process.html',
-            title: 'Discovery Process Overview',
-            desc: 'The roadmap for Customer Discovery: State, Test, Validate, and Exit.',
-            emoji: '📍'
-        },
-        {
-            url: '5_Symbols/cd/cd-watering-holes.html',
-            title: 'Watering Holes & Outreach',
-            desc: 'Where early adopters gather (Triton Square, meetups, cohorts) and outreach templates.',
-            emoji: '🌐'
-        },
-        {
-            url: '5_Symbols/cd/cd-interview-guide.html',
-            title: 'Qualitative Interview Guide',
-            desc: 'The core customer development interview script, focusing on customer story gathering and pain/gain signals.',
-            emoji: '🎤'
-        },
-        {
-            url: '5_Symbols/cd/cd-interview-recording.html',
-            title: 'Interview Recording & Tracker',
-            desc: 'The live CRM of customer discovery conversations and follow-up copy templates.',
-            emoji: '📝'
-        },
-        {
-            url: '5_Symbols/cd/archived-interview-transcripts.html',
-            title: 'Archived Interview Transcripts',
-            desc: 'Detailed qualitative interview notes and transcript archives from customer discovery sessions.',
-            emoji: '📂'
-        },
-        {
-            url: '5_Symbols/bmc/business-model-canvas.html',
-            title: 'Business Model Canvas',
-            desc: 'The full 9-box view of the business model. See how value, segments, and costs connect.',
-            emoji: '🖼️'
-        },
-        {
-            url: '5_Symbols/bmc/value-proposition.html',
-            title: 'Value Proposition Canvas',
-            desc: 'Connecting customer pains and gains directly to the training video MVP features.',
-            emoji: '💎'
-        },
-        {
-            url: '5_Symbols/bmc/bmc-revenue-streams.html',
-            title: 'Revenue Streams & Pricing',
-            desc: 'Monetization details: low-ticket mock exams ($10/mo) and high-ticket cohorts ($250-$500).',
-            emoji: '💰'
-        },
-        {
-            url: '5_Symbols/hypotheses/hypothesis.html',
-            title: 'Hypothesis Dashboard',
-            desc: 'The single source of truth tracking all 19 hypotheses (H1 to H19) and their validation status.',
-            emoji: '💭'
-        },
-        {
-            url: '5_Symbols/hypotheses/hypothesis-connectivity.html',
-            title: 'Hypothesis Dependency Map',
-            desc: 'The dependency maps explaining foundational gaps, isolated assumptions, and leaf nodes.',
-            emoji: '🔀'
-        },
-        {
-            url: '5_Symbols/growth/unit-economics.html',
-            title: 'Unit Economics & Funnel Math',
-            desc: 'Financial metrics and ROI calculations showing profitability and sustainability gates.',
-            emoji: '💵'
-        },
-        {
-            url: '5_Symbols/comp/comp-roadmap.html',
-            title: 'Sales & Marketing Roadmap',
-            desc: 'Copywriting swipe files, positioning strategies, and scaling triggers.',
-            emoji: '🗺️'
-        },
-        {
-            url: '5_Symbols/dashboard/calendar.html',
-            title: 'Milestone Calendar',
-            desc: 'The chronological timeline tracking actual done/TBD dates for the project.',
-            emoji: '📅'
-        },
-        {
-            url: '5_Symbols/dashboard/confidence-report.html',
-            title: 'Business Model Confidence Report',
-            desc: 'The final numeric verification sanity check scoring all hypotheses and site links.',
-            emoji: '🧪'
+    var tourNarration = {
+        'index.html': { title: 'Customer Development Hub', desc: 'The starting point. It maps all stages, business validation frameworks, and milestones in Steve Blank\'s framework.', emoji: '🏠' },
+        'motivation.html': { title: 'Founder Motivation & ICP', desc: 'The strategic \'why\' of the project. Understand Rifat\'s personal rules, target personas, revenue streams, and exit gates.', emoji: '🔥' },
+        '5_Symbols/cd/cd-process.html': { title: 'Discovery Process Overview', desc: 'The roadmap for Customer Discovery: State, Test, Validate, and Exit.', emoji: '📍' },
+        '5_Symbols/cd/cd-watering-holes.html': { title: 'Watering Holes & Outreach', desc: 'Where early adopters gather (Triton Square, meetups, cohorts) and outreach templates.', emoji: '🌐' },
+        '5_Symbols/cd/cd-interview-guide.html': { title: 'Qualitative Interview Guide', desc: 'The core customer development interview script, focusing on customer story gathering and pain/gain signals.', emoji: '🎤' },
+        '5_Symbols/cd/cd-interview-recording.html': { title: 'Interview Recording & Tracker', desc: 'The live CRM of customer discovery conversations and follow-up copy templates.', emoji: '📝' },
+        '5_Symbols/cd/archived-interview-transcripts.html': { title: 'Archived Interview Transcripts', desc: 'Detailed qualitative interview notes and transcript archives from customer discovery sessions.', emoji: '📂' },
+        '5_Symbols/bmc/business-model-canvas.html': { title: 'Business Model Canvas', desc: 'The full 9-box view of the business model. See how value, segments, and costs connect.', emoji: '🖼️' },
+        '5_Symbols/bmc/value-proposition.html': { title: 'Value Proposition Canvas', desc: 'Connecting customer pains and gains directly to the training video MVP features.', emoji: '💎' },
+        '5_Symbols/bmc/bmc-revenue-streams.html': { title: 'Revenue Streams & Pricing', desc: 'Monetization details: low-ticket mock exams ($10/mo) and high-ticket cohorts ($250-$500).', emoji: '💰' },
+        '5_Symbols/hypotheses/hypothesis.html': { title: 'Hypothesis Dashboard', desc: 'The single source of truth tracking all hypotheses (H1–H34) and their validation status.', emoji: '💭' },
+        '5_Symbols/hypotheses/hypothesis-connectivity.html': { title: 'Hypothesis Dependency Map', desc: 'The dependency maps explaining foundational gaps, isolated assumptions, and leaf nodes.', emoji: '🔀' },
+        '5_Symbols/growth/unit-economics.html': { title: 'Unit Economics & Funnel Math', desc: 'Financial metrics and ROI calculations showing profitability and sustainability gates.', emoji: '💵' },
+        '5_Symbols/comp/comp-roadmap.html': { title: 'Sales & Marketing Roadmap', desc: 'Copywriting swipe files, positioning strategies, and scaling triggers.', emoji: '🗺️' },
+        '5_Symbols/dashboard/calendar.html': { title: 'Milestone Calendar', desc: 'The chronological timeline tracking actual done/TBD dates for the project.', emoji: '📅' },
+        '5_Symbols/dashboard/confidence-report.html': { title: 'Business Model Confidence Report', desc: 'The final numeric verification sanity check scoring all hypotheses and site links.', emoji: '🧪' }
+    };
+
+    function decodeNavLabel(label) {
+        var d = document.createElement('div');
+        d.innerHTML = String(label || '');
+        return (d.textContent || d.innerText || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function buildTourStops() {
+        var seen = {};
+        var stops = [];
+        var searchByUrl = {};
+        searchIndex.forEach(function(item) {
+            searchByUrl[item.url] = item;
+        });
+
+        function addStop(url, title, desc, emoji, cat) {
+            if (!url || seen[url]) return;
+            seen[url] = true;
+            var indexed = searchByUrl[url] || {};
+            var narration = tourNarration[url] || {};
+            stops.push({
+                url: url,
+                title: narration.title || title || indexed.title || url,
+                desc: narration.desc || desc || indexed.desc || 'Workspace page in the customer development catalog.',
+                emoji: narration.emoji || emoji || getEmojiForCategory(indexed.cat || cat || ''),
+                cat: indexed.cat || cat || 'Page'
+            });
         }
-    ];
+
+        groups.forEach(function(group) {
+            if (group.label === 'Favorites') return;
+            if (group.type === 'link' && group.href) {
+                addStop(group.href, decodeNavLabel(group.label), '', group.emoji, group.label);
+            }
+            if (group.items) {
+                group.items.forEach(function(item) {
+                    if (Array.isArray(item) && item[0]) {
+                        addStop(item[0], decodeNavLabel(item[1]), '', group.emoji, group.label);
+                    }
+                });
+            }
+        });
+
+        searchIndex.forEach(function(item) {
+            if (item.url.indexOf('markdown_renderer.html') === 0) return;
+            addStop(item.url, item.title, item.desc, getEmojiForCategory(item.cat), item.cat);
+        });
+
+        searchIndex.forEach(function(item) {
+            if (item.url.indexOf('markdown_renderer.html') !== 0) return;
+            addStop(item.url, item.title, item.desc, '📄', item.cat || 'Docs');
+        });
+
+        return stops;
+    }
+
+    var tourStops = buildTourStops();
+    if (window.__siteMapData) window.__siteMapData.tourStops = tourStops;
 
     var relatedConceptsOverride = {
         '5_Symbols/strategy/slogan.html': [
@@ -1990,39 +2056,116 @@
         return clean.charAt(0).toUpperCase() + clean.slice(1);
     }
 
+    function tourUrlKey(url) {
+        return decodeURIComponent(url || '').split('#')[0];
+    }
+
     function findCurrentTourIndex() {
+        var current = tourUrlKey(currentPageUrl);
         for (var i = 0; i < tourStops.length; i++) {
-            if (tourStops[i].url === currentFile) {
+            if (tourUrlKey(tourStops[i].url) === current) {
                 return i;
             }
         }
         return -1;
     }
 
-    function findParentTourIndex() {
-        if (currentFile.indexOf('hyp-h') === 0) {
-            return 9; // Hypothesis tracker stop index is 9
+    var TOUR_VISITED_KEY = 'site_tour_visited';
+    var TOUR_DRAFT_KEY = 'site_tour_drafts';
+
+    function getVisitedStops() {
+        var raw = getCookie(TOUR_VISITED_KEY);
+        if (!raw) {
+            try {
+                var fromLs = localStorage.getItem(TOUR_VISITED_KEY);
+                if (fromLs) {
+                    setCookie(TOUR_VISITED_KEY, fromLs, 365);
+                    return JSON.parse(fromLs);
+                }
+            } catch (e) {}
+            return [];
         }
-        if (currentFile.indexOf('cd-hyp-') === 0 || currentFile.indexOf('cd-tp-') === 0 || currentFile.indexOf('cd-tpr-') === 0 || currentFile.indexOf('cd-verify-') === 0) {
-            return 2; // Process overview stop index is 2
+        try {
+            return JSON.parse(raw);
+        } catch (e) {
+            return [];
         }
-        if (currentFile.indexOf('bmc-') === 0) {
-            return 6; // Business model canvas stop index is 6
+    }
+
+    function markStopVisited(url) {
+        if (!url) return;
+        var list = getVisitedStops();
+        if (list.indexOf(url) === -1) {
+            list.push(url);
+            setCookie(TOUR_VISITED_KEY, JSON.stringify(list), 365);
         }
-        if (currentFile.indexOf('comp-') === 0) {
-            return 12; // Sales/marketing roadmap stop index is 12
+    }
+
+    function getTourDrafts() {
+        var raw = getCookie(TOUR_DRAFT_KEY);
+        if (!raw) {
+            try {
+                var fromLs = localStorage.getItem(TOUR_DRAFT_KEY);
+                if (fromLs) {
+                    setCookie(TOUR_DRAFT_KEY, fromLs, 365);
+                    return JSON.parse(fromLs);
+                }
+            } catch (e) {}
+            return {};
+        }
+        try {
+            return JSON.parse(raw);
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function setTourDraft(url, text) {
+        var drafts = getTourDrafts();
+        if (text && text.trim()) drafts[url] = text;
+        else delete drafts[url];
+        setCookie(TOUR_DRAFT_KEY, JSON.stringify(drafts), 365);
+    }
+
+    function tourNoteItemHtml(note) {
+        return '<div class="tour-note-item" data-id="' + note.id + '">' +
+            '  <div class="tour-note-page"><strong>Page:</strong> ' + escapeHtml(note.pageTitle || 'Untitled page') + '</div>' +
+            '  <div class="tour-note-path"><strong>Path:</strong> ' + escapeHtml(note.pageUrl || '') + '</div>' +
+            '  <div class="tour-note-text">' + escapeHtml(note.text) + '</div>' +
+            '  <div class="tour-note-meta">' +
+            '    <span><strong>Time:</strong> ' + escapeHtml(noteTimeLabel(note)) + '</span>' +
+            '    <button type="button" class="tour-note-delete" data-id="' + note.id + '" title="Delete note">🗑️</button>' +
+            '  </div>' +
+            '</div>';
+    }
+
+    function notesForCurrentPage() {
+        return getNotes().filter(function(note) {
+            return tourUrlKey(note.pageUrl) === tourUrlKey(currentPageUrl);
+        });
+    }
+
+    function findNextUnvisitedIndex(fromIdx) {
+        var visited = getVisitedStops();
+        var start = fromIdx < 0 ? 0 : fromIdx + 1;
+        for (var i = start; i < tourStops.length; i++) {
+            if (visited.indexOf(tourStops[i].url) === -1) return i;
+        }
+        for (var j = 0; j < start && j < tourStops.length; j++) {
+            if (visited.indexOf(tourStops[j].url) === -1) return j;
         }
         return -1;
     }
 
     function getRelatedConceptsForPage(file) {
-        if (relatedConceptsOverride[file]) {
-            return relatedConceptsOverride[file];
+        var key = tourUrlKey(file || currentPageUrl);
+        if (relatedConceptsOverride[key]) {
+            return relatedConceptsOverride[key];
         }
 
         var currentCat = null;
         for (var i = 0; i < searchIndex.length; i++) {
-            if (searchIndex[i].url === file) {
+            if (searchIndex[i].url === key) {
                 currentCat = searchIndex[i].cat;
                 break;
             }
@@ -2032,7 +2175,7 @@
         if (currentCat) {
             for (var j = 0; j < searchIndex.length; j++) {
                 var item = searchIndex[j];
-                if (item.url !== file && item.cat === currentCat) {
+                if (item.url !== key && item.cat === currentCat) {
                     related.push({
                         url: item.url,
                         title: item.title,
@@ -2050,7 +2193,7 @@
                 { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' }
             ];
             for (var k = 0; k < fallbacks.length; k++) {
-                if (fallbacks[k].url !== file && !related.some(function(r) { return r.url === fallbacks[k].url; })) {
+                if (fallbacks[k].url !== key && !related.some(function(r) { return r.url === fallbacks[k].url; })) {
                     related.push(fallbacks[k]);
                     if (related.length >= 3) break;
                 }
@@ -2065,14 +2208,42 @@
             case 'Hub': return '🏠';
             case 'Stage': return '🗺️';
             case 'Process': return '📍';
+            case 'Discovery': return '🔍';
             case 'Strategy': return '🎯';
             case 'Business Model': return '📊';
             case 'Growth': return '📈';
+            case 'Product': return '🏫';
             case 'Components': return '🧩';
             case 'Docs': return '📄';
+            case 'Dashboard': return '📋';
+            case 'Execution': return '🌪️';
             case 'Hypothesis Detail': return '💭';
+            case 'Discovery Detail': return '🔬';
+            case 'References': return '📚';
             default: return '🔗';
         }
+    }
+
+    function buildTourSelectOptions(filterText, currentStopIdx) {
+        var q = (filterText || '').toLowerCase().trim();
+        var html = '<option value="">🧭 Jump to any page (' + tourStops.length + ')</option>';
+        var lastCat = null;
+        var openGroup = false;
+        tourStops.forEach(function(stop, idx) {
+            var hay = ((idx + 1) + ' ' + stop.title + ' ' + stop.cat + ' ' + stop.url).toLowerCase();
+            if (q && hay.indexOf(q) === -1) return;
+            if (stop.cat !== lastCat) {
+                if (openGroup) html += '</optgroup>';
+                html += '<optgroup label="' + escapeHtml(stop.cat) + '">';
+                openGroup = true;
+                lastCat = stop.cat;
+            }
+            var selected = (idx === currentStopIdx) ? ' selected' : '';
+            var visited = getVisitedStops().indexOf(stop.url) !== -1 ? ' ✓' : '';
+            html += '<option value="' + stop.url + '"' + selected + '>' + (idx + 1) + '. ' + stop.emoji + ' ' + escapeHtml(stop.title) + visited + '</option>';
+        });
+        if (openGroup) html += '</optgroup>';
+        return html;
     }
 
     function buildTourHtml() {
@@ -2082,31 +2253,26 @@
         var stepTitleText = "";
         var stepDescText = "";
         var progressPercent = 0;
+        var visited = getVisitedStops();
+        if (isCurrentStop) markStopVisited(tourStops[currentStopIdx].url);
+        visited = getVisitedStops();
+        var visitedCount = visited.length;
 
         if (isCurrentStop) {
             var stop = tourStops[currentStopIdx];
             stepNumText = "Stop " + (currentStopIdx + 1) + " of " + tourStops.length;
             stepTitleText = stop.emoji + " " + stop.title;
             stepDescText = stop.desc;
-            progressPercent = Math.round(((currentStopIdx + 1) / tourStops.length) * 100);
+            progressPercent = Math.round((visitedCount / tourStops.length) * 100);
         } else {
-            var parentStopIdx = findParentTourIndex();
-            if (parentStopIdx !== -1) {
-                var parentStop = tourStops[parentStopIdx];
-                stepNumText = "Custom Exploration";
-                stepTitleText = "Exploring: " + getPageTitleFromSearchIndex(currentFile);
-                stepDescText = "This page provides details related to Stop " + (parentStopIdx + 1) + ": " + parentStop.title + ".";
-                progressPercent = Math.round(((parentStopIdx + 0.5) / tourStops.length) * 100);
-            } else {
-                stepNumText = "Custom Exploration";
-                stepTitleText = getPageTitleFromSearchIndex(currentFile);
-                stepDescText = "You are currently exploring a supporting page in the customer development framework.";
-                progressPercent = 0;
-            }
+            stepNumText = "Off-catalog page";
+            stepTitleText = getPageTitleFromSearchIndex(currentFile);
+            stepDescText = "This page is not in the search catalog yet. Notes still save against it; use Jump to continue the full-site tour.";
+            progressPercent = Math.round((visitedCount / Math.max(tourStops.length, 1)) * 100);
         }
 
         var relatedLinksHtml = "";
-        var related = getRelatedConceptsForPage(currentFile);
+        var related = getRelatedConceptsForPage(currentPageUrl);
         if (related && related.length > 0) {
             relatedLinksHtml += '<div class="tour-related-section">' +
                 '<span class="tour-section-title">Related Concepts</span>' +
@@ -2116,32 +2282,41 @@
                 var emoji = item.emoji || '🔗';
                 relatedLinksHtml += '<a href="' + finalHref + '" class="tour-related-item">' +
                     '<span class="emoji">' + emoji + '</span> ' +
-                    '<span>' + item.title + '</span>' +
+                    '<span>' + escapeHtml(item.title) + '</span>' +
                     '</a>';
             });
             relatedLinksHtml += '</div></div>';
         }
 
-        var selectOptionsHtml = '<option value="">🧭 Select Tour Stop...</option>';
-        tourStops.forEach(function(stop, idx) {
-            var selected = (idx === currentStopIdx) ? ' selected' : '';
-            selectOptionsHtml += '<option value="' + stop.url + '"' + selected + '>' + (idx + 1) + '. ' + stop.emoji + ' ' + stop.title + '</option>';
-        });
+        var pageNotes = notesForCurrentPage();
+        var drafts = getTourDrafts();
+        var draftText = drafts[currentPageUrl] || '';
+        var notesListHtml = '';
+        if (pageNotes.length === 0) {
+            notesListHtml = '<p class="tour-notes-empty">No notes on this stop yet. Highlight page text to drop it in, then save.</p>';
+        } else {
+            pageNotes.slice().reverse().forEach(function(note) {
+                notesListHtml += tourNoteItemHtml(note);
+            });
+        }
 
         var prevDisabled = currentStopIdx <= 0 ? ' disabled' : '';
         var nextDisabled = (currentStopIdx === -1 || currentStopIdx >= tourStops.length - 1) ? ' disabled' : '';
-
         var prevHref = currentStopIdx > 0 ? (pathPrefix + tourStops[currentStopIdx - 1].url) : '#';
         var nextHref = (currentStopIdx !== -1 && currentStopIdx < tourStops.length - 1) ? (pathPrefix + tourStops[currentStopIdx + 1].url) : '#';
+        var nextUnvisitedIdx = findNextUnvisitedIndex(currentStopIdx);
+        var nextUnvisitedHref = nextUnvisitedIdx !== -1 ? (pathPrefix + tourStops[nextUnvisitedIdx].url) : '#';
+        var nextUnvisitedDisabled = nextUnvisitedIdx === -1 ? ' disabled' : '';
 
         var openClass = (getCookie('site_tour_open') === 'true') ? ' open' : '';
+        var badgeText = (currentStopIdx !== -1 ? (currentStopIdx + 1) + '/' + tourStops.length : tourStops.length);
 
-        var tourHtml = 
+        var tourHtml =
             '<div class="tour-container">' +
-            '  <button id="tour-fab-btn" class="tour-fab" title="Start Guided Tour">' +
+            '  <button id="tour-fab-btn" class="tour-fab" title="Site Tour Guide — every page, with notes">' +
             '    <span>🧭</span>' +
             '    <span>Guided Tour</span>' +
-            '    <span class="badge">' + (currentStopIdx !== -1 ? (currentStopIdx + 1) + '/' + tourStops.length : 'Explore') + '</span>' +
+            '    <span class="badge">' + badgeText + '</span>' +
             '  </button>' +
             '  <div id="tour-card-panel" class="tour-card' + openClass + '">' +
             '    <div class="tour-header">' +
@@ -2150,23 +2325,37 @@
             '    </div>' +
             '    <div class="tour-body">' +
             '      <div class="tour-step-info">' +
-            '        <span class="tour-step-indicator">' + stepNumText + '</span>' +
-            '        <span class="tour-step-title">' + stepTitleText + '</span>' +
-            '        <p class="tour-step-desc">' + stepDescText + '</p>' +
+            '        <span class="tour-step-indicator">' + stepNumText + ' · ' + visitedCount + ' visited</span>' +
+            '        <span class="tour-step-title">' + escapeHtml(stepTitleText) + '</span>' +
+            '        <p class="tour-step-desc">' + escapeHtml(stepDescText) + '</p>' +
             '      </div>' +
-            '      <div class="tour-progress-container">' +
+            '      <div class="tour-progress-container" title="' + visitedCount + ' of ' + tourStops.length + ' pages visited">' +
             '        <div class="tour-progress-bar" style="width: ' + progressPercent + '%;"></div>' +
             '      </div>' +
             relatedLinksHtml +
+            '      <div class="tour-notes-section">' +
+            '        <span class="tour-section-title">📝 Notes on this stop (<span id="tour-page-notes-count">' + pageNotes.length + '</span>)</span>' +
+            '        <p class="tour-notes-context">Page: <strong>' + escapeHtml(currentPageTitle) + '</strong><br>Path: <code>' + escapeHtml(currentPageUrl) + '</code><br>Saved in cookie <code>site_notes</code> with page + time.</p>' +
+            '        <textarea id="tour-note-textarea" class="tour-note-textarea" rows="3" placeholder="Write a note for this page. Save stores page + UK time in the site_notes cookie. Highlight page text to capture it.">' + escapeHtml(draftText) + '</textarea>' +
+            '        <div class="tour-notes-actions">' +
+            '          <button type="button" id="tour-save-note-btn" class="tour-btn btn-next">Save note</button>' +
+            '          <button type="button" id="tour-export-md-btn" class="tour-btn">⬇️ Export .md</button>' +
+            '          <button type="button" id="tour-copy-page-notes-btn" class="tour-btn">Copy page</button>' +
+            '          <button type="button" id="tour-open-all-notes-btn" class="tour-btn">All notes</button>' +
+            '        </div>' +
+            '        <div id="tour-notes-list" class="tour-notes-list">' + notesListHtml + '</div>' +
+            '      </div>' +
             '    </div>' +
             '    <div class="tour-footer">' +
             '      <div class="tour-actions">' +
-            '        <a href="' + prevHref + '" id="tour-prev-btn" class="tour-btn' + (prevDisabled ? ' disabled' : '') + '"' + prevDisabled + '>◀ Prev Stop</a>' +
-            '        <a href="' + nextHref + '" id="tour-next-btn" class="tour-btn btn-next' + (nextDisabled ? ' disabled' : '') + '"' + nextDisabled + '>Next Stop ▶</a>' +
+            '        <a href="' + prevHref + '" id="tour-prev-btn" class="tour-btn' + (prevDisabled ? ' disabled' : '') + '"' + prevDisabled + '>◀ Prev</a>' +
+            '        <a href="' + nextUnvisitedHref + '" id="tour-next-unvisited-btn" class="tour-btn' + (nextUnvisitedDisabled ? ' disabled' : '') + '"' + nextUnvisitedDisabled + '>Next unread</a>' +
+            '        <a href="' + nextHref + '" id="tour-next-btn" class="tour-btn btn-next' + (nextDisabled ? ' disabled' : '') + '"' + nextDisabled + '>Next ▶</a>' +
             '      </div>' +
             '      <div class="tour-select-wrapper">' +
-            '        <select id="tour-select-box" class="tour-select">' +
-            selectOptionsHtml +
+            '        <input type="search" id="tour-stop-filter" class="tour-stop-filter" placeholder="Filter ' + tourStops.length + ' pages…" autocomplete="off">' +
+            '        <select id="tour-select-box" class="tour-select" size="8">' +
+            buildTourSelectOptions('', currentStopIdx) +
             '        </select>' +
             '      </div>' +
             '    </div>' +
@@ -2176,11 +2365,70 @@
         return tourHtml;
     }
 
+    function renderTourNotes() {
+        var list = document.getElementById('tour-notes-list');
+        var countEl = document.getElementById('tour-page-notes-count');
+        if (!list) return;
+        var pageNotes = notesForCurrentPage();
+        if (countEl) countEl.textContent = pageNotes.length;
+        if (pageNotes.length === 0) {
+            list.innerHTML = '<p class="tour-notes-empty">No notes on this stop yet. Highlight page text to drop it in, then save.</p>';
+            return;
+        }
+        var html = '';
+        pageNotes.slice().reverse().forEach(function(note) {
+            html += tourNoteItemHtml(note);
+        });
+        list.innerHTML = html;
+        list.querySelectorAll('.tour-note-delete').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                deleteNote(parseInt(this.getAttribute('data-id'), 10));
+            });
+        });
+    }
+
+    function copyPageTourNotes() {
+        var pageNotes = notesForCurrentPage();
+        if (pageNotes.length === 0) {
+            alert('No notes on this page yet.');
+            return;
+        }
+        var md = '# Notes — ' + currentPageTitle + '\n\n';
+        md += '- Page: [' + currentPageTitle + '](' + absoluteNoteUrl(currentPageUrl) + ')\n';
+        md += '- Path: `' + currentPageUrl + '`\n';
+        md += '- Storage: cookie `site_notes`\n\n';
+        pageNotes.forEach(function(note) {
+            md += '### Time: ' + noteTimeLabel(note) + '\n';
+            if (note.savedAt) md += '- ISO: `' + note.savedAt + '`\n';
+            md += '\n' + note.text + '\n\n---\n\n';
+        });
+        var btn = document.getElementById('tour-copy-page-notes-btn');
+        var original = btn ? btn.innerHTML : '';
+        var done = function() {
+            if (!btn) return;
+            btn.innerHTML = 'Copied';
+            setTimeout(function() { btn.innerHTML = original; }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(md).then(done).catch(function() {
+                window.prompt('Copy these notes:', md);
+            });
+        } else {
+            window.prompt('Copy these notes:', md);
+        }
+    }
+
     function initTourEvents() {
         var tourFabBtn = document.getElementById('tour-fab-btn');
         var tourCardPanel = document.getElementById('tour-card-panel');
         var tourCloseBtn = document.getElementById('tour-close-btn');
         var tourSelectBox = document.getElementById('tour-select-box');
+        var tourFilter = document.getElementById('tour-stop-filter');
+        var tourSaveBtn = document.getElementById('tour-save-note-btn');
+        var tourTextarea = document.getElementById('tour-note-textarea');
+        var tourCopyBtn = document.getElementById('tour-copy-page-notes-btn');
+        var tourExportBtn = document.getElementById('tour-export-md-btn');
+        var tourOpenAllBtn = document.getElementById('tour-open-all-notes-btn');
 
         if (tourFabBtn && tourCardPanel) {
             tourFabBtn.addEventListener('click', function(e) {
@@ -2192,6 +2440,7 @@
                 } else {
                     tourCardPanel.classList.add('open');
                     setCookie('site_tour_open', 'true', 30);
+                    if (tourTextarea) tourTextarea.focus();
                 }
             });
         }
@@ -2213,6 +2462,70 @@
                 }
             });
         }
+
+        if (tourFilter && tourSelectBox) {
+            tourFilter.addEventListener('input', function() {
+                var currentStopIdx = findCurrentTourIndex();
+                tourSelectBox.innerHTML = buildTourSelectOptions(this.value, currentStopIdx);
+            });
+        }
+
+        if (tourSaveBtn && tourTextarea) {
+            tourSaveBtn.addEventListener('click', function() {
+                addNote(tourTextarea.value);
+                tourTextarea.value = '';
+                setTourDraft(currentPageUrl, '');
+                renderTourNotes();
+            });
+            tourTextarea.addEventListener('input', function() {
+                setTourDraft(currentPageUrl, this.value);
+            });
+            tourTextarea.addEventListener('keydown', function(e) {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    tourSaveBtn.click();
+                }
+            });
+        }
+
+        if (tourCopyBtn) {
+            tourCopyBtn.addEventListener('click', copyPageTourNotes);
+        }
+
+        if (tourExportBtn) {
+            tourExportBtn.addEventListener('click', exportNotesMarkdown);
+        }
+
+        if (tourOpenAllBtn) {
+            tourOpenAllBtn.addEventListener('click', function() {
+                openNotes();
+            });
+        }
+
+        var notesList = document.getElementById('tour-notes-list');
+        if (notesList) {
+            notesList.querySelectorAll('.tour-note-delete').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    deleteNote(parseInt(this.getAttribute('data-id'), 10));
+                });
+            });
+        }
+
+        document.addEventListener('mouseup', function(e) {
+            var panel = document.getElementById('tour-card-panel');
+            if (!panel || !panel.classList.contains('open')) return;
+            if (panel.contains(e.target)) return;
+            var drawer = document.getElementById('notes-drawer');
+            if (drawer && drawer.classList.contains('open') && !drawer.classList.contains('minimized')) return;
+            var selection = window.getSelection();
+            var text = selection ? selection.toString().trim() : '';
+            if (!text) return;
+            var textarea = document.getElementById('tour-note-textarea');
+            if (!textarea) return;
+            textarea.value = textarea.value ? (textarea.value + '\n\n' + text) : text;
+            setTourDraft(currentPageUrl, textarea.value);
+            selection.removeAllRanges();
+        });
     }
 
     // Initialize overlays and events
@@ -2323,6 +2636,11 @@
             });
         }
         
+        var exportNotesMdBtn = document.getElementById('export-notes-md-btn');
+        if (exportNotesMdBtn) {
+            exportNotesMdBtn.addEventListener('click', exportNotesMarkdown);
+        }
+
         var copyNotesBtn = document.getElementById('copy-notes-btn');
         if (copyNotesBtn) {
             copyNotesBtn.addEventListener('click', copyNotes);
@@ -2368,6 +2686,7 @@
         
         renderNotes();
         initTourEvents();
+        renderTourNotes();
     }
 
     function toggleNavSection(header) {

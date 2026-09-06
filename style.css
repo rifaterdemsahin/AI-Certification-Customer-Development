@@ -1635,8 +1635,8 @@ body.light-theme .logo-text {
     position: absolute;
     bottom: 60px;
     left: 0;
-    width: 360px;
-    max-width: 90vw;
+    width: 420px;
+    max-width: 92vw;
     background: rgba(17, 24, 39, 0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1699,7 +1699,7 @@ body.light-theme .logo-text {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-height: 380px;
+    max-height: min(52vh, 480px);
     overflow-y: auto;
 }
 
@@ -1867,6 +1867,149 @@ body.light-theme .logo-text {
 .tour-select:focus {
     border-color: var(--color-primary);
     color: var(--text-primary);
+}
+
+.tour-select[size] {
+    height: 9.5rem;
+}
+
+.tour-stop-filter {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    outline: none;
+    font-family: var(--font-sans);
+    margin-bottom: 0.4rem;
+}
+
+.tour-stop-filter:focus {
+    border-color: var(--color-primary);
+}
+
+.tour-notes-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tour-note-textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    padding: 0.55rem 0.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    outline: none;
+    resize: vertical;
+    min-height: 4.5rem;
+}
+
+.tour-note-textarea:focus {
+    border-color: var(--color-primary);
+}
+
+.tour-notes-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tour-notes-actions .tour-btn {
+    flex: 1 1 calc(50% - 0.4rem);
+    padding: 0.4rem 0.35rem;
+    font-size: 0.75rem;
+}
+
+.tour-notes-context {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+.tour-notes-context code {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.tour-note-page,
+.tour-note-path {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+}
+
+.tour-note-page {
+    color: var(--text-secondary);
+}
+
+.tour-notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    max-height: 8.5rem;
+    overflow-y: auto;
+}
+
+.tour-notes-empty {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.tour-note-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.65rem;
+}
+
+.tour-note-text {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+.tour-note-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.35rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.tour-note-delete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.tour-note-delete:hover {
+    opacity: 1;
+}
+
+body.light-theme .tour-note-textarea,
+body.light-theme .tour-stop-filter,
+body.light-theme .tour-select[size] {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+body.light-theme .tour-note-item {
+    background: rgba(0, 0, 0, 0.03);
 }
 
 /* Light Theme overrides */
