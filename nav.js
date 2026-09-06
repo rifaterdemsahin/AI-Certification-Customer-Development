@@ -32,6 +32,7 @@
                 ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Core Message: Positive AI Skills Elevation'],
                 ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Being Intentional: Digital Minimalism'],
                 ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)'],
+                ['5_Symbols/cd/cohort-session-11-analysis.html', '🎙️ Cohort Session 11 Analysis'],
                 ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule'],
@@ -48,6 +49,7 @@
                 ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas'],
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis Tracker'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report'],
+                ['5_Symbols/dashboard/hypotheses-print.html', '🖨️ Hypotheses Print Sheet'],
                 ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages'],
                 ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
@@ -75,6 +77,7 @@
                 ['5_Symbols/cd/interview-hcl-devops-screen.html', '🎙️ HCL SRE/DevOps Screen (2026-08-24)'],
                 ['5_Symbols/cd/cd-interview-pdf.html', '🖨️ 1-Page A4 Interview PDF'],
                 ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)'],
+                ['5_Symbols/cd/cohort-session-11-analysis.html', '🎙️ Cohort Session 11 Analysis'],
                 ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
                 ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
                 ['5_Symbols/cd/cohort-session-8-analysis.html', '🎙️ Cohort Session 8 Analysis'],
@@ -275,6 +278,7 @@
                 ['5_Symbols/growth/cost-side-model.html', '📉 Cost-Side Model'],
                 ['5_Symbols/growth/validation-repeat-gate.html', '🚪 Validation Repeat Gate'],
                 ['5_Symbols/growth/sales-tactics.html', '🎯 Sales Tactics'],
+                ['5_Symbols/growth/courses-production-collaborative-video.html', '🎬 Courses Production (Collaborative Video)'],
                 ['5_Symbols/growth/fast-conversion-shorts.html', '⚡ Fast-Conversion Shorts'],
                 ['5_Symbols/growth/marketing-tactics.html', '📰 Marketing Tactics'],
                 ['5_Symbols/growth/private-quiz-lead-magnet-tactic.html', '🕵️ Private Quiz Lead Magnet Tactic'],
@@ -338,6 +342,7 @@
                 ['markdown_renderer.html?src=agents.md', '🤖 AI Agent Guidelines'],
                 ['markdown_renderer.html?src=HYPOTHESIS.md', '📊 Hypothesis Tracker Full Doc'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Business Model Confidence Report'],
+                ['5_Symbols/dashboard/hypotheses-print.html', '🖨️ Hypotheses Print Sheet'],
                 ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '📅 Latest Created/Updated Pages'],
                 ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
@@ -476,6 +481,8 @@
         { url: '5_Symbols/product/skool-audience-emails-and-event-triggers.html', title: 'Skool Audience Emails & Automated Event Triggers', desc: 'Real-world Skool transactional event reminder emails, 24h Sunday call alerts, member directory administration, and VIP tier settings.', cat: 'Product', tags: 'skool audience emails automated event reminder triggers sunday cohort session member settings vip tier notification timezone delivery pilot h5 h8 h29 h30' },
         { url: '5_Symbols/growth/community-building-score.html', title: 'Community Building & Business Model Confidence Score', desc: 'Detailed architectural connection between Skool community building, lecture-to-party pivot, 10 true regulars, and the numeric confidence score.', cat: 'Growth', tags: 'community building business model confidence score skool freemium peek sit in share screen lecture party listen speak 10 true regulars anti spam level 2 posting onboarding venture cafe cambridge triton square contractor fde h5 h8 h9 h20 h29 h30' },
         { url: '5_Symbols/growth/turn-community-to-movement.html', title: 'Turn Community to Movement: From Audience to Autonomous Alliance', desc: 'Strategic blueprint to evolve passive Skool members and YouTube lurkers into an active Forward Deployed Engineer contractor alliance co-bidding on enterprise contracts.', cat: 'Growth', tags: 'turn community to movement alliance fde forward deployed engineer contractor 10 true regulars autonomous leadership co bidding enterprise tender sunday live screen share derek sivers first follower h30 h29 h5 h8 h11' },
+        { url: '5_Symbols/cd/cohort-session-11-analysis.html', title: 'AI Cohort Session 11 Analysis: Edge Erosion & the Token Trap', desc: 'Customer discovery with returning members Bora and Marianna: AI trading token-trap corroboration, collaborative course-review tool UX feedback, no new prospect or revenue signal.', cat: 'Discovery', tags: 'cohort session 11 simulation customer discovery bora marianna token trap ai trading polymarket edge fees course production canva skool feedback tool simplicity sude module transition h2 h24 h29 h30' },
+        { url: 'markdown_renderer.html?src=reports/cohort-session-11-analysis-v1.0.0.md', title: 'Cohort Session 11 Analysis Report v1.0.0', desc: 'Versioned markdown report of Session 11: Bora AI trading token-trap frustration, Marianna value-perception and course-tool simplicity feedback.', cat: 'Docs', tags: 'cohort session 11 report bora marianna token trap course tool simplicity h2 h24 h29 h30' },
         { url: '5_Symbols/cd/cohort-session-10-analysis.html', title: 'AI Cohort Session 10 Analysis: Follow the Money', desc: 'Customer discovery with Mariana and Chidi: faceless shorts lifting Skool joins, B2C to B2B placement still unoperationalized, partner payroll gate, simplicity, next Sunday topic is how we make money.', cat: 'Discovery', tags: 'cohort session 10 simulation customer discovery follow the money b2c2b chidi mariana faceless shorts skool partner payroll capgemini ibm c prime deloitte chamber triton square h4 h5 h12 h22 h24 h29 h30' },
         { url: '5_Symbols/cd/cohort-session-9-analysis.html', title: 'AI Cohort Session 9 Analysis: Schedule & Pedagogical Overhaul', desc: 'Customer discovery analysis with Mariana, Brian & Anna: 60-min cap, 10-10-15 structure, 3-tier preset projects, and VIP 1-on-1 calendar slots.', cat: 'Discovery', tags: 'cohort session 9 simulation customer discovery schedule overhaul 60 min cap 10 10 15 structure preset projects foundational intermediate architect vip 1-on-1 anna mariana brian uwise cambridge togaf h5 h8 h24 h29 h30' },
         { url: 'markdown_renderer.html?src=reports/cohort-session-10-analysis-v1.0.0.md', title: 'Cohort Session 10 Analysis Report v1.0.0', desc: 'Versioned markdown report of Session 10: 5x shorts retention, ~30 Skool joins, Chidi Uber-license money path, Mariana simplicity and Chamber networking.', cat: 'Docs', tags: 'cohort session 10 report chidi mariana b2b payroll simplicity shorts h12 h22 h30' },
@@ -623,6 +630,7 @@
         { url: '5_Symbols/hypotheses/hyp-h17.html', title: 'H17 · Onsite Cambridge + corporate pilot', desc: 'Detail page with premise-conclusion-status SVG diagram for H17.', cat: 'Hypothesis Detail', tags: 'h17 hypothesis detail onsite cambridge marianna svg diagram' },
         { url: '5_Symbols/hypotheses/hyp-h18.html', title: 'H18 · International onsite channels', desc: 'Detail page with premise-conclusion-status SVG diagram for H18.', cat: 'Hypothesis Detail', tags: 'h18 hypothesis detail international onsite uk europe usa svg diagram' },
         { url: '5_Symbols/dashboard/confidence-report.html', title: 'Business Model Confidence Report', desc: 'Versioned, whole-site sanity check scoring hypothesis validation and site integrity into one confidence number. v1.9.78 holds 48 after Saturday LinkedIn 8-week invite swipe file.', cat: 'Docs', tags: 'confidence score sanity check audit integrity version saturday linkedin invites v1.9.78' },
+        { url: '5_Symbols/dashboard/hypotheses-print.html', title: 'Hypotheses Print Sheet', desc: 'Print-to-PDF meeting sheet listing all 32 tracked hypotheses (H1–H33; H26 unused) with lined note space for Sunday labs, Triton Square, and 1-1 workshops.', cat: 'Docs', tags: 'print pdf hypotheses meeting notes live sunday h1 h33 worksheet' },
         { url: '5_Symbols/dashboard/how-to-move-the-score.html', title: 'How to Move the Confidence Score', desc: 'Master playbook: formula, every historical score-up event, what does not move the number, housekeeping rules, and ranked evidence levers (H9, H21, F12).', cat: 'Docs', tags: 'how to move confidence score playbook integrity validation git broken links acidity h5 h8 h9 h21 h27 f12' },
         { url: '5_Symbols/dashboard/project-stats.html', title: 'Project Stats', desc: 'Counted snapshot of HTML pages, hypotheses, git history, reports, and discovery evidence for this Customer Development repo.', cat: 'Docs', tags: 'project stats dashboard pages commits loc hypotheses confidence h9 snapshot' },
         { url: '5_Symbols/hypotheses/hyp-h27.html', title: 'H27 · Practice Exam & Question Bank Gap', desc: 'Detail page with premise-conclusion-status SVG diagram for H27: blueprint-mapped practice exams are the value blocker for H8 and H21.', cat: 'Hypothesis Detail', tags: 'h27 hypothesis detail practice exam question bank mock test blueprint gap charles postponement svg diagram' },
@@ -704,9 +712,10 @@
         { url: '5_Symbols/growth/pricing-change-strategy.html', title: 'Pricing Change Strategy & Milestone Roadmap', desc: 'Transition roadmap for Tier 2 ($1→$10/mo) and Tier 3 ($250→$1,000/yr), triggered by 4 stage milestones with grandfathering rules.', cat: 'Growth', tags: 'pricing change strategy tier progression sit in share screen milestones grandfathering urgency' },
         { url: '5_Symbols/growth/cost-side-model.html', title: 'Cost-Side Model', desc: 'Business-level cost stack, founder time-opportunity cost, and break-even math against the $100/mo infra cost.', cat: 'Growth', tags: 'cost side model break even infra opportunity cost' },
         { url: '5_Symbols/growth/validation-repeat-gate.html', title: 'Validation Repeat Gate', desc: 'Revises the $10k Stage 2 exit gate to require 2 consecutive cohort launches instead of one.', cat: 'Growth', tags: 'validation repeat gate two launches revenue false positive' },
-        { url: '5_Symbols/growth/sales-tactics.html', title: '🎯 Sales Tactics', desc: 'Concise catalog of core sales tactics: Fast-Conversion Shorts (TzjDPMfsb3o), Face-to-Face Core Message, Reverse Response, Private Quiz, Funfair Tokens, and Skool Outro Cards.', cat: 'Growth', tags: 'sales tactics fast conversion shorts tzjdpmfsb3o face to face reverse response funfair tokens private quiz skool card cta conversion' },
+        { url: '5_Symbols/growth/sales-tactics.html', title: '🎯 Sales Tactics', desc: 'Catalog of conversion tactics including Fast-Conversion Shorts, Face-to-Face Core Message, Reverse Response, Private Quiz, Funfair Tokens, Skool Outro Cards, and Courses Production collaborative video building.', cat: 'Growth', tags: 'sales tactics fast conversion shorts tzjdpmfsb3o face to face reverse response funfair tokens private quiz skool card cta conversion courses production canva' },
+        { url: '5_Symbols/growth/courses-production-collaborative-video.html', title: '🎬 Courses Production: Collaborative Video Building', desc: 'Skool Courses living hub with three doors: official Anthropic Claude 101, unofficial Exam Prep Classroom, and Canva dual-lens comment review so members co-produce the next cut.', cat: 'Growth', tags: 'courses production collaborative video canva comments claude 101 exam prep living hub h2 h10 h29 co-production' },
         { url: '5_Symbols/growth/fast-conversion-shorts.html', title: '⚡ Fast-Conversion Shorts (TzjDPMfsb3o Pattern)', desc: 'The 60-Second Video Sales Tactic: 4-beat conversion architecture (hook, high-density proof, bridge CTA, infinite loop) converting short viewers into Skool members.', cat: 'Growth', tags: 'fast conversion shorts video sales tactic 60 second conversion tzjdpmfsb3o beat sheet pattern interrupt skool cta infinite loop h2 h5 h10 h30' },
-        { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Eight draft headlines plus Reverse Response, Funfair Tokens, Private Quiz, Fast-Conversion Shorts, and Face-to-Face Core Message.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds networkchuck face to face core message fast conversion shorts' },
+        { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics: The Headline Swipe File', desc: 'Draft headlines plus Reverse Response, Funfair Tokens, Private Quiz, Fast-Conversion Shorts, Face-to-Face Core Message, and Courses Production collaborative video building.', cat: 'Growth', tags: 'marketing tactics headlines copywriting titles urgency swipe file samuel leeds networkchuck face to face core message fast conversion shorts courses production' },
         { url: '5_Symbols/growth/funfair-tokens.html', title: '🎡 Funfair Token System: Time-Based Tokens', desc: 'Audience earns time-based tokens that expire weekly and spends them at stalls inside the fair on Memory Cards, Mock Exams, and the Ultimate IT Contractor Course.', cat: 'Growth', tags: 'funfair tokens time based expiry gamification engagement memory cards mock exams contractor course stalls urgency h21 h30' },
         { url: '5_Symbols/growth/face-to-face-core-message.html', title: '☕ Face-to-Face Core Message (NetworkChuck Pattern)', desc: 'Share the Video 6 core message looking at the audience — LinkedIn talking-head, Triton Square, Sunday live, founder-on-lens closer. Chuck Keith pattern: one hard line, then listen.', cat: 'Growth', tags: 'face to face core message networkchuck chuck keith linkedin talking head triton square sunday founder voice h2 h5 h29' },
         { url: '5_Symbols/growth/youtube-titles-skool-mapping.html', title: 'YouTube Titles → Skool Content Mapping', desc: 'Eight YouTube title ideas mapped to their intended Skool landing destination (free feed, $10/mo membership, $29 bundle, or live cohort), each with a stated rationale.', cat: 'Growth', tags: 'youtube titles skool mapping funnel destination classroom membership bundle cohort headlines' },
@@ -1739,6 +1748,7 @@
             { url: 'motivation.html', title: 'Motivation & ICP', emoji: '🔥' }
         ],
         '5_Symbols/hypotheses/hypothesis.html': [
+            { url: '5_Symbols/dashboard/hypotheses-print.html', title: 'Print Hypotheses', emoji: '🖨️' },
             { url: '5_Symbols/hypotheses/hypothesis-connectivity.html', title: 'Dependency Map', emoji: '🔀' },
             { url: '5_Symbols/hypotheses/h1-not-connected.html', title: 'Why H1 Sits Alone', emoji: '🟡' },
             { url: '5_Symbols/dashboard/confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
@@ -1805,9 +1815,18 @@
         ],
         '5_Symbols/growth/sales-tactics.html': [
             { url: '5_Symbols/growth/fast-conversion-shorts.html', title: 'Fast-Conversion Shorts', emoji: '⚡' },
+            { url: '5_Symbols/growth/courses-production-collaborative-video.html', title: 'Courses Production', emoji: '🎬' },
             { url: '5_Symbols/growth/sales-pipeline.html', title: 'Sales Pipeline', emoji: '📊' },
             { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
             { url: '5_Symbols/growth/video-conversion-tactics.html', title: 'Video Conversion Tactics', emoji: '🎬' }
+        ],
+        '5_Symbols/growth/courses-production-collaborative-video.html': [
+            { url: '5_Symbols/growth/sales-tactics.html', title: 'Sales Tactics', emoji: '🎯' },
+            { url: '5_Symbols/growth/marketing-tactics.html', title: 'Marketing Tactics', emoji: '📰' },
+            { url: '5_Symbols/growth/animation-shorts-pipeline.html', title: 'Animation Pipeline', emoji: '🎬' },
+            { url: '5_Symbols/growth/course-curriculum-learning-objectives.html', title: 'Learning Objectives', emoji: '🎯' },
+            { url: '5_Symbols/product/skool-static-posts.html', title: 'Living Hubs', emoji: '📌' },
+            { url: '5_Symbols/hypotheses/hyp-h29.html', title: 'H29 Listen', emoji: '👂' }
         ],
         '5_Symbols/growth/fast-conversion-shorts.html': [
             { url: '5_Symbols/growth/sales-tactics.html', title: 'Sales Tactics', emoji: '🎯' },
@@ -1828,9 +1847,16 @@
             { url: 'index.html', title: 'Hub', emoji: '🏠' }
         ],
         '5_Symbols/dashboard/confidence-report.html': [
+            { url: '5_Symbols/dashboard/hypotheses-print.html', title: 'Print Hypotheses', emoji: '🖨️' },
             { url: '5_Symbols/dashboard/how-to-move-the-score.html', title: 'How to Move the Score', emoji: '📈' },
             { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
             { url: '5_Symbols/growth/quality-gates.html', title: 'Quality Gates', emoji: '🚪' },
+            { url: '5_Symbols/strategy/evidence-map.html', title: 'Evidence Map', emoji: '🔍' }
+        ],
+        '5_Symbols/dashboard/hypotheses-print.html': [
+            { url: '5_Symbols/dashboard/confidence-report.html', title: 'Confidence Report', emoji: '🧪' },
+            { url: '5_Symbols/hypotheses/hypothesis.html', title: 'Hypothesis Dashboard', emoji: '💭' },
+            { url: '5_Symbols/cd/cd-interview-pdf.html', title: 'Interview PDF', emoji: '📄' },
             { url: '5_Symbols/strategy/evidence-map.html', title: 'Evidence Map', emoji: '🔍' }
         ],
         '5_Symbols/dashboard/how-to-move-the-score.html': [

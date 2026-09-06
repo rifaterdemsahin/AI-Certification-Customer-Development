@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypotheses Print Sheet (Live Meeting Notes) | AI Certification Helper</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .pdf-toolbar {
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid var(--border-accent);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin: 0 auto 2rem;
+            max-width: 920px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-print {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        .btn-print:hover { transform: translateY(-1px); }
+        .a4-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            padding: 10mm 11mm 9mm;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+            position: relative;
+        }
+        .pdf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2.5px solid #1e1b4b;
+            padding-bottom: 6px;
+            margin-bottom: 7px;
+        }
+        .pdf-header h1 {
+            font-family: Outfit, Inter, sans-serif;
+            font-size: 14.5pt;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin: 0 0 2px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        .pdf-subtitle { font-size: 7.5pt; color: #64748b; margin: 0; font-weight: 500; }
+        .pdf-brand {
+            background: #eef2ff;
+            border: 1px solid #c7d2fe;
+            color: #4338ca;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 7.5pt;
+            font-weight: 700;
+            text-align: right;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.2fr 1fr;
+            gap: 5px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            padding: 6px 8px;
+            margin-bottom: 7px;
+            font-size: 7.5pt;
+        }
+        .meta-grid label { display: block; font-size: 6.5pt; font-weight: 700; color: #64748b; letter-spacing: 0.04em; text-transform: uppercase; }
+        .uline {
+            border-bottom: 1px solid #94a3b8;
+            min-height: 14px;
+            margin-top: 2px;
+        }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            font-size: 6.8pt;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+        .legend b { color: #1e1b4b; }
+        .stage-label {
+            font-size: 7.5pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #4338ca;
+            background: #eef2ff;
+            border-left: 3px solid #6366f1;
+            padding: 2px 6px;
+            margin: 6px 0 4px;
+        }
+        .stage-label.val { color: #0f766e; background: #ecfdf5; border-left-color: #10b981; }
+        .stage-label.cre { color: #b45309; background: #fffbeb; border-left-color: #f59e0b; }
+        .stage-label.bld { color: #9f1239; background: #fff1f2; border-left-color: #f43f5e; }
+        .stage-label.xst { color: #6d28d9; background: #f5f3ff; border-left-color: #8b5cf6; }
+        .hyp-row {
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 4px 6px 3px;
+            margin-bottom: 3.5px;
+            page-break-inside: avoid;
+        }
+        .hyp-top {
+            display: grid;
+            grid-template-columns: 28px 1fr auto;
+            gap: 6px;
+            align-items: baseline;
+        }
+        .hyp-id {
+            font-weight: 800;
+            font-size: 8.5pt;
+            color: #1e1b4b;
+        }
+        .hyp-title {
+            font-weight: 700;
+            font-size: 8pt;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+        .hyp-status {
+            font-size: 6.6pt;
+            font-weight: 700;
+            white-space: nowrap;
+            padding: 1px 5px;
+            border-radius: 999px;
+            border: 1px solid #e2e8f0;
+        }
+        .st-y { background: #fffbeb; color: #b45309; border-color: #fde68a; }
+        .st-w { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+        .st-a { background: #fff1f2; color: #9f1239; border-color: #fecdd3; }
+        .hyp-claim {
+            font-size: 7pt;
+            color: #334155;
+            line-height: 1.3;
+            margin: 1px 0 2px 34px;
+        }
+        .hyp-marks {
+            display: flex;
+            gap: 8px;
+            font-size: 6.6pt;
+            color: #334155;
+            margin: 0 0 2px 34px;
+            font-weight: 600;
+        }
+        .box {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border: 1.2px solid #334155;
+            border-radius: 1.5px;
+            margin-right: 3px;
+            vertical-align: -1px;
+            background: #fff;
+        }
+        .note-lines {
+            margin: 0 0 1px 34px;
+        }
+        .note-lines .ln {
+            border-bottom: 1px dotted #94a3b8;
+            height: 11px;
+        }
+        .pdf-footer {
+            border-top: 1px solid #e2e8f0;
+            margin-top: 6px;
+            padding-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 6.5pt;
+            color: #64748b;
+        }
+        .actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .action-box {
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            padding: 6px 8px;
+            min-height: 78mm;
+        }
+        .action-box h3 {
+            margin: 0 0 4px;
+            font-size: 9pt;
+            color: #1e1b4b;
+        }
+        .action-box .ln { border-bottom: 1px dotted #94a3b8; height: 14px; }
+        .full-notes { margin-top: 8px; }
+        .full-notes h3 { margin: 0 0 4px; font-size: 9pt; color: #1e1b4b; }
+        .full-notes .ln { border-bottom: 1px solid #cbd5e1; height: 16px; }
+
+        @page { size: A4 portrait; margin: 8mm 9mm; }
+        @media print {
+            html, body {
+                background: #ffffff !important;
+                color: #000 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #site-header, footer, .pdf-toolbar, .no-print { display: none !important; }
+            .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+            .a4-wrapper { margin: 0; gap: 0; display: block; }
+            .a4-page {
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+                height: auto;
+                padding: 0;
+                border-radius: 0;
+                page-break-after: always;
+            }
+            .a4-page:last-child { page-break-after: auto; }
+        }
+        @media screen and (max-width: 900px) {
+            .a4-page { width: 100%; min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+
+        <a href="confidence-report.html" class="no-print" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Confidence Report
+        </a>
+
+        <div class="card no-print animate-fade-in" style="margin-bottom: 1.5rem; border-left: 5px solid var(--color-warning);">
+            <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fef3c7; border-color: rgba(245, 158, 11, 0.3);">Dashboard &middot; Print Sheet &middot; H1&ndash;H33</span>
+            <h1 style="font-family: var(--font-heading); font-size: 2.1rem; margin: 0.5rem 0 0.75rem;">🖨️ Hypotheses Print Sheet</h1>
+            <p style="color: var(--text-secondary); max-width: 86ch; line-height: 1.65;">
+                One list. Nothing else. All 32 tracked hypotheses (H1&ndash;H33; H26 unused) with a one-line claim, current status, tick boxes, and lined note space. Print to PDF or paper for Sunday labs, Triton Square, 1-1 workshops, and discovery interviews. Source of truth remains <a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-warning);">HYPOTHESIS.md</a>. This sheet does not score the model &mdash; that lives on the <a href="confidence-report.html" style="color: var(--color-warning);">Confidence Report</a>.
+            </p>
+        </div>
+
+        <div class="card no-print animate-fade-in" style="margin-bottom: 1.5rem; padding: 0; overflow: hidden;">
+            <img src="hypotheses-print-hero.jpg" alt="Printed meeting worksheet with lined note rows, highlighter, pen, coffee, and a laptop on a discovery table" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <div class="pdf-toolbar no-print">
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">Chrome &rarr; Print &rarr; Destination: Save as PDF. Hide headers/footers. Four A4 pages.</span>
+            <button type="button" class="btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        </div>
+
+        <div class="a4-wrapper">
+
+            <!-- PAGE 1 -->
+            <section class="a4-page" aria-label="Print page 1 of 4">
+                <div class="pdf-header">
+                    <div>
+                        <h1>Hypothesis Meeting Sheet</h1>
+                        <p class="pdf-subtitle">AI Certification Helper &middot; Delivery Pilot &middot; H1&ndash;H33 (32 tracked; H26 unused) &middot; see HYPOTHESIS.md</p>
+                    </div>
+                    <div class="pdf-brand">Get Certified in AI.<br>Shape the Future.</div>
+                </div>
+                <div class="meta-grid">
+                    <div><label>Date</label><div class="uline"></div></div>
+                    <div><label>Meeting (Sun / Triton / 1-1)</label><div class="uline"></div></div>
+                    <div><label>Attendees (first names only)</label><div class="uline"></div></div>
+                    <div><label>Scribe</label><div class="uline"></div></div>
+                </div>
+                <div class="legend">
+                    <span><b>Marks:</b></span>
+                    <span><i class="box"></i>confirmed</span>
+                    <span><i class="box"></i>challenged</span>
+                    <span><i class="box"></i>follow-up</span>
+                    <span><b>Status:</b> 🟡 testing / partial &nbsp; ⚪ planned / decided &nbsp; ⚠️ unverified</span>
+                    <span>$0 / $1 joins are not paid enrollments.</span>
+                </div>
+
+                <div class="stage-label">1. Customer Discovery</div>
+
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H1</span><span class="hyp-title">Rising AI skills expectations</span><span class="hyp-status st-y">🟡 Partial</span></div>
+                    <div class="hyp-claim">Demand for AI/LLM skills is structurally rising; certs are screens, not substitutes for demonstrable ability.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H2</span><span class="hyp-title">Animated format beats dry materials</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Animated, visually distilled explanations outperform standard slide/manual formats on watch retention.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H3</span><span class="hyp-title">Audience will pay for cert prep</span><span class="hyp-status st-y">🟡 Progress</span></div>
+                    <div class="hyp-claim">A subset of engaged viewers convert if offered a low-friction next step; newsletter + visible pricing surfaces intent.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H24</span><span class="hyp-title">Emotional pain drivers (fear, greed, insecurity)</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Cert interest is driven by anxiety relief, career security, and status/pay &mdash; not dry academic information.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+
+                <div class="stage-label val">2. Customer Validation</div>
+
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H4</span><span class="hyp-title">YouTube funnel converts ~1% to paid</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Out of every 1,000 free-course views, at least 10 join the $10/mo membership. Still unmeasured as paid conversion.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H5</span><span class="hyp-title">Cohorts sell out organically ($0 ads)</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">20&ndash;40 premium students enroll per launch with $0 ads, buying live practice &mdash; not a pass guarantee. $0/$1 ≠ paid.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H6</span><span class="hyp-title">TAM / SAM / SOM market is large enough</span><span class="hyp-status st-a">⚠️ Unverified</span></div>
+                    <div class="hyp-claim">~50,000 tech practitioners reachable via these channels within 3 years (SOM). Working proxy; SOM unproven.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H7</span><span class="hyp-title">Funnel CTR / conversion rates hold</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">10% of viewers click to newsletter; 2% of subscribers convert to a cohort purchase. Unreconciled with H4.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H8</span><span class="hyp-title">Cohort delivers exam-ready PMF</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Live-session graduates pass at a high rate and recommend peers. Hoped-for outcome, not a guarantee.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H21</span><span class="hyp-title">$29 Exam Prep Bundle is a viable entry SKU</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Converts prospects who will not buy $10/mo or $250&ndash;$500 without cannibalizing those tiers.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+
+                <div class="pdf-footer">
+                    <span>Page 1 of 4 &middot; Discovery + Validation (start)</span>
+                    <span>First names only. Candidate B. stays B.</span>
+                    <span>Print from confidence-report companion</span>
+                </div>
+            </section>
+
+            <!-- PAGE 2 -->
+            <section class="a4-page" aria-label="Print page 2 of 4">
+                <div class="pdf-header">
+                    <div>
+                        <h1>Hypothesis Meeting Sheet</h1>
+                        <p class="pdf-subtitle">Page 2 &middot; Validation (cont.) + Customer Creation</p>
+                    </div>
+                    <div class="pdf-brand">H1&ndash;H33 &middot; live notes</div>
+                </div>
+
+                <div class="stage-label val">2. Customer Validation (continued)</div>
+
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H27</span><span class="hyp-title">Practice exam / question-bank gap</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Without blueprint-mapped mocks, the value prop is incomplete and conversions stall (blocks H8 and H21).</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H30</span><span class="hyp-title">Delivery Pilot career transformation roadmap</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Training &rarr; cert &rarr; CV/recruiter &rarr; FDE / IT contractor (£500&ndash;£1,000+/day) retains and converts better than exam-only.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+
+                <div class="stage-label cre">3. Customer Creation</div>
+
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H9</span><span class="hyp-title">$10k Stage 2&rarr;3 exit gate (2 launches)</span><span class="hyp-status st-w">⚪ Decided</span></div>
+                    <div class="hyp-claim">$10,000 gross from 2 consecutive paid cohort launches is the sole Validation&rarr;Creation gate. Stays a second job.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H10</span><span class="hyp-title">&gt;40% average watch retention (MVP floor)</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Catalog-wide &gt;40% AVD proves video quality. MVP metric only &mdash; Stage 3 is managed against H13, not H10.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H12</span><span class="hyp-title">IT consulting / gov-contractor B2B channel</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Firms have a bulk-purchase incentive to pay for staff Claude prep &mdash; larger than the individual YouTube funnel.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H13</span><span class="hyp-title">1,000x subscriber growth per video</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Each published video moves the channel toward 1,000x baseline (~30 &rarr; ~30,000). Primary Stage 3 metric.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H14</span><span class="hyp-title">Multi-cert expansion (Nvidia / Microsoft / Google)</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Expanding beyond Claude decreases vendor dependency and increases Stage 3 paid market reach.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H16</span><span class="hyp-title">Paid ads only post-validation, CAC/LTV-gated</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Ads become an option in Stage 3 only if a capped test keeps CAC below $10/mo + $250&ndash;$500 LTV. Organic stays primary.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H17</span><span class="hyp-title">Onsite Cambridge + corporate pilot (Marianna)</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">In-person delivery complements Sunday; first real signal on H12 B2B before dedicated outreach.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H18</span><span class="hyp-title">International onsite (UK / Europe / USA)</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">After Cambridge confidence clears, extend the same corporate onsite format into Europe and the USA.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+
+                <div class="stage-label bld">4. Company Building</div>
+
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H11</span><span class="hyp-title">$100k ARR triggers hiring + Skool moderators</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">$100,000 ARR hires editors, TAs, coordinators; alumni become Skool moderators. Distinct from H33 kill gate.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H15</span><span class="hyp-title">Founder goes full-time at Stage 4 only</span><span class="hyp-status st-w">⚪ Decided</span></div>
+                    <div class="hyp-claim">H9 does not trigger full-time. Stage 4 ($100k ARR) is when this becomes the founder&rsquo;s full-time job.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H22</span><span class="hyp-title">Certified-talent FDE placement (Stage 4 vision)</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">After Creation, pilot placing certified graduates with enterprises as embedded talent &mdash; a new revenue line.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+
+                <div class="pdf-footer">
+                    <span>Page 2 of 4 &middot; Validation (end) + Creation + Building</span>
+                    <span>Not a pass guarantee. Partners seat the exam (F12).</span>
+                    <span>H26 unused on purpose</span>
+                </div>
+            </section>
+
+            <!-- PAGE 3 -->
+            <section class="a4-page" aria-label="Print page 3 of 4">
+                <div class="pdf-header">
+                    <div>
+                        <h1>Hypothesis Meeting Sheet</h1>
+                        <p class="pdf-subtitle">Page 3 &middot; Cross-stage hypotheses</p>
+                    </div>
+                    <div class="pdf-brand">H1&ndash;H33 &middot; live notes</div>
+                </div>
+
+                <div class="stage-label xst">Cross-stage</div>
+
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H19</span><span class="hyp-title">Stage timeline estimates</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Discovery ~Q4 2026; Validation ~Q2 2027 ($10k / H9); Creation into 2029 (H13); Building ~2028 (H11/H15).</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H20</span><span class="hyp-title">MAOT: delight threshold predicts referral</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Referral count and NPS per cohort show whether the program crosses delight, not just a functional MVP bar.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H23</span><span class="hyp-title">4DX weekly accountable rhythm</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">A weekly 4DX cadence hits Stage 1&ndash;2 gates on the estimated timelines without founder burnout.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H25</span><span class="hyp-title">Cert value bifurcation (judgement vs trivia)</span><span class="hyp-status st-w">⚪ Planned</span></div>
+                    <div class="hyp-claim">Proctored, scenario-based certs rise; multiple-choice trivia certs deflate. Tailwind for live problem-solving.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H28</span><span class="hyp-title">YouTube engagement-rate benchmark</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Plan to &ge;4% like, &ge;0.5% comment, &ge;5% total engagement until real per-video data replaces the estimate.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H29</span><span class="hyp-title">Listen more than you speak</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Founder Stage 1&ndash;2 role: collect feedback, listen more than speak, let the audience cocreate the next shipped change.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H31</span><span class="hyp-title">AI job-creation multiplier vs job apocalypse</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">AI creates more high-value FDE / architect jobs than it destroys; train people to ride that curve (Jevons).</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H32</span><span class="hyp-title">Priestley five-step path (stay in CHAOS)</span><span class="hyp-status st-y">🟡 Testing</span></div>
+                    <div class="hyp-claim">Stay in CHAOS until H9 clears twice. Monday 3&ndash;6 / Friday debrief. Do not hire the four-person team yet.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+                <article class="hyp-row">
+                    <div class="hyp-top"><span class="hyp-id">H33</span><span class="hyp-title">£100k GBP pure-time pivot (kill gate)</span><span class="hyp-status st-w">⚪ Decided</span></div>
+                    <div class="hyp-claim">When the £100k ledger is full AND Discovery cannot become Validation AND Skool is not charging back, pivot that week.</div>
+                    <div class="hyp-marks"><span><i class="box"></i>confirmed</span><span><i class="box"></i>challenged</span><span><i class="box"></i>follow-up</span></div>
+                    <div class="note-lines"><div class="ln"></div><div class="ln"></div></div>
+                </article>
+
+                <div class="full-notes">
+                    <h3>Session overflow notes (quotes, first names only)</h3>
+                    <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                    <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                    <div class="ln"></div><div class="ln"></div>
+                </div>
+
+                <div class="pdf-footer">
+                    <span>Page 3 of 4 &middot; Cross-stage + overflow</span>
+                    <span>H33 is a kill gate, not the $100k ARR hire trigger (H11).</span>
+                    <span>Credit speakers by first name</span>
+                </div>
+            </section>
+
+            <!-- PAGE 4 -->
+            <section class="a4-page" aria-label="Print page 4 of 4">
+                <div class="pdf-header">
+                    <div>
+                        <h1>Hypothesis Meeting Sheet</h1>
+                        <p class="pdf-subtitle">Page 4 &middot; Actions, follow-ups, and evidence to log after the meeting</p>
+                    </div>
+                    <div class="pdf-brand">Do not invent last names</div>
+                </div>
+
+                <div class="actions-grid">
+                    <div class="action-box">
+                        <h3>What was confirmed (move toward 🟡 / ✅)</h3>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div>
+                    </div>
+                    <div class="action-box">
+                        <h3>What was challenged (risk / pivot)</h3>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div>
+                    </div>
+                    <div class="action-box">
+                        <h3>Follow-ups (who / by when)</h3>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div>
+                    </div>
+                    <div class="action-box">
+                        <h3>Evidence to file (page / report / transcript)</h3>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                        <div class="ln"></div><div class="ln"></div>
+                    </div>
+                </div>
+
+                <div class="full-notes">
+                    <h3>Paid-enrollment check (H5 / H9) &mdash; cash only; $0 Peek and $1 Sit In do not count</h3>
+                    <div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                    <h3 style="margin-top: 8px;">Exam-seating / partner note (F12) &mdash; named candidate, first name only</h3>
+                    <div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                    <h3 style="margin-top: 8px;">Free writing</h3>
+                    <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                    <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div>
+                    <div class="ln"></div><div class="ln"></div>
+                </div>
+
+                <div class="pdf-footer">
+                    <span>Page 4 of 4 &middot; After-meeting capture</span>
+                    <span>Log into HYPOTHESIS.md before treating a quote as a status change.</span>
+                    <span>Delivery Pilot &middot; 2026</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="no-print">
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 2rem 0;">
+            <span class="footer-text">© 2026 AI Certification Helper. Customer Development blueprint based on Steve Blank's framework.</span>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem; text-align: center;">
+                Latest Change: Added printable H1&ndash;H33 live-meeting notes sheet (2026-09-06) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/hypotheses-print.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>

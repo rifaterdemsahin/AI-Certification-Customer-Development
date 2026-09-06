@@ -21,17 +21,20 @@
             <p style="color: var(--text-secondary); margin-top: 1rem;">
                 A whole-site sanity check, re-run on demand by the <code>business-model-sanity-check</code> skill: every page and doc gets rescanned for internal contradictions and dead/orphaned content, every hypothesis in <a href="../../markdown_renderer.html?src=HYPOTHESIS.md" style="color: var(--color-warning);">HYPOTHESIS.md</a> gets scored, and the result is published as a new version below &mdash; never edited in place, so the trend line stays honest.
             </p>
+            <p style="margin-top: 1.1rem;">
+                <a href="hypotheses-print.html" class="btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; display: inline-flex; align-items: center; gap: 0.4rem;">🖨️ Print hypotheses (live meeting notes) &rarr;</a>
+            </p>
             <div class="grid" style="margin-top: 1.5rem;">
                 <div class="col-6">
                     <ul class="info-list">
-                        <li class="info-item"><span class="info-label">Current Version:</span><span class="info-value">v1.9.87</span></li>
-                        <li class="info-item"><span class="info-label">Date:</span><span class="info-value">2026-09-04</span></li>
+                        <li class="info-item"><span class="info-label">Current Version:</span><span class="info-value">v1.9.90</span></li>
+                        <li class="info-item"><span class="info-label">Date:</span><span class="info-value">2026-09-06</span></li>
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul class="info-list">
                         <li class="info-item"><span class="info-label">Methodology:</span><span class="info-value">0.7 &times; Hypothesis Validation + 0.3 &times; Site Integrity</span></li>
-                        <li class="info-item"><span class="info-label">Full Detail:</span><span class="info-value"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.87.md" style="color: var(--color-warning);">Read v1.9.87 report &rarr;</a></span></li>
+                        <li class="info-item"><span class="info-label">Full Detail:</span><span class="info-value"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.90.md" style="color: var(--color-warning);">Read v1.9.90 report &rarr;</a></span></li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +49,7 @@
                         <div style="color: var(--text-secondary); margin-top: 0.25rem;">out of 100 <span style="color: var(--color-warning);">(H33 scored; 32-hyp denom)</span></div>
                         <span class="status-pill" style="color: var(--color-warning); margin-top: 1rem;">🟡 Low-moderate</span>
                         <p style="color: var(--text-secondary); margin-top: 1.25rem; max-width: 48ch;">
-                            v1.9.87: holds 46. Sude first dedicated 1-1 ingested as Discovery (Ph.D. fork + Google Flow); Validation 35.0. Integrity 70 from the &minus;10 uncommitted-work deduction (slogan + this 1-1). Not a paid enrollment. Playbook: <a href="how-to-move-the-score.html" style="color: var(--color-warning);">How to Move the Score</a>.
+                            v1.9.90: holds 46. Hypotheses print sheet added (H1&ndash;H33 live-meeting notes); Validation 35.0. Integrity 70 from the &minus;10 uncommitted-work deduction. Not a paid enrollment. Playbook: <a href="how-to-move-the-score.html" style="color: var(--color-warning);">How to Move the Score</a>. Print: <a href="hypotheses-print.html" style="color: var(--color-warning);">hypotheses-print.html</a>.
                         </p>
                     </div>
                 </div>
@@ -274,13 +277,13 @@
                 <ul class="emoji-list">
                     <li><span class="emoji">🚪</span><span style="color: var(--text-secondary);"><strong>&minus;10 &mdash; 2 acidity-check findings still open:</strong> F2 (no dataset behind H1's original "Validated" claim), F11 (no churn/renewal model backs the $100 LTV assumption). See <a href="../../markdown_renderer.html?src=reports/acidity-check-report-v1.4.0.md" style="color: var(--color-primary);">Acidity Check v1.4</a>.</span></li>
                     <li><span class="emoji">🟡</span><span style="color: var(--text-secondary);"><strong>&minus;10 &mdash; 4 acidity-check findings partially addressed:</strong> F3, F7, F9, and <strong>F12</strong> (Cheuk at National Grid could not self-enroll; two partner companies enroll people).</span></li>
-                    <li><span class="emoji">📂</span><span style="color: var(--text-secondary);"><strong>&minus;10 &mdash; uncommitted work:</strong> slogan batch is still in the working tree (<code>slogan.html</code> + hero images untracked; 19 related files modified). Same category as v1.9.82: uncommitted = losable. Commit to <code>main</code> restores Integrity 70 &rarr; 80.</span></li>
-                    <li><span class="emoji">🔗</span><span style="color: var(--text-secondary);"><strong>0 &mdash; broken links:</strong> full-site scan; six regex hits are false positives inside inline <code>&lt;script&gt;</code> template strings.</span></li>
-                    <li><span class="emoji">✔️</span><span style="color: var(--text-secondary);"><strong>0 &mdash; orphaned pages:</strong> <code>slogan.html</code> is in Favorites, Strategy, searchIndex, and linked from H1/H24/H30 plus brand pages.</span></li>
+                    <li><span class="emoji">📂</span><span style="color: var(--text-secondary);"><strong>&minus;10 &mdash; uncommitted work:</strong> Print-sheet batch plus still-open Cohort Session 11 and Courses Production files. Uncommitted = losable. Commit to <code>main</code> restores Integrity 70 &rarr; 80.</span></li>
+                    <li><span class="emoji">🔗</span><span style="color: var(--text-secondary);"><strong>0 &mdash; broken links:</strong> <code>hypotheses-print.html</code> scan is clean; remaining regex hits elsewhere are false positives inside inline <code>&lt;script&gt;</code> template strings.</span></li>
+                    <li><span class="emoji">✔️</span><span style="color: var(--text-secondary);"><strong>0 &mdash; orphaned pages:</strong> <code>hypotheses-print.html</code> is in Docs + Favorites nav, searchIndex, relatedPages, and linked from this report and the hypothesis tracker.</span></li>
                     <li><span class="emoji">🔧</span><span style="color: var(--text-secondary);"><strong>0 &mdash; HYPOTHESIS.md internal consistency:</strong> all 32 Summary Table rows programmatically diffed against their own entries' leading status emoji &mdash; 0 mismatches.</span></li>
                     <li><span class="emoji">✔️</span><span style="color: var(--text-secondary);"><strong>0 &mdash; headline number consistency:</strong> the $10,000 gate, $100,000 ARR trigger, 1,000x growth metric, and &gt;40% retention floor are stated consistently everywhere they appear on the live site.</span></li>
                 </ul>
-                <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.85rem;">Total deductions: 30 (10 + 10 + 10) &rarr; <strong>Site Integrity Score: 70.0/100</strong>. Overall holds 46. See <a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.87.md" style="color: var(--color-primary);">v1.9.87 report</a>.</p>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.85rem;">Total deductions: 30 (10 + 10 + 10) &rarr; <strong>Site Integrity Score: 70.0/100</strong>. Overall holds 46. See <a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.90.md" style="color: var(--color-primary);">v1.9.90 report</a>.</p>
             </div>
         </section>
 
@@ -325,6 +328,9 @@
                         </tr>
                     </thead>
                     <tbody style="font-size: 0.8rem;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">v1.9.90</td><td style="padding: 0.6rem 0.5rem;">2026-09-06</td><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">46 / 100 (Low-moderate)</td><td style="padding: 0.6rem 0.5rem;"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.90.md" style="color: var(--color-primary);">Hypotheses print sheet (live meeting notes); score holds 46 &rarr;</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">v1.9.89</td><td style="padding: 0.6rem 0.5rem;">2026-09-06</td><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">46 / 100 (Low-moderate)</td><td style="padding: 0.6rem 0.5rem;"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.89.md" style="color: var(--color-primary);">Cohort Session 11 ingest (Bora, Marianna); score holds 46 &rarr;</a></td></tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">v1.9.88</td><td style="padding: 0.6rem 0.5rem;">2026-09-05</td><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">46 / 100 (Low-moderate)</td><td style="padding: 0.6rem 0.5rem;"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.88.md" style="color: var(--color-primary);">Courses Production collaborative-video tactic; score holds 46 &rarr;</a></td></tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">v1.9.87</td><td style="padding: 0.6rem 0.5rem;">2026-09-04</td><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">46 / 100 (Low-moderate)</td><td style="padding: 0.6rem 0.5rem;"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.87.md" style="color: var(--color-primary);">Sude first 1-1 ingest; Discovery keep / Validation do not count; score holds 46 &rarr;</a></td></tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">v1.9.86</td><td style="padding: 0.6rem 0.5rem;">2026-09-04</td><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">46 / 100 (Low-moderate)</td><td style="padding: 0.6rem 0.5rem;"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.86.md" style="color: var(--color-primary);">Slogan page + elevator pitch; uncommitted batch &minus;10 Integrity; 49 &rarr; 46 &rarr;</a></td></tr>
                         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary);"><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">v1.9.85</td><td style="padding: 0.6rem 0.5rem;">2026-09-04</td><td style="padding: 0.6rem 0.5rem; font-weight: 600; color: var(--color-warning);">49 / 100 (Low-moderate)</td><td style="padding: 0.6rem 0.5rem;"><a href="../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.85.md" style="color: var(--color-primary);">Honest-creator benchmark + Mehmet's direct ask to sell training courses; score holds 49 &rarr;</a></td></tr>
@@ -461,7 +467,7 @@
                 <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Published v1.9.87 after Sude first 1-1 ingest &mdash; overall holds 46 (2026-09-04) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/confidence-report.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Published v1.9.90 after hypotheses print sheet &mdash; overall holds 46; print companion at <a href="hypotheses-print.html" style="color: var(--color-primary);">hypotheses-print.html</a> (2026-09-06) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/confidence-report.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </div>
     </footer>
