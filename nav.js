@@ -28,33 +28,33 @@
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
                 ['5_Symbols/dashboard/favorites.html', '⭐ Favorites Hub &amp; Feedback'],
-                ['5_Symbols/dashboard/hypotheses-print.html', '🖨️ Hypotheses Print Sheet'],
-                ['5_Symbols/strategy/slogan.html', '📣 Slogan: Get Certified in AI. Shape the Future.'],
-                ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Core Message: Positive AI Skills Elevation'],
-                ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Being Intentional: Digital Minimalism'],
-                ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)'],
-                ['5_Symbols/cd/cohort-session-11-analysis.html', '🎙️ Cohort Session 11 Analysis'],
-                ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
-                ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis'],
-                ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule'],
-                ['5_Symbols/growth/course-curriculum-learning-objectives.html', '🎯 5-Min Video Curriculum &amp; LOs'],
-                ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Community Promotion Templates'],
-                ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos'],
-                ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Triggers & Thresholds)'],
-                ['5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', '⛔ £100k Pure-Time Pivot (H33)'],
-                ['5_Symbols/cd/cd-interview-recording.html', '📝 Discovery Interview Recorder'],
-                ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing'],
-                ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing'],
-                ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style'],
-                ['5_Symbols/growth/animation-shorts-pipeline.html', '🎬 Animation Shorts Pipeline &amp; Tools'],
-                ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas'],
-                ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis Tracker'],
-                ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report'],
-                ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
-                ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages'],
-                ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
-                ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide'],
-                ['5_Symbols/dashboard/todo.html', '✅ Task List']
+                ['5_Symbols/dashboard/hypotheses-print.html', '🖨️ Hypotheses Print Sheet', '2026-09-06'],
+                ['5_Symbols/strategy/slogan.html', '📣 Slogan: Get Certified in AI. Shape the Future.', '2026-09-04'],
+                ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Core Message: Positive AI Skills Elevation', '2026-08-30'],
+                ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Being Intentional: Digital Minimalism', '2026-08-30'],
+                ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)', '2026-09-04'],
+                ['5_Symbols/cd/cohort-session-11-analysis.html', '🎙️ Cohort Session 11 Analysis', '2026-09-06'],
+                ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis', '2026-08-30'],
+                ['5_Symbols/cd/cohort-session-9-analysis.html', '🎙️ Cohort Session 9 Analysis', '2026-08-23'],
+                ['5_Symbols/dashboard/content-kanban-release-schedule.html', '📋 Content Kanban &amp; Release Schedule', '2026-08-20'],
+                ['5_Symbols/growth/course-curriculum-learning-objectives.html', '🎯 5-Min Video Curriculum &amp; LOs', '2026-08-22'],
+                ['5_Symbols/growth/daily-community-promotion-templates.html', '📢 Daily Community Promotion Templates', '2026-08-23'],
+                ['5_Symbols/dashboard/weekly-todos.html', '🗓️ Weekly Todos', '2026-08-20'],
+                ['5_Symbols/strategy/when-to-pivot.html', '🔄 When to Pivot (Triggers & Thresholds)', '2026-08-21'],
+                ['5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', '⛔ £100k Pure-Time Pivot (H33)', '2026-08-27'],
+                ['5_Symbols/cd/cd-interview-recording.html', '📝 Discovery Interview Recorder', '2026-08-18'],
+                ['5_Symbols/comp/comp-mvp-separation.html', '⚖️ MVP Product vs. Marketing', '2026-08-18'],
+                ['5_Symbols/growth/reverse-response-marketing.html', '🔄 Reverse Response Marketing', '2026-08-18'],
+                ['5_Symbols/growth/roger-rabbit-animation.html', '🐇 Roger Rabbit Animation Style', '2026-08-18'],
+                ['5_Symbols/growth/animation-shorts-pipeline.html', '🎬 Animation Shorts Pipeline &amp; Tools', '2026-08-19'],
+                ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas', '2026-08-10'],
+                ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis Tracker', '2026-08-10'],
+                ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report', '2026-08-10'],
+                ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score', '2026-08-12'],
+                ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages', '2026-08-10'],
+                ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats', '2026-08-15'],
+                ['5_Symbols/cd/cd-interview-guide.html', '🎤 Interview Guide', '2026-08-10'],
+                ['5_Symbols/dashboard/todo.html', '✅ Task List', '2026-08-10']
             ]
         },
         {
@@ -420,7 +420,7 @@
         { url: '5_Symbols/cd/enterprise-openshift-onboarding.html', title: '🏢 Enterprise OpenShift Onboarding & Findable Content Engine', desc: 'Workplace discovery from 2 enterprise recruits using Udemy (Imran & Coombes) to navigate OpenShift: building findable YouTube shorts, an organized Skool hub, and easy-to-follow core messaging.', cat: 'Discovery', tags: 'enterprise openshift onboarding content engine findable youtube skool imran coombes capgemini consulting udemy kubernetes containers fde core message easy to follow h1 h2 h4 h8 h10 h12 h14 h24 h25 h29 h30' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-enterprise-openshift-onboarding-v1.0.0.md', title: 'Customer Discovery Report: Enterprise OpenShift Onboarding & Learning Engine v1.0', desc: 'Customer discovery synthesis of enterprise onboarding void at Capgemini: new starters learning OpenShift on Udemy, search discoverability on YouTube, Skool classroom presets, and core message cadence.', cat: 'Docs', tags: 'enterprise openshift onboarding customer discovery report imran coombes udemy youtube search engine skool presets fde contractor delivery pilot core message h1 h2 h4 h8 h10 h12 h14 h24 h25 h29 h30 report' },
         { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_enterprise_onboarding_openshift_2026-09-01.md', title: 'Discovery Record: Enterprise OpenShift Onboarding (2026-09-01)', desc: 'Raw discovery intake notes from 2 new starters in enterprise delivery team learning OpenShift via Udemy courses (Imran and Coombes).', cat: 'Docs', tags: 'interview enterprise onboarding openshift udemy imran coombes capgemini starters recruits raw record 2026-09-01 h1 h4 h12 h24 h30' },
-        { url: '5_Symbols/dashboard/favorites.html', title: '⭐ Favorites & Feedback Hub', desc: 'Sort, search, and copy bookmarked strategy pages in the same order for AI agent feedback.', cat: 'Dashboard', tags: 'favorites feedback hub sort copy clipboard a-z category selected rating letter rail core message being intentional export markdown agent h23' },
+        { url: '5_Symbols/dashboard/favorites.html', title: '⭐ Favorites & Feedback Hub', desc: 'Sort A→Z or oldest→newest, search, and copy bookmarked strategy pages in the same order for AI agent feedback.', cat: 'Dashboard', tags: 'favorites feedback hub sort copy clipboard a-z oldest newest category selected rating letter rail core message being intentional export markdown agent h23' },
         { url: '5_Symbols/strategy/intentionality-digital-minimalism.html', title: 'Intentionality & Digital Minimalism: Removing Noise to Amplify Signal', desc: 'Applying Cal Newport\'s Digital Minimalism framework: scanning repository ideas, ruthlessly removing cognitive and digital noise, and focusing single-founder bandwidth on high-leverage signals.', cat: 'Strategy', tags: 'intentionality digital minimalism cal newport focus signal noise single founder bandwidth deep work gary stevenson living hubs preset menus pexabo fde h23 h29 h30 h33' },
         { url: '5_Symbols/strategy/b2c2b-business-model.html', title: 'B2C2B Business Model & Enterprise Sourcing Pipeline', desc: 'The B2C2B business model: empowering individual developers (B2C), transitioning through agile SME pilots (SME 2B), and scaling to large enterprise talent sourcing and Forward Deployed Engineers (Enterprise 2B).', cat: 'Strategy', tags: 'b2c2b business model b2c 2b enterprise sourcing talent sme small mid enterprise delivery pilot forward deployed engineer fde day rate ilker marianna h1 h12 h22 h30' },
         { url: '5_Symbols/strategy/slogan.html', title: 'Slogan & Elevator Pitch: Get Certified in AI. Shape the Future.', desc: 'Canonical public slogan and 20-second elevator pitch for YouTube, LinkedIn, Skool About, and face-to-face opens — with an honest map to the Delivery Pilot offer and no pass guarantee.', cat: 'Strategy', tags: 'slogan elevator pitch get certified in ai shape the future brand copy youtube linkedin skool about face to face h1 h24 h30 h8 h5' },
@@ -630,7 +630,7 @@
         { url: '5_Symbols/hypotheses/hyp-h17.html', title: 'H17 · Onsite Cambridge + corporate pilot', desc: 'Detail page with premise-conclusion-status SVG diagram for H17.', cat: 'Hypothesis Detail', tags: 'h17 hypothesis detail onsite cambridge marianna svg diagram' },
         { url: '5_Symbols/hypotheses/hyp-h18.html', title: 'H18 · International onsite channels', desc: 'Detail page with premise-conclusion-status SVG diagram for H18.', cat: 'Hypothesis Detail', tags: 'h18 hypothesis detail international onsite uk europe usa svg diagram' },
         { url: '5_Symbols/dashboard/confidence-report.html', title: 'Business Model Confidence Report', desc: 'Versioned, whole-site sanity check scoring hypothesis validation and site integrity into one confidence number. v1.9.78 holds 48 after Saturday LinkedIn 8-week invite swipe file.', cat: 'Docs', tags: 'confidence score sanity check audit integrity version saturday linkedin invites v1.9.78' },
-        { url: '5_Symbols/dashboard/hypotheses-print.html', title: 'Hypotheses Print Sheet', desc: 'Print-to-PDF meeting sheet listing all 33 tracked hypotheses (H1–H34; H26 unused) with lined note space for Sunday labs, Triton Square, and 1-1 workshops.', cat: 'Docs', tags: 'print pdf hypotheses meeting notes live sunday h1 h34 worksheet' },
+        { url: '5_Symbols/dashboard/hypotheses-print.html', title: 'Hypotheses Print Sheet', desc: 'Print-to-PDF meeting sheet listing all 33 tracked hypotheses (H1–H34; H26 unused). Must be updated in the same commit as any new hypothesis ID or status change.', cat: 'Docs', tags: 'print pdf hypotheses meeting notes live sunday h1 h34 worksheet' },
         { url: '5_Symbols/dashboard/how-to-move-the-score.html', title: 'How to Move the Confidence Score', desc: 'Master playbook: formula, every historical score-up event, what does not move the number, housekeeping rules, and ranked evidence levers (H9, H21, F12).', cat: 'Docs', tags: 'how to move confidence score playbook integrity validation git broken links acidity h5 h8 h9 h21 h27 f12' },
         { url: '5_Symbols/dashboard/project-stats.html', title: 'Project Stats', desc: 'Counted snapshot of HTML pages, hypotheses, git history, reports, and discovery evidence for this Customer Development repo.', cat: 'Docs', tags: 'project stats dashboard pages commits loc hypotheses confidence h9 snapshot' },
         { url: '5_Symbols/hypotheses/hyp-h27.html', title: 'H27 · Practice Exam & Question Bank Gap', desc: 'Detail page with premise-conclusion-status SVG diagram for H27: blueprint-mapped practice exams are the value blocker for H8 and H21.', cat: 'Hypothesis Detail', tags: 'h27 hypothesis detail practice exam question bank mock test blueprint gap charles postponement svg diagram' },
@@ -869,15 +869,32 @@
                 var dropdownItems = group.items;
                 if (group.className === 'nav-favorites' && group.items.length > 1) {
                     var hubItem = group.items[0];
-                    var restItems = group.items.slice(1).slice().sort(function (a, b) {
-                        function key(label) {
-                            var m = String(label).match(/[A-Za-z0-9£]/);
-                            if (!m) return String(label).toLowerCase();
-                            return String(label).slice(String(label).indexOf(m[0])).toLowerCase();
+                    var printItem = null;
+                    var restItems = [];
+                    group.items.slice(1).forEach(function (item) {
+                        if (String(item[0]).indexOf('hypotheses-print.html') !== -1) {
+                            printItem = item;
+                        } else {
+                            restItems.push(item);
                         }
-                        return key(a[1]).localeCompare(key(b[1]), 'en', { sensitivity: 'base' });
                     });
-                    dropdownItems = [hubItem].concat(restItems);
+                    function favKey(label) {
+                        var m = String(label).match(/[A-Za-z0-9£]/);
+                        if (!m) return String(label).toLowerCase();
+                        return String(label).slice(String(label).indexOf(m[0])).toLowerCase();
+                    }
+                    restItems.sort(function (a, b) {
+                        var ka = favKey(a[1]);
+                        var kb = favKey(b[1]);
+                        var cmp = ka.localeCompare(kb, 'en', { sensitivity: 'base' });
+                        if (cmp !== 0) return cmp;
+                        var da = a[2] || '';
+                        var db = b[2] || '';
+                        return String(da).localeCompare(String(db));
+                    });
+                    dropdownItems = [hubItem];
+                    if (printItem) dropdownItems.push(printItem);
+                    dropdownItems = dropdownItems.concat(restItems);
                 }
                 dropdownItems.forEach(function (item) {
                     if (isActive(item[0])) {

@@ -240,7 +240,7 @@
                     <span class="badge" style="background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">User Feedback Engine &middot; Strategic Favorites</span>
                     <h1 style="font-family: var(--font-heading); font-size: 2.2rem; margin: 0.5rem 0 0.5rem 0;">⭐ Favorites &amp; Feedback Generator</h1>
                     <p style="color: var(--text-secondary); max-width: 86ch; line-height: 1.65; font-size: 1.02rem;">
-                        Sort, search, and rate the bookmarked strategy pages, then copy a markdown packet in <strong>the same order you see</strong> for the AI agent. Sort is an execution tool, not a paid-enrollment claim — see <a href="../hypotheses/hyp-h23.html" style="color: var(--color-primary);">H23</a>.
+                        Sort, search, and rate the bookmarked strategy pages, then copy a markdown packet in <strong>the same order you see</strong> for the AI agent. A&rarr;Z ignores emoji; Oldest&rarr;Newest uses the date the page was bookmarked. Sort is an execution tool, not a paid-enrollment claim — see <a href="../hypotheses/hyp-h23.html" style="color: var(--color-primary);">H23</a>.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
@@ -250,7 +250,7 @@
                 </div>
             </div>
             <div class="sort-flow" aria-label="How copy uses the current sort">
-                <div class="sort-flow-step"><strong>1. Sort</strong><span>A→Z, category, selected first, or rating — not the original dump order.</span></div>
+                <div class="sort-flow-step"><strong>1. Sort</strong><span>A→Z, oldest→newest, newest→oldest, category, selected first, or rating.</span></div>
                 <div class="sort-flow-step"><strong>2. Filter</strong><span>Search or tap a letter (Daily Promo sits under D).</span></div>
                 <div class="sort-flow-step"><strong>3. Rate</strong><span>Check items, pick a rating, add a note.</span></div>
                 <div class="sort-flow-step"><strong>4. Copy</strong><span>The sticky button pastes that sorted list plus your feedback.</span></div>
@@ -310,13 +310,15 @@
         <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom: 0.75rem;">
                 <div>
-                    <h2 class="section-title" style="margin:0;">📋 All Bookmarked Favorites (<span id="fav-count">20</span>)</h2>
+                    <h2 class="section-title" style="margin:0;">📋 All Bookmarked Favorites (<span id="fav-count">27</span>)</h2>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top:0.25rem;">Sort and filter first. Copy uses this order. Check items to include in the feedback packet.</p>
                 </div>
                 <div class="fav-toolbar">
                     <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600; letter-spacing:0.04em;">SORT</span>
                     <button type="button" id="btn-sort-az" class="sort-btn active" data-sort="az" aria-pressed="true">A &rarr; Z</button>
                     <button type="button" id="btn-sort-za" class="sort-btn" data-sort="za" aria-pressed="false">Z &rarr; A</button>
+                    <button type="button" id="btn-sort-old" class="sort-btn" data-sort="oldest" aria-pressed="false">Oldest &rarr; newest</button>
+                    <button type="button" id="btn-sort-new" class="sort-btn" data-sort="newest" aria-pressed="false">Newest &rarr; oldest</button>
                     <button type="button" id="btn-sort-cat" class="sort-btn" data-sort="cat" aria-pressed="false">Category</button>
                     <button type="button" id="btn-sort-selected" class="sort-btn" data-sort="selected" aria-pressed="false">Selected first</button>
                     <button type="button" id="btn-sort-rating" class="sort-btn" data-sort="rating" aria-pressed="false">Rating</button>
@@ -376,7 +378,7 @@
                 <span style="color: var(--text-secondary); font-size: 0.9rem;">Founder: Rifat Erdem Sahin (Pexabo Ltd)</span>
             </div>
             <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
-                Latest Change: Added Hypotheses Print Sheet to Favorites (2026-09-06) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/favorites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+                Latest Change: Added A→Z plus Oldest→Newest / Newest→Oldest favorite sorts; print sheet stays pinned in the nav (2026-09-06) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/dashboard/favorites.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
             </span>
         </footer>
 
@@ -537,7 +539,31 @@
                     title: '🖨️ Hypotheses Print Sheet',
                     cat: 'Dashboard',
                     emoji: '🖨️',
-                    desc: 'Print-to-PDF H1–H33 meeting sheet with lined note space for Sunday labs, Triton Square, and 1-1 workshops.'
+                    desc: 'Print-to-PDF H1–H34 meeting sheet with lined note space for Sunday labs, Triton Square, and 1-1 workshops. Update this sheet in the same commit as any new hypothesis.'
+                },
+                {
+                    id: 'slogan',
+                    url: '5_Symbols/strategy/slogan.html',
+                    title: '📣 Slogan: Get Certified in AI. Shape the Future.',
+                    cat: 'Strategy',
+                    emoji: '📣',
+                    desc: 'Canonical public slogan and elevator pitch. Not a pass guarantee.'
+                },
+                {
+                    id: 'sude-1-1',
+                    url: '5_Symbols/cd/sude-1-1-session.html',
+                    title: '🎧 Sude First 1-1 (Critical Value)',
+                    cat: 'Discovery',
+                    emoji: '🎧',
+                    desc: 'Ph.D. fork vs FDE ladder plus live Google Flow lab. Not a paid enrollment.'
+                },
+                {
+                    id: 'cohort-11',
+                    url: '5_Symbols/cd/cohort-session-11-analysis.html',
+                    title: '🎙️ Cohort Session 11 Analysis',
+                    cat: 'Discovery',
+                    emoji: '🎙️',
+                    desc: 'Bora + Marianna: AI trading token-trap, course-review UX. No new revenue signal.'
                 },
                 {
                     id: 'how-to-move-score',
@@ -581,6 +607,40 @@
                 }
             ];
 
+            var ADDED = {
+                'bmc': '2026-08-10',
+                'hypothesis-tracker': '2026-08-10',
+                'confidence-report': '2026-08-10',
+                'latest-pages': '2026-08-10',
+                'interview-guide': '2026-08-10',
+                'todo-list': '2026-08-10',
+                'how-to-move-score': '2026-08-12',
+                'project-stats': '2026-08-15',
+                'cd-recorder': '2026-08-18',
+                'mvp-separation': '2026-08-18',
+                'reverse-response': '2026-08-18',
+                'roger-rabbit': '2026-08-18',
+                'animation-pipeline': '2026-08-19',
+                'kanban': '2026-08-20',
+                'weekly-todos': '2026-08-20',
+                'when-to-pivot': '2026-08-21',
+                'course-curriculum-los': '2026-08-22',
+                'cohort-9': '2026-08-23',
+                'promo-templates': '2026-08-23',
+                'hundred-k-pivot': '2026-08-27',
+                'core-message': '2026-08-30',
+                'intentionality': '2026-08-30',
+                'cohort-10': '2026-08-30',
+                'slogan': '2026-09-04',
+                'sude-1-1': '2026-09-04',
+                'hypotheses-print': '2026-09-06',
+                'cohort-11': '2026-09-06'
+            };
+            favoritesList.forEach(function(item, i) {
+                item.added = ADDED[item.id] || '2026-08-10';
+                item.origIndex = i;
+            });
+
             var grid = document.getElementById('favorites-grid');
             var favCountEl = document.getElementById('fav-count');
             var markdownPreviewEl = document.getElementById('markdown-preview');
@@ -594,6 +654,8 @@
             var SORT_LABELS = {
                 az: 'A → Z (letter, ignoring emoji)',
                 za: 'Z → A',
+                oldest: 'Oldest → newest (bookmark date)',
+                newest: 'Newest → oldest (bookmark date)',
                 cat: 'Category, then A → Z',
                 selected: 'Selected first, then A → Z',
                 rating: 'Rating (priority first)',
@@ -639,7 +701,15 @@
             }
 
             function compareAz(a, b) {
-                return azSortKey(a.title).localeCompare(azSortKey(b.title), 'en', { sensitivity: 'base' });
+                var cmp = azSortKey(a.title).localeCompare(azSortKey(b.title), 'en', { sensitivity: 'base' });
+                if (cmp !== 0) return cmp;
+                return String(a.added || '').localeCompare(String(b.added || ''));
+            }
+
+            function compareAdded(a, b) {
+                var cmp = String(a.added || '').localeCompare(String(b.added || ''));
+                if (cmp !== 0) return cmp;
+                return compareAz(a, b);
             }
 
             function collectCardState() {
@@ -691,6 +761,10 @@
                     copy.sort(compareAz);
                 } else if (sortMode === 'za') {
                     copy.sort(function(a, b) { return compareAz(b, a); });
+                } else if (sortMode === 'oldest') {
+                    copy.sort(compareAdded);
+                } else if (sortMode === 'newest') {
+                    copy.sort(function(a, b) { return compareAdded(b, a); });
                 } else if (sortMode === 'cat') {
                     copy.sort(function(a, b) {
                         var c = String(a.cat).localeCompare(String(b.cat), 'en', { sensitivity: 'base' });
@@ -809,6 +883,7 @@
                         '    <a href="../../' + item.url + '" target="_blank" style="color:var(--text-muted); font-size:0.8rem; text-decoration:none;" title="Open Page">🔗 Open</a>' +
                         '  </div>' +
                         '  <a href="../../' + item.url + '" class="fav-card-title">' + item.title + '</a>' +
+                        '  <p style="color:var(--text-muted); font-size:0.75rem; margin:0.15rem 0 0;">Bookmarked ' + (item.added || '—') + '</p>' +
                         '  <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">' + item.desc + '</p>' +
                         '  <div style="display:flex; flex-direction:column; gap:0.4rem; margin-top:0.25rem;">' +
                         '    <select id="rate-' + item.id + '" class="rating-select" data-id="' + item.id + '">' +
