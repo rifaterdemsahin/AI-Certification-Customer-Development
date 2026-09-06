@@ -28,6 +28,7 @@
         {
             type: 'dropdown', label: 'Favorites', emoji: '⭐', className: 'nav-favorites', items: [
                 ['5_Symbols/dashboard/favorites.html', '⭐ Favorites Hub &amp; Feedback'],
+                ['5_Symbols/dashboard/hypotheses-print.html', '🖨️ Hypotheses Print Sheet'],
                 ['5_Symbols/strategy/slogan.html', '📣 Slogan: Get Certified in AI. Shape the Future.'],
                 ['5_Symbols/strategy/positive-ai-skills-message.html', '✨ Core Message: Positive AI Skills Elevation'],
                 ['5_Symbols/strategy/intentionality-digital-minimalism.html', '🧘 Being Intentional: Digital Minimalism'],
@@ -49,7 +50,6 @@
                 ['5_Symbols/bmc/business-model-canvas.html', '🖼️ Business Model Canvas'],
                 ['5_Symbols/hypotheses/hypothesis.html', '💭 Hypothesis Tracker'],
                 ['5_Symbols/dashboard/confidence-report.html', '🧪 Confidence Report'],
-                ['5_Symbols/dashboard/hypotheses-print.html', '🖨️ Hypotheses Print Sheet'],
                 ['5_Symbols/dashboard/how-to-move-the-score.html', '📈 How to Move the Score'],
                 ['5_Symbols/dashboard/latest-pages.html', '✨ Latest Pages'],
                 ['5_Symbols/dashboard/project-stats.html', '📊 Project Stats'],
