@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cohort Session 11 Analysis | Token Trap &amp; Course Feedback</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .arch-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-normal);
+        }
+        .arch-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        .arch-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .quote-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--color-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin: 0.75rem 0;
+            color: var(--text-secondary);
+        }
+        .todo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <a href="archived-interview-transcripts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Archived Transcripts &amp; Interviews
+        </a>
+
+        <div class="card animate-fade-in" style="margin-bottom: 3rem; border-left: 5px solid var(--color-info); position: relative; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background: rgba(59, 130, 246, 0.15); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);">Customer Discovery &middot; Live Cohort Simulation</span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">🎙️ AI Cohort Session 11: Edge Erosion &amp; the Token Trap</h1>
+                    <p style="color: var(--text-secondary); max-width: 78ch; font-size: 1.05rem; line-height: 1.6;">
+                        Sunday session with returning members <strong>Bora</strong> and <strong>Marianna</strong>. Bora's AI trading models keep burning tokens without finding an edge; Marianna names the mechanism — AI platforms are incentivized to keep users consuming tokens, not solving problems. Direct UX feedback on the collaborative course-review tool. No new prospect, no revenue signal this session. See <a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a>, <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a>, <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>. Not a paid enrollment.
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="archived-interview-transcripts.html" class="btn" style="background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 8px; text-align: center;">
+                        📂 View All Transcripts
+                    </a>
+                    <a href="../dashboard/todo.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-align: center;">
+                        ✅ View Action Items in todo.html
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">📄 Source &amp; Related Session</h2>
+            <div class="card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.6); border-color: rgba(59, 130, 246, 0.25);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-primary);">Source PDF:</strong> <code>3_Simulation/Cohorts/Cohort 11 - Google Docs.pdf</code> &mdash; cleaned transcript + executive summary + action items.
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <a href="cohort-session-10-analysis.html" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            &larr; Session 10 Analysis
+                        </a>
+                        <a href="../../markdown_renderer.html?src=reports/cohort-session-11-analysis-v1.0.0.md" class="btn" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; font-size: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none;">
+                            📄 Read Full Markdown Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">👥 Participant Discovery Signals &amp; Verbatim VoC</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-blue">Returning Member &middot; AI Trading Builder</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Bora</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Builds AI prediction-market trading strategies. Models run for weeks, burn tokens, find no sustainable edge, then self-block every trade on fee risk. Has archived 15 private AI repos because they didn't make money. Contracting/certification goal unchanged.
+                        </p>
+                        <div class="quote-box">
+                            &ldquo;The models run for weeks, burn through tokens, and then tell me to shelf the project because they can&rsquo;t overcome the maker/taker fees.&rdquo;
+                        </div>
+                        <div class="quote-box">
+                            &ldquo;My main goal is to get certified, improve my AI infrastructure skills, and land a solid Unix/AI systems contracting role in London.&rdquo;
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #60a5fa;">Signal:</strong> Corroborates <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a>'s complexity/emotional-driver premise; <a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a> goal unchanged.
+                    </div>
+                </div>
+
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-green">Returning Member &middot; Value Perception</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Marianna</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Names the "token trap": AI platforms are incentivized to keep users consuming tokens, not solving problems. Reviewed the Canva/Skool course-feedback tool live and asked for lower visual/textual density.
+                        </p>
+                        <div class="quote-box">
+                            &ldquo;AI platforms are incentivized to keep users consuming tokens and generating text rather than solving problems directly.&rdquo;
+                        </div>
+                        <div class="quote-box">
+                            &ldquo;The feedback tool is clear, but we need to keep the visual and textual information simple. The human mind can only process so much information at once.&rdquo;
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #34d399;">Signal:</strong> Direct UX feedback for <a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a> (simplified format) and reinforces <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a>.
+                    </div>
+                </div>
+
+                <div class="arch-card">
+                    <div>
+                        <span class="arch-tag tag-amber">Founder &amp; FDE Contractor</span>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Rifat</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                            Ran a live walkthrough of the collaborative course-production platform (Skool/GitHub/Canva). Confirmed he runs his own "business confidence score" on ideas &mdash; the same discipline behind this site's sanity-check reports.
+                        </p>
+                        <div class="quote-box">
+                            &ldquo;I use AI to calculate a &lsquo;business confidence score&rsquo; on my ideas to stop me from building aimlessly.&rdquo;
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 0.85rem;">
+                        <strong style="color: #fbbf24;">Note:</strong> A third of the session was a personal-finance (UK salary sacrifice) detour &mdash; off-thesis, logged as a scope note under <a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title">🧭 What This Session Does &amp; Does Not Validate</h2>
+            <div class="card" style="padding: 1.25rem;">
+                <pre class="mermaid">
+flowchart LR
+    Bora["Bora: AI trading token trap&lt;br/&gt;15 archived repos"] --> Confirms["Confirms token-trap /&lt;br/&gt;complexity failure mode"]
+    Marianna["Marianna: course-tool review&lt;br/&gt;keep it simple"] --> UX["Direct UX feedback:&lt;br/&gt;Canva/Skool module review"]
+    Sude["Sude (relayed): avatar-to-voice&lt;br/&gt;transition still rough"] --> UX
+    Confirms --> H24["H24: complexity/emotional-driver&lt;br/&gt;hypothesis"]
+    UX --> H2["H2: animated/simplified&lt;br/&gt;format hypothesis"]
+    TaxTalk["UK salary-sacrifice / Rolls-Royce&lt;br/&gt;personal-finance detour"] -.->|off-topic, not a product signal| NoAction["No H-linkage"]
+                </pre>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem;">No new named prospect, no enrollment discussion, no revenue data this session &mdash; corroborating qualitative evidence only. Status on H2 / H24 / H29 / H30 is unchanged.</p>
+            </div>
+        </section>
+
+        <section class="content-section animate-fade-in" style="margin-bottom: 3rem;">
+            <h2 class="section-title">📋 Action Items &amp; To-Do Checklist</h2>
+            <div class="card">
+                <div class="todo-item">
+                    <span>🎨</span>
+                    <div><strong>Course-tool simplicity pass:</strong> reduce visual/textual density in the Canva/Skool feedback review tool per Marianna's note (<a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a> / <a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a>).</div>
+                </div>
+                <div class="todo-item">
+                    <span>🎬</span>
+                    <div><strong>Smooth the avatar-to-live-voice transition:</strong> standing item from Sude, re-raised by Bora this session (<a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a>).</div>
+                </div>
+                <div class="todo-item">
+                    <span>⏱️</span>
+                    <div><strong>Keep Sunday sessions scoped to product/discovery:</strong> personal-finance tangents are fine for rapport but should not consume a third of a thin-room session.</div>
+                </div>
+                <div class="todo-item">
+                    <span>🚫</span>
+                    <div><strong>No action needed on Bora's trading frustration</strong> &mdash; off-thesis, useful only as evidence of the token-trap pattern to design against.</div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>AI Certification Helper &copy; 2026 &middot; Steve Blank Customer Development Engine</div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="archived-interview-transcripts.html" style="color: var(--color-primary); text-decoration: none;">Archived Transcripts</a>
+                    <a href="../dashboard/todo.html" style="color: var(--color-primary); text-decoration: none;">Task List</a>
+                    <a href="../dashboard/weekly-todos.html" style="color: var(--color-primary); text-decoration: none;">Weekly Todos</a>
+                </div>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added AI Cohort Session 11 analysis &mdash; AI token-trap corroboration and collaborative course-tool UX feedback (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/cohort-session-11-analysis.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a>)
+            </span>
+        </footer>
+    </main>
+
+    <script src="../../nav.js"></script>
+    <script src="../../main.js"></script>
+</body>
+</html>
