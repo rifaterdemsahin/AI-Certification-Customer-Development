@@ -1,3 +1,5 @@
+> **Superseded** — see [v1.9.94](business-model-confidence-v1.9.94.md) for the current report.
+
 # Business Model Confidence Report — v1.9.93
 
 **Date:** 2026-09-06
