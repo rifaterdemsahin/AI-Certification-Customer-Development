@@ -19,6 +19,7 @@ In a monthly career promotion call between founder **Erdem** and community membe
 3. **Enterprise Partner Thresholds as a B2C2B Engine (H25 / H1):** Hyperscalers (Google Cloud, AWS, Microsoft) mandate that enterprise partner firms (Capgemini, IBM, regional boutique consultancies) maintain quotas of certified staff (e.g., 10+ certified engineers) to retain tier status and receive direct inbound enterprise deals. This directly validates our B2C2B placement alignment and partner exam seating strategy.
 4. **Contracting Track Record vs. IR35 Tax Realities (H30):** Erdem shared his £1.3M+ contracting track record across 22 roles in the UK, US, and Turkey. High effective tax brackets (65–70% on stacked inside-IR35 roles) demonstrate why independent contractors must pivot into high-margin digital products, courses, and community alliances rather than purely stacking hourly time.
 5. **Debiasing AI Trading Bot Myths (H2 / H29):** Bora tested 15 AI-driven trading/fintech bot prototypes using multi-source data (APIs, GPS, Twitter sentiment). In all 15 cases, rigorous AI risk assessment advised a "no go" on live capital deployment. Bora observed that online claims of "$3k/month trading bots" are promotional funnels for courses/communities, validating the critical need for honest, transparent engineering education.
+6. **Multi-Agent Strategy Research & Hermes Triad (H1 / H8 / H30):** In post-session follow-up feedback, Bora detailed his strategy: staying focused on certification while building public GitHub repositories on trading systems. He highlighted multi-agent architectures using the latest **Hermes agent** release, decomposing workflows into **research**, **code**, and **reviewer** sub-agents with **Human-in-the-Loop (HITL)** monitoring and intervention, proposing a new project: *"Multi-Agent Strategy Research"*.
 
 ---
 
@@ -27,7 +28,7 @@ In a monthly career promotion call between founder **Erdem** and community membe
 ### Profile & Intake Data
 * **Candidate:** Bora
 * **Role / Background:** Linux & DevOps Engineer transitioning to AI Infrastructure & Cloud Architecture
-* **Channel:** Monthly VIP Career Promotion Call
+* **Channel:** Monthly VIP Career Promotion Call & Written Follow-up
 * **Date Logged:** 2026-09-07
 * **Tagged Hypotheses:** H1, H5, H8, H24, H25, H29, H30
 
@@ -38,6 +39,7 @@ In a monthly career promotion call between founder **Erdem** and community membe
 | **3. Partner Program Tier Quotas (H25 / H1)** | Cloud providers require partner companies to maintain at least 10 certified staff to receive client referrals and partner tier status. | Validates B2C2B model: enterprise partners have an acute commercial incentive to sponsor or absorb certified Delivery Pilot members. |
 | **4. Contracting & Tax Realities (H30)** | £1.3M+ contracting record across 22 roles; 65–70% effective tax rates on stacked contracts prompt digital leverage. | Raw hourly contracting hits a steep tax wall; productized knowledge (Udemy, Skool) and collective bidding create sustainable equity. |
 | **5. AI Trading Bot Debiasing (H2 / H29)** | 15 AI trading bot prototypes evaluated risk as "no go"; $3k/mo bot claims are marketing funnels for courses. | Reinforces community demand for authentic, hype-free AI skills over get-rich-quick schemes. |
+| **6. Multi-Agent Strategy & Public Repos (H1 / H8 / H30)** | *"Thanks teacher, I will examine these. As you said, one needs to stay focused to get certified; in the meantime, I will apply what I learn to the trading side and create public repos. For example, the multi-agent topic is very hyped right now. In the latest version of the Hermes agent, you can create separate agents such as research, code, and reviewer, enable them to interact with each other, and you can sit back, monitor the messaging between them, and step in to intervene. My new project could be 'Multi-Agent Strategy Research', for instance."* | Validates dual-track positioning: vendor certification provides institutional baseline while public multi-agent repositories (Hermes research/code/reviewer triad + HITL) create undeniable proof-of-work. |
 
 ---
 
@@ -52,6 +54,9 @@ In a monthly career promotion call between founder **Erdem** and community membe
 ### C. Reinforcement of H24 & H29 (Career Plateau Pain & Authentic Mentorship)
 * **Empirical Grounding:** The transition from commoditized Linux/DevOps to AI infrastructure addresses deep practitioner anxiety about market obsolescence. Erdem's transparent sharing of real tax math, contracting histories, and course access establishes high-trust mentorship.
 
+### D. Multi-Agent Orchestration & Public Repositories (H1 / H8 / H30)
+* **Empirical Grounding:** Bora's initiative to build **"Multi-Agent Strategy Research"** using the Hermes agent pattern (`research`, `code`, `reviewer` with human-in-the-loop oversight) demonstrates how Forward Deployed Engineers create verifiable proof-of-work. Vendor certification provides the formal credential filter (H1/H25), while open-source multi-agent systems demonstrate real-world deployment capability.
+
 ---
 
 ## 4. Action Items & Shared Deliverables
@@ -60,6 +65,7 @@ In a monthly career promotion call between founder **Erdem** and community membe
 2. **Exam Prep & Mock Testing in Classroom:** Shared GCP Architect readiness materials and PDFs within the *Deliver a Pilot* classroom.
 3. **Enterprise Partner Introduction:** Erdem arranged to connect Bora with **Barış** (partner firm gathering 10 certified engineers for cloud provider partner tiers).
 4. **Hands-on Lab Progression:** Bora continues Skilljar and Qwiklabs modules to complete high-difficulty certification objectives.
+5. **Multi-Agent Strategy Research Repo:** Bora initiates public GitHub repository demonstrating Hermes multi-agent triad architecture (research, code, reviewer + HITL) applied to trading strategy research.
 
 ---
 

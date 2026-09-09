@@ -38,6 +38,22 @@
   3. Erdem initiated an introduction between Bora and **Barış** (a partner tech firm assembling 10 certified members for cloud hyperscaler partner tiers).
   4. Bora committed to continuing Qwiklabs/Skilljar hands-on modules to finalize certification exam readiness.
 
+## 5b. Post-Call Follow-Up Feedback: Multi-Agent Strategy Research & Hermes Agent (2026-09-07)
+
+Following the 1-on-1 session and review of the shared study assets, Bora provided written follow-up feedback detailing his operational focus and next hands-on technical project:
+
+### 🗣️ Verbatim Feedback (Turkish Original)
+> *"Sagol hocam, inceleyecegim bunlari. Dedigin gibi certified olmak icin odaklanmak gerekiyor, bu arada ogrendiklerimi trading tarafinda uygulayip public repo'lar yaratacagim. Mesela multi-agent konusu su anda cok hype, Hermes agent’in son surumunde research, code ve reviewer seklinde ayri agent'lar yaratip bunlarin birbiri ile etkilesimini saglatabiliyorsun, sen de oturup aralarindaki mesajlasmalari takip edip araya girip mudahale edebiliyorsun. Yeni projem Multi-Agent Strategy Research olabilir mesela."*
+
+### 🌐 English Translation
+> *"Thanks teacher / mate, I will examine these. As you said, one needs to stay focused to get certified; in the meantime, I will apply what I learn to the trading side and create public repos. For example, the multi-agent topic is very hyped right now. In the latest version of the Hermes agent, you can create separate agents such as research, code, and reviewer, enable them to interact with each other, and you can sit back, monitor the messaging between them, and step in to intervene. My new project could be 'Multi-Agent Strategy Research', for instance."*
+
+### 🔬 Technical Breakdown & Strategic Takeaways:
+1. **Certification Focus + Public Proof-of-Work Repositories (H1 / H8 / H30):** Bora reinforces the dual-track learning methodology: maintaining dedicated focus to pass vendor certification exams while constructing public GitHub repositories to demonstrate real-world implementation capabilities to recruiters and clients.
+2. **Hermes Multi-Agent Triad (Research, Code, Reviewer):** Decomposing complex software and analysis tasks into specialized sub-agents (`research` gathers context/data, `code` generates logic, `reviewer` evaluates quality/risk).
+3. **Human-in-the-Loop (HITL) Interactivity:** Unlike brittle, fully autonomous black-box loops (which failed in earlier automated trading bot tests), the human operator monitors the multi-agent message bus in real-time and steps in to steer or correct decisions.
+4. **Project Initiative — Multi-Agent Strategy Research:** Deploying multi-agent orchestration for financial and trading strategy research as an open-source, verifiable portfolio project.
+
 ## 6. Sources & Reviewed Reference Artifacts
 - **Skool Classroom & Study Guides:**
   - [CCAF Exam Print Out (Study) - Exam Prep](https://www.skool.com/delivery-pilot-8938/classroom/b0a02d54?md=219f64fe248e43158b5fbcc5ceb925d3)
