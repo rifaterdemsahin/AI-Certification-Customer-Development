@@ -149,6 +149,8 @@
 - **Related Files:** every `*.html` under `5_Symbols/` and root, `nav.js`, `navigation_config.json`, `5_Symbols/toolbox/nav_sync.py`, `5_Symbols/toolbox/smoke_test.py`, `6_Semblance/error_log.md`
 - **Last Updated:** 2026-09-10
 
+**Follow-up fix (same day):** a repo-wide link audit (custom Python link checker walking every `src=`/`href=` in every `.html` file and verifying the resolved target exists on disk) caught a class of bug the original rewrite missed: for the 4 files that moved themselves out of root (`motivation.html`, `business-overview.html`, `exam-topics.html`, `markdown_renderer.html`), only references *to* other moved targets had been re-based — their own links to *unmoved* sibling pages (written when they lived at root, e.g. `href="5_Symbols/hypotheses/hyp-h1.html"`) were never recomputed for their new, one-level-deeper directory. Also missed: relative `../../reports/*.md` and `../../.agents/skills/*` references (the directory-move token-replacement pass only caught bare root-relative mentions, not `../`-prefixed ones already "qualified" by a leading `/`), and a handful of pre-existing broken `href="exam-topics.html"` / `href="motivation.html"` cross-references in sibling pages that happened to now resolve correctly by coincidence of folder co-location. Wrote a second re-basing pass (recomputes every static href/src in the 4 self-moved files relative to their new directory) plus a targeted sweep for the `reports/`/`.agents/skills/` relative-path gap. Verified 0 real broken `src`/`href` targets across all 303 HTML files afterward (7 remaining "misses" are JS template-literal false positives, e.g. `${page.url}`, not static paths).
+
 ---
 
 ## Spec Template
