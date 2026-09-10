@@ -74,6 +74,7 @@
                 ['5_Symbols/cd/cd-interview-recording.html', '📝 Interview Recording &amp; Tracker'],
                 ['5_Symbols/cd/interview-hcl-devops-screen.html', '🎙️ HCL SRE/DevOps Screen (2026-08-24)'],
                 ['5_Symbols/cd/cd-interview-pdf.html', '🖨️ 1-Page A4 Interview PDF'],
+                ['5_Symbols/cd/mehmet-halil-course-video-feedback.html', '🎧 Mehmet &amp; Halil First Course Video'],
                 ['5_Symbols/cd/sude-1-1-session.html', '🎧 Sude First 1-1 (Critical Value)'],
                 ['5_Symbols/cd/cohort-session-11-analysis.html', '🎙️ Cohort Session 11 Analysis'],
                 ['5_Symbols/cd/cohort-session-10-analysis.html', '🎙️ Cohort Session 10 Analysis'],
@@ -392,6 +393,8 @@
                 ['markdown_renderer.html?src=reports/skool-pricing-feedback-v1.0.0.md', '💬 Skool Pricing Feedback v1.0'],
                 ['markdown_renderer.html?src=reports/skool-availability-v1.0.0.md', '📡 Skool Availability v1.0'],
                 { header: '👤 Customer Discovery Interview Reports' },
+                ['markdown_renderer.html?src=reports/customer-discovery-mehmet-halil-course-video-v1.1.0.md', '🎧 Mehmet &amp; Halil First Course Video CD v1.1'],
+                ['markdown_renderer.html?src=reports/customer-discovery-mehmet-halil-course-video-v1.0.0.md', '🎧 Mehmet &amp; Halil First Course Video CD v1.0 (Historical)'],
                 ['markdown_renderer.html?src=reports/customer-discovery-charles-interview-v1.3.0.md', '🔁 Charles 4th Exam &amp; Udemy Benefit CD v1.3'],
                 ['markdown_renderer.html?src=reports/customer-discovery-marianna-event-planning-crm-v1.0.0.md', '🎯 Marianna Event Planning &amp; CRM CD v1.0'],
                 ['markdown_renderer.html?src=reports/customer-discovery-bora-interview-v1.0.0.md', '🎯 Bora Monthly Career Call CD v1.0'],
@@ -432,6 +435,10 @@
 
     // Search Index representing all pages for full-text and tag matching
     var searchIndex = [
+        { url: '5_Symbols/cd/mehmet-halil-course-video-feedback.html', title: 'Mehmet & Halil: First Associate Course Video Recut', desc: 'Module 1.1 mix/script review plus Mehmet purchase veto: would not buy, not take a course, not check YouTube while teaching videos are AI-generated. Organic founder-on-lens is the bar. Not a paid enrollment.', cat: 'Discovery', tags: 'mehmet halil first course video module 1.1 audio mix authenticity organic purchase veto ai generated h2 h3 h4 h5 h8 h10 h29 h34' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-mehmet-halil-course-video-v1.1.0.md', title: 'Customer Discovery Report: Mehmet & Halil First Course Video v1.1', desc: 'v1.1 adds Mehmet authenticity follow-up: selling AI training with AI-generated videos is a purchase veto; older organic Turkish job/US-company videos are the quality bar.', cat: 'Docs', tags: 'mehmet halil customer discovery report v1.1 purchase veto organic authenticity founder on lens h2 h3 h4 h5 h29 report' },
+        { url: 'markdown_renderer.html?src=reports/customer-discovery-mehmet-halil-course-video-v1.0.0.md', title: 'Customer Discovery Report: Mehmet & Halil First Course Video v1.0 (Historical)', desc: 'Superseded mix/script/AI-feel analysis of Associate Module 1.1.', cat: 'Docs', tags: 'mehmet halil customer discovery report first course video audio mix beginner script historical v1.0' },
+        { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_mehmet_halil_2026-09-09_course_video.md', title: 'Discovery Record: Mehmet & Halil First Course Video (2026-09-09)', desc: 'Raw intake: sound effects drown voice, abrupt audio cuts, too technical for beginners, robotic AI feel, Turkish-first recut recommendation.', cat: 'Docs', tags: 'interview mehmet halil course video module 1.1 audio sfx 2026-09-09 raw record h2 h4 h8 h10 h29 h34' },
         { url: '5_Symbols/growth/event-management-leadgen-crm.html', title: '🎯 Event Management, LinkedIn Syndication & Lead Gen CRM', desc: 'Bi-weekly event planning, 14-day runway, 8-part class blueprint, LinkedIn Event viral social proof, Meetup/Eventbrite syndication, and Lead Gen CRM pipeline from Marianna customer discovery.', cat: 'Growth', tags: 'event management lead generation crm linkedin events meetup eventbrite bi weekly cadence 14 day runway 8 part class blueprint monday workplace roi virality popularization marianna h4 h5 h12 h23 h28 h29 h30' },
         { url: 'markdown_renderer.html?src=reports/customer-discovery-marianna-event-planning-crm-v1.0.0.md', title: 'Customer Discovery Report: Marianna Event Planning & Lead Gen CRM v1.0', desc: 'Marianna customer discovery feedback: bi-weekly planning cadence, 8-part class curriculum blueprint, LinkedIn Events viral popularization, Meetup/Eventbrite syndication, and Event CRM pipeline.', cat: 'Docs', tags: 'marianna customer discovery report event planning linkedin events meetup eventbrite lead generation crm 8 part class blueprint 14 day runway h4 h5 h12 h23 h28 h29 h30 report' },
         { url: 'markdown_renderer.html?src=3_Simulation/Interviews/interview_marianna_2026-09-07_event_planning_crm.md', title: 'Discovery Record: Marianna Event Planning & CRM (2026-09-07)', desc: 'Raw intake from Marianna post-career call feedback: real event planning, bi-weekly cadence, LinkedIn Event viral invitations, Meetup/Eventbrite publishing, event CRM function.', cat: 'Docs', tags: 'interview marianna event planning crm linkedin events meetup eventbrite 2026-09-07 raw record h4 h5 h12 h23 h28 h29 h30' },

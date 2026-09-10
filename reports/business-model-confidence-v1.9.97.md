@@ -1,3 +1,5 @@
+> **Superseded by** [`business-model-confidence-v1.9.98.md`](business-model-confidence-v1.9.98.md) (2026-09-09) — Mehmet & Halil first course-video ingest; Integrity 80 → 70 from uncommitted-work deduction.
+
 # Business Model Confidence Report — v1.9.97
 
 **Date:** 2026-09-09

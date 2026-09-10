@@ -112,8 +112,8 @@
 - **Likelihood:** Medium
 - **Impact:** High (Learner confusion, negative student reviews, low course ratings, word-of-mouth referral stalls)
 - **Trigger:** Customer discovery feedback from Mehmet: *"Eğitim veriyon ama insanlar seni anlamazsa kimse sana güzel puan vermez"* ("You're giving training, but if people don't understand you, no one will give you a good rating / positive review.")
-- **Mitigation:** Adopt the 10-10-15 sprint delivery structure (5-10 min intro, 10 min demo, 15 min Q&amp;A), 3-tier preset project ladder (Foundational &rarr; Intermediate &rarr; Architect) with published preconditions and postconditions, visual whiteboard diagrams, and real-time comprehension verification checkpoints ("Check &amp; Help" loop).
-- **Last Updated:** 2026-08-24
+- **Mitigation:** Adopt the 10-10-15 sprint delivery structure (5-10 min intro, 10 min demo, 15 min Q&amp;A), 3-tier preset project ladder (Foundational &rarr; Intermediate &rarr; Architect) with published preconditions and postconditions, visual whiteboard diagrams, and real-time comprehension verification checkpoints ("Check &amp; Help" loop). **New (2026-09-09):** first published Associate Module 1.1 confirmed the risk on a live YouTube artifact — SFX drown voice, beginner-hostile script, obvious AI feel (Mehmet &amp; Halil). Mehmet follow-up: selling AI training with AI-generated videos is a purchase veto; mix recut is required and not sufficient; founder-on-lens is the bar. See `5_Symbols/cd/mehmet-halil-course-video-feedback.html`.
+- **Last Updated:** 2026-09-09 (Mehmet authenticity veto: organic founder-on-lens is now required; mix recut is not sufficient)
 
 ### R-015: YouTube Content Misalignment & Low Subscriber Yield per Video
 - **Status:** 🟠 Active
@@ -212,6 +212,7 @@
 | 2026-07-12 | Smoke gate wired into `static.yml` | R-S09 | Solved: `deploy` job requires the `smoke` job (SPEC-008 runner); Formula Agent owns the CI/CD pipeline |
 | 2026-08-19 | Macro & founder-income risk review | R-010 → R-013 | Added 4 active risks: IR35 & global contractor usage (High), business confidence falling with global wars (High), inside-IR35 day-job dependency (High), global economy slowing (Medium) — mirrored on `5_Symbols/strategy/risk-analysis.html` |
 | 2026-08-24 | Customer discovery pedagogical risk | R-014 | Added active risk: Instructional Clarity & Learner Comprehension ("Rating Penalty") from Mehmet's feedback (*"Eğitim veriyon ama insanlar seni anlamazsa kimse sana güzel puan vermez"*) |
+| 2026-09-09 | First course video review | R-014 | Mehmet & Halil confirmed the rating-penalty risk on Associate Module 1.1 (SFX drown voice, beginner-hostile script, AI feel). Recut mix + first-principles script. |
 | 2026-09-02 | YouTube content alignment risk | R-015 | Added active risk: YouTube Content Misalignment & Low Subscriber Yield per Video (~700 subs / 32 videos, x24 growth factor, tracking subs/video metric) |
 
 ---
