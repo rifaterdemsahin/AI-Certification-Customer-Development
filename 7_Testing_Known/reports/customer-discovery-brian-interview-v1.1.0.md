@@ -1,3 +1,5 @@
+> **⚠️ Superseded:** See [customer-discovery-brian-interview-v1.2.0.md](customer-discovery-brian-interview-v1.2.0.md) for the current version, which adds Brian's delegation-vs-DIY and hopeful-messaging feedback (2026-09-10).
+
 # Customer Discovery Report: Brian Interview — Timezone Coordination, Slot Scarcity & Failure-Triggered Course Enrollment
 
 **Report Version:** v1.1.0  
