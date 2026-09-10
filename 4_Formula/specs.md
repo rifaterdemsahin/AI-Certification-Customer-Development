@@ -103,7 +103,7 @@
 - **Description:** A dependency-free Python script (`5_Symbols/toolbox/smoke_test.py`) that scans the project's pages and structure, runs the smoke test suite, and generates `6_Semblance/smoke_test_report.md`. Template-adapted: it reads `navigation_config.json` as its source of truth, so any project bootstrapped from this template gets working smoke tests without code changes.
 - **Key Behaviors:**
   - Reads `navigation_config.json` (projectMenu + debugMenu) and derives the page/file inventory from it — no hardcoded file lists
-  - Checks: config JSON validity, every menu URL resolves to an existing file/folder, required root files exist (`index.html`, `markdown_renderer.html`, `README.md`, `robots.txt`, `sitemap.xml`), social links present in `index.html`, GitHub Pages URL present in `README.md`, 3-way navigation sync (config = `index.html` fallback = `markdown_renderer.html` fallback), stage markdown files not orphaned from the debug menu, no committed secrets patterns
+  - Checks: config JSON validity, every menu URL resolves to an existing file/folder, required root files exist (`index.html`, `5_Symbols/toolbox/markdown_renderer.html`, `README.md`, `robots.txt`, `sitemap.xml`), social links present in `index.html`, GitHub Pages URL present in `README.md`, 3-way navigation sync (config = `index.html` fallback = `5_Symbols/toolbox/markdown_renderer.html` fallback), stage markdown files not orphaned from the debug menu, no committed secrets patterns
   - Optional `--base-url` mode fetches the deployed site over HTTP and verifies pages return 200 (cloud smoke test); default mode is local filesystem
   - Writes results to `6_Semblance/smoke_test_report.md` in the report format defined in `7_Testing_Known/smoke_tests.md`; exit code 0 = all pass, 1 = failures (CI gate compatible)
   - Failures must be raised as GitHub Issues per the Smoke Tests & GitHub Issues rule
@@ -133,6 +133,21 @@
   - CI/CD is owned by the **Formula Agent**: `.github/workflows/static.yml` runs the smoke test gate, then deploys to GitHub Pages (Continuous Integration → Continuous Delivery → Continuous Deployment)
 - **Related Files:** `agents.md`, `claude.md`, `gemini.md`, `copilot.md`, `kilocode.md`, `.github/workflows/static.yml`, `5_Symbols/toolbox/smoke_test.py`
 - **Last Updated:** 2026-07-12
+
+### SPEC-011: RULE-005 Root Compliance — Full Root Asset Relocation
+- **Status:** Active
+- **Description:** Brought this project's repo root into full compliance with `5_Symbols/rules/agent_operating_rules.md` RULE-005 (allowed root folders only: `.claude/skills`, `.github/workflows`, `.kilo/skills`, `1_Real_Unknown`…`7_Testing_Known`, plus `index.html`, `README.md`, `robots.txt`, `sitemap.xml`, `.gitignore`, `.env.example`, `navigation_config.json`, `agents.md` + LLM persona files). Every other root file/folder was `git mv`'d into the matching stage subfolder and every reference to it was rewritten repo-wide.
+- **Key Behaviors:**
+  - `nav.js`, `style.css`, `main.js`, `markdown_renderer.html` → `5_Symbols/toolbox/` (matches this repo's own prior convention from SPEC-002/010)
+  - `business-overview.html`, `motivation.html` → `5_Symbols/strategy/`; `exam-topics.html` → `5_Symbols/product/` (matches the locations `CLAUDE.md`'s own page-family listing already documented for these files)
+  - `hero.jpg`, `motivation-infographic.png`, `vonos_visual_check.jpg` → `3_Simulation/` (media library)
+  - `kilo.json` → `.kilo/kilo.json`; `HYPOTHESIS.md` → `4_Formula/HYPOTHESIS.md`; `reports/` → `7_Testing_Known/reports/`
+  - `.agents/skills/{customer-interview-analyzer,cohort-session-analyzer}` (a root folder not on the RULE-005 allowlist) merged into `.claude/skills/`; `.agents/` removed
+  - All 303 HTML pages' `<script src>`/`<link href>` and every `markdown_renderer.html?src=...` query-param path across the repo recomputed relative to each file's own directory and rewritten; all root-relative textual mentions in `.md`/`.py`/`.json` docs (incl. `file://` absolute paths and `commits/main/<file>` GitHub-history links) updated to the new paths
+  - Fixed two pre-existing broken `<script src="../nav.js">`/`../main.js` refs in `5_Symbols/discovery/*.html` (wrong depth even before this move) while touching those files
+  - `5_Symbols/toolbox/nav_sync.py` re-run (`Synced 64 debug menu entries across 3 sources`); `5_Symbols/toolbox/smoke_test.py` re-run: 8/10 pass. The 2 new-since-this-change items (`Nav 3-Way Sync` drift for `4_Formula/HYPOTHESIS.md` and one `7_Testing_Known/reports/*.md` link) are a heuristic false-positive of the checker's stage-prefix regex incidentally matching business-content links in `index.html` that were never part of the debugMenu system — not a broken link (verified 200 OK both ways) — logged in `6_Semblance/error_log.md`. `Stage Docs In Menu` orphan failure is pre-existing/unrelated (orphaned interview transcripts).
+- **Related Files:** every `*.html` under `5_Symbols/` and root, `nav.js`, `navigation_config.json`, `5_Symbols/toolbox/nav_sync.py`, `5_Symbols/toolbox/smoke_test.py`, `6_Semblance/error_log.md`
+- **Last Updated:** 2026-09-10
 
 ---
 

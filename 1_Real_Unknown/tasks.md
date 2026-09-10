@@ -7,7 +7,7 @@
 | ID | Task | Agent | Done |
 |----|------|-------|------|
 | TSK-001 | Initialize project structure with 7-stage folders | Real Agent | [x] |
-| TSK-002 | Create root templates (index.html, markdown_renderer.html, .env.example, robots.txt, sitemap.xml) | Symbols Agent | [x] |
+| TSK-002 | Create root templates (index.html, 5_Symbols/toolbox/markdown_renderer.html, .env.example, robots.txt, sitemap.xml) | Symbols Agent | [x] |
 | TSK-003 | Define agent coordinator (agents.md) with 7-stage execution flow | Real Agent | [x] |
 | TSK-004 | Configure navigation menus and debug menu | Environment Agent | [x] |
 

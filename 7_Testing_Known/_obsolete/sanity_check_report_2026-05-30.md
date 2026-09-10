@@ -35,7 +35,7 @@ While the conceptual model is highly effective for structuring thinking, there a
 ### Critical Gaps
 1. **Missing Root Files**: 
    - `index.html` is completely missing from the root. The rules state: *"Keep `index.html` at the repo root — GitHub Pages requires it at the root for the site to work"*. Without `index.html`, the GitHub Pages site will return a 404 error.
-   - `markdown_renderer.html` is missing. The rules state: *"All markdown files must be accessible via `markdown_renderer.html`"*.
+   - `5_Symbols/toolbox/markdown_renderer.html` is missing. The rules state: *"All markdown files must be accessible via `5_Symbols/toolbox/markdown_renderer.html`"*.
    - `.env.example` and `.gitignore` are referenced in the folder structure list but do not exist in the root.
    - `robots.txt` and `sitemap.xml` are referenced but missing.
 2. **Empty Folders vs Git**:
@@ -77,7 +77,7 @@ The 7-stage structure is highly suited to self-learning because it mimics the co
 
 ### Phase 1: Structural Completeness (High Priority)
 - [ ] **Create a base `index.html` at the root**: This file should implement the Two-Menu system (Project Menu + Debug Menu) reading from a JSON configuration, along with the bottom-right debug toggle button.
-- [ ] **Create `markdown_renderer.html`**: A generic Markdown reader using PrismJS for syntax highlighting and marked.js/Mermaid for diagrams.
+- [ ] **Create `5_Symbols/toolbox/markdown_renderer.html`**: A generic Markdown reader using PrismJS for syntax highlighting and marked.js/Mermaid for diagrams.
 - [ ] **Add default configuration files**:
   - Create a dummy `3_Simulation/carousel_config.json`.
   - Create `.gitignore` to ignore local environment files like `.env` and `.DS_Store`.
@@ -93,5 +93,5 @@ The 7-stage structure is highly suited to self-learning because it mimics the co
 
 **Original question:** Is the template format functional, consistent, and complete for new projects and self-learning?
 **Test method:** Deep manual review of directory structures, rule files, and tracking.
-**Result:** ⚠️ Partial (The directory hierarchy and agent files are excellent, but core system files like `index.html`, `markdown_renderer.html`, and config JSONs are missing, which breaks the GitHub Pages and navigation requirements).
+**Result:** ⚠️ Partial (The directory hierarchy and agent files are excellent, but core system files like `index.html`, `5_Symbols/toolbox/markdown_renderer.html`, and config JSONs are missing, which breaks the GitHub Pages and navigation requirements).
 **Date validated:** 2026-05-30

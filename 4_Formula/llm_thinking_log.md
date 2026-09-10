@@ -44,7 +44,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 1. **Goal Identification**: Assess the project template to identify structural completeness, consistency, fitness as a bootstrapping tool, and fitness as a self-learning platform.
 2. **Analysis of Template Structure**:
    - Inspected all folders `1_Real_Unknown` through `7_Testing_Known`.
-   - Identified that while directory structures and stage READMEs are well-drafted, key files required by the template rules themselves (e.g. `index.html` at the root, `markdown_renderer.html` at the root, `.env.example`, `.gitignore`, `robots.txt`, `sitemap.xml`) are completely missing from the template codebase.
+   - Identified that while directory structures and stage READMEs are well-drafted, key files required by the template rules themselves (e.g. `index.html` at the root, `5_Symbols/toolbox/markdown_renderer.html` at the root, `.env.example`, `.gitignore`, `robots.txt`, `sitemap.xml`) are completely missing from the template codebase.
    - Identified minor discrepancies in checklists (empty comment placeholders for YouTube video embeds, `7_Testing_Known` directory name vs user's reference `7_testing_unknown`).
 3. **Formulating Recommendations**:
    - Proposed immediate actions to create the missing root files.
@@ -203,14 +203,14 @@ This log documents the thinking phase summaries and reasoning processes of the L
 ## 📅 2026-05-30 — Create Missing Root Templates
 
 ### 📥 Input / Task
-- Create `.env.example`, `markdown_renderer.html`, `.gitignore`, `robots.txt`, and `sitemap.xml` templates at the project root to solve the missing file gaps identified in the sanity check.
+- Create `.env.example`, `5_Symbols/toolbox/markdown_renderer.html`, `.gitignore`, `robots.txt`, and `sitemap.xml` templates at the project root to solve the missing file gaps identified in the sanity check.
 - Log the prompt in `prompts.md` and document the LLM thinking phase here.
 
 ### 💭 Thinking & Reasoning Process
-1. **Requirements Gathering**: Addressed structural gaps where `.env.example`, `.gitignore`, `markdown_renderer.html`, `robots.txt`, and `sitemap.xml` were listed or required by rules/checklists but did not exist in the repository root.
+1. **Requirements Gathering**: Addressed structural gaps where `.env.example`, `.gitignore`, `5_Symbols/toolbox/markdown_renderer.html`, `robots.txt`, and `sitemap.xml` were listed or required by rules/checklists but did not exist in the repository root.
 2. **Template Design**:
    - `.env.example`: Designed to document variables for Azure Key Vault, local DB setups, and local Ollama/Qdrant services.
-   - `markdown_renderer.html`: Built a responsive dark-themed renderer using Google Fonts, FontAwesome, marked.js, PrismJS (for syntaxes/linenos), and mermaid.js (for diagrams). Integrated the side debug toggle and autocomplete search matching `index.html`.
+   - `5_Symbols/toolbox/markdown_renderer.html`: Built a responsive dark-themed renderer using Google Fonts, FontAwesome, marked.js, PrismJS (for syntaxes/linenos), and mermaid.js (for diagrams). Integrated the side debug toggle and autocomplete search matching `index.html`.
    - `.gitignore`: Configured to ignore environment secrets (`.env`), package directories (`node_modules`), OS cache files, and local caches of LLM configurations.
    - `robots.txt` & `sitemap.xml`: Prepared sitemaps and index specifications to satisfy SEO rules.
 3. **Execution & Commits**: Create each file sequentially at the root, making separate commits and pushes for each task to respect versioning policies.
@@ -218,7 +218,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 
 ### 📤 Outcomes & Decisions
 - Created `.env.example`.
-- Created `markdown_renderer.html`.
+- Created `5_Symbols/toolbox/markdown_renderer.html`.
 - Created `.gitignore`.
 - Created `robots.txt`.
 - Created `sitemap.xml`.
@@ -298,17 +298,17 @@ This log documents the thinking phase summaries and reasoning processes of the L
 
 ### 💭 Thinking & Reasoning Process
 1. **Requirements Gathering**: The user requested that the dashboard project documentation reaches markdowns using a reusable menu and includes GitHub edit buttons.
-2. **Reusable Configuration**: Created a central `navigation_config.json` at the root containing the arrays for both `projectMenu` and `debugMenu`. Refactored `index.html` and `markdown_renderer.html` to fetch this JSON config dynamically with a fallback for offline execution.
+2. **Reusable Configuration**: Created a central `navigation_config.json` at the root containing the arrays for both `projectMenu` and `debugMenu`. Refactored `index.html` and `5_Symbols/toolbox/markdown_renderer.html` to fetch this JSON config dynamically with a fallback for offline execution.
 3. **Markdown Routing & Editing**:
-   - Refactored index.html's menu compiler to dynamically convert file links (e.g. `1_Real_Unknown/`) to markdown_renderer query URLs (`markdown_renderer.html?file=1_Real_Unknown/`) to satisfy the routing rules.
-   - Modified `markdown_renderer.html` to generate an edit URL referencing the current file being loaded (`https://github.com/rifaterdemsahin/delivery-pilot-template/edit/main/{filePath}`) and render a beautiful gradient button next to the file path.
-4. **Execution & Commits**: Created `navigation_config.json`, updated `index.html`, and updated `markdown_renderer.html` separately, staging, committing, and pushing after each write to satisfy history guidelines.
+   - Refactored index.html's menu compiler to dynamically convert file links (e.g. `1_Real_Unknown/`) to markdown_renderer query URLs (`5_Symbols/toolbox/markdown_renderer.html?file=1_Real_Unknown/`) to satisfy the routing rules.
+   - Modified `5_Symbols/toolbox/markdown_renderer.html` to generate an edit URL referencing the current file being loaded (`https://github.com/rifaterdemsahin/delivery-pilot-template/edit/main/{filePath}`) and render a beautiful gradient button next to the file path.
+4. **Execution & Commits**: Created `navigation_config.json`, updated `index.html`, and updated `5_Symbols/toolbox/markdown_renderer.html` separately, staging, committing, and pushing after each write to satisfy history guidelines.
 5. **Logs Updates**: Appended prompt logs in `prompts.md` and documented details in `4_Formula/llm_thinking_log.md`.
 
 ### 📤 Outcomes & Decisions
 - Created `navigation_config.json` configuration file.
 - Updated `index.html` to dynamically fetch and compile menus.
-- Updated `markdown_renderer.html` to support configuration fetching, search autocomplete, and direct GitHub Edit redirection buttons.
+- Updated `5_Symbols/toolbox/markdown_renderer.html` to support configuration fetching, search autocomplete, and direct GitHub Edit redirection buttons.
 - Staged, committed, and pushed all modifications.
 
 ---
@@ -357,19 +357,19 @@ This log documents the thinking phase summaries and reasoning processes of the L
 4. **Integration & Navigation Config**:
    - Register the file in `navigation_config.json` under `debugMenu`. Let's put it under `4. Formula` or as `   ├─ Required Extensions`.
    - Update `index.html` fallback navigation arrays to match.
-   - Update `markdown_renderer.html` fallback navigation arrays to match.
+   - Update `5_Symbols/toolbox/markdown_renderer.html` fallback navigation arrays to match.
 5. **Execution Plan**:
    - Document thinking log (this entry).
    - Write `4_Formula/extensions.md`.
    - Update `navigation_config.json`.
-   - Update `index.html` and `markdown_renderer.html`.
+   - Update `index.html` and `5_Symbols/toolbox/markdown_renderer.html`.
    - Update `prompts.md`.
    - Commit and push changes.
 
 ### 📤 Outcomes & Decisions
 - Created `4_Formula/extensions.md` detailing all recommended and required system, CLI, and IDE extensions (Fly.io, Azure, Mermaid, Docker).
 - Listed the new `extensions.md` file in `4_Formula/README.md` file table.
-- Updated the debug menu configuration (`navigation_config.json`) and the fallback menus in `index.html` and `markdown_renderer.html`.
+- Updated the debug menu configuration (`navigation_config.json`) and the fallback menus in `index.html` and `5_Symbols/toolbox/markdown_renderer.html`.
 - Logged the prompt details in `prompts.md`.
 - Separately committed and pushed each individual change to GitHub main branch.
 
@@ -385,7 +385,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 - Stage, commit, and push updates.
 
 ### 💭 Thinking & Reasoning Process
-1. **Analyze the Navigation Sharing Requirement**: The user wants us to document the "Navigation Reusability Formula" in the formulas stage. The core concept is sharing menu code dynamically through a configuration file (`navigation_config.json`) and client-side rendering scripts in both `index.html` and `markdown_renderer.html`. This keeps configuration in one place and avoids hardcoding/duplicating HTML layouts.
+1. **Analyze the Navigation Sharing Requirement**: The user wants us to document the "Navigation Reusability Formula" in the formulas stage. The core concept is sharing menu code dynamically through a configuration file (`navigation_config.json`) and client-side rendering scripts in both `index.html` and `5_Symbols/toolbox/markdown_renderer.html`. This keeps configuration in one place and avoids hardcoding/duplicating HTML layouts.
 2. **Analyze the Supabase Requirement**:
    - We initialized Supabase locally using `npx supabase init`. The created `supabase/config.toml` contains `project_id = "delivery-pilot-template"`, which matches the GitHub repository name.
    - We must explain how Supabase credentials (URL, Anon Key, Service Role Key) are secured inside Azure Key Vault (dev/staging/prod vaults) and loaded at runtime into the application, rather than stored in the code.
@@ -396,7 +396,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
    - Create `4_Formula/navigation.md` (documents navigation sharing logic).
    - Create `4_Formula/database.md` (documents Supabase integration, naming conventions, and Key Vault retrieval).
    - Update `4_Formula/README.md` to include these files.
-   - Update `navigation_config.json`, `index.html`, and `markdown_renderer.html` fallback config structures to add these links.
+   - Update `navigation_config.json`, `index.html`, and `5_Symbols/toolbox/markdown_renderer.html` fallback config structures to add these links.
    - Update `.env.example` with Supabase placeholder variables.
    - Update `prompts.md` prompt log.
    - Finalize the LLM reasoning log in `4_Formula/llm_thinking_log.md`.
@@ -407,7 +407,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 - Created `4_Formula/database.md` documenting Supabase config, naming standards, and Azure Key Vault secret injection mappings.
 - Appended both files to the file index in `4_Formula/README.md`.
 - Updated `.env.example` with Supabase credential placeholders (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, etc.).
-- Registered both files in `navigation_config.json` and fallback configurations inside `index.html` and `markdown_renderer.html`.
+- Registered both files in `navigation_config.json` and fallback configurations inside `index.html` and `5_Symbols/toolbox/markdown_renderer.html`.
 - Logged the prompt in `prompts.md` and committed all files to Git main branch.
 
 ---
@@ -471,7 +471,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 ### 🧠 Thinking & Planning (before action)
 - **Goal:** One formula doc covering (1) frontend logs via the existing footer debug feature, (2) backend logs via Axiom, and (3) a nightly agent that fixes errors when no one is actively coding.
 - **Approach:**
-  1. Grounded the doc in real code: the `debugLog`/`getCookie` utility and bottom-right `#debugToggle` button already in `index.html`/`markdown_renderer.html`. Proposed extending `debugLog` with a ring buffer, a footer "Logs" panel, global `onerror` capture, and backend-forwarding (so the Axiom token never lives in the browser).
+  1. Grounded the doc in real code: the `debugLog`/`getCookie` utility and bottom-right `#debugToggle` button already in `index.html`/`5_Symbols/toolbox/markdown_renderer.html`. Proposed extending `debugLog` with a ring buffer, a footer "Logs" panel, global `onerror` capture, and backend-forwarding (so the Axiom token never lives in the browser).
   2. Backend = single writer to Axiom; defined the structured error shape and the tag fields (`trace`, `source`, `path`, `commit`, `count`) the fix agent needs.
   3. Nightly fix loop via the `/schedule` skill (cron `0 3 * * *`) with an **idle guard** (skip if uncommitted changes / recent commits / wip PR), Axiom→error.log cross-reference, smallest-safe-fix on a branch, `/verify`, fix.log entry, and **PR only — never auto-merge**.
 - **Sync:** Added to `4_Formula/README.md` files table and the debug menu (navigation_config.json + both HTML fallbacks) per the menu-sync rule.
@@ -514,16 +514,16 @@ This log documents the thinking phase summaries and reasoning processes of the L
    - Integration with specs system
    Updated `3_Simulation/README.md` and `4_Formula/README.md` to include the new files.
 
-5. **Navigation Sync**: Updated `navigation_config.json` and fallback debug menu arrays in both `index.html` and `markdown_renderer.html` to include `specs.md` and `design_workflow.md`.
+5. **Navigation Sync**: Updated `navigation_config.json` and fallback debug menu arrays in both `index.html` and `5_Symbols/toolbox/markdown_renderer.html` to include `specs.md` and `design_workflow.md`.
 
 6. **Commit Strategy**: Followed the project's commit-per-file rule, committing and pushing each file change individually (16 commits total).
 
 ### 📤 Outcomes & Decisions
-- 5 skill files created in `.kilo/skills/` plus `kilo.json` config.
+- 5 skill files created in `.kilo/skills/` plus `.kilo/kilo.json` config.
 - `4_Formula/specs.md` created with 5 active specs and a template.
 - `3_Simulation/design_workflow.md` created as design-first process documentation.
 - All agent persona files updated with Specs System and Design-First rules.
-- All debug menu configurations synchronized across `navigation_config.json`, `index.html`, and `markdown_renderer.html`.
+- All debug menu configurations synchronized across `navigation_config.json`, `index.html`, and `5_Symbols/toolbox/markdown_renderer.html`.
 - All changes committed and pushed to GitHub main branch.
 
 ---
@@ -591,7 +591,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
    - **Build & delivery flow** showing how dependencies map to the 7-stage structure
    - **Rules** for adding and upgrading dependencies
 3. **Navigation Sync**: Added `dependencies.md` to `navigation_config.json` under `2. Environment`, and synced both HTML fallback arrays.
-4. **Execution**: Updated `4_Formula/specs.md` (SPEC-006), created `2_Environment/dependencies.md`, updated `2_Environment/README.md`, `navigation_config.json`, `index.html`, `markdown_renderer.html`, `prompts.md`, and this log.
+4. **Execution**: Updated `4_Formula/specs.md` (SPEC-006), created `2_Environment/dependencies.md`, updated `2_Environment/README.md`, `navigation_config.json`, `index.html`, `5_Symbols/toolbox/markdown_renderer.html`, `prompts.md`, and this log.
 
 ###  Outcomes & Decisions
 - SPEC-006 added to `4_Formula/specs.md` defining the stage dependency chain.
@@ -757,7 +757,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 1. **Template adaptation**: The smoke test must not hardcode this project's file list — it reads `navigation_config.json` as the single source of truth, so any project bootstrapped from the template inherits working smoke tests. Python stdlib only (no npm/pip installs), so it runs anywhere and in CI.
 2. **Local + cloud**: Default mode checks the local filesystem; `--base-url` mode fetches the deployed GitHub Pages site over HTTP — matching the Test Agent rule to test in both environments.
 3. **Placement**: Runner goes to `5_Symbols/toolbox/` (source code belongs in 5_Symbols; toolbox already hosts `count.sh`). Report output goes to `6_Semblance/smoke_test_report.md` per the Smoke Tests & GitHub Issues rule. Specced as SPEC-008 before implementation.
-4. **Debug menu backfill**: 27 absent files added to all 3 nav sources (`navigation_config.json`, `index.html` fallback, `markdown_renderer.html` fallback) in one pass; stage READMEs listed as "Overview" entries. This resolves sanity finding F-003 and downgrades risk R-003 (the smoke test now detects future desync automatically).
+4. **Debug menu backfill**: 27 absent files added to all 3 nav sources (`navigation_config.json`, `index.html` fallback, `5_Symbols/toolbox/markdown_renderer.html` fallback) in one pass; stage READMEs listed as "Overview" entries. This resolves sanity finding F-003 and downgrades risk R-003 (the smoke test now detects future desync automatically).
 5. **Loop design (SPEC-009)**: Stage 7 produces test evidence; the Real Agent's sanity sub-agent consumes it and publishes the verdict in Stage 1 against the OKRs — 1 → … → 7 → 1. The outdated 2026-05-30 Stage-7 report moves to `_obsolete/` per the lifecycle rule, and `7_Testing_Known/sanity_check_report.md` becomes the data-source pointer doc.
 
 ### 📤 Outcomes & Decisions
@@ -771,7 +771,7 @@ This log documents the thinking phase summaries and reasoning processes of the L
 ## 📅 2026-07-12 — Template Restructure: File Moves, Placeholders, Skills, CI/CD Gate
 
 ### 📥 Input / Task
-- Move `supabase/` → `2_Environment/supabase/`; move `prompts.md` → `1_Real_Unknown/`; move `markdown_renderer.html` → `5_Symbols/` and fix links.
+- Move `supabase/` → `2_Environment/supabase/`; move `prompts.md` → `1_Real_Unknown/`; move `5_Symbols/toolbox/markdown_renderer.html` → `5_Symbols/` and fix links.
 - Document template consumption (placeholders + bootstrap steps for consumer LLM agents) in all 5 agent files.
 - Add Claude Code skills to the project.
 - Check and fix reference/template-reuse issues; commit, push, deploy; make CI/CD (smoke gate in `static.yml`) the Formula Agent's responsibility.
@@ -786,3 +786,25 @@ This log documents the thinking phase summaries and reasoning processes of the L
 ### 📤 Outcomes & Decisions
 - SPEC-002 revised (renderer in `5_Symbols`, root-relative `?file=`, derived edit URL); SPEC-010 added (template consumption); smoke gate wired into `static.yml`.
 - All moves executed with `git mv`; references fixed; local + cloud smoke tests green before completion.
+
+---
+
+## 📅 2026-09-10 — RULE-005 Root Compliance: Full Root Asset Relocation
+
+### 📥 Input / Task
+- User asked to refactor this existing, live project onto the delivery-pilot-template conventions, specifically enforcing RULE-005's allowed-root-folders list and moving every other root file into the matching stage subfolder, fixing references.
+- User also asked about pulling Cloudflare/Fly.io backend + Azure Key Vault secrets and external GitHub skill repos; clarified via AskUserQuestion that this is a static, backend-less site — skip cloud/backend provisioning and external skill pulls, and do the root reorg with full reference rewriting.
+
+### 💭 Thinking & Reasoning Process
+1. Surveyed the repo first: most of the delivery-pilot-template scaffold (`1_Real_Unknown`…`7_Testing_Known`, `.claude/skills`, `.kilo/skills`, `.env.example`) was already ported in a prior commit. The remaining gap was purely the root-file cleanup.
+2. Root non-compliant items: `nav.js`, `style.css`, `main.js`, `markdown_renderer.html`, `business-overview.html`, `exam-topics.html`, `motivation.html`, three images, `kilo.json`, `HYPOTHESIS.md`, `reports/` (201 files), plus a non-RULE-005 `.agents/skills/` folder.
+3. Blast radius check: `nav.js`/`style.css`/`main.js` are referenced via relative path from all 303 HTML pages (`CLAUDE.md`'s own documented page convention). Confirmed via `grep -rl` before touching anything. Case-insensitive filesystem (`APFS`) ruled out `HYPOTHESIS.md` colliding with the existing `1_Real_Unknown/hypotheses.md` stub — routed it to `4_Formula/HYPOTHESIS.md` instead.
+4. Wrote a Python rewrite script (`resolve()`/`os.path.relpath`) that runs *before* `git mv`: for HTML/JS it parses `src=`/`href=`/`url()`, resolves each reference to an absolute repo path, and if that path matches a moved file, recomputes the correct relative path from the referencing file's own directory. For prose/doc/code files it does bounded token replacement of root-relative path strings (with a lookbehind so already-correct, already-prefixed occurrences are skipped — critical for idempotent re-runs).
+5. First run missed two things, caught by grepping the result rather than trusting the script blindly: (a) markdown_renderer.html `?src=...` query-param values weren't touched by the attribute rewriter (it only fixes the base path before `?`) — fixed by letting the token-replacement fallback pass also run across HTML files; that fallback was itself broken by an over-eager trailing-lookahead that rejected directory-token matches (e.g. `reports/`) followed by a letter — fixed by dropping the lookahead for tokens ending in `/`. (b) `commits/main/<file>` GitHub-history URLs inside the moved files' own footers reference themselves — these are preceded by `/` (from `main/`), which the lookbehind (correctly, for path-prefix dedup) treats as "already qualified," so they were silently skipped; fixed with 4 targeted `sed` replacements.
+6. Also found and fixed two pre-existing broken script tags in `5_Symbols/discovery/*.html` (`../nav.js` instead of `../../nav.js`) that predate this session — an already-broken reference that never 404'd because nobody had 5_Symbols/nav.js there to compare against; folded the fix into the same `../toolbox/nav.js` correction since the file was already being touched.
+7. Ran `git mv` only after the reference rewrite was verified via `curl` 200s on a local `python3 -m http.server`, then ran `nav_sync.py` (regenerates the debugMenu block) and `smoke_test.py`. 8/10 pass; `Stage Docs In Menu` was already failing before this change (orphaned interview transcripts, unrelated); `Nav 3-Way Sync` newly flags `HYPOTHESIS.md`/one report link because moving them into stage-prefixed folders makes them match the checker's regex for the first time — confirmed via `curl` that both links are still 200 OK, so this is a heuristic false-positive, not a break. Documented rather than hacked around (didn't want to stuff project content into the template's fixed 64-entry debugMenu just to satisfy a regex).
+8. Declined the Cloudflare Workers/Fly.io/Key Vault and external-skills parts of the original request after the user confirmed via AskUserQuestion that this is a static site with no backend need right now.
+
+### 📤 Outcomes & Decisions
+- SPEC-011 added. All 303 HTML pages verified reference-consistent; `nav_sync.py` and `smoke_test.py` re-run; `6_Semblance/error_log.md` updated with the one accepted smoke-test finding.
+- Repo root now contains only the RULE-005-allowed set.

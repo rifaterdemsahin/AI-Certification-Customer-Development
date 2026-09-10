@@ -49,7 +49,7 @@ The token is **never** stored in code, config files, or git history. It lives ex
 ## Agent Capabilities
 
 ### 1. Page Visit & Error Scan
-- Opens `index.html` and `markdown_renderer.html` in a headless browser
+- Opens `index.html` and `5_Symbols/toolbox/markdown_renderer.html` in a headless browser
 - Captures all console errors (JS runtime, 404s, CORS, CDN failures)
 - Checks for layout breakage at mobile (375px) and desktop (1920px) viewports
 - Validates that navigation menus render and respond to clicks
@@ -78,7 +78,7 @@ The token is **never** stored in code, config files, or git history. It lives ex
 ```
 ┌─────────────────────────────────────────────────────┐
 │  1. Load GITHUB_AGENT_TOKEN from Azure Key Vault    │
-│  2. Visit index.html + markdown_renderer.html       │
+│  2. Visit index.html + 5_Symbols/toolbox/markdown_renderer.html       │
 │  3. Scan console for errors                         │
 │  4. For each error:                                 │
 │     ├── Create GitHub Issue (via token)             │

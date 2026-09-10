@@ -12,8 +12,8 @@ Usage (from repo root):
     python3 5_Symbols/toolbox/skool_availability_check.py --no-report
 
 Writes:
-    reports/skool-availability-latest.json
-    reports/skool-availability-vX.Y.Z.md   (unless --no-report)
+    7_Testing_Known/reports/skool-availability-latest.json
+    7_Testing_Known/reports/skool-availability-vX.Y.Z.md   (unless --no-report)
 
 Exit: 0 all gates pass, 1 at least one gate failed.
 """
@@ -49,11 +49,11 @@ GET_CERTIFIED_RE = re.compile(r"get certified", re.I)
 def find_project_root() -> str:
     d = os.path.abspath(os.getcwd())
     while True:
-        if os.path.exists(os.path.join(d, "HYPOTHESIS.md")):
+        if os.path.exists(os.path.join(d, "4_Formula/HYPOTHESIS.md")):
             return d
         parent = os.path.dirname(d)
         if parent == d:
-            sys.exit("ERROR: HYPOTHESIS.md not found walking up from cwd")
+            sys.exit("ERROR: 4_Formula/HYPOTHESIS.md not found walking up from cwd")
         d = parent
 
 
@@ -465,7 +465,7 @@ Authors: `{json.dumps(result['authors'], ensure_ascii=False)}`
 python3 5_Symbols/toolbox/skool_availability_check.py
 ```
 
-From the repo root. Exit `0` = all gates pass. Writes `reports/skool-availability-latest.json` and the next `reports/skool-availability-vX.Y.Z.md`.
+From the repo root. Exit `0` = all gates pass. Writes `7_Testing_Known/reports/skool-availability-latest.json` and the next `7_Testing_Known/reports/skool-availability-vX.Y.Z.md`.
 
 ---
 

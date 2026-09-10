@@ -31,10 +31,10 @@ For any page that receives functional or business content updates, the footer **
   ```
 
 ### 4. Hypothesis Linkage
-Whenever a page is updated or a new page is added, AI agents **MUST** cross-link it with `HYPOTHESIS.md`:
-* Add or update the relevant hypothesis entry (premise → conclusion → status) in `HYPOTHESIS.md` to reference the page by relative path.
+Whenever a page is updated or a new page is added, AI agents **MUST** cross-link it with `4_Formula/HYPOTHESIS.md`:
+* Add or update the relevant hypothesis entry (premise → conclusion → status) in `4_Formula/HYPOTHESIS.md` to reference the page by relative path.
 * Cite the hypothesis ID (e.g. "see H10") from the page's own content wherever it states a falsifiable claim.
-* Bump `HYPOTHESIS.md`'s version field and Change Log whenever this linkage is added or changed.
+* Bump `4_Formula/HYPOTHESIS.md`'s version field and Change Log whenever this linkage is added or changed.
 
 ### 4b. Print-sheet sync (founder-required)
 Whenever a hypothesis is **added, reworded, or its status emoji changes**, update `5_Symbols/dashboard/hypotheses-print.html` **in the same commit**. Live URL: `https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/dashboard/hypotheses-print.html`. Do not leave the print sheet on H1–H33 after H34 (or later) exists.
@@ -55,7 +55,7 @@ AI agents must align all content, strategy proposals, and specs with the followi
 * **Proven Course Creation & Monetization Track Record:** Founder has already published and sold 4 commercial technical courses across **Coursera** (*SonarQube*, *Secure AI Models* in partnership with Starweaver) and **Udemy** (*The Ultimate IT Contractor*, *Infrastructure as Code*), proving institutional instructional quality, payment collection, and course productization capability.
 * **Public slogan & elevator pitch (founder-chosen 2026-09-04):** Slogan: **Get Certified in AI. Shape the Future.** Elevator pitch: *AI is reshaping every industry, and getting certified is the fastest way to stay ahead. Our program gives you the practical, high-impact skills needed to build cutting-edge solutions, stand out to top employers, and launch a future-proof career at the forefront of technology.* Canonical page: `5_Symbols/strategy/slogan.html`. Not a pass guarantee. See H1, H24, H30.
 * **Organic Distribution Channels:** Primary channels are YouTube Courses and organic LinkedIn sharing (specifically leveraging Rifat Erdem Sahin's professional audience).
-* **Live Skool checkout (experiment):** Freemium — Standard $0 / Premium $1/mo / VIP $250/year (founder-confirmed 2026-08-14). Recommended names: Peek / Sit In / Share Screen on `5_Symbols/product/skool-delivery-pilot-offer.html`. Feedback: `reports/skool-pricing-feedback-v1.0.0.md`. About-tab copy (replaces the live “get certified” line): `5_Symbols/product/skool-about.html`. Preview ramp only — does not replace the $10/mo + $250–$500 revenue model. $0 and $1 joins are not paid enrollments. Cap VIP as Sunday screen-share, not on-demand 1:1.
+* **Live Skool checkout (experiment):** Freemium — Standard $0 / Premium $1/mo / VIP $250/year (founder-confirmed 2026-08-14). Recommended names: Peek / Sit In / Share Screen on `5_Symbols/product/skool-delivery-pilot-offer.html`. Feedback: `7_Testing_Known/reports/skool-pricing-feedback-v1.0.0.md`. About-tab copy (replaces the live “get certified” line): `5_Symbols/product/skool-about.html`. Preview ramp only — does not replace the $10/mo + $250–$500 revenue model. $0 and $1 joins are not paid enrollments. Cap VIP as Sunday screen-share, not on-demand 1:1.
 * **Founder Anti-Spam Guardrail (Skool):** To prevent notification clutter and spamming the community, founder posts are converted into evergreen living hubs (e.g. centralized "Courses" hub with Claude Architect nested inside) that are updated and nurtured in place rather than creating fragmented one-off announcement threads.
 * **LinkedIn Connection Cap & Monday VIP Claude Cowork:** Rifat Erdem Sahin is capped at 30,000 LinkedIn connections (`https://www.linkedin.com/mynetwork/grow/`); he strictly only adds verified Skool community members to preserve network capacity. On Mondays, Rifat hosts dedicated VIP Claude Cowork sessions to optimize profiles and promote VIP members directly to recruiters over the Delivery Pilot organization network. **Disambiguation (Charles, 2026-08-30):** Anthropic **Claude Cowork** (the product) is a required course lab for the *daily status report* while learners study cert content (`course-curriculum-learning-objectives.html` Video 2.4). Do not collapse that job into the Monday VIP recruiter session.
 * **Delivery Pilot Transformation Roadmap & Ultimate IT Contractor Course:** Community members progress along a 4-stage pipeline (Hands-on Training &rarr; Vendor Certification &rarr; CV/Recruiter Promotion Meetings &rarr; Ultimate IT Contractor Course). Members value the Forward Deployed Engineer (FDE) and independent contractor persona (£500&ndash;£1,000+/day) over pure academic study, co-bidding on enterprise tenders as an alliance (H30).
@@ -78,8 +78,8 @@ AI agents must align all content, strategy proposals, and specs with the followi
 ## 🎨 Design & Aesthetic Heuristics
 
 All web app page extensions or styles must uphold premium visual standards:
-1. **Modern Layouts:** Use CSS custom properties from `:root` in [style.css](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/style.css) (`var(--color-primary)`, `var(--bg-card)`, etc.) to maintain visual harmony.
-2. **Glassmorphism & Spotlight effects:** Keep `.card` components styled beautifully. Mouse-follow spotlight glow is automatically handled by [main.js](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/main.js).
+1. **Modern Layouts:** Use CSS custom properties from `:root` in [5_Symbols/toolbox/style.css](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/5_Symbols/toolbox/style.css) (`var(--color-primary)`, `var(--bg-card)`, etc.) to maintain visual harmony.
+2. **Glassmorphism & Spotlight effects:** Keep `.card` components styled beautifully. Mouse-follow spotlight glow is automatically handled by [5_Symbols/toolbox/main.js](file:///Users/rifaterdemsahin/projects/AI-Certification-Customer-Development/5_Symbols/toolbox/main.js).
 3. **Visual Proof & Media (Slides & Screenshots):** When creating and updating pages, ALWAYS embed relevant slides, visual storyboard cards, and concrete screenshots (e.g. Canva slides, Skool community UI snapshots, architecture blueprints, terminal outputs, workflow diagrams) to provide undeniable visual context.
 4. **No Default Browser Styling:** Avoid standard colors or browser font defaults. Use Outfit/Inter typography, gradients, and soft borders.
 5. **No Placeholders:** Generate functional assets using image tools instead of plain grey blocks.
@@ -88,19 +88,19 @@ All web app page extensions or styles must uphold premium visual standards:
 
 ## 📊 Report Versioning & Resolution Tracking
 
-`reports/*.md` files (e.g. `acidity-check-report-v1.2.0.md`) carry their version number **in the filename**, unlike `HYPOTHESIS.md`, which bumps a version field in place. When new evidence resolves, partially resolves, or changes a finding in one of these reports, AI agents **MUST NOT** silently edit the old file. Instead:
-1. **Create a new file** at the next version (`reports/<name>-vX.Y.0.md`) rather than overwriting the old one — old versions are the historical record.
+`7_Testing_Known/reports/*.md` files (e.g. `acidity-check-report-v1.2.0.md`) carry their version number **in the filename**, unlike `4_Formula/HYPOTHESIS.md`, which bumps a version field in place. When new evidence resolves, partially resolves, or changes a finding in one of these reports, AI agents **MUST NOT** silently edit the old file. Instead:
+1. **Create a new file** at the next version (`7_Testing_Known/reports/<name>-vX.Y.0.md`) rather than overwriting the old one — old versions are the historical record.
 2. **Annotate each finding's resolution status in place**, e.g. `"F1. ... → ✅ RESOLVED (2026-08-01)."` or `"→ 🟡 PARTIALLY ADDRESSED."` — never delete a finding just because it's resolved.
 3. **Add a one-line superseded-by banner** at the top of the old file, linking forward to the new one.
-4. **Update every cross-reference** to the old filename: `HYPOTHESIS.md`'s header, `nav.js`'s Docs group, and any page citing the report by name.
+4. **Update every cross-reference** to the old filename: `4_Formula/HYPOTHESIS.md`'s header, `5_Symbols/toolbox/nav.js`'s Docs group, and any page citing the report by name.
 
-The same "always show status, never silently resolve" rule applies to `HYPOTHESIS.md` itself — bump its version field and Change Log (see the file's own header) rather than quietly rewriting a hypothesis's conclusion.
+The same "always show status, never silently resolve" rule applies to `4_Formula/HYPOTHESIS.md` itself — bump its version field and Change Log (see the file's own header) rather than quietly rewriting a hypothesis's conclusion.
 
 ## 🗂️ Navigation & Link Integrity
 
-* **Single source of truth:** all top nav grouping lives in `nav.js`'s `groups` array. Never hand-write a `<header>` on a page — grep for `<header>` across `*.html` after any nav change; it should never match.
+* **Single source of truth:** all top nav grouping lives in `5_Symbols/toolbox/nav.js`'s `groups` array. Never hand-write a `<header>` on a page — grep for `<header>` across `*.html` after any nav change; it should never match.
 * **Before adding a page:** pick the nav group it logically belongs to (or add a new group) and add it to `groups`, plus a `searchIndex` entry so it's findable via 🔍 Search.
-* **Before renaming or removing a page:** grep its filename across `*.html` and `nav.js` — a link left dangling in `groups`, `searchIndex`, or another page's body is the most common way this site breaks.
+* **Before renaming or removing a page:** grep its filename across `*.html` and `5_Symbols/toolbox/nav.js` — a link left dangling in `groups`, `searchIndex`, or another page's body is the most common way this site breaks.
 * **Detail pages don't have to live in the top nav:** `5_Symbols/discovery/*.html` is a deliberate example — reachable from stage discovery's diagram and from Search, not from a dropdown. Prefer this pattern over cramming every sub-page into the nav when a parent page can link to it directly instead.
 
 ---

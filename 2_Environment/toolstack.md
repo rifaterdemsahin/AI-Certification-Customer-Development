@@ -16,11 +16,11 @@
 | **Kilo Code Local Indexing** | AI / Vector | Built-in nomic text indexing for semantic search (small projects) | Zero-setup semantic search built directly into Kilo Code. No Docker, no external services, no configuration. Default choice for the delivery-pilot-template. Chosen as the primary AI stack to minimize infrastructure overhead. |
 | **Qdrant** | AI / Vector | Vector database for high-dimensional embeddings (big repos) | Specialized vector DB for production-scale semantic search. Only deployed when Kilo Code local indexing is insufficient. Runs in Docker on port 6333. Chosen over Pinecone (managed, but vendor lock-in) and Weaviate (heavier). |
 | **Ollama** | AI / Runtime | Local LLM and embedding model hosting | Runs LLMs locally without cloud dependencies. Hosts `nomic-embed-text` (4096 dimensions) for embeddings. Free, private, and offline-capable. Chosen over OpenAI API (cost, privacy) and HuggingFace Inference (latency). |
-| **Mermaid** | Documentation | Architecture and flow diagrams as code | Markdown-native diagramming — diagrams live in `.md` files and render in `markdown_renderer.html`. Version-controllable, no external design tools needed. Chosen over Excalidraw (binary files) and draw.io (external dependency). |
+| **Mermaid** | Documentation | Architecture and flow diagrams as code | Markdown-native diagramming — diagrams live in `.md` files and render in `5_Symbols/toolbox/markdown_renderer.html`. Version-controllable, no external design tools needed. Chosen over Excalidraw (binary files) and draw.io (external dependency). |
 | **PrismJS** | Documentation | Syntax highlighting in markdown renderer | Lightweight, CDN-hosted syntax highlighter with dark theme (Tomorrow Night). Extensible via language plugins. No build step. Chosen over highlight.js (larger bundle) and Shiki (requires build). |
 | **FontAwesome** | UI | Icons for menus and UI elements | Free CDN-hosted icon library with a large selection. Used for the debug button, navigation icons, and social links. No custom SVG maintenance. |
 | **Google Fonts (Inter + Outfit)** | UI | Typography for the project site | Clean, modern, highly-readable fonts. Inter for body text, Outfit for headings. CDN-hosted with no performance impact. |
-| **marked.js** | Frontend | Markdown to HTML parsing in `markdown_renderer.html` | Lightweight, fast, and widely-used markdown parser. CDN-hosted with no build step. Renders all `.md` files served by `markdown_renderer.html`. |
+| **marked.js** | Frontend | Markdown to HTML parsing in `5_Symbols/toolbox/markdown_renderer.html` | Lightweight, fast, and widely-used markdown parser. CDN-hosted with no build step. Renders all `.md` files served by `5_Symbols/toolbox/markdown_renderer.html`. |
 
 ## Decision Principles
 

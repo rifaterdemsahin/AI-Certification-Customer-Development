@@ -30,7 +30,7 @@ delivery-pilot-template/
 ├── 2_Environment/        # Roadmaps, constraints, setup guides (Win/Mac/AI)
 ├── 3_Simulation/         # UI mockups, dynamic image carousel
 ├── 4_Formula/            # Thinking & planning stage: LLM reasoning, decisions, recipes, research
-├── 5_Symbols/            # Source code, markdown_renderer.html, toolbox scripts
+├── 5_Symbols/            # Source code, 5_Symbols/toolbox/markdown_renderer.html, toolbox scripts
 ├── 6_Semblance/          # Error logs, near-misses, workarounds
 ├── 7_Testing_Known/      # Validation, testing checklists, outcomes
 ├── index.html            # Main entry point with unified navigation
@@ -69,7 +69,7 @@ delivery-pilot-template/
 - Debug mode persists via `debug=true` cookie
 - Both menus use Flexbox/Grid, responsive, and read from JSON config
 - Search with autocomplete in the Debug Menu
-- No direct link to `markdown_renderer.html`
+- No direct link to `5_Symbols/toolbox/markdown_renderer.html`
 
 ### Social Links (required in `index.html`)
 - GitHub Repository link

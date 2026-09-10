@@ -7,16 +7,16 @@ description: Scan every page and doc in the AI Certification Customer Developmen
 
 Produces a versioned, numeric **Business Model Confidence Score** for this repo by
 re-scanning the whole site each run. Every run creates a new version — never edit a
-past version's numbers in place (mirrors the `reports/acidity-check-report-*.md`
+past version's numbers in place (mirrors the `7_Testing_Known/reports/acidity-check-report-*.md`
 versioning convention already established in `CLAUDE.md`).
 
-Re-read `CLAUDE.md` at the start of each run — page conventions, nav.js structure,
+Re-read `CLAUDE.md` at the start of each run — page conventions, 5_Symbols/toolbox/nav.js structure,
 and the report-versioning rules may have evolved since this skill was written.
 
 ## Step 1 — Determine the next version
 
 ```
-ls reports/business-model-confidence-v*.md
+ls 7_Testing_Known/reports/business-model-confidence-v*.md
 ```
 
 - No file exists yet → this run is `v1.0.0`.
@@ -31,7 +31,7 @@ ls reports/business-model-confidence-v*.md
 
 ## Step 2 — Re-derive hypothesis validation score from source, not from caches
 
-Read `HYPOTHESIS.md` fresh. For **each** hypothesis (H1, H2, …), read its own
+Read `4_Formula/HYPOTHESIS.md` fresh. For **each** hypothesis (H1, H2, …), read its own
 **Status:** line inside its own section — not the Summary Table row, which has
 drifted out of sync before (found in v1.0.0: H3's table row said ⚪ Planned while
 its own entry said 🟡 In Progress). Treat any such mismatch as a finding, and use
@@ -57,11 +57,11 @@ Run each of these fresh (do not reuse numbers from a previous report version):
    isn't `http(s)://`, `mailto:`, `#`, or `javascript:` must resolve to a real file
    relative to its source file. (A quick Python pass with `re.findall(r'href="([^"]+)"')`
    + `os.path.exists` works; watch for false positives inside inline `<script>`
-   template-literal strings, e.g. `markdown_renderer.html`'s own regex-replacement
+   template-literal strings, e.g. `5_Symbols/toolbox/markdown_renderer.html`'s own regex-replacement
    code.)
 2. **Nav/reachability graph** — every `*.html` file (except `index.html` itself,
    the root of the graph) must be referenced either as an `href` from some page, or
-   inside `nav.js`'s `groups`/`searchIndex` arrays. Anything not referenced
+   inside `5_Symbols/toolbox/nav.js`'s `groups`/`searchIndex` arrays. Anything not referenced
    anywhere is an **orphaned page** — flag it as a finding without deleting or
    auto-wiring it in (wiring in orphaned content is a separate, explicit task —
    this skill only reports).
@@ -78,7 +78,7 @@ Run each of these fresh (do not reuse numbers from a previous report version):
    treating any modified/untracked file as suspicious, `git diff` a sample to
    confirm it's coherent, intentional prior work and not something to flag as
    corruption.
-3. **HYPOTHESIS.md internal consistency** — for every hypothesis, does the Summary
+3. **4_Formula/HYPOTHESIS.md internal consistency** — for every hypothesis, does the Summary
    Table row's status match the entry's own Status line? List every mismatch.
 4. **Headline-number cross-file consistency** — grep all `*.html` for the site's
    four headline business numbers (the $10,000 Stage 2→3 gate, the 1,000x
@@ -86,10 +86,10 @@ Run each of these fresh (do not reuse numbers from a previous report version):
    the >40% MVP video-retention floor — see `CLAUDE.md`'s "Where the business
    numbers/milestones live" section for the canonical source pages) and confirm no
    page states a conflicting number or currency for the same claim (e.g. a stray
-   "£10,000" that never made it past `HYPOTHESIS.md`'s own text would be a pass,
+   "£10,000" that never made it past `4_Formula/HYPOTHESIS.md`'s own text would be a pass,
    not a finding — only flag a number if it's live on an actual page).
 5. **Acidity-check findings roll-forward** — read the latest
-   `reports/acidity-check-report-v*.md` (highest version number) and tally its
+   `7_Testing_Known/reports/acidity-check-report-v*.md` (highest version number) and tally its
    finding statuses: count `✅ RESOLVED`/`✅ ADDRESSED`, `🟡 PARTIALLY ADDRESSED`,
    and `STILL OPEN`/unresolved findings.
 
@@ -106,7 +106,7 @@ Run each of these fresh (do not reuse numbers from a previous report version):
   prior version of this report already deducted for this and the working tree is
   unchanged since, don't deduct again — only deduct once per distinct batch of
   uncommitted work.
-- −5 per HYPOTHESIS.md table/entry status mismatch
+- −5 per 4_Formula/HYPOTHESIS.md table/entry status mismatch
 - −5 per confirmed cross-file numeric contradiction
 
 Floor the score at 0.
@@ -136,7 +136,7 @@ stage."
 
 ## Step 5 — Write the new report
 
-Create `reports/business-model-confidence-vX.Y.Z.md` (never edit an old version's
+Create `7_Testing_Known/reports/business-model-confidence-vX.Y.Z.md` (never edit an old version's
 numbers — see `CLAUDE.md`'s Report versioning convention). Include:
 - Version, date, and one line on what changed vs. the prior version (or "initial
   version" for v1.0.0).
@@ -150,7 +150,7 @@ numbers — see `CLAUDE.md`'s Report versioning convention). Include:
   integrity deduction).
 
 If a prior version file exists, add a one-line superseded banner at its top
-pointing forward, exactly as `reports/acidity-check-report-v1.0.md` does for
+pointing forward, exactly as `7_Testing_Known/reports/acidity-check-report-v1.0.md` does for
 `v1.1.0`.
 
 ## Step 6 — Publish / update `confidence-report.html`
@@ -159,22 +159,22 @@ This is the one HTML page for this skill's output (create it on the first run,
 update it on every subsequent run — don't create a new HTML file per version, the
 markdown report is what's versioned on disk).
 
-Follow the page conventions in `CLAUDE.md`: `#site-header` div, `nav.js` +
-`main.js` includes, `.card` hero with a `.badge` + big score number, `.metrics-grid`
+Follow the page conventions in `CLAUDE.md`: `#site-header` div, `5_Symbols/toolbox/nav.js` +
+`5_Symbols/toolbox/main.js` includes, `.card` hero with a `.badge` + big score number, `.metrics-grid`
 for the two sub-scores, `.content-section` blocks for the per-hypothesis table and
 the integrity findings, a version-history table (append a row each run, don't
 overwrite prior rows), and a link to the current version's full markdown report via
-`markdown_renderer.html?src=reports/business-model-confidence-vX.Y.Z.md`.
+`5_Symbols/toolbox/markdown_renderer.html?src=7_Testing_Known/reports/business-model-confidence-vX.Y.Z.md`.
 
 On first run only:
-- Register `confidence-report.html` in `nav.js`'s **Docs** group and in
+- Register `confidence-report.html` in `5_Symbols/toolbox/nav.js`'s **Docs** group and in
   `searchIndex`.
 - Add bidirectional links between `confidence-report.html` and `hypothesis.html`,
   and add it to `index.html`'s page-index grid.
 
-## Step 7 — Update HYPOTHESIS.md
+## Step 7 — Update 4_Formula/HYPOTHESIS.md
 
-Bump `HYPOTHESIS.md`'s version and add a Change Log entry noting the new
+Bump `4_Formula/HYPOTHESIS.md`'s version and add a Change Log entry noting the new
 confidence-report version and its headline score. This does not require adding a
 new hypothesis ID — the confidence report scores existing hypotheses, it doesn't
 assert a new falsifiable claim of its own.

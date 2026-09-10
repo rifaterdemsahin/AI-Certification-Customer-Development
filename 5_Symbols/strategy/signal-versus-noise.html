@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signal versus Noise | AI Certification Helper</title>
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../toolbox/style.css">
     <style>
         .sn-bar-wrap { display: flex; height: 8px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.06); min-width: 88px; }
         .sn-bar-s { background: var(--color-success); height: 100%; }
@@ -218,26 +218,26 @@
         </div>
     </footer>
 
-    <script src="../../nav.js"></script>
-    <script src="../../main.js"></script>
+    <script src="../toolbox/nav.js"></script>
+    <script src="../toolbox/main.js"></script>
     <script>
         (function () {
             var ITEMS = [
                 { name: "Archived Interview Transcripts", url: "../cd/archived-interview-transcripts.html", cat: "Discovery", signal: 96, noise: 8, why: "Raw customer words (Sude, Charles, Tuncer, Brian). Highest-leverage field evidence on the site." },
                 { name: "Candidate Exam Performance Evidence", url: "../product/exam-performance-evidence.html", cat: "Strategy", signal: 92, noise: 12, why: "Real 917/1000 pass, carefully scoped as motivation-channel evidence, not product evidence." },
-                { name: "Exam Prep & Student Behavior v1.6", url: "../../markdown_renderer.html?src=reports/exam-prep-market-and-student-behavior-v1.6.0.md", cat: "Docs", signal: 90, noise: 12, why: "Synthesizes the interview batch into buyer behavior, including Mehmet on institutional / MSP hiring. Current research, not theater." },
+                { name: "Exam Prep & Student Behavior v1.6", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/exam-prep-market-and-student-behavior-v1.6.0.md", cat: "Docs", signal: 90, noise: 12, why: "Synthesizes the interview batch into buyer behavior, including Mehmet on institutional / MSP hiring. Current research, not theater." },
                 { name: "Content Analysis", url: "../growth/content-analysis.html", cat: "Growth", signal: 90, noise: 14, why: "Only published retention number (68.5%, n=1). Honest about sample size." },
-                { name: "Hypothesis Tracker (full doc)", url: "../../markdown_renderer.html?src=HYPOTHESIS.md", cat: "Docs", signal: 88, noise: 15, why: "Premise → conclusion → status for every claim. The source of truth." },
+                { name: "Hypothesis Tracker (full doc)", url: "../../markdown_renderer.html?src=4_Formula/HYPOTHESIS.md", cat: "Docs", signal: 88, noise: 15, why: "Premise → conclusion → status for every claim. The source of truth." },
                 { name: "Evidence Map", url: "evidence-map.html", cat: "Strategy", signal: 88, noise: 18, why: "Shows what is backed vs empty. Decision filter for which bets are live." },
                 { name: "Core Business Hypotheses", url: "../hypotheses/hypothesis.html", cat: "Strategy", signal: 86, noise: 16, why: "Dashboard of every live bet. Status, not prose." },
                 { name: "Single-Founder Bandwidth", url: "single-founder-bandwidth.html", cat: "Strategy", signal: 86, noise: 14, why: "The real constraint. Time ledger that makes Stage 3/4 pages noise this week." },
                 { name: "Validation Repeat Gate", url: "../growth/validation-repeat-gate.html", cat: "Growth", signal: 85, noise: 16, why: "Two consecutive paid launches, not one warm-network spike. The H9 mechanic." },
                 { name: "Quality Gates", url: "../growth/quality-gates.html", cat: "Growth", signal: 84, noise: 18, why: "Numeric stage exits. Tells you what not to work on yet." },
                 { name: "Interview Recording & Tracker", url: "../cd/cd-interview-recording.html", cat: "Discovery", signal: 84, noise: 16, why: "Working log for the interviews that actually move H1/H3/H5/H8." },
-                { name: "Acidity Check Report v1.3", url: "../../markdown_renderer.html?src=reports/acidity-check-report-v1.3.0.md", cat: "Docs", signal: 84, noise: 16, why: "Independent critique of overclaim. Still the best 'what is fake' document." },
+                { name: "Acidity Check Report v1.3", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/acidity-check-report-v1.3.0.md", cat: "Docs", signal: 84, noise: 16, why: "Independent critique of overclaim. Still the best 'what is fake' document." },
                 { name: "YouTube Channel Metrics", url: "../growth/youtube-channel-metrics.html", cat: "Growth", signal: 83, noise: 20, why: "Studio numbers plus H28 targets. Signal is the measured row, not the benchmark." },
                 { name: "2-Hour Workshop Upload", url: "../product/skool-workshop-upload.html", cat: "Business Model", signal: 82, noise: 14, why: "Closed operational decision: Classroom replay, not YouTube, not H10." },
-                { name: "Workshop Upload Sanity Check", url: "../../markdown_renderer.html?src=reports/skool-workshop-upload-sanity-check-v1.0.md", cat: "Docs", signal: 82, noise: 14, why: "The written verdict behind the upload rule." },
+                { name: "Workshop Upload Sanity Check", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/skool-workshop-upload-sanity-check-v1.0.md", cat: "Docs", signal: 82, noise: 14, why: "The written verdict behind the upload rule." },
                 { name: "Exam Topic Blueprint", url: "../../exam-topics.html", cat: "Strategy", signal: 80, noise: 16, why: "Official topic list. Curriculum sequencing depends on this, not on TAM." },
                 { name: "YouTube → Skool Handoff", url: "../product/youtube-skool-handoff.html", cat: "Business Model", signal: 80, noise: 18, why: "Fixed channel order. Stops the 'post on Skool to acquire' mistake." },
                 { name: "Watering Holes & Outreach", url: "../cd/cd-watering-holes.html", cat: "Discovery", signal: 80, noise: 18, why: "Where interviews actually happen (Triton Square, Venture Coffee, Sunday cohort)." },
@@ -245,13 +245,13 @@
                 { name: "Golden Rules of Community Building", url: "../product/skool-community-golden-rules.html", cat: "Business Model", signal: 82, noise: 14, why: "This week's operating playbook: party not lecture. How founding seats become regulars." },
                 { name: "Skool Steps & Founding Members", url: "../product/skool-founding-members.html", cat: "Business Model", signal: 80, noise: 14, why: "This week's action: invite Marianna, Sude, B. Named seats, not paid enrollments." },
                 { name: "Skool Posting Sanity Check", url: "../product/skool-posting-sanity-check.html", cat: "Business Model", signal: 78, noise: 16, why: "Board is not acquisition. Stops a real Stage 2 failure mode." },
-                { name: "Founder Posting Sanity Check (report)", url: "../../markdown_renderer.html?src=reports/skool-founder-posting-sanity-check-v1.0.md", cat: "Docs", signal: 78, noise: 16, why: "Written verdict: Classroom + warm invites, not board-only." },
+                { name: "Founder Posting Sanity Check (report)", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/skool-founder-posting-sanity-check-v1.0.md", cat: "Docs", signal: 78, noise: 16, why: "Written verdict: Classroom + warm invites, not board-only." },
                 { name: "Practice Exam Gap", url: "practice-exams-gap.html", cat: "Strategy", signal: 78, noise: 22, why: "H27 value-blocker. Buyers have named this gap in interviews." },
                 { name: "Cost-Side Model", url: "../growth/cost-side-model.html", cat: "Growth", signal: 78, noise: 20, why: "Infra + founder opportunity cost. Honest about $0 cash burn vs time burn." },
                 { name: "Test Plan", url: "../growth/test-plan.html", cat: "Growth", signal: 78, noise: 20, why: "Sunday-cohort cadence for interviews and funnel instrumentation." },
                 { name: "Hypothesis Interview Questions", url: "../cd/cd-hypothesis-interview-questions.html", cat: "Discovery", signal: 76, noise: 16, why: "Kill/validate questions mapped to H1–H19. Use before more strategy pages." },
                 { name: "Business Model Confidence Report", url: "../dashboard/confidence-report.html", cat: "Docs", signal: 76, noise: 18, why: "Numeric honesty: 45/100. Integrity score, not a growth story." },
-                { name: "Confidence Report v1.9.11", url: "../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.11.md", cat: "Docs", signal: 76, noise: 18, why: "Auditable math behind the 45/100 number." },
+                { name: "Confidence Report v1.9.11", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/business-model-confidence-v1.9.11.md", cat: "Docs", signal: 76, noise: 18, why: "Auditable math behind the 45/100 number." },
                 { name: "Focus", url: "focus.html", cat: "Strategy", signal: 76, noise: 20, why: "One problem, explicit defer list. Complements this ranking." },
                 { name: "H5 · Cohorts sell out organically", url: "../hypotheses/hyp-h5.html", cat: "Hypothesis", signal: 76, noise: 22, why: "In testing: 8 Skool signups, Sunday mechanics. Closest path to H9." },
                 { name: "H2 · Animated content format", url: "../hypotheses/hyp-h2.html", cat: "Hypothesis", signal: 75, noise: 20, why: "68.5% first data point. Still n=1 — read the number, ignore the extrapolation." },
@@ -263,7 +263,7 @@
                 { name: "Task List", url: "../dashboard/todo.html", cat: "Growth", signal: 78, noise: 14, why: "Recurring weekly loop (videos, Sunday cohort, Skool answers, YouTube comments) plus one-off backlog. Action, not narrative." },
                 { name: "H24 · Emotional Pain Drivers", url: "../hypotheses/hyp-h24.html", cat: "Hypothesis", signal: 72, noise: 24, why: "In testing from interviews (fear/greed/insecurity). Informs copy, not TAM." },
                 { name: "H4 · ~1% free-to-paid", url: "../hypotheses/hyp-h4.html", cat: "Hypothesis", signal: 72, noise: 26, why: "In testing on a thin Sunday-cohort sample. Treat rates as hypotheses." },
-                { name: "H27 · Practice exam gap (in tracker)", url: "../../markdown_renderer.html?src=HYPOTHESIS.md", cat: "Hypothesis", signal: 72, noise: 20, why: "In testing; 2 of 60 questions started. No standalone hyp-h27 page yet — scored from the tracker entry and practice-exams-gap.html." },
+                { name: "H27 · Practice exam gap (in tracker)", url: "../../markdown_renderer.html?src=4_Formula/HYPOTHESIS.md", cat: "Hypothesis", signal: 72, noise: 20, why: "In testing; 2 of 60 questions started. No standalone hyp-h27 page yet — scored from the tracker entry and practice-exams-gap.html." },
                 { name: "VC Constructive Feedback", url: "../product/vc-feedback.html", cat: "Strategy", signal: 72, noise: 26, why: "Honest inversion of the deck. Use the close-the-note list; skip the theater." },
                 { name: "90-Day Execution Plan", url: "../growth/90-day-execution-plan.html", cat: "Growth", signal: 72, noise: 28, why: "Dated near-term calendar. Signal is this quarter; later weeks are estimates." },
                 { name: "Cohort Prep", url: "../growth/cohort-prep.html", cat: "Growth", signal: 72, noise: 20, why: "Weekly install list so Sunday attendees arrive ready. Operational." },
@@ -283,7 +283,7 @@
                 { name: "Risk Analysis", url: "risk-analysis.html", cat: "Strategy", signal: 62, noise: 30, why: "Named risks (bandwidth, copycats, platform). Some future-stage items inflate noise." },
                 { name: "BMC: Revenue Streams", url: "../bmc/bmc-revenue-streams.html", cat: "Business Model", signal: 62, noise: 32, why: "$10 / $29 / $250–$500 are decided SKUs. Revenue itself is still $0." },
                 { name: "BMC: Customer Segments", url: "../bmc/bmc-customer-segments.html", cat: "Business Model", signal: 62, noise: 30, why: "Segment definition. Overlaps target-audience.html." },
-                { name: "Market Validation Argument", url: "../../markdown_renderer.html?src=reports/market-validation-argument-v1.0.md", cat: "Docs", signal: 62, noise: 28, why: "External-research argument. Useful context; not first-party proof." },
+                { name: "Market Validation Argument", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/market-validation-argument-v1.0.md", cat: "Docs", signal: 62, noise: 28, why: "External-research argument. Useful context; not first-party proof." },
                 { name: "Market Reality Check", url: "market-reality-check.html", cat: "Strategy", signal: 60, noise: 36, why: "JTBD is sharp; some confidence labels outrun the interview n." },
                 { name: "Funnel Math", url: "../growth/funnel-math.html", cat: "Growth", signal: 60, noise: 34, why: "Honest arithmetic on unvalidated H4/H7 rates. Use as sensitivity, not forecast." },
                 { name: "BMC: Cost Structure", url: "../bmc/bmc-cost-structure.html", cat: "Business Model", signal: 60, noise: 30, why: "Cost stack. Overlaps cost-side-model with less math." },
@@ -294,7 +294,7 @@
                 { name: "Test Metrics", url: "../growth/test-metrics.html", cat: "Growth", signal: 58, noise: 30, why: "KPI list. Targets without measurements are mid-signal." },
                 { name: "Sales & Marketing Roadmap", url: "../growth/sales-marketing-roadmap.html", cat: "Growth", signal: 58, noise: 34, why: "7 Skool classrooms exist. Sequence is real; paid mapping is not." },
                 { name: "BMC: Customer Relationships", url: "../bmc/bmc-customer-relationships.html", cat: "Business Model", signal: 58, noise: 32, why: "Sunday + WhatsApp + Skool. Restates H5 mechanics." },
-                { name: "AI Adoption & Skills Gap report", url: "../../markdown_renderer.html?src=reports/ai-adoption-and-skills-gap-v1.0.md", cat: "Docs", signal: 58, noise: 30, why: "External skills-gap research. Supports H1; not willingness to pay." },
+                { name: "AI Adoption & Skills Gap report", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/ai-adoption-and-skills-gap-v1.0.md", cat: "Docs", signal: 58, noise: 30, why: "External skills-gap research. Supports H1; not willingness to pay." },
                 { name: "Skool vs YouTube", url: "../product/skool-vs-youtube.html", cat: "Business Model", signal: 56, noise: 28, why: "Comparison after the handoff decision. Mostly restatement." },
                 { name: "Skills Gap", url: "skills-gap.html", cat: "Strategy", signal: 56, noise: 34, why: "Enterprise framing. Directional; Delivery-Pilot language can overclaim." },
                 { name: "BMC: Key Activities", url: "../bmc/bmc-key-activities.html", cat: "Business Model", signal: 56, noise: 34, why: "Scripts, editing, outreach. Duplicate of the todo / bandwidth pages." },
@@ -312,7 +312,7 @@
                 { name: "Why Certification Matters", url: "why-certification.html", cat: "Strategy", signal: 50, noise: 36, why: "Prospect-facing case. Fine for a landing page; not founder work." },
                 { name: "Sales Pipeline", url: "../growth/sales-pipeline.html", cat: "Growth", signal: 50, noise: 40, why: "Funnel drawing on unvalidated rates." },
                 { name: "Component: Problem-Solution Fit", url: "../comp/comp-problem-solution.html", cat: "Component", signal: 48, noise: 38, why: "Stage-1 spec. Overlaps focus + discovery." },
-                { name: "TAM/SAM/SOM Verification", url: "../../markdown_renderer.html?src=reports/tam-sam-som-verification-v1.0.md", cat: "Docs", signal: 48, noise: 55, why: "Useful as a 'these numbers are soft' warning. The TAM itself is still H6 noise." },
+                { name: "TAM/SAM/SOM Verification", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/tam-sam-som-verification-v1.0.md", cat: "Docs", signal: 48, noise: 55, why: "Useful as a 'these numbers are soft' warning. The TAM itself is still H6 noise." },
                 { name: "H25 · Cert value bifurcation", url: "../hypotheses/hyp-h25.html", cat: "Hypothesis", signal: 48, noise: 40, why: "Planned thesis. Does not change this week's cohort." },
                 { name: "Discipline 1: Focus on WIG", url: "../execution/4dx-discipline-1.html", cat: "Execution", signal: 48, noise: 40, why: "Useful reminder to pick one WIG. The WIG is already H9." },
                 { name: "Component: MVP", url: "../comp/comp-mvp.html", cat: "Component", signal: 46, noise: 40, why: "3 videos + practice test. Overlaps todo + H10." },
@@ -394,7 +394,7 @@
                 { name: "Latest Pages Dashboard", url: "../dashboard/latest-pages.html", cat: "Dashboard", signal: 20, noise: 10, why: "Changelog of the site, not the business." },
                 { name: "Adaptive AI Prep Demo", url: "../growth/ai-demo.html", cat: "Growth", signal: 20, noise: 68, why: "Prototype of a product that is not the MVP. Build-trap." },
                 { name: "Surplus Value Creation", url: "../bmc/surplus-value.html", cat: "Business Model", signal: 18, noise: 74, why: "Theory of digital reproducibility. Interesting; not a weekly input." },
-                { name: "Historical report versions (archive)", url: "../../markdown_renderer.html?src=reports/business-model-confidence-v1.9.10.md", cat: "Docs", signal: 12, noise: 40, why: "Superseded confidence/acidity/exam-prep versions. Keep as history; do not reread." }
+                { name: "Historical report versions (archive)", url: "../../markdown_renderer.html?src=7_Testing_Known/reports/business-model-confidence-v1.9.10.md", cat: "Docs", signal: 12, noise: 40, why: "Superseded confidence/acidity/exam-prep versions. Keep as history; do not reread." }
             ];
 
             function quadOf(item) {

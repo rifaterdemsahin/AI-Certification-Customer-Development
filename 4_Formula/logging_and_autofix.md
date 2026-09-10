@@ -23,7 +23,7 @@ Fly.io backend (structured logs) ───┘
 ## 1️⃣ Frontend Logs — The Footer Debug Feature
 
 ### What already exists
-`index.html` and `markdown_renderer.html` ship a developer logging layer, gated by the `debug=true` cookie and toggled by the floating **debug button at the bottom-right** (`#debugToggle`):
+`index.html` and `5_Symbols/toolbox/markdown_renderer.html` ship a developer logging layer, gated by the `debug=true` cookie and toggled by the floating **debug button at the bottom-right** (`#debugToggle`):
 
 ```js
 // getCookie() reads the debug flag; debugLog() only prints when debug mode is on

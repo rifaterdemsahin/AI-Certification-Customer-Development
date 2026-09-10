@@ -56,5 +56,5 @@ During today's strategic discovery session with Ilker and Marianna, three founda
 1. [x] Create dedicated strategy page for the **B2C2B Business Model** (`5_Symbols/strategy/b2c2b-business-model.html`).
 2. [x] Create dedicated messaging page for **Positive AI Skills Elevation** (`5_Symbols/strategy/positive-ai-skills-message.html`).
 3. [x] Create dedicated community value page for **What Does the Community Get?** (`5_Symbols/product/what-community-gets.html`).
-4. [x] Publish versioned analysis report (`reports/customer-discovery-ilker-marianna-b2c2b-v1.0.0.md`).
-5. [x] Update `nav.js`, `HYPOTHESIS.md`, and discovery archives.
+4. [x] Publish versioned analysis report (`7_Testing_Known/reports/customer-discovery-ilker-marianna-b2c2b-v1.0.0.md`).
+5. [x] Update `5_Symbols/toolbox/nav.js`, `4_Formula/HYPOTHESIS.md`, and discovery archives.

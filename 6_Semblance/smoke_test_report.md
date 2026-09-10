@@ -4,11 +4,11 @@
 > Latest run overwrites this file; one report per test run.
 
 ## Run Info
-- **Date:** 2026-08-24 13:12
+- **Date:** 2026-09-10 06:25
 - **Trigger:** Manual run
 - **Mode:** Local filesystem
 - **Tester:** smoke_test.py (automated)
-- **Verdict:** ❌ 1 FAILURE(S)
+- **Verdict:** ❌ 2 FAILURE(S)
 
 ## Results Summary
 | Test | Result | Detail |
@@ -18,16 +18,21 @@
 | Menu Links Resolve | ✅ Pass | — |
 | Project Menu | ✅ Pass | — |
 | Debug Menu | ✅ Pass | — |
-| Nav 3-Way Sync | ✅ Pass | — |
-| Stage Docs In Menu | ❌ Fail | orphaned: ['3_Simulation/Cohorts/readme.md', '3_Simulation/Interviews/interview_anna_2026-08-20.md', '3_Simulation/Interviews/interview_apo_2026-08-18.md', '3_Simulation/Interviews/interview_baran_g_2026-08-18.md', '3_Simulation/Interviews/interview_bayo_2026-08-24.md', '3_Simulation/Interviews/interview_brian_2026-08-20.md', '3_Simulation/Interviews/interview_charles_2026-08-22.md', '3_Simulation/Interviews/interview_hcl_devops_screen_2026-08-24.md'] |
+| Nav 3-Way Sync | ❌ Fail | drift: ['4_Formula/HYPOTHESIS.md', '7_Testing_Known/reports/skool-pricing-feedback-v1.0.0.md'] |
+| Stage Docs In Menu | ❌ Fail | orphaned: ['3_Simulation/Cohorts/readme.md', '3_Simulation/Interviews/interview_anna_2026-08-20.md', '3_Simulation/Interviews/interview_apo_2026-08-18.md', '3_Simulation/Interviews/interview_b2b_insurance_agent_training_2026-08-31.md', '3_Simulation/Interviews/interview_baran_g_2026-08-18.md', '3_Simulation/Interviews/interview_bayo_2026-08-24.md', '3_Simulation/Interviews/interview_bora_2026-09-07.md', '3_Simulation/Interviews/interview_brian_2026-08-20.md'] |
 | Social Links | ✅ Pass | — |
 | README Pages URL | ✅ Pass | — |
 | Secrets Scan | ✅ Pass | — |
 
 ## Failures
 
-### #1 — Stage Docs In Menu
-- **Error:** orphaned: ['3_Simulation/Cohorts/readme.md', '3_Simulation/Interviews/interview_anna_2026-08-20.md', '3_Simulation/Interviews/interview_apo_2026-08-18.md', '3_Simulation/Interviews/interview_baran_g_2026-08-18.md', '3_Simulation/Interviews/interview_bayo_2026-08-24.md', '3_Simulation/Interviews/interview_brian_2026-08-20.md', '3_Simulation/Interviews/interview_charles_2026-08-22.md', '3_Simulation/Interviews/interview_hcl_devops_screen_2026-08-24.md']
+### #1 — Nav 3-Way Sync
+- **Error:** drift: ['4_Formula/HYPOTHESIS.md', '7_Testing_Known/reports/skool-pricing-feedback-v1.0.0.md']
+- **GitHub Issue:** _create per the Smoke Tests & GitHub Issues rule_
+- **Status:** Open
+
+### #2 — Stage Docs In Menu
+- **Error:** orphaned: ['3_Simulation/Cohorts/readme.md', '3_Simulation/Interviews/interview_anna_2026-08-20.md', '3_Simulation/Interviews/interview_apo_2026-08-18.md', '3_Simulation/Interviews/interview_b2b_insurance_agent_training_2026-08-31.md', '3_Simulation/Interviews/interview_baran_g_2026-08-18.md', '3_Simulation/Interviews/interview_bayo_2026-08-24.md', '3_Simulation/Interviews/interview_bora_2026-09-07.md', '3_Simulation/Interviews/interview_brian_2026-08-20.md']
 - **GitHub Issue:** _create per the Smoke Tests & GitHub Issues rule_
 - **Status:** Open
 

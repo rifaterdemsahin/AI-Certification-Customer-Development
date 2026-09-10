@@ -88,7 +88,7 @@ From a consumer psychology and marketing funnel perspective, this script represe
    - Produce a dedicated 60-second Roger Rabbit mixed-reality video deploying the 7-part script framework, featuring on-screen QR code and description link.
    - Record via Fal.ai Founder Voice Clone for high retention and memorability.
 3. **Repository Cross-Linking:**
-   - Synchronize across `5_Symbols/growth/marketing-tactics.html`, `5_Symbols/cd/archived-interview-transcripts.html`, `HYPOTHESIS.md` (H2, H4, H5, H10, H21, H24, H29, H30), and versioned reports.
+   - Synchronize across `5_Symbols/growth/marketing-tactics.html`, `5_Symbols/cd/archived-interview-transcripts.html`, `4_Formula/HYPOTHESIS.md` (H2, H4, H5, H10, H21, H24, H29, H30), and versioned reports.
 
 ---
 *Archived in Customer Discovery Workspace · AI Certification Helper*

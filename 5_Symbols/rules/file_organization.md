@@ -31,7 +31,7 @@
 ### Root-Level Files
 Only files required at the repository root go outside `5_Symbols/`:
 - `index.html` — GitHub Pages entry point
-- `markdown_renderer.html` — Shared markdown viewer
+- `5_Symbols/toolbox/markdown_renderer.html` — Shared markdown viewer
 - `robots.txt`, `sitemap.xml` — SEO
 - `.env.example`, `.gitignore` — Config
 - `navigation_config.json` — Shared menu config

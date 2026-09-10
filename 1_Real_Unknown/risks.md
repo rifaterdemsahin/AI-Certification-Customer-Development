@@ -146,7 +146,7 @@
 - **Status:** ✅ Solved (2026-07-12)
 - **Severity:** Was 🟡 Medium
 - **Risk:** Debug menu required manual sync across 3 files; ~27 stage docs were missing from all menu sources.
-- **Resolution:** Full backfill — every stage markdown file now listed (64 entries, identical across `navigation_config.json`, `index.html`, `markdown_renderer.html`). The SPEC-008 smoke runner checks "Nav 3-Way Sync" and "Stage Docs In Menu" on every run, so future desync is detected automatically instead of relying on discipline.
+- **Resolution:** Full backfill — every stage markdown file now listed (64 entries, identical across `navigation_config.json`, `index.html`, `5_Symbols/toolbox/markdown_renderer.html`). The SPEC-008 smoke runner checks "Nav 3-Way Sync" and "Stage Docs In Menu" on every run, so future desync is detected automatically instead of relying on discipline.
 - **Verification:** Smoke tests 2026-07-12: both checks ✅ (10/10 local, 11/11 cloud).
 
 ### R-S01: Features Implemented Without Documented Specs
@@ -174,7 +174,7 @@
 - **Status:** ✅ Solved (2026-07-11)
 - **Severity:** Was 🟡 Medium
 - **Risk:** Agents loaded the entire project context (all AGENTS.md rules, all persona files, all stage READMEs) on every run — wasteful and slow.
-- **Resolution:** Created 6 on-demand skill files in `.kilo/skills/` (navigation, planning, simulation, deploy, secrets, error-fix). Created `kilo.json` to register them. Agents now load only the skills relevant to the current task.
+- **Resolution:** Created 6 on-demand skill files in `.kilo/skills/` (navigation, planning, simulation, deploy, secrets, error-fix). Created `.kilo/kilo.json` to register them. Agents now load only the skills relevant to the current task.
 - **Verification:** Skills loadable via the `skill` tool. Documented in `2_Environment/superskills.md`.
 
 ### R-S05: Unclear Tool Dependencies and Upgrade Impact
