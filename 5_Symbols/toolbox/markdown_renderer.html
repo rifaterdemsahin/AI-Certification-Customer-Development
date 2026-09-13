@@ -384,7 +384,7 @@
                     '<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/blob/main/' + encodeURI(cleanSrc) + '" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Source</a> | ' +
                     '<a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/markdown_renderer.html?src=' + encodeURIComponent(cleanSrc) + '" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)';
             }
-            fetch(src)
+            fetch('../../' + cleanSrc)
                 .then(function (res) {
                     if (!res.ok) throw new Error('HTTP ' + res.status);
                     return res.text();

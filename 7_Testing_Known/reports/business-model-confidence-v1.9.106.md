@@ -1,5 +1,7 @@
 # Business Model Confidence Report — v1.9.106
 
+> **Superseded by [v1.9.107](business-model-confidence-v1.9.107.md).**
+
 **Date:** 2026-09-13
 **Produced by:** the `business-model-sanity-check` skill
 **What changed vs. v1.9.105:**
