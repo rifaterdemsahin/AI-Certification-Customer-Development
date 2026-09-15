@@ -742,6 +742,7 @@
         { url: '5_Symbols/growth/hundred-k-opportunity-cost-pivot.html', title: '£100k Pure-Time Pivot Milestone', desc: 'Four courses at £40k institutional value plus £60k founder time. If Discovery cannot become Validation and Skool cannot charge back at £100k GBP, pivot. Distinct from $100k ARR hire (H33).', cat: 'Growth', tags: 'pivot hundred k 100000 opportunity cost founder time four courses skool charge back discovery validation h33 kill gate' },
         { url: '5_Symbols/hypotheses/hyp-h33.html', title: 'H33 · £100k Pure-Time Pivot', desc: 'Kill gate: 4 courses £40k + founder time £60k. Pivot if still stuck in Discovery with no Skool charge-back. Not H11 $100k ARR.', cat: 'Hypothesis Detail', tags: 'h33 hypothesis pivot opportunity cost 100k gbp courses founder time skool' },
         { url: '5_Symbols/hypotheses/hyp-h34.html', title: 'H34 · Collaborative Video Production', desc: 'Members co-produce the next course cut via a three-door Skool Courses living hub: official Claude 101, unofficial Exam Prep Classroom, and Canva dual-lens comments. Not a paid enrollment.', cat: 'Hypothesis Detail', tags: 'h34 hypothesis collaborative video production courses hub canva comments claude 101 exam prep co-production' },
+        { url: '5_Symbols/hypotheses/hyp-h35.html', title: 'H35 · Repo-Count Badge Ladder', desc: '9-rank badge ladder (Cadet/Explorer 1 repo → Delivery Rainmaker 1000 repos) earned purely by shipping repos, inside the Delivery Pilot Program. Count first, then correctness, then quality.', cat: 'Hypothesis Detail', tags: 'h35 hypothesis badges badge ladder repo count cadet explorer active contributor flight engineer senior practitioner mission specialist squadron leader pilot graduate delivery rainmaker delivery pilot program cohort prep' },
         { url: '5_Symbols/growth/stage-timelines.html', title: 'Stage Timeline Estimates', desc: 'Estimated start/exit date ranges for each of the four Customer Development stages, with a horizontal timeline diagram and a founder-bandwidth caveat.', cat: 'Growth', tags: 'timeline estimate schedule dates gantt stage duration' },
         { url: '5_Symbols/growth/90-day-execution-plan.html', title: '90-Day Execution Plan', desc: 'Dated 2026-08-09 to 2026-11-06 execution plan in 3 phases with a full day-by-day calendar, operationalizing H19 stage estimates into a weekly cadence and milestone checklist.', cat: 'Growth', tags: '90 day execution plan phases weeks sprint schedule milestones checklist launch readiness day by day calendar' },
         { url: '5_Symbols/dashboard/calendar.html', title: 'Milestone Calendar', desc: 'Chronological list of named, dated milestones past and projected, expanding the H19 stage-timeline estimates into individual events, including 10 true regulars in Skool.', cat: 'Growth', tags: 'calendar milestones dates schedule roadmap timeline events 10 true regulars skool' },
@@ -775,7 +776,7 @@
         { url: '5_Symbols/hypotheses/hyp-h32.html', title: 'H32 · Priestley Five-Step Path (CHAOS)', desc: 'Daniel Priestley standing-start path: apprenticeship, 90-day hustle, CHAOS, four-person ramp, seven-figure KPI. This business is in CHAOS.', cat: 'Hypothesis Detail', tags: 'h32 hypothesis priestley chaos apprenticeship side hustle product for prospects core offer seven figure kpi tuncer' },
         { url: '5_Symbols/growth/youtube-banner.html', title: 'YouTube Channel Top Banner', desc: 'Transformational 3-part banner mockup (No Experience → Split Brain → Get Certified in 90 Days) with enhanced Midjourney prompts.', cat: 'Growth', tags: 'youtube banner top header mockup graphic design prompt midjourney conversion' },
         { url: '5_Symbols/hypotheses/hyp-h28.html', title: 'H28 · YouTube Engagement Rate Benchmark', desc: 'Detail page with premise-conclusion-status SVG diagram for H28.', cat: 'Hypothesis Detail', tags: 'h28 hypothesis detail youtube engagement rate likes comments ctr svg diagram' },
-        { url: '5_Symbols/growth/cohort-prep.html', title: 'Cohort Prep', desc: 'Weekly WhatsApp/Discord install list and content preview that runs between live Sunday cohort sessions, so attendees arrive ready for hands-on work.', cat: 'Growth', tags: 'cohort prep whatsapp discord install setup weekly hands-on' },
+        { url: '5_Symbols/growth/cohort-prep.html', title: 'Cohort Prep', desc: 'Weekly WhatsApp/Discord install list and content preview that runs between live Sunday cohort sessions inside the Delivery Pilot Program, plus the repo-count 🏅 Badges ladder (Cadet → Delivery Rainmaker, H35).', cat: 'Growth', tags: 'cohort prep whatsapp discord install setup weekly hands-on delivery pilot program badges repo ladder cadet explorer rainmaker h35' },
         { url: '5_Symbols/comp/comp-problem-solution.html', title: 'Component: Problem-Solution Fit', desc: 'Validating that study guides solve the core certification retention issues.', cat: 'Component', tags: 'problem solution fit validation' },
         { url: '5_Symbols/comp/comp-mvp.html', title: 'Component: Minimum Viable Product (MVP)', desc: 'Blueprint for the first 3 animated videos and a simple practice test page.', cat: 'Component', tags: 'mvp blueprint videos practice test' },
         { url: '5_Symbols/comp/comp-mvp-separation.html', title: 'Component: MVP Product vs. Marketing Separation & Remediation', desc: 'Critical decoupling audit separating acquisition marketing materials (YouTube animations) from core product materials (Skool cohort, Sunday screen-share, practice exams).', cat: 'Component', tags: 'mvp product marketing separation decoupling fixes remediation youtube skool cohort' },
@@ -2018,6 +2019,17 @@
             { url: '5_Symbols/hypotheses/hyp-h29.html', title: 'H29 Listen', emoji: '👂' },
             { url: '5_Symbols/hypotheses/hyp-h2.html', title: 'H2 Animation', emoji: '🔍' },
             { url: '5_Symbols/hypotheses/hyp-h10.html', title: 'H10 Retention', emoji: '📈' }
+        ],
+        '5_Symbols/hypotheses/hyp-h35.html': [
+            { url: '5_Symbols/growth/cohort-prep.html', title: 'Cohort Prep · Badges', emoji: '🏅' },
+            { url: '5_Symbols/hypotheses/hyp-h30.html', title: 'H30 Delivery Pilot Roadmap', emoji: '🚀' },
+            { url: '5_Symbols/hypotheses/hyp-h34.html', title: 'H34 Co-Production', emoji: '🎬' }
+        ],
+        '5_Symbols/growth/cohort-prep.html': [
+            { url: '5_Symbols/hypotheses/hyp-h35.html', title: 'H35 Badge Ladder', emoji: '🏅' },
+            { url: '5_Symbols/strategy/delivery-pilot-roadmap.html', title: 'Delivery Pilot Roadmap', emoji: '🚀' },
+            { url: '5_Symbols/hypotheses/hyp-h5.html', title: 'H5 Cohorts', emoji: '📅' },
+            { url: '5_Symbols/hypotheses/hyp-h8.html', title: 'H8 Peer Accountability', emoji: '🤝' }
         ],
         '5_Symbols/growth/fast-conversion-shorts.html': [
             { url: '5_Symbols/growth/sales-tactics.html', title: 'Sales Tactics', emoji: '🎯' },
