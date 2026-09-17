@@ -1,4 +1,4 @@
-> Superseded by nothing yet — this is the current version. Previous: [v1.9.109](business-model-confidence-v1.9.109.md)
+> Superseded by [v1.9.111](business-model-confidence-v1.9.111.md). Previous: [v1.9.109](business-model-confidence-v1.9.109.md)
 
 # Business Model Confidence Report — v1.9.110
 
