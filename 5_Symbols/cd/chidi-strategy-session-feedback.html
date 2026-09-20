@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidi — Strategy, Multi-Agent Governance &amp; Role Constraints | AI Certification Helper</title>
+    <link rel="stylesheet" href="../toolbox/style.css">
+    <style>
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .strategy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-normal);
+        }
+        .strategy-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        .quote-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+        }
+        .agent-pill {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .pill-cfo { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .pill-cto { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .pill-sandbox { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .todo-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <!-- Back Link -->
+        <a href="archived-interview-transcripts.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-weight: 500;">
+            &larr; Back to Archived Transcripts &amp; Interviews
+        </a>
+
+        <!-- Hero Card -->
+        <div class="card animate-fade-in" style="margin-bottom: 2rem; border-left: 5px solid #f59e0b; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">
+                        Customer Discovery &middot; Strategic Advisory Review &middot; <a href="../hypotheses/hyp-h2.html" style="color: inherit;">H2</a> / <a href="../hypotheses/hyp-h10.html" style="color: inherit;">H10</a> / <a href="../hypotheses/hyp-h24.html" style="color: inherit;">H24</a> / <a href="../hypotheses/hyp-h29.html" style="color: inherit;">H29</a> / <a href="../hypotheses/hyp-h30.html" style="color: inherit;">H30</a>
+                    </span>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.25rem; margin-top: 0.6rem; margin-bottom: 0.85rem;">
+                        ♟️ Chidi: Strategy, Multi-Agent Governance &amp; Role Constraints
+                    </h1>
+                    <p style="color: var(--text-secondary); max-width: 84ch; line-height: 1.65; margin: 0; font-size: 1.05rem;">
+                        Private strategy sync with <strong>Chidi</strong> on 2026-09-20. Candid critique on single-founder bandwidth: replace manual LinkedIn feed scrolling with automated AI agents, enforce financial discipline (tracking 3,000 watch hours toward monetization), sandbox new experiments internally ("get the receipts") before public release, and institute synthetic personas (a <strong>Strict CFO</strong> and a <strong>Lean CTO</strong>) to eliminate feature creep. <strong>Internal Board Strategy &middot; Strictly Private Transcript.</strong>
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="../toolbox/markdown_renderer.html?src=7_Testing_Known/reports/customer-discovery-chidi-strategy-session-v1.0.0.md" class="btn btn-primary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; text-align: center;">
+                        📄 View Report v1.0.0 &rarr;
+                    </a>
+                    <a href="../toolbox/markdown_renderer.html?src=3_Simulation/Interviews/interview_chidi_2026-09-20_strategy_cfo_cto_agents.md" class="btn btn-secondary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; border-color: rgba(245, 158, 11, 0.4); color: #fbbf24; text-align: center;">
+                        🔒 Raw Record &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual Display -->
+        <div class="card animate-fade-in" style="margin-bottom: 2.5rem; padding: 0; overflow: hidden; border: 1px solid rgba(245, 158, 11, 0.25);">
+            <img src="chidi-strategy-session-hero.jpg" alt="Executive control room displaying multi-agent governance: Strict CFO agent monitoring 3,000 watch hours and ROI, Lean CTO agent enforcing minimalist architecture, Devil's Advocate sandbox chamber, and automated LinkedIn research pipeline" style="width: 100%; height: auto; display: block;">
+            <div style="padding: 0.85rem 1.25rem; background: rgba(15, 23, 42, 0.85); border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                    <strong style="color: var(--text-primary);">Strategic Architecture:</strong> Multi-agent governance board balancing technical experimentation against strict financial unit economics.
+                </span>
+                <span style="font-size: 0.8rem; color: #fbbf24; font-weight: 600;">
+                    Chidi Advisory Recommendation &middot; 2026-09-20
+                </span>
+            </div>
+        </div>
+
+        <!-- 1. Executive Summary -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">📌 Executive Summary &amp; Cohort Operating Rhythm</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card" style="border-top: 4px solid var(--color-primary);">
+                    <div>
+                        <span class="agent-pill pill-cto">Operational Rhythm</span>
+                        <h3 style="margin: 0.5rem 0; font-size: 1.15rem; color: var(--text-primary);">Structured 1-Hour Cohort Model</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Rifat outlined a tight, non-fatiguing 60-minute call architecture (<a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary);">H29</a>):
+                        </p>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin: 0.5rem 0;">
+                            <li><strong>10m:</strong> Introductions &amp; individual blocker check-ins</li>
+                            <li><strong>10m:</strong> Curated high-signal AI industry news</li>
+                            <li><strong>20m:</strong> Hands-on certification practice (task decomposition, CoT)</li>
+                            <li><strong>15m:</strong> Member project updates &amp; architecture review</li>
+                            <li><strong>05m:</strong> Gamified badge awards based on verified GitHub repos (<a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary);">H30</a>)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="strategy-card" style="border-top: 4px solid var(--color-success);">
+                    <div>
+                        <span class="agent-pill pill-sandbox">Distribution Proof</span>
+                        <h3 style="margin: 0.5rem 0; font-size: 1.15rem; color: var(--text-primary);">Content Performance Uplift</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Strong engagement signals across organic channels:
+                        </p>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin: 0.5rem 0;">
+                            <li><strong>LinkedIn:</strong> Recent controversial posts reached <strong>&gt;40,000 views</strong> leveraging reverse response marketing techniques.</li>
+                            <li><strong>YouTube:</strong> Audience watch retention improved significantly after shifting to faceless, animated video formats compared to legacy talking-head/screen recordings (<a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary);">H2</a> / <a href="../hypotheses/hyp-h10.html" style="color: var(--color-primary);">H10</a>).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Critique & Pushback from Chidi -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🛑 Critique &amp; Red-Teaming from Chidi</h2>
+            <div class="quote-box">
+                &ldquo;You are constantly building alpha and beta technical experiments. But where are the financial receipts? If you spend your time scrolling LinkedIn manually or giving unbaked tools to students, you are burning your most precious resource — focus. Put a strict CFO and a lean CTO in charge of your own brain.&rdquo; &mdash; Chidi
+            </div>
+
+            <div class="strategy-grid">
+                <div class="strategy-card" style="border-left: 4px solid #ef4444;">
+                    <div>
+                        <strong style="color: #f87171; font-size: 1.05rem;">1. Manual Feed Browsing Trap</strong>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.6;">
+                            Manually scrolling through LinkedIn feeds to identify viral themes is noisy, time-consuming, and an inefficient drain on founder bandwidth (<a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary);">H24</a>). It must be delegated to automated headless AI research agents.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-card" style="border-left: 4px solid #f59e0b;">
+                    <div>
+                        <strong style="color: #fbbf24; font-size: 1.05rem;">2. Absence of Financial &amp; Monetization Focus</strong>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.6;">
+                            Focusing exclusively on technical novelties and view counts hides business risk. The venture requires hard economic targets: tracking progress toward the <strong>3,000 watch hours</strong> YouTube monetization threshold and enforcing strict ROI per asset (<a href="../hypotheses/hyp-h10.html" style="color: var(--color-primary);">H10</a> / <a href="../hypotheses/hyp-h11.html" style="color: var(--color-primary);">H11</a>).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-card" style="border-left: 4px solid #3b82f6;">
+                    <div>
+                        <strong style="color: #60a5fa; font-size: 1.05rem;">3. Premature Community Testing</strong>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.6;">
+                            Pushing experimental or unvalidated tools directly into the main cohort creates confusion and friction. All new methods and frameworks must be sandboxed and validated internally with undeniable &ldquo;receipts&rdquo; before being taught to students.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-card" style="border-left: 4px solid #a855f7;">
+                    <div>
+                        <strong style="color: #c084fc; font-size: 1.05rem;">4. Role Constraints &amp; Synthetic Personas</strong>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.6;">
+                            A solo founder naturally over-engineers. Chidi recommends setting up synthetic personas as behavioral firewalls: a <strong>Lean CTO</strong> to veto unnecessary complexity and a <strong>Strict CFO</strong> to enforce spending discipline.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Multi-Agent Governance Model -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🤖 Synthetic Multi-Agent Governance Architecture</h2>
+            <div class="card" style="background: rgba(15, 23, 42, 0.6); border-color: rgba(99, 102, 241, 0.25); margin-bottom: 2rem;">
+                <p style="color: var(--text-secondary); line-height: 1.65; margin: 0 0 1.25rem;">
+                    To protect the founder from cognitive exhaustion (<a href="../strategy/single-founder-bandwidth.html" style="color: var(--color-primary);">Single-Founder Bandwidth</a>), decision-making is delegated to three specialized synthetic agent personas:
+                </p>
+
+                <div class="strategy-grid" style="margin: 0;">
+                    <div style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 8px; padding: 1.25rem;">
+                        <span class="agent-pill pill-cfo">Financial Discipline</span>
+                        <h4 style="margin: 0.25rem 0 0.5rem; color: #f87171;">💼 Strict CFO Agent</h4>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin: 0;">
+                            <li>Calculates creation cost and API spend per video/short.</li>
+                            <li>Monitors watch-hour accumulation toward 3,000 hrs.</li>
+                            <li>Enforces clear break-even gates before expanding software subscriptions.</li>
+                            <li>Demands ROI justification on all proposed production tools.</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 8px; padding: 1.25rem;">
+                        <span class="agent-pill pill-cto">Technical Minimalism</span>
+                        <h4 style="margin: 0.25rem 0 0.5rem; color: #60a5fa;">🛠️ Lean / Pragmatic CTO Agent</h4>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin: 0;">
+                            <li>Vetoes redundant side-projects and unnecessary repository forks.</li>
+                            <li>Mandates simple static HTML/JS/CSS over heavy node build systems.</li>
+                            <li>Limits tool stack to proven reliable engines (Canva, OBS, ElevenLabs).</li>
+                            <li>Enforces strict delivery deadlines on student-facing materials.</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 8px; padding: 1.25rem;">
+                        <span class="agent-pill pill-sandbox">Pre-Release Sandbox</span>
+                        <h4 style="margin: 0.25rem 0 0.5rem; color: #34d399;">🛡️ Devil's Advocate Agent</h4>
+                        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin: 0;">
+                            <li>Stress-tests new prompts and frameworks prior to public display.</li>
+                            <li>Validates "the receipts" internally with actual test data.</li>
+                            <li>Simulates beginner confusion to eliminate developer blind spots.</li>
+                            <li>Ensures student safety and confidence in live sessions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Action Points -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🎯 Operational Action Points</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: 1.1rem; margin-top: 0;">🤖 AI Agent &amp; Automation Setup</h3>
+                        <div class="todo-box">
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">LinkedIn Research Agent:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Automate manual feed scrolling to scan top-performing, relevant AI posts while discarding sponsored ads and vanity chatter.
+                            </p>
+                        </div>
+                        <div class="todo-box">
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">LinkedIn Writer Agent:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Generate tailored post drafts using reverse-response hooks from high-engagement posts, with mandatory human founder review.
+                            </p>
+                        </div>
+                        <div class="todo-box">
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">Governance Prompts:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Codify prompt personas for the Strict CFO, Lean CTO, and Devil's Advocate into the repository's agentic workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <div>
+                        <h3 style="color: var(--color-warning); font-size: 1.1rem; margin-top: 0;">📊 Content, Monetization &amp; Privacy</h3>
+                        <div class="todo-box">
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">YouTube Watch Hour Tracking:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Transition analytics dashboard to monitor progress toward 3,000 watch hours and 1,000 subscribers rather than raw impressions.
+                            </p>
+                        </div>
+                        <div class="todo-box">
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">Sandbox Verification ("Receipts"):</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Require proven sandbox validation before releasing tools or methodologies to the Skool community.
+                            </p>
+                        </div>
+                        <div class="todo-box">
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">24 Associate Shorts Pipeline:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Execute the 24 faceless glossary short videos under strict CFO budget supervision to guarantee positive unit economics.
+                            </p>
+                        </div>
+                        <div class="todo-box" style="border-left: 3px solid #ef4444;">
+                            <strong style="color: #f87171; font-size: 0.9rem;">Confidentiality Mandate:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.25rem 0 0;">
+                                Keep this video and transcript strictly confidential as requested by Chidi (internal advisory board use only).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Cross-Hypothesis Linkage -->
+        <section class="content-section animate-fade-in">
+            <h2 class="section-title">🔬 Hypothesis &amp; Strategy Linkage</h2>
+            <div class="card" style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 650px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Hypothesis</th>
+                            <th style="padding: 0.75rem 0.5rem;">Core Premise</th>
+                            <th style="padding: 0.75rem 0.5rem;">Chidi Discovery Impact</th>
+                            <th style="padding: 0.75rem 0.5rem;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h2.html" style="color: var(--color-primary); font-weight: 600;">H2</a></td>
+                            <td style="padding: 0.75rem 0.5rem;">Faceless Animated Videos</td>
+                            <td style="padding: 0.75rem 0.5rem;">Validated higher audience watch retention; proceed with 24-short glossary series under CFO cost tracking.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--color-warning);">🟡 In Testing</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h10.html" style="color: var(--color-primary); font-weight: 600;">H10</a></td>
+                            <td style="padding: 0.75rem 0.5rem;">Quality Floor &amp; Monetization</td>
+                            <td style="padding: 0.75rem 0.5rem;">Refocused target metric from retention percentages to 3,000 watch hours toward YouTube monetization.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--color-warning);">🟡 In Testing</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h24.html" style="color: var(--color-primary); font-weight: 600;">H24</a></td>
+                            <td style="padding: 0.75rem 0.5rem;">Single-Founder Bandwidth</td>
+                            <td style="padding: 0.75rem 0.5rem;">Eliminate manual scrolling &amp; feature creep; enforce synthetic Lean CTO and Strict CFO constraints.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--color-warning);">🟡 In Testing</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h29.html" style="color: var(--color-primary); font-weight: 600;">H29</a></td>
+                            <td style="padding: 0.75rem 0.5rem;">Listen More Than You Speak</td>
+                            <td style="padding: 0.75rem 0.5rem;">1-hour structured cohort model ensures high practical density, active member practice, and zero lecture fatigue.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--color-warning);">🟡 In Testing</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 0.5rem;"><a href="../hypotheses/hyp-h30.html" style="color: var(--color-primary); font-weight: 600;">H30</a></td>
+                            <td style="padding: 0.75rem 0.5rem;">Delivery Pilot FDE Roadmap</td>
+                            <td style="padding: 0.75rem 0.5rem;">Gamified badges earned via built GitHub repositories provide undeniable practitioner proof-of-work.</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--color-warning);">🟡 In Testing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Standard Footer with Revision Tracking -->
+    <footer>
+        <div class="footer-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <span class="footer-text">&copy; 2026 AI Certification Helper. Customer Discovery Interview Hub.</span>
+                <span class="footer-text">Prepared for: Rifat Erdem Sahin</span>
+            </div>
+            <span class="footer-text" style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding-top: 0.5rem; margin-top: 0.5rem;">
+                Latest Change: Added dedicated customer discovery page for Chidi strategy review covering multi-agent governance, role constraints (Strict CFO &amp; Lean CTO), and YouTube 3,000 watch-hour monetization target (2026-09-20) (<a href="https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commits/main/5_Symbols/cd/chidi-strategy-session-feedback.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">GitHub Page History</a> | <a href="https://rifaterdemsahin.github.io/AI-Certification-Customer-Development/5_Symbols/cd/chidi-strategy-session-feedback.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Live Page</a>)
+            </span>
+        </div>
+    </footer>
+
+    <script src="../toolbox/nav.js"></script>
+    <script src="../toolbox/main.js"></script>
+</body>
+</html>
