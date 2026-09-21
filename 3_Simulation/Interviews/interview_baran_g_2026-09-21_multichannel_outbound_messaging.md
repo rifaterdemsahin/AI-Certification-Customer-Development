@@ -4,6 +4,7 @@
 - **Interviewee / Stakeholder:** Baran G (LinkedIn personal connection; the same practitioner first logged on 2026-08-18 in `interview_baran_g_2026-08-18.md`)
 - **Reported by:** Rifat Erdem Sahin (Founder) — relayed feedback in conversation, not a verbatim transcript
 - **Channel / Location:** Founder ↔ Baran conversation, relayed to the project
+- **Ingest commit:** [`9bd9a0f`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/9bd9a0f)
 - **Related Hypotheses:** H24 (Emotional Pain Drivers), H17 (Corporate / Practical Delivery), H30 (Delivery Pilot / Practitioner Productivity) — plus H12 as a segment signal
 
 ---

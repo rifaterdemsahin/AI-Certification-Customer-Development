@@ -1,6 +1,8 @@
 # Customer Discovery Report: Baran G Follow-up — Multi-Channel Outbound Messaging (Airbnb / SpareRoom / LinkedIn)
 
-**Date:** 2026-09-21
+**Date:** 2026-09-21  
+**Repo:** [AI-Certification-Customer-Development](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development)  
+**Ingest commit:** [`9bd9a0f`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/9bd9a0f)  
 **Version:** 1.0.0
 **Source Evidence:** [`3_Simulation/Interviews/interview_baran_g_2026-09-21_multichannel_outbound_messaging.md`](../../3_Simulation/Interviews/interview_baran_g_2026-09-21_multichannel_outbound_messaging.md)
 **Prior Evidence:** [`customer-discovery-baran-g-interview-v1.0.0.md`](customer-discovery-baran-g-interview-v1.0.0.md) (2026-08-18)

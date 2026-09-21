@@ -1,6 +1,8 @@
 # Business Model Confidence Report — v1.9.114
 
-**Date:** 2026-09-21
+**Date:** 2026-09-21  
+**Repo:** [AI-Certification-Customer-Development](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development)  
+**Ingest commit:** [`9bd9a0f`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/9bd9a0f)  
 **Produced by:** the `business-model-sanity-check` skill
 **What changed vs. v1.9.113:**
 1. **Baran G Follow-up Ingested (multi-channel outbound messaging)**: Relayed feedback from Baran G — the practitioner first logged 2026-08-18 — that he wants to send proper messages to people on **Airbnb and SpareRoom**; the founder recognised the identical primitive for **LinkedIn responses**, named **Grokbot** as the solution path, stated the process must work (≈$50,000 spent on his contracting business), and required that all the answers live in the project **for contractors and for research**. Recorded in `3_Simulation/Interviews/interview_baran_g_2026-09-21_multichannel_outbound_messaging.md`, synthesized in `7_Testing_Known/reports/customer-discovery-baran-g-multichannel-messaging-v1.0.0.md`, analysed on `5_Symbols/cd/baran-g-multichannel-messaging-feedback.html`.
