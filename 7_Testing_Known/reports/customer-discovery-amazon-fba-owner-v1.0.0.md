@@ -1,6 +1,8 @@
 # Customer Discovery Report: Amazon FBA Business Owner — Trust, Determinism, and the Agent Operations Stack
 
-**Date:** 2026-09-21
+**Date:** 2026-09-21  
+**Repo:** [AI-Certification-Customer-Development](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development)  
+**Ingest commit:** [`bfd4ca7`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/bfd4ca7)  
 **Version:** 1.0.0
 **Source Interview:** [`3_Simulation/Interviews/interview_amazon_fba_owner_2026-09-21.md`](../../3_Simulation/Interviews/interview_amazon_fba_owner_2026-09-21.md)
 **Location:** Remote 1-1 customer discovery conversation (translated from Turkish)

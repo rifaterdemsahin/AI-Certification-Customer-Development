@@ -4,6 +4,7 @@
 - **Interviewee / Stakeholder:** Amazon FBA business owner (unnamed in the session record; Turkish-language conversation, translated)
 - **Attendees:** Rifat Erdem Sahin (Founder)
 - **Channel / Location:** Remote 1-1 customer discovery conversation (translated from Turkish)
+- **Ingest commit:** [`bfd4ca7`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/bfd4ca7)
 - **Related Hypotheses:** H24 (Emotional Pain Drivers), H30 (Delivery Pilot / contractor proof-of-work), H35 (repo-count badge ladder), H1 (AI skills demand), H12 (B2B/SMB channel read)
 
 ---

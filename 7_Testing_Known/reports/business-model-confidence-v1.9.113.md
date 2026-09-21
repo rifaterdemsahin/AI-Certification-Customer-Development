@@ -1,6 +1,8 @@
 # Business Model Confidence Report — v1.9.113
 
-**Date:** 2026-09-21
+**Date:** 2026-09-21  
+**Repo:** [AI-Certification-Customer-Development](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development)  
+**Ingest commit:** [`bfd4ca7`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/bfd4ca7)  
 **Produced by:** the `business-model-sanity-check` skill
 **What changed vs. v1.9.112:**
 1. **Amazon FBA Operator Discovery Ingested**: A Turkish-language customer discovery session with an Amazon FBA business owner (unnamed) was ingested — deterministic core vs non-deterministic AI, modules-vs-one-brain architecture indecision, relational memory as an operational ledger (PostgreSQL/Supabase), and autonomous agents driven from Telegram on an always-on local machine. Documented in `3_Simulation/Interviews/interview_amazon_fba_owner_2026-09-21.md`, synthesized in `7_Testing_Known/reports/customer-discovery-amazon-fba-owner-v1.0.0.md`, and analysed on `5_Symbols/cd/amazon-fba-owner-agent-architecture-feedback.html`.
