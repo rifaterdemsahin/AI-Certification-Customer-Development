@@ -4,7 +4,7 @@
 - **Interviewee / Stakeholder:** **"M"** — logged by **first-name initial only**, per founder instruction on logging (2026-09-24). She is a **Delivery Pilots community member** who attended a private 1-1 setup session. No last name, no employer, no role title, no company and no team size are recorded — omitted by design, not by oversight.
 - **Facilitator / Reported by:** Rifat Erdem Sahin (Founder) — the founder ran the session; the record below is the **founder-supplied session executive summary**, not a verbatim transcript and not a recording.
 - **Channel / Location:** Private 1-1 remote session (Grokbot environment walkthrough), 2026-09-24
-- **Ingest commit:** _pending — backfilled by the follow-up `chore(docs)` commit_
+- **Ingest commit:** [`f56e25b`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/f56e25b)
 - **Related Hypotheses:** H30 (agent orchestration, data layer, human-in-the-loop), H1 (R.A.I.S.E. — Rapid AI Increases Skills Expectations), H24 (non-core workload driver), H29 (the capped 1-1 as the founder lab) — H35, H17, H12 and H34 **deliberately not annotated** (see §5)
 
 ---
