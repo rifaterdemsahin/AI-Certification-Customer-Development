@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-27  
 **Repo:** [AI-Certification-Customer-Development](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development)  
-**Ingest commit:** [`__COMMIT_SHA__`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/__COMMIT_SHA__)  
+**Ingest commit:** [`302baca`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/302baca)  
 **Produced by:** the `business-model-sanity-check` skill
 **What changed vs. v1.9.115:**
 1. **"I." (software architect) private 1-1 ingested (agent adoption, trust boundaries, context scaling, cost routing)**: A working software architect — logged by **first-name initial only** on explicit founder instruction — was onboarded onto the platform and taken through purpose-built agents on local and cloud environments, long-context background operations, an Obsidian second brain wired to Hermes Telegram bots with scheduled cron jobs, and a Grok-prototype / DeepSeek-at-volume cost strategy. Recorded in `3_Simulation/Interviews/interview_i_2026-09-27_agent_adoption_architecture.md`, synthesized in `7_Testing_Known/reports/customer-discovery-i-software-architect-agent-adoption-v1.0.0.md`, analysed on `5_Symbols/cd/i-software-architect-agent-adoption-feedback.html`.

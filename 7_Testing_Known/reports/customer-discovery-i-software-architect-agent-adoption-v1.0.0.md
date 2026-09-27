@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-27  
 **Repo:** [AI-Certification-Customer-Development](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development)  
-**Ingest commit:** `__COMMIT_SHA__`  
+**Ingest commit:** [`302baca`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/302baca)  
 **Version:** 1.0.0
 **Source Evidence:** [`3_Simulation/Interviews/interview_i_2026-09-27_agent_adoption_architecture.md`](../../3_Simulation/Interviews/interview_i_2026-09-27_agent_adoption_architecture.md)
 **Participants:** "I." - software architect (logged by first-name initial only; no surname, employer or client captured). In session with Rifat Erdem Sahin (Founder).
