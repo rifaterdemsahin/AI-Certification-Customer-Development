@@ -4,7 +4,7 @@
 - **Interviewee / Stakeholder:** "I." - software architect. **Logged by first-name initial only** on the founder's instruction. No surname, no employer, no client name and no role title were captured beyond "software architect", and this record is published on a public documentation site, so the participant is identified by initial rather than by identity. The initial is the identifier for this ingest - do not carry any stand-in name forward.
 - **Reported by:** Rifat Erdem Sahin (Founder) - **first-hand** (the founder ran the session himself) but **unrecorded**: there is no transcript, no recording and no verbatim capture. The ingest source is a **founder-authored structured session summary**, so every line below is the founder's characterisation of what happened, including the characterisation of the participant's own position.
 - **Channel / Location:** Private 1-1 remote session - community-platform walkthrough plus screen-shared agent setup (local and cloud). Nominally a customer-discovery and mentoring session; in practice a technical evaluation with the founder driving.
-- **Ingest commit:** _pending - backfilled by the follow-up `chore(docs)` commit_
+- **Ingest commit:** [`302baca`](https://github.com/rifaterdemsahin/AI-Certification-Customer-Development/commit/302baca)
 - **Related Hypotheses:** H30 (Delivery Pilot career transformation roadmap), H24 (emotional / trust drivers behind AI adoption), H29 (founder-as-listener, 1-1 cocreation), H1 (rising AI skills expectations) - plus H12 as a segment-direction note
 
 ---
